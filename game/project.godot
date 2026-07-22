@@ -15,10 +15,17 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Dragon Quest Monster Showdown"
-run/main_scene="res://tests/test_scene.tscn"
+run/main_scene="res://ui/team_builder/team_builder_screen.tscn"
 config/features=PackedStringArray("4.7")
 
 [debug]
 
 gdscript/warnings/untyped_declaration=1
 gdscript/warnings/unsafe_method_access=1
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/team_builder/team_member_row.gd" id="1"]
+
+[node name="TeamMemberRow" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 40)
+script = ExtResource("1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DragHandle" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+text = "::"
+
+[node name="NicknameEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Nickname"
+
+[node name="SpeciesLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SkillsBox" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RemoveButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Remove"
