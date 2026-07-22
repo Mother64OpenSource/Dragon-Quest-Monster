@@ -1,0 +1,12 @@
+{
+  "id": "attack",
+  "display_name": "Attack",
+  "mp_cost": 0,
+  "priority": 0,
+  "accuracy": 1.0,
+  "category": "physical",
+  "target_type": "single_enemy",
+  "effects": [
+    { "type": "damage", "category": "physical", "power": 15 }
+  ]
+}

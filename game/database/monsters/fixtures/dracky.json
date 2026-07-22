@@ -1,0 +1,13 @@
+{
+  "id": "dracky",
+  "display_name": "Dracky",
+  "family": "dracky",
+  "base_hp": 45,
+  "base_mp": 14,
+  "base_attack": 8,
+  "base_defense": 10,
+  "base_agility": 16,
+  "base_wisdom": 12,
+  "starting_skill_ids": ["attack", "frizz", "poison_breath"],
+  "starting_trait_ids": []
+}

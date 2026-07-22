@@ -1,0 +1,8 @@
+{
+  "id": "poison",
+  "display_name": "Poison",
+  "tick_damage_percent": 0.125,
+  "skip_turn_chance": 0.0,
+  "duration_turns": 4,
+  "stat_mods_on_apply": []
+}

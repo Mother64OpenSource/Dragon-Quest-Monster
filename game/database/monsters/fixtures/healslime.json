@@ -1,0 +1,13 @@
+{
+  "id": "healslime",
+  "display_name": "Heal Slime",
+  "family": "slime",
+  "base_hp": 22,
+  "base_mp": 18,
+  "base_attack": 6,
+  "base_defense": 8,
+  "base_agility": 9,
+  "base_wisdom": 12,
+  "starting_skill_ids": ["attack", "heal", "sap"],
+  "starting_trait_ids": []
+}

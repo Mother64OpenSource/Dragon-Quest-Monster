@@ -1,0 +1,12 @@
+{
+  "id": "frizz",
+  "display_name": "Frizz",
+  "mp_cost": 2,
+  "priority": 0,
+  "accuracy": 1.0,
+  "category": "magic",
+  "target_type": "single_enemy",
+  "effects": [
+    { "type": "damage", "category": "magic", "power": 18 }
+  ]
+}

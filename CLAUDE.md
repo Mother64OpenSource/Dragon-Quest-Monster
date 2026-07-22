@@ -16,10 +16,20 @@ wiki/                   Everything you write and maintain lives here.
   entities/             Pages for concrete "things": characters, monsters, systems, tools, people.
   concepts/             Pages for abstract ideas: mechanics, design philosophies, themes, comparisons.
   decisions/            Design-decision records — what was decided, why, and what alternatives were rejected.
+game/                   The actual Godot 4 project (GDScript) — code, not wiki content. Built and
+                        maintained like a normal software project (milestones, tests), separate from
+                        the raw/wiki ingest-and-query workflow below. See game/ for its own structure.
 CLAUDE.md               This file. Co-evolve it with the user as conventions get discovered.
 ```
 
 If a new kind of page doesn't fit `entities/`, `concepts/`, or `decisions/`, propose a new subfolder rather than forcing a bad fit — then document it here.
+
+The rest of this file (page conventions, ingest/query/lint operations, index/log formats)
+governs `wiki/` only. `game/` is implemented and reviewed like ordinary code — normal
+software engineering practices apply, not the wiki's ingest/query discipline. Design
+decisions worth preserving for the long term (e.g. why the battle engine is structured a
+certain way) can still be written up as a `wiki/decisions/` page when the user wants that
+captured, cross-linking to the relevant milestone.
 
 ## Page conventions
 
@@ -88,7 +98,13 @@ Append-only, newest at the bottom. Each entry starts with a consistent prefix so
 ## [YYYY-MM-DD] ingest | Source Title
 ## [YYYY-MM-DD] query | Short question summary
 ## [YYYY-MM-DD] lint | What was checked / found
+## [YYYY-MM-DD] build | game/ milestone summary
 ```
+
+`build` entries are the one exception to "this log covers wiki/ only" — a short pointer
+whenever a `game/` milestone lands, so the wiki's timeline stays a complete project
+record even though the milestone's actual design detail lives in `wiki/decisions/` (if
+captured) rather than in the log itself.
 
 ## Notes for the LLM
 

@@ -1,0 +1,12 @@
+{
+  "id": "double_slash",
+  "display_name": "Double Slash",
+  "mp_cost": 3,
+  "priority": 0,
+  "accuracy": 1.0,
+  "category": "physical",
+  "target_type": "single_enemy",
+  "effects": [
+    { "type": "damage", "category": "physical", "power": 8, "min_hits": 2, "max_hits": 2 }
+  ]
+}

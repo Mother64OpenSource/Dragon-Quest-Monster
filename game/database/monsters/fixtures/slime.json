@@ -1,0 +1,13 @@
+{
+  "id": "slime",
+  "display_name": "Slime",
+  "family": "slime",
+  "base_hp": 50,
+  "base_mp": 10,
+  "base_attack": 10,
+  "base_defense": 10,
+  "base_agility": 12,
+  "base_wisdom": 6,
+  "starting_skill_ids": ["attack", "oomph"],
+  "starting_trait_ids": []
+}

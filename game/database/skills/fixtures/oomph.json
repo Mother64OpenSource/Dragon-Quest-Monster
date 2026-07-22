@@ -1,0 +1,12 @@
+{
+  "id": "oomph",
+  "display_name": "Oomph",
+  "mp_cost": 2,
+  "priority": 0,
+  "accuracy": 1.0,
+  "category": "status",
+  "target_type": "self",
+  "effects": [
+    { "type": "stat_mod", "stat_name": "attack", "stages": 1, "target_self": true }
+  ]
+}
