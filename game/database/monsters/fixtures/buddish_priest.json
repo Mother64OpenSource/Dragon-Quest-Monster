@@ -1,0 +1,18 @@
+{
+    "id":  "buddish_priest",
+    "display_name":  "Buddish Priest",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  2240,
+    "base_mp":  560,
+    "base_attack":  539,
+    "base_defense":  847,
+    "base_agility":  462,
+    "base_wisdom":  539,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

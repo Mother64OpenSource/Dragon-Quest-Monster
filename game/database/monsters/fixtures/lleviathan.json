@@ -1,0 +1,18 @@
+{
+    "id":  "lleviathan",
+    "display_name":  "Lleviathan",
+    "family":  "Nature",
+    "rank":  "S",
+    "base_hp":  2156,
+    "base_mp":  504,
+    "base_attack":  547,
+    "base_defense":  678,
+    "base_agility":  486,
+    "base_wisdom":  770,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

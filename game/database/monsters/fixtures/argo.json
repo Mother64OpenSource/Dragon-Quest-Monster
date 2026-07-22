@@ -1,0 +1,18 @@
+{
+    "id":  "argo",
+    "display_name":  "Argo",
+    "family":  "Devil",
+    "rank":  "SS",
+    "base_hp":  1143,
+    "base_mp":  633,
+    "base_attack":  837,
+    "base_defense":  905,
+    "base_agility":  389,
+    "base_wisdom":  926,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

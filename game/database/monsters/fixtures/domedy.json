@@ -1,0 +1,18 @@
+{
+    "id":  "domedy",
+    "display_name":  "Domedy",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1805,
+    "base_mp":  574,
+    "base_attack":  362,
+    "base_defense":  692,
+    "base_agility":  725,
+    "base_wisdom":  930,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

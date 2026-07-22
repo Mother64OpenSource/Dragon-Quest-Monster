@@ -1,0 +1,18 @@
+{
+    "id":  "v_drag",
+    "display_name":  "V-Drag",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  2080,
+    "base_mp":  720,
+    "base_attack":  792,
+    "base_defense":  660,
+    "base_agility":  704,
+    "base_wisdom":  704,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "munchie",
+    "display_name":  "Munchie",
+    "family":  "Nature",
+    "rank":  "SS",
+    "base_hp":  970,
+    "base_mp":  421,
+    "base_attack":  671,
+    "base_defense":  492,
+    "base_agility":  731,
+    "base_wisdom":  471,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

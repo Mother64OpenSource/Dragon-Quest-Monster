@@ -1,0 +1,18 @@
+{
+    "id":  "rugius",
+    "display_name":  "Rugius",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  1229,
+    "base_mp":  437,
+    "base_attack":  891,
+    "base_defense":  505,
+    "base_agility":  773,
+    "base_wisdom":  476,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

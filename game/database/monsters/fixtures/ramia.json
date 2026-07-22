@@ -1,0 +1,18 @@
+{
+    "id":  "ramia",
+    "display_name":  "Ramia",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2400,
+    "base_mp":  565,
+    "base_attack":  592,
+    "base_defense":  381,
+    "base_agility":  884,
+    "base_wisdom":  760,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

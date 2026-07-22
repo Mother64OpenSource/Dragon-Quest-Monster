@@ -1,0 +1,18 @@
+{
+    "id":  "magarugi",
+    "display_name":  "Magarugi",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2092,
+    "base_mp":  818,
+    "base_attack":  492,
+    "base_defense":  642,
+    "base_agility":  833,
+    "base_wisdom":  1000,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

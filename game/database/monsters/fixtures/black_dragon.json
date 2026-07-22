@@ -1,0 +1,18 @@
+{
+    "id":  "black_dragon",
+    "display_name":  "Black Dragon",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  1641,
+    "base_mp":  369,
+    "base_attack":  821,
+    "base_defense":  738,
+    "base_agility":  677,
+    "base_wisdom":  615,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

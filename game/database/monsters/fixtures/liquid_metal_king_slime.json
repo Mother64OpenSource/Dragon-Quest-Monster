@@ -1,0 +1,18 @@
+{
+    "id":  "liquid_metal_king_slime",
+    "display_name":  "Liquid Metal King Slime",
+    "family":  "Slime",
+    "rank":  "SS",
+    "base_hp":  263,
+    "base_mp":  801,
+    "base_attack":  211,
+    "base_defense":  1500,
+    "base_agility":  1310,
+    "base_wisdom":  747,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

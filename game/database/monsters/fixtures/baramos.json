@@ -1,0 +1,18 @@
+{
+    "id":  "baramos",
+    "display_name":  "Baramos",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1365,
+    "base_mp":  642,
+    "base_attack":  530,
+    "base_defense":  572,
+    "base_agility":  591,
+    "base_wisdom":  1019,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

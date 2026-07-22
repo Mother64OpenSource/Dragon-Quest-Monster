@@ -1,0 +1,18 @@
+{
+    "id":  "dr_snapped",
+    "display_name":  "Dr. Snapped",
+    "family":  "Zombie",
+    "rank":  "SS",
+    "base_hp":  1524,
+    "base_mp":  600,
+    "base_attack":  681,
+    "base_defense":  656,
+    "base_agility":  572,
+    "base_wisdom":  1008,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

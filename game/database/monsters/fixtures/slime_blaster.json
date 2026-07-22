@@ -1,0 +1,18 @@
+{
+    "id":  "slime_blaster",
+    "display_name":  "Slime Blaster",
+    "family":  "Slime",
+    "rank":  "SS",
+    "base_hp":  1859,
+    "base_mp":  768,
+    "base_attack":  432,
+    "base_defense":  968,
+    "base_agility":  308,
+    "base_wisdom":  1056,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "greygnarl",
+    "display_name":  "Greygnarl",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  1776,
+    "base_mp":  420,
+    "base_attack":  681,
+    "base_defense":  614,
+    "base_agility":  639,
+    "base_wisdom":  689,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

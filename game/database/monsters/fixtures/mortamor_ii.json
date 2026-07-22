@@ -1,0 +1,18 @@
+{
+    "id":  "mortamor_ii",
+    "display_name":  "Mortamor II",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  2144,
+    "base_mp":  560,
+    "base_attack":  608,
+    "base_defense":  528,
+    "base_agility":  968,
+    "base_wisdom":  696,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

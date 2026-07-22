@@ -48,7 +48,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 func _check_wiring() -> void:
 	_check("team_list_panel resolved", _screen._team_list_panel != null)
 	_check("team_editor_panel resolved", _screen._team_editor_panel != null)
-	_check("monster_db loaded 4 species", _screen.monster_db.get_all_species().size() == 4)
+	_check("at least 4 species loaded", _screen.monster_db.get_all_species().size() >= 4)
 	_check("skill_db loaded 7 skills", _screen.skill_db.get_all_skills().size() == 7)
 
 func _check_crud_and_selection() -> void:

@@ -1,0 +1,18 @@
+{
+    "id":  "beast_of_the_sea",
+    "display_name":  "Beast of the Sea",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  2124,
+    "base_mp":  713,
+    "base_attack":  428,
+    "base_defense":  535,
+    "base_agility":  713,
+    "base_wisdom":  607,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "xenlon",
+    "display_name":  "Xenlon",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  1673,
+    "base_mp":  430,
+    "base_attack":  746,
+    "base_defense":  765,
+    "base_agility":  555,
+    "base_wisdom":  713,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

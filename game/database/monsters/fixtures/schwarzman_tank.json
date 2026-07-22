@@ -1,0 +1,18 @@
+{
+    "id":  "schwarzman_tank",
+    "display_name":  "Schwarzman Tank",
+    "family":  "Material",
+    "rank":  "SS",
+    "base_hp":  1416,
+    "base_mp":  576,
+    "base_attack":  669,
+    "base_defense":  942,
+    "base_agility":  476,
+    "base_wisdom":  379,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

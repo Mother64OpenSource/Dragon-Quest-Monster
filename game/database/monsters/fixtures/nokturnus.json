@@ -1,0 +1,18 @@
+{
+    "id":  "nokturnus",
+    "display_name":  "Nokturnus",
+    "family":  "Devil",
+    "rank":  "SS",
+    "base_hp":  1282,
+    "base_mp":  331,
+    "base_attack":  900,
+    "base_defense":  624,
+    "base_agility":  641,
+    "base_wisdom":  602,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

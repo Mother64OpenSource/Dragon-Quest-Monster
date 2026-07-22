@@ -1,0 +1,18 @@
+{
+    "id":  "asura_zoma",
+    "display_name":  "Asura Zoma",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2025,
+    "base_mp":  825,
+    "base_attack":  621,
+    "base_defense":  483,
+    "base_agility":  518,
+    "base_wisdom":  518,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

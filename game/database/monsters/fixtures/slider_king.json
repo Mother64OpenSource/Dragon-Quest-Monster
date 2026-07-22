@@ -1,0 +1,18 @@
+{
+    "id":  "slider_king",
+    "display_name":  "Slider King",
+    "family":  "Slime",
+    "rank":  "SS",
+    "base_hp":  2304,
+    "base_mp":  608,
+    "base_attack":  722,
+    "base_defense":  476,
+    "base_agility":  880,
+    "base_wisdom":  493,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

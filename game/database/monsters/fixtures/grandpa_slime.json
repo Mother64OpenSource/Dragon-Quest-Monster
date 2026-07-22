@@ -1,0 +1,18 @@
+{
+    "id":  "grandpa_slime",
+    "display_name":  "Grandpa Slime",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  1673,
+    "base_mp":  774,
+    "base_attack":  675,
+    "base_defense":  912,
+    "base_agility":  661,
+    "base_wisdom":  1095,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

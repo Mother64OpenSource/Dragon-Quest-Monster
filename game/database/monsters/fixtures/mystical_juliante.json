@@ -1,0 +1,18 @@
+{
+    "id":  "mystical_juliante",
+    "display_name":  "Mystical Juliante",
+    "family":  "Beast",
+    "rank":  "SS",
+    "base_hp":  1330,
+    "base_mp":  440,
+    "base_attack":  780,
+    "base_defense":  520,
+    "base_agility":  1000,
+    "base_wisdom":  820,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

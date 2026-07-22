@@ -1,0 +1,18 @@
+{
+    "id":  "murdaw",
+    "display_name":  "Murdaw",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1473,
+    "base_mp":  517,
+    "base_attack":  637,
+    "base_defense":  716,
+    "base_agility":  796,
+    "base_wisdom":  955,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

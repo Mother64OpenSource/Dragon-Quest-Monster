@@ -1,0 +1,18 @@
+{
+    "id":  "excalipurr",
+    "display_name":  "Excalipurr",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1098,
+    "base_mp":  441,
+    "base_attack":  856,
+    "base_defense":  428,
+    "base_agility":  964,
+    "base_wisdom":  498,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

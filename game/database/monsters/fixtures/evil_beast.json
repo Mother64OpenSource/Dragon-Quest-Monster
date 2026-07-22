@@ -1,0 +1,18 @@
+{
+    "id":  "evil_beast",
+    "display_name":  "Evil Beast",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1654,
+    "base_mp":  518,
+    "base_attack":  470,
+    "base_defense":  609,
+    "base_agility":  663,
+    "base_wisdom":  924,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

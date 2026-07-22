@@ -1,0 +1,18 @@
+{
+    "id":  "king_godfrey",
+    "display_name":  "King Godfrey",
+    "family":  "Zombie",
+    "rank":  "S",
+    "base_hp":  1584,
+    "base_mp":  756,
+    "base_attack":  546,
+    "base_defense":  546,
+    "base_agility":  664,
+    "base_wisdom":  1008,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

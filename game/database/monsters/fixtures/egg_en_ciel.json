@@ -1,0 +1,18 @@
+{
+    "id":  "egg_en_ciel",
+    "display_name":  "Egg-en-ciel",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  1050,
+    "base_mp":  560,
+    "base_attack":  520,
+    "base_defense":  720,
+    "base_agility":  480,
+    "base_wisdom":  720,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

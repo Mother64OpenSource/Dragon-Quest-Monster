@@ -1,0 +1,18 @@
+{
+    "id":  "syphon",
+    "display_name":  "Syphon",
+    "family":  "Zombie",
+    "rank":  "SS",
+    "base_hp":  1116,
+    "base_mp":  900,
+    "base_attack":  324,
+    "base_defense":  621,
+    "base_agility":  873,
+    "base_wisdom":  1053,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

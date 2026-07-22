@@ -1,0 +1,18 @@
+{
+    "id":  "prism_peacock",
+    "display_name":  "Prism Peacock",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1514,
+    "base_mp":  642,
+    "base_attack":  842,
+    "base_defense":  642,
+    "base_agility":  742,
+    "base_wisdom":  520,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

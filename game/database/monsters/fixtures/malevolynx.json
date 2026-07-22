@@ -1,0 +1,18 @@
+{
+    "id":  "malevolynx",
+    "display_name":  "Malevolynx",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2560,
+    "base_mp":  576,
+    "base_attack":  669,
+    "base_defense":  643,
+    "base_agility":  696,
+    "base_wisdom":  537,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

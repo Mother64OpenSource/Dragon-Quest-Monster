@@ -1,0 +1,18 @@
+{
+    "id":  "malroth",
+    "display_name":  "Malroth",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1739,
+    "base_mp":  717,
+    "base_attack":  665,
+    "base_defense":  655,
+    "base_agility":  410,
+    "base_wisdom":  982,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "canzar",
+    "display_name":  "Canzar",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  2880,
+    "base_mp":  640,
+    "base_attack":  731,
+    "base_defense":  836,
+    "base_agility":  352,
+    "base_wisdom":  520,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

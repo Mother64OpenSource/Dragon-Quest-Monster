@@ -1,0 +1,18 @@
+{
+    "id":  "king_sanguini",
+    "display_name":  "King Sanguini",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1350,
+    "base_mp":  760,
+    "base_attack":  448,
+    "base_defense":  627,
+    "base_agility":  895,
+    "base_wisdom":  987,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "atlas",
+    "display_name":  "Atlas",
+    "family":  "Devil",
+    "rank":  "S",
+    "base_hp":  2086,
+    "base_mp":  441,
+    "base_attack":  625,
+    "base_defense":  882,
+    "base_agility":  521,
+    "base_wisdom":  319,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

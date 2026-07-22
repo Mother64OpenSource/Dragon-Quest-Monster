@@ -1,0 +1,18 @@
+{
+    "id":  "maizarcane",
+    "display_name":  "Maizarcane",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1931,
+    "base_mp":  579,
+    "base_attack":  551,
+    "base_defense":  847,
+    "base_agility":  695,
+    "base_wisdom":  382,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

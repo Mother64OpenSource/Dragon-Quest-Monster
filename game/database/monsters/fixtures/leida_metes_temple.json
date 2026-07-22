@@ -1,0 +1,18 @@
+{
+    "id":  "leida_metes_temple",
+    "display_name":  "Leida Metes Temple",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2422,
+    "base_mp":  504,
+    "base_attack":  516,
+    "base_defense":  924,
+    "base_agility":  332,
+    "base_wisdom":  601,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "gem_slime",
+    "display_name":  "Gem Slime",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  233,
+    "base_mp":  787,
+    "base_attack":  506,
+    "base_defense":  1500,
+    "base_agility":  1350,
+    "base_wisdom":  894,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

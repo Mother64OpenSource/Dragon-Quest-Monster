@@ -1,0 +1,18 @@
+{
+    "id":  "extreme_killing_machine",
+    "display_name":  "Extreme Killing Machine",
+    "family":  "Material",
+    "rank":  "S",
+    "base_hp":  1519,
+    "base_mp":  504,
+    "base_attack":  524,
+    "base_defense":  924,
+    "base_agility":  847,
+    "base_wisdom":  308,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

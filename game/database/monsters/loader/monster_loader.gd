@@ -41,6 +41,8 @@ static func _parse_rank(value: String) -> MonsterSpecies.Rank:
 			return MonsterSpecies.Rank.A
 		"S":
 			return MonsterSpecies.Rank.S
+		"SS":
+			return MonsterSpecies.Rank.SS
 		_:
 			push_error("Unknown monster rank: %s" % value)
 			return MonsterSpecies.Rank.F
@@ -61,6 +63,8 @@ static func rank_to_string(rank: MonsterSpecies.Rank) -> String:
 			return "A"
 		MonsterSpecies.Rank.S:
 			return "S"
+		MonsterSpecies.Rank.SS:
+			return "SS"
 		_:
 			push_error("Unknown monster rank enum value: %d" % rank)
 			return "F"

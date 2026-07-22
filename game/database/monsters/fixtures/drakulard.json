@@ -1,0 +1,18 @@
+{
+    "id":  "drakulard",
+    "display_name":  "Drakulard",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  1610,
+    "base_mp":  350,
+    "base_attack":  900,
+    "base_defense":  1000,
+    "base_agility":  550,
+    "base_wisdom":  530,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

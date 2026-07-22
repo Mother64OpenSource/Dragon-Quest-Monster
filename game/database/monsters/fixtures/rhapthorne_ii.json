@@ -1,0 +1,18 @@
+{
+    "id":  "rhapthorne_ii",
+    "display_name":  "Rhapthorne II",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2640,
+    "base_mp":  816,
+    "base_attack":  564,
+    "base_defense":  748,
+    "base_agility":  379,
+    "base_wisdom":  1056,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "zoma",
+    "display_name":  "Zoma",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  995,
+    "base_mp":  593,
+    "base_attack":  642,
+    "base_defense":  836,
+    "base_agility":  622,
+    "base_wisdom":  972,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

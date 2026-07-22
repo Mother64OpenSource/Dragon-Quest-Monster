@@ -1,0 +1,18 @@
+{
+    "id":  "he_who_bears_no_name",
+    "display_name":  "He Who Bears No Name",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2250,
+    "base_mp":  525,
+    "base_attack":  604,
+    "base_defense":  621,
+    "base_agility":  345,
+    "base_wisdom":  690,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

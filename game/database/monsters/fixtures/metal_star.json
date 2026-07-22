@@ -1,0 +1,18 @@
+{
+    "id":  "metal_star",
+    "display_name":  "Metal Star",
+    "family":  "Slime",
+    "rank":  "SS",
+    "base_hp":  341,
+    "base_mp":  731,
+    "base_attack":  211,
+    "base_defense":  1500,
+    "base_agility":  1110,
+    "base_wisdom":  785,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "shock_plob",
+    "display_name":  "Shock Plob",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  2400,
+    "base_mp":  704,
+    "base_attack":  678,
+    "base_defense":  687,
+    "base_agility":  792,
+    "base_wisdom":  388,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "orochi",
+    "display_name":  "Orochi",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  2880,
+    "base_mp":  640,
+    "base_attack":  696,
+    "base_defense":  590,
+    "base_agility":  520,
+    "base_wisdom":  502,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

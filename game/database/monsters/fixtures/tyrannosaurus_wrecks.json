@@ -1,0 +1,18 @@
+{
+    "id":  "tyrannosaurus_wrecks",
+    "display_name":  "Tyrannosaurus Wrecks",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1320,
+    "base_mp":  288,
+    "base_attack":  776,
+    "base_defense":  552,
+    "base_agility":  480,
+    "base_wisdom":  408,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

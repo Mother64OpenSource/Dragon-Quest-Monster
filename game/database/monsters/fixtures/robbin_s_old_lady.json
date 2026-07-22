@@ -1,0 +1,18 @@
+{
+    "id":  "robbin_s_old_lady",
+    "display_name":  "Robbin\u0027s Old Lady",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1706,
+    "base_mp":  434,
+    "base_attack":  732,
+    "base_defense":  579,
+    "base_agility":  674,
+    "base_wisdom":  641,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "balhib",
+    "display_name":  "Balhib",
+    "family":  "Material",
+    "rank":  "S",
+    "base_hp":  1478,
+    "base_mp":  358,
+    "base_attack":  863,
+    "base_defense":  1040,
+    "base_agility":  650,
+    "base_wisdom":  620,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

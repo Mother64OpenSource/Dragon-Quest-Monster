@@ -1,0 +1,18 @@
+{
+    "id":  "baalzack",
+    "display_name":  "Baalzack",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1829,
+    "base_mp":  551,
+    "base_attack":  793,
+    "base_defense":  695,
+    "base_agility":  437,
+    "base_wisdom":  620,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

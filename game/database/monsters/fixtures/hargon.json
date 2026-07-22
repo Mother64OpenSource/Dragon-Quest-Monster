@@ -1,0 +1,18 @@
+{
+    "id":  "hargon",
+    "display_name":  "Hargon",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1584,
+    "base_mp":  609,
+    "base_attack":  629,
+    "base_defense":  772,
+    "base_agility":  609,
+    "base_wisdom":  975,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

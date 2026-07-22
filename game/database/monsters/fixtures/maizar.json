@@ -1,0 +1,18 @@
+{
+    "id":  "maizar",
+    "display_name":  "Maizar",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1125,
+    "base_mp":  900,
+    "base_attack":  630,
+    "base_defense":  918,
+    "base_agility":  432,
+    "base_wisdom":  1008,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

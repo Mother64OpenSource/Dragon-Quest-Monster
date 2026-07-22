@@ -1,0 +1,18 @@
+{
+    "id":  "mossferatu",
+    "display_name":  "Mossferatu",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1446,
+    "base_mp":  634,
+    "base_attack":  871,
+    "base_defense":  673,
+    "base_agility":  634,
+    "base_wisdom":  791,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

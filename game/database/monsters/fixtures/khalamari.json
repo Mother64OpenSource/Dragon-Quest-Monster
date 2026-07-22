@@ -1,0 +1,18 @@
+{
+    "id":  "khalamari",
+    "display_name":  "Khalamari",
+    "family":  "Nature",
+    "rank":  "S",
+    "base_hp":  2560,
+    "base_mp":  608,
+    "base_attack":  660,
+    "base_defense":  687,
+    "base_agility":  581,
+    "base_wisdom":  722,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "realm_of_the_mighty",
+    "display_name":  "Realm of the Mighty",
+    "family":  "Material",
+    "rank":  "SS",
+    "base_hp":  2784,
+    "base_mp":  560,
+    "base_attack":  704,
+    "base_defense":  1056,
+    "base_agility":  335,
+    "base_wisdom":  537,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

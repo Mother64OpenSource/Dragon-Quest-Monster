@@ -1,0 +1,18 @@
+{
+    "id":  "grand_estark",
+    "display_name":  "Grand Estark",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2100,
+    "base_mp":  675,
+    "base_attack":  608,
+    "base_defense":  552,
+    "base_agility":  552,
+    "base_wisdom":  408,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

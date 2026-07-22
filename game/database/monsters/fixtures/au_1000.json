@@ -1,0 +1,18 @@
+{
+    "id":  "au_1000",
+    "display_name":  "AU-1000",
+    "family":  "Material",
+    "rank":  "SS",
+    "base_hp":  768,
+    "base_mp":  576,
+    "base_attack":  748,
+    "base_defense":  1050,
+    "base_agility":  471,
+    "base_wisdom":  681,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

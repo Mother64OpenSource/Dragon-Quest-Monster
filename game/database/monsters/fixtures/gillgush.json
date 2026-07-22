@@ -1,0 +1,18 @@
+{
+    "id":  "gillgush",
+    "display_name":  "Gillgush",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  1992,
+    "base_mp":  468,
+    "base_attack":  605,
+    "base_defense":  530,
+    "base_agility":  588,
+    "base_wisdom":  689,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "oren_wraithblade",
+    "display_name":  "Oren Wraithblade",
+    "family":  "Zombie",
+    "rank":  "S",
+    "base_hp":  1000,
+    "base_mp":  352,
+    "base_attack":  768,
+    "base_defense":  680,
+    "base_agility":  608,
+    "base_wisdom":  616,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

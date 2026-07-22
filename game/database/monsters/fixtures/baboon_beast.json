@@ -1,0 +1,18 @@
+{
+    "id":  "baboon_beast",
+    "display_name":  "Baboon Beast",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1743,
+    "base_mp":  504,
+    "base_attack":  486,
+    "base_defense":  589,
+    "base_agility":  515,
+    "base_wisdom":  740,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

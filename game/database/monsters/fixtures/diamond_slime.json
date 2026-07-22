@@ -1,0 +1,18 @@
+{
+    "id":  "diamond_slime",
+    "display_name":  "Diamond Slime",
+    "family":  "Slime",
+    "rank":  "SS",
+    "base_hp":  175,
+    "base_mp":  650,
+    "base_attack":  650,
+    "base_defense":  1500,
+    "base_agility":  1050,
+    "base_wisdom":  1050,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

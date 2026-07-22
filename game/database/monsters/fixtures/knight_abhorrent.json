@@ -1,0 +1,18 @@
+{
+    "id":  "knight_abhorrent",
+    "display_name":  "Knight Abhorrent",
+    "family":  "Devil",
+    "rank":  "S",
+    "base_hp":  2043,
+    "base_mp":  473,
+    "base_attack":  795,
+    "base_defense":  945,
+    "base_agility":  663,
+    "base_wisdom":  511,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

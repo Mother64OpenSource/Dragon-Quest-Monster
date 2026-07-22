@@ -1,0 +1,18 @@
+{
+    "id":  "robbin_locks",
+    "display_name":  "Robbin\u0027 Locks",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2224,
+    "base_mp":  576,
+    "base_attack":  687,
+    "base_defense":  722,
+    "base_agility":  880,
+    "base_wisdom":  423,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

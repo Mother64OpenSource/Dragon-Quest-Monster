@@ -1,0 +1,18 @@
+{
+    "id":  "uberkilling_machine",
+    "display_name":  "Uberkilling Machine",
+    "family":  "Material",
+    "rank":  "S",
+    "base_hp":  1350,
+    "base_mp":  315,
+    "base_attack":  810,
+    "base_defense":  900,
+    "base_agility":  675,
+    "base_wisdom":  315,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

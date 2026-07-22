@@ -1,0 +1,18 @@
+{
+    "id":  "twiney",
+    "display_name":  "Twiney",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  672,
+    "base_mp":  512,
+    "base_attack":  384,
+    "base_defense":  512,
+    "base_agility":  640,
+    "base_wisdom":  512,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "king_hydra",
+    "display_name":  "King Hydra",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  2916,
+    "base_mp":  648,
+    "base_attack":  743,
+    "base_defense":  822,
+    "base_agility":  753,
+    "base_wisdom":  545,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

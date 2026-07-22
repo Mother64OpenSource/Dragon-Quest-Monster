@@ -1,0 +1,18 @@
+{
+    "id":  "gold_ninja_slime",
+    "display_name":  "Gold Ninja Slime",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  1638,
+    "base_mp":  540,
+    "base_attack":  821,
+    "base_defense":  487,
+    "base_agility":  1176,
+    "base_wisdom":  487,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

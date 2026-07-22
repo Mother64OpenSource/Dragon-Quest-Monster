@@ -1,0 +1,18 @@
+{
+    "id":  "cluboon_ace",
+    "display_name":  "Cluboon Ace",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1379,
+    "base_mp":  528,
+    "base_attack":  822,
+    "base_defense":  880,
+    "base_agility":  743,
+    "base_wisdom":  704,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

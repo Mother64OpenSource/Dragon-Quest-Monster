@@ -1,0 +1,18 @@
+{
+    "id":  "geno_malroth",
+    "display_name":  "Geno Malroth",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  2295,
+    "base_mp":  900,
+    "base_attack":  552,
+    "base_defense":  442,
+    "base_agility":  504,
+    "base_wisdom":  442,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

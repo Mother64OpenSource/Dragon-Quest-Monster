@@ -1,0 +1,18 @@
+{
+    "id":  "ghost_ship",
+    "display_name":  "Ghost Ship",
+    "family":  "Zombie",
+    "rank":  "S",
+    "base_hp":  2040,
+    "base_mp":  780,
+    "base_attack":  330,
+    "base_defense":  763,
+    "base_agility":  623,
+    "base_wisdom":  954,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

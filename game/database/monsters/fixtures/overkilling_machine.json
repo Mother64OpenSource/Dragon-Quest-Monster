@@ -1,0 +1,18 @@
+{
+    "id":  "overkilling_machine",
+    "display_name":  "Overkilling Machine",
+    "family":  "Material",
+    "rank":  "S",
+    "base_hp":  985,
+    "base_mp":  345,
+    "base_attack":  739,
+    "base_defense":  660,
+    "base_agility":  778,
+    "base_wisdom":  394,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

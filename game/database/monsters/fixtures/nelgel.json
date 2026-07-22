@@ -1,0 +1,18 @@
+{
+    "id":  "nelgel",
+    "display_name":  "Nelgel",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1560,
+    "base_mp":  480,
+    "base_attack":  773,
+    "base_defense":  689,
+    "base_agility":  647,
+    "base_wisdom":  672,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

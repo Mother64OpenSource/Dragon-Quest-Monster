@@ -1,0 +1,18 @@
+{
+    "id":  "silver_ninja_slime",
+    "display_name":  "Silver Ninja Slime",
+    "family":  "Slime",
+    "rank":  "S",
+    "base_hp":  2035,
+    "base_mp":  965,
+    "base_attack":  503,
+    "base_defense":  1144,
+    "base_agility":  571,
+    "base_wisdom":  1181,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

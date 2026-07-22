@@ -1,0 +1,18 @@
+{
+    "id":  "yggdrasil",
+    "display_name":  "Yggdrasil",
+    "family":  "Nature",
+    "rank":  "SS",
+    "base_hp":  2300,
+    "base_mp":  1148,
+    "base_attack":  623,
+    "base_defense":  876,
+    "base_agility":  526,
+    "base_wisdom":  710,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

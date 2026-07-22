@@ -1,0 +1,18 @@
+{
+    "id":  "night_clubber",
+    "display_name":  "Night Clubber",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1570,
+    "base_mp":  360,
+    "base_attack":  1000,
+    "base_defense":  1000,
+    "base_agility":  570,
+    "base_wisdom":  360,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -35,7 +35,11 @@ func run() -> bool:
 	return _all_passed
 
 func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> void:
-	_check("4 species loaded", monster_db.get_all_species().size() == 4)
+	# The fixtures directory holds the 4 hand-tuned M1 test species plus a
+	# larger real-data batch, so this only floors the count rather than
+	# asserting an exact total that would need updating every time fixtures
+	# are added.
+	_check("at least 4 species loaded", monster_db.get_all_species().size() >= 4)
 
 	var slime := monster_db.get_species("slime")
 	_check("slime rank == F", slime != null and slime.rank == MonsterSpecies.Rank.F)
@@ -56,8 +60,12 @@ func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> vo
 	var family_ids: Array[String] = []
 	for species in family_results:
 		family_ids.append(species.id)
-	family_ids.sort()
-	_check("filter_by_family('slime') finds healslime+slime", family_ids == ["healslime", "slime"])
+	# Real fixture data adds more Slime-family monsters, so check membership
+	# rather than an exact list.
+	_check(
+		"filter_by_family('slime') includes healslime+slime",
+		family_ids.has("healslime") and family_ids.has("slime")
+	)
 
 	var combined := monster_db.find("", MonsterSpecies.Rank.F, "slime")
 	_check("find(rank=F,family=slime) finds exactly slime", combined.size() == 1 and combined[0].id == "slime")

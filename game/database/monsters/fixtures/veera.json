@@ -1,0 +1,18 @@
+{
+    "id":  "veera",
+    "display_name":  "Veera",
+    "family":  "Beast",
+    "rank":  "SS",
+    "base_hp":  1242,
+    "base_mp":  497,
+    "base_attack":  775,
+    "base_defense":  387,
+    "base_agility":  944,
+    "base_wisdom":  398,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

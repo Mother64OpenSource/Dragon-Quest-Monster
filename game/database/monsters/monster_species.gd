@@ -6,7 +6,8 @@ extends Resource
 
 ## Ascending strength order (matches the classic DQM rank ladder) so filters
 ## can compare ordinally (e.g. rank >= Rank.C), not just check equality.
-enum Rank { F, E, D, C, B, A, S }
+## SS is the top tier above S, used by the game's strongest monsters.
+enum Rank { F, E, D, C, B, A, S, SS }
 
 @export var id: String = ""
 @export var display_name: String = ""

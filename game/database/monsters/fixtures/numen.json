@@ -1,0 +1,18 @@
+{
+    "id":  "numen",
+    "display_name":  "Numen",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  1418,
+    "base_mp":  591,
+    "base_attack":  749,
+    "base_defense":  749,
+    "base_agility":  690,
+    "base_wisdom":  946,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

@@ -1,0 +1,18 @@
+{
+    "id":  "shantak",
+    "display_name":  "Shantak",
+    "family":  "Dragon",
+    "rank":  "S",
+    "base_hp":  1740,
+    "base_mp":  480,
+    "base_attack":  681,
+    "base_defense":  479,
+    "base_agility":  748,
+    "base_wisdom":  614,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

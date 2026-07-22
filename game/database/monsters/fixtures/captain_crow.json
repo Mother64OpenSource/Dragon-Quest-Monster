@@ -1,0 +1,18 @@
+{
+    "id":  "captain_crow",
+    "display_name":  "Captain Crow",
+    "family":  "Zombie",
+    "rank":  "S",
+    "base_hp":  1500,
+    "base_mp":  520,
+    "base_attack":  860,
+    "base_defense":  840,
+    "base_agility":  760,
+    "base_wisdom":  400,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

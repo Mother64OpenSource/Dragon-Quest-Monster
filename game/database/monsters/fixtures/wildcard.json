@@ -1,0 +1,18 @@
+{
+    "id":  "wildcard",
+    "display_name":  "Wildcard",
+    "family":  "unknown",
+    "rank":  "SS",
+    "base_hp":  828,
+    "base_mp":  557,
+    "base_attack":  928,
+    "base_defense":  928,
+    "base_agility":  854,
+    "base_wisdom":  743,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

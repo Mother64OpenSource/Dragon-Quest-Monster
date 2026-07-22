@@ -1,0 +1,18 @@
+{
+    "id":  "gorago",
+    "display_name":  "Gorago",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1596,
+    "base_mp":  515,
+    "base_attack":  728,
+    "base_defense":  500,
+    "base_agility":  537,
+    "base_wisdom":  258,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

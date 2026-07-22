@@ -1,0 +1,18 @@
+{
+    "id":  "stalagosaur",
+    "display_name":  "Stalagosaur",
+    "family":  "Dragon",
+    "rank":  "SS",
+    "base_hp":  2387,
+    "base_mp":  713,
+    "base_attack":  621,
+    "base_defense":  642,
+    "base_agility":  386,
+    "base_wisdom":  528,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

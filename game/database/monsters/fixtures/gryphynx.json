@@ -1,0 +1,18 @@
+{
+    "id":  "gryphynx",
+    "display_name":  "Gryphynx",
+    "family":  "Beast",
+    "rank":  "S",
+    "base_hp":  1997,
+    "base_mp":  920,
+    "base_attack":  647,
+    "base_defense":  736,
+    "base_agility":  369,
+    "base_wisdom":  695,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}

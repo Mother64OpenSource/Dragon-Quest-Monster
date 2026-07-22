@@ -1,0 +1,18 @@
+{
+    "id":  "sorcerer_bedora",
+    "display_name":  "Sorcerer Bedora",
+    "family":  "unknown",
+    "rank":  "S",
+    "base_hp":  1500,
+    "base_mp":  500,
+    "base_attack":  660,
+    "base_defense":  680,
+    "base_agility":  780,
+    "base_wisdom":  940,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ]
+}
