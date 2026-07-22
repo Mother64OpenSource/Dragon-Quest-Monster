@@ -2,6 +2,7 @@
   "id": "healslime",
   "display_name": "Heal Slime",
   "family": "slime",
+  "rank": "D",
   "base_hp": 22,
   "base_mp": 18,
   "base_attack": 6,

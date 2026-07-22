@@ -2,6 +2,7 @@
   "id": "dracky",
   "display_name": "Dracky",
   "family": "dracky",
+  "rank": "E",
   "base_hp": 45,
   "base_mp": 14,
   "base_attack": 8,

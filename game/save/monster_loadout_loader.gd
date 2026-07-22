@@ -1,0 +1,32 @@
+class_name MonsterLoadoutLoader
+extends RefCounted
+
+static func load_from_dict(data: Dictionary) -> MonsterLoadout:
+	var loadout := MonsterLoadout.new()
+	loadout.species_id = data.get("species_id", "")
+	loadout.nickname = data.get("nickname", "")
+	loadout.equipped_skill_ids = _to_string_array(data.get("equipped_skill_ids", []))
+	return loadout
+
+static func to_dict(loadout: MonsterLoadout) -> Dictionary:
+	return {
+		"species_id": loadout.species_id,
+		"nickname": loadout.nickname,
+		"equipped_skill_ids": loadout.equipped_skill_ids.duplicate(),
+	}
+
+## Constructs a fresh, independent MonsterLoadout with the same field values —
+## used by TeamRosterManager.duplicate_team() so mutating a duplicated team's
+## members can never affect the original's.
+static func duplicate_loadout(loadout: MonsterLoadout) -> MonsterLoadout:
+	var copy := MonsterLoadout.new()
+	copy.species_id = loadout.species_id
+	copy.nickname = loadout.nickname
+	copy.equipped_skill_ids = loadout.equipped_skill_ids.duplicate()
+	return copy
+
+static func _to_string_array(raw: Array) -> Array[String]:
+	var result: Array[String] = []
+	for item in raw:
+		result.append(String(item))
+	return result

@@ -1,0 +1,192 @@
+class_name TeamRosterTestRunner
+extends RefCounted
+
+## Runs the Milestone 2 (Team Builder data layer) checks end-to-end: database
+## search/filter, saved-team CRUD, reorder, import/export round-trip,
+## validation, and malformed-input handling. Uses user://test_teams/ (never
+## the real user://teams/) and wipes it before and after run() so repeated
+## runs stay deterministic and never touch real player save data.
+
+const TEST_TEAMS_DIR := "user://test_teams/"
+
+var _all_passed := true
+
+func run() -> bool:
+	_all_passed = true
+	_clear_test_dir()
+
+	var monster_db := MonsterDatabase.new()
+	var skill_db := SkillDatabase.new()
+	var roster := TeamRosterManager.new(TEST_TEAMS_DIR)
+
+	_check_database(monster_db, skill_db)
+	_check_crud(roster)
+	_check_reorder_and_members(roster)
+	_check_import_export(roster)
+	_check_validation(roster, monster_db)
+	_check_malformed_import(roster)
+
+	_clear_test_dir()
+
+	if _all_passed:
+		print("TeamRosterTestRunner: ALL CHECKS PASSED")
+	else:
+		print("TeamRosterTestRunner: SOME CHECKS FAILED")
+	return _all_passed
+
+func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> void:
+	_check("4 species loaded", monster_db.get_all_species().size() == 4)
+
+	var slime := monster_db.get_species("slime")
+	_check("slime rank == F", slime != null and slime.rank == MonsterSpecies.Rank.F)
+	var dracky := monster_db.get_species("dracky")
+	_check("dracky rank == E", dracky != null and dracky.rank == MonsterSpecies.Rank.E)
+	var healslime := monster_db.get_species("healslime")
+	_check("healslime rank == D", healslime != null and healslime.rank == MonsterSpecies.Rank.D)
+	var golem := monster_db.get_species("golem")
+	_check("golem rank == C", golem != null and golem.rank == MonsterSpecies.Rank.C)
+
+	var name_results := monster_db.search_by_name("drac")
+	_check("search_by_name('drac') finds exactly dracky", name_results.size() == 1 and name_results[0].id == "dracky")
+
+	var rank_results := monster_db.filter_by_rank(MonsterSpecies.Rank.C)
+	_check("filter_by_rank(C) finds exactly golem", rank_results.size() == 1 and rank_results[0].id == "golem")
+
+	var family_results := monster_db.filter_by_family("slime")
+	var family_ids: Array[String] = []
+	for species in family_results:
+		family_ids.append(species.id)
+	family_ids.sort()
+	_check("filter_by_family('slime') finds healslime+slime", family_ids == ["healslime", "slime"])
+
+	var combined := monster_db.find("", MonsterSpecies.Rank.F, "slime")
+	_check("find(rank=F,family=slime) finds exactly slime", combined.size() == 1 and combined[0].id == "slime")
+
+	_check("SkillDatabase loads 7 skills", skill_db.get_all_skills().size() == 7)
+	var frizz := skill_db.get_skill("frizz")
+	_check("get_skill('frizz') resolves", frizz != null and frizz.id == "frizz")
+
+func _check_crud(roster: TeamRosterManager) -> void:
+	var team := roster.create_team("My Slime Squad")
+	_check("create_team returns non-null with generated id", team != null and not team.id.is_empty())
+	_check("created team appears in list_teams()", _contains_team_id(roster.list_teams(), team.id))
+
+	var fetched := roster.get_team(team.id)
+	_check("get_team round-trips team_name", fetched != null and fetched.team_name == "My Slime Squad")
+
+	var loadout := MonsterLoadout.new()
+	loadout.species_id = "slime"
+	loadout.nickname = "Sluggo"
+	loadout.equipped_skill_ids = ["attack", "oomph"]
+	roster.add_member(team, loadout)
+	roster.save_team(team)
+
+	var duplicate := roster.duplicate_team(team.id)
+	_check("duplicate_team produces a distinct id", duplicate != null and duplicate.id != team.id)
+	_check("duplicate has 1 member copied", duplicate.members.size() == 1)
+
+	duplicate.members[0].nickname = "Changed"
+	_check("mutating duplicate's loadout doesn't affect in-memory original", team.members[0].nickname == "Sluggo")
+	var original_reloaded := roster.get_team(team.id)
+	_check("mutating duplicate's loadout doesn't affect original on disk", original_reloaded.members[0].nickname == "Sluggo")
+
+	_check("delete_team returns true", roster.delete_team(duplicate.id))
+	_check("deleted team no longer in list_teams()", not _contains_team_id(roster.list_teams(), duplicate.id))
+
+	roster.delete_team(team.id)
+
+func _check_reorder_and_members(roster: TeamRosterManager) -> void:
+	var team := roster.create_team("Reorder Test")
+	var a := MonsterLoadout.new()
+	a.species_id = "slime"
+	var b := MonsterLoadout.new()
+	b.species_id = "dracky"
+	var c := MonsterLoadout.new()
+	c.species_id = "golem"
+	roster.add_member(team, a)
+	roster.add_member(team, b)
+	roster.add_member(team, c)
+	_check("3 members added", team.members.size() == 3)
+
+	_check("move_member(0,2) succeeds", roster.move_member(team, 0, 2))
+	_check("order after move is [b,c,a]", team.members[0] == b and team.members[1] == c and team.members[2] == a)
+	_check("move_member with out-of-bounds index returns false", not roster.move_member(team, 0, 10))
+
+	_check("remove_member(1) succeeds", roster.remove_member(team, 1))
+	_check("2 members remain", team.members.size() == 2)
+	_check("remove_member with out-of-bounds index returns false", not roster.remove_member(team, 99))
+
+	roster.delete_team(team.id)
+
+func _check_import_export(roster: TeamRosterManager) -> void:
+	var team := roster.create_team("Export Me")
+	var loadout := MonsterLoadout.new()
+	loadout.species_id = "healslime"
+	loadout.nickname = "Doc"
+	loadout.equipped_skill_ids = ["heal", "sap"]
+	roster.add_member(team, loadout)
+	roster.save_team(team)
+
+	var exported := roster.export_team_to_string(team)
+	var imported := roster.import_team_from_string(exported)
+	_check("imported team is non-null", imported != null)
+	if imported != null:
+		_check("imported team_name matches", imported.team_name == "Export Me")
+		_check("imported gets a fresh id (not colliding with original)", imported.id != team.id)
+		_check(
+			"imported member fields match",
+			imported.members.size() == 1
+			and imported.members[0].species_id == "healslime"
+			and imported.members[0].nickname == "Doc"
+			and imported.members[0].equipped_skill_ids == ["heal", "sap"]
+		)
+		roster.delete_team(imported.id)
+
+	var imported_preserved := roster.import_team_from_string(exported, true)
+	_check("preserve_id=true keeps the original exported id", imported_preserved != null and imported_preserved.id == team.id)
+
+	roster.delete_team(team.id)
+
+func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase) -> void:
+	var valid_loadout := MonsterLoadout.new()
+	valid_loadout.species_id = "slime"
+	valid_loadout.equipped_skill_ids = ["attack", "oomph"]
+	_check("valid loadout has no errors", roster.validate_member(valid_loadout, monster_db).is_empty())
+
+	var bad_skill_loadout := MonsterLoadout.new()
+	bad_skill_loadout.species_id = "slime"
+	bad_skill_loadout.equipped_skill_ids = ["frizz"]
+	_check("loadout with unknown-to-species skill flagged", roster.validate_member(bad_skill_loadout, monster_db).size() == 1)
+
+	var bad_species_loadout := MonsterLoadout.new()
+	bad_species_loadout.species_id = "nonexistent_species"
+	_check("loadout with unknown species flagged", roster.validate_member(bad_species_loadout, monster_db).size() == 1)
+
+func _check_malformed_import(roster: TeamRosterManager) -> void:
+	var result := roster.import_team_from_string("{ this is not valid json ][")
+	_check("malformed JSON import returns null without crashing", result == null)
+
+func _contains_team_id(teams: Array[SavedTeam], team_id: String) -> bool:
+	for team in teams:
+		if team.id == team_id:
+			return true
+	return false
+
+func _clear_test_dir() -> void:
+	var dir := DirAccess.open(TEST_TEAMS_DIR)
+	if dir == null:
+		return
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir() and file_name.ends_with(".json"):
+			dir.remove(file_name)
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+func _check(label: String, condition: bool) -> void:
+	if condition:
+		print("PASS: %s" % label)
+	else:
+		print("FAIL: %s" % label)
+		_all_passed = false

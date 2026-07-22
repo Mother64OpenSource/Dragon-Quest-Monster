@@ -2,6 +2,7 @@
   "id": "golem",
   "display_name": "Golem",
   "family": "golem",
+  "rank": "C",
   "base_hp": 50,
   "base_mp": 5,
   "base_attack": 14,
