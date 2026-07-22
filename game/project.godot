@@ -15,8 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Dragon Quest Monster Showdown"
-config/features=PackedStringArray("4.7")
 run/main_scene="res://tests/test_scene.tscn"
+config/features=PackedStringArray("4.7")
 
 [debug]
 
