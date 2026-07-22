@@ -1,0 +1,19 @@
+{
+    "id":  "wax_murderer",
+    "display_name":  "Wax Murderer",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1500,
+    "base_mp":  488,
+    "base_attack":  725,
+    "base_defense":  937,
+    "base_agility":  700,
+    "base_wisdom":  725,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/wax_murderer.webp"
+}

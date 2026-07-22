@@ -10,5 +10,6 @@
   "base_agility": 16,
   "base_wisdom": 12,
   "starting_skill_ids": ["attack", "frizz", "poison_breath"],
-  "starting_trait_ids": []
+  "starting_trait_ids": [],
+  "sprite_path": "res://assets/monsters/dracky.webp"
 }

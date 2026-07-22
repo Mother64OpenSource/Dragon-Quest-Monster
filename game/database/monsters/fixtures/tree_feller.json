@@ -1,0 +1,19 @@
+{
+    "id":  "tree_feller",
+    "display_name":  "Tree Feller",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1366,
+    "base_mp":  586,
+    "base_attack":  756,
+    "base_defense":  830,
+    "base_agility":  865,
+    "base_wisdom":  610,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/tree_feller.webp"
+}

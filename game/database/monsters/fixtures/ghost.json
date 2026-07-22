@@ -1,0 +1,19 @@
+{
+    "id":  "ghost",
+    "display_name":  "Ghost",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1014,
+    "base_mp":  632,
+    "base_attack":  504,
+    "base_defense":  528,
+    "base_agility":  644,
+    "base_wisdom":  630,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/ghost.webp"
+}

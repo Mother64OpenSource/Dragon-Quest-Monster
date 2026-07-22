@@ -1,0 +1,19 @@
+{
+    "id":  "crested_viper",
+    "display_name":  "Crested Viper",
+    "family":  "Dragon",
+    "rank":  "F",
+    "base_hp":  1610,
+    "base_mp":  360,
+    "base_attack":  840,
+    "base_defense":  580,
+    "base_agility":  800,
+    "base_wisdom":  560,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/crested_viper.webp"
+}

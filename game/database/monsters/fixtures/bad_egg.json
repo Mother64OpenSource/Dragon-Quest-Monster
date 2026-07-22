@@ -1,0 +1,19 @@
+{
+    "id":  "bad_egg",
+    "display_name":  "Bad Egg",
+    "family":  "Slime",
+    "rank":  "F",
+    "base_hp":  1138,
+    "base_mp":  514,
+    "base_attack":  514,
+    "base_defense":  873,
+    "base_agility":  488,
+    "base_wisdom":  411,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/bad_egg.webp"
+}

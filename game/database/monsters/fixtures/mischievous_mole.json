@@ -1,0 +1,19 @@
+{
+    "id":  "mischievous_mole",
+    "display_name":  "Mischievous Mole",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  1432,
+    "base_mp":  370,
+    "base_attack":  889,
+    "base_defense":  864,
+    "base_agility":  790,
+    "base_wisdom":  544,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/mischievous_mole.webp"
+}

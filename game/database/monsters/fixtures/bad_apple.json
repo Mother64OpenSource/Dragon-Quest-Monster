@@ -1,0 +1,19 @@
+{
+    "id":  "bad_apple",
+    "display_name":  "Bad Apple",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1466,
+    "base_mp":  511,
+    "base_attack":  881,
+    "base_defense":  672,
+    "base_agility":  745,
+    "base_wisdom":  633,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/bad_apple.webp"
+}

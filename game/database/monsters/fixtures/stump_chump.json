@@ -1,0 +1,19 @@
+{
+    "id":  "stump_chump",
+    "display_name":  "Stump Chump",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1517,
+    "base_mp":  580,
+    "base_attack":  852,
+    "base_defense":  928,
+    "base_agility":  639,
+    "base_wisdom":  476,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/stump_chump.webp"
+}

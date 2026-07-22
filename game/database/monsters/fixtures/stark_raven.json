@@ -1,0 +1,19 @@
+{
+    "id":  "stark_raven",
+    "display_name":  "Stark Raven",
+    "family":  "Nature",
+    "rank":  "F",
+    "base_hp":  1323,
+    "base_mp":  496,
+    "base_attack":  763,
+    "base_defense":  882,
+    "base_agility":  903,
+    "base_wisdom":  644,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/stark_raven.webp"
+}

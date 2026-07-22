@@ -1,0 +1,19 @@
+{
+    "id":  "weedie",
+    "display_name":  "Weedie",
+    "family":  "Slime",
+    "rank":  "F",
+    "base_hp":  1230,
+    "base_mp":  468,
+    "base_attack":  456,
+    "base_defense":  598,
+    "base_agility":  612,
+    "base_wisdom":  391,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/weedie.webp"
+}

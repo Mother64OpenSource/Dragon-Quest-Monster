@@ -21,3 +21,6 @@ enum Rank { F, E, D, C, B, A, S, SS }
 @export var base_wisdom: int = 1
 @export var starting_skill_ids: Array[String] = []
 @export var starting_trait_ids: Array[String] = []
+
+## "" means no artwork available yet — callers must handle the missing case.
+@export var sprite_path: String = ""

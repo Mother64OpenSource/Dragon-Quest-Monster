@@ -1,0 +1,19 @@
+{
+    "id":  "mud_mannequin",
+    "display_name":  "Mud Mannequin",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1551,
+    "base_mp":  583,
+    "base_attack":  870,
+    "base_defense":  807,
+    "base_agility":  707,
+    "base_wisdom":  354,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/mud_mannequin.webp"
+}

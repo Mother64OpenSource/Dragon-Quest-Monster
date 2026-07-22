@@ -1,0 +1,19 @@
+{
+    "id":  "bag_o_laughs",
+    "display_name":  "Bag O\u0027 Laughs",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1432,
+    "base_mp":  618,
+    "base_attack":  642,
+    "base_defense":  716,
+    "base_agility":  827,
+    "base_wisdom":  864,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/bag_o_laughs.webp"
+}

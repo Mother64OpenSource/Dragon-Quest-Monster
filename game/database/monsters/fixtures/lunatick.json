@@ -1,0 +1,19 @@
+{
+    "id":  "lunatick",
+    "display_name":  "Lunatick",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1588,
+    "base_mp":  571,
+    "base_attack":  762,
+    "base_defense":  559,
+    "base_agility":  647,
+    "base_wisdom":  876,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/lunatick.webp"
+}

@@ -1,0 +1,19 @@
+{
+    "id":  "cruelcumber",
+    "display_name":  "Cruelcumber",
+    "family":  "Nature",
+    "rank":  "F",
+    "base_hp":  1366,
+    "base_mp":  585,
+    "base_attack":  829,
+    "base_defense":  879,
+    "base_agility":  719,
+    "base_wisdom":  708,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/cruelcumber.webp"
+}

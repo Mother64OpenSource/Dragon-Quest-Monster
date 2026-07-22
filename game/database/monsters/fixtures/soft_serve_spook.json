@@ -1,0 +1,19 @@
+{
+    "id":  "soft_serve_spook",
+    "display_name":  "Soft Serve Spook",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1670,
+    "base_mp":  540,
+    "base_attack":  630,
+    "base_defense":  840,
+    "base_agility":  670,
+    "base_wisdom":  680,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/soft_serve_spook.webp"
+}

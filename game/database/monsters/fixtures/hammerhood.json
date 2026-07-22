@@ -1,0 +1,19 @@
+{
+    "id":  "hammerhood",
+    "display_name":  "Hammerhood",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  1570,
+    "base_mp":  380,
+    "base_attack":  970,
+    "base_defense":  810,
+    "base_agility":  640,
+    "base_wisdom":  450,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/hammerhood.webp"
+}

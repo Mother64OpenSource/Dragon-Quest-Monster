@@ -1,0 +1,19 @@
+{
+    "id":  "conklave",
+    "display_name":  "Conklave",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1014,
+    "base_mp":  431,
+    "base_attack":  580,
+    "base_defense":  580,
+    "base_agility":  807,
+    "base_wisdom":  303,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/conklave.webp"
+}

@@ -1,0 +1,19 @@
+{
+    "id":  "capsichum",
+    "display_name":  "Capsichum",
+    "family":  "Nature",
+    "rank":  "F",
+    "base_hp":  1500,
+    "base_mp":  550,
+    "base_attack":  800,
+    "base_defense":  750,
+    "base_agility":  700,
+    "base_wisdom":  700,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/capsichum.webp"
+}

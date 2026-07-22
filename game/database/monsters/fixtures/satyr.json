@@ -1,0 +1,19 @@
+{
+    "id":  "satyr",
+    "display_name":  "Satyr",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1551,
+    "base_mp":  431,
+    "base_attack":  808,
+    "base_defense":  883,
+    "base_agility":  656,
+    "base_wisdom":  656,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/satyr.webp"
+}

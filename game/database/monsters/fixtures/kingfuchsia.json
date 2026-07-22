@@ -1,0 +1,19 @@
+{
+    "id":  "kingfuchsia",
+    "display_name":  "Kingfuchsia",
+    "family":  "Nature",
+    "rank":  "F",
+    "base_hp":  980,
+    "base_mp":  440,
+    "base_attack":  544,
+    "base_defense":  552,
+    "base_agility":  800,
+    "base_wisdom":  480,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/kingfuchsia.webp"
+}

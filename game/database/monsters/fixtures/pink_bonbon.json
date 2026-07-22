@@ -1,0 +1,19 @@
+{
+    "id":  "pink_bonbon",
+    "display_name":  "Pink Bonbon",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  959,
+    "base_mp":  352,
+    "base_attack":  496,
+    "base_defense":  720,
+    "base_agility":  800,
+    "base_wisdom":  544,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/pink_bonbon.webp"
+}

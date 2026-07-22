@@ -1,0 +1,19 @@
+{
+    "id":  "heedoo_voodoo",
+    "display_name":  "Heedoo Voodoo",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1450,
+    "base_mp":  631,
+    "base_attack":  743,
+    "base_defense":  680,
+    "base_agility":  656,
+    "base_wisdom":  991,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/heedoo_voodoo.webp"
+}

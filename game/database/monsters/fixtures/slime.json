@@ -10,5 +10,6 @@
   "base_agility": 12,
   "base_wisdom": 6,
   "starting_skill_ids": ["attack", "oomph"],
-  "starting_trait_ids": []
+  "starting_trait_ids": [],
+  "sprite_path": "res://assets/monsters/slime.webp"
 }

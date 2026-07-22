@@ -1,0 +1,19 @@
+{
+    "id":  "putrefido",
+    "display_name":  "Putrefido",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1535,
+    "base_mp":  642,
+    "base_attack":  905,
+    "base_defense":  579,
+    "base_agility":  604,
+    "base_wisdom":  691,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/putrefido.webp"
+}

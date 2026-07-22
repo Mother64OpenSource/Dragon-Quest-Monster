@@ -1,0 +1,19 @@
+{
+    "id":  "guaardvark",
+    "display_name":  "Guaardvark",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  1517,
+    "base_mp":  579,
+    "base_attack":  903,
+    "base_defense":  577,
+    "base_agility":  627,
+    "base_wisdom":  750,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/guaardvark.webp"
+}

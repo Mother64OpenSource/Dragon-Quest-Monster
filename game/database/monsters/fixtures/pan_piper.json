@@ -1,0 +1,19 @@
+{
+    "id":  "pan_piper",
+    "display_name":  "Pan Piper",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1482,
+    "base_mp":  402,
+    "base_attack":  784,
+    "base_defense":  873,
+    "base_agility":  673,
+    "base_wisdom":  847,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/pan_piper.webp"
+}

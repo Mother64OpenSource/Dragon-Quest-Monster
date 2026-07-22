@@ -1,0 +1,19 @@
+{
+    "id":  "evil_seed",
+    "display_name":  "Evil Seed",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1448,
+    "base_mp":  622,
+    "base_attack":  879,
+    "base_defense":  520,
+    "base_agility":  743,
+    "base_wisdom":  718,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/evil_seed.webp"
+}

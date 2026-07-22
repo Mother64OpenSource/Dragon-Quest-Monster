@@ -1,0 +1,19 @@
+{
+    "id":  "small_fry",
+    "display_name":  "Small Fry",
+    "family":  "Dragon",
+    "rank":  "F",
+    "base_hp":  1239,
+    "base_mp":  496,
+    "base_attack":  624,
+    "base_defense":  440,
+    "base_agility":  548,
+    "base_wisdom":  288,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/small_fry.webp"
+}

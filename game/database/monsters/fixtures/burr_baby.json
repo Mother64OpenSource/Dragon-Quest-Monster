@@ -1,0 +1,19 @@
+{
+    "id":  "burr_baby",
+    "display_name":  "Burr Baby",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1550,
+    "base_mp":  350,
+    "base_attack":  720,
+    "base_defense":  890,
+    "base_agility":  680,
+    "base_wisdom":  860,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/burr_baby.webp"
+}

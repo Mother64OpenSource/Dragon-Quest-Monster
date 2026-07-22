@@ -1,0 +1,19 @@
+{
+    "id":  "pocus_poppet",
+    "display_name":  "Pocus Poppet",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1382,
+    "base_mp":  626,
+    "base_attack":  709,
+    "base_defense":  819,
+    "base_agility":  734,
+    "base_wisdom":  905,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/pocus_poppet.webp"
+}

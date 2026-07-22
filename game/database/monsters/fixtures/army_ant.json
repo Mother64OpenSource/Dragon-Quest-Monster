@@ -1,0 +1,19 @@
+{
+    "id":  "army_ant",
+    "display_name":  "Army Ant",
+    "family":  "Nature",
+    "rank":  "F",
+    "base_hp":  1102,
+    "base_mp":  384,
+    "base_attack":  690,
+    "base_defense":  792,
+    "base_agility":  485,
+    "base_wisdom":  359,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/army_ant.webp"
+}

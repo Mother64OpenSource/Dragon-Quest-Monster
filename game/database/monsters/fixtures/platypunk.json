@@ -1,0 +1,19 @@
+{
+    "id":  "platypunk",
+    "display_name":  "Platypunk",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  1466,
+    "base_mp":  472,
+    "base_attack":  870,
+    "base_defense":  919,
+    "base_agility":  720,
+    "base_wisdom":  497,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/platypunk.webp"
+}

@@ -1,0 +1,19 @@
+{
+    "id":  "wing_slime",
+    "display_name":  "Wing Slime",
+    "family":  "Slime",
+    "rank":  "F",
+    "base_hp":  1383,
+    "base_mp":  587,
+    "base_attack":  770,
+    "base_defense":  416,
+    "base_agility":  942,
+    "base_wisdom":  807,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/wing_slime.webp"
+}

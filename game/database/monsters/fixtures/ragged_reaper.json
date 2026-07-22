@@ -1,0 +1,19 @@
+{
+    "id":  "ragged_reaper",
+    "display_name":  "Ragged Reaper",
+    "family":  "Material",
+    "rank":  "F",
+    "base_hp":  1605,
+    "base_mp":  677,
+    "base_attack":  929,
+    "base_defense":  535,
+    "base_agility":  535,
+    "base_wisdom":  650,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/ragged_reaper.webp"
+}

@@ -1,0 +1,19 @@
+{
+    "id":  "argon_lizard",
+    "display_name":  "Argon Lizard",
+    "family":  "Dragon",
+    "rank":  "F",
+    "base_hp":  1246,
+    "base_mp":  288,
+    "base_attack":  728,
+    "base_defense":  568,
+    "base_agility":  480,
+    "base_wisdom":  280,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/argon_lizard.webp"
+}

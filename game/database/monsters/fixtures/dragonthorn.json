@@ -1,0 +1,19 @@
+{
+    "id":  "dragonthorn",
+    "display_name":  "Dragonthorn",
+    "family":  "Dragon",
+    "rank":  "F",
+    "base_hp":  1482,
+    "base_mp":  373,
+    "base_attack":  800,
+    "base_defense":  922,
+    "base_agility":  834,
+    "base_wisdom":  473,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/dragonthorn.webp"
+}

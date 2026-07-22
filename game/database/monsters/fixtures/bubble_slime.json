@@ -1,0 +1,19 @@
+{
+    "id":  "bubble_slime",
+    "display_name":  "Bubble Slime",
+    "family":  "Slime",
+    "rank":  "F",
+    "base_hp":  1139,
+    "base_mp":  719,
+    "base_attack":  540,
+    "base_defense":  616,
+    "base_agility":  488,
+    "base_wisdom":  410,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/bubble_slime.webp"
+}

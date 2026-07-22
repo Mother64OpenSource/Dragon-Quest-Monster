@@ -1,0 +1,19 @@
+{
+    "id":  "devipine",
+    "display_name":  "Devipine",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1600,
+    "base_mp":  430,
+    "base_attack":  860,
+    "base_defense":  690,
+    "base_agility":  700,
+    "base_wisdom":  560,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/devipine.webp"
+}

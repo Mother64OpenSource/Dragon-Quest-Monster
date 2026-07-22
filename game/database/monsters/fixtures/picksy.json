@@ -1,0 +1,19 @@
+{
+    "id":  "picksy",
+    "display_name":  "Picksy",
+    "family":  "Devil",
+    "rank":  "F",
+    "base_hp":  1540,
+    "base_mp":  350,
+    "base_attack":  840,
+    "base_defense":  660,
+    "base_agility":  840,
+    "base_wisdom":  550,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/picksy.webp"
+}

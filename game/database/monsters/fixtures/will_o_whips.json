@@ -1,0 +1,19 @@
+{
+    "id":  "will_o_whips",
+    "display_name":  "Will-O\u0027-Whips",
+    "family":  "Zombie",
+    "rank":  "F",
+    "base_hp":  1238,
+    "base_mp":  714,
+    "base_attack":  858,
+    "base_defense":  476,
+    "base_agility":  833,
+    "base_wisdom":  952,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/will_o_whips.webp"
+}

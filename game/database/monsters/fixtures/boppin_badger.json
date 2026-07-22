@@ -1,0 +1,19 @@
+{
+    "id":  "boppin_badger",
+    "display_name":  "Boppin\u0027 Badger",
+    "family":  "Beast",
+    "rank":  "F",
+    "base_hp":  1460,
+    "base_mp":  380,
+    "base_attack":  820,
+    "base_defense":  910,
+    "base_agility":  800,
+    "base_wisdom":  550,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/boppin_badger.webp"
+}

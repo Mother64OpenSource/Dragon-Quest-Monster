@@ -1,0 +1,19 @@
+{
+    "id":  "montner_2nd_form",
+    "display_name":  "Montner (2nd Form)",
+    "family":  "unknown",
+    "rank":  "F",
+    "base_hp":  1500,
+    "base_mp":  500,
+    "base_attack":  750,
+    "base_defense":  750,
+    "base_agility":  750,
+    "base_wisdom":  750,
+    "starting_skill_ids":  [
+                               "attack"
+                           ],
+    "starting_trait_ids":  [
+
+                           ],
+    "sprite_path":  "res://assets/monsters/montner_2nd_form.webp"
+}
