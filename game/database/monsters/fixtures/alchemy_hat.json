@@ -1,0 +1,16 @@
+{
+	"base_agility": 820.0,
+	"base_attack": 440.0,
+	"base_defense": 760.0,
+	"base_hp": 1450.0,
+	"base_mp": 720.0,
+	"base_wisdom": 1100.0,
+	"display_name": "Alchemy Hat",
+	"family": "Beast",
+	"id": "alchemy_hat",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 592.0,
+	"base_attack": 784.0,
+	"base_defense": 367.0,
+	"base_hp": 1334.0,
+	"base_mp": 295.0,
+	"base_wisdom": 320.0,
+	"display_name": "Fire-Eater & Ice-Eater",
+	"family": "Devil",
+	"id": "fire_eater_ice_eater",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

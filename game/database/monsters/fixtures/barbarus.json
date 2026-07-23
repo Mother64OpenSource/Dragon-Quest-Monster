@@ -1,18 +1,17 @@
 {
-    "id":  "barbarus",
-    "display_name":  "Barbarus",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1740,
-    "base_mp":  432,
-    "base_attack":  714,
-    "base_defense":  672,
-    "base_agility":  555,
-    "base_wisdom":  773,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 555.0,
+	"base_attack": 714.0,
+	"base_defense": 672.0,
+	"base_hp": 1740.0,
+	"base_mp": 432.0,
+	"base_wisdom": 773.0,
+	"display_name": "Barbarus",
+	"family": "Dragon",
+	"id": "barbarus",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/barbarus.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

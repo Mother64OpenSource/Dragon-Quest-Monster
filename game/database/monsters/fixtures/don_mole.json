@@ -1,0 +1,16 @@
+{
+	"base_agility": 623.0,
+	"base_attack": 844.0,
+	"base_defense": 945.0,
+	"base_hp": 1528.0,
+	"base_mp": 583.0,
+	"base_wisdom": 482.0,
+	"display_name": "Don Mole",
+	"family": "Beast",
+	"id": "don_mole",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 470.0,
+	"base_attack": 524.0,
+	"base_defense": 632.0,
+	"base_hp": 2142.0,
+	"base_mp": 588.0,
+	"base_wisdom": 863.0,
+	"display_name": "Devilish Destroyer",
+	"family": "Material",
+	"id": "devilish_destroyer",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

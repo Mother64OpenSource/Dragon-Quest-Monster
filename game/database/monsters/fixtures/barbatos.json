@@ -1,18 +1,17 @@
 {
-    "id":  "barbatos",
-    "display_name":  "Barbatos",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1634,
-    "base_mp":  479,
-    "base_attack":  865,
-    "base_defense":  600,
-    "base_agility":  569,
-    "base_wisdom":  785,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 569.0,
+	"base_attack": 865.0,
+	"base_defense": 600.0,
+	"base_hp": 1634.0,
+	"base_mp": 479.0,
+	"base_wisdom": 785.0,
+	"display_name": "Barbatos",
+	"family": "Devil",
+	"id": "barbatos",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/barbatos.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

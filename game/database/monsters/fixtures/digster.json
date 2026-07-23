@@ -1,0 +1,16 @@
+{
+	"base_agility": 467.0,
+	"base_attack": 866.0,
+	"base_defense": 1025.0,
+	"base_hp": 821.0,
+	"base_mp": 572.0,
+	"base_wisdom": 455.0,
+	"display_name": "Digster",
+	"family": "Nature",
+	"id": "digster",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

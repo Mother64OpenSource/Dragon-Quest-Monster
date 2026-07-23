@@ -1,18 +1,17 @@
 {
-    "id":  "ruin",
-    "display_name":  "Ruin",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  2880,
-    "base_mp":  640,
-    "base_attack":  731,
-    "base_defense":  924,
-    "base_agility":  291,
-    "base_wisdom":  555,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 291.0,
+	"base_attack": 731.0,
+	"base_defense": 924.0,
+	"base_hp": 2880.0,
+	"base_mp": 640.0,
+	"base_wisdom": 555.0,
+	"display_name": "Ruin",
+	"family": "Material",
+	"id": "ruin",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/ruin.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

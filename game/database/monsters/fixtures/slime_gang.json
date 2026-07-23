@@ -1,0 +1,16 @@
+{
+	"base_agility": 847.0,
+	"base_attack": 541.0,
+	"base_defense": 506.0,
+	"base_hp": 1703.0,
+	"base_mp": 530.0,
+	"base_wisdom": 717.0,
+	"display_name": "Slime Gang",
+	"family": "Slime",
+	"id": "slime_gang",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

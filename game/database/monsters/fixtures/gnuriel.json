@@ -1,0 +1,16 @@
+{
+	"base_agility": 627.0,
+	"base_attack": 822.0,
+	"base_defense": 962.0,
+	"base_hp": 2030.0,
+	"base_mp": 486.0,
+	"base_wisdom": 523.0,
+	"display_name": "Gnuriel",
+	"family": "Zombie",
+	"id": "gnuriel",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

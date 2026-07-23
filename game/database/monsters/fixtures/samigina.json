@@ -1,0 +1,16 @@
+{
+	"base_agility": 897.0,
+	"base_attack": 678.0,
+	"base_defense": 504.0,
+	"base_hp": 1417.0,
+	"base_mp": 550.0,
+	"base_wisdom": 962.0,
+	"display_name": "Samigina",
+	"family": "Devil",
+	"id": "samigina",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

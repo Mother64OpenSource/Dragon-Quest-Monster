@@ -1,0 +1,16 @@
+{
+	"base_agility": 567.0,
+	"base_attack": 883.0,
+	"base_defense": 707.0,
+	"base_hp": 1551.0,
+	"base_mp": 558.0,
+	"base_wisdom": 733.0,
+	"display_name": "Killer Gila",
+	"family": "Dragon",
+	"id": "killer_gila",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 720.0,
+	"base_attack": 560.0,
+	"base_defense": 560.0,
+	"base_hp": 1088.0,
+	"base_mp": 544.0,
+	"base_wisdom": 560.0,
+	"display_name": "Djinneral Tokiwa",
+	"family": "unknown",
+	"id": "djinneral_tokiwa",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

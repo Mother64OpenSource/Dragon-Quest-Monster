@@ -1,0 +1,16 @@
+{
+	"base_agility": 600.0,
+	"base_attack": 800.0,
+	"base_defense": 1080.0,
+	"base_hp": 1500.0,
+	"base_mp": 360.0,
+	"base_wisdom": 760.0,
+	"display_name": "Rubble Slime",
+	"family": "Slime",
+	"id": "rubble_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 532.0,
+	"base_attack": 905.0,
+	"base_defense": 1134.0,
+	"base_hp": 2225.0,
+	"base_mp": 849.0,
+	"base_wisdom": 687.0,
+	"display_name": "Metal Heavy",
+	"family": "Material",
+	"id": "metal_heavy",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

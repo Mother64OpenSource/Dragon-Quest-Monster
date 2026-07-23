@@ -1,0 +1,16 @@
+{
+	"base_agility": 662.0,
+	"base_attack": 662.0,
+	"base_defense": 484.0,
+	"base_hp": 2786.0,
+	"base_mp": 632.0,
+	"base_wisdom": 498.0,
+	"display_name": "Sluggernaut",
+	"family": "Nature",
+	"id": "sluggernaut",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

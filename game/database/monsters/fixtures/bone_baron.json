@@ -1,0 +1,16 @@
+{
+	"base_agility": 807.0,
+	"base_attack": 742.0,
+	"base_defense": 829.0,
+	"base_hp": 1403.0,
+	"base_mp": 481.0,
+	"base_wisdom": 786.0,
+	"display_name": "Bone Baron",
+	"family": "Zombie",
+	"id": "bone_baron",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

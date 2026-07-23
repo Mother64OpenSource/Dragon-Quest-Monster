@@ -1,0 +1,16 @@
+{
+	"base_agility": 670.0,
+	"base_attack": 819.0,
+	"base_defense": 816.0,
+	"base_hp": 2034.0,
+	"base_mp": 485.0,
+	"base_wisdom": 585.0,
+	"display_name": "Drackal",
+	"family": "Beast",
+	"id": "drackal",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

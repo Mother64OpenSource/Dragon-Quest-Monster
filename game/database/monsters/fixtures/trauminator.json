@@ -1,18 +1,17 @@
 {
-    "id":  "trauminator",
-    "display_name":  "Trauminator",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  1305,
-    "base_mp":  453,
-    "base_attack":  641,
-    "base_defense":  924,
-    "base_agility":  869,
-    "base_wisdom":  636,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 869.0,
+	"base_attack": 641.0,
+	"base_defense": 924.0,
+	"base_hp": 1305.0,
+	"base_mp": 453.0,
+	"base_wisdom": 636.0,
+	"display_name": "Trauminator",
+	"family": "Material",
+	"id": "trauminator",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/trauminator.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

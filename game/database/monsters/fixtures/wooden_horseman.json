@@ -1,0 +1,16 @@
+{
+	"base_agility": 737.0,
+	"base_attack": 955.0,
+	"base_defense": 368.0,
+	"base_hp": 1698.0,
+	"base_mp": 462.0,
+	"base_wisdom": 390.0,
+	"display_name": "Wooden Horseman",
+	"family": "Material",
+	"id": "wooden_horseman",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

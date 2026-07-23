@@ -1,0 +1,16 @@
+{
+	"base_agility": 580.0,
+	"base_attack": 500.0,
+	"base_defense": 699.0,
+	"base_hp": 2487.0,
+	"base_mp": 808.0,
+	"base_wisdom": 1005.0,
+	"display_name": "Togrus Maximus",
+	"family": "Devil",
+	"id": "togrus_maximus",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

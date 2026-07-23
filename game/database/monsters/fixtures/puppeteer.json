@@ -1,0 +1,16 @@
+{
+	"base_agility": 544.0,
+	"base_attack": 644.0,
+	"base_defense": 631.0,
+	"base_hp": 895.0,
+	"base_mp": 484.0,
+	"base_wisdom": 866.0,
+	"display_name": "Puppeteer",
+	"family": "Material",
+	"id": "puppeteer",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

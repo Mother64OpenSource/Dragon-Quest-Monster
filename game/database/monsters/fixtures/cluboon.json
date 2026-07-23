@@ -1,0 +1,16 @@
+{
+	"base_agility": 432.0,
+	"base_attack": 732.0,
+	"base_defense": 570.0,
+	"base_hp": 1204.0,
+	"base_mp": 462.0,
+	"base_wisdom": 294.0,
+	"display_name": "Cluboon",
+	"family": "unknown",
+	"id": "cluboon",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

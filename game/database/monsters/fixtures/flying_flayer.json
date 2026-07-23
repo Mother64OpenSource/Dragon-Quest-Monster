@@ -1,0 +1,16 @@
+{
+	"base_agility": 730.0,
+	"base_attack": 817.0,
+	"base_defense": 545.0,
+	"base_hp": 1450.0,
+	"base_mp": 631.0,
+	"base_wisdom": 830.0,
+	"display_name": "Flying Flayer",
+	"family": "Devil",
+	"id": "flying_flayer",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,19 +1,17 @@
 {
-    "id":  "jargon",
-    "display_name":  "Jargon",
-    "family":  "Dragon",
-    "rank":  "F",
-    "base_hp":  1590,
-    "base_mp":  360,
-    "base_attack":  940,
-    "base_defense":  920,
-    "base_agility":  580,
-    "base_wisdom":  500,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/jargon.webp"
+	"base_agility": 580.0,
+	"base_attack": 940.0,
+	"base_defense": 920.0,
+	"base_hp": 1590.0,
+	"base_mp": 360.0,
+	"base_wisdom": 500.0,
+	"display_name": "Jargon",
+	"family": "Dragon",
+	"id": "jargon",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/jargon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

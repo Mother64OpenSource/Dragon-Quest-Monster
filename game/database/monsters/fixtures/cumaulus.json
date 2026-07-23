@@ -1,0 +1,16 @@
+{
+	"base_agility": 753.0,
+	"base_attack": 840.0,
+	"base_defense": 543.0,
+	"base_hp": 1432.0,
+	"base_mp": 532.0,
+	"base_wisdom": 875.0,
+	"display_name": "Cumaulus",
+	"family": "Material",
+	"id": "cumaulus",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

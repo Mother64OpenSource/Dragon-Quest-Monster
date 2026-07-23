@@ -1,0 +1,16 @@
+{
+	"base_agility": 320.0,
+	"base_attack": 368.0,
+	"base_defense": 704.0,
+	"base_hp": 1260.0,
+	"base_mp": 632.0,
+	"base_wisdom": 808.0,
+	"display_name": "Genie Sanguini",
+	"family": "Beast",
+	"id": "genie_sanguini",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

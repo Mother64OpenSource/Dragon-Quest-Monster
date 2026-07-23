@@ -1,0 +1,16 @@
+{
+	"base_agility": 543.0,
+	"base_attack": 636.0,
+	"base_defense": 363.0,
+	"base_hp": 1046.0,
+	"base_mp": 270.0,
+	"base_wisdom": 381.0,
+	"display_name": "Leokid",
+	"family": "unknown",
+	"id": "leokid",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

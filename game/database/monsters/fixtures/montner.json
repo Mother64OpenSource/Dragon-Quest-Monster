@@ -1,19 +1,17 @@
 {
-    "id":  "montner",
-    "display_name":  "Montner",
-    "family":  "unknown",
-    "rank":  "F",
-    "base_hp":  1500,
-    "base_mp":  500,
-    "base_attack":  750,
-    "base_defense":  750,
-    "base_agility":  750,
-    "base_wisdom":  750,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/montner.webp"
+	"base_agility": 750.0,
+	"base_attack": 750.0,
+	"base_defense": 750.0,
+	"base_hp": 1500.0,
+	"base_mp": 500.0,
+	"base_wisdom": 750.0,
+	"display_name": "Montner",
+	"family": "unknown",
+	"id": "montner",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/montner.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

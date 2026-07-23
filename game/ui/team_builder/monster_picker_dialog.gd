@@ -12,7 +12,9 @@ var _monster_db: MonsterDatabase
 @onready var _search_edit: LineEdit = $VBoxContainer/SearchEdit
 @onready var _rank_filter: OptionButton = $VBoxContainer/FiltersRow/RankFilter
 @onready var _family_filter: OptionButton = $VBoxContainer/FiltersRow/FamilyFilter
-@onready var _results_list: ItemList = $VBoxContainer/ResultsList
+@onready var _results_list: ItemList = $VBoxContainer/ResultsRow/ResultsList
+@onready var _details_icon: TextureRect = $VBoxContainer/ResultsRow/DetailsPanel/DetailsIcon
+@onready var _details_label: Label = $VBoxContainer/ResultsRow/DetailsPanel/DetailsLabel
 
 func _ready() -> void:
 	title = "Add Monster"
@@ -23,6 +25,7 @@ func _ready() -> void:
 	_family_filter.item_selected.connect(_on_filters_changed)
 	_results_list.item_selected.connect(_on_result_selected)
 	confirmed.connect(_on_confirmed)
+	_clear_details()
 
 func setup(monster_db: MonsterDatabase) -> void:
 	_monster_db = monster_db
@@ -36,7 +39,8 @@ func _populate_rank_filter() -> void:
 	_rank_filter.set_item_metadata(0, null)
 	var ranks := [
 		MonsterSpecies.Rank.F, MonsterSpecies.Rank.E, MonsterSpecies.Rank.D,
-		MonsterSpecies.Rank.C, MonsterSpecies.Rank.B, MonsterSpecies.Rank.A, MonsterSpecies.Rank.S
+		MonsterSpecies.Rank.C, MonsterSpecies.Rank.B, MonsterSpecies.Rank.A,
+		MonsterSpecies.Rank.S, MonsterSpecies.Rank.SS
 	]
 	for rank in ranks:
 		_rank_filter.add_item(MonsterLoader.rank_to_string(rank))
@@ -69,12 +73,19 @@ func _refresh_results() -> void:
 
 	_results_list.clear()
 	for species in results:
-		var idx := _results_list.add_item("%s (%s)" % [species.display_name, MonsterLoader.rank_to_string(species.rank)])
+		var idx := _results_list.add_item(
+			"%s (%s)" % [species.display_name, MonsterLoader.rank_to_string(species.rank)],
+			_load_icon(species)
+		)
 		_results_list.set_item_metadata(idx, species.id)
 	get_ok_button().disabled = true
+	_clear_details()
 
-func _on_result_selected(_index: int) -> void:
+func _on_result_selected(index: int) -> void:
 	get_ok_button().disabled = false
+	var species_id: String = _results_list.get_item_metadata(index)
+	var species := _monster_db.get_species(species_id)
+	_show_details(species)
 
 func _on_confirmed() -> void:
 	var selected := _results_list.get_selected_items()
@@ -82,3 +93,28 @@ func _on_confirmed() -> void:
 		return
 	var species_id: String = _results_list.get_item_metadata(selected[0])
 	species_chosen.emit(species_id)
+
+func _load_icon(species: MonsterSpecies) -> Texture2D:
+	if species.sprite_path.is_empty():
+		return null
+	var texture: Texture2D = load(species.sprite_path)
+	return texture
+
+func _show_details(species: MonsterSpecies) -> void:
+	if species == null:
+		_clear_details()
+		return
+	_details_icon.texture = _load_icon(species)
+	_details_label.text = (
+		"%s\nFamily: %s   Rank: %s\n\nHP: %d   MP: %d\nATK: %d   DEF: %d\nAGI: %d   WIS: %d"
+		% [
+			species.display_name, species.family, MonsterLoader.rank_to_string(species.rank),
+			species.base_hp, species.base_mp,
+			species.base_attack, species.base_defense,
+			species.base_agility, species.base_wisdom
+		]
+	)
+
+func _clear_details() -> void:
+	_details_icon.texture = null
+	_details_label.text = "Select a monster to see its stats."

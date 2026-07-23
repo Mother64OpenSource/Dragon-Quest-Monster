@@ -1,0 +1,16 @@
+{
+	"base_agility": 538.0,
+	"base_attack": 790.0,
+	"base_defense": 496.0,
+	"base_hp": 1980.0,
+	"base_mp": 528.0,
+	"base_wisdom": 429.0,
+	"display_name": "Incineraytor",
+	"family": "Nature",
+	"id": "incineraytor",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

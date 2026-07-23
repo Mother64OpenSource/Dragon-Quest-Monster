@@ -1,18 +1,16 @@
 {
-    "id":  "twiney",
-    "display_name":  "Twiney",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  672,
-    "base_mp":  512,
-    "base_attack":  384,
-    "base_defense":  512,
-    "base_agility":  640,
-    "base_wisdom":  512,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 640.0,
+	"base_attack": 384.0,
+	"base_defense": 512.0,
+	"base_hp": 672.0,
+	"base_mp": 512.0,
+	"base_wisdom": 512.0,
+	"display_name": "Twiney",
+	"family": "unknown",
+	"id": "twiney",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

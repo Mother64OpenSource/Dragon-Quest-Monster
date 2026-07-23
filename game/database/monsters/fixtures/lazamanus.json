@@ -1,18 +1,17 @@
 {
-    "id":  "lazamanus",
-    "display_name":  "Lazamanus",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1548,
-    "base_mp":  768,
-    "base_attack":  555,
-    "base_defense":  605,
-    "base_agility":  647,
-    "base_wisdom":  1008,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 647.0,
+	"base_attack": 555.0,
+	"base_defense": 605.0,
+	"base_hp": 1548.0,
+	"base_mp": 768.0,
+	"base_wisdom": 1008.0,
+	"display_name": "Lazamanus",
+	"family": "Zombie",
+	"id": "lazamanus",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/lazamanus.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

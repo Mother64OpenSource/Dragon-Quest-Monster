@@ -1,0 +1,16 @@
+{
+	"base_agility": 728.0,
+	"base_attack": 832.0,
+	"base_defense": 794.0,
+	"base_hp": 1931.0,
+	"base_mp": 473.0,
+	"base_wisdom": 615.0,
+	"display_name": "Green Dragon",
+	"family": "Dragon",
+	"id": "green_dragon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

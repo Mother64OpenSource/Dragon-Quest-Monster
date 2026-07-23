@@ -1,0 +1,16 @@
+{
+	"base_agility": 700.0,
+	"base_attack": 660.0,
+	"base_defense": 620.0,
+	"base_hp": 1600.0,
+	"base_mp": 580.0,
+	"base_wisdom": 880.0,
+	"display_name": "Dream Eater",
+	"family": "Beast",
+	"id": "dream_eater",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 691.0,
+	"base_attack": 790.0,
+	"base_defense": 615.0,
+	"base_hp": 1432.0,
+	"base_mp": 571.0,
+	"base_wisdom": 988.0,
+	"display_name": "King Korol",
+	"family": "Dragon",
+	"id": "king_korol",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

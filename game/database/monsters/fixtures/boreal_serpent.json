@@ -1,0 +1,16 @@
+{
+	"base_agility": 693.0,
+	"base_attack": 705.0,
+	"base_defense": 871.0,
+	"base_hp": 1861.0,
+	"base_mp": 493.0,
+	"base_wisdom": 945.0,
+	"display_name": "Boreal Serpent",
+	"family": "Dragon",
+	"id": "boreal_serpent",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

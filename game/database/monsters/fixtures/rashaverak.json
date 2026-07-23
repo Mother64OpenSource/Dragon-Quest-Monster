@@ -1,0 +1,16 @@
+{
+	"base_agility": 744.0,
+	"base_attack": 853.0,
+	"base_defense": 788.0,
+	"base_hp": 1417.0,
+	"base_mp": 440.0,
+	"base_wisdom": 744.0,
+	"display_name": "Rashaverak",
+	"family": "Dragon",
+	"id": "rashaverak",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

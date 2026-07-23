@@ -1,0 +1,16 @@
+{
+	"base_agility": 854.0,
+	"base_attack": 805.0,
+	"base_defense": 805.0,
+	"base_hp": 1366.0,
+	"base_mp": 366.0,
+	"base_wisdom": 779.0,
+	"display_name": "Jailcat",
+	"family": "Beast",
+	"id": "jailcat",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 976.0,
+	"base_attack": 647.0,
+	"base_defense": 635.0,
+	"base_hp": 1308.0,
+	"base_mp": 430.0,
+	"base_wisdom": 710.0,
+	"display_name": "Dual Duellers",
+	"family": "Dragon",
+	"id": "dual_duellers",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

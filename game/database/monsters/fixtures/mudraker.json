@@ -1,0 +1,16 @@
+{
+	"base_agility": 481.0,
+	"base_attack": 911.0,
+	"base_defense": 734.0,
+	"base_hp": 1570.0,
+	"base_mp": 621.0,
+	"base_wisdom": 721.0,
+	"display_name": "Mudraker",
+	"family": "Material",
+	"id": "mudraker",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

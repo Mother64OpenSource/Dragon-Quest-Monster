@@ -1,0 +1,16 @@
+{
+	"base_agility": 779.0,
+	"base_attack": 791.0,
+	"base_defense": 422.0,
+	"base_hp": 998.0,
+	"base_mp": 359.0,
+	"base_wisdom": 488.0,
+	"display_name": "Goresby-Purrvis",
+	"family": "Beast",
+	"id": "goresby_purrvis",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 662.0,
+	"base_attack": 747.0,
+	"base_defense": 870.0,
+	"base_hp": 1971.0,
+	"base_mp": 486.0,
+	"base_wisdom": 775.0,
+	"display_name": "Thornella",
+	"family": "Nature",
+	"id": "thornella",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,17 @@
 {
-    "id":  "marquis_de_l_on",
-    "display_name":  "Marquis de L?on",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  2013,
-    "base_mp":  543,
-    "base_attack":  712,
-    "base_defense":  830,
-    "base_agility":  584,
-    "base_wisdom":  944,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 584.0,
+	"base_attack": 712.0,
+	"base_defense": 830.0,
+	"base_hp": 2013.0,
+	"base_mp": 543.0,
+	"base_wisdom": 944.0,
+	"display_name": "Marquis de L?on",
+	"family": "Beast",
+	"id": "marquis_de_l_on",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/marquis_de_l_on.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

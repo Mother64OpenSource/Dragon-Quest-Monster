@@ -1,0 +1,16 @@
+{
+	"base_agility": 350.0,
+	"base_attack": 720.0,
+	"base_defense": 770.0,
+	"base_hp": 1750.0,
+	"base_mp": 740.0,
+	"base_wisdom": 850.0,
+	"display_name": "Gastank",
+	"family": "Material",
+	"id": "gastank",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

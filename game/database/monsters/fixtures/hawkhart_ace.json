@@ -1,18 +1,17 @@
 {
-    "id":  "hawkhart_ace",
-    "display_name":  "Hawkhart Ace",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1125,
-    "base_mp":  572,
-    "base_attack":  485,
-    "base_defense":  775,
-    "base_agility":  901,
-    "base_wisdom":  834,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 901.0,
+	"base_attack": 485.0,
+	"base_defense": 775.0,
+	"base_hp": 1125.0,
+	"base_mp": 572.0,
+	"base_wisdom": 834.0,
+	"display_name": "Hawkhart Ace",
+	"family": "unknown",
+	"id": "hawkhart_ace",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/hawkhart_ace.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 480.0,
+	"base_attack": 900.0,
+	"base_defense": 1100.0,
+	"base_hp": 1450.0,
+	"base_mp": 380.0,
+	"base_wisdom": 860.0,
+	"display_name": "Genji Beetle",
+	"family": "Nature",
+	"id": "genji_beetle",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

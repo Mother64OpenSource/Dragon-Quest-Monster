@@ -1,18 +1,17 @@
 {
-    "id":  "armoured_scorpion",
-    "display_name":  "Armoured Scorpion",
-    "family":  "Nature",
-    "rank":  "S",
-    "base_hp":  1016,
-    "base_mp":  512,
-    "base_attack":  838,
-    "base_defense":  974,
-    "base_agility":  585,
-    "base_wisdom":  544,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 585.0,
+	"base_attack": 838.0,
+	"base_defense": 974.0,
+	"base_hp": 1016.0,
+	"base_mp": 512.0,
+	"base_wisdom": 544.0,
+	"display_name": "Armoured Scorpion",
+	"family": "Nature",
+	"id": "armoured_scorpion",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/armoured_scorpion.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

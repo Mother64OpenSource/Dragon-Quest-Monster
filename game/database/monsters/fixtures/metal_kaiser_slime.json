@@ -1,0 +1,16 @@
+{
+	"base_agility": 1360.0,
+	"base_attack": 542.0,
+	"base_defense": 1500.0,
+	"base_hp": 241.0,
+	"base_mp": 710.0,
+	"base_wisdom": 822.0,
+	"display_name": "Metal Kaiser Slime",
+	"family": "Slime",
+	"id": "metal_kaiser_slime",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

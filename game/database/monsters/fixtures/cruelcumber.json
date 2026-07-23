@@ -1,19 +1,17 @@
 {
-    "id":  "cruelcumber",
-    "display_name":  "Cruelcumber",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1366,
-    "base_mp":  585,
-    "base_attack":  829,
-    "base_defense":  879,
-    "base_agility":  719,
-    "base_wisdom":  708,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/cruelcumber.webp"
+	"base_agility": 719.0,
+	"base_attack": 829.0,
+	"base_defense": 879.0,
+	"base_hp": 1366.0,
+	"base_mp": 585.0,
+	"base_wisdom": 708.0,
+	"display_name": "Cruelcumber",
+	"family": "Nature",
+	"id": "cruelcumber",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/cruelcumber.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

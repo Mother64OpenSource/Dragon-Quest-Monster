@@ -1,18 +1,17 @@
 {
-    "id":  "leonyx",
-    "display_name":  "Leonyx",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2448,
-    "base_mp":  560,
-    "base_attack":  652,
-    "base_defense":  652,
-    "base_agility":  696,
-    "base_wisdom":  696,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 696.0,
+	"base_attack": 652.0,
+	"base_defense": 652.0,
+	"base_hp": 2448.0,
+	"base_mp": 560.0,
+	"base_wisdom": 696.0,
+	"display_name": "Leonyx",
+	"family": "unknown",
+	"id": "leonyx",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/leonyx.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

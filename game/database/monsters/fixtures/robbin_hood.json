@@ -1,0 +1,16 @@
+{
+	"base_agility": 805.0,
+	"base_attack": 849.0,
+	"base_defense": 784.0,
+	"base_hp": 1388.0,
+	"base_mp": 567.0,
+	"base_wisdom": 565.0,
+	"display_name": "Robbin' Hood",
+	"family": "unknown",
+	"id": "robbin_hood",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

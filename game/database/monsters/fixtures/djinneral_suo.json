@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 720.0,
+	"base_defense": 560.0,
+	"base_hp": 1096.0,
+	"base_mp": 528.0,
+	"base_wisdom": 560.0,
+	"display_name": "Djinneral Suo",
+	"family": "unknown",
+	"id": "djinneral_suo",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

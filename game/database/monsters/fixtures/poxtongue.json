@@ -1,19 +1,17 @@
 {
-    "id":  "poxtongue",
-    "display_name":  "Poxtongue",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1605,
-    "base_mp":  703,
-    "base_attack":  904,
-    "base_defense":  510,
-    "base_agility":  547,
-    "base_wisdom":  675,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/poxtongue.webp"
+	"base_agility": 547.0,
+	"base_attack": 904.0,
+	"base_defense": 510.0,
+	"base_hp": 1605.0,
+	"base_mp": 703.0,
+	"base_wisdom": 675.0,
+	"display_name": "Poxtongue",
+	"family": "Beast",
+	"id": "poxtongue",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/poxtongue.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

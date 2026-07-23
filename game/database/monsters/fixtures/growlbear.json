@@ -1,0 +1,16 @@
+{
+	"base_agility": 715.0,
+	"base_attack": 789.0,
+	"base_defense": 653.0,
+	"base_hp": 2090.0,
+	"base_mp": 516.0,
+	"base_wisdom": 617.0,
+	"display_name": "Growlbear",
+	"family": "Beast",
+	"id": "growlbear",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 620.0,
+	"base_attack": 746.0,
+	"base_defense": 820.0,
+	"base_hp": 2146.0,
+	"base_mp": 593.0,
+	"base_wisdom": 592.0,
+	"display_name": "Ginormoose",
+	"family": "Beast",
+	"id": "ginormoose",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

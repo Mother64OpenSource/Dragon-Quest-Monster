@@ -1,0 +1,16 @@
+{
+	"base_agility": 570.0,
+	"base_attack": 880.0,
+	"base_defense": 828.0,
+	"base_hp": 1695.0,
+	"base_mp": 364.0,
+	"base_wisdom": 518.0,
+	"display_name": "Mudslinger",
+	"family": "Zombie",
+	"id": "mudslinger",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

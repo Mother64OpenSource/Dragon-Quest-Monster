@@ -1,0 +1,16 @@
+{
+	"base_agility": 713.0,
+	"base_attack": 826.0,
+	"base_defense": 745.0,
+	"base_hp": 1601.0,
+	"base_mp": 500.0,
+	"base_wisdom": 475.0,
+	"display_name": "Hades Condor",
+	"family": "Nature",
+	"id": "hades_condor",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

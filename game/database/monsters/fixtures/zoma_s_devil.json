@@ -1,0 +1,16 @@
+{
+	"base_agility": 440.0,
+	"base_attack": 332.0,
+	"base_defense": 468.0,
+	"base_hp": 1046.0,
+	"base_mp": 497.0,
+	"base_wisdom": 864.0,
+	"display_name": "Zoma's Devil",
+	"family": "unknown",
+	"id": "zoma_s_devil",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,19 +1,17 @@
 {
-    "id":  "swarmtroop",
-    "display_name":  "Swarmtroop",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1084,
-    "base_mp":  423,
-    "base_attack":  662,
-    "base_defense":  318,
-    "base_agility":  764,
-    "base_wisdom":  332,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/swarmtroop.webp"
+	"base_agility": 764.0,
+	"base_attack": 662.0,
+	"base_defense": 318.0,
+	"base_hp": 1084.0,
+	"base_mp": 423.0,
+	"base_wisdom": 332.0,
+	"display_name": "Swarmtroop",
+	"family": "Nature",
+	"id": "swarmtroop",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/swarmtroop.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

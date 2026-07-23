@@ -1,0 +1,16 @@
+{
+	"base_agility": 985.0,
+	"base_attack": 867.0,
+	"base_defense": 503.0,
+	"base_hp": 1065.0,
+	"base_mp": 433.0,
+	"base_wisdom": 522.0,
+	"display_name": "Red Ninja Slime",
+	"family": "Slime",
+	"id": "red_ninja_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

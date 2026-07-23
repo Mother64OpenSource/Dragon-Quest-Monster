@@ -1,0 +1,16 @@
+{
+	"base_agility": 798.0,
+	"base_attack": 630.0,
+	"base_defense": 764.0,
+	"base_hp": 1566.0,
+	"base_mp": 473.0,
+	"base_wisdom": 775.0,
+	"display_name": "Rampage",
+	"family": "Beast",
+	"id": "rampage",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

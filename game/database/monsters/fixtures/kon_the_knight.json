@@ -1,0 +1,16 @@
+{
+	"base_agility": 618.0,
+	"base_attack": 794.0,
+	"base_defense": 838.0,
+	"base_hp": 1462.0,
+	"base_mp": 444.0,
+	"base_wisdom": 970.0,
+	"display_name": "Kon the Knight",
+	"family": "Beast",
+	"id": "kon_the_knight",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

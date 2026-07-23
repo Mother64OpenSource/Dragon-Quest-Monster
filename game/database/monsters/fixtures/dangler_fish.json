@@ -1,0 +1,16 @@
+{
+	"base_agility": 805.0,
+	"base_attack": 756.0,
+	"base_defense": 756.0,
+	"base_hp": 1366.0,
+	"base_mp": 512.0,
+	"base_wisdom": 878.0,
+	"display_name": "Dangler Fish",
+	"family": "Nature",
+	"id": "dangler_fish",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

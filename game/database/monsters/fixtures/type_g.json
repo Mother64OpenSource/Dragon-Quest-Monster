@@ -1,0 +1,16 @@
+{
+	"base_agility": 536.0,
+	"base_attack": 728.0,
+	"base_defense": 592.0,
+	"base_hp": 1280.0,
+	"base_mp": 320.0,
+	"base_wisdom": 400.0,
+	"display_name": "Type G",
+	"family": "Material",
+	"id": "type_g",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

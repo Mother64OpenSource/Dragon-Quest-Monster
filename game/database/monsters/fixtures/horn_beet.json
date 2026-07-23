@@ -1,18 +1,17 @@
 {
-    "id":  "horn_beet",
-    "display_name":  "Horn Beet",
-    "family":  "Nature",
-    "rank":  "S",
-    "base_hp":  1006,
-    "base_mp":  478,
-    "base_attack":  786,
-    "base_defense":  1164,
-    "base_agility":  592,
-    "base_wisdom":  493,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 592.0,
+	"base_attack": 786.0,
+	"base_defense": 1164.0,
+	"base_hp": 1006.0,
+	"base_mp": 478.0,
+	"base_wisdom": 493.0,
+	"display_name": "Horn Beet",
+	"family": "Nature",
+	"id": "horn_beet",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/horn_beet.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

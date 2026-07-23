@@ -1,0 +1,16 @@
+{
+	"base_agility": 620.0,
+	"base_attack": 870.0,
+	"base_defense": 950.0,
+	"base_hp": 1640.0,
+	"base_mp": 380.0,
+	"base_wisdom": 410.0,
+	"display_name": "Dragurn",
+	"family": "Dragon",
+	"id": "dragurn",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

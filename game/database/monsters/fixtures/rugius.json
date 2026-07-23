@@ -1,18 +1,17 @@
 {
-    "id":  "rugius",
-    "display_name":  "Rugius",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1229,
-    "base_mp":  437,
-    "base_attack":  891,
-    "base_defense":  505,
-    "base_agility":  773,
-    "base_wisdom":  476,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 773.0,
+	"base_attack": 891.0,
+	"base_defense": 505.0,
+	"base_hp": 1229.0,
+	"base_mp": 437.0,
+	"base_wisdom": 476.0,
+	"display_name": "Rugius",
+	"family": "Dragon",
+	"id": "rugius",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/rugius.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

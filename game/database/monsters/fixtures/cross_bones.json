@@ -1,0 +1,16 @@
+{
+	"base_agility": 641.0,
+	"base_attack": 841.0,
+	"base_defense": 819.0,
+	"base_hp": 1478.0,
+	"base_mp": 553.0,
+	"base_wisdom": 708.0,
+	"display_name": "Cross Bones",
+	"family": "Zombie",
+	"id": "cross_bones",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

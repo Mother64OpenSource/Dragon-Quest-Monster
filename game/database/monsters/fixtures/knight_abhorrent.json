@@ -1,18 +1,17 @@
 {
-    "id":  "knight_abhorrent",
-    "display_name":  "Knight Abhorrent",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  2043,
-    "base_mp":  473,
-    "base_attack":  795,
-    "base_defense":  945,
-    "base_agility":  663,
-    "base_wisdom":  511,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 663.0,
+	"base_attack": 795.0,
+	"base_defense": 945.0,
+	"base_hp": 2043.0,
+	"base_mp": 473.0,
+	"base_wisdom": 511.0,
+	"display_name": "Knight Abhorrent",
+	"family": "Devil",
+	"id": "knight_abhorrent",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/knight_abhorrent.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

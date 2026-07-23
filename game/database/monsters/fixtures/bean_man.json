@@ -1,0 +1,16 @@
+{
+	"base_agility": 645.0,
+	"base_attack": 761.0,
+	"base_defense": 542.0,
+	"base_hp": 1677.0,
+	"base_mp": 505.0,
+	"base_wisdom": 787.0,
+	"display_name": "Bean Man",
+	"family": "Nature",
+	"id": "bean_man",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

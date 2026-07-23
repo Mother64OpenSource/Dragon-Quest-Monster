@@ -1,0 +1,16 @@
+{
+	"base_agility": 740.0,
+	"base_attack": 820.0,
+	"base_defense": 780.0,
+	"base_hp": 1580.0,
+	"base_mp": 360.0,
+	"base_wisdom": 580.0,
+	"display_name": "Bambooligan",
+	"family": "Material",
+	"id": "bambooligan",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

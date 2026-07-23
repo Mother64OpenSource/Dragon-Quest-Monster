@@ -1,0 +1,16 @@
+{
+	"base_agility": 600.0,
+	"base_attack": 851.0,
+	"base_defense": 639.0,
+	"base_hp": 1112.0,
+	"base_mp": 666.0,
+	"base_wisdom": 774.0,
+	"display_name": "Shogum",
+	"family": "Slime",
+	"id": "shogum",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

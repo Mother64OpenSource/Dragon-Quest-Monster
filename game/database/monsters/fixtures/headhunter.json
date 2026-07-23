@@ -1,0 +1,16 @@
+{
+	"base_agility": 860.0,
+	"base_attack": 930.0,
+	"base_defense": 770.0,
+	"base_hp": 1440.0,
+	"base_mp": 420.0,
+	"base_wisdom": 350.0,
+	"display_name": "Headhunter",
+	"family": "Devil",
+	"id": "headhunter",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

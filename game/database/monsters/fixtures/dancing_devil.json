@@ -1,0 +1,16 @@
+{
+	"base_agility": 892.0,
+	"base_attack": 520.0,
+	"base_defense": 866.0,
+	"base_hp": 1448.0,
+	"base_mp": 572.0,
+	"base_wisdom": 842.0,
+	"display_name": "Dancing Devil",
+	"family": "Devil",
+	"id": "dancing_devil",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

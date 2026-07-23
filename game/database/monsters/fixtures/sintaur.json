@@ -1,0 +1,16 @@
+{
+	"base_agility": 667.0,
+	"base_attack": 889.0,
+	"base_defense": 713.0,
+	"base_hp": 1508.0,
+	"base_mp": 447.0,
+	"base_wisdom": 712.0,
+	"display_name": "Sintaur",
+	"family": "Dragon",
+	"id": "sintaur",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

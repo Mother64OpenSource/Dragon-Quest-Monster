@@ -51,10 +51,20 @@ func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> vo
 	_check("golem rank == C", golem != null and golem.rank == MonsterSpecies.Rank.C)
 
 	var name_results := monster_db.search_by_name("drac")
-	_check("search_by_name('drac') finds exactly dracky", name_results.size() == 1 and name_results[0].id == "dracky")
+	var name_result_ids: Array[String] = []
+	for species in name_results:
+		name_result_ids.append(species.id)
+	# Real fixture data adds more "drac"-containing names, so check
+	# membership rather than an exact single match.
+	_check("search_by_name('drac') includes dracky", name_result_ids.has("dracky"))
 
 	var rank_results := monster_db.filter_by_rank(MonsterSpecies.Rank.C)
-	_check("filter_by_rank(C) finds exactly golem", rank_results.size() == 1 and rank_results[0].id == "golem")
+	var rank_result_ids: Array[String] = []
+	for species in rank_results:
+		rank_result_ids.append(species.id)
+	# Real fixture data adds many more rank-C monsters, so check membership
+	# rather than an exact single match.
+	_check("filter_by_rank(C) includes golem", rank_result_ids.has("golem"))
 
 	var family_results := monster_db.filter_by_family("slime")
 	var family_ids: Array[String] = []

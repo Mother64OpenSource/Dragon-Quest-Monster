@@ -1,18 +1,16 @@
 {
-    "id":  "saggitar",
-    "display_name":  "Saggitar",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  2368,
-    "base_mp":  576,
-    "base_attack":  564,
-    "base_defense":  880,
-    "base_agility":  704,
-    "base_wisdom":  704,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 704.0,
+	"base_attack": 564.0,
+	"base_defense": 880.0,
+	"base_hp": 2368.0,
+	"base_mp": 576.0,
+	"base_wisdom": 704.0,
+	"display_name": "Saggitar",
+	"family": "Material",
+	"id": "saggitar",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

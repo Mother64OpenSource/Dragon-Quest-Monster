@@ -1,18 +1,17 @@
 {
-    "id":  "mumboh_jumboe",
-    "display_name":  "Mumboh-Jumboe",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1439,
-    "base_mp":  554,
-    "base_attack":  959,
-    "base_defense":  990,
-    "base_agility":  494,
-    "base_wisdom":  672,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 494.0,
+	"base_attack": 959.0,
+	"base_defense": 990.0,
+	"base_hp": 1439.0,
+	"base_mp": 554.0,
+	"base_wisdom": 672.0,
+	"display_name": "Mumboh-Jumboe",
+	"family": "Material",
+	"id": "mumboh_jumboe",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/mumboh_jumboe.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

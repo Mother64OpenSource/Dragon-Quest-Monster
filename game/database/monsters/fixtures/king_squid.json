@@ -1,0 +1,16 @@
+{
+	"base_agility": 609.0,
+	"base_attack": 772.0,
+	"base_defense": 609.0,
+	"base_hp": 1944.0,
+	"base_mp": 458.0,
+	"base_wisdom": 310.0,
+	"display_name": "King Squid",
+	"family": "Nature",
+	"id": "king_squid",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

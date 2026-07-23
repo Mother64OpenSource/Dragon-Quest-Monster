@@ -1,0 +1,16 @@
+{
+	"base_agility": 698.0,
+	"base_attack": 647.0,
+	"base_defense": 924.0,
+	"base_hp": 1524.0,
+	"base_mp": 444.0,
+	"base_wisdom": 664.0,
+	"display_name": "Terracotta Warrior",
+	"family": "Material",
+	"id": "terracotta_warrior",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

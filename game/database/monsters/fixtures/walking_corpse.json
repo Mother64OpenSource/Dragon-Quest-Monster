@@ -1,0 +1,16 @@
+{
+	"base_agility": 586.0,
+	"base_attack": 914.0,
+	"base_defense": 760.0,
+	"base_hp": 1695.0,
+	"base_mp": 390.0,
+	"base_wisdom": 460.0,
+	"display_name": "Walking Corpse",
+	"family": "Zombie",
+	"id": "walking_corpse",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,19 +1,17 @@
 {
-    "id":  "walking_stick",
-    "display_name":  "Walking Stick",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1022,
-    "base_mp":  640,
-    "base_attack":  720,
-    "base_defense":  280,
-    "base_agility":  704,
-    "base_wisdom":  296,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/walking_stick.webp"
+	"base_agility": 704.0,
+	"base_attack": 720.0,
+	"base_defense": 280.0,
+	"base_hp": 1022.0,
+	"base_mp": 640.0,
+	"base_wisdom": 296.0,
+	"display_name": "Walking Stick",
+	"family": "Nature",
+	"id": "walking_stick",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/walking_stick.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

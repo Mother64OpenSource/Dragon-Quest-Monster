@@ -1,0 +1,16 @@
+{
+	"base_agility": 545.0,
+	"base_attack": 805.0,
+	"base_defense": 899.0,
+	"base_hp": 1621.0,
+	"base_mp": 478.0,
+	"base_wisdom": 681.0,
+	"display_name": "Aggrosculpture",
+	"family": "Devil",
+	"id": "aggrosculpture",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

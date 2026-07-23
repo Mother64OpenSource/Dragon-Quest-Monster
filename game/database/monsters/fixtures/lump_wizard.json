@@ -1,0 +1,16 @@
+{
+	"base_agility": 832.0,
+	"base_attack": 563.0,
+	"base_defense": 881.0,
+	"base_hp": 1382.0,
+	"base_mp": 563.0,
+	"base_wisdom": 976.0,
+	"display_name": "Lump Wizard",
+	"family": "Devil",
+	"id": "lump_wizard",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

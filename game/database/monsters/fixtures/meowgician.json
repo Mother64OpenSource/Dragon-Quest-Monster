@@ -1,0 +1,16 @@
+{
+	"base_agility": 762.0,
+	"base_attack": 523.0,
+	"base_defense": 591.0,
+	"base_hp": 1634.0,
+	"base_mp": 615.0,
+	"base_wisdom": 956.0,
+	"display_name": "Meowgician",
+	"family": "Beast",
+	"id": "meowgician",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

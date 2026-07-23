@@ -1,18 +1,16 @@
 {
-    "id":  "cat_riberio",
-    "display_name":  "Cat Riberio",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1515,
-    "base_mp":  539,
-    "base_attack":  796,
-    "base_defense":  503,
-    "base_agility":  1642,
-    "base_wisdom":  525,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1642.0,
+	"base_attack": 796.0,
+	"base_defense": 503.0,
+	"base_hp": 1515.0,
+	"base_mp": 539.0,
+	"base_wisdom": 525.0,
+	"display_name": "Cat Riberio",
+	"family": "unknown",
+	"id": "cat_riberio",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

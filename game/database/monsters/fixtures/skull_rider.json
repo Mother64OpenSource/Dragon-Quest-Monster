@@ -1,19 +1,17 @@
 {
-    "id":  "skull_rider",
-    "display_name":  "Skull Rider",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1590,
-    "base_mp":  560,
-    "base_attack":  770,
-    "base_defense":  520,
-    "base_agility":  660,
-    "base_wisdom":  880,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/skull_rider.webp"
+	"base_agility": 660.0,
+	"base_attack": 770.0,
+	"base_defense": 520.0,
+	"base_hp": 1590.0,
+	"base_mp": 560.0,
+	"base_wisdom": 880.0,
+	"display_name": "Skull Rider",
+	"family": "Zombie",
+	"id": "skull_rider",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/skull_rider.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

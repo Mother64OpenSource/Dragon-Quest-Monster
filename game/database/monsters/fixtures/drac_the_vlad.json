@@ -1,0 +1,16 @@
+{
+	"base_agility": 880.0,
+	"base_attack": 740.0,
+	"base_defense": 680.0,
+	"base_hp": 1400.0,
+	"base_mp": 480.0,
+	"base_wisdom": 800.0,
+	"display_name": "Drac the Vlad",
+	"family": "Zombie",
+	"id": "drac_the_vlad",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

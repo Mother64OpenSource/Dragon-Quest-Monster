@@ -1,0 +1,16 @@
+{
+	"base_agility": 735.0,
+	"base_attack": 945.0,
+	"base_defense": 809.0,
+	"base_hp": 2370.0,
+	"base_mp": 525.0,
+	"base_wisdom": 546.0,
+	"display_name": "Dreadmaster",
+	"family": "Devil",
+	"id": "dreadmaster",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

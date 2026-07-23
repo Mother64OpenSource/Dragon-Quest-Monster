@@ -1,0 +1,16 @@
+{
+	"base_agility": 752.0,
+	"base_attack": 624.0,
+	"base_defense": 416.0,
+	"base_hp": 910.0,
+	"base_mp": 448.0,
+	"base_wisdom": 704.0,
+	"display_name": "Babygoyle",
+	"family": "Devil",
+	"id": "babygoyle",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

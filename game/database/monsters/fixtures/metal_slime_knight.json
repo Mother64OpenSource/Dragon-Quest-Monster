@@ -1,0 +1,16 @@
+{
+	"base_agility": 760.0,
+	"base_attack": 838.0,
+	"base_defense": 947.0,
+	"base_hp": 727.0,
+	"base_mp": 377.0,
+	"base_wisdom": 572.0,
+	"display_name": "Metal Slime Knight",
+	"family": "Slime",
+	"id": "metal_slime_knight",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

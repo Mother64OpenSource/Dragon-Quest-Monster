@@ -1,0 +1,16 @@
+{
+	"base_agility": 612.0,
+	"base_attack": 869.0,
+	"base_defense": 1185.0,
+	"base_hp": 1432.0,
+	"base_mp": 474.0,
+	"base_wisdom": 515.0,
+	"display_name": "Escudogre",
+	"family": "Material",
+	"id": "escudogre",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

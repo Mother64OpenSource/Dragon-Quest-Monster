@@ -1,0 +1,16 @@
+{
+	"base_agility": 775.0,
+	"base_attack": 823.0,
+	"base_defense": 671.0,
+	"base_hp": 2093.0,
+	"base_mp": 486.0,
+	"base_wisdom": 426.0,
+	"display_name": "Serpentia",
+	"family": "Dragon",
+	"id": "serpentia",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

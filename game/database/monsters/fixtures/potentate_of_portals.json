@@ -1,18 +1,17 @@
 {
-    "id":  "potentate_of_portals",
-    "display_name":  "Potentate of Portals",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1875,
-    "base_mp":  750,
-    "base_attack":  552,
-    "base_defense":  552,
-    "base_agility":  621,
-    "base_wisdom":  552,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 621.0,
+	"base_attack": 552.0,
+	"base_defense": 552.0,
+	"base_hp": 1875.0,
+	"base_mp": 750.0,
+	"base_wisdom": 552.0,
+	"display_name": "Potentate of Portals",
+	"family": "unknown",
+	"id": "potentate_of_portals",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/potentate_of_portals.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

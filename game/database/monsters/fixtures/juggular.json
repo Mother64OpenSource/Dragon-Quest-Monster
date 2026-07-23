@@ -1,0 +1,16 @@
+{
+	"base_agility": 782.0,
+	"base_attack": 738.0,
+	"base_defense": 605.0,
+	"base_hp": 1539.0,
+	"base_mp": 561.0,
+	"base_wisdom": 716.0,
+	"display_name": "Juggular",
+	"family": "Devil",
+	"id": "juggular",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

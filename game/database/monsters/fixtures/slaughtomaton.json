@@ -1,18 +1,17 @@
 {
-    "id":  "slaughtomaton",
-    "display_name":  "Slaughtomaton",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  2048,
-    "base_mp":  534,
-    "base_attack":  860,
-    "base_defense":  979,
-    "base_agility":  587,
-    "base_wisdom":  448,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 587.0,
+	"base_attack": 860.0,
+	"base_defense": 979.0,
+	"base_hp": 2048.0,
+	"base_mp": 534.0,
+	"base_wisdom": 448.0,
+	"display_name": "Slaughtomaton",
+	"family": "Material",
+	"id": "slaughtomaton",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/slaughtomaton.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

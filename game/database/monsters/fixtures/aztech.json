@@ -1,18 +1,16 @@
 {
-    "id":  "aztech",
-    "display_name":  "Aztech",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  2800,
-    "base_mp":  560,
-    "base_attack":  836,
-    "base_defense":  801,
-    "base_agility":  326,
-    "base_wisdom":  528,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 326.0,
+	"base_attack": 836.0,
+	"base_defense": 801.0,
+	"base_hp": 2800.0,
+	"base_mp": 560.0,
+	"base_wisdom": 528.0,
+	"display_name": "Aztech",
+	"family": "Material",
+	"id": "aztech",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

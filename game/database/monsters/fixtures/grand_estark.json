@@ -1,18 +1,17 @@
 {
-    "id":  "grand_estark",
-    "display_name":  "Grand Estark",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2100,
-    "base_mp":  675,
-    "base_attack":  608,
-    "base_defense":  552,
-    "base_agility":  552,
-    "base_wisdom":  408,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 552.0,
+	"base_attack": 608.0,
+	"base_defense": 552.0,
+	"base_hp": 2100.0,
+	"base_mp": 675.0,
+	"base_wisdom": 408.0,
+	"display_name": "Grand Estark",
+	"family": "unknown",
+	"id": "grand_estark",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/grand_estark.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

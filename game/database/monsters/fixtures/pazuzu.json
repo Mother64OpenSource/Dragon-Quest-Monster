@@ -1,0 +1,16 @@
+{
+	"base_agility": 746.0,
+	"base_attack": 724.0,
+	"base_defense": 877.0,
+	"base_hp": 1433.0,
+	"base_mp": 440.0,
+	"base_wisdom": 877.0,
+	"display_name": "Pazuzu",
+	"family": "Devil",
+	"id": "pazuzu",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

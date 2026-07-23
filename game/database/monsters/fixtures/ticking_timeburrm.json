@@ -1,0 +1,16 @@
+{
+	"base_agility": 613.0,
+	"base_attack": 818.0,
+	"base_defense": 920.0,
+	"base_hp": 1622.0,
+	"base_mp": 462.0,
+	"base_wisdom": 512.0,
+	"display_name": "Ticking Timeburrm",
+	"family": "Material",
+	"id": "ticking_timeburrm",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

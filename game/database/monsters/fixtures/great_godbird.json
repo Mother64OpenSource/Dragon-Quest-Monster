@@ -1,18 +1,17 @@
 {
-    "id":  "great_godbird",
-    "display_name":  "Great Godbird",
-    "family":  "Nature",
-    "rank":  "SS",
-    "base_hp":  2112,
-    "base_mp":  572,
-    "base_attack":  582,
-    "base_defense":  581,
-    "base_agility":  998,
-    "base_wisdom":  665,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 998.0,
+	"base_attack": 582.0,
+	"base_defense": 581.0,
+	"base_hp": 2112.0,
+	"base_mp": 572.0,
+	"base_wisdom": 665.0,
+	"display_name": "Great Godbird",
+	"family": "Nature",
+	"id": "great_godbird",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/great_godbird.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 968.0,
+	"base_attack": 810.0,
+	"base_defense": 841.0,
+	"base_hp": 1211.0,
+	"base_mp": 507.0,
+	"base_wisdom": 674.0,
+	"display_name": "Garuda",
+	"family": "Nature",
+	"id": "garuda",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

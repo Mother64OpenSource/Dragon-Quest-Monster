@@ -1,0 +1,16 @@
+{
+	"base_agility": 936.0,
+	"base_attack": 728.0,
+	"base_defense": 492.0,
+	"base_hp": 1931.0,
+	"base_mp": 486.0,
+	"base_wisdom": 700.0,
+	"display_name": "Flython",
+	"family": "Dragon",
+	"id": "flython",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

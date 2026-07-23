@@ -1,0 +1,16 @@
+{
+	"base_agility": 685.0,
+	"base_attack": 814.0,
+	"base_defense": 695.0,
+	"base_hp": 2043.0,
+	"base_mp": 569.0,
+	"base_wisdom": 613.0,
+	"display_name": "Quadrahead",
+	"family": "Devil",
+	"id": "quadrahead",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

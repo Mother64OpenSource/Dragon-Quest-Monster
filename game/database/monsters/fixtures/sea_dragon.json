@@ -1,0 +1,16 @@
+{
+	"base_agility": 732.0,
+	"base_attack": 799.0,
+	"base_defense": 799.0,
+	"base_hp": 1493.0,
+	"base_mp": 487.0,
+	"base_wisdom": 666.0,
+	"display_name": "Sea Dragon",
+	"family": "Dragon",
+	"id": "sea_dragon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

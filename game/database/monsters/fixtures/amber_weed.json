@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 476.0,
+	"base_defense": 1031.0,
+	"base_hp": 2138.0,
+	"base_mp": 697.0,
+	"base_wisdom": 881.0,
+	"display_name": "Amber Weed",
+	"family": "Material",
+	"id": "amber_weed",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

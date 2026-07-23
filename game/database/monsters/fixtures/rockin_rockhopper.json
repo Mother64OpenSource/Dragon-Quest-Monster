@@ -1,0 +1,16 @@
+{
+	"base_agility": 1020.0,
+	"base_attack": 760.0,
+	"base_defense": 760.0,
+	"base_hp": 1222.0,
+	"base_mp": 524.0,
+	"base_wisdom": 712.0,
+	"display_name": "Rockin' Rockhopper",
+	"family": "Nature",
+	"id": "rockin_rockhopper",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

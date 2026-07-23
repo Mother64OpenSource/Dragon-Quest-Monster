@@ -1,0 +1,16 @@
+{
+	"base_agility": 547.0,
+	"base_attack": 432.0,
+	"base_defense": 662.0,
+	"base_hp": 1204.0,
+	"base_mp": 602.0,
+	"base_wisdom": 432.0,
+	"display_name": "Boe",
+	"family": "Material",
+	"id": "boe",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

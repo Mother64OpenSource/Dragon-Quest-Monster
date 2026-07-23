@@ -1,18 +1,16 @@
 {
-    "id":  "cottney",
-    "display_name":  "Cottney",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1053,
-    "base_mp":  548,
-    "base_attack":  598,
-    "base_defense":  456,
-    "base_agility":  660,
-    "base_wisdom":  477,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 660.0,
+	"base_attack": 598.0,
+	"base_defense": 456.0,
+	"base_hp": 1053.0,
+	"base_mp": 548.0,
+	"base_wisdom": 477.0,
+	"display_name": "Cottney",
+	"family": "unknown",
+	"id": "cottney",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

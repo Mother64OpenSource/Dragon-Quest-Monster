@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 640.0,
+	"base_defense": 800.0,
+	"base_hp": 984.0,
+	"base_mp": 432.0,
+	"base_wisdom": 640.0,
+	"display_name": "Djinneral Geppaku",
+	"family": "unknown",
+	"id": "djinneral_geppaku",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

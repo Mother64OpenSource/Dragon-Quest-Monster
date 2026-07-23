@@ -1,15 +1,19 @@
 {
-  "id": "healslime",
-  "display_name": "Heal Slime",
-  "family": "slime",
-  "rank": "D",
-  "base_hp": 22,
-  "base_mp": 18,
-  "base_attack": 6,
-  "base_defense": 8,
-  "base_agility": 9,
-  "base_wisdom": 12,
-  "starting_skill_ids": ["attack", "heal", "sap"],
-  "starting_trait_ids": [],
-  "sprite_path": "res://assets/monsters/healslime.webp"
+	"base_agility": 9.0,
+	"base_attack": 6.0,
+	"base_defense": 8.0,
+	"base_hp": 22.0,
+	"base_mp": 18.0,
+	"base_wisdom": 12.0,
+	"display_name": "Heal Slime",
+	"family": "slime",
+	"id": "healslime",
+	"rank": "D",
+	"sprite_path": "res://assets/monsters/healslime.webp",
+	"starting_skill_ids": [
+		"attack",
+		"heal",
+		"sap"
+	],
+	"starting_trait_ids": []
 }

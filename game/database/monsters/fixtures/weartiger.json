@@ -1,0 +1,16 @@
+{
+	"base_agility": 669.0,
+	"base_attack": 842.0,
+	"base_defense": 953.0,
+	"base_hp": 1448.0,
+	"base_mp": 411.0,
+	"base_wisdom": 718.0,
+	"display_name": "Weartiger",
+	"family": "Beast",
+	"id": "weartiger",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

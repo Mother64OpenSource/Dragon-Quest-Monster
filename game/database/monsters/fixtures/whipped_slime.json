@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 640.0,
+	"base_defense": 560.0,
+	"base_hp": 1050.0,
+	"base_mp": 320.0,
+	"base_wisdom": 560.0,
+	"display_name": "Whipped Slime",
+	"family": "Slime",
+	"id": "whipped_slime",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

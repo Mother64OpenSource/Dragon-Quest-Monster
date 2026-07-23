@@ -1,0 +1,16 @@
+{
+	"base_agility": 797.0,
+	"base_attack": 846.0,
+	"base_defense": 638.0,
+	"base_hp": 1399.0,
+	"base_mp": 517.0,
+	"base_wisdom": 761.0,
+	"display_name": "Lucky Bag",
+	"family": "Material",
+	"id": "lucky_bag",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

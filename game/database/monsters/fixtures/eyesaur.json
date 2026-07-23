@@ -1,0 +1,16 @@
+{
+	"base_agility": 400.0,
+	"base_attack": 920.0,
+	"base_defense": 820.0,
+	"base_hp": 1670.0,
+	"base_mp": 680.0,
+	"base_wisdom": 520.0,
+	"display_name": "Eyesaur",
+	"family": "Zombie",
+	"id": "eyesaur",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

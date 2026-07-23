@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 720.0,
+	"base_defense": 560.0,
+	"base_hp": 1000.0,
+	"base_mp": 560.0,
+	"base_wisdom": 720.0,
+	"display_name": "Djinneral Benihi",
+	"family": "unknown",
+	"id": "djinneral_benihi",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

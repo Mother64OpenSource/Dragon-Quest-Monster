@@ -1,0 +1,16 @@
+{
+	"base_agility": 878.0,
+	"base_attack": 939.0,
+	"base_defense": 495.0,
+	"base_hp": 1431.0,
+	"base_mp": 355.0,
+	"base_wisdom": 654.0,
+	"display_name": "Mad Mole",
+	"family": "Beast",
+	"id": "mad_mole",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

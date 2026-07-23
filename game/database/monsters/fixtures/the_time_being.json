@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 432.0,
+	"base_defense": 440.0,
+	"base_hp": 1168.0,
+	"base_mp": 680.0,
+	"base_wisdom": 960.0,
+	"display_name": "The Time Being",
+	"family": "Devil",
+	"id": "the_time_being",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

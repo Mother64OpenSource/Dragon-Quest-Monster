@@ -1,0 +1,16 @@
+{
+	"base_agility": 476.0,
+	"base_attack": 578.0,
+	"base_defense": 1204.0,
+	"base_hp": 1517.0,
+	"base_mp": 702.0,
+	"base_wisdom": 952.0,
+	"display_name": "Armoured Wartoise",
+	"family": "Dragon",
+	"id": "armoured_wartoise",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

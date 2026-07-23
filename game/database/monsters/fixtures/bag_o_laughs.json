@@ -1,19 +1,17 @@
 {
-    "id":  "bag_o_laughs",
-    "display_name":  "Bag O\u0027 Laughs",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1432,
-    "base_mp":  618,
-    "base_attack":  642,
-    "base_defense":  716,
-    "base_agility":  827,
-    "base_wisdom":  864,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/bag_o_laughs.webp"
+	"base_agility": 827.0,
+	"base_attack": 642.0,
+	"base_defense": 716.0,
+	"base_hp": 1432.0,
+	"base_mp": 618.0,
+	"base_wisdom": 864.0,
+	"display_name": "Bag O' Laughs",
+	"family": "Material",
+	"id": "bag_o_laughs",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/bag_o_laughs.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

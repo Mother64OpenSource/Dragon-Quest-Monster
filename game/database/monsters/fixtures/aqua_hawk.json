@@ -1,19 +1,17 @@
 {
-    "id":  "aqua_hawk",
-    "display_name":  "Aqua Hawk",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1750,
-    "base_mp":  840,
-    "base_attack":  400,
-    "base_defense":  580,
-    "base_agility":  800,
-    "base_wisdom":  680,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/aqua_hawk.webp"
+	"base_agility": 800.0,
+	"base_attack": 400.0,
+	"base_defense": 580.0,
+	"base_hp": 1750.0,
+	"base_mp": 840.0,
+	"base_wisdom": 680.0,
+	"display_name": "Aqua Hawk",
+	"family": "Nature",
+	"id": "aqua_hawk",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/aqua_hawk.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

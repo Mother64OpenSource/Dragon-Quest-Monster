@@ -1,0 +1,16 @@
+{
+	"base_agility": 961.0,
+	"base_attack": 832.0,
+	"base_defense": 769.0,
+	"base_hp": 1288.0,
+	"base_mp": 429.0,
+	"base_wisdom": 640.0,
+	"display_name": "Erazor Blade",
+	"family": "Material",
+	"id": "erazor_blade",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

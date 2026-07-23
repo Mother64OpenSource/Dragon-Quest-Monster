@@ -1,0 +1,16 @@
+{
+	"base_agility": 890.0,
+	"base_attack": 800.0,
+	"base_defense": 980.0,
+	"base_hp": 1300.0,
+	"base_mp": 380.0,
+	"base_wisdom": 660.0,
+	"display_name": "Hellhound",
+	"family": "Zombie",
+	"id": "hellhound",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

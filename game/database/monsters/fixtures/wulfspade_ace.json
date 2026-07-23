@@ -1,18 +1,17 @@
 {
-    "id":  "wulfspade_ace",
-    "display_name":  "Wulfspade Ace",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1301,
-    "base_mp":  482,
-    "base_attack":  771,
-    "base_defense":  867,
-    "base_agility":  810,
-    "base_wisdom":  887,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 810.0,
+	"base_attack": 771.0,
+	"base_defense": 867.0,
+	"base_hp": 1301.0,
+	"base_mp": 482.0,
+	"base_wisdom": 887.0,
+	"display_name": "Wulfspade Ace",
+	"family": "unknown",
+	"id": "wulfspade_ace",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/wulfspade_ace.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

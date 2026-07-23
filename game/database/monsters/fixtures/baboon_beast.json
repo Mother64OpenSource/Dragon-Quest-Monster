@@ -1,18 +1,17 @@
 {
-    "id":  "baboon_beast",
-    "display_name":  "Baboon Beast",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1743,
-    "base_mp":  504,
-    "base_attack":  486,
-    "base_defense":  589,
-    "base_agility":  515,
-    "base_wisdom":  740,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 515.0,
+	"base_attack": 486.0,
+	"base_defense": 589.0,
+	"base_hp": 1743.0,
+	"base_mp": 504.0,
+	"base_wisdom": 740.0,
+	"display_name": "Baboon Beast",
+	"family": "unknown",
+	"id": "baboon_beast",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/baboon_beast.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

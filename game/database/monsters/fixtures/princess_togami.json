@@ -1,18 +1,17 @@
 {
-    "id":  "princess_togami",
-    "display_name":  "Princess Togami",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1820,
-    "base_mp":  1260,
-    "base_attack":  539,
-    "base_defense":  385,
-    "base_agility":  616,
-    "base_wisdom":  770,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 616.0,
+	"base_attack": 539.0,
+	"base_defense": 385.0,
+	"base_hp": 1820.0,
+	"base_mp": 1260.0,
+	"base_wisdom": 770.0,
+	"display_name": "Princess Togami",
+	"family": "unknown",
+	"id": "princess_togami",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/princess_togami.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

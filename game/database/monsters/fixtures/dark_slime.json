@@ -1,0 +1,16 @@
+{
+	"base_agility": 677.0,
+	"base_attack": 442.0,
+	"base_defense": 509.0,
+	"base_hp": 1014.0,
+	"base_mp": 582.0,
+	"base_wisdom": 756.0,
+	"display_name": "Dark Slime",
+	"family": "Slime",
+	"id": "dark_slime",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

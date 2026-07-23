@@ -1,19 +1,17 @@
 {
-    "id":  "komodo",
-    "display_name":  "Komodo",
-    "family":  "Dragon",
-    "rank":  "F",
-    "base_hp":  1440,
-    "base_mp":  360,
-    "base_attack":  890,
-    "base_defense":  720,
-    "base_agility":  940,
-    "base_wisdom":  380,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/komodo.webp"
+	"base_agility": 940.0,
+	"base_attack": 890.0,
+	"base_defense": 720.0,
+	"base_hp": 1440.0,
+	"base_mp": 360.0,
+	"base_wisdom": 380.0,
+	"display_name": "Komodo",
+	"family": "Dragon",
+	"id": "komodo",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/komodo.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 845.0,
+	"base_attack": 608.0,
+	"base_defense": 687.0,
+	"base_hp": 2368.0,
+	"base_mp": 576.0,
+	"base_wisdom": 528.0,
+	"display_name": "Missing Lynx",
+	"family": "Beast",
+	"id": "missing_lynx",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

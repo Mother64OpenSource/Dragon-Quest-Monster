@@ -1,19 +1,17 @@
 {
-    "id":  "frou_fry",
-    "display_name":  "Frou-Fry",
-    "family":  "Dragon",
-    "rank":  "F",
-    "base_hp":  1260,
-    "base_mp":  402,
-    "base_attack":  642,
-    "base_defense":  616,
-    "base_agility":  450,
-    "base_wisdom":  320,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/frou_fry.webp"
+	"base_agility": 450.0,
+	"base_attack": 642.0,
+	"base_defense": 616.0,
+	"base_hp": 1260.0,
+	"base_mp": 402.0,
+	"base_wisdom": 320.0,
+	"display_name": "Frou-Fry",
+	"family": "Dragon",
+	"id": "frou_fry",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/frou_fry.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

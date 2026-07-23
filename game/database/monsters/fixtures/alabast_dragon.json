@@ -1,18 +1,17 @@
 {
-    "id":  "alabast_dragon",
-    "display_name":  "Alabast Dragon",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  1812,
-    "base_mp":  597,
-    "base_attack":  823,
-    "base_defense":  936,
-    "base_agility":  599,
-    "base_wisdom":  830,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 599.0,
+	"base_attack": 823.0,
+	"base_defense": 936.0,
+	"base_hp": 1812.0,
+	"base_mp": 597.0,
+	"base_wisdom": 830.0,
+	"display_name": "Alabast Dragon",
+	"family": "Dragon",
+	"id": "alabast_dragon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/alabast_dragon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

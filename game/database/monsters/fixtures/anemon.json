@@ -1,0 +1,16 @@
+{
+	"base_agility": 570.0,
+	"base_attack": 860.0,
+	"base_defense": 680.0,
+	"base_hp": 1690.0,
+	"base_mp": 420.0,
+	"base_wisdom": 660.0,
+	"display_name": "Anemon",
+	"family": "Devil",
+	"id": "anemon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 550.0,
+	"base_attack": 890.0,
+	"base_defense": 1100.0,
+	"base_hp": 1500.0,
+	"base_mp": 370.0,
+	"base_wisdom": 650.0,
+	"display_name": "Harmour",
+	"family": "Material",
+	"id": "harmour",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

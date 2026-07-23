@@ -1,0 +1,16 @@
+{
+	"base_agility": 765.0,
+	"base_attack": 479.0,
+	"base_defense": 622.0,
+	"base_hp": 1560.0,
+	"base_mp": 816.0,
+	"base_wisdom": 857.0,
+	"display_name": "She-stroyer",
+	"family": "Material",
+	"id": "she_stroyer",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

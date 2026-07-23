@@ -1,0 +1,16 @@
+{
+	"base_agility": 882.0,
+	"base_attack": 816.0,
+	"base_defense": 685.0,
+	"base_hp": 1463.0,
+	"base_mp": 420.0,
+	"base_wisdom": 573.0,
+	"display_name": "Grim Rider",
+	"family": "Zombie",
+	"id": "grim_rider",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

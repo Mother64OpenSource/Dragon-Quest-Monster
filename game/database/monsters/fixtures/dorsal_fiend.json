@@ -1,0 +1,16 @@
+{
+	"base_agility": 914.0,
+	"base_attack": 741.0,
+	"base_defense": 640.0,
+	"base_hp": 1703.0,
+	"base_mp": 574.0,
+	"base_wisdom": 826.0,
+	"display_name": "Dorsal Fiend",
+	"family": "Beast",
+	"id": "dorsal_fiend",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

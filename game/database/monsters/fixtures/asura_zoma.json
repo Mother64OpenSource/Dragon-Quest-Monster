@@ -1,18 +1,17 @@
 {
-    "id":  "asura_zoma",
-    "display_name":  "Asura Zoma",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2025,
-    "base_mp":  825,
-    "base_attack":  621,
-    "base_defense":  483,
-    "base_agility":  518,
-    "base_wisdom":  518,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 518.0,
+	"base_attack": 621.0,
+	"base_defense": 483.0,
+	"base_hp": 2025.0,
+	"base_mp": 825.0,
+	"base_wisdom": 518.0,
+	"display_name": "Asura Zoma",
+	"family": "unknown",
+	"id": "asura_zoma",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/asura_zoma.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

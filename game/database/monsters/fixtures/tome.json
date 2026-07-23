@@ -1,0 +1,16 @@
+{
+	"base_agility": 280.0,
+	"base_attack": 512.0,
+	"base_defense": 648.0,
+	"base_hp": 1211.0,
+	"base_mp": 624.0,
+	"base_wisdom": 776.0,
+	"display_name": "Tome",
+	"family": "Material",
+	"id": "tome",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

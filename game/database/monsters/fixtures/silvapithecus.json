@@ -1,0 +1,16 @@
+{
+	"base_agility": 741.0,
+	"base_attack": 642.0,
+	"base_defense": 864.0,
+	"base_hp": 1432.0,
+	"base_mp": 568.0,
+	"base_wisdom": 938.0,
+	"display_name": "Silvapithecus",
+	"family": "Devil",
+	"id": "silvapithecus",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

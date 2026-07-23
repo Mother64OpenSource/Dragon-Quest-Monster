@@ -1,0 +1,16 @@
+{
+	"base_agility": 740.0,
+	"base_attack": 850.0,
+	"base_defense": 720.0,
+	"base_hp": 1660.0,
+	"base_mp": 420.0,
+	"base_wisdom": 360.0,
+	"display_name": "Tundra Dragon",
+	"family": "Dragon",
+	"id": "tundra_dragon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

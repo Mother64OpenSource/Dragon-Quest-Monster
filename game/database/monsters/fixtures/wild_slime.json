@@ -1,0 +1,16 @@
+{
+	"base_agility": 612.0,
+	"base_attack": 950.0,
+	"base_defense": 638.0,
+	"base_hp": 1612.0,
+	"base_mp": 351.0,
+	"base_wisdom": 663.0,
+	"display_name": "Wild Slime",
+	"family": "Slime",
+	"id": "wild_slime",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

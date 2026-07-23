@@ -1,0 +1,16 @@
+{
+	"base_agility": 544.0,
+	"base_attack": 609.0,
+	"base_defense": 436.0,
+	"base_hp": 1260.0,
+	"base_mp": 436.0,
+	"base_wisdom": 344.0,
+	"display_name": "She Slime",
+	"family": "Slime",
+	"id": "she_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

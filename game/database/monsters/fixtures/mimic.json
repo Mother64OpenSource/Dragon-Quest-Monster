@@ -1,0 +1,16 @@
+{
+	"base_agility": 821.0,
+	"base_attack": 854.0,
+	"base_defense": 908.0,
+	"base_hp": 1351.0,
+	"base_mp": 435.0,
+	"base_wisdom": 605.0,
+	"display_name": "Mimic",
+	"family": "Material",
+	"id": "mimic",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

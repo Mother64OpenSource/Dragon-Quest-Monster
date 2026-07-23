@@ -1,0 +1,16 @@
+{
+	"base_agility": 660.0,
+	"base_attack": 920.0,
+	"base_defense": 660.0,
+	"base_hp": 1520.0,
+	"base_mp": 350.0,
+	"base_wisdom": 790.0,
+	"display_name": "Broadaxer",
+	"family": "Devil",
+	"id": "broadaxer",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

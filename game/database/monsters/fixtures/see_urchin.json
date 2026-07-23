@@ -1,0 +1,16 @@
+{
+	"base_agility": 875.0,
+	"base_attack": 351.0,
+	"base_defense": 376.0,
+	"base_hp": 963.0,
+	"base_mp": 625.0,
+	"base_wisdom": 751.0,
+	"display_name": "See Urchin",
+	"family": "Devil",
+	"id": "see_urchin",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

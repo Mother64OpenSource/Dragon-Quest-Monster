@@ -1,0 +1,16 @@
+{
+	"base_agility": 724.0,
+	"base_attack": 834.0,
+	"base_defense": 800.0,
+	"base_hp": 1432.0,
+	"base_mp": 496.0,
+	"base_wisdom": 724.0,
+	"display_name": "Slime Stack",
+	"family": "Slime",
+	"id": "slime_stack",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

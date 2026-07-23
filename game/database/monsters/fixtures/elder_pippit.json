@@ -1,0 +1,16 @@
+{
+	"base_agility": 920.0,
+	"base_attack": 280.0,
+	"base_defense": 536.0,
+	"base_hp": 763.0,
+	"base_mp": 800.0,
+	"base_wisdom": 920.0,
+	"display_name": "Elder Pippit",
+	"family": "unknown",
+	"id": "elder_pippit",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

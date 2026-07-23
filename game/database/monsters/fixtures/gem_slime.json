@@ -1,18 +1,17 @@
 {
-    "id":  "gem_slime",
-    "display_name":  "Gem Slime",
-    "family":  "Slime",
-    "rank":  "S",
-    "base_hp":  233,
-    "base_mp":  787,
-    "base_attack":  506,
-    "base_defense":  1500,
-    "base_agility":  1350,
-    "base_wisdom":  894,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1350.0,
+	"base_attack": 506.0,
+	"base_defense": 1500.0,
+	"base_hp": 233.0,
+	"base_mp": 787.0,
+	"base_wisdom": 894.0,
+	"display_name": "Gem Slime",
+	"family": "Slime",
+	"id": "gem_slime",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/gem_slime.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 780.0,
+	"base_defense": 880.0,
+	"base_hp": 1560.0,
+	"base_mp": 460.0,
+	"base_wisdom": 700.0,
+	"display_name": "Prancing Pillar",
+	"family": "Material",
+	"id": "prancing_pillar",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

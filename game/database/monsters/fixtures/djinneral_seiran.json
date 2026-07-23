@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 560.0,
+	"base_defense": 560.0,
+	"base_hp": 1152.0,
+	"base_mp": 576.0,
+	"base_wisdom": 720.0,
+	"display_name": "Djinneral Seiran",
+	"family": "unknown",
+	"id": "djinneral_seiran",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

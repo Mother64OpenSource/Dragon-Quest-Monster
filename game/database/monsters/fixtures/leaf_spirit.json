@@ -1,18 +1,17 @@
 {
-    "id":  "leaf_spirit",
-    "display_name":  "Leaf Spirit",
-    "family":  "Nature",
-    "rank":  "S",
-    "base_hp":  1660,
-    "base_mp":  620,
-    "base_attack":  650,
-    "base_defense":  720,
-    "base_agility":  540,
-    "base_wisdom":  960,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 540.0,
+	"base_attack": 650.0,
+	"base_defense": 720.0,
+	"base_hp": 1660.0,
+	"base_mp": 620.0,
+	"base_wisdom": 960.0,
+	"display_name": "Leaf Spirit",
+	"family": "Nature",
+	"id": "leaf_spirit",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/leaf_spirit.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

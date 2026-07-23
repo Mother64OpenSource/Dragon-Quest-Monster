@@ -1,0 +1,16 @@
+{
+	"base_agility": 568.0,
+	"base_attack": 864.0,
+	"base_defense": 1148.0,
+	"base_hp": 1432.0,
+	"base_mp": 408.0,
+	"base_wisdom": 716.0,
+	"display_name": "Anchorman",
+	"family": "Material",
+	"id": "anchorman",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

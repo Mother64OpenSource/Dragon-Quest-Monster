@@ -1,0 +1,16 @@
+{
+	"base_agility": 900.0,
+	"base_attack": 640.0,
+	"base_defense": 680.0,
+	"base_hp": 1680.0,
+	"base_mp": 350.0,
+	"base_wisdom": 530.0,
+	"display_name": "Animated Armour",
+	"family": "Zombie",
+	"id": "animated_armour",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

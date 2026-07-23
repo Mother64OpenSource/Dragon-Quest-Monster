@@ -1,0 +1,16 @@
+{
+	"base_agility": 925.0,
+	"base_attack": 880.0,
+	"base_defense": 360.0,
+	"base_hp": 1587.0,
+	"base_mp": 394.0,
+	"base_wisdom": 462.0,
+	"display_name": "Mean Spirit",
+	"family": "Zombie",
+	"id": "mean_spirit",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

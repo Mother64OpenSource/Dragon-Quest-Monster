@@ -1,0 +1,16 @@
+{
+	"base_agility": 538.0,
+	"base_attack": 703.0,
+	"base_defense": 604.0,
+	"base_hp": 1811.0,
+	"base_mp": 528.0,
+	"base_wisdom": 733.0,
+	"display_name": "Wishmaster",
+	"family": "Beast",
+	"id": "wishmaster",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

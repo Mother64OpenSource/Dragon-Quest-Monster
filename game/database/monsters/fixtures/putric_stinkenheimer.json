@@ -1,0 +1,16 @@
+{
+	"base_agility": 500.0,
+	"base_attack": 756.0,
+	"base_defense": 765.0,
+	"base_hp": 1720.0,
+	"base_mp": 395.0,
+	"base_wisdom": 888.0,
+	"display_name": "Putric Stinkenheimer",
+	"family": "Zombie",
+	"id": "putric_stinkenheimer",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

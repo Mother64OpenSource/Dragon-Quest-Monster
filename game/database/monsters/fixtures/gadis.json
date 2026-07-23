@@ -1,18 +1,17 @@
 {
-    "id":  "gadis",
-    "display_name":  "Gadis",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1974,
-    "base_mp":  588,
-    "base_attack":  478,
-    "base_defense":  647,
-    "base_agility":  570,
-    "base_wisdom":  924,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 570.0,
+	"base_attack": 478.0,
+	"base_defense": 647.0,
+	"base_hp": 1974.0,
+	"base_mp": 588.0,
+	"base_wisdom": 924.0,
+	"display_name": "Gadis",
+	"family": "unknown",
+	"id": "gadis",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/gadis.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

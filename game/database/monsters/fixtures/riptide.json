@@ -1,0 +1,16 @@
+{
+	"base_agility": 944.0,
+	"base_attack": 795.0,
+	"base_defense": 800.0,
+	"base_hp": 1317.0,
+	"base_mp": 358.0,
+	"base_wisdom": 730.0,
+	"display_name": "Riptide",
+	"family": "Dragon",
+	"id": "riptide",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

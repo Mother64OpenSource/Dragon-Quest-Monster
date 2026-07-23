@@ -1,0 +1,16 @@
+{
+	"base_agility": 941.0,
+	"base_attack": 853.0,
+	"base_defense": 676.0,
+	"base_hp": 1392.0,
+	"base_mp": 412.0,
+	"base_wisdom": 540.0,
+	"display_name": "Raven Lunatic",
+	"family": "Nature",
+	"id": "raven_lunatic",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

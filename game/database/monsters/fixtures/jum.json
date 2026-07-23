@@ -1,0 +1,16 @@
+{
+	"base_agility": 336.0,
+	"base_attack": 600.0,
+	"base_defense": 800.0,
+	"base_hp": 1260.0,
+	"base_mp": 408.0,
+	"base_wisdom": 440.0,
+	"display_name": "Jum",
+	"family": "Material",
+	"id": "jum",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

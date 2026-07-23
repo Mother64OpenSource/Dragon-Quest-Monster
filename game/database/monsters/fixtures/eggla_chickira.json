@@ -1,18 +1,16 @@
 {
-    "id":  "eggla_chickira",
-    "display_name":  "Eggla \u0026 Chickira",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1550,
-    "base_mp":  449,
-    "base_attack":  745,
-    "base_defense":  466,
-    "base_agility":  930,
-    "base_wisdom":  424,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 930.0,
+	"base_attack": 745.0,
+	"base_defense": 466.0,
+	"base_hp": 1550.0,
+	"base_mp": 449.0,
+	"base_wisdom": 424.0,
+	"display_name": "Eggla & Chickira",
+	"family": "unknown",
+	"id": "eggla_chickira",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

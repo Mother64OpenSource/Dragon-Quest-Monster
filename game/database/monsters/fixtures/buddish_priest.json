@@ -1,18 +1,16 @@
 {
-    "id":  "buddish_priest",
-    "display_name":  "Buddish Priest",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  2240,
-    "base_mp":  560,
-    "base_attack":  539,
-    "base_defense":  847,
-    "base_agility":  462,
-    "base_wisdom":  539,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 462.0,
+	"base_attack": 539.0,
+	"base_defense": 847.0,
+	"base_hp": 2240.0,
+	"base_mp": 560.0,
+	"base_wisdom": 539.0,
+	"display_name": "Buddish Priest",
+	"family": "unknown",
+	"id": "buddish_priest",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

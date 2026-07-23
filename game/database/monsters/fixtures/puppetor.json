@@ -1,0 +1,16 @@
+{
+	"base_agility": 710.0,
+	"base_attack": 710.0,
+	"base_defense": 640.0,
+	"base_hp": 1550.0,
+	"base_mp": 450.0,
+	"base_wisdom": 970.0,
+	"display_name": "Puppetor",
+	"family": "Material",
+	"id": "puppetor",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 469.0,
+	"base_attack": 985.0,
+	"base_defense": 796.0,
+	"base_hp": 1612.0,
+	"base_mp": 480.0,
+	"base_wisdom": 592.0,
+	"display_name": "Peeper",
+	"family": "Devil",
+	"id": "peeper",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

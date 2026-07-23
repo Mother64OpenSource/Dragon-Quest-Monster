@@ -1,19 +1,17 @@
 {
-    "id":  "cheeky_tiki",
-    "display_name":  "Cheeky Tiki",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1535,
-    "base_mp":  428,
-    "base_attack":  855,
-    "base_defense":  1031,
-    "base_agility":  553,
-    "base_wisdom":  655,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/cheeky_tiki.webp"
+	"base_agility": 553.0,
+	"base_attack": 855.0,
+	"base_defense": 1031.0,
+	"base_hp": 1535.0,
+	"base_mp": 428.0,
+	"base_wisdom": 655.0,
+	"display_name": "Cheeky Tiki",
+	"family": "Material",
+	"id": "cheeky_tiki",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/cheeky_tiki.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

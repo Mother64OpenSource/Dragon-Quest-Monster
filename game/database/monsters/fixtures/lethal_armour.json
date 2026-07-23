@@ -1,0 +1,16 @@
+{
+	"base_agility": 638.0,
+	"base_attack": 763.0,
+	"base_defense": 979.0,
+	"base_hp": 1641.0,
+	"base_mp": 436.0,
+	"base_wisdom": 501.0,
+	"display_name": "Lethal Armour",
+	"family": "Material",
+	"id": "lethal_armour",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

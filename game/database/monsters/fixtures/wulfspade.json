@@ -1,0 +1,16 @@
+{
+	"base_agility": 516.0,
+	"base_attack": 652.0,
+	"base_defense": 630.0,
+	"base_hp": 1109.0,
+	"base_mp": 476.0,
+	"base_wisdom": 426.0,
+	"display_name": "Wulfspade",
+	"family": "unknown",
+	"id": "wulfspade",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

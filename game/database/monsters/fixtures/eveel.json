@@ -1,0 +1,16 @@
+{
+	"base_agility": 837.0,
+	"base_attack": 837.0,
+	"base_defense": 837.0,
+	"base_hp": 1414.0,
+	"base_mp": 396.0,
+	"base_wisdom": 591.0,
+	"display_name": "Eveel",
+	"family": "Nature",
+	"id": "eveel",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

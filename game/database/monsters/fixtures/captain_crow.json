@@ -1,18 +1,17 @@
 {
-    "id":  "captain_crow",
-    "display_name":  "Captain Crow",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1500,
-    "base_mp":  520,
-    "base_attack":  860,
-    "base_defense":  840,
-    "base_agility":  760,
-    "base_wisdom":  400,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 760.0,
+	"base_attack": 860.0,
+	"base_defense": 840.0,
+	"base_hp": 1500.0,
+	"base_mp": 520.0,
+	"base_wisdom": 400.0,
+	"display_name": "Captain Crow",
+	"family": "Zombie",
+	"id": "captain_crow",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/captain_crow.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

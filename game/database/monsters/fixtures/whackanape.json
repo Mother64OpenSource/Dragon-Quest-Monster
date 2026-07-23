@@ -1,0 +1,16 @@
+{
+	"base_agility": 890.0,
+	"base_attack": 920.0,
+	"base_defense": 720.0,
+	"base_hp": 1360.0,
+	"base_mp": 360.0,
+	"base_wisdom": 580.0,
+	"display_name": "Whackanape",
+	"family": "Beast",
+	"id": "whackanape",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

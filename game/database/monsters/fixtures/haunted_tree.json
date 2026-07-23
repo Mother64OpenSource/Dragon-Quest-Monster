@@ -1,0 +1,16 @@
+{
+	"base_agility": 456.0,
+	"base_attack": 647.0,
+	"base_defense": 331.0,
+	"base_hp": 1701.0,
+	"base_mp": 368.0,
+	"base_wisdom": 706.0,
+	"display_name": "Haunted Tree",
+	"family": "Zombie",
+	"id": "haunted_tree",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

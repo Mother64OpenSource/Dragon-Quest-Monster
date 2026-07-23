@@ -1,0 +1,16 @@
+{
+	"base_agility": 680.0,
+	"base_attack": 759.0,
+	"base_defense": 476.0,
+	"base_hp": 1134.0,
+	"base_mp": 284.0,
+	"base_wisdom": 498.0,
+	"display_name": "Cerberwretch",
+	"family": "Zombie",
+	"id": "cerberwretch",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

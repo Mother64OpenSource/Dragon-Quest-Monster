@@ -1,19 +1,17 @@
 {
-    "id":  "antguzzler",
-    "display_name":  "Antguzzler",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1563,
-    "base_mp":  570,
-    "base_attack":  907,
-    "base_defense":  607,
-    "base_agility":  594,
-    "base_wisdom":  695,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/antguzzler.webp"
+	"base_agility": 594.0,
+	"base_attack": 907.0,
+	"base_defense": 607.0,
+	"base_hp": 1563.0,
+	"base_mp": 570.0,
+	"base_wisdom": 695.0,
+	"display_name": "Antguzzler",
+	"family": "Beast",
+	"id": "antguzzler",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/antguzzler.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

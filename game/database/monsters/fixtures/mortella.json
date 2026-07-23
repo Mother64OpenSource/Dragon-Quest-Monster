@@ -1,0 +1,16 @@
+{
+	"base_agility": 983.0,
+	"base_attack": 730.0,
+	"base_defense": 670.0,
+	"base_hp": 1638.0,
+	"base_mp": 488.0,
+	"base_wisdom": 833.0,
+	"display_name": "Mortella",
+	"family": "Devil",
+	"id": "mortella",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

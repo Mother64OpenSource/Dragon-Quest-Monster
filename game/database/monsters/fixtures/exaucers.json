@@ -1,0 +1,16 @@
+{
+	"base_agility": 710.0,
+	"base_attack": 880.0,
+	"base_defense": 640.0,
+	"base_hp": 1590.0,
+	"base_mp": 350.0,
+	"base_wisdom": 650.0,
+	"display_name": "Exaucers",
+	"family": "Material",
+	"id": "exaucers",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

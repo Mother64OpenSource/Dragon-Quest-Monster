@@ -1,0 +1,16 @@
+{
+	"base_agility": 752.0,
+	"base_attack": 688.0,
+	"base_defense": 512.0,
+	"base_hp": 987.0,
+	"base_mp": 280.0,
+	"base_wisdom": 472.0,
+	"display_name": "Killer Wave",
+	"family": "Material",
+	"id": "killer_wave",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 641.0,
+	"base_attack": 797.0,
+	"base_defense": 1084.0,
+	"base_hp": 1478.0,
+	"base_mp": 464.0,
+	"base_wisdom": 620.0,
+	"display_name": "Tortoceratops",
+	"family": "Dragon",
+	"id": "tortoceratops",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

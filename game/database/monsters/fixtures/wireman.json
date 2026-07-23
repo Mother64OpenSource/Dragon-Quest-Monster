@@ -1,0 +1,16 @@
+{
+	"base_agility": 600.0,
+	"base_attack": 830.0,
+	"base_defense": 790.0,
+	"base_hp": 1560.0,
+	"base_mp": 390.0,
+	"base_wisdom": 840.0,
+	"display_name": "Wireman",
+	"family": "Material",
+	"id": "wireman",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 542.0,
+	"base_attack": 646.0,
+	"base_defense": 810.0,
+	"base_hp": 2752.0,
+	"base_mp": 567.0,
+	"base_wisdom": 518.0,
+	"display_name": "Maulusc",
+	"family": "Zombie",
+	"id": "maulusc",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

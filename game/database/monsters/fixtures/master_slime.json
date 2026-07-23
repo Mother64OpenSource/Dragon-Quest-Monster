@@ -1,0 +1,16 @@
+{
+	"base_agility": 800.0,
+	"base_attack": 480.0,
+	"base_defense": 576.0,
+	"base_hp": 1015.0,
+	"base_mp": 320.0,
+	"base_wisdom": 624.0,
+	"display_name": "Master Slime",
+	"family": "Slime",
+	"id": "master_slime",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

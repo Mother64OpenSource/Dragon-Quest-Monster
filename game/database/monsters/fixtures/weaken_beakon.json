@@ -1,0 +1,16 @@
+{
+	"base_agility": 871.0,
+	"base_attack": 883.0,
+	"base_defense": 687.0,
+	"base_hp": 1399.0,
+	"base_mp": 443.0,
+	"base_wisdom": 564.0,
+	"display_name": "Weaken Beakon",
+	"family": "Nature",
+	"id": "weaken_beakon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

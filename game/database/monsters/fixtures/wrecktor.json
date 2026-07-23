@@ -1,0 +1,16 @@
+{
+	"base_agility": 652.0,
+	"base_attack": 677.0,
+	"base_defense": 702.0,
+	"base_hp": 1517.0,
+	"base_mp": 604.0,
+	"base_wisdom": 1002.0,
+	"display_name": "Wrecktor",
+	"family": "Devil",
+	"id": "wrecktor",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

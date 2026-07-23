@@ -1,0 +1,16 @@
+{
+	"base_agility": 983.0,
+	"base_attack": 855.0,
+	"base_defense": 512.0,
+	"base_hp": 1230.0,
+	"base_mp": 442.0,
+	"base_wisdom": 560.0,
+	"display_name": "Brown Ninja Slime",
+	"family": "Slime",
+	"id": "brown_ninja_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

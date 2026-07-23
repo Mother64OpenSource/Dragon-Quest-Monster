@@ -1,0 +1,16 @@
+{
+	"base_agility": 775.0,
+	"base_attack": 837.0,
+	"base_defense": 542.0,
+	"base_hp": 1416.0,
+	"base_mp": 455.0,
+	"base_wisdom": 947.0,
+	"display_name": "Float-O-Copier",
+	"family": "Zombie",
+	"id": "float_o_copier",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

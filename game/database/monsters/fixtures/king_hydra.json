@@ -1,18 +1,17 @@
 {
-    "id":  "king_hydra",
-    "display_name":  "King Hydra",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2916,
-    "base_mp":  648,
-    "base_attack":  743,
-    "base_defense":  822,
-    "base_agility":  753,
-    "base_wisdom":  545,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 753.0,
+	"base_attack": 743.0,
+	"base_defense": 822.0,
+	"base_hp": 2916.0,
+	"base_mp": 648.0,
+	"base_wisdom": 545.0,
+	"display_name": "King Hydra",
+	"family": "Dragon",
+	"id": "king_hydra",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/king_hydra.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

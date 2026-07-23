@@ -1,0 +1,16 @@
+{
+	"base_agility": 680.0,
+	"base_attack": 812.0,
+	"base_defense": 1075.0,
+	"base_hp": 1433.0,
+	"base_mp": 460.0,
+	"base_wisdom": 615.0,
+	"display_name": "Restless Armour",
+	"family": "Zombie",
+	"id": "restless_armour",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

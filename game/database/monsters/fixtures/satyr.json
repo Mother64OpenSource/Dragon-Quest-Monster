@@ -1,19 +1,17 @@
 {
-    "id":  "satyr",
-    "display_name":  "Satyr",
-    "family":  "Devil",
-    "rank":  "F",
-    "base_hp":  1551,
-    "base_mp":  431,
-    "base_attack":  808,
-    "base_defense":  883,
-    "base_agility":  656,
-    "base_wisdom":  656,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/satyr.webp"
+	"base_agility": 656.0,
+	"base_attack": 808.0,
+	"base_defense": 883.0,
+	"base_hp": 1551.0,
+	"base_mp": 431.0,
+	"base_wisdom": 656.0,
+	"display_name": "Satyr",
+	"family": "Devil",
+	"id": "satyr",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/satyr.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

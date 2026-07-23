@@ -1,18 +1,17 @@
 {
-    "id":  "poseidon",
-    "display_name":  "Poseidon",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  2128,
-    "base_mp":  840,
-    "base_attack":  655,
-    "base_defense":  724,
-    "base_agility":  416,
-    "base_wisdom":  493,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 416.0,
+	"base_attack": 655.0,
+	"base_defense": 724.0,
+	"base_hp": 2128.0,
+	"base_mp": 840.0,
+	"base_wisdom": 493.0,
+	"display_name": "Poseidon",
+	"family": "unknown",
+	"id": "poseidon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/poseidon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

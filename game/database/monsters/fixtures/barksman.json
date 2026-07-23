@@ -1,0 +1,16 @@
+{
+	"base_agility": 824.0,
+	"base_attack": 873.0,
+	"base_defense": 776.0,
+	"base_hp": 1358.0,
+	"base_mp": 436.0,
+	"base_wisdom": 678.0,
+	"display_name": "Barksman",
+	"family": "Beast",
+	"id": "barksman",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

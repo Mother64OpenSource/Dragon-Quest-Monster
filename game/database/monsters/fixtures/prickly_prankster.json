@@ -1,0 +1,16 @@
+{
+	"base_agility": 1110.0,
+	"base_attack": 777.0,
+	"base_defense": 510.0,
+	"base_hp": 1341.0,
+	"base_mp": 354.0,
+	"base_wisdom": 680.0,
+	"display_name": "Prickly Prankster",
+	"family": "Devil",
+	"id": "prickly_prankster",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 613.0,
+	"base_attack": 920.0,
+	"base_defense": 792.0,
+	"base_hp": 1622.0,
+	"base_mp": 358.0,
+	"base_wisdom": 540.0,
+	"display_name": "Skeleton",
+	"family": "Zombie",
+	"id": "skeleton",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 752.0,
+	"base_attack": 529.0,
+	"base_defense": 640.0,
+	"base_hp": 982.0,
+	"base_mp": 448.0,
+	"base_wisdom": 508.0,
+	"display_name": "Conkettes",
+	"family": "Devil",
+	"id": "conkettes",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

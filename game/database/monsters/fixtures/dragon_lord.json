@@ -1,18 +1,17 @@
 {
-    "id":  "dragon_lord",
-    "display_name":  "Dragon Lord",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  1432,
-    "base_mp":  612,
-    "base_attack":  711,
-    "base_defense":  691,
-    "base_agility":  751,
-    "base_wisdom":  909,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 751.0,
+	"base_attack": 711.0,
+	"base_defense": 691.0,
+	"base_hp": 1432.0,
+	"base_mp": 612.0,
+	"base_wisdom": 909.0,
+	"display_name": "Dragon Lord",
+	"family": "Dragon",
+	"id": "dragon_lord",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/dragon_lord.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

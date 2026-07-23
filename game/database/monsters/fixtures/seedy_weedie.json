@@ -1,0 +1,16 @@
+{
+	"base_agility": 666.0,
+	"base_attack": 487.0,
+	"base_defense": 556.0,
+	"base_hp": 1013.0,
+	"base_mp": 629.0,
+	"base_wisdom": 599.0,
+	"display_name": "Seedy Weedie",
+	"family": "Slime",
+	"id": "seedy_weedie",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

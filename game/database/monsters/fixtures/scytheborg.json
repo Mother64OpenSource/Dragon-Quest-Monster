@@ -1,0 +1,16 @@
+{
+	"base_agility": 608.0,
+	"base_attack": 877.0,
+	"base_defense": 785.0,
+	"base_hp": 1570.0,
+	"base_mp": 475.0,
+	"base_wisdom": 630.0,
+	"display_name": "Scytheborg",
+	"family": "Material",
+	"id": "scytheborg",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,19 +1,17 @@
 {
-    "id":  "evil_seed",
-    "display_name":  "Evil Seed",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1448,
-    "base_mp":  622,
-    "base_attack":  879,
-    "base_defense":  520,
-    "base_agility":  743,
-    "base_wisdom":  718,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/evil_seed.webp"
+	"base_agility": 743.0,
+	"base_attack": 879.0,
+	"base_defense": 520.0,
+	"base_hp": 1448.0,
+	"base_mp": 622.0,
+	"base_wisdom": 718.0,
+	"display_name": "Evil Seed",
+	"family": "Zombie",
+	"id": "evil_seed",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/evil_seed.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

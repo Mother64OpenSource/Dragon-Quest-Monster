@@ -1,0 +1,16 @@
+{
+	"base_agility": 670.0,
+	"base_attack": 820.0,
+	"base_defense": 780.0,
+	"base_hp": 1600.0,
+	"base_mp": 350.0,
+	"base_wisdom": 690.0,
+	"display_name": "Shadow Noble",
+	"family": "Zombie",
+	"id": "shadow_noble",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

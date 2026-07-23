@@ -1,18 +1,16 @@
 {
-    "id":  "araniad_the_enigma",
-    "display_name":  "Araniad the Enigma",
-    "family":  "Nature",
-    "rank":  "SS",
-    "base_hp":  2304,
-    "base_mp":  656,
-    "base_attack":  792,
-    "base_defense":  555,
-    "base_agility":  643,
-    "base_wisdom":  722,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 643.0,
+	"base_attack": 792.0,
+	"base_defense": 555.0,
+	"base_hp": 2304.0,
+	"base_mp": 656.0,
+	"base_wisdom": 722.0,
+	"display_name": "Araniad the Enigma",
+	"family": "Nature",
+	"id": "araniad_the_enigma",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

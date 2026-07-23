@@ -1,0 +1,16 @@
+{
+	"base_agility": 830.0,
+	"base_attack": 688.0,
+	"base_defense": 1500.0,
+	"base_hp": 161.0,
+	"base_mp": 656.0,
+	"base_wisdom": 736.0,
+	"display_name": "Metal Slime",
+	"family": "Slime",
+	"id": "metal_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

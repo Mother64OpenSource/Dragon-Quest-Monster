@@ -1,0 +1,16 @@
+{
+	"base_agility": 662.0,
+	"base_attack": 728.0,
+	"base_defense": 785.0,
+	"base_hp": 2201.0,
+	"base_mp": 486.0,
+	"base_wisdom": 577.0,
+	"display_name": "Tuskateer",
+	"family": "Beast",
+	"id": "tuskateer",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

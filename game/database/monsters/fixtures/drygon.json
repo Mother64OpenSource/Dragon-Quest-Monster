@@ -1,0 +1,16 @@
+{
+	"base_agility": 605.0,
+	"base_attack": 773.0,
+	"base_defense": 639.0,
+	"base_hp": 1836.0,
+	"base_mp": 432.0,
+	"base_wisdom": 454.0,
+	"display_name": "Drygon",
+	"family": "Dragon",
+	"id": "drygon",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

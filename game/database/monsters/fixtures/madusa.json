@@ -1,0 +1,16 @@
+{
+	"base_agility": 609.0,
+	"base_attack": 597.0,
+	"base_defense": 438.0,
+	"base_hp": 2642.0,
+	"base_mp": 581.0,
+	"base_wisdom": 968.0,
+	"display_name": "Madusa",
+	"family": "Devil",
+	"id": "madusa",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 890.0,
+	"base_attack": 759.0,
+	"base_defense": 814.0,
+	"base_hp": 1374.0,
+	"base_mp": 468.0,
+	"base_wisdom": 672.0,
+	"display_name": "Malevolamp",
+	"family": "Material",
+	"id": "malevolamp",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

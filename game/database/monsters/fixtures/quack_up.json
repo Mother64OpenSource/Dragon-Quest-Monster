@@ -1,0 +1,16 @@
+{
+	"base_agility": 764.0,
+	"base_attack": 808.0,
+	"base_defense": 416.0,
+	"base_hp": 1563.0,
+	"base_mp": 584.0,
+	"base_wisdom": 730.0,
+	"display_name": "Quack Up",
+	"family": "Nature",
+	"id": "quack_up",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

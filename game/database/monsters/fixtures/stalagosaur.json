@@ -1,18 +1,17 @@
 {
-    "id":  "stalagosaur",
-    "display_name":  "Stalagosaur",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2387,
-    "base_mp":  713,
-    "base_attack":  621,
-    "base_defense":  642,
-    "base_agility":  386,
-    "base_wisdom":  528,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 386.0,
+	"base_attack": 621.0,
+	"base_defense": 642.0,
+	"base_hp": 2387.0,
+	"base_mp": 713.0,
+	"base_wisdom": 528.0,
+	"display_name": "Stalagosaur",
+	"family": "Dragon",
+	"id": "stalagosaur",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/stalagosaur.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

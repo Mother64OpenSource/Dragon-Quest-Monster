@@ -1,0 +1,16 @@
+{
+	"base_agility": 695.0,
+	"base_attack": 808.0,
+	"base_defense": 695.0,
+	"base_hp": 1554.0,
+	"base_mp": 473.0,
+	"base_wisdom": 718.0,
+	"display_name": "Grotwyrm",
+	"family": "Zombie",
+	"id": "grotwyrm",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

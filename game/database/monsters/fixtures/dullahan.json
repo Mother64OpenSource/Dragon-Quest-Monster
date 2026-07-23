@@ -1,0 +1,16 @@
+{
+	"base_agility": 708.0,
+	"base_attack": 708.0,
+	"base_defense": 904.0,
+	"base_hp": 1405.0,
+	"base_mp": 511.0,
+	"base_wisdom": 943.0,
+	"display_name": "Dullahan",
+	"family": "Zombie",
+	"id": "dullahan",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

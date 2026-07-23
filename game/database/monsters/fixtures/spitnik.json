@@ -1,19 +1,17 @@
 {
-    "id":  "spitnik",
-    "display_name":  "Spitnik",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1432,
-    "base_mp":  593,
-    "base_attack":  840,
-    "base_defense":  889,
-    "base_agility":  740,
-    "base_wisdom":  494,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/spitnik.webp"
+	"base_agility": 740.0,
+	"base_attack": 840.0,
+	"base_defense": 889.0,
+	"base_hp": 1432.0,
+	"base_mp": 593.0,
+	"base_wisdom": 494.0,
+	"display_name": "Spitnik",
+	"family": "Material",
+	"id": "spitnik",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/spitnik.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

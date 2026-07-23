@@ -1,0 +1,16 @@
+{
+	"base_agility": 840.0,
+	"base_attack": 667.0,
+	"base_defense": 702.0,
+	"base_hp": 1432.0,
+	"base_mp": 457.0,
+	"base_wisdom": 963.0,
+	"display_name": "Drohl Diabolist",
+	"family": "Zombie",
+	"id": "drohl_diabolist",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

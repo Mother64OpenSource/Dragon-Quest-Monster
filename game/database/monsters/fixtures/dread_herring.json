@@ -1,19 +1,17 @@
 {
-    "id":  "dread_herring",
-    "display_name":  "Dread Herring",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1425,
-    "base_mp":  451,
-    "base_attack":  878,
-    "base_defense":  655,
-    "base_agility":  787,
-    "base_wisdom":  714,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/dread_herring.webp"
+	"base_agility": 787.0,
+	"base_attack": 878.0,
+	"base_defense": 655.0,
+	"base_hp": 1425.0,
+	"base_mp": 451.0,
+	"base_wisdom": 714.0,
+	"display_name": "Dread Herring",
+	"family": "Nature",
+	"id": "dread_herring",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/dread_herring.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

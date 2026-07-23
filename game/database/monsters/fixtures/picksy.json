@@ -1,19 +1,17 @@
 {
-    "id":  "picksy",
-    "display_name":  "Picksy",
-    "family":  "Devil",
-    "rank":  "F",
-    "base_hp":  1540,
-    "base_mp":  350,
-    "base_attack":  840,
-    "base_defense":  660,
-    "base_agility":  840,
-    "base_wisdom":  550,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/picksy.webp"
+	"base_agility": 840.0,
+	"base_attack": 840.0,
+	"base_defense": 660.0,
+	"base_hp": 1540.0,
+	"base_mp": 350.0,
+	"base_wisdom": 550.0,
+	"display_name": "Picksy",
+	"family": "Devil",
+	"id": "picksy",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/picksy.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 885.0,
+	"base_attack": 845.0,
+	"base_defense": 659.0,
+	"base_hp": 1405.0,
+	"base_mp": 491.0,
+	"base_wisdom": 580.0,
+	"display_name": "Whip Bird",
+	"family": "Nature",
+	"id": "whip_bird",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

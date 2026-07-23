@@ -1,18 +1,17 @@
 {
-    "id":  "chocolate_golem",
-    "display_name":  "Chocolate Golem",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1650,
-    "base_mp":  400,
-    "base_attack":  800,
-    "base_defense":  1000,
-    "base_agility":  600,
-    "base_wisdom":  500,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 600.0,
+	"base_attack": 800.0,
+	"base_defense": 1000.0,
+	"base_hp": 1650.0,
+	"base_mp": 400.0,
+	"base_wisdom": 500.0,
+	"display_name": "Chocolate Golem",
+	"family": "Material",
+	"id": "chocolate_golem",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/chocolate_golem.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

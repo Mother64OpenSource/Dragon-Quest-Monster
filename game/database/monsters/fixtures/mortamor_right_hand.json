@@ -1,0 +1,16 @@
+{
+	"base_agility": 848.0,
+	"base_attack": 727.0,
+	"base_defense": 606.0,
+	"base_hp": 1334.0,
+	"base_mp": 606.0,
+	"base_wisdom": 970.0,
+	"display_name": "Mortamor Right Hand",
+	"family": "unknown",
+	"id": "mortamor_right_hand",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

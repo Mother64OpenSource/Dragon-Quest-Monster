@@ -1,18 +1,17 @@
 {
-    "id":  "dhoulmagus",
-    "display_name":  "Dhoulmagus",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1340,
-    "base_mp":  563,
-    "base_attack":  777,
-    "base_defense":  835,
-    "base_agility":  699,
-    "base_wisdom":  970,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 699.0,
+	"base_attack": 777.0,
+	"base_defense": 835.0,
+	"base_hp": 1340.0,
+	"base_mp": 563.0,
+	"base_wisdom": 970.0,
+	"display_name": "Dhoulmagus",
+	"family": "unknown",
+	"id": "dhoulmagus",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/dhoulmagus.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

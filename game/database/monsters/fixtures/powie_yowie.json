@@ -1,19 +1,17 @@
 {
-    "id":  "powie_yowie",
-    "display_name":  "Powie Yowie",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1426,
-    "base_mp":  353,
-    "base_attack":  898,
-    "base_defense":  830,
-    "base_agility":  764,
-    "base_wisdom":  641,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/powie_yowie.webp"
+	"base_agility": 764.0,
+	"base_attack": 898.0,
+	"base_defense": 830.0,
+	"base_hp": 1426.0,
+	"base_mp": 353.0,
+	"base_wisdom": 641.0,
+	"display_name": "Powie Yowie",
+	"family": "Beast",
+	"id": "powie_yowie",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/powie_yowie.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

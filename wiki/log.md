@@ -70,3 +70,71 @@ hard-zero (not floor-1) damage for elemental immunity. Implementing this into
 `DamageFormula`/`DamageEffect` — including adding critical hits, which don't exist
 in the engine yet — is a substantial change touching already-tested code and is
 planned as its own follow-up, not yet done.
+
+## [2026-07-23] build | Team Builder image/stats UI + full artwork coverage
+
+`MonsterPickerDialog` now shows a thumbnail per search result and a details panel
+(larger image + full stats) on selection; `TeamMemberRow` shows each member's icon.
+Separately, sourced artwork for the remaining monsters that lacked it: 145 more
+images for the S/SS-rank batch (plus Golem), bringing artwork coverage to 235 of
+269 species. Built two small one-off Godot utilities (`game/tests/tools/`,
+kept in-repo for reuse) since neither ImageMagick nor .NET's System.Drawing could
+decode the WebP files on this machine, but Godot's own `Image` class could:
+`inspect_transparency.gd` flags images with no alpha or an opaque background, and
+`remove_background.gd` flood-fills a uniform background to transparent from the
+image's edges inward (so it never eats into similarly colored regions inside the
+subject). Fixed 17 images that had opaque backgrounds — 8 by finding a properly
+cutout alternate source image, 10 via the flood-fill tool. Montner and its 2nd
+form were left opaque; their only available image is an in-game customization
+screen with a varied, non-uniform background, a bad candidate for naive flood-fill.
+34 monsters still have no artwork at all (name mismatches with obscure/unlocalized
+source titles, e.g. several appear to be exclusive to *Dragon Quest Monsters:
+Joker 3*, which was never localized and has almost no fan-uploaded art anywhere).
+All three headless suites still pass throughout.
+
+## [2026-07-23] build | Full spreadsheet import: 802 monsters total
+
+Imported the remaining 533 monsters (ranks A-F) from the same community stats
+spreadsheet, covering the full 803-row sheet apart from one collision ("Golem",
+row 384, left alone since `golem.json` is the hand-tuned M1 test fixture the
+battle test's verified numbers depend on). As before, only structural fields
+were imported (name, family, rank, base stats) — never the sheet's "Description"
+flavor-text column. All default to a single "attack" skill and no traits, same
+known gap as the earlier S/SS batch. Loosened two more test assertions
+(`search_by_name('drac')`, `filter_by_rank(C)`) to membership checks, since the
+802-monster roster now has other name/rank matches beyond the original 4 test
+fixtures. No artwork sourced for this batch yet. All three headless suites pass.
+
+## [2026-07-23] build | Correction: reverted a bad sprite import, added Brushead
+
+The user's downloaded HTML export of the stats spreadsheet
+(`[Guide] Dragon Quest Monsters 2... - Google Drive.html`) contains 808 embedded
+images (`unnamed(N).png`, 44×44). These sorted into a perfectly sequential
+1–803 order, which looked like strong evidence they were per-monster sprite
+thumbnails aligned to the sheet's rows — so a full mapping was built from it:
+802 images copied into `game/assets/monsters/`, `sprite_path` set on all
+matching fixtures, and a new `brushead.json` fixture created from row 78's
+confirmed stats (`Family: Devil, Rank F, HP 1412, MP 463, ATK 752, DEF 728,
+AGI 887, WIS 707` — this row previously had no confirmed stats). Direct visual
+inspection of the copied files then disproved the mapping entirely: the file
+for "Slime" was a flower, "Dracky" was a bird, and the raw `unnamed(1).png`
+was an unrelated smiley face. These embedded images are not per-monster
+artwork in row order — what they actually depict in the source document is
+still unknown (possibly icons from a different tab, e.g. Skills/Traits/Items,
+or inline comment attachments) and needs fresh investigation before this
+source is tried again for sprites.
+
+Recovery (surgical, not a full git revert, since 1900+ uncommitted files spanning
+several legitimate prior sessions were sitting in the tree): identified the 15
+species whose pre-existing correct artwork had been overwritten by the bad
+bulk copy, re-downloaded all 15 from their original source URLs, deleted the
+other 787 wrongly-copied files, re-ran the flood-fill background tool
+(`game/tests/tools/remove_background.gd`) on the 10 of those 15 that needed
+it, then wrote a one-off reconciliation script
+(`game/tests/tools/fix_sprite_paths.gd`) that sets each fixture's `sprite_path`
+from what actually exists on disk in `game/assets/monsters/` rather than trusting
+any previously-recorded value — 220 fixtures corrected to their real image,
+567 had a now-invalid `sprite_path` removed (including `brushead.json`, which
+has confirmed stats but no artwork). Artwork coverage is back to its last
+known-good state: 237 real images. All three headless suites pass after
+reimport.

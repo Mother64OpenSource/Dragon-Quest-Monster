@@ -1,0 +1,16 @@
+{
+	"base_agility": 814.0,
+	"base_attack": 880.0,
+	"base_defense": 616.0,
+	"base_hp": 1448.0,
+	"base_mp": 440.0,
+	"base_wisdom": 660.0,
+	"display_name": "Dhuran",
+	"family": "Devil",
+	"id": "dhuran",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,19 +1,17 @@
 {
-    "id":  "army_ant",
-    "display_name":  "Army Ant",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1102,
-    "base_mp":  384,
-    "base_attack":  690,
-    "base_defense":  792,
-    "base_agility":  485,
-    "base_wisdom":  359,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/army_ant.webp"
+	"base_agility": 485.0,
+	"base_attack": 690.0,
+	"base_defense": 792.0,
+	"base_hp": 1102.0,
+	"base_mp": 384.0,
+	"base_wisdom": 359.0,
+	"display_name": "Army Ant",
+	"family": "Nature",
+	"id": "army_ant",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/army_ant.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

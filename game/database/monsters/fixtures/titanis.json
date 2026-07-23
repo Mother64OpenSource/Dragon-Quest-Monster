@@ -1,18 +1,17 @@
 {
-    "id":  "titanis",
-    "display_name":  "Titanis",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1848,
-    "base_mp":  900,
-    "base_attack":  563,
-    "base_defense":  462,
-    "base_agility":  454,
-    "base_wisdom":  1008,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 454.0,
+	"base_attack": 563.0,
+	"base_defense": 462.0,
+	"base_hp": 1848.0,
+	"base_mp": 900.0,
+	"base_wisdom": 1008.0,
+	"display_name": "Titanis",
+	"family": "Devil",
+	"id": "titanis",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/titanis.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

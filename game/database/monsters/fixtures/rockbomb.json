@@ -1,0 +1,16 @@
+{
+	"base_agility": 500.0,
+	"base_attack": 880.0,
+	"base_defense": 1100.0,
+	"base_hp": 1470.0,
+	"base_mp": 360.0,
+	"base_wisdom": 840.0,
+	"display_name": "Rockbomb",
+	"family": "Material",
+	"id": "rockbomb",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

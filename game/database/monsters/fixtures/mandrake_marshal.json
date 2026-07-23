@@ -1,0 +1,16 @@
+{
+	"base_agility": 747.0,
+	"base_attack": 812.0,
+	"base_defense": 834.0,
+	"base_hp": 1432.0,
+	"base_mp": 483.0,
+	"base_wisdom": 701.0,
+	"display_name": "Mandrake Marshal",
+	"family": "Dragon",
+	"id": "mandrake_marshal",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

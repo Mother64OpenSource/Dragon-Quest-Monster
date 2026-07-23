@@ -1,0 +1,16 @@
+{
+	"base_agility": 504.0,
+	"base_attack": 872.0,
+	"base_defense": 1056.0,
+	"base_hp": 1682.0,
+	"base_mp": 415.0,
+	"base_wisdom": 413.0,
+	"display_name": "Heligator",
+	"family": "Dragon",
+	"id": "heligator",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

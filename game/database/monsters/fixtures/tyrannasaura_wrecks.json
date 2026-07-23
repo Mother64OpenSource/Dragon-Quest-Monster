@@ -1,18 +1,17 @@
 {
-    "id":  "tyrannasaura_wrecks",
-    "display_name":  "Tyrannasaura Wrecks",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  2688,
-    "base_mp":  576,
-    "base_attack":  678,
-    "base_defense":  414,
-    "base_agility":  722,
-    "base_wisdom":  555,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 722.0,
+	"base_attack": 678.0,
+	"base_defense": 414.0,
+	"base_hp": 2688.0,
+	"base_mp": 576.0,
+	"base_wisdom": 555.0,
+	"display_name": "Tyrannasaura Wrecks",
+	"family": "Devil",
+	"id": "tyrannasaura_wrecks",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/tyrannasaura_wrecks.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

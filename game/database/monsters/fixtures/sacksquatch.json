@@ -1,19 +1,17 @@
 {
-    "id":  "sacksquatch",
-    "display_name":  "Sacksquatch",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1611,
-    "base_mp":  697,
-    "base_attack":  644,
-    "base_defense":  859,
-    "base_agility":  591,
-    "base_wisdom":  752,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/sacksquatch.webp"
+	"base_agility": 591.0,
+	"base_attack": 644.0,
+	"base_defense": 859.0,
+	"base_hp": 1611.0,
+	"base_mp": 697.0,
+	"base_wisdom": 752.0,
+	"display_name": "Sacksquatch",
+	"family": "Material",
+	"id": "sacksquatch",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/sacksquatch.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,19 +1,17 @@
 {
-    "id":  "funghoul",
-    "display_name":  "Funghoul",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1432,
-    "base_mp":  518,
-    "base_attack":  815,
-    "base_defense":  864,
-    "base_agility":  741,
-    "base_wisdom":  642,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/funghoul.webp"
+	"base_agility": 741.0,
+	"base_attack": 815.0,
+	"base_defense": 864.0,
+	"base_hp": 1432.0,
+	"base_mp": 518.0,
+	"base_wisdom": 642.0,
+	"display_name": "Funghoul",
+	"family": "Zombie",
+	"id": "funghoul",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/funghoul.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

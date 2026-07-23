@@ -1,0 +1,16 @@
+{
+	"base_agility": 733.0,
+	"base_attack": 881.0,
+	"base_defense": 832.0,
+	"base_hp": 1382.0,
+	"base_mp": 491.0,
+	"base_wisdom": 685.0,
+	"display_name": "Bullfinch",
+	"family": "Nature",
+	"id": "bullfinch",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

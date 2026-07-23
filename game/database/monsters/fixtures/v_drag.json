@@ -1,18 +1,16 @@
 {
-    "id":  "v_drag",
-    "display_name":  "V-Drag",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  2080,
-    "base_mp":  720,
-    "base_attack":  792,
-    "base_defense":  660,
-    "base_agility":  704,
-    "base_wisdom":  704,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 704.0,
+	"base_attack": 792.0,
+	"base_defense": 660.0,
+	"base_hp": 2080.0,
+	"base_mp": 720.0,
+	"base_wisdom": 704.0,
+	"display_name": "V-Drag",
+	"family": "Dragon",
+	"id": "v_drag",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

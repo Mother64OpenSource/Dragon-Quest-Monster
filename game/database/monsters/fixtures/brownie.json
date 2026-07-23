@@ -1,0 +1,16 @@
+{
+	"base_agility": 740.0,
+	"base_attack": 930.0,
+	"base_defense": 860.0,
+	"base_hp": 1430.0,
+	"base_mp": 400.0,
+	"base_wisdom": 540.0,
+	"display_name": "Brownie",
+	"family": "Beast",
+	"id": "brownie",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

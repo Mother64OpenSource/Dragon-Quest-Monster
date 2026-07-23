@@ -1,0 +1,16 @@
+{
+	"base_agility": 910.0,
+	"base_attack": 800.0,
+	"base_defense": 880.0,
+	"base_hp": 1340.0,
+	"base_mp": 380.0,
+	"base_wisdom": 640.0,
+	"display_name": "Great Dracky",
+	"family": "Devil",
+	"id": "great_dracky",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

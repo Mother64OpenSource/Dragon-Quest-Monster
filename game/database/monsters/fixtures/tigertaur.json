@@ -1,0 +1,16 @@
+{
+	"base_agility": 831.0,
+	"base_attack": 854.0,
+	"base_defense": 737.0,
+	"base_hp": 1222.0,
+	"base_mp": 595.0,
+	"base_wisdom": 854.0,
+	"display_name": "Tigertaur",
+	"family": "Beast",
+	"id": "tigertaur",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 530.0,
+	"base_attack": 858.0,
+	"base_defense": 858.0,
+	"base_hp": 1551.0,
+	"base_mp": 507.0,
+	"base_wisdom": 757.0,
+	"display_name": "Cross Eye",
+	"family": "Beast",
+	"id": "cross_eye",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

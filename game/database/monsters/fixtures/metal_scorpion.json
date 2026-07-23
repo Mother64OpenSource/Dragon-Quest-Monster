@@ -1,18 +1,17 @@
 {
-    "id":  "metal_scorpion",
-    "display_name":  "Metal Scorpion",
-    "family":  "Nature",
-    "rank":  "SS",
-    "base_hp":  948,
-    "base_mp":  531,
-    "base_attack":  887,
-    "base_defense":  1086,
-    "base_agility":  906,
-    "base_wisdom":  706,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 906.0,
+	"base_attack": 887.0,
+	"base_defense": 1086.0,
+	"base_hp": 948.0,
+	"base_mp": 531.0,
+	"base_wisdom": 706.0,
+	"display_name": "Metal Scorpion",
+	"family": "Nature",
+	"id": "metal_scorpion",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/metal_scorpion.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

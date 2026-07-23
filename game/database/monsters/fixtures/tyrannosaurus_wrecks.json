@@ -1,18 +1,17 @@
 {
-    "id":  "tyrannosaurus_wrecks",
-    "display_name":  "Tyrannosaurus Wrecks",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1320,
-    "base_mp":  288,
-    "base_attack":  776,
-    "base_defense":  552,
-    "base_agility":  480,
-    "base_wisdom":  408,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 480.0,
+	"base_attack": 776.0,
+	"base_defense": 552.0,
+	"base_hp": 1320.0,
+	"base_mp": 288.0,
+	"base_wisdom": 408.0,
+	"display_name": "Tyrannosaurus Wrecks",
+	"family": "unknown",
+	"id": "tyrannosaurus_wrecks",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/tyrannosaurus_wrecks.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

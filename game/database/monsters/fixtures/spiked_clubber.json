@@ -1,0 +1,16 @@
+{
+	"base_agility": 690.0,
+	"base_attack": 980.0,
+	"base_defense": 830.0,
+	"base_hp": 1430.0,
+	"base_mp": 360.0,
+	"base_wisdom": 610.0,
+	"display_name": "Spiked Clubber",
+	"family": "Beast",
+	"id": "spiked_clubber",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

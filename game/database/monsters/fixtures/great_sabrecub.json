@@ -1,0 +1,16 @@
+{
+	"base_agility": 660.0,
+	"base_attack": 686.0,
+	"base_defense": 686.0,
+	"base_hp": 1064.0,
+	"base_mp": 286.0,
+	"base_wisdom": 306.0,
+	"display_name": "Great Sabrecub",
+	"family": "Beast",
+	"id": "great_sabrecub",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

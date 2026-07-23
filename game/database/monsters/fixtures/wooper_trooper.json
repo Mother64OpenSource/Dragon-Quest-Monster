@@ -1,0 +1,16 @@
+{
+	"base_agility": 864.0,
+	"base_attack": 789.0,
+	"base_defense": 736.0,
+	"base_hp": 1351.0,
+	"base_mp": 478.0,
+	"base_wisdom": 778.0,
+	"display_name": "Wooper Trooper",
+	"family": "Nature",
+	"id": "wooper_trooper",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

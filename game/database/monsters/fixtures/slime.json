@@ -1,15 +1,18 @@
 {
-  "id": "slime",
-  "display_name": "Slime",
-  "family": "slime",
-  "rank": "F",
-  "base_hp": 50,
-  "base_mp": 10,
-  "base_attack": 10,
-  "base_defense": 10,
-  "base_agility": 12,
-  "base_wisdom": 6,
-  "starting_skill_ids": ["attack", "oomph"],
-  "starting_trait_ids": [],
-  "sprite_path": "res://assets/monsters/slime.webp"
+	"base_agility": 12.0,
+	"base_attack": 10.0,
+	"base_defense": 10.0,
+	"base_hp": 50.0,
+	"base_mp": 10.0,
+	"base_wisdom": 6.0,
+	"display_name": "Slime",
+	"family": "slime",
+	"id": "slime",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/slime.webp",
+	"starting_skill_ids": [
+		"attack",
+		"oomph"
+	],
+	"starting_trait_ids": []
 }

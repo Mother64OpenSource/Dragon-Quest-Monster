@@ -1,0 +1,16 @@
+{
+	"base_agility": 738.0,
+	"base_attack": 940.0,
+	"base_defense": 692.0,
+	"base_hp": 1539.0,
+	"base_mp": 427.0,
+	"base_wisdom": 447.0,
+	"display_name": "Barracuda",
+	"family": "Nature",
+	"id": "barracuda",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

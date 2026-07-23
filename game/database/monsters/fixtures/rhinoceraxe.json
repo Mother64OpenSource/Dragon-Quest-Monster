@@ -1,0 +1,16 @@
+{
+	"base_agility": 752.0,
+	"base_attack": 840.0,
+	"base_defense": 960.0,
+	"base_hp": 1403.0,
+	"base_mp": 559.0,
+	"base_wisdom": 491.0,
+	"display_name": "Rhinoceraxe",
+	"family": "Beast",
+	"id": "rhinoceraxe",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

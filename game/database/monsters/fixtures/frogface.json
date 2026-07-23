@@ -1,19 +1,17 @@
 {
-    "id":  "frogface",
-    "display_name":  "Frogface",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1517,
-    "base_mp":  529,
-    "base_attack":  752,
-    "base_defense":  777,
-    "base_agility":  677,
-    "base_wisdom":  802,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/frogface.webp"
+	"base_agility": 677.0,
+	"base_attack": 752.0,
+	"base_defense": 777.0,
+	"base_hp": 1517.0,
+	"base_mp": 529.0,
+	"base_wisdom": 802.0,
+	"display_name": "Frogface",
+	"family": "Beast",
+	"id": "frogface",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/frogface.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

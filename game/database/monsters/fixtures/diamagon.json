@@ -1,0 +1,16 @@
+{
+	"base_agility": 284.0,
+	"base_attack": 529.0,
+	"base_defense": 576.0,
+	"base_hp": 1260.0,
+	"base_mp": 464.0,
+	"base_wisdom": 855.0,
+	"display_name": "Diamagon",
+	"family": "unknown",
+	"id": "diamagon",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

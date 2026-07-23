@@ -1,0 +1,16 @@
+{
+	"base_agility": 792.0,
+	"base_attack": 528.0,
+	"base_defense": 616.0,
+	"base_hp": 875.0,
+	"base_mp": 440.0,
+	"base_wisdom": 704.0,
+	"display_name": "Confetti",
+	"family": "Slime",
+	"id": "confetti",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

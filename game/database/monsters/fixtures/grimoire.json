@@ -1,0 +1,16 @@
+{
+	"base_agility": 854.0,
+	"base_attack": 530.0,
+	"base_defense": 697.0,
+	"base_hp": 1789.0,
+	"base_mp": 905.0,
+	"base_wisdom": 962.0,
+	"display_name": "Grimoire",
+	"family": "Material",
+	"id": "grimoire",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

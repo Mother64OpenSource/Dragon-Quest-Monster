@@ -1,0 +1,16 @@
+{
+	"base_agility": 1033.0,
+	"base_attack": 728.0,
+	"base_defense": 469.0,
+	"base_hp": 817.0,
+	"base_mp": 939.0,
+	"base_wisdom": 892.0,
+	"display_name": "Green Ninja Slime",
+	"family": "Slime",
+	"id": "green_ninja_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 546.0,
+	"base_attack": 597.0,
+	"base_defense": 437.0,
+	"base_hp": 1956.0,
+	"base_mp": 636.0,
+	"base_wisdom": 815.0,
+	"display_name": "Uber Dreamaera",
+	"family": "Nature",
+	"id": "uber_dreamaera",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

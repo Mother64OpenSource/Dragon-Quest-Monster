@@ -1,19 +1,17 @@
 {
-    "id":  "feralball",
-    "display_name":  "Feralball",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1211,
-    "base_mp":  688,
-    "base_attack":  532,
-    "base_defense":  286,
-    "base_agility":  443,
-    "base_wisdom":  712,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/feralball.webp"
+	"base_agility": 443.0,
+	"base_attack": 532.0,
+	"base_defense": 286.0,
+	"base_hp": 1211.0,
+	"base_mp": 688.0,
+	"base_wisdom": 712.0,
+	"display_name": "Feralball",
+	"family": "Beast",
+	"id": "feralball",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/feralball.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

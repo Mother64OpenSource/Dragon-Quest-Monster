@@ -1,0 +1,16 @@
+{
+	"base_agility": 1090.0,
+	"base_attack": 620.0,
+	"base_defense": 670.0,
+	"base_hp": 1360.0,
+	"base_mp": 360.0,
+	"base_wisdom": 830.0,
+	"display_name": "Pyuro",
+	"family": "Nature",
+	"id": "pyuro",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

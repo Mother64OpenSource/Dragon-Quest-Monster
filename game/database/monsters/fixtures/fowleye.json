@@ -1,18 +1,17 @@
 {
-    "id":  "fowleye",
-    "display_name":  "Fowleye",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1269,
-    "base_mp":  490,
-    "base_attack":  444,
-    "base_defense":  447,
-    "base_agility":  921,
-    "base_wisdom":  999,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 921.0,
+	"base_attack": 444.0,
+	"base_defense": 447.0,
+	"base_hp": 1269.0,
+	"base_mp": 490.0,
+	"base_wisdom": 999.0,
+	"display_name": "Fowleye",
+	"family": "Devil",
+	"id": "fowleye",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/fowleye.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

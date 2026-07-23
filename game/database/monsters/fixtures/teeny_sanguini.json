@@ -1,0 +1,16 @@
+{
+	"base_agility": 842.0,
+	"base_attack": 496.0,
+	"base_defense": 544.0,
+	"base_hp": 895.0,
+	"base_mp": 594.0,
+	"base_wisdom": 544.0,
+	"display_name": "Teeny Sanguini",
+	"family": "Beast",
+	"id": "teeny_sanguini",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

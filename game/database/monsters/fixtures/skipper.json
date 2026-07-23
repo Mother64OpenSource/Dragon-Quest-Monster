@@ -1,0 +1,16 @@
+{
+	"base_agility": 830.0,
+	"base_attack": 780.0,
+	"base_defense": 951.0,
+	"base_hp": 1366.0,
+	"base_mp": 463.0,
+	"base_wisdom": 634.0,
+	"display_name": "Skipper",
+	"family": "Zombie",
+	"id": "skipper",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

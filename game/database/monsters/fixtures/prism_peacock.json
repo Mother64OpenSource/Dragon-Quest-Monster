@@ -1,18 +1,17 @@
 {
-    "id":  "prism_peacock",
-    "display_name":  "Prism Peacock",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1514,
-    "base_mp":  642,
-    "base_attack":  842,
-    "base_defense":  642,
-    "base_agility":  742,
-    "base_wisdom":  520,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 742.0,
+	"base_attack": 842.0,
+	"base_defense": 642.0,
+	"base_hp": 1514.0,
+	"base_mp": 642.0,
+	"base_wisdom": 520.0,
+	"display_name": "Prism Peacock",
+	"family": "Beast",
+	"id": "prism_peacock",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/prism_peacock.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

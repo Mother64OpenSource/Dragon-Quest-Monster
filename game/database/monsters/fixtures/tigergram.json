@@ -1,0 +1,16 @@
+{
+	"base_agility": 874.0,
+	"base_attack": 908.0,
+	"base_defense": 740.0,
+	"base_hp": 1342.0,
+	"base_mp": 452.0,
+	"base_wisdom": 560.0,
+	"display_name": "Tigergram",
+	"family": "Beast",
+	"id": "tigergram",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

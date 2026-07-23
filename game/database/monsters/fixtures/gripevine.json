@@ -1,18 +1,17 @@
 {
-    "id":  "gripevine",
-    "display_name":  "Gripevine",
-    "family":  "Nature",
-    "rank":  "S",
-    "base_hp":  1973,
-    "base_mp":  502,
-    "base_attack":  636,
-    "base_defense":  829,
-    "base_agility":  318,
-    "base_wisdom":  874,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 318.0,
+	"base_attack": 636.0,
+	"base_defense": 829.0,
+	"base_hp": 1973.0,
+	"base_mp": 502.0,
+	"base_wisdom": 874.0,
+	"display_name": "Gripevine",
+	"family": "Nature",
+	"id": "gripevine",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/gripevine.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

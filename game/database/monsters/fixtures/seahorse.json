@@ -1,0 +1,16 @@
+{
+	"base_agility": 780.0,
+	"base_attack": 890.0,
+	"base_defense": 720.0,
+	"base_hp": 1420.0,
+	"base_mp": 440.0,
+	"base_wisdom": 660.0,
+	"display_name": "Seahorse",
+	"family": "Dragon",
+	"id": "seahorse",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

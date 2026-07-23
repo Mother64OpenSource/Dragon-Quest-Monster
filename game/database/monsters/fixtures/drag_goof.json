@@ -1,0 +1,16 @@
+{
+	"base_agility": 513.0,
+	"base_attack": 873.0,
+	"base_defense": 549.0,
+	"base_hp": 1611.0,
+	"base_mp": 342.0,
+	"base_wisdom": 315.0,
+	"display_name": "Drag-goof",
+	"family": "Dragon",
+	"id": "drag_goof",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

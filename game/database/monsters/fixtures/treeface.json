@@ -1,0 +1,16 @@
+{
+	"base_agility": 666.0,
+	"base_attack": 718.0,
+	"base_defense": 771.0,
+	"base_hp": 1881.0,
+	"base_mp": 732.0,
+	"base_wisdom": 880.0,
+	"display_name": "Treeface",
+	"family": "Nature",
+	"id": "treeface",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

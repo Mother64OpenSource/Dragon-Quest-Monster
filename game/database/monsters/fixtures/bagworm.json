@@ -1,19 +1,17 @@
 {
-    "id":  "bagworm",
-    "display_name":  "Bagworm",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1482,
-    "base_mp":  626,
-    "base_attack":  823,
-    "base_defense":  897,
-    "base_agility":  510,
-    "base_wisdom":  847,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/bagworm.webp"
+	"base_agility": 510.0,
+	"base_attack": 823.0,
+	"base_defense": 897.0,
+	"base_hp": 1482.0,
+	"base_mp": 626.0,
+	"base_wisdom": 847.0,
+	"display_name": "Bagworm",
+	"family": "Nature",
+	"id": "bagworm",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/bagworm.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,18 +1,17 @@
 {
-    "id":  "prince_o_thieves",
-    "display_name":  "Prince O\u0027 Thieves",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1296,
-    "base_mp":  372,
-    "base_attack":  824,
-    "base_defense":  623,
-    "base_agility":  764,
-    "base_wisdom":  442,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 764.0,
+	"base_attack": 824.0,
+	"base_defense": 623.0,
+	"base_hp": 1296.0,
+	"base_mp": 372.0,
+	"base_wisdom": 442.0,
+	"display_name": "Prince O' Thieves",
+	"family": "unknown",
+	"id": "prince_o_thieves",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/prince_o_thieves.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

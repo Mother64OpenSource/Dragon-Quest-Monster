@@ -1,18 +1,17 @@
 {
-    "id":  "uberkilling_machine",
-    "display_name":  "Uberkilling Machine",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1350,
-    "base_mp":  315,
-    "base_attack":  810,
-    "base_defense":  900,
-    "base_agility":  675,
-    "base_wisdom":  315,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 675.0,
+	"base_attack": 810.0,
+	"base_defense": 900.0,
+	"base_hp": 1350.0,
+	"base_mp": 315.0,
+	"base_wisdom": 315.0,
+	"display_name": "Uberkilling Machine",
+	"family": "Material",
+	"id": "uberkilling_machine",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/uberkilling_machine.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

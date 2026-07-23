@@ -1,0 +1,16 @@
+{
+	"base_agility": 537.0,
+	"base_attack": 828.0,
+	"base_defense": 713.0,
+	"base_hp": 1782.0,
+	"base_mp": 573.0,
+	"base_wisdom": 420.0,
+	"display_name": "Weedbug",
+	"family": "Nature",
+	"id": "weedbug",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

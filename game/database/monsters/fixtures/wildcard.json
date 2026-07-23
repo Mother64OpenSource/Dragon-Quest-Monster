@@ -1,18 +1,17 @@
 {
-    "id":  "wildcard",
-    "display_name":  "Wildcard",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  828,
-    "base_mp":  557,
-    "base_attack":  928,
-    "base_defense":  928,
-    "base_agility":  854,
-    "base_wisdom":  743,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 854.0,
+	"base_attack": 928.0,
+	"base_defense": 928.0,
+	"base_hp": 828.0,
+	"base_mp": 557.0,
+	"base_wisdom": 743.0,
+	"display_name": "Wildcard",
+	"family": "unknown",
+	"id": "wildcard",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/wildcard.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

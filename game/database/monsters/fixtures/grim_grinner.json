@@ -1,0 +1,16 @@
+{
+	"base_agility": 740.0,
+	"base_attack": 760.0,
+	"base_defense": 830.0,
+	"base_hp": 1580.0,
+	"base_mp": 410.0,
+	"base_wisdom": 600.0,
+	"display_name": "Grim Grinner",
+	"family": "Devil",
+	"id": "grim_grinner",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

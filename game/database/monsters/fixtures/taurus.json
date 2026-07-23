@@ -1,0 +1,16 @@
+{
+	"base_agility": 908.0,
+	"base_attack": 794.0,
+	"base_defense": 671.0,
+	"base_hp": 1809.0,
+	"base_mp": 486.0,
+	"base_wisdom": 615.0,
+	"display_name": "Taurus",
+	"family": "Beast",
+	"id": "taurus",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

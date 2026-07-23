@@ -1,18 +1,17 @@
 {
-    "id":  "duke_sigras",
-    "display_name":  "Duke Sigras",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1300,
-    "base_mp":  540,
-    "base_attack":  920,
-    "base_defense":  600,
-    "base_agility":  780,
-    "base_wisdom":  860,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 780.0,
+	"base_attack": 920.0,
+	"base_defense": 600.0,
+	"base_hp": 1300.0,
+	"base_mp": 540.0,
+	"base_wisdom": 860.0,
+	"display_name": "Duke Sigras",
+	"family": "Devil",
+	"id": "duke_sigras",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/duke_sigras.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

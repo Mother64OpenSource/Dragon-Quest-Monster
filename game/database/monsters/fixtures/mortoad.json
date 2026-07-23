@@ -1,0 +1,16 @@
+{
+	"base_agility": 719.0,
+	"base_attack": 743.0,
+	"base_defense": 767.0,
+	"base_hp": 1920.0,
+	"base_mp": 769.0,
+	"base_wisdom": 647.0,
+	"display_name": "Mortoad",
+	"family": "Beast",
+	"id": "mortoad",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

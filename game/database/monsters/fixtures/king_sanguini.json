@@ -1,18 +1,17 @@
 {
-    "id":  "king_sanguini",
-    "display_name":  "King Sanguini",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1350,
-    "base_mp":  760,
-    "base_attack":  448,
-    "base_defense":  627,
-    "base_agility":  895,
-    "base_wisdom":  987,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 895.0,
+	"base_attack": 448.0,
+	"base_defense": 627.0,
+	"base_hp": 1350.0,
+	"base_mp": 760.0,
+	"base_wisdom": 987.0,
+	"display_name": "King Sanguini",
+	"family": "Beast",
+	"id": "king_sanguini",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/king_sanguini.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

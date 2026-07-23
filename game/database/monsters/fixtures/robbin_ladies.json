@@ -1,18 +1,17 @@
 {
-    "id":  "robbin_ladies",
-    "display_name":  "Robbin\u0027 Ladies",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1881,
-    "base_mp":  518,
-    "base_attack":  536,
-    "base_defense":  446,
-    "base_agility":  781,
-    "base_wisdom":  732,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 781.0,
+	"base_attack": 536.0,
+	"base_defense": 446.0,
+	"base_hp": 1881.0,
+	"base_mp": 518.0,
+	"base_wisdom": 732.0,
+	"display_name": "Robbin' Ladies",
+	"family": "unknown",
+	"id": "robbin_ladies",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/robbin_ladies.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

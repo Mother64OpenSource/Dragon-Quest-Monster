@@ -1,18 +1,17 @@
 {
-    "id":  "gisvarg",
-    "display_name":  "Gisvarg",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1697,
-    "base_mp":  690,
-    "base_attack":  778,
-    "base_defense":  688,
-    "base_agility":  769,
-    "base_wisdom":  923,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 769.0,
+	"base_attack": 778.0,
+	"base_defense": 688.0,
+	"base_hp": 1697.0,
+	"base_mp": 690.0,
+	"base_wisdom": 923.0,
+	"display_name": "Gisvarg",
+	"family": "unknown",
+	"id": "gisvarg",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/gisvarg.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

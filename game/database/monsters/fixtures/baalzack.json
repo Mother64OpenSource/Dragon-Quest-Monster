@@ -1,18 +1,17 @@
 {
-    "id":  "baalzack",
-    "display_name":  "Baalzack",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1829,
-    "base_mp":  551,
-    "base_attack":  793,
-    "base_defense":  695,
-    "base_agility":  437,
-    "base_wisdom":  620,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 437.0,
+	"base_attack": 793.0,
+	"base_defense": 695.0,
+	"base_hp": 1829.0,
+	"base_mp": 551.0,
+	"base_wisdom": 620.0,
+	"display_name": "Baalzack",
+	"family": "Beast",
+	"id": "baalzack",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/baalzack.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,18 +1,17 @@
 {
-    "id":  "bilhaw",
-    "display_name":  "Bilhaw",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  1495,
-    "base_mp":  559,
-    "base_attack":  568,
-    "base_defense":  875,
-    "base_agility":  1049,
-    "base_wisdom":  969,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1049.0,
+	"base_attack": 568.0,
+	"base_defense": 875.0,
+	"base_hp": 1495.0,
+	"base_mp": 559.0,
+	"base_wisdom": 969.0,
+	"display_name": "Bilhaw",
+	"family": "Dragon",
+	"id": "bilhaw",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/bilhaw.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

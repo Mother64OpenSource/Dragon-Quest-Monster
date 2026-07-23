@@ -1,0 +1,16 @@
+{
+	"base_agility": 630.0,
+	"base_attack": 932.0,
+	"base_defense": 845.0,
+	"base_hp": 1634.0,
+	"base_mp": 353.0,
+	"base_wisdom": 410.0,
+	"display_name": "Nardragon",
+	"family": "Dragon",
+	"id": "nardragon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

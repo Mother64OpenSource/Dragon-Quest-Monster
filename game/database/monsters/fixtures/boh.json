@@ -1,0 +1,16 @@
+{
+	"base_agility": 400.0,
+	"base_attack": 560.0,
+	"base_defense": 784.0,
+	"base_hp": 1260.0,
+	"base_mp": 520.0,
+	"base_wisdom": 296.0,
+	"display_name": "Boh",
+	"family": "Material",
+	"id": "boh",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

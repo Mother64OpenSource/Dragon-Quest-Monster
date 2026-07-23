@@ -1,0 +1,16 @@
+{
+	"base_agility": 760.0,
+	"base_attack": 750.0,
+	"base_defense": 900.0,
+	"base_hp": 1510.0,
+	"base_mp": 400.0,
+	"base_wisdom": 660.0,
+	"display_name": "Spinchilla",
+	"family": "Nature",
+	"id": "spinchilla",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

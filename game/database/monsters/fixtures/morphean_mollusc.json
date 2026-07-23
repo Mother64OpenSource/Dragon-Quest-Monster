@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 740.0,
+	"base_defense": 950.0,
+	"base_hp": 1640.0,
+	"base_mp": 380.0,
+	"base_wisdom": 690.0,
+	"display_name": "Morphean Mollusc",
+	"family": "Nature",
+	"id": "morphean_mollusc",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

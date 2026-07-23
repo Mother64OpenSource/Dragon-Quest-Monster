@@ -1,0 +1,16 @@
+{
+	"base_agility": 587.0,
+	"base_attack": 830.0,
+	"base_defense": 712.0,
+	"base_hp": 2063.0,
+	"base_mp": 648.0,
+	"base_wisdom": 674.0,
+	"display_name": "Power Hammer",
+	"family": "Nature",
+	"id": "power_hammer",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

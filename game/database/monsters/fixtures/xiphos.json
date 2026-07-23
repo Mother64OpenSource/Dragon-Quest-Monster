@@ -1,18 +1,17 @@
 {
-    "id":  "xiphos",
-    "display_name":  "Xiphos",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1918,
-    "base_mp":  532,
-    "base_attack":  539,
-    "base_defense":  455,
-    "base_agility":  809,
-    "base_wisdom":  609,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 809.0,
+	"base_attack": 539.0,
+	"base_defense": 455.0,
+	"base_hp": 1918.0,
+	"base_mp": 532.0,
+	"base_wisdom": 609.0,
+	"display_name": "Xiphos",
+	"family": "Dragon",
+	"id": "xiphos",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/xiphos.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

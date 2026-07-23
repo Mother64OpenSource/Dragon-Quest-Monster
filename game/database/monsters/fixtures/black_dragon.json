@@ -1,18 +1,17 @@
 {
-    "id":  "black_dragon",
-    "display_name":  "Black Dragon",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  1641,
-    "base_mp":  369,
-    "base_attack":  821,
-    "base_defense":  738,
-    "base_agility":  677,
-    "base_wisdom":  615,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 677.0,
+	"base_attack": 821.0,
+	"base_defense": 738.0,
+	"base_hp": 1641.0,
+	"base_mp": 369.0,
+	"base_wisdom": 615.0,
+	"display_name": "Black Dragon",
+	"family": "Dragon",
+	"id": "black_dragon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/black_dragon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 530.0,
+	"base_attack": 770.0,
+	"base_defense": 1000.0,
+	"base_hp": 875.0,
+	"base_mp": 380.0,
+	"base_wisdom": 520.0,
+	"display_name": "Fryling",
+	"family": "Dragon",
+	"id": "fryling",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

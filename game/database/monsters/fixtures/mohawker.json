@@ -1,0 +1,16 @@
+{
+	"base_agility": 760.0,
+	"base_attack": 790.0,
+	"base_defense": 780.0,
+	"base_hp": 1550.0,
+	"base_mp": 370.0,
+	"base_wisdom": 650.0,
+	"display_name": "Mohawker",
+	"family": "Beast",
+	"id": "mohawker",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

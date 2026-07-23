@@ -1,0 +1,16 @@
+{
+	"base_agility": 889.0,
+	"base_attack": 678.0,
+	"base_defense": 555.0,
+	"base_hp": 2176.0,
+	"base_mp": 560.0,
+	"base_wisdom": 652.0,
+	"display_name": "Giga Conkuistador",
+	"family": "Devil",
+	"id": "giga_conkuistador",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

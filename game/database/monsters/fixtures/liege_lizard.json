@@ -1,0 +1,16 @@
+{
+	"base_agility": 656.0,
+	"base_attack": 807.0,
+	"base_defense": 370.0,
+	"base_hp": 1968.0,
+	"base_mp": 420.0,
+	"base_wisdom": 378.0,
+	"display_name": "Liege Lizard",
+	"family": "Dragon",
+	"id": "liege_lizard",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

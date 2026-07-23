@@ -1,0 +1,16 @@
+{
+	"base_agility": 700.0,
+	"base_attack": 892.0,
+	"base_defense": 903.0,
+	"base_hp": 1448.0,
+	"base_mp": 398.0,
+	"base_wisdom": 619.0,
+	"display_name": "Snapdragon",
+	"family": "Dragon",
+	"id": "snapdragon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

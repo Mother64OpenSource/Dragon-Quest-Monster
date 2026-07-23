@@ -1,0 +1,16 @@
+{
+	"base_agility": 366.0,
+	"base_attack": 646.0,
+	"base_defense": 646.0,
+	"base_hp": 1045.0,
+	"base_mp": 585.0,
+	"base_wisdom": 760.0,
+	"display_name": "Mum",
+	"family": "Material",
+	"id": "mum",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

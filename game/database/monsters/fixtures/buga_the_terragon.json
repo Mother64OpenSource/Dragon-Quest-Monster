@@ -1,18 +1,16 @@
 {
-    "id":  "buga_the_terragon",
-    "display_name":  "Buga the Terragon",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  1404,
-    "base_mp":  420,
-    "base_attack":  815,
-    "base_defense":  614,
-    "base_agility":  521,
-    "base_wisdom":  521,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 521.0,
+	"base_attack": 815.0,
+	"base_defense": 614.0,
+	"base_hp": 1404.0,
+	"base_mp": 420.0,
+	"base_wisdom": 521.0,
+	"display_name": "Buga the Terragon",
+	"family": "Dragon",
+	"id": "buga_the_terragon",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

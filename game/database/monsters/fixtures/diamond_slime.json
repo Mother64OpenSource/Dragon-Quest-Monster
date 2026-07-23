@@ -1,18 +1,17 @@
 {
-    "id":  "diamond_slime",
-    "display_name":  "Diamond Slime",
-    "family":  "Slime",
-    "rank":  "SS",
-    "base_hp":  175,
-    "base_mp":  650,
-    "base_attack":  650,
-    "base_defense":  1500,
-    "base_agility":  1050,
-    "base_wisdom":  1050,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1050.0,
+	"base_attack": 650.0,
+	"base_defense": 1500.0,
+	"base_hp": 175.0,
+	"base_mp": 650.0,
+	"base_wisdom": 1050.0,
+	"display_name": "Diamond Slime",
+	"family": "Slime",
+	"id": "diamond_slime",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/diamond_slime.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

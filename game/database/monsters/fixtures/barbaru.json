@@ -1,18 +1,17 @@
 {
-    "id":  "barbaru",
-    "display_name":  "Barbaru",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1932,
-    "base_mp":  432,
-    "base_attack":  756,
-    "base_defense":  572,
-    "base_agility":  630,
-    "base_wisdom":  370,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 630.0,
+	"base_attack": 756.0,
+	"base_defense": 572.0,
+	"base_hp": 1932.0,
+	"base_mp": 432.0,
+	"base_wisdom": 370.0,
+	"display_name": "Barbaru",
+	"family": "unknown",
+	"id": "barbaru",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/barbaru.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

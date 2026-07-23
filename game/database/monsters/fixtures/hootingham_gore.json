@@ -1,0 +1,16 @@
+{
+	"base_agility": 922.0,
+	"base_attack": 521.0,
+	"base_defense": 803.0,
+	"base_hp": 1374.0,
+	"base_mp": 586.0,
+	"base_wisdom": 977.0,
+	"display_name": "Hootingham-Gore",
+	"family": "Devil",
+	"id": "hootingham_gore",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,16 @@
 {
-    "id":  "slival_s_ship",
-    "display_name":  "Slival\u0027s Ship",
-    "family":  "Slime",
-    "rank":  "SS",
-    "base_hp":  2184,
-    "base_mp":  495,
-    "base_attack":  546,
-    "base_defense":  680,
-    "base_agility":  699,
-    "base_wisdom":  319,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 699.0,
+	"base_attack": 546.0,
+	"base_defense": 680.0,
+	"base_hp": 2184.0,
+	"base_mp": 495.0,
+	"base_wisdom": 319.0,
+	"display_name": "Slival's Ship",
+	"family": "Slime",
+	"id": "slival_s_ship",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

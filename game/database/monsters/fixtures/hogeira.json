@@ -1,18 +1,17 @@
 {
-    "id":  "hogeira",
-    "display_name":  "Hogeira",
-    "family":  "Nature",
-    "rank":  "SS",
-    "base_hp":  1331,
-    "base_mp":  476,
-    "base_attack":  810,
-    "base_defense":  800,
-    "base_agility":  607,
-    "base_wisdom":  434,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 607.0,
+	"base_attack": 810.0,
+	"base_defense": 800.0,
+	"base_hp": 1331.0,
+	"base_mp": 476.0,
+	"base_wisdom": 434.0,
+	"display_name": "Hogeira",
+	"family": "Nature",
+	"id": "hogeira",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/hogeira.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

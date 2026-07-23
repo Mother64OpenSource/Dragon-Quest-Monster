@@ -1,19 +1,17 @@
 {
-    "id":  "killerpillar",
-    "display_name":  "Killerpillar",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1366,
-    "base_mp":  500,
-    "base_attack":  854,
-    "base_defense":  841,
-    "base_agility":  756,
-    "base_wisdom":  707,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/killerpillar.webp"
+	"base_agility": 756.0,
+	"base_attack": 854.0,
+	"base_defense": 841.0,
+	"base_hp": 1366.0,
+	"base_mp": 500.0,
+	"base_wisdom": 707.0,
+	"display_name": "Killerpillar",
+	"family": "Nature",
+	"id": "killerpillar",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/killerpillar.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

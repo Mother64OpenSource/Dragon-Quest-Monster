@@ -1,18 +1,16 @@
 {
-    "id":  "urnhaler",
-    "display_name":  "Urnhaler",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  1641,
-    "base_mp":  440,
-    "base_attack":  626,
-    "base_defense":  872,
-    "base_agility":  636,
-    "base_wisdom":  882,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 636.0,
+	"base_attack": 626.0,
+	"base_defense": 872.0,
+	"base_hp": 1641.0,
+	"base_mp": 440.0,
+	"base_wisdom": 882.0,
+	"display_name": "Urnhaler",
+	"family": "Material",
+	"id": "urnhaler",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

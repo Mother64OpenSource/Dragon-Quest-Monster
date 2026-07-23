@@ -1,0 +1,16 @@
+{
+	"base_agility": 544.0,
+	"base_attack": 556.0,
+	"base_defense": 556.0,
+	"base_hp": 1032.0,
+	"base_mp": 642.0,
+	"base_wisdom": 644.0,
+	"display_name": "Woebergine",
+	"family": "Nature",
+	"id": "woebergine",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

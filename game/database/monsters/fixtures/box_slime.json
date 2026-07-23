@@ -1,0 +1,16 @@
+{
+	"base_agility": 322.0,
+	"base_attack": 540.0,
+	"base_defense": 669.0,
+	"base_hp": 1158.0,
+	"base_mp": 682.0,
+	"base_wisdom": 682.0,
+	"display_name": "Box Slime",
+	"family": "Slime",
+	"id": "box_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

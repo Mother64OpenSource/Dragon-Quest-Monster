@@ -1,18 +1,17 @@
 {
-    "id":  "kakalon",
-    "display_name":  "Kakalon",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1798,
-    "base_mp":  459,
-    "base_attack":  721,
-    "base_defense":  557,
-    "base_agility":  655,
-    "base_wisdom":  577,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 655.0,
+	"base_attack": 721.0,
+	"base_defense": 557.0,
+	"base_hp": 1798.0,
+	"base_mp": 459.0,
+	"base_wisdom": 577.0,
+	"display_name": "Kakalon",
+	"family": "unknown",
+	"id": "kakalon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/kakalon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

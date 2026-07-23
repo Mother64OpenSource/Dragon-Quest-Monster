@@ -1,0 +1,16 @@
+{
+	"base_agility": 825.0,
+	"base_attack": 803.0,
+	"base_defense": 727.0,
+	"base_hp": 1161.0,
+	"base_mp": 437.0,
+	"base_wisdom": 461.0,
+	"display_name": "Equinox",
+	"family": "Dragon",
+	"id": "equinox",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

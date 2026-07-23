@@ -1,18 +1,17 @@
 {
-    "id":  "corvus",
-    "display_name":  "Corvus",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1160,
-    "base_mp":  370,
-    "base_attack":  790,
-    "base_defense":  616,
-    "base_agility":  390,
-    "base_wisdom":  739,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 390.0,
+	"base_attack": 790.0,
+	"base_defense": 616.0,
+	"base_hp": 1160.0,
+	"base_mp": 370.0,
+	"base_wisdom": 739.0,
+	"display_name": "Corvus",
+	"family": "unknown",
+	"id": "corvus",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/corvus.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

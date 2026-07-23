@@ -1,0 +1,16 @@
+{
+	"base_agility": 683.0,
+	"base_attack": 795.0,
+	"base_defense": 872.0,
+	"base_hp": 1463.0,
+	"base_mp": 563.0,
+	"base_wisdom": 683.0,
+	"display_name": "Octavian Sentry",
+	"family": "Devil",
+	"id": "octavian_sentry",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

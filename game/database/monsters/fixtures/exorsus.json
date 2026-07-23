@@ -1,0 +1,16 @@
+{
+	"base_agility": 829.0,
+	"base_attack": 529.0,
+	"base_defense": 736.0,
+	"base_hp": 1782.0,
+	"base_mp": 806.0,
+	"base_wisdom": 1052.0,
+	"display_name": "Exorsus",
+	"family": "Zombie",
+	"id": "exorsus",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

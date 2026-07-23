@@ -1,0 +1,16 @@
+{
+	"base_agility": 666.0,
+	"base_attack": 819.0,
+	"base_defense": 603.0,
+	"base_hp": 1242.0,
+	"base_mp": 324.0,
+	"base_wisdom": 819.0,
+	"display_name": "Orgodemir",
+	"family": "unknown",
+	"id": "orgodemir",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

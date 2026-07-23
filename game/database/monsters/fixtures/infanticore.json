@@ -1,0 +1,16 @@
+{
+	"base_agility": 475.0,
+	"base_attack": 764.0,
+	"base_defense": 714.0,
+	"base_hp": 1760.0,
+	"base_mp": 699.0,
+	"base_wisdom": 565.0,
+	"display_name": "Infanticore",
+	"family": "Beast",
+	"id": "infanticore",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

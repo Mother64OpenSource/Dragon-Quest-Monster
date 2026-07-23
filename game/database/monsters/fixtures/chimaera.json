@@ -1,0 +1,16 @@
+{
+	"base_agility": 733.0,
+	"base_attack": 832.0,
+	"base_defense": 783.0,
+	"base_hp": 1382.0,
+	"base_mp": 540.0,
+	"base_wisdom": 783.0,
+	"display_name": "Chimaera",
+	"family": "Nature",
+	"id": "chimaera",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

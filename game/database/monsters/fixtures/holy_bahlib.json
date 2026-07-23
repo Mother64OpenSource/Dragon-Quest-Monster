@@ -1,18 +1,17 @@
 {
-    "id":  "holy_bahlib",
-    "display_name":  "Holy Bahlib",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  2009,
-    "base_mp":  540,
-    "base_attack":  662,
-    "base_defense":  756,
-    "base_agility":  567,
-    "base_wisdom":  756,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 567.0,
+	"base_attack": 662.0,
+	"base_defense": 756.0,
+	"base_hp": 2009.0,
+	"base_mp": 540.0,
+	"base_wisdom": 756.0,
+	"display_name": "Holy Bahlib",
+	"family": "Dragon",
+	"id": "holy_bahlib",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/holy_bahlib.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

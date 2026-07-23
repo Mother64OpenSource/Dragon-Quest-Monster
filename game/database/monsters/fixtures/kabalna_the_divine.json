@@ -1,18 +1,16 @@
 {
-    "id":  "kabalna_the_divine",
-    "display_name":  "Kabalna the Divine",
-    "family":  "Devil",
-    "rank":  "SS",
-    "base_hp":  1840,
-    "base_mp":  576,
-    "base_attack":  792,
-    "base_defense":  652,
-    "base_agility":  880,
-    "base_wisdom":  704,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 880.0,
+	"base_attack": 792.0,
+	"base_defense": 652.0,
+	"base_hp": 1840.0,
+	"base_mp": 576.0,
+	"base_wisdom": 704.0,
+	"display_name": "Kabalna the Divine",
+	"family": "Devil",
+	"id": "kabalna_the_divine",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

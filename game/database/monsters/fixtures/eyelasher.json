@@ -1,0 +1,16 @@
+{
+	"base_agility": 620.0,
+	"base_attack": 690.0,
+	"base_defense": 720.0,
+	"base_hp": 1570.0,
+	"base_mp": 690.0,
+	"base_wisdom": 830.0,
+	"display_name": "Eyelasher",
+	"family": "Zombie",
+	"id": "eyelasher",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,17 @@
 {
-    "id":  "hideney",
-    "display_name":  "Hideney",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  560,
-    "base_mp":  384,
-    "base_attack":  512,
-    "base_defense":  512,
-    "base_agility":  640,
-    "base_wisdom":  640,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 640.0,
+	"base_attack": 512.0,
+	"base_defense": 512.0,
+	"base_hp": 560.0,
+	"base_mp": 384.0,
+	"base_wisdom": 640.0,
+	"display_name": "Hideney",
+	"family": "unknown",
+	"id": "hideney",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/hideney.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

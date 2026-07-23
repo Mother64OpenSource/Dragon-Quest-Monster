@@ -1,0 +1,16 @@
+{
+	"base_agility": 320.0,
+	"base_attack": 432.0,
+	"base_defense": 1000.0,
+	"base_hp": 1260.0,
+	"base_mp": 528.0,
+	"base_wisdom": 488.0,
+	"display_name": "Shell Slime",
+	"family": "Slime",
+	"id": "shell_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

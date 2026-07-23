@@ -1,0 +1,16 @@
+{
+	"base_agility": 577.0,
+	"base_attack": 992.0,
+	"base_defense": 531.0,
+	"base_hp": 1714.0,
+	"base_mp": 442.0,
+	"base_wisdom": 461.0,
+	"display_name": "Slon the Rook",
+	"family": "Beast",
+	"id": "slon_the_rook",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

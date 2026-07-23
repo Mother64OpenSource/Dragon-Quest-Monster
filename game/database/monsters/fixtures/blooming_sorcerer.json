@@ -1,0 +1,16 @@
+{
+	"base_agility": 739.0,
+	"base_attack": 752.0,
+	"base_defense": 824.0,
+	"base_hp": 1333.0,
+	"base_mp": 631.0,
+	"base_wisdom": 897.0,
+	"display_name": "Blooming Sorcerer",
+	"family": "Zombie",
+	"id": "blooming_sorcerer",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

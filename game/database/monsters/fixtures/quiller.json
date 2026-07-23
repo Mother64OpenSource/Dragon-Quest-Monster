@@ -1,19 +1,17 @@
 {
-    "id":  "quiller",
-    "display_name":  "Quiller",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1462,
-    "base_mp":  425,
-    "base_attack":  836,
-    "base_defense":  804,
-    "base_agility":  787,
-    "base_wisdom":  601,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/quiller.webp"
+	"base_agility": 787.0,
+	"base_attack": 836.0,
+	"base_defense": 804.0,
+	"base_hp": 1462.0,
+	"base_mp": 425.0,
+	"base_wisdom": 601.0,
+	"display_name": "Quiller",
+	"family": "Beast",
+	"id": "quiller",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/quiller.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

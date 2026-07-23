@@ -1,0 +1,16 @@
+{
+	"base_agility": 630.0,
+	"base_attack": 730.0,
+	"base_defense": 920.0,
+	"base_hp": 1260.0,
+	"base_mp": 640.0,
+	"base_wisdom": 840.0,
+	"display_name": "Slimecicle",
+	"family": "Slime",
+	"id": "slimecicle",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

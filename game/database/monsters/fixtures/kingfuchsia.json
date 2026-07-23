@@ -1,19 +1,17 @@
 {
-    "id":  "kingfuchsia",
-    "display_name":  "Kingfuchsia",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  980,
-    "base_mp":  440,
-    "base_attack":  544,
-    "base_defense":  552,
-    "base_agility":  800,
-    "base_wisdom":  480,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/kingfuchsia.webp"
+	"base_agility": 800.0,
+	"base_attack": 544.0,
+	"base_defense": 552.0,
+	"base_hp": 980.0,
+	"base_mp": 440.0,
+	"base_wisdom": 480.0,
+	"display_name": "Kingfuchsia",
+	"family": "Nature",
+	"id": "kingfuchsia",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/kingfuchsia.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

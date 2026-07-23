@@ -1,19 +1,17 @@
 {
-    "id":  "dragonfry",
-    "display_name":  "Dragonfry",
-    "family":  "Dragon",
-    "rank":  "F",
-    "base_hp":  1169,
-    "base_mp":  408,
-    "base_attack":  536,
-    "base_defense":  360,
-    "base_agility":  800,
-    "base_wisdom":  288,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/dragonfry.webp"
+	"base_agility": 800.0,
+	"base_attack": 536.0,
+	"base_defense": 360.0,
+	"base_hp": 1169.0,
+	"base_mp": 408.0,
+	"base_wisdom": 288.0,
+	"display_name": "Dragonfry",
+	"family": "Dragon",
+	"id": "dragonfry",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/dragonfry.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

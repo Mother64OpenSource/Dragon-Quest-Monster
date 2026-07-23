@@ -1,0 +1,16 @@
+{
+	"base_agility": 681.0,
+	"base_attack": 879.0,
+	"base_defense": 643.0,
+	"base_hp": 1450.0,
+	"base_mp": 632.0,
+	"base_wisdom": 705.0,
+	"display_name": "Cobra King",
+	"family": "Dragon",
+	"id": "cobra_king",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

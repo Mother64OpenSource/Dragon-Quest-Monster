@@ -1,0 +1,16 @@
+{
+	"base_agility": 827.0,
+	"base_attack": 690.0,
+	"base_defense": 604.0,
+	"base_hp": 1935.0,
+	"base_mp": 473.0,
+	"base_wisdom": 884.0,
+	"display_name": "Thunderbird",
+	"family": "Nature",
+	"id": "thunderbird",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

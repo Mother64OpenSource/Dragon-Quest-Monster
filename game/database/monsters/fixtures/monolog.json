@@ -1,0 +1,16 @@
+{
+	"base_agility": 569.0,
+	"base_attack": 835.0,
+	"base_defense": 556.0,
+	"base_hp": 1800.0,
+	"base_mp": 426.0,
+	"base_wisdom": 610.0,
+	"display_name": "Monolog",
+	"family": "Zombie",
+	"id": "monolog",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

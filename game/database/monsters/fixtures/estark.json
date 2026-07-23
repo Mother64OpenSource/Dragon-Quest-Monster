@@ -1,18 +1,17 @@
 {
-    "id":  "estark",
-    "display_name":  "Estark",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2576,
-    "base_mp":  592,
-    "base_attack":  660,
-    "base_defense":  660,
-    "base_agility":  599,
-    "base_wisdom":  704,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 599.0,
+	"base_attack": 660.0,
+	"base_defense": 660.0,
+	"base_hp": 2576.0,
+	"base_mp": 592.0,
+	"base_wisdom": 704.0,
+	"display_name": "Estark",
+	"family": "unknown",
+	"id": "estark",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/estark.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

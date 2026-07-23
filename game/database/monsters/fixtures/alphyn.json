@@ -1,0 +1,16 @@
+{
+	"base_agility": 772.0,
+	"base_attack": 710.0,
+	"base_defense": 619.0,
+	"base_hp": 1454.0,
+	"base_mp": 640.0,
+	"base_wisdom": 658.0,
+	"display_name": "Alphyn",
+	"family": "Beast",
+	"id": "alphyn",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

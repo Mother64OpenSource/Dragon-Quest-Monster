@@ -1,0 +1,16 @@
+{
+	"base_agility": 808.0,
+	"base_attack": 797.0,
+	"base_defense": 636.0,
+	"base_hp": 2008.0,
+	"base_mp": 476.0,
+	"base_wisdom": 575.0,
+	"display_name": "Widow's Pique",
+	"family": "Zombie",
+	"id": "widow_s_pique",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

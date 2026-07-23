@@ -1,18 +1,17 @@
 {
-    "id":  "realm_of_the_mighty",
-    "display_name":  "Realm of the Mighty",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  2784,
-    "base_mp":  560,
-    "base_attack":  704,
-    "base_defense":  1056,
-    "base_agility":  335,
-    "base_wisdom":  537,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 335.0,
+	"base_attack": 704.0,
+	"base_defense": 1056.0,
+	"base_hp": 2784.0,
+	"base_mp": 560.0,
+	"base_wisdom": 537.0,
+	"display_name": "Realm of the Mighty",
+	"family": "Material",
+	"id": "realm_of_the_mighty",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/realm_of_the_mighty.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

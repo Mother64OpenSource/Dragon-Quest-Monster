@@ -1,0 +1,16 @@
+{
+	"base_agility": 952.0,
+	"base_attack": 662.0,
+	"base_defense": 476.0,
+	"base_hp": 1429.0,
+	"base_mp": 571.0,
+	"base_wisdom": 867.0,
+	"display_name": "Emyu",
+	"family": "Nature",
+	"id": "emyu",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 724.0,
+	"base_attack": 877.0,
+	"base_defense": 571.0,
+	"base_hp": 1214.0,
+	"base_mp": 384.0,
+	"base_wisdom": 620.0,
+	"display_name": "Dragon Rider",
+	"family": "Dragon",
+	"id": "dragon_rider",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

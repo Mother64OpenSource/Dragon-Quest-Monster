@@ -1,0 +1,16 @@
+{
+	"base_agility": 817.0,
+	"base_attack": 673.0,
+	"base_defense": 937.0,
+	"base_hp": 1285.0,
+	"base_mp": 600.0,
+	"base_wisdom": 913.0,
+	"display_name": "Goodybag",
+	"family": "Material",
+	"id": "goodybag",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

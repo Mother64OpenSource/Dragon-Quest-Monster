@@ -1,0 +1,16 @@
+{
+	"base_agility": 506.0,
+	"base_attack": 932.0,
+	"base_defense": 748.0,
+	"base_hp": 1698.0,
+	"base_mp": 439.0,
+	"base_wisdom": 541.0,
+	"display_name": "Baby Bjorn",
+	"family": "Beast",
+	"id": "baby_bjorn",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

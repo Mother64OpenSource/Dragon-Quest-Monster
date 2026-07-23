@@ -1,0 +1,16 @@
+{
+	"base_agility": 842.0,
+	"base_attack": 475.0,
+	"base_defense": 712.0,
+	"base_hp": 2001.0,
+	"base_mp": 647.0,
+	"base_wisdom": 964.0,
+	"display_name": "Dead Masker",
+	"family": "Zombie",
+	"id": "dead_masker",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

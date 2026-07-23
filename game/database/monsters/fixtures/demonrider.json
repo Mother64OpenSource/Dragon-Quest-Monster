@@ -1,0 +1,16 @@
+{
+	"base_agility": 1050.0,
+	"base_attack": 720.0,
+	"base_defense": 840.0,
+	"base_hp": 1300.0,
+	"base_mp": 370.0,
+	"base_wisdom": 650.0,
+	"display_name": "Demonrider",
+	"family": "Zombie",
+	"id": "demonrider",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

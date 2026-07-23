@@ -1,0 +1,16 @@
+{
+	"base_agility": 448.0,
+	"base_attack": 752.0,
+	"base_defense": 512.0,
+	"base_hp": 1288.0,
+	"base_mp": 424.0,
+	"base_wisdom": 488.0,
+	"display_name": "Suckling Ocker",
+	"family": "Nature",
+	"id": "suckling_ocker",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

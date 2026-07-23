@@ -1,0 +1,16 @@
+{
+	"base_agility": 656.0,
+	"base_attack": 875.0,
+	"base_defense": 875.0,
+	"base_hp": 1419.0,
+	"base_mp": 437.0,
+	"base_wisdom": 788.0,
+	"display_name": "Captain Catastrophe",
+	"family": "Devil",
+	"id": "captain_catastrophe",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

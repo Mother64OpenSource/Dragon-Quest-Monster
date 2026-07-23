@@ -1,0 +1,16 @@
+{
+	"base_agility": 728.0,
+	"base_attack": 882.0,
+	"base_defense": 905.0,
+	"base_hp": 1463.0,
+	"base_mp": 419.0,
+	"base_wisdom": 530.0,
+	"display_name": "Megalodon",
+	"family": "Dragon",
+	"id": "megalodon",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

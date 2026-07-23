@@ -1,0 +1,16 @@
+{
+	"base_agility": 675.0,
+	"base_attack": 412.0,
+	"base_defense": 893.0,
+	"base_hp": 1666.0,
+	"base_mp": 618.0,
+	"base_wisdom": 983.0,
+	"display_name": "King Cureslime",
+	"family": "Slime",
+	"id": "king_cureslime",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

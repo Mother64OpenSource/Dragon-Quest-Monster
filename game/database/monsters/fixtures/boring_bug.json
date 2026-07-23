@@ -1,0 +1,16 @@
+{
+	"base_agility": 787.0,
+	"base_attack": 824.0,
+	"base_defense": 824.0,
+	"base_hp": 1333.0,
+	"base_mp": 440.0,
+	"base_wisdom": 848.0,
+	"display_name": "Boring Bug",
+	"family": "Nature",
+	"id": "boring_bug",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

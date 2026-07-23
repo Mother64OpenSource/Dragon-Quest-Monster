@@ -1,18 +1,16 @@
 {
-    "id":  "tactician_iddo",
-    "display_name":  "Tactician Iddo",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1260,
-    "base_mp":  735,
-    "base_attack":  515,
-    "base_defense":  544,
-    "base_agility":  574,
-    "base_wisdom":  882,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 574.0,
+	"base_attack": 515.0,
+	"base_defense": 544.0,
+	"base_hp": 1260.0,
+	"base_mp": 735.0,
+	"base_wisdom": 882.0,
+	"display_name": "Tactician Iddo",
+	"family": "Dragon",
+	"id": "tactician_iddo",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

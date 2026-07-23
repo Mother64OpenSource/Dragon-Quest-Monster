@@ -1,0 +1,16 @@
+{
+	"base_agility": 1360.0,
+	"base_attack": 500.0,
+	"base_defense": 1500.0,
+	"base_hp": 200.0,
+	"base_mp": 770.0,
+	"base_wisdom": 810.0,
+	"display_name": "Metal King Slime",
+	"family": "Slime",
+	"id": "metal_king_slime",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

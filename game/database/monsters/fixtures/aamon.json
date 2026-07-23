@@ -1,18 +1,17 @@
 {
-    "id":  "aamon",
-    "display_name":  "Aamon",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1377,
-    "base_mp":  778,
-    "base_attack":  518,
-    "base_defense":  770,
-    "base_agility":  983,
-    "base_wisdom":  1044,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 983.0,
+	"base_attack": 518.0,
+	"base_defense": 770.0,
+	"base_hp": 1377.0,
+	"base_mp": 778.0,
+	"base_wisdom": 1044.0,
+	"display_name": "Aamon",
+	"family": "Devil",
+	"id": "aamon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/aamon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

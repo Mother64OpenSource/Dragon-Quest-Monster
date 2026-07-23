@@ -1,18 +1,16 @@
 {
-    "id":  "beast_of_the_sea",
-    "display_name":  "Beast of the Sea",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2124,
-    "base_mp":  713,
-    "base_attack":  428,
-    "base_defense":  535,
-    "base_agility":  713,
-    "base_wisdom":  607,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 713.0,
+	"base_attack": 428.0,
+	"base_defense": 535.0,
+	"base_hp": 2124.0,
+	"base_mp": 713.0,
+	"base_wisdom": 607.0,
+	"display_name": "Beast of the Sea",
+	"family": "Dragon",
+	"id": "beast_of_the_sea",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

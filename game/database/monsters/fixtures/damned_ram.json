@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 829.0,
+	"base_defense": 1000.0,
+	"base_hp": 1366.0,
+	"base_mp": 415.0,
+	"base_wisdom": 975.0,
+	"display_name": "Damned Ram",
+	"family": "Beast",
+	"id": "damned_ram",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

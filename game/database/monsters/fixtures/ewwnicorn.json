@@ -1,0 +1,16 @@
+{
+	"base_agility": 791.0,
+	"base_attack": 453.0,
+	"base_defense": 565.0,
+	"base_hp": 1602.0,
+	"base_mp": 724.0,
+	"base_wisdom": 1019.0,
+	"display_name": "Ewwnicorn",
+	"family": "Beast",
+	"id": "ewwnicorn",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

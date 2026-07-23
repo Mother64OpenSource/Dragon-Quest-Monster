@@ -1,0 +1,16 @@
+{
+	"base_agility": 724.0,
+	"base_attack": 768.0,
+	"base_defense": 1075.0,
+	"base_hp": 1433.0,
+	"base_mp": 460.0,
+	"base_wisdom": 615.0,
+	"display_name": "Yabby",
+	"family": "Nature",
+	"id": "yabby",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 584.0,
+	"base_attack": 721.0,
+	"base_defense": 877.0,
+	"base_hp": 1570.0,
+	"base_mp": 428.0,
+	"base_wisdom": 945.0,
+	"display_name": "King Slime",
+	"family": "Slime",
+	"id": "king_slime",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

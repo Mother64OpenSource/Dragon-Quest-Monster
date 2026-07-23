@@ -1,0 +1,16 @@
+{
+	"base_agility": 412.0,
+	"base_attack": 542.0,
+	"base_defense": 952.0,
+	"base_hp": 1155.0,
+	"base_mp": 489.0,
+	"base_wisdom": 412.0,
+	"display_name": "Mecha-mynah",
+	"family": "Material",
+	"id": "mecha_mynah",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

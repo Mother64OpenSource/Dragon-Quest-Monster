@@ -1,18 +1,17 @@
 {
-    "id":  "ramia",
-    "display_name":  "Ramia",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2400,
-    "base_mp":  565,
-    "base_attack":  592,
-    "base_defense":  381,
-    "base_agility":  884,
-    "base_wisdom":  760,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 884.0,
+	"base_attack": 592.0,
+	"base_defense": 381.0,
+	"base_hp": 2400.0,
+	"base_mp": 565.0,
+	"base_wisdom": 760.0,
+	"display_name": "Ramia",
+	"family": "unknown",
+	"id": "ramia",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/ramia.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

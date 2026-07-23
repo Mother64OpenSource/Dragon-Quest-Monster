@@ -1,0 +1,16 @@
+{
+	"base_agility": 533.0,
+	"base_attack": 749.0,
+	"base_defense": 635.0,
+	"base_hp": 1617.0,
+	"base_mp": 637.0,
+	"base_wisdom": 930.0,
+	"display_name": "Devil Glass",
+	"family": "Material",
+	"id": "devil_glass",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

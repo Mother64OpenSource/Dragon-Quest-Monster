@@ -1,0 +1,16 @@
+{
+	"base_agility": 550.0,
+	"base_attack": 831.0,
+	"base_defense": 1056.0,
+	"base_hp": 1563.0,
+	"base_mp": 382.0,
+	"base_wisdom": 674.0,
+	"display_name": "Living Statue",
+	"family": "Material",
+	"id": "living_statue",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

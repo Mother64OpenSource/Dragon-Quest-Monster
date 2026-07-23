@@ -1,0 +1,16 @@
+{
+	"base_agility": 762.0,
+	"base_attack": 583.0,
+	"base_defense": 650.0,
+	"base_hp": 1554.0,
+	"base_mp": 607.0,
+	"base_wisdom": 945.0,
+	"display_name": "Ragin' Contagion",
+	"family": "Zombie",
+	"id": "ragin_contagion",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

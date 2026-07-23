@@ -1,0 +1,16 @@
+{
+	"base_agility": 676.0,
+	"base_attack": 851.0,
+	"base_defense": 1003.0,
+	"base_hp": 1403.0,
+	"base_mp": 439.0,
+	"base_wisdom": 698.0,
+	"display_name": "Octagoon",
+	"family": "Beast",
+	"id": "octagoon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

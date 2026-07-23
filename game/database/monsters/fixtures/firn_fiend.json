@@ -1,0 +1,16 @@
+{
+	"base_agility": 600.0,
+	"base_attack": 825.0,
+	"base_defense": 825.0,
+	"base_hp": 1500.0,
+	"base_mp": 475.0,
+	"base_wisdom": 850.0,
+	"display_name": "Firn Fiend",
+	"family": "Material",
+	"id": "firn_fiend",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

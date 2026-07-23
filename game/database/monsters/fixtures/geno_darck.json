@@ -1,18 +1,16 @@
 {
-    "id":  "geno_darck",
-    "display_name":  "Geno Darck",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1572,
-    "base_mp":  432,
-    "base_attack":  656,
-    "base_defense":  320,
-    "base_agility":  790,
-    "base_wisdom":  1008,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 790.0,
+	"base_attack": 656.0,
+	"base_defense": 320.0,
+	"base_hp": 1572.0,
+	"base_mp": 432.0,
+	"base_wisdom": 1008.0,
+	"display_name": "Geno Darck",
+	"family": "unknown",
+	"id": "geno_darck",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,18 +1,17 @@
 {
-    "id":  "valgirt",
-    "display_name":  "Valgirt",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2032,
-    "base_mp":  577,
-    "base_attack":  546,
-    "base_defense":  607,
-    "base_agility":  693,
-    "base_wisdom":  524,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 693.0,
+	"base_attack": 546.0,
+	"base_defense": 607.0,
+	"base_hp": 2032.0,
+	"base_mp": 577.0,
+	"base_wisdom": 524.0,
+	"display_name": "Valgirt",
+	"family": "Dragon",
+	"id": "valgirt",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/valgirt.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

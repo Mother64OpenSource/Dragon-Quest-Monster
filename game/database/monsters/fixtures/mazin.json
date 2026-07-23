@@ -1,0 +1,16 @@
+{
+	"base_agility": 420.0,
+	"base_attack": 756.0,
+	"base_defense": 840.0,
+	"base_hp": 1980.0,
+	"base_mp": 432.0,
+	"base_wisdom": 454.0,
+	"display_name": "Mazin",
+	"family": "Material",
+	"id": "mazin",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

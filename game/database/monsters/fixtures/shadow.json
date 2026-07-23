@@ -1,0 +1,16 @@
+{
+	"base_agility": 1021.0,
+	"base_attack": 641.0,
+	"base_defense": 770.0,
+	"base_hp": 1222.0,
+	"base_mp": 584.0,
+	"base_wisdom": 878.0,
+	"display_name": "Shadow",
+	"family": "Material",
+	"id": "shadow",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

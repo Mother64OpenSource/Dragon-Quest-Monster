@@ -1,0 +1,16 @@
+{
+	"base_agility": 944.0,
+	"base_attack": 837.0,
+	"base_defense": 730.0,
+	"base_hp": 1317.0,
+	"base_mp": 387.0,
+	"base_wisdom": 687.0,
+	"display_name": "Firebird",
+	"family": "Nature",
+	"id": "firebird",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

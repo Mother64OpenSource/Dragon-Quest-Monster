@@ -1,0 +1,16 @@
+{
+	"base_agility": 472.0,
+	"base_attack": 803.0,
+	"base_defense": 991.0,
+	"base_hp": 1854.0,
+	"base_mp": 657.0,
+	"base_wisdom": 968.0,
+	"display_name": "Wyrtle",
+	"family": "Dragon",
+	"id": "wyrtle",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

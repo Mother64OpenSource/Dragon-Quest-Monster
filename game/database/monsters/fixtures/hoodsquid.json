@@ -1,0 +1,16 @@
+{
+	"base_agility": 857.0,
+	"base_attack": 667.0,
+	"base_defense": 810.0,
+	"base_hp": 1476.0,
+	"base_mp": 523.0,
+	"base_wisdom": 667.0,
+	"display_name": "Hoodsquid",
+	"family": "Nature",
+	"id": "hoodsquid",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

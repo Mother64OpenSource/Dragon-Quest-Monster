@@ -1,0 +1,16 @@
+{
+	"base_agility": 716.0,
+	"base_attack": 716.0,
+	"base_defense": 741.0,
+	"base_hp": 1432.0,
+	"base_mp": 593.0,
+	"base_wisdom": 938.0,
+	"display_name": "Lesser Demon",
+	"family": "Devil",
+	"id": "lesser_demon",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

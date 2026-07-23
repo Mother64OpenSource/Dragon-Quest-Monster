@@ -1,18 +1,17 @@
 {
-    "id":  "syphon",
-    "display_name":  "Syphon",
-    "family":  "Zombie",
-    "rank":  "SS",
-    "base_hp":  1116,
-    "base_mp":  900,
-    "base_attack":  324,
-    "base_defense":  621,
-    "base_agility":  873,
-    "base_wisdom":  1053,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 873.0,
+	"base_attack": 324.0,
+	"base_defense": 621.0,
+	"base_hp": 1116.0,
+	"base_mp": 900.0,
+	"base_wisdom": 1053.0,
+	"display_name": "Syphon",
+	"family": "Zombie",
+	"id": "syphon",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/syphon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

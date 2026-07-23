@@ -1,0 +1,16 @@
+{
+	"base_agility": 642.0,
+	"base_attack": 875.0,
+	"base_defense": 775.0,
+	"base_hp": 1485.0,
+	"base_mp": 601.0,
+	"base_wisdom": 620.0,
+	"display_name": "Gryphon",
+	"family": "Devil",
+	"id": "gryphon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

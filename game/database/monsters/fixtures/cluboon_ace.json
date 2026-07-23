@@ -1,18 +1,17 @@
 {
-    "id":  "cluboon_ace",
-    "display_name":  "Cluboon Ace",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1379,
-    "base_mp":  528,
-    "base_attack":  822,
-    "base_defense":  880,
-    "base_agility":  743,
-    "base_wisdom":  704,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 743.0,
+	"base_attack": 822.0,
+	"base_defense": 880.0,
+	"base_hp": 1379.0,
+	"base_mp": 528.0,
+	"base_wisdom": 704.0,
+	"display_name": "Cluboon Ace",
+	"family": "unknown",
+	"id": "cluboon_ace",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/cluboon_ace.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

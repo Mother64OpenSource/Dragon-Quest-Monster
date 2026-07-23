@@ -1,0 +1,16 @@
+{
+	"base_agility": 708.0,
+	"base_attack": 819.0,
+	"base_defense": 708.0,
+	"base_hp": 1477.0,
+	"base_mp": 444.0,
+	"base_wisdom": 840.0,
+	"display_name": "Herb Man",
+	"family": "Zombie",
+	"id": "herb_man",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

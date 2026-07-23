@@ -1,0 +1,16 @@
+{
+	"base_agility": 634.0,
+	"base_attack": 732.0,
+	"base_defense": 951.0,
+	"base_hp": 1366.0,
+	"base_mp": 671.0,
+	"base_wisdom": 914.0,
+	"display_name": "Urnexpected",
+	"family": "Material",
+	"id": "urnexpected",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

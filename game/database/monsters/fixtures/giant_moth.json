@@ -1,0 +1,16 @@
+{
+	"base_agility": 708.0,
+	"base_attack": 663.0,
+	"base_defense": 884.0,
+	"base_hp": 1478.0,
+	"base_mp": 620.0,
+	"base_wisdom": 798.0,
+	"display_name": "Giant Moth",
+	"family": "Nature",
+	"id": "giant_moth",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -15,6 +15,7 @@ var member_index: int
 var _species: MonsterSpecies
 var _skill_db: SkillDatabase
 
+@onready var _species_icon: TextureRect = $HBoxContainer/SpeciesIcon
 @onready var _nickname_edit: LineEdit = $HBoxContainer/NicknameEdit
 @onready var _species_label: Label = $HBoxContainer/SpeciesLabel
 @onready var _skills_box: HBoxContainer = $HBoxContainer/SkillsBox
@@ -38,10 +39,12 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		child.queue_free()
 
 	if _species == null:
+		_species_icon.texture = null
 		_species_label.text = "Unknown species: '%s'" % loadout.species_id
 		_build_unknown_species_label()
 		return
 
+	_species_icon.texture = load(_species.sprite_path) if not _species.sprite_path.is_empty() else null
 	_species_label.text = _species.display_name
 	_build_skill_checkboxes()
 

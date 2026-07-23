@@ -1,18 +1,17 @@
 {
-    "id":  "zoma",
-    "display_name":  "Zoma",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  995,
-    "base_mp":  593,
-    "base_attack":  642,
-    "base_defense":  836,
-    "base_agility":  622,
-    "base_wisdom":  972,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 622.0,
+	"base_attack": 642.0,
+	"base_defense": 836.0,
+	"base_hp": 995.0,
+	"base_mp": 593.0,
+	"base_wisdom": 972.0,
+	"display_name": "Zoma",
+	"family": "unknown",
+	"id": "zoma",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/zoma.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

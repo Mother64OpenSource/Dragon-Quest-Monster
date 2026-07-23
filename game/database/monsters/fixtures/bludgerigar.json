@@ -1,19 +1,17 @@
 {
-    "id":  "bludgerigar",
-    "display_name":  "Bludgerigar",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1333,
-    "base_mp":  680,
-    "base_attack":  836,
-    "base_defense":  509,
-    "base_agility":  897,
-    "base_wisdom":  679,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/bludgerigar.webp"
+	"base_agility": 897.0,
+	"base_attack": 836.0,
+	"base_defense": 509.0,
+	"base_hp": 1333.0,
+	"base_mp": 680.0,
+	"base_wisdom": 679.0,
+	"display_name": "Bludgerigar",
+	"family": "Nature",
+	"id": "bludgerigar",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/bludgerigar.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 543.0,
+	"base_attack": 656.0,
+	"base_defense": 769.0,
+	"base_hp": 1364.0,
+	"base_mp": 450.0,
+	"base_wisdom": 860.0,
+	"display_name": "Belial",
+	"family": "Devil",
+	"id": "belial",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

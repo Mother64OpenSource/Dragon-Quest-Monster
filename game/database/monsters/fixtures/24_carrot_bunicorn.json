@@ -1,0 +1,16 @@
+{
+	"base_agility": 1000.0,
+	"base_attack": 840.0,
+	"base_defense": 740.0,
+	"base_hp": 1300.0,
+	"base_mp": 360.0,
+	"base_wisdom": 620.0,
+	"display_name": "24-Carrot Bunicorn",
+	"family": "Beast",
+	"id": "24_carrot_bunicorn",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

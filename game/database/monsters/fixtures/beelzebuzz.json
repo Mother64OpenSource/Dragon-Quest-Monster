@@ -1,0 +1,16 @@
+{
+	"base_agility": 870.0,
+	"base_attack": 710.0,
+	"base_defense": 560.0,
+	"base_hp": 1720.0,
+	"base_mp": 480.0,
+	"base_wisdom": 360.0,
+	"display_name": "Beelzebuzz",
+	"family": "Zombie",
+	"id": "beelzebuzz",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

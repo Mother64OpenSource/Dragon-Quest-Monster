@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 560.0,
+	"base_defense": 640.0,
+	"base_hp": 1050.0,
+	"base_mp": 480.0,
+	"base_wisdom": 640.0,
+	"display_name": "Cherry Slime",
+	"family": "Slime",
+	"id": "cherry_slime",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

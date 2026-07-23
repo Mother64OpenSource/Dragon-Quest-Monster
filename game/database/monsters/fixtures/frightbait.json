@@ -1,0 +1,16 @@
+{
+	"base_agility": 891.0,
+	"base_attack": 792.0,
+	"base_defense": 693.0,
+	"base_hp": 1465.0,
+	"base_mp": 496.0,
+	"base_wisdom": 515.0,
+	"display_name": "Frightbait",
+	"family": "Zombie",
+	"id": "frightbait",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

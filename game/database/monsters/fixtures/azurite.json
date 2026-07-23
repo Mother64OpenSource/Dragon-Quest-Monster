@@ -1,18 +1,17 @@
 {
-    "id":  "azurite",
-    "display_name":  "Azurite",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1680,
-    "base_mp":  420,
-    "base_attack":  706,
-    "base_defense":  622,
-    "base_agility":  706,
-    "base_wisdom":  630,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 706.0,
+	"base_attack": 706.0,
+	"base_defense": 622.0,
+	"base_hp": 1680.0,
+	"base_mp": 420.0,
+	"base_wisdom": 630.0,
+	"display_name": "Azurite",
+	"family": "Beast",
+	"id": "azurite",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/azurite.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

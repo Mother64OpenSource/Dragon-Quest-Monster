@@ -1,18 +1,17 @@
 {
-    "id":  "psaro",
-    "display_name":  "Psaro",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1622,
-    "base_mp":  503,
-    "base_attack":  847,
-    "base_defense":  847,
-    "base_agility":  753,
-    "base_wisdom":  571,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 753.0,
+	"base_attack": 847.0,
+	"base_defense": 847.0,
+	"base_hp": 1622.0,
+	"base_mp": 503.0,
+	"base_wisdom": 571.0,
+	"display_name": "Psaro",
+	"family": "unknown",
+	"id": "psaro",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/psaro.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

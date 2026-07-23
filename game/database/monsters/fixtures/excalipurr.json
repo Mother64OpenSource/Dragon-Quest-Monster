@@ -1,18 +1,17 @@
 {
-    "id":  "excalipurr",
-    "display_name":  "Excalipurr",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1098,
-    "base_mp":  441,
-    "base_attack":  856,
-    "base_defense":  428,
-    "base_agility":  964,
-    "base_wisdom":  498,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 964.0,
+	"base_attack": 856.0,
+	"base_defense": 428.0,
+	"base_hp": 1098.0,
+	"base_mp": 441.0,
+	"base_wisdom": 498.0,
+	"display_name": "Excalipurr",
+	"family": "Beast",
+	"id": "excalipurr",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/excalipurr.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

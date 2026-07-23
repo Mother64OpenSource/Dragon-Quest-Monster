@@ -1,18 +1,16 @@
 {
-    "id":  "lord_of_hell",
-    "display_name":  "Lord of Hell",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1560,
-    "base_mp":  455,
-    "base_attack":  665,
-    "base_defense":  630,
-    "base_agility":  572,
-    "base_wisdom":  651,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 572.0,
+	"base_attack": 665.0,
+	"base_defense": 630.0,
+	"base_hp": 1560.0,
+	"base_mp": 455.0,
+	"base_wisdom": 651.0,
+	"display_name": "Lord of Hell",
+	"family": "unknown",
+	"id": "lord_of_hell",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

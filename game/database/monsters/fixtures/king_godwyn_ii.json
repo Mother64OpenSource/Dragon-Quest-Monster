@@ -1,18 +1,17 @@
 {
-    "id":  "king_godwyn_ii",
-    "display_name":  "King Godwyn II",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1977,
-    "base_mp":  691,
-    "base_attack":  473,
-    "base_defense":  430,
-    "base_agility":  687,
-    "base_wisdom":  859,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 687.0,
+	"base_attack": 473.0,
+	"base_defense": 430.0,
+	"base_hp": 1977.0,
+	"base_mp": 691.0,
+	"base_wisdom": 859.0,
+	"display_name": "King Godwyn II",
+	"family": "Zombie",
+	"id": "king_godwyn_ii",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/king_godwyn_ii.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

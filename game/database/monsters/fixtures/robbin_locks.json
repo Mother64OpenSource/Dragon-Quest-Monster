@@ -1,18 +1,16 @@
 {
-    "id":  "robbin_locks",
-    "display_name":  "Robbin\u0027 Locks",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2224,
-    "base_mp":  576,
-    "base_attack":  687,
-    "base_defense":  722,
-    "base_agility":  880,
-    "base_wisdom":  423,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 880.0,
+	"base_attack": 687.0,
+	"base_defense": 722.0,
+	"base_hp": 2224.0,
+	"base_mp": 576.0,
+	"base_wisdom": 423.0,
+	"display_name": "Robbin' Locks",
+	"family": "unknown",
+	"id": "robbin_locks",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

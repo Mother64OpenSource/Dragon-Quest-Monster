@@ -1,0 +1,16 @@
+{
+	"base_agility": 511.0,
+	"base_attack": 649.0,
+	"base_defense": 880.0,
+	"base_hp": 2624.0,
+	"base_mp": 578.0,
+	"base_wisdom": 638.0,
+	"display_name": "Stormgate Citadel",
+	"family": "Material",
+	"id": "stormgate_citadel",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,16 @@
 {
-    "id":  "guardian_lazuvann",
-    "display_name":  "Guardian Lazuvann",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1440,
-    "base_mp":  420,
-    "base_attack":  824,
-    "base_defense":  731,
-    "base_agility":  656,
-    "base_wisdom":  723,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 656.0,
+	"base_attack": 824.0,
+	"base_defense": 731.0,
+	"base_hp": 1440.0,
+	"base_mp": 420.0,
+	"base_wisdom": 723.0,
+	"display_name": "Guardian Lazuvann",
+	"family": "unknown",
+	"id": "guardian_lazuvann",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

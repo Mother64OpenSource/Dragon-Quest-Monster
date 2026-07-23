@@ -1,0 +1,16 @@
+{
+	"base_agility": 544.0,
+	"base_attack": 552.0,
+	"base_defense": 624.0,
+	"base_hp": 1239.0,
+	"base_mp": 464.0,
+	"base_wisdom": 288.0,
+	"display_name": "Bodkin Archer",
+	"family": "Devil",
+	"id": "bodkin_archer",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

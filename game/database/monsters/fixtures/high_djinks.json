@@ -1,0 +1,16 @@
+{
+	"base_agility": 775.0,
+	"base_attack": 818.0,
+	"base_defense": 732.0,
+	"base_hp": 1331.0,
+	"base_mp": 559.0,
+	"base_wisdom": 861.0,
+	"display_name": "High Djinks",
+	"family": "Devil",
+	"id": "high_djinks",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

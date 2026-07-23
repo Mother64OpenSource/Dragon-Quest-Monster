@@ -1,18 +1,16 @@
 {
-    "id":  "demonic_carriage",
-    "display_name":  "Demonic Carriage",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  2800,
-    "base_mp":  586,
-    "base_attack":  653,
-    "base_defense":  828,
-    "base_agility":  432,
-    "base_wisdom":  643,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 432.0,
+	"base_attack": 653.0,
+	"base_defense": 828.0,
+	"base_hp": 2800.0,
+	"base_mp": 586.0,
+	"base_wisdom": 643.0,
+	"display_name": "Demonic Carriage",
+	"family": "Material",
+	"id": "demonic_carriage",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

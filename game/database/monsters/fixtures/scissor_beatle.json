@@ -1,0 +1,16 @@
+{
+	"base_agility": 609.0,
+	"base_attack": 838.0,
+	"base_defense": 1168.0,
+	"base_hp": 1587.0,
+	"base_mp": 358.0,
+	"base_wisdom": 406.0,
+	"display_name": "Scissor Beatle",
+	"family": "Nature",
+	"id": "scissor_beatle",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

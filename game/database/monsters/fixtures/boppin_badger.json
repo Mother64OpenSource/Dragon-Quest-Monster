@@ -1,19 +1,17 @@
 {
-    "id":  "boppin_badger",
-    "display_name":  "Boppin\u0027 Badger",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1460,
-    "base_mp":  380,
-    "base_attack":  820,
-    "base_defense":  910,
-    "base_agility":  800,
-    "base_wisdom":  550,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/boppin_badger.webp"
+	"base_agility": 800.0,
+	"base_attack": 820.0,
+	"base_defense": 910.0,
+	"base_hp": 1460.0,
+	"base_mp": 380.0,
+	"base_wisdom": 550.0,
+	"display_name": "Boppin' Badger",
+	"family": "Beast",
+	"id": "boppin_badger",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/boppin_badger.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

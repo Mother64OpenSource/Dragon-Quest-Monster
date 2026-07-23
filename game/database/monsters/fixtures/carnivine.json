@@ -1,0 +1,16 @@
+{
+	"base_agility": 642.0,
+	"base_attack": 821.0,
+	"base_defense": 632.0,
+	"base_hp": 2059.0,
+	"base_mp": 573.0,
+	"base_wisdom": 722.0,
+	"display_name": "Carnivine",
+	"family": "Nature",
+	"id": "carnivine",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

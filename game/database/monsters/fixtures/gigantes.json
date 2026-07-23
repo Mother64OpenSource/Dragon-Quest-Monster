@@ -1,0 +1,16 @@
+{
+	"base_agility": 549.0,
+	"base_attack": 870.0,
+	"base_defense": 945.0,
+	"base_hp": 2187.0,
+	"base_mp": 486.0,
+	"base_wisdom": 378.0,
+	"display_name": "Gigantes",
+	"family": "Devil",
+	"id": "gigantes",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 993.0,
+	"base_attack": 756.0,
+	"base_defense": 482.0,
+	"base_hp": 1931.0,
+	"base_mp": 513.0,
+	"base_wisdom": 520.0,
+	"display_name": "Pteranodon",
+	"family": "Dragon",
+	"id": "pteranodon",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

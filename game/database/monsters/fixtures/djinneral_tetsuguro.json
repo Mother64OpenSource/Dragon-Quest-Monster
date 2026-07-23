@@ -1,0 +1,16 @@
+{
+	"base_agility": 720.0,
+	"base_attack": 560.0,
+	"base_defense": 720.0,
+	"base_hp": 1080.0,
+	"base_mp": 400.0,
+	"base_wisdom": 560.0,
+	"display_name": "Djinneral Tetsuguro",
+	"family": "unknown",
+	"id": "djinneral_tetsuguro",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

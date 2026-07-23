@@ -1,0 +1,16 @@
+{
+	"base_agility": 525.0,
+	"base_attack": 730.0,
+	"base_defense": 593.0,
+	"base_hp": 1650.0,
+	"base_mp": 639.0,
+	"base_wisdom": 958.0,
+	"display_name": "Cumulus Rex",
+	"family": "Material",
+	"id": "cumulus_rex",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

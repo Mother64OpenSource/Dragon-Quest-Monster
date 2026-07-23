@@ -1,0 +1,16 @@
+{
+	"base_agility": 800.0,
+	"base_attack": 570.0,
+	"base_defense": 800.0,
+	"base_hp": 1620.0,
+	"base_mp": 390.0,
+	"base_wisdom": 830.0,
+	"display_name": "Scarfish",
+	"family": "Zombie",
+	"id": "scarfish",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

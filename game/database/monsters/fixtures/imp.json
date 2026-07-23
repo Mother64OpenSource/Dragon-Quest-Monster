@@ -1,0 +1,16 @@
+{
+	"base_agility": 820.0,
+	"base_attack": 819.0,
+	"base_defense": 800.0,
+	"base_hp": 1301.0,
+	"base_mp": 356.0,
+	"base_wisdom": 964.0,
+	"display_name": "Imp",
+	"family": "Devil",
+	"id": "imp",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

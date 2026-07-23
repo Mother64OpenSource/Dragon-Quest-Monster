@@ -1,19 +1,17 @@
 {
-    "id":  "lunatick",
-    "display_name":  "Lunatick",
-    "family":  "Devil",
-    "rank":  "F",
-    "base_hp":  1588,
-    "base_mp":  571,
-    "base_attack":  762,
-    "base_defense":  559,
-    "base_agility":  647,
-    "base_wisdom":  876,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/lunatick.webp"
+	"base_agility": 647.0,
+	"base_attack": 762.0,
+	"base_defense": 559.0,
+	"base_hp": 1588.0,
+	"base_mp": 571.0,
+	"base_wisdom": 876.0,
+	"display_name": "Lunatick",
+	"family": "Devil",
+	"id": "lunatick",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/lunatick.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

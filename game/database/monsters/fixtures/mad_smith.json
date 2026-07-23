@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 900.0,
+	"base_defense": 720.0,
+	"base_hp": 1480.0,
+	"base_mp": 640.0,
+	"base_wisdom": 660.0,
+	"display_name": "Mad Smith",
+	"family": "Zombie",
+	"id": "mad_smith",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

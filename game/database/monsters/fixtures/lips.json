@@ -1,19 +1,17 @@
 {
-    "id":  "lips",
-    "display_name":  "Lips",
-    "family":  "Devil",
-    "rank":  "F",
-    "base_hp":  1211,
-    "base_mp":  597,
-    "base_attack":  572,
-    "base_defense":  648,
-    "base_agility":  441,
-    "base_wisdom":  364,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/lips.webp"
+	"base_agility": 441.0,
+	"base_attack": 572.0,
+	"base_defense": 648.0,
+	"base_hp": 1211.0,
+	"base_mp": 597.0,
+	"base_wisdom": 364.0,
+	"display_name": "Lips",
+	"family": "Devil",
+	"id": "lips",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/lips.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

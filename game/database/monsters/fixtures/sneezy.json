@@ -1,18 +1,16 @@
 {
-    "id":  "sneezy",
-    "display_name":  "Sneezy",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1620,
-    "base_mp":  432,
-    "base_attack":  614,
-    "base_defense":  353,
-    "base_agility":  874,
-    "base_wisdom":  824,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 874.0,
+	"base_attack": 614.0,
+	"base_defense": 353.0,
+	"base_hp": 1620.0,
+	"base_mp": 432.0,
+	"base_wisdom": 824.0,
+	"display_name": "Sneezy",
+	"family": "unknown",
+	"id": "sneezy",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,18 +1,17 @@
 {
-    "id":  "magarugi",
-    "display_name":  "Magarugi",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2092,
-    "base_mp":  818,
-    "base_attack":  492,
-    "base_defense":  642,
-    "base_agility":  833,
-    "base_wisdom":  1000,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 833.0,
+	"base_attack": 492.0,
+	"base_defense": 642.0,
+	"base_hp": 2092.0,
+	"base_mp": 818.0,
+	"base_wisdom": 1000.0,
+	"display_name": "Magarugi",
+	"family": "unknown",
+	"id": "magarugi",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/magarugi.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

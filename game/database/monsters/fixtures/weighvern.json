@@ -1,0 +1,16 @@
+{
+	"base_agility": 785.0,
+	"base_attack": 638.0,
+	"base_defense": 791.0,
+	"base_hp": 2428.0,
+	"base_mp": 580.0,
+	"base_wisdom": 418.0,
+	"display_name": "Weighvern",
+	"family": "Dragon",
+	"id": "weighvern",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

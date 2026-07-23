@@ -1,0 +1,16 @@
+{
+	"base_agility": 968.0,
+	"base_attack": 558.0,
+	"base_defense": 397.0,
+	"base_hp": 913.0,
+	"base_mp": 421.0,
+	"base_wisdom": 447.0,
+	"display_name": "Hell Hornet",
+	"family": "Nature",
+	"id": "hell_hornet",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

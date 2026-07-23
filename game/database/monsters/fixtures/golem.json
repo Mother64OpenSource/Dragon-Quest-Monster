@@ -1,14 +1,20 @@
 {
-  "id": "golem",
-  "display_name": "Golem",
-  "family": "golem",
-  "rank": "C",
-  "base_hp": 50,
-  "base_mp": 5,
-  "base_attack": 14,
-  "base_defense": 20,
-  "base_agility": 4,
-  "base_wisdom": 4,
-  "starting_skill_ids": ["attack", "double_slash"],
-  "starting_trait_ids": ["metal_body"]
+    "id":  "golem",
+    "display_name":  "Golem",
+    "family":  "golem",
+    "rank":  "C",
+    "base_hp":  50,
+    "base_mp":  5,
+    "base_attack":  14,
+    "base_defense":  20,
+    "base_agility":  4,
+    "base_wisdom":  4,
+    "starting_skill_ids":  [
+                               "attack",
+                               "double_slash"
+                           ],
+    "starting_trait_ids":  [
+                               "metal_body"
+                           ],
+    "sprite_path":  "res://assets/monsters/golem.webp"
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 240.0,
+	"base_attack": 528.0,
+	"base_defense": 1000.0,
+	"base_hp": 1190.0,
+	"base_mp": 424.0,
+	"base_wisdom": 720.0,
+	"display_name": "Snail Slime",
+	"family": "Slime",
+	"id": "snail_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

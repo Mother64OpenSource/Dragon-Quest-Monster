@@ -1,18 +1,16 @@
 {
-    "id":  "monster_wanderer",
-    "display_name":  "Monster Wanderer",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  2076,
-    "base_mp":  504,
-    "base_attack":  563,
-    "base_defense":  807,
-    "base_agility":  513,
-    "base_wisdom":  504,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 513.0,
+	"base_attack": 563.0,
+	"base_defense": 807.0,
+	"base_hp": 2076.0,
+	"base_mp": 504.0,
+	"base_wisdom": 504.0,
+	"display_name": "Monster Wanderer",
+	"family": "Dragon",
+	"id": "monster_wanderer",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

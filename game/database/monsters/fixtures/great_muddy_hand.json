@@ -1,0 +1,16 @@
+{
+	"base_agility": 724.0,
+	"base_attack": 912.0,
+	"base_defense": 657.0,
+	"base_hp": 3500.0,
+	"base_mp": 776.0,
+	"base_wisdom": 596.0,
+	"display_name": "Great Muddy Hand",
+	"family": "Material",
+	"id": "great_muddy_hand",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

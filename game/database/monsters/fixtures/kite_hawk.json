@@ -1,0 +1,16 @@
+{
+	"base_agility": 820.0,
+	"base_attack": 660.0,
+	"base_defense": 610.0,
+	"base_hp": 1640.0,
+	"base_mp": 660.0,
+	"base_wisdom": 490.0,
+	"display_name": "Kite Hawk",
+	"family": "Zombie",
+	"id": "kite_hawk",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

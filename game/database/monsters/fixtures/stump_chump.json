@@ -1,19 +1,17 @@
 {
-    "id":  "stump_chump",
-    "display_name":  "Stump Chump",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1517,
-    "base_mp":  580,
-    "base_attack":  852,
-    "base_defense":  928,
-    "base_agility":  639,
-    "base_wisdom":  476,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/stump_chump.webp"
+	"base_agility": 639.0,
+	"base_attack": 852.0,
+	"base_defense": 928.0,
+	"base_hp": 1517.0,
+	"base_mp": 580.0,
+	"base_wisdom": 476.0,
+	"display_name": "Stump Chump",
+	"family": "Zombie",
+	"id": "stump_chump",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/stump_chump.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

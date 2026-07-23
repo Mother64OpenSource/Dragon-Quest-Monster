@@ -1,0 +1,16 @@
+{
+	"base_agility": 770.0,
+	"base_attack": 910.0,
+	"base_defense": 590.0,
+	"base_hp": 1570.0,
+	"base_mp": 360.0,
+	"base_wisdom": 550.0,
+	"display_name": "Dingbat",
+	"family": "Devil",
+	"id": "dingbat",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

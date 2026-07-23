@@ -1,0 +1,16 @@
+{
+	"base_agility": 594.0,
+	"base_attack": 542.0,
+	"base_defense": 568.0,
+	"base_hp": 1174.0,
+	"base_mp": 465.0,
+	"base_wisdom": 414.0,
+	"display_name": "Mottle Slime",
+	"family": "Slime",
+	"id": "mottle_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 561.0,
+	"base_attack": 815.0,
+	"base_defense": 917.0,
+	"base_hp": 1631.0,
+	"base_mp": 610.0,
+	"base_wisdom": 459.0,
+	"display_name": "Mummy",
+	"family": "Zombie",
+	"id": "mummy",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

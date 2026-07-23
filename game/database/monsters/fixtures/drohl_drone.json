@@ -1,19 +1,17 @@
 {
-    "id":  "drohl_drone",
-    "display_name":  "Drohl Drone",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1366,
-    "base_mp":  489,
-    "base_attack":  743,
-    "base_defense":  756,
-    "base_agility":  951,
-    "base_wisdom":  635,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/drohl_drone.webp"
+	"base_agility": 951.0,
+	"base_attack": 743.0,
+	"base_defense": 756.0,
+	"base_hp": 1366.0,
+	"base_mp": 489.0,
+	"base_wisdom": 635.0,
+	"display_name": "Drohl Drone",
+	"family": "Zombie",
+	"id": "drohl_drone",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/drohl_drone.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

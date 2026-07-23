@@ -1,0 +1,16 @@
+{
+	"base_agility": 876.0,
+	"base_attack": 809.0,
+	"base_defense": 762.0,
+	"base_hp": 1428.0,
+	"base_mp": 419.0,
+	"base_wisdom": 593.0,
+	"display_name": "Fat Rat",
+	"family": "Beast",
+	"id": "fat_rat",
+	"rank": "F",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

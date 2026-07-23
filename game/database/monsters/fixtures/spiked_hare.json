@@ -1,0 +1,16 @@
+{
+	"base_agility": 940.0,
+	"base_attack": 843.0,
+	"base_defense": 796.0,
+	"base_hp": 1301.0,
+	"base_mp": 361.0,
+	"base_wisdom": 675.0,
+	"display_name": "Spiked Hare",
+	"family": "Beast",
+	"id": "spiked_hare",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

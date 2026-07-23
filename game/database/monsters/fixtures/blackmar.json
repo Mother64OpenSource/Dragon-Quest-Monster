@@ -1,18 +1,17 @@
 {
-    "id":  "blackmar",
-    "display_name":  "Blackmar",
-    "family":  "Devil",
-    "rank":  "S",
-    "base_hp":  1245,
-    "base_mp":  596,
-    "base_attack":  660,
-    "base_defense":  638,
-    "base_agility":  262,
-    "base_wisdom":  836,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 262.0,
+	"base_attack": 660.0,
+	"base_defense": 638.0,
+	"base_hp": 1245.0,
+	"base_mp": 596.0,
+	"base_wisdom": 836.0,
+	"display_name": "Blackmar",
+	"family": "Devil",
+	"id": "blackmar",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/blackmar.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 648.0,
+	"base_attack": 625.0,
+	"base_defense": 515.0,
+	"base_hp": 1060.0,
+	"base_mp": 452.0,
+	"base_wisdom": 468.0,
+	"display_name": "Dragon Slime",
+	"family": "Slime",
+	"id": "dragon_slime",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

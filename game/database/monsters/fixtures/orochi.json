@@ -1,18 +1,17 @@
 {
-    "id":  "orochi",
-    "display_name":  "Orochi",
-    "family":  "Dragon",
-    "rank":  "S",
-    "base_hp":  2880,
-    "base_mp":  640,
-    "base_attack":  696,
-    "base_defense":  590,
-    "base_agility":  520,
-    "base_wisdom":  502,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 520.0,
+	"base_attack": 696.0,
+	"base_defense": 590.0,
+	"base_hp": 2880.0,
+	"base_mp": 640.0,
+	"base_wisdom": 502.0,
+	"display_name": "Orochi",
+	"family": "Dragon",
+	"id": "orochi",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/orochi.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

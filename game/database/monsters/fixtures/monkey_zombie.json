@@ -1,0 +1,16 @@
+{
+	"base_agility": 742.0,
+	"base_attack": 786.0,
+	"base_defense": 698.0,
+	"base_hp": 1403.0,
+	"base_mp": 568.0,
+	"base_wisdom": 872.0,
+	"display_name": "Monkey Zombie",
+	"family": "Zombie",
+	"id": "monkey_zombie",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

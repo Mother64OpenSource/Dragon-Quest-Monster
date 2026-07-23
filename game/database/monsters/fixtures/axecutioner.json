@@ -1,0 +1,16 @@
+{
+	"base_agility": 320.0,
+	"base_attack": 707.0,
+	"base_defense": 602.0,
+	"base_hp": 1260.0,
+	"base_mp": 343.0,
+	"base_wisdom": 524.0,
+	"display_name": "Axecutioner",
+	"family": "Devil",
+	"id": "axecutioner",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

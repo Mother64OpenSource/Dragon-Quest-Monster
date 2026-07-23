@@ -1,18 +1,16 @@
 {
-    "id":  "darkonium_slime",
-    "display_name":  "Darkonium Slime",
-    "family":  "Slime",
-    "rank":  "S",
-    "base_hp":  209,
-    "base_mp":  605,
-    "base_attack":  416,
-    "base_defense":  1500,
-    "base_agility":  1260,
-    "base_wisdom":  877,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1260.0,
+	"base_attack": 416.0,
+	"base_defense": 1500.0,
+	"base_hp": 209.0,
+	"base_mp": 605.0,
+	"base_wisdom": 877.0,
+	"display_name": "Darkonium Slime",
+	"family": "Slime",
+	"id": "darkonium_slime",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 560.0,
+	"base_attack": 560.0,
+	"base_defense": 560.0,
+	"base_hp": 1120.0,
+	"base_mp": 480.0,
+	"base_wisdom": 560.0,
+	"display_name": "Flan Slime",
+	"family": "Slime",
+	"id": "flan_slime",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

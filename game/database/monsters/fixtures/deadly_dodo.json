@@ -1,0 +1,16 @@
+{
+	"base_agility": 808.0,
+	"base_attack": 808.0,
+	"base_defense": 516.0,
+	"base_hp": 1554.0,
+	"base_mp": 505.0,
+	"base_wisdom": 639.0,
+	"display_name": "Deadly Dodo",
+	"family": "Nature",
+	"id": "deadly_dodo",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,17 @@
 {
-    "id":  "woolly_elefort",
-    "display_name":  "Woolly Elefort",
-    "family":  "Beast",
-    "rank":  "SS",
-    "base_hp":  2248,
-    "base_mp":  698,
-    "base_attack":  571,
-    "base_defense":  678,
-    "base_agility":  571,
-    "base_wisdom":  357,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 571.0,
+	"base_attack": 571.0,
+	"base_defense": 678.0,
+	"base_hp": 2248.0,
+	"base_mp": 698.0,
+	"base_wisdom": 357.0,
+	"display_name": "Woolly Elefort",
+	"family": "Beast",
+	"id": "woolly_elefort",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/woolly_elefort.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

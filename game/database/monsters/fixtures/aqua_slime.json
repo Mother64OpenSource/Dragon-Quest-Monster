@@ -1,0 +1,16 @@
+{
+	"base_agility": 920.0,
+	"base_attack": 660.0,
+	"base_defense": 640.0,
+	"base_hp": 1470.0,
+	"base_mp": 520.0,
+	"base_wisdom": 740.0,
+	"display_name": "Aqua Slime",
+	"family": "Slime",
+	"id": "aqua_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

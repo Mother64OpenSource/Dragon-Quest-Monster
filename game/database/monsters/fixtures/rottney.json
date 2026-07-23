@@ -1,18 +1,16 @@
 {
-    "id":  "rottney",
-    "display_name":  "Rottney",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  956,
-    "base_mp":  584,
-    "base_attack":  550,
-    "base_defense":  284,
-    "base_agility":  750,
-    "base_wisdom":  750,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 750.0,
+	"base_attack": 550.0,
+	"base_defense": 284.0,
+	"base_hp": 956.0,
+	"base_mp": 584.0,
+	"base_wisdom": 750.0,
+	"display_name": "Rottney",
+	"family": "unknown",
+	"id": "rottney",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

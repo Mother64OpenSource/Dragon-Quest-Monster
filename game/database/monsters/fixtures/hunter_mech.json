@@ -1,0 +1,16 @@
+{
+	"base_agility": 720.0,
+	"base_attack": 855.0,
+	"base_defense": 755.0,
+	"base_hp": 1260.0,
+	"base_mp": 328.0,
+	"base_wisdom": 450.0,
+	"display_name": "Hunter Mech",
+	"family": "Material",
+	"id": "hunter_mech",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

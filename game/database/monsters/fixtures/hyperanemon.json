@@ -1,0 +1,16 @@
+{
+	"base_agility": 766.0,
+	"base_attack": 761.0,
+	"base_defense": 592.0,
+	"base_hp": 1421.0,
+	"base_mp": 592.0,
+	"base_wisdom": 920.0,
+	"display_name": "Hyperanemon",
+	"family": "Devil",
+	"id": "hyperanemon",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

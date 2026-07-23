@@ -1,0 +1,16 @@
+{
+	"base_agility": 837.0,
+	"base_attack": 247.0,
+	"base_defense": 542.0,
+	"base_hp": 862.0,
+	"base_mp": 788.0,
+	"base_wisdom": 935.0,
+	"display_name": "Kukri",
+	"family": "unknown",
+	"id": "kukri",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

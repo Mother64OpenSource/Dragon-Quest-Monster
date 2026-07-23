@@ -1,18 +1,17 @@
 {
-    "id":  "veera",
-    "display_name":  "Veera",
-    "family":  "Beast",
-    "rank":  "SS",
-    "base_hp":  1242,
-    "base_mp":  497,
-    "base_attack":  775,
-    "base_defense":  387,
-    "base_agility":  944,
-    "base_wisdom":  398,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 944.0,
+	"base_attack": 775.0,
+	"base_defense": 387.0,
+	"base_hp": 1242.0,
+	"base_mp": 497.0,
+	"base_wisdom": 398.0,
+	"display_name": "Veera",
+	"family": "Beast",
+	"id": "veera",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/veera.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

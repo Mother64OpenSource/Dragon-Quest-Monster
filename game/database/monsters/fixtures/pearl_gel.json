@@ -1,0 +1,16 @@
+{
+	"base_agility": 720.0,
+	"base_attack": 660.0,
+	"base_defense": 900.0,
+	"base_hp": 1510.0,
+	"base_mp": 520.0,
+	"base_wisdom": 800.0,
+	"display_name": "Pearl Gel",
+	"family": "Slime",
+	"id": "pearl_gel",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

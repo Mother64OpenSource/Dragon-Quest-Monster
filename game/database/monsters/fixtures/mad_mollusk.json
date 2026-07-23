@@ -1,0 +1,16 @@
+{
+	"base_agility": 540.0,
+	"base_attack": 849.0,
+	"base_defense": 592.0,
+	"base_hp": 1658.0,
+	"base_mp": 697.0,
+	"base_wisdom": 617.0,
+	"display_name": "Mad Mollusk",
+	"family": "Nature",
+	"id": "mad_mollusk",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

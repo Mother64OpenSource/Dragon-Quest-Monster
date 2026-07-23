@@ -1,0 +1,16 @@
+{
+	"base_agility": 429.0,
+	"base_attack": 748.0,
+	"base_defense": 521.0,
+	"base_hp": 2064.0,
+	"base_mp": 696.0,
+	"base_wisdom": 471.0,
+	"display_name": "Finned Fatale",
+	"family": "Dragon",
+	"id": "finned_fatale",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

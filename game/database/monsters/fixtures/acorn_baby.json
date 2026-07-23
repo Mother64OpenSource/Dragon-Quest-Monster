@@ -1,0 +1,16 @@
+{
+	"base_agility": 336.0,
+	"base_attack": 744.0,
+	"base_defense": 656.0,
+	"base_hp": 1225.0,
+	"base_mp": 432.0,
+	"base_wisdom": 352.0,
+	"display_name": "Acorn Baby",
+	"family": "Nature",
+	"id": "acorn_baby",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

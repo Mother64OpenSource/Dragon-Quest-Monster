@@ -1,0 +1,16 @@
+{
+	"base_agility": 343.0,
+	"base_attack": 700.0,
+	"base_defense": 476.0,
+	"base_hp": 1211.0,
+	"base_mp": 308.0,
+	"base_wisdom": 308.0,
+	"display_name": "Octophant",
+	"family": "Nature",
+	"id": "octophant",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 920.0,
+	"base_attack": 620.0,
+	"base_defense": 770.0,
+	"base_hp": 1420.0,
+	"base_mp": 450.0,
+	"base_wisdom": 860.0,
+	"display_name": "Lunar Chimaera",
+	"family": "Nature",
+	"id": "lunar_chimaera",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

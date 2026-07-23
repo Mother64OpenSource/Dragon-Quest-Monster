@@ -1,0 +1,16 @@
+{
+	"base_agility": 840.0,
+	"base_attack": 790.0,
+	"base_defense": 741.0,
+	"base_hp": 1481.0,
+	"base_mp": 494.0,
+	"base_wisdom": 543.0,
+	"display_name": "Beavern",
+	"family": "Beast",
+	"id": "beavern",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

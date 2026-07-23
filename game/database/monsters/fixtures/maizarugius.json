@@ -1,18 +1,16 @@
 {
-    "id":  "maizarugius",
-    "display_name":  "Maizarugius",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2288,
-    "base_mp":  567,
-    "base_attack":  599,
-    "base_defense":  669,
-    "base_agility":  757,
-    "base_wisdom":  828,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 757.0,
+	"base_attack": 599.0,
+	"base_defense": 669.0,
+	"base_hp": 2288.0,
+	"base_mp": 567.0,
+	"base_wisdom": 828.0,
+	"display_name": "Maizarugius",
+	"family": "unknown",
+	"id": "maizarugius",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,19 +1,17 @@
 {
-    "id":  "mummy_boy",
-    "display_name":  "Mummy Boy",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1570,
-    "base_mp":  532,
-    "base_attack":  835,
-    "base_defense":  886,
-    "base_agility":  633,
-    "base_wisdom":  506,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/mummy_boy.webp"
+	"base_agility": 633.0,
+	"base_attack": 835.0,
+	"base_defense": 886.0,
+	"base_hp": 1570.0,
+	"base_mp": 532.0,
+	"base_wisdom": 506.0,
+	"display_name": "Mummy Boy",
+	"family": "Zombie",
+	"id": "mummy_boy",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/mummy_boy.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

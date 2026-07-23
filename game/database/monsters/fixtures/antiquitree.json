@@ -1,0 +1,16 @@
+{
+	"base_agility": 504.0,
+	"base_attack": 656.0,
+	"base_defense": 723.0,
+	"base_hp": 1776.0,
+	"base_mp": 564.0,
+	"base_wisdom": 798.0,
+	"display_name": "Antiquitree",
+	"family": "Nature",
+	"id": "antiquitree",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

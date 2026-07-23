@@ -1,0 +1,16 @@
+{
+	"base_agility": 620.0,
+	"base_attack": 840.0,
+	"base_defense": 900.0,
+	"base_hp": 1510.0,
+	"base_mp": 360.0,
+	"base_wisdom": 800.0,
+	"display_name": "Beetlebully",
+	"family": "Nature",
+	"id": "beetlebully",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

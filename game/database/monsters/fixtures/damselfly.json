@@ -1,0 +1,16 @@
+{
+	"base_agility": 920.0,
+	"base_attack": 473.0,
+	"base_defense": 324.0,
+	"base_hp": 929.0,
+	"base_mp": 523.0,
+	"base_wisdom": 647.0,
+	"display_name": "Damselfly",
+	"family": "Dragon",
+	"id": "damselfly",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

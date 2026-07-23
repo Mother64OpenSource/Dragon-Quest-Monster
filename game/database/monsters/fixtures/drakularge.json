@@ -1,0 +1,16 @@
+{
+	"base_agility": 645.0,
+	"base_attack": 904.0,
+	"base_defense": 950.0,
+	"base_hp": 1601.0,
+	"base_mp": 367.0,
+	"base_wisdom": 383.0,
+	"display_name": "Drakularge",
+	"family": "Dragon",
+	"id": "drakularge",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

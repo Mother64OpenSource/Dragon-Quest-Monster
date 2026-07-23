@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 866.0,
+	"base_defense": 1180.0,
+	"base_hp": 1412.0,
+	"base_mp": 394.0,
+	"base_wisdom": 590.0,
+	"display_name": "Scorpion",
+	"family": "Nature",
+	"id": "scorpion",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

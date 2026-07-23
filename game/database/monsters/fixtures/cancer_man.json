@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 950.0,
+	"base_defense": 730.0,
+	"base_hp": 1580.0,
+	"base_mp": 350.0,
+	"base_wisdom": 640.0,
+	"display_name": "Cancer Man",
+	"family": "Nature",
+	"id": "cancer_man",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

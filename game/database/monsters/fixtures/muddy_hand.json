@@ -1,19 +1,17 @@
 {
-    "id":  "muddy_hand",
-    "display_name":  "Muddy Hand",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1211,
-    "base_mp":  560,
-    "base_attack":  623,
-    "base_defense":  506,
-    "base_agility":  480,
-    "base_wisdom":  364,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/muddy_hand.webp"
+	"base_agility": 480.0,
+	"base_attack": 623.0,
+	"base_defense": 506.0,
+	"base_hp": 1211.0,
+	"base_mp": 560.0,
+	"base_wisdom": 364.0,
+	"display_name": "Muddy Hand",
+	"family": "Material",
+	"id": "muddy_hand",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/muddy_hand.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

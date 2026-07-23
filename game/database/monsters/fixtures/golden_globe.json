@@ -1,19 +1,17 @@
 {
-    "id":  "golden_globe",
-    "display_name":  "Golden Globe",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1580,
-    "base_mp":  640,
-    "base_attack":  900,
-    "base_defense":  500,
-    "base_agility":  600,
-    "base_wisdom":  700,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/golden_globe.webp"
+	"base_agility": 600.0,
+	"base_attack": 900.0,
+	"base_defense": 500.0,
+	"base_hp": 1580.0,
+	"base_mp": 640.0,
+	"base_wisdom": 700.0,
+	"display_name": "Golden Globe",
+	"family": "Nature",
+	"id": "golden_globe",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/golden_globe.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

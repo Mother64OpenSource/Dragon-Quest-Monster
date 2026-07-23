@@ -1,0 +1,16 @@
+{
+	"base_agility": 415.0,
+	"base_attack": 769.0,
+	"base_defense": 415.0,
+	"base_hp": 2056.0,
+	"base_mp": 468.0,
+	"base_wisdom": 733.0,
+	"display_name": "Tri Winder",
+	"family": "Dragon",
+	"id": "tri_winder",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,17 @@
 {
-    "id":  "dark_dragonlord",
-    "display_name":  "Dark Dragonlord",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2205,
-    "base_mp":  750,
-    "base_attack":  511,
-    "base_defense":  483,
-    "base_agility":  580,
-    "base_wisdom":  483,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 580.0,
+	"base_attack": 511.0,
+	"base_defense": 483.0,
+	"base_hp": 2205.0,
+	"base_mp": 750.0,
+	"base_wisdom": 483.0,
+	"display_name": "Dark Dragonlord",
+	"family": "Dragon",
+	"id": "dark_dragonlord",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/dark_dragonlord.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

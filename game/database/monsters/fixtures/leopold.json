@@ -1,18 +1,17 @@
 {
-    "id":  "leopold",
-    "display_name":  "Leopold",
-    "family":  "Beast",
-    "rank":  "SS",
-    "base_hp":  1314,
-    "base_mp":  522,
-    "base_attack":  812,
-    "base_defense":  792,
-    "base_agility":  966,
-    "base_wisdom":  502,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 966.0,
+	"base_attack": 812.0,
+	"base_defense": 792.0,
+	"base_hp": 1314.0,
+	"base_mp": 522.0,
+	"base_wisdom": 502.0,
+	"display_name": "Leopold",
+	"family": "Beast",
+	"id": "leopold",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/leopold.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

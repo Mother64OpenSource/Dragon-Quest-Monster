@@ -1,0 +1,16 @@
+{
+	"base_agility": 758.0,
+	"base_attack": 770.0,
+	"base_defense": 671.0,
+	"base_hp": 2116.0,
+	"base_mp": 519.0,
+	"base_wisdom": 511.0,
+	"display_name": "Swordgon",
+	"family": "Dragon",
+	"id": "swordgon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

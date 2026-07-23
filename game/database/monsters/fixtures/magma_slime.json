@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 680.0,
+	"base_defense": 480.0,
+	"base_hp": 952.0,
+	"base_mp": 384.0,
+	"base_wisdom": 720.0,
+	"display_name": "Magma Slime",
+	"family": "Slime",
+	"id": "magma_slime",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

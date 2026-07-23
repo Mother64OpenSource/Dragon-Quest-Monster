@@ -1,0 +1,16 @@
+{
+	"base_agility": 1033.0,
+	"base_attack": 728.0,
+	"base_defense": 488.0,
+	"base_hp": 937.0,
+	"base_mp": 939.0,
+	"base_wisdom": 911.0,
+	"display_name": "Purple Ninja Slime",
+	"family": "Slime",
+	"id": "purple_ninja_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

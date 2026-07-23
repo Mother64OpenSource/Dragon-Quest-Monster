@@ -1,18 +1,16 @@
 {
-    "id":  "shaman_marline",
-    "display_name":  "Shaman Marline",
-    "family":  "Devil",
-    "rank":  "SS",
-    "base_hp":  1848,
-    "base_mp":  600,
-    "base_attack":  656,
-    "base_defense":  756,
-    "base_agility":  437,
-    "base_wisdom":  773,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 437.0,
+	"base_attack": 656.0,
+	"base_defense": 756.0,
+	"base_hp": 1848.0,
+	"base_mp": 600.0,
+	"base_wisdom": 773.0,
+	"display_name": "Shaman Marline",
+	"family": "Devil",
+	"id": "shaman_marline",
+	"rank": "SS",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

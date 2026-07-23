@@ -1,18 +1,17 @@
 {
-    "id":  "liquid_metal_king_slime",
-    "display_name":  "Liquid Metal King Slime",
-    "family":  "Slime",
-    "rank":  "SS",
-    "base_hp":  263,
-    "base_mp":  801,
-    "base_attack":  211,
-    "base_defense":  1500,
-    "base_agility":  1310,
-    "base_wisdom":  747,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1310.0,
+	"base_attack": 211.0,
+	"base_defense": 1500.0,
+	"base_hp": 263.0,
+	"base_mp": 801.0,
+	"base_wisdom": 747.0,
+	"display_name": "Liquid Metal King Slime",
+	"family": "Slime",
+	"id": "liquid_metal_king_slime",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/liquid_metal_king_slime.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

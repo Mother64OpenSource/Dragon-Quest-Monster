@@ -1,18 +1,17 @@
 {
-    "id":  "murdaw",
-    "display_name":  "Murdaw",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1473,
-    "base_mp":  517,
-    "base_attack":  637,
-    "base_defense":  716,
-    "base_agility":  796,
-    "base_wisdom":  955,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 796.0,
+	"base_attack": 637.0,
+	"base_defense": 716.0,
+	"base_hp": 1473.0,
+	"base_mp": 517.0,
+	"base_wisdom": 955.0,
+	"display_name": "Murdaw",
+	"family": "unknown",
+	"id": "murdaw",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/murdaw.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

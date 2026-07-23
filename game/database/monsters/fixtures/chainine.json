@@ -1,0 +1,16 @@
+{
+	"base_agility": 827.0,
+	"base_attack": 851.0,
+	"base_defense": 851.0,
+	"base_hp": 1349.0,
+	"base_mp": 367.0,
+	"base_wisdom": 728.0,
+	"display_name": "Chainine",
+	"family": "Beast",
+	"id": "chainine",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

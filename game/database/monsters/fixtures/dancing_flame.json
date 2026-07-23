@@ -1,0 +1,16 @@
+{
+	"base_agility": 736.0,
+	"base_attack": 810.0,
+	"base_defense": 859.0,
+	"base_hp": 1399.0,
+	"base_mp": 515.0,
+	"base_wisdom": 736.0,
+	"display_name": "Dancing Flame",
+	"family": "Material",
+	"id": "dancing_flame",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

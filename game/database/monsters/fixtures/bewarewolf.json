@@ -1,0 +1,16 @@
+{
+	"base_agility": 911.0,
+	"base_attack": 874.0,
+	"base_defense": 795.0,
+	"base_hp": 1140.0,
+	"base_mp": 467.0,
+	"base_wisdom": 888.0,
+	"display_name": "Bewarewolf",
+	"family": "Beast",
+	"id": "bewarewolf",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

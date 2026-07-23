@@ -1,0 +1,16 @@
+{
+	"base_agility": 808.0,
+	"base_attack": 776.0,
+	"base_defense": 756.0,
+	"base_hp": 1939.0,
+	"base_mp": 512.0,
+	"base_wisdom": 567.0,
+	"display_name": "Ethereal Serpent",
+	"family": "Dragon",
+	"id": "ethereal_serpent",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

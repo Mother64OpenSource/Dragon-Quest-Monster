@@ -1,18 +1,17 @@
 {
-    "id":  "dragovian_lord",
-    "display_name":  "Dragovian Lord",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1931,
-    "base_mp":  486,
-    "base_attack":  842,
-    "base_defense":  945,
-    "base_agility":  662,
-    "base_wisdom":  567,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 662.0,
+	"base_attack": 842.0,
+	"base_defense": 945.0,
+	"base_hp": 1931.0,
+	"base_mp": 486.0,
+	"base_wisdom": 567.0,
+	"display_name": "Dragovian Lord",
+	"family": "Dragon",
+	"id": "dragovian_lord",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/dragovian_lord.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 463.0,
+	"base_attack": 524.0,
+	"base_defense": 252.0,
+	"base_hp": 945.0,
+	"base_mp": 663.0,
+	"base_wisdom": 713.0,
+	"display_name": "Estarkers",
+	"family": "unknown",
+	"id": "estarkers",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

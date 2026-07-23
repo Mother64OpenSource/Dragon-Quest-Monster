@@ -1,0 +1,16 @@
+{
+	"base_agility": 1080.0,
+	"base_attack": 770.0,
+	"base_defense": 800.0,
+	"base_hp": 1360.0,
+	"base_mp": 390.0,
+	"base_wisdom": 390.0,
+	"display_name": "Cockateer",
+	"family": "Beast",
+	"id": "cockateer",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

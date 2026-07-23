@@ -1,0 +1,16 @@
+{
+	"base_agility": 738.0,
+	"base_attack": 782.0,
+	"base_defense": 771.0,
+	"base_hp": 1235.0,
+	"base_mp": 366.0,
+	"base_wisdom": 557.0,
+	"display_name": "Corrupt Carter",
+	"family": "Material",
+	"id": "corrupt_carter",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

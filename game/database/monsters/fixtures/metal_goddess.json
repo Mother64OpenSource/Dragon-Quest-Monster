@@ -1,18 +1,17 @@
 {
-    "id":  "metal_goddess",
-    "display_name":  "Metal Goddess",
-    "family":  "Slime",
-    "rank":  "SS",
-    "base_hp":  188,
-    "base_mp":  1170,
-    "base_attack":  216,
-    "base_defense":  1500,
-    "base_agility":  1000,
-    "base_wisdom":  593,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 1000.0,
+	"base_attack": 216.0,
+	"base_defense": 1500.0,
+	"base_hp": 188.0,
+	"base_mp": 1170.0,
+	"base_wisdom": 593.0,
+	"display_name": "Metal Goddess",
+	"family": "Slime",
+	"id": "metal_goddess",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/metal_goddess.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

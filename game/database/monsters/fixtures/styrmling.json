@@ -1,18 +1,17 @@
 {
-    "id":  "styrmling",
-    "display_name":  "Styrmling",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  2800,
-    "base_mp":  560,
-    "base_attack":  669,
-    "base_defense":  625,
-    "base_agility":  643,
-    "base_wisdom":  405,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 643.0,
+	"base_attack": 669.0,
+	"base_defense": 625.0,
+	"base_hp": 2800.0,
+	"base_mp": 560.0,
+	"base_wisdom": 405.0,
+	"display_name": "Styrmling",
+	"family": "Dragon",
+	"id": "styrmling",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/styrmling.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

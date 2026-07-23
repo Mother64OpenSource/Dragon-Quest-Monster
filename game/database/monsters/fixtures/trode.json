@@ -1,18 +1,17 @@
 {
-    "id":  "trode",
-    "display_name":  "Trode",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1256,
-    "base_mp":  648,
-    "base_attack":  575,
-    "base_defense":  471,
-    "base_agility":  449,
-    "base_wisdom":  367,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 449.0,
+	"base_attack": 575.0,
+	"base_defense": 471.0,
+	"base_hp": 1256.0,
+	"base_mp": 648.0,
+	"base_wisdom": 367.0,
+	"display_name": "Trode",
+	"family": "unknown",
+	"id": "trode",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/trode.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

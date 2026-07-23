@@ -1,18 +1,17 @@
 {
-    "id":  "schwarzman_tank",
-    "display_name":  "Schwarzman Tank",
-    "family":  "Material",
-    "rank":  "SS",
-    "base_hp":  1416,
-    "base_mp":  576,
-    "base_attack":  669,
-    "base_defense":  942,
-    "base_agility":  476,
-    "base_wisdom":  379,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 476.0,
+	"base_attack": 669.0,
+	"base_defense": 942.0,
+	"base_hp": 1416.0,
+	"base_mp": 576.0,
+	"base_wisdom": 379.0,
+	"display_name": "Schwarzman Tank",
+	"family": "Material",
+	"id": "schwarzman_tank",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/schwarzman_tank.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

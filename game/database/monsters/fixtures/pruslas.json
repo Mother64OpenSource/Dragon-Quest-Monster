@@ -1,18 +1,17 @@
 {
-    "id":  "pruslas",
-    "display_name":  "Pruslas",
-    "family":  "Beast",
-    "rank":  "SS",
-    "base_hp":  2880,
-    "base_mp":  640,
-    "base_attack":  757,
-    "base_defense":  810,
-    "base_agility":  352,
-    "base_wisdom":  493,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 352.0,
+	"base_attack": 757.0,
+	"base_defense": 810.0,
+	"base_hp": 2880.0,
+	"base_mp": 640.0,
+	"base_wisdom": 493.0,
+	"display_name": "Pruslas",
+	"family": "Beast",
+	"id": "pruslas",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/pruslas.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

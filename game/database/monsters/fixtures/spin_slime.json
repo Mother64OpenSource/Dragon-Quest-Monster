@@ -1,0 +1,16 @@
+{
+	"base_agility": 432.0,
+	"base_attack": 720.0,
+	"base_defense": 704.0,
+	"base_hp": 1064.0,
+	"base_mp": 464.0,
+	"base_wisdom": 496.0,
+	"display_name": "Spin Slime",
+	"family": "Slime",
+	"id": "spin_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

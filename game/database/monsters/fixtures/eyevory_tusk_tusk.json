@@ -1,0 +1,16 @@
+{
+	"base_agility": 733.0,
+	"base_attack": 733.0,
+	"base_defense": 722.0,
+	"base_hp": 2160.0,
+	"base_mp": 484.0,
+	"base_wisdom": 548.0,
+	"display_name": "Eyevory Tusk-tusk",
+	"family": "Beast",
+	"id": "eyevory_tusk_tusk",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

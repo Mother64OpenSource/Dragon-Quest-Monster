@@ -1,18 +1,17 @@
 {
-    "id":  "baramos",
-    "display_name":  "Baramos",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1365,
-    "base_mp":  642,
-    "base_attack":  530,
-    "base_defense":  572,
-    "base_agility":  591,
-    "base_wisdom":  1019,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 591.0,
+	"base_attack": 530.0,
+	"base_defense": 572.0,
+	"base_hp": 1365.0,
+	"base_mp": 642.0,
+	"base_wisdom": 1019.0,
+	"display_name": "Baramos",
+	"family": "unknown",
+	"id": "baramos",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/baramos.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

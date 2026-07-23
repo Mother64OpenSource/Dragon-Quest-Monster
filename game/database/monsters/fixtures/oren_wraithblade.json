@@ -1,18 +1,17 @@
 {
-    "id":  "oren_wraithblade",
-    "display_name":  "Oren Wraithblade",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1000,
-    "base_mp":  352,
-    "base_attack":  768,
-    "base_defense":  680,
-    "base_agility":  608,
-    "base_wisdom":  616,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 608.0,
+	"base_attack": 768.0,
+	"base_defense": 680.0,
+	"base_hp": 1000.0,
+	"base_mp": 352.0,
+	"base_wisdom": 616.0,
+	"display_name": "Oren Wraithblade",
+	"family": "Zombie",
+	"id": "oren_wraithblade",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/oren_wraithblade.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

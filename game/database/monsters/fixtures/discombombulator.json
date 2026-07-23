@@ -1,0 +1,16 @@
+{
+	"base_agility": 698.0,
+	"base_attack": 822.0,
+	"base_defense": 723.0,
+	"base_hp": 1482.0,
+	"base_mp": 525.0,
+	"base_wisdom": 748.0,
+	"display_name": "Discombombulator",
+	"family": "Zombie",
+	"id": "discombombulator",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

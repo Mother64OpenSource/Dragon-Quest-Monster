@@ -1,19 +1,17 @@
 {
-    "id":  "capsichum",
-    "display_name":  "Capsichum",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1500,
-    "base_mp":  550,
-    "base_attack":  800,
-    "base_defense":  750,
-    "base_agility":  700,
-    "base_wisdom":  700,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/capsichum.webp"
+	"base_agility": 700.0,
+	"base_attack": 800.0,
+	"base_defense": 750.0,
+	"base_hp": 1500.0,
+	"base_mp": 550.0,
+	"base_wisdom": 700.0,
+	"display_name": "Capsichum",
+	"family": "Nature",
+	"id": "capsichum",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/capsichum.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

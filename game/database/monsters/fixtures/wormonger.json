@@ -1,0 +1,16 @@
+{
+	"base_agility": 616.0,
+	"base_attack": 634.0,
+	"base_defense": 748.0,
+	"base_hp": 2672.0,
+	"base_mp": 592.0,
+	"base_wisdom": 528.0,
+	"display_name": "Wormonger",
+	"family": "Nature",
+	"id": "wormonger",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,18 +1,16 @@
 {
-    "id":  "large_ghost_mammon",
-    "display_name":  "Large Ghost Mammon",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1320,
-    "base_mp":  600,
-    "base_attack":  810,
-    "base_defense":  720,
-    "base_agility":  820,
-    "base_wisdom":  780,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 820.0,
+	"base_attack": 810.0,
+	"base_defense": 720.0,
+	"base_hp": 1320.0,
+	"base_mp": 600.0,
+	"base_wisdom": 780.0,
+	"display_name": "Large Ghost Mammon",
+	"family": "Zombie",
+	"id": "large_ghost_mammon",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

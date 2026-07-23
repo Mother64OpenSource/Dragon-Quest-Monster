@@ -1,0 +1,16 @@
+{
+	"base_agility": 550.0,
+	"base_attack": 930.0,
+	"base_defense": 1000.0,
+	"base_hp": 1570.0,
+	"base_mp": 400.0,
+	"base_wisdom": 500.0,
+	"display_name": "Seasaur",
+	"family": "Dragon",
+	"id": "seasaur",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

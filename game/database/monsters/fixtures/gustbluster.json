@@ -1,0 +1,16 @@
+{
+	"base_agility": 981.0,
+	"base_attack": 773.0,
+	"base_defense": 437.0,
+	"base_hp": 1396.0,
+	"base_mp": 501.0,
+	"base_wisdom": 762.0,
+	"display_name": "Gustbluster",
+	"family": "Zombie",
+	"id": "gustbluster",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

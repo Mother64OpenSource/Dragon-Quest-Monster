@@ -1,0 +1,16 @@
+{
+	"base_agility": 788.0,
+	"base_attack": 831.0,
+	"base_defense": 788.0,
+	"base_hp": 1417.0,
+	"base_mp": 526.0,
+	"base_wisdom": 614.0,
+	"display_name": "Gargoyle",
+	"family": "Beast",
+	"id": "gargoyle",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

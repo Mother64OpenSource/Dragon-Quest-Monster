@@ -1,0 +1,16 @@
+{
+	"base_agility": 883.0,
+	"base_attack": 646.0,
+	"base_defense": 753.0,
+	"base_hp": 1331.0,
+	"base_mp": 580.0,
+	"base_wisdom": 947.0,
+	"display_name": "Cobra Cardinal",
+	"family": "Zombie",
+	"id": "cobra_cardinal",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 564.0,
+	"base_attack": 669.0,
+	"base_defense": 845.0,
+	"base_hp": 2672.0,
+	"base_mp": 576.0,
+	"base_wisdom": 476.0,
+	"display_name": "Wiggly",
+	"family": "Nature",
+	"id": "wiggly",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

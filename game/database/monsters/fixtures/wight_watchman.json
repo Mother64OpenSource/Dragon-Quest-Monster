@@ -1,0 +1,16 @@
+{
+	"base_agility": 598.0,
+	"base_attack": 892.0,
+	"base_defense": 510.0,
+	"base_hp": 1605.0,
+	"base_mp": 587.0,
+	"base_wisdom": 713.0,
+	"display_name": "Wight Watchman",
+	"family": "Zombie",
+	"id": "wight_watchman",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

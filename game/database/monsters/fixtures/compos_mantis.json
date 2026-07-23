@@ -1,0 +1,16 @@
+{
+	"base_agility": 698.0,
+	"base_attack": 786.0,
+	"base_defense": 938.0,
+	"base_hp": 1403.0,
+	"base_mp": 546.0,
+	"base_wisdom": 742.0,
+	"display_name": "Compos Mantis",
+	"family": "Nature",
+	"id": "compos_mantis",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

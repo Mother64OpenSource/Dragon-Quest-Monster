@@ -1,18 +1,17 @@
 {
-    "id":  "darck",
-    "display_name":  "Darck",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1670,
-    "base_mp":  473,
-    "base_attack":  722,
-    "base_defense":  722,
-    "base_agility":  598,
-    "base_wisdom":  825,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 598.0,
+	"base_attack": 722.0,
+	"base_defense": 722.0,
+	"base_hp": 1670.0,
+	"base_mp": 473.0,
+	"base_wisdom": 825.0,
+	"display_name": "Darck",
+	"family": "unknown",
+	"id": "darck",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/darck.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

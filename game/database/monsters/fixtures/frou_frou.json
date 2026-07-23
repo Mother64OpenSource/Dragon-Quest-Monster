@@ -1,0 +1,16 @@
+{
+	"base_agility": 650.0,
+	"base_attack": 910.0,
+	"base_defense": 1050.0,
+	"base_hp": 1540.0,
+	"base_mp": 350.0,
+	"base_wisdom": 400.0,
+	"display_name": "Frou-Frou",
+	"family": "Dragon",
+	"id": "frou_frou",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

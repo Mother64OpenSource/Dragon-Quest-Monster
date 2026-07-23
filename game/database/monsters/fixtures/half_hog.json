@@ -1,0 +1,16 @@
+{
+	"base_agility": 546.0,
+	"base_attack": 758.0,
+	"base_defense": 554.0,
+	"base_hp": 1966.0,
+	"base_mp": 464.0,
+	"base_wisdom": 483.0,
+	"display_name": "Half Hog",
+	"family": "Beast",
+	"id": "half_hog",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

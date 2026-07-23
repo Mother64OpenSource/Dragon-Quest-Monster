@@ -1,0 +1,16 @@
+{
+	"base_agility": 648.0,
+	"base_attack": 847.0,
+	"base_defense": 797.0,
+	"base_hp": 1482.0,
+	"base_mp": 452.0,
+	"base_wisdom": 797.0,
+	"display_name": "Dessert Demon",
+	"family": "Devil",
+	"id": "dessert_demon",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

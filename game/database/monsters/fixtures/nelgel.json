@@ -1,18 +1,17 @@
 {
-    "id":  "nelgel",
-    "display_name":  "Nelgel",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1560,
-    "base_mp":  480,
-    "base_attack":  773,
-    "base_defense":  689,
-    "base_agility":  647,
-    "base_wisdom":  672,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 647.0,
+	"base_attack": 773.0,
+	"base_defense": 689.0,
+	"base_hp": 1560.0,
+	"base_mp": 480.0,
+	"base_wisdom": 672.0,
+	"display_name": "Nelgel",
+	"family": "unknown",
+	"id": "nelgel",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/nelgel.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

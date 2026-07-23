@@ -1,0 +1,16 @@
+{
+	"base_agility": 639.0,
+	"base_attack": 801.0,
+	"base_defense": 639.0,
+	"base_hp": 1287.0,
+	"base_mp": 324.0,
+	"base_wisdom": 783.0,
+	"display_name": "Mortamor",
+	"family": "unknown",
+	"id": "mortamor",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

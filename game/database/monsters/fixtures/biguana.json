@@ -1,0 +1,16 @@
+{
+	"base_agility": 927.0,
+	"base_attack": 743.0,
+	"base_defense": 619.0,
+	"base_hp": 1703.0,
+	"base_mp": 651.0,
+	"base_wisdom": 766.0,
+	"display_name": "Biguana",
+	"family": "Dragon",
+	"id": "biguana",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

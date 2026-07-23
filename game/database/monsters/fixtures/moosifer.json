@@ -1,0 +1,16 @@
+{
+	"base_agility": 563.0,
+	"base_attack": 799.0,
+	"base_defense": 788.0,
+	"base_hp": 1578.0,
+	"base_mp": 431.0,
+	"base_wisdom": 901.0,
+	"display_name": "Moosifer",
+	"family": "Devil",
+	"id": "moosifer",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

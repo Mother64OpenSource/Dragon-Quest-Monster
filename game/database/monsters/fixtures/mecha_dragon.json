@@ -1,18 +1,16 @@
 {
-    "id":  "mecha_dragon",
-    "display_name":  "Mecha-Dragon",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1796,
-    "base_mp":  473,
-    "base_attack":  738,
-    "base_defense":  927,
-    "base_agility":  927,
-    "base_wisdom":  464,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 927.0,
+	"base_attack": 738.0,
+	"base_defense": 927.0,
+	"base_hp": 1796.0,
+	"base_mp": 473.0,
+	"base_wisdom": 464.0,
+	"display_name": "Mecha-Dragon",
+	"family": "Material",
+	"id": "mecha_dragon",
+	"rank": "S",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

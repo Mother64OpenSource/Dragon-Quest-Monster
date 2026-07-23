@@ -1,0 +1,16 @@
+{
+	"base_agility": 776.0,
+	"base_attack": 576.0,
+	"base_defense": 800.0,
+	"base_hp": 1493.0,
+	"base_mp": 578.0,
+	"base_wisdom": 932.0,
+	"display_name": "Wailin Weed",
+	"family": "Zombie",
+	"id": "wailin_weed",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

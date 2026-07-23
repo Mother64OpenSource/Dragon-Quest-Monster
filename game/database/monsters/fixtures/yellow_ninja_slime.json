@@ -1,0 +1,16 @@
+{
+	"base_agility": 988.0,
+	"base_attack": 864.0,
+	"base_defense": 489.0,
+	"base_hp": 1253.0,
+	"base_mp": 454.0,
+	"base_wisdom": 489.0,
+	"display_name": "Yellow Ninja Slime",
+	"family": "Slime",
+	"id": "yellow_ninja_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

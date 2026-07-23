@@ -1,0 +1,16 @@
+{
+	"base_agility": 660.0,
+	"base_attack": 734.0,
+	"base_defense": 856.0,
+	"base_hp": 1382.0,
+	"base_mp": 736.0,
+	"base_wisdom": 856.0,
+	"display_name": "Psaro's Pawn",
+	"family": "Devil",
+	"id": "psaro_s_pawn",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

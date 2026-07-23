@@ -1,0 +1,16 @@
+{
+	"base_agility": 917.0,
+	"base_attack": 436.0,
+	"base_defense": 906.0,
+	"base_hp": 1403.0,
+	"base_mp": 600.0,
+	"base_wisdom": 982.0,
+	"display_name": "Fallen Priest",
+	"family": "Devil",
+	"id": "fallen_priest",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

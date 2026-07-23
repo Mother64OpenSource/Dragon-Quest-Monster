@@ -1,0 +1,16 @@
+{
+	"base_agility": 697.0,
+	"base_attack": 787.0,
+	"base_defense": 540.0,
+	"base_hp": 1334.0,
+	"base_mp": 393.0,
+	"base_wisdom": 635.0,
+	"display_name": "Pumpkin Knight",
+	"family": "Zombie",
+	"id": "pumpkin_knight",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

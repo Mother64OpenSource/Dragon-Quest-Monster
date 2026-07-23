@@ -1,0 +1,16 @@
+{
+	"base_agility": 670.0,
+	"base_attack": 950.0,
+	"base_defense": 850.0,
+	"base_hp": 1540.0,
+	"base_mp": 380.0,
+	"base_wisdom": 450.0,
+	"display_name": "Notso-Macho",
+	"family": "Beast",
+	"id": "notso_macho",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -1,0 +1,16 @@
+{
+	"base_agility": 608.0,
+	"base_attack": 923.0,
+	"base_defense": 945.0,
+	"base_hp": 1570.0,
+	"base_mp": 362.0,
+	"base_wisdom": 491.0,
+	"display_name": "Noble Gasbagon",
+	"family": "Dragon",
+	"id": "noble_gasbagon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

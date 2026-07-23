@@ -1,18 +1,17 @@
 {
-    "id":  "diamagon_ace",
-    "display_name":  "Diamagon Ace",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1432,
-    "base_mp":  553,
-    "base_attack":  760,
-    "base_defense":  810,
-    "base_agility":  632,
-    "base_wisdom":  989,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 632.0,
+	"base_attack": 760.0,
+	"base_defense": 810.0,
+	"base_hp": 1432.0,
+	"base_mp": 553.0,
+	"base_wisdom": 989.0,
+	"display_name": "Diamagon Ace",
+	"family": "unknown",
+	"id": "diamagon_ace",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/diamagon_ace.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

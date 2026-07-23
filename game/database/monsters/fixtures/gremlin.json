@@ -1,0 +1,16 @@
+{
+	"base_agility": 610.0,
+	"base_attack": 508.0,
+	"base_defense": 331.0,
+	"base_hp": 1067.0,
+	"base_mp": 648.0,
+	"base_wisdom": 748.0,
+	"display_name": "Gremlin",
+	"family": "Devil",
+	"id": "gremlin",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

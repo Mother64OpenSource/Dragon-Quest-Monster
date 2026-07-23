@@ -1,19 +1,17 @@
 {
-    "id":  "vampire_cat",
-    "display_name":  "Vampire Cat",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1269,
-    "base_mp":  420,
-    "base_attack":  671,
-    "base_defense":  706,
-    "base_agility":  1030,
-    "base_wisdom":  934,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/vampire_cat.webp"
+	"base_agility": 1030.0,
+	"base_attack": 671.0,
+	"base_defense": 706.0,
+	"base_hp": 1269.0,
+	"base_mp": 420.0,
+	"base_wisdom": 934.0,
+	"display_name": "Vampire Cat",
+	"family": "Beast",
+	"id": "vampire_cat",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/vampire_cat.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

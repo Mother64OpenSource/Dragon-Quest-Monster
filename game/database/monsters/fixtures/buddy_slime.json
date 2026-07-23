@@ -1,19 +1,17 @@
 {
-    "id":  "buddy_slime",
-    "display_name":  "Buddy Slime",
-    "family":  "Slime",
-    "rank":  "F",
-    "base_hp":  1466,
-    "base_mp":  685,
-    "base_attack":  782,
-    "base_defense":  398,
-    "base_agility":  720,
-    "base_wisdom":  981,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/buddy_slime.webp"
+	"base_agility": 720.0,
+	"base_attack": 782.0,
+	"base_defense": 398.0,
+	"base_hp": 1466.0,
+	"base_mp": 685.0,
+	"base_wisdom": 981.0,
+	"display_name": "Buddy Slime",
+	"family": "Slime",
+	"id": "buddy_slime",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/buddy_slime.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

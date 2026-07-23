@@ -1,18 +1,17 @@
 {
-    "id":  "dimensional_dragon",
-    "display_name":  "Dimensional Dragon",
-    "family":  "Dragon",
-    "rank":  "SS",
-    "base_hp":  1183,
-    "base_mp":  483,
-    "base_attack":  588,
-    "base_defense":  542,
-    "base_agility":  723,
-    "base_wisdom":  726,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 723.0,
+	"base_attack": 588.0,
+	"base_defense": 542.0,
+	"base_hp": 1183.0,
+	"base_mp": 483.0,
+	"base_wisdom": 726.0,
+	"display_name": "Dimensional Dragon",
+	"family": "Dragon",
+	"id": "dimensional_dragon",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/dimensional_dragon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

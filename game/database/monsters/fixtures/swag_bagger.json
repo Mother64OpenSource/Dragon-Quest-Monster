@@ -1,0 +1,16 @@
+{
+	"base_agility": 940.0,
+	"base_attack": 820.0,
+	"base_defense": 650.0,
+	"base_hp": 1350.0,
+	"base_mp": 410.0,
+	"base_wisdom": 720.0,
+	"display_name": "Swag Bagger",
+	"family": "Zombie",
+	"id": "swag_bagger",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

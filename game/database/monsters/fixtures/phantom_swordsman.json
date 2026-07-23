@@ -1,0 +1,16 @@
+{
+	"base_agility": 923.0,
+	"base_attack": 773.0,
+	"base_defense": 751.0,
+	"base_hp": 1315.0,
+	"base_mp": 540.0,
+	"base_wisdom": 687.0,
+	"display_name": "Phantom Swordsman",
+	"family": "Zombie",
+	"id": "phantom_swordsman",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

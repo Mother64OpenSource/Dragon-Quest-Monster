@@ -1,0 +1,16 @@
+{
+	"base_agility": 880.0,
+	"base_attack": 810.0,
+	"base_defense": 600.0,
+	"base_hp": 1350.0,
+	"base_mp": 500.0,
+	"base_wisdom": 820.0,
+	"display_name": "Knotty Child",
+	"family": "Material",
+	"id": "knotty_child",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

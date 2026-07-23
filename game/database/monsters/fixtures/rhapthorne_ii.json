@@ -1,18 +1,17 @@
 {
-    "id":  "rhapthorne_ii",
-    "display_name":  "Rhapthorne II",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2640,
-    "base_mp":  816,
-    "base_attack":  564,
-    "base_defense":  748,
-    "base_agility":  379,
-    "base_wisdom":  1056,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 379.0,
+	"base_attack": 564.0,
+	"base_defense": 748.0,
+	"base_hp": 2640.0,
+	"base_mp": 816.0,
+	"base_wisdom": 1056.0,
+	"display_name": "Rhapthorne II",
+	"family": "unknown",
+	"id": "rhapthorne_ii",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/rhapthorne_ii.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

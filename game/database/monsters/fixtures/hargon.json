@@ -1,18 +1,17 @@
 {
-    "id":  "hargon",
-    "display_name":  "Hargon",
-    "family":  "unknown",
-    "rank":  "S",
-    "base_hp":  1584,
-    "base_mp":  609,
-    "base_attack":  629,
-    "base_defense":  772,
-    "base_agility":  609,
-    "base_wisdom":  975,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 609.0,
+	"base_attack": 629.0,
+	"base_defense": 772.0,
+	"base_hp": 1584.0,
+	"base_mp": 609.0,
+	"base_wisdom": 975.0,
+	"display_name": "Hargon",
+	"family": "unknown",
+	"id": "hargon",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/hargon.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

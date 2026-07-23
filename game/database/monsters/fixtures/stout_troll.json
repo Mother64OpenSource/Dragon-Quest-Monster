@@ -1,0 +1,16 @@
+{
+	"base_agility": 779.0,
+	"base_attack": 1002.0,
+	"base_defense": 567.0,
+	"base_hp": 2474.0,
+	"base_mp": 585.0,
+	"base_wisdom": 402.0,
+	"display_name": "Stout Troll",
+	"family": "Devil",
+	"id": "stout_troll",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

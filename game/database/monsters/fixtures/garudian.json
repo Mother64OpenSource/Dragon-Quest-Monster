@@ -1,0 +1,16 @@
+{
+	"base_agility": 798.0,
+	"base_attack": 530.0,
+	"base_defense": 605.0,
+	"base_hp": 1812.0,
+	"base_mp": 420.0,
+	"base_wisdom": 630.0,
+	"display_name": "Garudian",
+	"family": "Nature",
+	"id": "garudian",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

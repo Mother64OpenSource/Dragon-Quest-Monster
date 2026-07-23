@@ -1,19 +1,17 @@
 {
-    "id":  "coil_bird",
-    "display_name":  "Coil Bird",
-    "family":  "Material",
-    "rank":  "F",
-    "base_hp":  1260,
-    "base_mp":  408,
-    "base_attack":  616,
-    "base_defense":  696,
-    "base_agility":  384,
-    "base_wisdom":  416,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/coil_bird.webp"
+	"base_agility": 384.0,
+	"base_attack": 616.0,
+	"base_defense": 696.0,
+	"base_hp": 1260.0,
+	"base_mp": 408.0,
+	"base_wisdom": 416.0,
+	"display_name": "Coil Bird",
+	"family": "Material",
+	"id": "coil_bird",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/coil_bird.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

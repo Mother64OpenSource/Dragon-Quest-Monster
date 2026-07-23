@@ -1,18 +1,17 @@
 {
-    "id":  "mossferatu",
-    "display_name":  "Mossferatu",
-    "family":  "Beast",
-    "rank":  "S",
-    "base_hp":  1446,
-    "base_mp":  634,
-    "base_attack":  871,
-    "base_defense":  673,
-    "base_agility":  634,
-    "base_wisdom":  791,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 634.0,
+	"base_attack": 871.0,
+	"base_defense": 673.0,
+	"base_hp": 1446.0,
+	"base_mp": 634.0,
+	"base_wisdom": 791.0,
+	"display_name": "Mossferatu",
+	"family": "Beast",
+	"id": "mossferatu",
+	"rank": "S",
+	"sprite_path": "res://assets/monsters/mossferatu.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

@@ -1,0 +1,16 @@
+{
+	"base_agility": 1050.0,
+	"base_attack": 850.0,
+	"base_defense": 700.0,
+	"base_hp": 1360.0,
+	"base_mp": 380.0,
+	"base_wisdom": 400.0,
+	"display_name": "Drag Racer",
+	"family": "Dragon",
+	"id": "drag_racer",
+	"rank": "E",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

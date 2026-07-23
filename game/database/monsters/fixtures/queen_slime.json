@@ -1,0 +1,16 @@
+{
+	"base_agility": 650.0,
+	"base_attack": 560.0,
+	"base_defense": 550.0,
+	"base_hp": 1520.0,
+	"base_mp": 880.0,
+	"base_wisdom": 1110.0,
+	"display_name": "Queen Slime",
+	"family": "Slime",
+	"id": "queen_slime",
+	"rank": "B",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -14,5 +14,6 @@
                            ],
     "starting_trait_ids":  [
 
-                           ]
+                           ],
+    "sprite_path":  "res://assets/monsters/wight_king.png"
 }

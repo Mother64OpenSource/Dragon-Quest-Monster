@@ -1,0 +1,16 @@
+{
+	"base_agility": 1010.0,
+	"base_attack": 757.0,
+	"base_defense": 818.0,
+	"base_hp": 1683.0,
+	"base_mp": 509.0,
+	"base_wisdom": 499.0,
+	"display_name": "Gemon",
+	"family": "Devil",
+	"id": "gemon",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

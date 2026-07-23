@@ -1,0 +1,16 @@
+{
+	"base_agility": 656.0,
+	"base_attack": 834.0,
+	"base_defense": 858.0,
+	"base_hp": 1551.0,
+	"base_mp": 555.0,
+	"base_wisdom": 505.0,
+	"display_name": "Behemoth Slime",
+	"family": "Slime",
+	"id": "behemoth_slime",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

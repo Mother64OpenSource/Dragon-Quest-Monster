@@ -1,0 +1,16 @@
+{
+	"base_agility": 614.0,
+	"base_attack": 820.0,
+	"base_defense": 842.0,
+	"base_hp": 1632.0,
+	"base_mp": 480.0,
+	"base_wisdom": 546.0,
+	"display_name": "Diemon",
+	"family": "Beast",
+	"id": "diemon",
+	"rank": "C",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

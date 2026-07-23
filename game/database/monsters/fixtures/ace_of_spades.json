@@ -1,18 +1,17 @@
 {
-    "id":  "ace_of_spades",
-    "display_name":  "Ace of Spades",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1446,
-    "base_mp":  544,
-    "base_attack":  792,
-    "base_defense":  822,
-    "base_agility":  693,
-    "base_wisdom":  772,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ]
+	"base_agility": 693.0,
+	"base_attack": 792.0,
+	"base_defense": 822.0,
+	"base_hp": 1446.0,
+	"base_mp": 544.0,
+	"base_wisdom": 772.0,
+	"display_name": "Ace of Spades",
+	"family": "unknown",
+	"id": "ace_of_spades",
+	"rank": "SS",
+	"sprite_path": "res://assets/monsters/ace_of_spades.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

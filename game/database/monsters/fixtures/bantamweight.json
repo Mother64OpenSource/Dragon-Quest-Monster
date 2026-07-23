@@ -1,19 +1,17 @@
 {
-    "id":  "bantamweight",
-    "display_name":  "Bantamweight",
-    "family":  "Nature",
-    "rank":  "F",
-    "base_hp":  1568,
-    "base_mp":  478,
-    "base_attack":  688,
-    "base_defense":  755,
-    "base_agility":  1042,
-    "base_wisdom":  821,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/bantamweight.webp"
+	"base_agility": 1042.0,
+	"base_attack": 688.0,
+	"base_defense": 755.0,
+	"base_hp": 1568.0,
+	"base_mp": 478.0,
+	"base_wisdom": 821.0,
+	"display_name": "Bantamweight",
+	"family": "Nature",
+	"id": "bantamweight",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/bantamweight.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

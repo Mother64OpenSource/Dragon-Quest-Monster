@@ -1,19 +1,17 @@
 {
-    "id":  "drooling_ghoul",
-    "display_name":  "Drooling Ghoul",
-    "family":  "Zombie",
-    "rank":  "F",
-    "base_hp":  1301,
-    "base_mp":  603,
-    "base_attack":  795,
-    "base_defense":  651,
-    "base_agility":  807,
-    "base_wisdom":  940,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/drooling_ghoul.webp"
+	"base_agility": 807.0,
+	"base_attack": 795.0,
+	"base_defense": 651.0,
+	"base_hp": 1301.0,
+	"base_mp": 603.0,
+	"base_wisdom": 940.0,
+	"display_name": "Drooling Ghoul",
+	"family": "Zombie",
+	"id": "drooling_ghoul",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/drooling_ghoul.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

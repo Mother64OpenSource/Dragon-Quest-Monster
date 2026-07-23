@@ -1,0 +1,16 @@
+{
+	"base_agility": 640.0,
+	"base_attack": 696.0,
+	"base_defense": 560.0,
+	"base_hp": 1200.0,
+	"base_mp": 344.0,
+	"base_wisdom": 424.0,
+	"display_name": "Heart Knight",
+	"family": "Slime",
+	"id": "heart_knight",
+	"rank": "D",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

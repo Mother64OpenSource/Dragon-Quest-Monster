@@ -1,0 +1,16 @@
+{
+	"base_agility": 671.0,
+	"base_attack": 894.0,
+	"base_defense": 671.0,
+	"base_hp": 1540.0,
+	"base_mp": 448.0,
+	"base_wisdom": 671.0,
+	"display_name": "Thwarthog",
+	"family": "Beast",
+	"id": "thwarthog",
+	"rank": "A",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

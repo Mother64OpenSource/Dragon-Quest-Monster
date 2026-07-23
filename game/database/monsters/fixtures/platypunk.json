@@ -1,19 +1,17 @@
 {
-    "id":  "platypunk",
-    "display_name":  "Platypunk",
-    "family":  "Beast",
-    "rank":  "F",
-    "base_hp":  1466,
-    "base_mp":  472,
-    "base_attack":  870,
-    "base_defense":  919,
-    "base_agility":  720,
-    "base_wisdom":  497,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/platypunk.webp"
+	"base_agility": 720.0,
+	"base_attack": 870.0,
+	"base_defense": 919.0,
+	"base_hp": 1466.0,
+	"base_mp": 472.0,
+	"base_wisdom": 497.0,
+	"display_name": "Platypunk",
+	"family": "Beast",
+	"id": "platypunk",
+	"rank": "F",
+	"sprite_path": "res://assets/monsters/platypunk.webp",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }
