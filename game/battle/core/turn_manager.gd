@@ -14,10 +14,17 @@ static func run_turn(ctx: BattleContext, action_providers: Dictionary, skill_loo
 	for side in ["side_a", "side_b"]:
 		var provider: ActionProvider = action_providers[side]
 		var active_slot_count := state.get_active_slot_count(side)
+		# A multi-slot monster occupies more than one raw slot index -- only
+		# ask its provider for one action, at the first (lowest) slot it
+		# occupies, or it would act once per slot it spans.
+		var acted_instance_ids := {}
 		for slot in range(active_slot_count):
 			var monster := state.get_monster_at(side, slot)
 			if monster == null or monster.is_fainted():
 				continue
+			if acted_instance_ids.has(monster.instance_id):
+				continue
+			acted_instance_ids[monster.instance_id] = true
 			var action := provider.get_action(state, side, slot)
 			if action == null:
 				continue

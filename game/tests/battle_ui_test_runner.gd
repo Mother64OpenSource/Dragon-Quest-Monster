@@ -29,6 +29,8 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_multi_slot(monster_db, skill_db, trait_db)
 	_check_orders_swap(monster_db, skill_db, trait_db)
 	_check_size_aware_packing(monster_db, skill_db, trait_db)
+	_check_multi_slot_acts_once_per_turn(monster_db, skill_db, trait_db)
+	_check_turn_resolved_ordering(monster_db, skill_db, trait_db)
 	await _check_side_view_rendering(monster_db, skill_db, trait_db)
 
 	if _all_passed:
@@ -125,6 +127,31 @@ func _check_full_battle(monster_db: MonsterDatabase, skill_db: SkillDatabase, tr
 		winners.size() == 1 and (winners[0] == "side_a" or winners[0] == "side_b")
 	)
 
+## Regression test for a real bug: BattleController used to emit
+## turn_resolved *before* resetting its per-slot "submitted" bookkeeping for
+## the new round, so a BattleSideView's handler (which calls
+## _advance_to_next_pending_slot() synchronously off that signal) saw the
+## just-finished round's stale "everything already submitted" state and
+## could never find an unsubmitted slot again -- both windows would get
+## stuck forever on "Waiting for the other side...". Checked from inside
+## the signal handler itself, matching exactly what the view's handler sees.
+func _check_turn_resolved_ordering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db)
+	var seen_fresh: Array = []
+	var probe := func(_events: Array) -> void:
+		seen_fresh.append(not controller.is_slot_submitted("side_a", 0))
+	controller.turn_resolved.connect(probe)
+
+	var a := controller.get_state().get_monster_at("side_a", 0)
+	var b := controller.get_state().get_monster_at("side_b", 0)
+	controller.submit_fight("side_a", 0, "attack", b.instance_id)
+	controller.submit_fight("side_b", 0, "attack", a.instance_id)
+
+	_check(
+		"turn_resolved fires only after the new round's slots are reset (no stuck 'waiting forever')",
+		seen_fresh.size() == 1 and seen_fresh[0] == true
+	)
+
 func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	var team_a := _make_team("Multi A", [["slime", ["attack"]], ["dracky", ["attack"]]])
 	var team_b := _make_team("Multi B", [["golem", ["attack"]]])
@@ -191,7 +218,12 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 	_check("get_monster_at returns the same instance for both its slots", state_a.get_monster_at("side_a", 0) == aamon and state_a.get_monster_at("side_a", 1) == aamon)
 	_check("the 1-slot monster after it packs into slot 2", state_a.get_monster_at("side_a", 2).species.id == "slime")
 	_check("the next 1-slot monster packs into slot 3", state_a.get_monster_at("side_a", 3).species.id == "dracky")
-	_check("side_a's pending slots reflect the packed layout (4 filled)", controller_a.get_pending_slots("side_a") == [0, 1, 2, 3])
+	# Pending slots are deduped per acting monster, not per raw slot index --
+	# aamon spans slots 0 and 1 but is one actor and should only appear once
+	# (regression test for a real bug: it used to get asked to command twice
+	# per round, overwriting its own queued action and needlessly double
+	# ticking end-of-turn status effects).
+	_check("side_a's pending slots are deduped per monster, not per raw slot (aamon once, at its first slot)", controller_a.get_pending_slots("side_a") == [0, 2, 3])
 
 	# A 4-slot monster occupies the whole roster alone; nothing else fits.
 	var team_c := _make_team("Packing C", [["asura_zoma", ["attack"]], ["slime", ["attack"]]])
@@ -233,6 +265,39 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 		and state_e.get_monster_at("side_a", 1).species.id != "aamon"
 	)
 
+## Regression test for a real bug: a multi-slot monster spans more than one
+## raw slot index, but TurnManager and BattleController's pending-slot
+## bookkeeping used to treat each raw slot it occupied as independently
+## actionable -- the player got asked to command it once per slot, and (since
+## submitting an action always overwrites, never appends, that instance_id's
+## queue) whichever action was submitted last silently replaced the first.
+## Confirms end-to-end, via the actual turn resolution, that a 2-slot
+## monster produces exactly one SkillUsedEvent per turn.
+func _check_multi_slot_acts_once_per_turn(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("SingleAction A", [
+		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
+	])
+	var team_b := _make_team("SingleAction B", [["golem", ["attack"]]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var state := controller.get_state()
+
+	var aamon := state.side_a_team[0]
+	var b_actor := state.get_monster_at("side_b", 0)
+
+	var events: Array = []
+	var probe := func(turn_events: Array) -> void: events.append_array(turn_events)
+	controller.turn_resolved.connect(probe)
+
+	for slot in controller.get_pending_slots("side_a"):
+		controller.submit_fight("side_a", slot, "attack", b_actor.instance_id)
+	controller.submit_fight("side_b", 0, "attack", aamon.instance_id)
+
+	var aamon_actions := 0
+	for event in events:
+		if event is SkillUsedEvent and event.actor_instance_id == aamon.instance_id:
+			aamon_actions += 1
+	_check("a 2-slot monster's action fires exactly once per turn, not once per slot it occupies", aamon_actions == 1)
+
 func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	var team_a := _make_team("View Test A", [["slime", ["attack", "frizz"]]])
 	var team_b := _make_team("View Test B", [["golem", ["attack"]]])
@@ -266,6 +331,18 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 				frizz_disabled = button.disabled
 	_check("side view keeps a 0-MP skill's button enabled", not attack_disabled)
 	_check("side view disables a skill button the actor can't afford", frizz_disabled)
+
+	# The battle log should actually narrate what happened, not just track
+	# HP bars silently -- resolve one real turn and check the log text names
+	# the turn, the move used, and the resulting damage.
+	instances_a[0].current_mp = instances_a[0].species.base_mp
+	controller.submit_fight("side_a", 0, "attack", instances_b[0].instance_id)
+	controller.submit_fight("side_b", 0, "attack", instances_a[0].instance_id)
+	var log_text := view._log_label.text
+	_check("battle log names the round", log_text.contains("Round 1"))
+	_check("battle log narrates the opening send-out", log_text.contains("enters the battle!"))
+	_check("battle log narrates the move used", log_text.contains("used Attack!"))
+	_check("battle log narrates the resulting damage", log_text.contains("damage!"))
 
 	view.queue_free()
 

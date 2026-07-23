@@ -21,22 +21,45 @@ const ACTIVE_SLOT_COUNT := 4
 
 signal turn_resolved(events: Array[BattleEvent])
 signal battle_ended(winner_side: String)
+## Purely additive -- unused by local same-process play. NetworkBattleRelay
+## (game/net/network_battle_relay.gd) listens for this to forward a locally-
+## submitted action to an online opponent. Fires for every submission
+## regardless of origin (local UI click or a relay replaying a remote
+## action), which is what lets the relay tell the two apart: it only
+## forwards when `side` matches its own local_side, since a submission for
+## the *other* side only ever happens because the relay itself just replayed
+## one that arrived over the network -- forwarding that back out again would
+## echo it forever.
+signal action_submitted(side: String, slot: int, kind: String, payload: Dictionary)
 
 var engine: BattleEngine
 var _providers: Dictionary
 var _pending_slots: Dictionary = {"side_a": [], "side_b": []}
 var _submitted_slots: Dictionary = {"side_a": {}, "side_b": {}}
 var _pending_events: Array[BattleEvent] = []
+var _opening_events: Array[BattleEvent] = []
 
 func _init(team_a: Array[MonsterInstance], team_b: Array[MonsterInstance], skill_lookup: Dictionary, seed_value: int = 0) -> void:
 	_providers = {"side_a": ScriptedActionProvider.new(), "side_b": ScriptedActionProvider.new()}
 	engine = BattleEngine.new(team_a, team_b, seed_value, _providers, skill_lookup, ACTIVE_SLOT_COUNT)
 	engine.get_event_bus().event_emitted.connect(_on_event_emitted)
 	engine.start_battle()
+	# The initial send-out's MonsterEnteredEvents fire here, before either
+	# BattleSideView has connected to turn_resolved (that only happens once
+	# setup() runs) -- _resolve_turn() would otherwise silently wipe them the
+	# moment round 1 resolves, so a battle's opening lineup never actually
+	# appeared in the log. Snapshot them separately for views to narrate once
+	# they're set up.
+	_opening_events = _pending_events.duplicate()
 	_recompute_pending_slots()
 
 func get_state() -> BattleState:
 	return engine.battle_state
+
+## The initial send-out's events (see _init()) -- narrate these once, when a
+## view first connects, since they happened before any view could see them.
+func get_opening_events() -> Array[BattleEvent]:
+	return _opening_events.duplicate()
 
 func is_over() -> bool:
 	return engine.battle_state.is_battle_over
@@ -89,6 +112,7 @@ func submit_fight(side: String, slot: int, skill_id: String, target_instance_id:
 	var queue: Array[Action] = [action]
 	_providers[side].set_queue(actor.instance_id, queue)
 	_submitted_slots[side][slot] = true
+	action_submitted.emit(side, slot, "fight", {"skill_id": skill_id, "target_instance_id": target_id})
 	_maybe_resolve_turn()
 
 ## The "Orders" command: swap a living bench monster into `slot`, consuming
@@ -106,7 +130,9 @@ func submit_swap(side: String, slot: int, bench_instance_id: int) -> void:
 	if team_index == -1:
 		return
 	state.set_active_at(side, slot, team_index)
+	team[team_index].slot = slot
 	_submitted_slots[side][slot] = true
+	action_submitted.emit(side, slot, "swap", {"bench_instance_id": bench_instance_id})
 	_maybe_resolve_turn()
 
 func _maybe_resolve_turn() -> void:
@@ -117,21 +143,37 @@ func _resolve_turn() -> void:
 	_pending_events = []
 	engine.run_turn()
 
+	# Recompute (and reset _submitted_slots) for the *new* round BEFORE
+	# emitting turn_resolved: BattleSideView's handler calls
+	# _advance_to_next_pending_slot() synchronously off this signal, and it
+	# needs to see the fresh round's state, not the just-finished round's
+	# now-stale "everything already submitted" bookkeeping -- otherwise
+	# every slot looks already-submitted forever and neither side can ever
+	# act again (both windows stuck on "Waiting for the other side...").
+	if not is_over():
+		_recompute_pending_slots()
+
 	turn_resolved.emit(_pending_events)
 
 	if is_over():
 		battle_ended.emit(engine.battle_state.winner_side)
-	else:
-		_recompute_pending_slots()
 
 func _recompute_pending_slots() -> void:
 	var state := engine.battle_state
 	for side in ["side_a", "side_b"]:
 		var pending: Array = []
+		# A multi-slot monster occupies more than one raw slot index -- only
+		# its first (lowest) slot is pending, matching TurnManager's action
+		# collection, or the player would be asked to command it twice.
+		var seen_instance_ids := {}
 		for slot in range(ACTIVE_SLOT_COUNT):
 			var monster := state.get_monster_at(side, slot)
-			if monster != null and not monster.is_fainted():
-				pending.append(slot)
+			if monster == null or monster.is_fainted():
+				continue
+			if seen_instance_ids.has(monster.instance_id):
+				continue
+			seen_instance_ids[monster.instance_id] = true
+			pending.append(slot)
 		_pending_slots[side] = pending
 		_submitted_slots[side] = {}
 

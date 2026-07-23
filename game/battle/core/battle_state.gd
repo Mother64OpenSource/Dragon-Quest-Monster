@@ -21,13 +21,22 @@ func _init(p_rng: DeterministicRng, p_event_bus: BattleEventBus) -> void:
 	rng = p_rng
 	event_bus = p_event_bus
 
+## Dedupes by team_index: a multi-slot monster occupies more than one raw
+## slot index, but must only appear once here -- callers (end-of-turn status
+## ticks, trait hooks) would otherwise double-apply to it once per slot it
+## spans.
 func get_active_monsters(side: String) -> Array[MonsterInstance]:
 	var team := _team_for_side(side)
 	var slots := _active_slots_for_side(side)
 	var result: Array[MonsterInstance] = []
+	var seen := {}
 	for team_index in slots:
-		if team_index >= 0 and team_index < team.size():
-			result.append(team[team_index])
+		if team_index < 0 or team_index >= team.size():
+			continue
+		if seen.has(team_index):
+			continue
+		seen[team_index] = true
+		result.append(team[team_index])
 	return result
 
 func get_monster_at(side: String, slot: int) -> MonsterInstance:

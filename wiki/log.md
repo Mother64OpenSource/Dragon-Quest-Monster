@@ -561,3 +561,397 @@ specifically to confirm the packing change is fully backward-compatible —
 all of its fixtures are 1-slot, so packing degenerates to the old 1:1
 behavior, and it still passes byte-for-byte identical. All four headless
 suites pass.
+
+## [2026-07-23] build | Cleaner battle screen + sortable monster picker
+
+The user shared reference screenshots of a well-known, unrelated Pokémon
+battle simulator's UI (clean split-panel team builder, sortable stat
+table, and a battle screen with a name+HP-bar header per monster and a
+side log panel) and asked for something similarly clean. Pulled only the
+structural/functional layout ideas — a two-pane battle screen, a
+sortable stat table, a compact name-over-HP-bar card header — not that
+app's actual branding, background art, or any Pokémon character
+names/sprites (all Nintendo/Game Freak IP, unrelated to and not reused
+in this project).
+
+`BattleSideView` restructured from a single vertical stack into a
+left/right split: the battlefield, party grids, and command panel on the
+left; the battle log moved into a fixed-width panel on the right with its
+own header, rather than a scrolling box wedged at the bottom. Monster
+cards got a cleaner header: icon beside name, then a full-width HP bar
+directly underneath with the numeric readout rendered inside the bar
+(green/amber/red by percentage, same thresholds as before) instead of a
+separate bar+label pair off to the side; MP got the same treatment for
+the player's own party.
+
+`MonsterPickerDialog`'s results went from a plain icon+name `ItemList` to
+a `Tree` with real columns (icon, name, rank, family, HP/ATK/DEF/AGI/WIS,
+slots) — clicking a column header sorts by it, clicking again reverses
+the order, matching the "sortable stat table" feel from the reference.
+Widened the dialog (780x460 → 980x520) to fit the extra columns
+comfortably. All four headless suites pass after reimport.
+
+## [2026-07-23] build | Fix: Tree icon sizing + a real turn-resolution deadlock
+
+Two bugs found after trying the redesigned screens. First, cosmetic but
+severe: `Tree`, unlike `ItemList`, doesn't auto-constrain icon size to the
+column width — without an explicit `set_icon_max_width()` per item, sprites
+rendered at full native resolution and blew out the whole results row.
+Fixed (28px, matching other icon sizes in the app) and added subtle
+alternating row shading for readability.
+
+Second, a real functional bug: both battle windows could get stuck
+permanently on "Waiting for the other side..." with neither player able to
+act. Root cause was a signal-ordering bug in `BattleController._resolve_turn()`:
+`turn_resolved` was emitted *before* `_recompute_pending_slots()` reset the
+per-slot "submitted" bookkeeping for the new round. `BattleSideView`'s
+handler calls `_advance_to_next_pending_slot()` synchronously off that
+signal, so it was reading the just-finished round's stale "everything
+already submitted" state — every slot looked already-submitted, no next
+slot was ever found, and neither side's UI could ever surface Fight/Orders
+again. Reordered so pending-slot recomputation happens before the signal
+fires. Added a regression test that checks `is_slot_submitted()` from
+*inside* the `turn_resolved` signal handler itself (matching exactly what
+`BattleSideView` sees) to catch this specific class of bug if it recurs.
+All four headless suites pass, including the new regression check.
+
+## [2026-07-23] build | Clean up: white Pokemon-Showdown-style theme
+
+User asked to "copy their style" using the same Showdown reference
+screenshots as the previous entry — again, only the unprotectable
+structural idea (a clean white UI with a blue accent, bordered card-style
+panels, light gray borders) was extracted, not any actual Showdown asset,
+color token, font, or branding.
+
+Rewrote `ui/theme.tres` from the dark-slate palette to a light one: white
+panels with a thin light-gray border and small corner radius, light-gray
+buttons that highlight blue on hover and go solid blue when pressed, a
+light-gray progress-bar track, and dark-on-white text throughout. Added
+`Tree` styling (was missing before, so `MonsterPickerDialog`'s results
+table was falling back to Godot's own default dark theme regardless of
+the project theme).
+
+Swapped the amber section-header accent color (`battle_side_view.tscn`'s
+"Opponent"/"Your Party"/"Battle Log"/"Commanding" labels) for the new
+theme's blue accent. Fixed two things in `battle_side_view.gd` while in
+there: the "currently commanding" card highlight was overriding a
+`"panel"` stylebox key that doesn't exist for `Button` (mine-party cards
+are always `disabled=true`, so only the `"disabled"` style key ever
+renders) — silently did nothing before; now overrides `"disabled"` with a
+light-blue/blue-border highlight that's actually visible. Also made every
+monster card always bordered (`flat = false` unconditionally) rather than
+flat except while clickable, and gave the HP/MP bar text overlays an
+explicit white-with-outline style so the numeric readout stays legible
+against fill colors that vary per bar (green/amber/red/blue), instead of
+relying on the theme's default text color which would wash out on darker
+fills. Fixed `MonsterPickerDialog`'s alternating-row tint, which was a
+white-alpha overlay meant for a dark background (invisible on the new
+white one) — now a black-alpha overlay.
+
+All four headless suites re-run and pass. Visual confirmation of the new
+look (does it actually read as "clean," does wrapping/contrast hold up at
+real window sizes) is manual-only — needs an in-editor F5 run, same
+category as prior milestones' manual-only items.
+
+## [2026-07-23] build | Fix: multi-slot monster acting more than once per turn
+
+Real bug reported by the user, confirmed and root-caused across three
+places that all shared the same wrong assumption baked in before
+Milestone 6 added multi-slot monsters: that one raw active-slot index ==
+one independently-acting unit. A monster whose `species.slots > 1`
+occupies more than one raw slot index (see `BattleSetup`/`FaintHandler`'s
+size-aware packing), but still needs exactly one action per turn, not one
+per slot it spans:
+
+1. `TurnManager.run_turn()` iterated every raw slot index and asked the
+   action provider for an action at each one — for a 2-slot monster this
+   meant two `get_action()` calls for the *same* instance. Fixed by
+   deduping by `instance_id` within each side's collection loop (first
+   occurrence — i.e. its lowest/anchor slot — wins).
+2. `BattleController._recompute_pending_slots()` had the identical bug one
+   layer up: it listed every raw slot a multi-slot monster occupied as an
+   independently pending command, so the player got asked to pick Fight/
+   Orders for the same monster twice per round. Since `submit_fight`/
+   `submit_swap` fully *replace* (never append to) that instance's queued
+   action, the second submission silently overwrote the first — so the
+   monster still only ever executed one action, but the player was
+   incorrectly allowed to submit (and have discarded) two, and the UI
+   forced them through the command menu twice for one monster. Fixed with
+   the same dedup-by-first-occurrence approach.
+3. `BattleState.get_active_monsters()` — used by `EndOfTurnProcessor` for
+   status ticks and `on_turn_end` trait hooks — returned the same monster
+   once per raw slot it occupied, so a multi-slot monster's poison/regen
+   ticks and turn-end trait effects were silently applied twice (or more)
+   per turn. Fixed by deduping by `team_index` in the source method
+   itself, so every caller benefits.
+
+Also fixed a smaller related gap while in the same code: `submit_swap`
+(the Orders command) never updated the swapped-in monster's own `.slot`
+field, which `BattleSideView` relies on to highlight the currently-
+commanding card — harmless before (Orders swaps only ever involved
+1-slot monsters in practice) but worth closing now that slot bookkeeping
+is under closer scrutiny.
+
+Added a new regression test, `_check_multi_slot_acts_once_per_turn` in
+`battle_ui_test_runner.gd`, that runs a real turn with a 2-slot monster on
+the team and asserts exactly one `SkillUsedEvent` comes from it — this is
+an end-to-end check of the actual reported symptom, not just the
+pending-slot bookkeeping. Also corrected an existing test
+(`_check_size_aware_packing`) that had encoded the bug as expected
+behavior (`get_pending_slots("side_a") == [0, 1, 2, 3]` for a team where
+a 2-slot monster occupies slots 0-1 — now correctly `[0, 2, 3]`, one
+entry per actor).
+
+Separately, per the user's ask to "make a proper hp bar and align them
+with the ui": `_build_monster_card` in `battle_side_view.gd` previously
+nested the HP/MP bars inside the same column as the icon, so they were
+squeezed to the right of a fixed-width icon rather than spanning the
+card. Restructured so icon+name form a header row and the HP/MP bars run
+the full width of the card underneath — every card's bars now start and
+end at the same edges regardless of icon aspect ratio or name length.
+
+All four headless suites pass, including the new regression test.
+
+## [2026-07-23] build | Battle log: narrate every event, not just some
+
+`BattleSideView._describe_event()` silently dropped four event types it
+didn't have a case for (`return ""` at the fallthrough) — `StatusTickEvent`
+(poison/regen damage each turn), `StatChangedEvent` (buff/debuff stage
+changes), `TurnStartedEvent`, and `BattleEndedEvent` — so the log looked
+plausible in short fights but went quiet on anything involving a status
+condition, a stat-changing move, or simply which turn you were on.
+
+Added narration for all four: a poison-style tick prints "X is hurt by
+Status! (N HP left)" and, separately, "X's Status wore off." the turn it
+expires; a stat change prints "X's Stat rose/fell(, sharply)!" (a delta
+of 0, already at the cap, prints "won't go any further!"); a turn
+boundary prints a "--- Turn N ---" separator (using `event.turn_number`,
+stamped by the event bus, not tracked separately); and battle-end prints
+"You win/lose the battle!" from this window's own perspective (`_my_side`)
+even though the same `BattleEndedEvent` is shared by both windows. Also
+ran `status_id`/`stat_name` through `String.capitalize()` instead of
+printing the raw snake_case id.
+
+Extended `_check_side_view_rendering` in `battle_ui_test_runner.gd` to
+resolve one real turn through a live `BattleSideView` and assert the log
+text (via `RichTextLabel.get_parsed_text()` — `.text` doesn't reflect
+content added through `append_text()`) actually names the turn, the move
+used, and the resulting damage, so a future regression back to silent
+event types would be caught. All four headless suites pass.
+
+## [2026-07-23] build | Battle log: show the opening send-out, label rounds
+
+User's screenshot showed the log panel completely blank even with all 4
+monsters already active on both sides. Root cause: `BattleController`
+connects to the event bus and calls `engine.start_battle()` inside its
+own `_init()` — which fires the initial `MonsterEnteredEvent`s for the
+starting lineup — but neither `BattleSideView` has connected to
+`turn_resolved` yet at that point (that only happens in `setup()`, called
+after the controller already exists). Those events accumulated into
+`_pending_events` along with everything else, but `_resolve_turn()`
+resets `_pending_events = []` at the *start* of resolving round 1 — so by
+the time `turn_resolved` ever fires for the first time, the opening
+send-out events had already been silently discarded. The battle's actual
+opening lines never had a chance to reach any view.
+
+Fixed by snapshotting `_pending_events` into a separate
+`_opening_events` array right after `start_battle()` returns, exposed via
+`get_opening_events()`. `BattleSideView.setup()` now prints "The battle
+begins!" plus a narrated line for each opening event before doing
+anything else, so both windows show the starting lineup immediately
+instead of a blank log until round 1 resolves.
+
+Also renamed the per-round separator from "--- Turn N ---" to "Round N"
+per the user's explicit ask ("write every round... like round 1..."),
+matching the DQM/user's own terminology rather than the engine's internal
+"turn" naming.
+
+Extended `_check_side_view_rendering`'s log-text check to also assert the
+log contains "enters the battle!" (the opening send-out) in addition to
+the round label, the move used, and the damage dealt. All four headless
+suites pass.
+
+## [2026-07-23] build | Fix: battle log text invisible (white-on-white)
+
+The previous fix made the log actually contain narration (confirmed by
+the headless test asserting on its text), but the user reported still
+seeing nothing live in the editor. Root cause: the white-theme rewrite
+(`ui/theme.tres`) added color overrides for `Label`, `Button`,
+`ProgressBar`, `OptionButton`, `LineEdit`, and `Tree`, but never added one
+for `RichTextLabel` — the log's only user. Without a project override, it
+was still using Godot's built-in default theme color for
+`RichTextLabel/colors/default_color`, which is light/white (designed
+against a dark background) — rendering white text on the new white
+`LogPanel` background. Invisible, but not empty; a headless check that
+only inspects `get_parsed_text()` has no way to catch a pure color
+problem like this, which is why the suite kept passing throughout.
+
+Added `RichTextLabel/colors/default_color = Color(0.13, 0.15, 0.18, 1)`
+to the theme, matching the same dark text color used everywhere else.
+No test coverage added for this class of bug (color contrast is a
+manual/visual concern, not a text-content one) — worth remembering next
+time a new theme is applied to a control type that wasn't in the
+previous theme's overrides, since the built-in fallback silently applies
+per-type and won't show up in any content-based check.
+
+## [2026-07-23] build | Log box: stop chasing theme resolution, hardcode it
+
+The theme-level fix above still didn't show up live (confirmed via a
+follow-up screenshot after a real restart — HP values had clearly moved
+since the previous screenshot, so this wasn't a stale-session issue).
+Verified via headless introspection that the theme *does* resolve
+`RichTextLabel/colors/default_color` to the correct dark value, including
+inside a second `Window` with no explicit theme assigned (matching
+side_b's real setup exactly) — so the shared-theme mechanism itself
+checks out in isolation, yet the live log still rendered blank. Pixel-level
+rendering couldn't be verified directly (Godot's `--headless` flag uses a
+dummy renderer with no real framebuffer to read back), so this couldn't be
+chased further through automated verification.
+
+Rather than keep iterating on shared-theme resolution blind, gave the log
+its own self-contained dark console box: `LogScroll` gets a hardcoded dark
+panel background (`Color(0.11, 0.12, 0.15, 1)`) and `LogLabel` gets a
+hardcoded light `default_color` (`Color(0.92, 0.93, 0.95, 1)`), both as
+direct per-node overrides in `battle_side_view.tscn` — independent of
+`ui/theme.tres` entirely, so no ambient theme/resolution timing question
+can affect it again. Also reads as a more natural "message box" look for
+a battle log regardless. All four headless suites still pass.
+
+## [2026-07-23] build | Log: dropped RichTextLabel, plain Label instead
+
+The dark-box fix above landed (confirmed by screenshot — the panel is
+genuinely dark now, so the .tscn changes were being picked up correctly
+all along), but the text itself was still completely invisible — not
+just low-contrast, zero visible characters. Since the background color
+change *did* take effect but the text color change did not, something
+about `RichTextLabel` specifically (append_text's actual color/paint
+path with `bbcode_enabled = false`, `visible_characters`/`visible_ratio`,
+or some other internal state) was the remaining unknown, and pixel-level
+rendering can't be verified from this headless environment (Godot's
+`--headless` flag forces a dummy renderer with no real framebuffer to
+read back), so this couldn't be chased further through automated checks.
+
+Rather than keep guessing at `RichTextLabel` internals, replaced it with
+a plain `Label`: no bbcode parsing, no append-text semantics, no
+visible-character state — just a `String` this code owns directly
+(`_log_label.text += line + "\n"`), styled with a single
+`theme_override_colors/font_color` override, the exact same mechanism
+already working correctly for every other Label in the app (headers,
+"Commanding: X", etc.). Auto-scroll-to-bottom (previously
+`scroll_following` on the RichTextLabel) is now done manually: `_append_log()`
+sets `LogScroll.scroll_vertical` to the scrollbar's max value one frame
+after the text grows.
+
+Updated `_check_side_view_rendering`'s log-text assertions to read
+`_log_label.text` directly (a plain Label has no separate "parsed text"
+concept the way RichTextLabel did). All four headless suites pass.
+
+## [2026-07-23] build | Milestone 7 + 8: Online 1v1 PvP over a direct connection
+
+User asked for online PvP against a friend, "like Pokemon Showdown, but I
+don't host [a dedicated server]." Asked which connection approach to use
+(direct ENet connect vs. WebRTC + a small signaling helper); user chose
+direct connect for zero extra infrastructure. Planned as two milestones
+via a validated plan (a Plan-mode sub-agent pass checked every Godot 4.7
+multiplayer API detail against current docs rather than from-memory
+assumptions, and corrected several: peer ids aren't reliably 1/2 so
+`max_clients=1` + broadcast `rpc()` is used instead of `rpc_id()`;
+`peer_disconnected` (host-side) and `server_disconnected` (joiner-side)
+are complementary, not interchangeable; `@rpc("authority", ...)` gives
+real enforcement -- not just convention -- that only the host's seed is
+ever used, since a Node's default multiplayer authority is peer id 1).
+
+This was tractable with almost no engine changes because the battle
+engine is already provably deterministic lockstep-friendly: `TurnManager
+.run_turn()` assigns every `Action.submission_index` by iterating
+`["side_a","side_b"]` in fixed canonical order *inside* `run_turn()`
+itself, never based on real-world click/network-arrival timing, and M1's
+existing "same seed -> same log" test already proves the engine is
+bit-deterministic given identical inputs. Checked for side_a/side_b
+asymmetry across the whole engine (`battle_setup.gd`, `battle_state.gd`,
+`action_resolver.gd`, `end_of_turn_processor.gd`, `victory_checker.gd`):
+none that matters (the only tiebreak favoring side_a needs identical
+priority, identical effective agility, *and* an identical 32-bit seeded
+RNG roll -- practically zero), so **"host is always side_a" is fair**.
+
+**M7 -- transport + handshake:** new autoload `Network`
+(`game/net/network_manager.gd`, `class_name NetworkManager extends Node`,
+registered in `project.godot`'s new `[autoload]` section) wraps
+`ENetMultiplayerPeer`: `host_game()`/`join_game()`, and `@rpc`-annotated
+methods exchanging each side's `SavedTeamLoader.to_dict(team)` (a
+Dictionary is directly RPC-transmittable -- no new serialization format
+needed) and one host-generated shared seed. New
+`game/ui/online/network_setup_screen.gd`/`.tscn`: Host row (port field +
+a filtered-to-IPv4 local-address display, since `IP.get_local_addresses()`
+returns a wall of IPv6/link-local noise otherwise -- deliberately makes
+no outbound HTTP call to check a public IP, staying dependency-free) /
+Join row (IP + port fields); once connected, a `TeamRosterManager`-backed
+team picker + "Ready" button. Readiness falls out of data already being
+exchanged (local ready + opponent's team dict + the seed all present) --
+no separate "both ready" handshake message needed.
+
+Hit one real bug during implementation: the seed RPC was originally
+`@rpc("authority", "call_remote", "reliable")` -- but `call_remote` means
+only the *other* peer's handler fires, so the host (who generates the
+seed and calls `rpc(...)` to send it) would never receive its own
+`seed_received` signal and never learn the very value it just picked.
+Fixed by switching to `"call_local"`, which fires the same handler on the
+caller too, making `seed_received` arrive symmetrically on both sides
+from one `rpc()` call.
+
+Also hit a real environment quirk while smoke-testing the new screen
+headlessly: referencing the bare autoload identifier `Network` compiled
+fine in some contexts but failed with "Identifier not found: Network"
+when the script was loaded via a custom `SceneTree`/`MainLoop` test
+harness (this project's `--headless --script res://tests/run_*.gd`
+pattern) -- autoload global-identifier resolution isn't guaranteed to be
+ready at that point in this execution mode. Fixed by resolving it via
+`get_node("/root/Network")` into a typed `_network` var instead of ever
+referencing the bare global identifier -- works identically in normal
+play and in test harnesses, and doesn't depend on GDScript's autoload
+bootstrap ordering.
+
+**M8 -- relay + battle launch + disconnect handling:** one new, purely
+additive signal on `BattleController`,
+`action_submitted(side, slot, kind, payload)`, emitted at the end of
+`submit_fight`/`submit_swap` regardless of who called them or why.
+New `game/net/network_battle_relay.gd`
+(`class_name NetworkBattleRelay extends RefCounted`) connects to that
+signal: forwards a submission over the network only when it's for the
+relay's own `local_side`; a submission for the *other* side only ever
+happens because the relay itself just replayed one that arrived over the
+network, so forwarding that back out would echo it forever -- the
+`side != local_side` check is what breaks the loop. `network_setup_screen
+.gd` builds one `BattleController` (host's team as `team_a`, joiner's as
+`team_b`, matching instance-id offsets) once ready, wraps it in a relay,
+and launches exactly **one** `BattleSideView` -- no second `Window` like
+the local 2-window flow, since the opponent is a different physical
+machine. `BattleSideView.show_disconnect_message(text)` reuses the
+existing win/lose result panel for a lost connection instead of building
+new UI.
+
+**Verification:** real ENet sockets can't be driven from
+`godot --headless --script` in one process the way the existing four
+suites work, so two new suites prove what genuinely *can* be checked
+without any real networking: `network_lockstep_test_runner.gd` builds two
+fully independent `BattleController`s from the same seed + same two teams
+and drives them with the same actions in *opposite* call order across a
+full battle, asserting byte-identical event logs -- the direct proof that
+submission order across two independently-driven instances doesn't
+matter, which is exactly what network jitter needs to not matter.
+`network_relay_test_runner.gd` adds a `FakeNetworkManager` test double
+(two instances wired to each other's `action_received` signal, zero real
+sockets) and proves the actual relay code path end-to-end: a local
+submission on one controller correctly lands on the other's matching
+slot, the receiving side's relay does *not* echo it back (asserted via
+send-call counts staying at 0), and a full battle played purely through
+this path produces identical logs on both sides. All six headless suites
+pass (`run_battle_headless.gd`, `run_team_roster_headless.gd`,
+`run_team_builder_ui_headless.gd`, `run_battle_ui_headless.gd`,
+`run_network_lockstep_headless.gd`, `run_network_relay_headless.gd`).
+
+**Manual-only** (not yet done): actually running `host_game()`/
+`join_game()` between two real processes/machines, the full Host/Join ->
+team-pick -> play flow end-to-end, and a real mid-battle disconnect. This
+needs an in-editor/exported-build run on real hardware -- no headless
+`SceneTree` run creates a real ENet socket pair.

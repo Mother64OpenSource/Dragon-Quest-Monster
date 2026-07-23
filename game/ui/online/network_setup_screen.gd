@@ -1,0 +1,220 @@
+class_name NetworkSetupScreen
+extends Control
+
+## Host/Join UI for online 1v1 PvP over a direct ENet connection (see
+## game/net/network_manager.gd, the "Network" autoload). Each machine picks
+## its own locally-saved team; once both sides have exchanged team data and
+## a shared seed (the host always generates and sends the seed), each peer
+## independently builds both teams' MonsterInstance arrays via
+## TeamToBattleBridge and launches its own BattleController -- kept in sync
+## with the opponent purely by relaying submissions (see
+## game/net/network_battle_relay.gd). Host is always side_a, joiner is
+## always side_b (confirmed fair -- see wiki/log.md).
+##
+## Unlike the local 2-window flow (battle_setup_screen.gd), this only ever
+## launches ONE BattleSideView: the opponent is a different physical machine,
+## so there is nothing local to render for their side.
+
+const BattleSideViewScene := preload("res://ui/battle/battle_side_view.tscn")
+const DEFAULT_PORT := 27931
+
+var roster: TeamRosterManager
+var monster_db: MonsterDatabase
+var skill_db: SkillDatabase
+var trait_db: TraitDatabase
+
+var _teams: Array[SavedTeam] = []
+var _my_team: SavedTeam = null
+var _my_team_dict: Dictionary = {}
+var _opponent_team_dict: Dictionary = {}
+var _shared_seed: int = -1
+var _local_ready: bool = false
+var _team_received: bool = false
+var _seed_received: bool = false
+var _battle_launched: bool = false
+var _relay: NetworkBattleRelay = null
+
+## Resolved via get_node() rather than referencing the bare autoload
+## identifier "Network" directly -- keeps this script working identically
+## whether it's running as part of a normal scene tree or instantiated
+## directly by a headless test's custom SceneTree/MainLoop script, where an
+## autoload's global identifier isn't guaranteed to be resolvable yet at
+## parse time.
+@onready var _network: NetworkManager = get_node("/root/Network")
+
+@onready var _host_section: VBoxContainer = $VBoxContainer/HostSection
+@onready var _port_edit: LineEdit = $VBoxContainer/HostSection/HostPortRow/PortEdit
+@onready var _host_button: Button = $VBoxContainer/HostSection/HostButton
+@onready var _local_ip_label: Label = $VBoxContainer/HostSection/LocalIpLabel
+@onready var _join_section: VBoxContainer = $VBoxContainer/JoinSection
+@onready var _ip_edit: LineEdit = $VBoxContainer/JoinSection/JoinIpRow/IpEdit
+@onready var _join_port_edit: LineEdit = $VBoxContainer/JoinSection/JoinPortRow/JoinPortEdit
+@onready var _join_button: Button = $VBoxContainer/JoinSection/JoinButton
+@onready var _status_label: Label = $VBoxContainer/StatusLabel
+@onready var _team_pick_row: HBoxContainer = $VBoxContainer/TeamPickRow
+@onready var _team_option: OptionButton = $VBoxContainer/TeamPickRow/TeamOption
+@onready var _ready_button: Button = $VBoxContainer/ReadyButton
+@onready var _back_button: Button = $VBoxContainer/BackButton
+
+func _ready() -> void:
+	roster = TeamRosterManager.new()
+	monster_db = MonsterDatabase.new()
+	skill_db = SkillDatabase.new()
+	trait_db = TraitDatabase.new()
+
+	_teams = roster.list_teams()
+	_populate_team_option()
+
+	_port_edit.text = str(DEFAULT_PORT)
+	_join_port_edit.text = str(DEFAULT_PORT)
+	_local_ip_label.text = (
+		"Your local IP(s): %s\nFor internet play, forward this port on your router and share your public IP (found via your own router page or a \"what's my IP\" lookup)."
+		% ", ".join(_ipv4_addresses())
+	)
+
+	_host_button.pressed.connect(_on_host_pressed)
+	_join_button.pressed.connect(_on_join_pressed)
+	_ready_button.pressed.connect(_on_ready_pressed)
+	_back_button.pressed.connect(_on_back_pressed)
+
+	_network.connection_established.connect(_on_connection_established)
+	_network.connection_failed.connect(_on_connection_failed)
+	_network.opponent_disconnected.connect(_on_opponent_disconnected)
+	_network.team_received.connect(_on_team_received)
+	_network.seed_received.connect(_on_seed_received)
+
+	_team_pick_row.visible = false
+	_ready_button.visible = false
+	_status_label.text = "Host a match, or join one."
+
+## IP.get_local_addresses() returns every interface's address, IPv6 and
+## link-local included -- overwhelming and mostly useless for "which
+## address do I give my friend." A plain IPv4 address (has dots, no colons)
+## is what ENetMultiplayerPeer.create_client() actually expects anyway.
+func _ipv4_addresses() -> Array:
+	var result: Array = []
+	for address in IP.get_local_addresses():
+		if address.contains(".") and not address.contains(":"):
+			result.append(address)
+	return result
+
+func _populate_team_option() -> void:
+	_team_option.clear()
+	for team in _teams:
+		_team_option.add_item("%s (%d members)" % [team.team_name, team.members.size()])
+	if _teams.is_empty():
+		_team_option.add_item("No saved teams")
+		_team_option.disabled = true
+
+func _on_host_pressed() -> void:
+	var port := int(_port_edit.text) if _port_edit.text.is_valid_int() else DEFAULT_PORT
+	var err := _network.host_game(port)
+	if err != OK:
+		_status_label.text = "Couldn't host on port %d (error %d)." % [port, err]
+		return
+	_status_label.text = "Hosting on port %d -- waiting for your opponent to join..." % port
+	_set_connect_controls_enabled(false)
+
+func _on_join_pressed() -> void:
+	var port := int(_join_port_edit.text) if _join_port_edit.text.is_valid_int() else DEFAULT_PORT
+	var ip := _ip_edit.text.strip_edges()
+	if ip.is_empty():
+		_status_label.text = "Enter the host's IP address first."
+		return
+	var err := _network.join_game(ip, port)
+	if err != OK:
+		_status_label.text = "Couldn't connect (error %d)." % err
+		return
+	_status_label.text = "Connecting to %s:%d..." % [ip, port]
+	_set_connect_controls_enabled(false)
+
+func _set_connect_controls_enabled(enabled: bool) -> void:
+	_host_section.modulate.a = 1.0 if enabled else 0.5
+	_join_section.modulate.a = 1.0 if enabled else 0.5
+	_host_button.disabled = not enabled
+	_join_button.disabled = not enabled
+	_port_edit.editable = enabled
+	_ip_edit.editable = enabled
+	_join_port_edit.editable = enabled
+
+func _on_connection_established() -> void:
+	if _teams.is_empty():
+		_status_label.text = "Connected, but you have no saved teams -- build one first."
+		return
+	_status_label.text = "Connected! Pick your team and press Ready."
+	_team_pick_row.visible = true
+	_ready_button.visible = true
+
+func _on_connection_failed() -> void:
+	_status_label.text = "Connection failed."
+	_set_connect_controls_enabled(true)
+
+func _on_opponent_disconnected() -> void:
+	if _battle_launched:
+		return  # the battle scene's own handler (wired in _launch_battle) takes over
+	_status_label.text = "Your opponent disconnected."
+	_team_pick_row.visible = false
+	_ready_button.visible = false
+	_set_connect_controls_enabled(true)
+
+func _on_ready_pressed() -> void:
+	_my_team = _teams[_team_option.selected]
+	_my_team_dict = SavedTeamLoader.to_dict(_my_team)
+	_local_ready = true
+	_ready_button.disabled = true
+	_team_option.disabled = true
+	_network.send_local_team(_my_team_dict)
+	_status_label.text = "Waiting for your opponent..."
+	_check_ready_to_start()
+
+func _on_team_received(team_dict: Dictionary) -> void:
+	_opponent_team_dict = team_dict
+	_team_received = true
+	_check_ready_to_start()
+
+func _on_seed_received(seed_value: int) -> void:
+	_shared_seed = seed_value
+	_seed_received = true
+	_check_ready_to_start()
+
+## Readiness falls out of data already being exchanged for other reasons --
+## no separate "both ready" handshake message is needed.
+func _check_ready_to_start() -> void:
+	if _battle_launched or not _local_ready or not _team_received or not _seed_received:
+		return
+	_launch_battle()
+
+func _launch_battle() -> void:
+	_battle_launched = true
+
+	var host_team_dict: Dictionary = _my_team_dict if _network.is_host else _opponent_team_dict
+	var joiner_team_dict: Dictionary = _opponent_team_dict if _network.is_host else _my_team_dict
+	var host_team := SavedTeamLoader.load_from_dict(host_team_dict)
+	var joiner_team := SavedTeamLoader.load_from_dict(joiner_team_dict)
+
+	var instances_a := TeamToBattleBridge.build_team(host_team, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(joiner_team, "side_b", monster_db, skill_db, trait_db, host_team.members.size())
+	if instances_a.is_empty() or instances_b.is_empty():
+		_status_label.text = "Couldn't build one of the teams (unknown species?)."
+		_battle_launched = false
+		return
+
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id, _shared_seed)
+	var my_side := "side_a" if _network.is_host else "side_b"
+	_relay = NetworkBattleRelay.new(controller, _network, my_side)
+
+	var view: BattleSideView = BattleSideViewScene.instantiate()
+	get_tree().root.add_child(view)
+	get_tree().current_scene = view
+	view.setup(controller, my_side, skill_db)
+
+	var handle_battle_disconnect := func() -> void:
+		if is_instance_valid(view):
+			view.show_disconnect_message("Connection to your opponent was lost.")
+	_network.opponent_disconnected.connect(handle_battle_disconnect, CONNECT_ONE_SHOT)
+
+	queue_free()
+
+func _on_back_pressed() -> void:
+	_network.close_connection()
+	get_tree().change_scene_to_file("res://ui/team_builder/team_builder_screen.tscn")

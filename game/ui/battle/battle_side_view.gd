@@ -36,21 +36,22 @@ var _current_slot: int = -1
 var _mode: String = MODE_MENU
 var _pending_skill_id: String = ""
 
-@onready var _battlefield_grid: HFlowContainer = $VBoxContainer/Battlefield/MarginContainer/VBox/BattlefieldGrid
-@onready var _current_slot_label: Label = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/CurrentSlotLabel
-@onready var _fight_button: Button = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/FightButton
-@onready var _orders_button: Button = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/OrdersButton
-@onready var _tactics_button: Button = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/TacticsButton
-@onready var _actions_scroll: ScrollContainer = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll
-@onready var _actions_box: VBoxContainer = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox
-@onready var _actions_back_button: Button = $VBoxContainer/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox/BackButton
-@onready var _my_party_grid: HFlowContainer = $VBoxContainer/BottomPanel/MyPartyPanel/MyPartyVBox/MyPartyGrid
-@onready var _waiting_label: Label = $VBoxContainer/WaitingLabel
-@onready var _targeting_label: Label = $VBoxContainer/Battlefield/MarginContainer/VBox/TargetingLabel
-@onready var _log_label: RichTextLabel = $VBoxContainer/LogScroll/LogLabel
-@onready var _result_panel: PanelContainer = $VBoxContainer/ResultPanel
-@onready var _result_label: Label = $VBoxContainer/ResultPanel/VBoxContainer/ResultLabel
-@onready var _back_button: Button = $VBoxContainer/ResultPanel/VBoxContainer/BackButton
+@onready var _battlefield_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/BattlefieldGrid
+@onready var _current_slot_label: Label = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/CurrentSlotLabel
+@onready var _fight_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/FightButton
+@onready var _orders_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/OrdersButton
+@onready var _tactics_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/TacticsButton
+@onready var _actions_scroll: ScrollContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll
+@onready var _actions_box: VBoxContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox
+@onready var _actions_back_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox/BackButton
+@onready var _my_party_grid: HFlowContainer = $Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox/MyPartyGrid
+@onready var _waiting_label: Label = $Root/MainColumn/WaitingLabel
+@onready var _targeting_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/TargetingLabel
+@onready var _log_label: Label = $Root/LogPanel/LogVBox/LogScroll/LogLabel
+@onready var _log_scroll: ScrollContainer = $Root/LogPanel/LogVBox/LogScroll
+@onready var _result_panel: PanelContainer = $Root/MainColumn/ResultPanel
+@onready var _result_label: Label = $Root/MainColumn/ResultPanel/VBoxContainer/ResultLabel
+@onready var _back_button: Button = $Root/MainColumn/ResultPanel/VBoxContainer/BackButton
 
 func _ready() -> void:
 	_result_panel.visible = false
@@ -67,8 +68,21 @@ func setup(controller: BattleController, my_side: String, skill_db: SkillDatabas
 	_skill_db = skill_db
 	_controller.turn_resolved.connect(_on_turn_resolved)
 	_controller.battle_ended.connect(_on_battle_ended)
+	_append_log("The battle begins!")
+	for event in _controller.get_opening_events():
+		var line := _describe_event(event)
+		if not line.is_empty():
+			_append_log(line)
 	_advance_to_next_pending_slot()
 	_refresh()
+
+## Plain Label, not RichTextLabel -- no bbcode parsing, no append-text/
+## visible-characters gotchas to fight, just a string we own and grow
+## ourselves. Auto-scrolls to the bottom on each new line.
+func _append_log(line: String) -> void:
+	_log_label.text += line + "\n"
+	await get_tree().process_frame
+	_log_scroll.scroll_vertical = int(_log_scroll.get_v_scroll_bar().max_value)
 
 func _opponent_side() -> String:
 	return "side_b" if _my_side == "side_a" else "side_a"
@@ -118,9 +132,25 @@ func _render_my_party(state: BattleState) -> void:
 			seen[monster.instance_id] = true
 		var card := _build_monster_card(monster, true)
 		if monster != null and monster.slot == _current_slot:
+			# "mine" cards are always disabled (display-only, never clickable),
+			# so Button actually renders its "disabled" style -- overriding
+			# "panel" (not a real Button style key) silently did nothing.
 			var style := StyleBoxFlat.new()
-			style.bg_color = Color(0.25, 0.4, 0.25)
-			card.add_theme_stylebox_override("panel", style)
+			style.bg_color = Color(0.85, 0.92, 1, 1)
+			style.border_width_left = 2
+			style.border_width_top = 2
+			style.border_width_right = 2
+			style.border_width_bottom = 2
+			style.border_color = Color(0.24, 0.45, 0.86, 1)
+			style.corner_radius_top_left = 5
+			style.corner_radius_top_right = 5
+			style.corner_radius_bottom_right = 5
+			style.corner_radius_bottom_left = 5
+			style.content_margin_left = 10.0
+			style.content_margin_top = 6.0
+			style.content_margin_right = 10.0
+			style.content_margin_bottom = 6.0
+			card.add_theme_stylebox_override("disabled", style)
 		_my_party_grid.add_child(card)
 
 func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
@@ -128,7 +158,9 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 	var width_scale := instance.species.slots if instance != null else 1
 	cell.custom_minimum_size = Vector2(CARD_BASE_WIDTH * width_scale, 100)
 	cell.toggle_mode = false
-	cell.flat = not (mine == false and _mode == MODE_TARGETING)
+	# Always a bordered "card" (never flat) -- clickability is communicated by
+	# disabled state, not by hiding the card's background/border.
+	cell.flat = false
 
 	var vbox := VBoxContainer.new()
 	vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -141,45 +173,71 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 		cell.disabled = true
 		return cell
 
+	vbox.add_theme_constant_override("separation", 4)
+
+	var header := HBoxContainer.new()
+	header.add_theme_constant_override("separation", 6)
+	vbox.add_child(header)
+
 	var icon := TextureRect.new()
 	icon.custom_minimum_size = Vector2(32, 32)
 	icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	if not instance.species.sprite_path.is_empty():
 		icon.texture = load(instance.species.sprite_path)
-	vbox.add_child(icon)
+	header.add_child(icon)
 
 	var name_label := Label.new()
 	var base_name := "%s [Slot %d]" % [instance.species.display_name, instance.species.slots]
 	name_label.text = base_name if not instance.is_fainted() else "%s (fainted)" % base_name
 	name_label.clip_text = true
-	vbox.add_child(name_label)
+	name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	header.add_child(name_label)
 
-	var hp_row := HBoxContainer.new()
+	# HP/MP bars span the card's full width below the icon+name row (not
+	# squeezed into a column beside the icon) so every card's bars start and
+	# end at the same edges regardless of icon shape or name length.
 	var hp_bar := ProgressBar.new()
-	hp_bar.custom_minimum_size = Vector2(60, 10)
+	hp_bar.custom_minimum_size = Vector2(0, 16)
+	hp_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	hp_bar.max_value = instance.species.base_hp
 	hp_bar.value = instance.current_hp
 	hp_bar.show_percentage = false
 	_style_hp_bar(hp_bar, instance.current_hp, instance.species.base_hp)
-	hp_row.add_child(hp_bar)
-	var hp_label := Label.new()
-	hp_label.text = "HP %d/%d" % [instance.current_hp, instance.species.base_hp]
-	hp_row.add_child(hp_label)
-	vbox.add_child(hp_row)
+	var hp_text := Label.new()
+	hp_text.text = "HP %d/%d" % [instance.current_hp, instance.species.base_hp]
+	hp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	hp_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	hp_text.add_theme_font_size_override("font_size", 11)
+	_style_bar_overlay_text(hp_text)
+	hp_bar.add_child(hp_text)
+	hp_text.set_anchors_preset(Control.PRESET_FULL_RECT)
+	vbox.add_child(hp_bar)
 
 	if mine:
-		var mp_row := HBoxContainer.new()
 		var mp_bar := ProgressBar.new()
-		mp_bar.custom_minimum_size = Vector2(60, 10)
+		mp_bar.custom_minimum_size = Vector2(0, 16)
+		mp_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		mp_bar.max_value = maxi(1, instance.species.base_mp)
 		mp_bar.value = instance.current_mp
 		mp_bar.show_percentage = false
-		mp_row.add_child(mp_bar)
-		var mp_label := Label.new()
-		mp_label.text = "MP %d/%d" % [instance.current_mp, instance.species.base_mp]
-		mp_row.add_child(mp_label)
-		vbox.add_child(mp_row)
+		var mp_style := StyleBoxFlat.new()
+		mp_style.bg_color = Color(0.32, 0.5, 0.78, 1)
+		mp_style.corner_radius_top_left = 3
+		mp_style.corner_radius_top_right = 3
+		mp_style.corner_radius_bottom_right = 3
+		mp_style.corner_radius_bottom_left = 3
+		mp_bar.add_theme_stylebox_override("fill", mp_style)
+		var mp_text := Label.new()
+		mp_text.text = "MP %d/%d" % [instance.current_mp, instance.species.base_mp]
+		mp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		mp_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		mp_text.add_theme_font_size_override("font_size", 11)
+		_style_bar_overlay_text(mp_text)
+		mp_bar.add_child(mp_text)
+		mp_text.set_anchors_preset(Control.PRESET_FULL_RECT)
+		vbox.add_child(mp_bar)
 
 	if not mine and _mode == MODE_TARGETING and not instance.is_fainted():
 		cell.disabled = false
@@ -188,6 +246,15 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 		cell.disabled = true
 
 	return cell
+
+## HP/MP readouts sit on top of a colored fill that varies (green/amber/red
+## for HP, blue for MP) -- white text with a dark outline stays legible
+## against any of them, unlike the theme's default dark label color which
+## would wash out on the darker fills.
+func _style_bar_overlay_text(label: Label) -> void:
+	label.add_theme_color_override("font_color", Color(1, 1, 1, 1))
+	label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.6))
+	label.add_theme_constant_override("outline_size", 3)
 
 ## Green above half HP, amber in the danger zone, red when critical -- a
 ## quick at-a-glance read without having to parse the numeric label.
@@ -318,12 +385,19 @@ func _on_turn_resolved(events: Array[BattleEvent]) -> void:
 	for event in events:
 		var line := _describe_event(event)
 		if not line.is_empty():
-			_log_label.append_text(line + "\n")
+			_append_log(line)
 	_refresh()
 
 func _on_battle_ended(winner_side: String) -> void:
 	_result_panel.visible = true
 	_result_label.text = "You Win!" if winner_side == _my_side else "You Lose!"
+
+## Online play only (see game/net/) -- reuses the same "stop taking input,
+## show a message, offer a way out" panel _on_battle_ended already shows,
+## rather than building separate UI for a mid-battle disconnect.
+func show_disconnect_message(text: String) -> void:
+	_result_panel.visible = true
+	_result_label.text = text
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/team_builder/team_builder_screen.tscn")
@@ -354,7 +428,7 @@ func _describe_event(event: BattleEvent) -> String:
 		var e4: StatusAppliedEvent = event
 		var target3 := _find_instance(e4.target_instance_id)
 		var target_name3 := target3.species.display_name if target3 != null else "???"
-		return "%s is afflicted with %s!" % [target_name3, e4.status_id]
+		return "%s is afflicted with %s!" % [target_name3, e4.status_id.capitalize()]
 	if event is MonsterFaintedEvent:
 		var e5: MonsterFaintedEvent = event
 		var m := _find_instance(e5.instance_id)
@@ -365,6 +439,32 @@ func _describe_event(event: BattleEvent) -> String:
 		var m2 := _find_instance(e6.instance_id)
 		var m_name2 := m2.species.display_name if m2 != null else e6.species_id
 		return "%s enters the battle!" % m_name2
+	if event is StatusTickEvent:
+		var e7: StatusTickEvent = event
+		var target4 := _find_instance(e7.target_instance_id)
+		var target_name4 := target4.species.display_name if target4 != null else "???"
+		var status_name := e7.status_id.capitalize()
+		var lines: Array[String] = []
+		if e7.damage > 0:
+			lines.append("%s is hurt by %s! (%d HP left)" % [target_name4, status_name, e7.resulting_hp])
+		if e7.expired:
+			lines.append("%s's %s wore off." % [target_name4, status_name])
+		return "\n".join(lines)
+	if event is StatChangedEvent:
+		var e8: StatChangedEvent = event
+		var target5 := _find_instance(e8.target_instance_id)
+		var target_name5 := target5.species.display_name if target5 != null else "???"
+		var stat_name := e8.stat_name.capitalize()
+		if e8.delta_applied == 0:
+			return "%s's %s won't go any further!" % [target_name5, stat_name]
+		var direction := "rose" if e8.delta_applied > 0 else "fell"
+		var qualifier := " sharply" if absi(e8.delta_applied) >= 2 else ""
+		return "%s's %s %s%s!" % [target_name5, stat_name, direction, qualifier]
+	if event is TurnStartedEvent:
+		return "\nRound %d" % event.turn_number
+	if event is BattleEndedEvent:
+		var e9: BattleEndedEvent = event
+		return "You win the battle!" if e9.winner_side == _my_side else "You lose the battle!"
 	return ""
 
 func _find_instance(instance_id: int) -> MonsterInstance:

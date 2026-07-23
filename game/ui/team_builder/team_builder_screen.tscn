@@ -23,6 +23,10 @@ offset_right = -4.0
 offset_bottom = 28.0
 alignment = 2
 
+[node name="OnlineBattleButton" type="Button" parent="TopBar"]
+layout_mode = 2
+text = "Online Battle..."
+
 [node name="BattleButton" type="Button" parent="TopBar"]
 layout_mode = 2
 text = "Battle!"
