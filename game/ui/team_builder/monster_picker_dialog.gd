@@ -7,6 +7,10 @@ extends ConfirmationDialog
 
 signal species_chosen(species_id: String)
 
+## Canonical column order from the source spreadsheet's "Base Resistances"
+## section (see MonsterSpecies.resistances).
+const RESIST_CODES := ["Frz","Siz","Bng","Wsh","Crk","Rbl","Zap","Zam","Dnk","Fre","Ice","Wck","Psn","Crs","Imm","Cnf","Par","Slp","Dzl","DrM","Hck","Fzl","Blt","Abi","Gbs","Ban","Sag","Sap","Dec","Dim"]
+
 var _monster_db: MonsterDatabase
 
 @onready var _search_edit: LineEdit = $VBoxContainer/SearchEdit
@@ -106,14 +110,29 @@ func _show_details(species: MonsterSpecies) -> void:
 		return
 	_details_icon.texture = _load_icon(species)
 	_details_label.text = (
-		"%s\nFamily: %s   Rank: %s\n\nHP: %d   MP: %d\nATK: %d   DEF: %d\nAGI: %d   WIS: %d"
+		"%s\nFamily: %s   Rank: %s\n\nHP: %d   MP: %d\nATK: %d   DEF: %d\nAGI: %d   WIS: %d\n\n%s"
 		% [
 			species.display_name, species.family, MonsterLoader.rank_to_string(species.rank),
 			species.base_hp, species.base_mp,
 			species.base_attack, species.base_defense,
-			species.base_agility, species.base_wisdom
+			species.base_agility, species.base_wisdom,
+			_format_resistances(species)
 		]
 	)
+
+## Only non-blank entries are stored on the species, so this always shows
+## every code that deviates from normal susceptibility. Symbol meanings
+## (½ = resist, ↓ = weak, 0 = immune are the confident ones; ⁎, ↑, ↑↑, ⇄ are
+## not yet confirmed) are preserved raw from the source rather than
+## interpreted -- see wiki/log.md.
+func _format_resistances(species: MonsterSpecies) -> String:
+	if species.resistances.is_empty():
+		return "Resistances: (none on record)"
+	var parts: Array[String] = []
+	for code in RESIST_CODES:
+		if species.resistances.has(code):
+			parts.append("%s %s" % [code, species.resistances[code]])
+	return "Resistances:\n" + "   ".join(parts)
 
 func _clear_details() -> void:
 	_details_icon.texture = null

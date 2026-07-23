@@ -35,6 +35,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_reorder()
 	await _check_degradation()
 	_check_validation_banner()
+	_check_resistances_shown()
 
 	_screen.queue_free()
 	_clear_test_dir()
@@ -196,6 +197,23 @@ func _check_validation_banner() -> void:
 
 	_screen.roster.delete_team(valid_team_id)
 	_screen.roster.delete_team(invalid_team_id)
+
+func _check_resistances_shown() -> void:
+	var editor := _screen._team_editor_panel
+	var picker := editor._monster_picker
+	var slime_species := _screen.monster_db.get_species("slime")
+	_check("slime fixture has resistance data to display", not slime_species.resistances.is_empty())
+
+	picker._show_details(slime_species)
+	_check("details label shows a Resistances section", picker._details_label.text.contains("Resistances"))
+	for code in slime_species.resistances:
+		_check(
+			"details label shows resistance code %s" % code,
+			picker._details_label.text.contains(code)
+		)
+
+	picker._show_details(null)
+	_check("clearing details hides resistance text", not picker._details_label.text.contains("Resistances:"))
 
 func _clear_test_dir() -> void:
 	var dir := DirAccess.open(TEST_TEAMS_DIR)
