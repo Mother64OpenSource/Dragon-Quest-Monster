@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "grotwyrm",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "↓",
+		"Crk": "0",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wsh": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/grotwyrm.png",
 	"starting_skill_ids": [
 		"attack"
 	],

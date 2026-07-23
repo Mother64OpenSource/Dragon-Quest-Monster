@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "orc",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/orc.png",
 	"starting_skill_ids": [
 		"attack"
 	],

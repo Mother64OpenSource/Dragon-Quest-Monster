@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "mean_spirit",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "⇄",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/mean_spirit.png",
 	"starting_skill_ids": [
 		"attack"
 	],

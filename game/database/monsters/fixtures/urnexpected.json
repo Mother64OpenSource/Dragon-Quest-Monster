@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "urnexpected",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/urnexpected.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "trode",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"Fre": "0",
+		"Fzl": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/trode.webp",
 	"starting_skill_ids": [
 		"attack"

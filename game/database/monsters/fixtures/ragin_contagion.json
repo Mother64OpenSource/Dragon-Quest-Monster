@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "ragin_contagion",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/ragin_contagion.png",
 	"starting_skill_ids": [
 		"attack"
 	],

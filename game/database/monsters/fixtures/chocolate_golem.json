@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "chocolate_golem",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↑",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/chocolate_golem.webp",
 	"starting_skill_ids": [
 		"attack"

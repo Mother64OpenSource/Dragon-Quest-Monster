@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "bad_egg",
 	"rank": "F",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/bad_egg.webp",
 	"starting_skill_ids": [
 		"attack"

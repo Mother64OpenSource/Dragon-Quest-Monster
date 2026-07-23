@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "nokturnus",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "0",
+		"Frz": "0",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Par": "↓",
+		"Psn": "↓",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/nokturnus.webp",
 	"starting_skill_ids": [
 		"attack"

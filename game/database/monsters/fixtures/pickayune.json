@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "pickayune",
 	"rank": "F",
+	"resistances": {
+		"Ban": "0",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/pickayune.png",
 	"starting_skill_ids": [
 		"attack"
 	],

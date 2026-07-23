@@ -9,6 +9,26 @@
 	"family": "Slime",
 	"id": "grandpa_slime",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "0",
+		"Fzl": "⁎",
+		"Ice": "↓",
+		"Imm": "½",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "0",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/grandpa_slime.webp",
 	"starting_skill_ids": [
 		"attack"

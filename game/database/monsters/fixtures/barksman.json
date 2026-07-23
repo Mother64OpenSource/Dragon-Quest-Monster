@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "barksman",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/barksman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

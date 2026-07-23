@@ -9,6 +9,23 @@
 	"family": "Slime",
 	"id": "beshemoth_slime",
 	"rank": "C",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "0",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/beshemoth_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

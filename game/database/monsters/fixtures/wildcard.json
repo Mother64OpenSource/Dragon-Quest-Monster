@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "wildcard",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"DrM": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "⇄",
+		"Wck": "↓",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/wildcard.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "24_carrot_bunicorn",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "0",
+		"DrM": "0",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/24_carrot_bunicorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

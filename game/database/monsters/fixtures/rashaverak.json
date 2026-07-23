@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "rashaverak",
 	"rank": "A",
+	"resistances": {
+		"Blt": "⁎",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/rashaverak.png",
 	"starting_skill_ids": [
 		"attack"
 	],

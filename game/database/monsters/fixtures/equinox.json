@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "equinox",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "0",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/equinox.png",
 	"starting_skill_ids": [
 		"attack"
 	],

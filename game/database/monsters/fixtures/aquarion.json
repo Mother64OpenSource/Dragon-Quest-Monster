@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "aquarion",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Cnf": "↑↑",
+		"Crk": "HP",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Frz": "½",
+		"Gbs": "↓",
+		"Ice": "HP",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Slp": "↑↑",
+		"Wck": "0"
+	},
 	"sprite_path": "res://assets/monsters/aquarion.webp",
 	"starting_skill_ids": [
 		"attack"

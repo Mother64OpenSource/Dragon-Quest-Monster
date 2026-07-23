@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "darck",
 	"rank": "S",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Gbs": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/darck.webp",
 	"starting_skill_ids": [
 		"attack"

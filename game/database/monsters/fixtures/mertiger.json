@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "mertiger",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Slp": "½",
+		"Wck": "↑↑",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/mertiger.png",
 	"starting_skill_ids": [
 		"attack"
 	],

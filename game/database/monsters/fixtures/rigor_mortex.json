@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "rigor_mortex",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dnk": "0",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "HP",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/rigor_mortex.webp",
 	"starting_skill_ids": [
 		"attack"

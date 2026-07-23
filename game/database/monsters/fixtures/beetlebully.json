@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "beetlebully",
 	"rank": "A",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Gbs": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/beetlebully.png",
 	"starting_skill_ids": [
 		"attack"
 	],

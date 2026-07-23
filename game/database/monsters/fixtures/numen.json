@@ -1,19 +1,33 @@
 {
-    "id":  "numen",
-    "display_name":  "Numen",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1418,
-    "base_mp":  591,
-    "base_attack":  749,
-    "base_defense":  749,
-    "base_agility":  690,
-    "base_wisdom":  946,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/numen.png"
+	"base_agility": 690.0,
+	"base_attack": 749.0,
+	"base_defense": 749.0,
+	"base_hp": 1418.0,
+	"base_mp": 591.0,
+	"base_wisdom": 946.0,
+	"display_name": "Numen",
+	"family": "unknown",
+	"id": "numen",
+	"rank": "SS",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Fre": "½",
+		"Ice": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Sap": "0",
+		"Siz": "↓",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/numen.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

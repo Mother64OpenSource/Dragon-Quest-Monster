@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "boppin_badger",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"DrM": "0",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/boppin_badger.webp",
 	"starting_skill_ids": [
 		"attack"

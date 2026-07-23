@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "ewwnicorn",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "0",
+		"Dec": "½",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "0",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/ewwnicorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

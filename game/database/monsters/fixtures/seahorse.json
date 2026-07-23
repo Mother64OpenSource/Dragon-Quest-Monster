@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "seahorse",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wsh": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/seahorse.png",
 	"starting_skill_ids": [
 		"attack"
 	],

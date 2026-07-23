@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "foo_dog",
 	"rank": "D",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/foo_dog.png",
 	"starting_skill_ids": [
 		"attack"
 	],

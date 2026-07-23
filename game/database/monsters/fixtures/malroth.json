@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "malroth",
 	"rank": "S",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Fzl": "↓",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/malroth.webp",
 	"starting_skill_ids": [
 		"attack"

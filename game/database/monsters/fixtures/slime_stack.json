@@ -9,6 +9,19 @@
 	"family": "Slime",
 	"id": "slime_stack",
 	"rank": "C",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "0",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/slime_stack.png",
 	"starting_skill_ids": [
 		"attack"
 	],

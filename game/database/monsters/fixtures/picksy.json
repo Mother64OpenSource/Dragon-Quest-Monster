@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "picksy",
 	"rank": "F",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zam": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/picksy.webp",
 	"starting_skill_ids": [
 		"attack"

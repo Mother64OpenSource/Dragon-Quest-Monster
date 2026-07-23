@@ -9,6 +9,24 @@
 	"family": "Slime",
 	"id": "slider_king",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "↑↑",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/slider_king.webp",
 	"starting_skill_ids": [
 		"attack"

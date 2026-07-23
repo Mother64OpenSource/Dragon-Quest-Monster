@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "drygon",
 	"rank": "D",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crk": "0",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "0",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/drygon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

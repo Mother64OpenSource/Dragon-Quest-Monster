@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "smile_lizard",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "⁎",
+		"Bng": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/smile_lizard.png",
 	"starting_skill_ids": [
 		"attack"
 	],

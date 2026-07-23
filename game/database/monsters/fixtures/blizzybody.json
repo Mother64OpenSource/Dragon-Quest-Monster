@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "blizzybody",
 	"rank": "B",
+	"resistances": {
+		"Blt": "↓",
+		"Cnf": "↓",
+		"Crk": "HP",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "HP",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓"
+	},
+	"sprite_path": "res://assets/monsters/blizzybody.png",
 	"starting_skill_ids": [
 		"attack"
 	],

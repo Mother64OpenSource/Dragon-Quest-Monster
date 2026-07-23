@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "demonrider",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "0",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Par": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/demonrider.png",
 	"starting_skill_ids": [
 		"attack"
 	],

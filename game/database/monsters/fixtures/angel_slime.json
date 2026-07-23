@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "angel_slime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
+	"sprite_path": "res://assets/monsters/angel_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

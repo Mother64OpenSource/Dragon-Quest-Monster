@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "hoodsquid",
 	"rank": "D",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/hoodsquid.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "anemon",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sap": "½",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/anemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

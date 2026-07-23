@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "bubblemon",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "0",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/bubblemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

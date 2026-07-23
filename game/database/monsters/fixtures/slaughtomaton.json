@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "slaughtomaton",
 	"rank": "S",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "½",
+		"Bng": "HP",
+		"Cnf": "↑",
+		"Crk": "½",
+		"Crs": "½",
+		"Gbs": "↓",
+		"Hck": "↓",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/slaughtomaton.webp",
 	"starting_skill_ids": [
 		"attack"

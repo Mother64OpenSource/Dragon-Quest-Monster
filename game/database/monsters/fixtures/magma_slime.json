@@ -9,6 +9,23 @@
 	"family": "Slime",
 	"id": "magma_slime",
 	"rank": "E",
+	"resistances": {
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "0",
+		"Frz": "0",
+		"Fzl": "⁎",
+		"Ice": "↓",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/magma_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

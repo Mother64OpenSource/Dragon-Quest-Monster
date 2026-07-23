@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "crayzee",
 	"rank": "B",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/crayzee.png",
 	"starting_skill_ids": [
 		"attack"
 	],

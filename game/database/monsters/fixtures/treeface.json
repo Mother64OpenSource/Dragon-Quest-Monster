@@ -9,6 +9,28 @@
 	"family": "Nature",
 	"id": "treeface",
 	"rank": "C",
+	"resistances": {
+		"Abi": "0",
+		"Ban": "⁎",
+		"Blt": "↑",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "↑",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Frz": "↓",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "↑",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/treeface.png",
 	"starting_skill_ids": [
 		"attack"
 	],

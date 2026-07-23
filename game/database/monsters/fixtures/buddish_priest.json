@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "buddish_priest",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑↑",
+		"DrM": "½",
+		"Fre": "0",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/buddish_priest.png",
 	"starting_skill_ids": [
 		"attack"
 	],

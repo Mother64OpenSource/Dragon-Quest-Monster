@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "morphean_mollusc",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Sap": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/morphean_mollusc.png",
 	"starting_skill_ids": [
 		"attack"
 	],

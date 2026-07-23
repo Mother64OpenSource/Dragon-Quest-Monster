@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "robbin_s_old_lady",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dnk": "0",
+		"DrM": "½",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/robbin_s_old_lady.webp",
 	"starting_skill_ids": [
 		"attack"

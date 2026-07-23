@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "hellhound",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "0",
+		"Sap": "½",
+		"Siz": "↓",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/hellhound.png",
 	"starting_skill_ids": [
 		"attack"
 	],

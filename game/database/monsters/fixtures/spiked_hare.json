@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "spiked_hare",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "0",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "½"
+	},
+	"sprite_path": "res://assets/monsters/spiked_hare.png",
 	"starting_skill_ids": [
 		"attack"
 	],

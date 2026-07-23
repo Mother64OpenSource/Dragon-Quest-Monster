@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "buga_the_terragon",
 	"rank": "S",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "0",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/buga_the_terragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

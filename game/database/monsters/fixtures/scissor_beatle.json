@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "scissor_beatle",
 	"rank": "D",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/scissor_beatle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

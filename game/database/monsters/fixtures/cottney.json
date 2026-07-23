@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "cottney",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dim": "½",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "HP",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
+	"sprite_path": "res://assets/monsters/cottney.png",
 	"starting_skill_ids": [
 		"attack"
 	],

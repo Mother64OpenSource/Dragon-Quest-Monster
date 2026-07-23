@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "guardian_lazuvann",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "½",
+		"DrM": "½",
+		"Fre": "½",
+		"Frz": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/guardian_lazuvann.png",
 	"starting_skill_ids": [
 		"attack"
 	],

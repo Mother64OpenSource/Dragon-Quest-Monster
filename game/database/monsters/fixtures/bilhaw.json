@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "bilhaw",
 	"rank": "S",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fre": "½",
+		"Fzl": "½",
+		"Hck": "↓",
+		"Ice": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "0",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/bilhaw.webp",
 	"starting_skill_ids": [
 		"attack"

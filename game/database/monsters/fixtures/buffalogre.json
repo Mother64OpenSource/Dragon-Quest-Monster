@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "buffalogre",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "0"
+	},
+	"sprite_path": "res://assets/monsters/buffalogre.png",
 	"starting_skill_ids": [
 		"attack"
 	],

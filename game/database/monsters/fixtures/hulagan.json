@@ -9,6 +9,28 @@
 	"family": "Devil",
 	"id": "hulagan",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Fre": "½",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/hulagan.png",
 	"starting_skill_ids": [
 		"attack"
 	],

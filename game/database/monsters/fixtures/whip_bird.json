@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "whip_bird",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "↓",
+		"Fzl": "½",
+		"Gbs": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "HP"
+	},
+	"sprite_path": "res://assets/monsters/whip_bird.png",
 	"starting_skill_ids": [
 		"attack"
 	],

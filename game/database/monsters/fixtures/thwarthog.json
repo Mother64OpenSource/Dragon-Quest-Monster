@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "thwarthog",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "↓",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/thwarthog.png",
 	"starting_skill_ids": [
 		"attack"
 	],

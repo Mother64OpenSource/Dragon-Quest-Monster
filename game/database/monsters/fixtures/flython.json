@@ -9,6 +9,28 @@
 	"family": "Dragon",
 	"id": "flython",
 	"rank": "E",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/flython.png",
 	"starting_skill_ids": [
 		"attack"
 	],

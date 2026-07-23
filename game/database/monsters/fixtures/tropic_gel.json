@@ -9,6 +9,26 @@
 	"family": "Slime",
 	"id": "tropic_gel",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/tropic_gel.png",
 	"starting_skill_ids": [
 		"attack"
 	],

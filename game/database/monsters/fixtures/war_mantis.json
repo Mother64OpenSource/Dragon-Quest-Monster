@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "war_mantis",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/war_mantis.png",
 	"starting_skill_ids": [
 		"attack"
 	],

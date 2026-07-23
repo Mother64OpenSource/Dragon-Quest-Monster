@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "jinkster",
 	"rank": "E",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/jinkster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

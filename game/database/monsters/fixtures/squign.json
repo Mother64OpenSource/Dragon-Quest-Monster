@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "squign",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Psn": "0",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/squign.png",
 	"starting_skill_ids": [
 		"attack"
 	],

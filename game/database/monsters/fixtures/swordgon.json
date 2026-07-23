@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "swordgon",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/swordgon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

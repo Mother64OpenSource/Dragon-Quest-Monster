@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "dhoulmagus",
 	"rank": "S",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "⁎",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Frz": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zam": "⇄",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/dhoulmagus.webp",
 	"starting_skill_ids": [
 		"attack"

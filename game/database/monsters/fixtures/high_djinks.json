@@ -9,6 +9,27 @@
 	"family": "Devil",
 	"id": "high_djinks",
 	"rank": "B",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "0",
+		"Fre": "↓",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/high_djinks.png",
 	"starting_skill_ids": [
 		"attack"
 	],

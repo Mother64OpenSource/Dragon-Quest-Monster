@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "dragon_lord",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Cnf": "½",
+		"Crs": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Frz": "0",
+		"Ice": "0",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/dragon_lord.webp",
 	"starting_skill_ids": [
 		"attack"

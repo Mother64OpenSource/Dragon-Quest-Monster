@@ -9,6 +9,27 @@
 	"family": "Zombie",
 	"id": "pumpkin_knight",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Par": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Slp": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/pumpkin_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "ornery_onion",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fzl": "↑",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/ornery_onion.png",
 	"starting_skill_ids": [
 		"attack"
 	],

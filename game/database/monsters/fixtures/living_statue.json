@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "living_statue",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dec": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/living_statue.png",
 	"starting_skill_ids": [
 		"attack"
 	],

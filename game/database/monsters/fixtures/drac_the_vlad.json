@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "drac_the_vlad",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/drac_the_vlad.png",
 	"starting_skill_ids": [
 		"attack"
 	],

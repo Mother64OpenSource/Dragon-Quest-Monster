@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "weaken_beakon",
 	"rank": "E",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "½",
+		"Crk": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "⁎",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/weaken_beakon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

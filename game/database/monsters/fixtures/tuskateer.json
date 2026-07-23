@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "tuskateer",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Fre": "↓",
+		"Frz": "½",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/tuskateer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

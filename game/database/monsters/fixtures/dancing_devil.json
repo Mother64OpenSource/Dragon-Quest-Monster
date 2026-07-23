@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "dancing_devil",
 	"rank": "E",
+	"resistances": {
+		"Ban": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/dancing_devil.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "gustbluster",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "HP",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/gustbluster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

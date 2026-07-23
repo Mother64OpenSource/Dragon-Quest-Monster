@@ -9,6 +9,20 @@
 	"family": "unknown",
 	"id": "hideney",
 	"rank": "S",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "0",
+		"DrM": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/hideney.webp",
 	"starting_skill_ids": [
 		"attack"

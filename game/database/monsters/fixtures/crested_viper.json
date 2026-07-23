@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "crested_viper",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/crested_viper.webp",
 	"starting_skill_ids": [
 		"attack"

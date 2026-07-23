@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "inverzon",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/inverzon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

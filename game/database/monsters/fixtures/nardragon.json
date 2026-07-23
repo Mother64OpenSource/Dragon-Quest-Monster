@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "nardragon",
 	"rank": "E",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/nardragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

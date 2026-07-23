@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "cross_eye",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↑",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "⁎",
+		"Frz": "↓",
+		"Ice": "0",
+		"Imm": "½",
+		"Par": "↓",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/cross_eye.png",
 	"starting_skill_ids": [
 		"attack"
 	],

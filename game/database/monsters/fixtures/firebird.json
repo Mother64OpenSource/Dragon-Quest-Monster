@@ -9,6 +9,28 @@
 	"family": "Nature",
 	"id": "firebird",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Crk": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "HP",
+		"Frz": "HP",
+		"Fzl": "↓",
+		"Ice": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "↓",
+		"Slp": "0",
+		"Wsh": "⁎",
+		"Zam": "↓",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/firebird.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "wishmaster",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wishmaster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "firn_fiend",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "HP",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "HP",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓"
+	},
+	"sprite_path": "res://assets/monsters/firn_fiend.png",
 	"starting_skill_ids": [
 		"attack"
 	],

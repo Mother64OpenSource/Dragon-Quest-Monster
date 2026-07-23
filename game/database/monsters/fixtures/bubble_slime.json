@@ -9,6 +9,19 @@
 	"family": "Slime",
 	"id": "bubble_slime",
 	"rank": "F",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Psn": "⇄",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/bubble_slime.webp",
 	"starting_skill_ids": [
 		"attack"

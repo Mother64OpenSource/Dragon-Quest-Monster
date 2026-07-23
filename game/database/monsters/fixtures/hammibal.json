@@ -1,19 +1,36 @@
 {
-    "id":  "hammibal",
-    "display_name":  "Hammibal",
-    "family":  "Nature",
-    "rank":  "S",
-    "base_hp":  1575,
-    "base_mp":  373,
-    "base_attack":  811,
-    "base_defense":  539,
-    "base_agility":  539,
-    "base_wisdom":  441,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/hammibal.png"
+	"base_agility": 539.0,
+	"base_attack": 811.0,
+	"base_defense": 539.0,
+	"base_hp": 1575.0,
+	"base_mp": 373.0,
+	"base_wisdom": 441.0,
+	"display_name": "Hammibal",
+	"family": "Nature",
+	"id": "hammibal",
+	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "↓",
+		"Wsh": "0"
+	},
+	"sprite_path": "res://assets/monsters/hammibal.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

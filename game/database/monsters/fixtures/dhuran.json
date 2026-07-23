@@ -9,6 +9,25 @@
 	"family": "Devil",
 	"id": "dhuran",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Psn": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/dhuran.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_benihi",
 	"rank": "D",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "0",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fzl": "0",
+		"Ice": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_benihi.png",
 	"starting_skill_ids": [
 		"attack"
 	],

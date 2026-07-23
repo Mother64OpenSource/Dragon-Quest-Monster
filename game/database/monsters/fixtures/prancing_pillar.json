@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "prancing_pillar",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/prancing_pillar.png",
 	"starting_skill_ids": [
 		"attack"
 	],

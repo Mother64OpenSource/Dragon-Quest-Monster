@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "mad_mole",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "0",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/mad_mole.png",
 	"starting_skill_ids": [
 		"attack"
 	],

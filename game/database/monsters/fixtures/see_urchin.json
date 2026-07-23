@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "see_urchin",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Ice": "½",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/see_urchin.png",
 	"starting_skill_ids": [
 		"attack"
 	],

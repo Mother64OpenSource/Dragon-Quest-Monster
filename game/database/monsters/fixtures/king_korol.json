@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "king_korol",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "⁎",
+		"Bng": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "0",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/king_korol.png",
 	"starting_skill_ids": [
 		"attack"
 	],

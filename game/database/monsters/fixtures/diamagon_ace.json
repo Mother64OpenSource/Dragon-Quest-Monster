@@ -9,6 +9,18 @@
 	"family": "unknown",
 	"id": "diamagon_ace",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "½",
+		"Crs": "↓",
+		"Fzl": "↓",
+		"Ice": "⁎",
+		"Psn": "⁎",
+		"Sag": "↓",
+		"Wck": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/diamagon_ace.webp",
 	"starting_skill_ids": [
 		"attack"

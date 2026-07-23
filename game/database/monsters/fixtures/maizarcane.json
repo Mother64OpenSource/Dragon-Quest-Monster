@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "maizarcane",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dim": "0",
+		"DrM": "0",
+		"Fzl": "↓",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/maizarcane.png",
 	"starting_skill_ids": [
 		"attack"
 	],

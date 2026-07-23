@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "grand_estark",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "0",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "↑",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/grand_estark.webp",
 	"starting_skill_ids": [
 		"attack"

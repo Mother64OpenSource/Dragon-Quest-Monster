@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "restless_armour",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/restless_armour.png",
 	"starting_skill_ids": [
 		"attack"
 	],

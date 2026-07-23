@@ -9,6 +9,27 @@
 	"family": "Nature",
 	"id": "thunderbird",
 	"rank": "A",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "⁎",
+		"Dzl": "↑",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "↑",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "0",
+		"Zap": "HP"
+	},
+	"sprite_path": "res://assets/monsters/thunderbird.png",
 	"starting_skill_ids": [
 		"attack"
 	],

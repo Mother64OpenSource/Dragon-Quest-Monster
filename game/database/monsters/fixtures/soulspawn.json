@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "soulspawn",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/soulspawn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

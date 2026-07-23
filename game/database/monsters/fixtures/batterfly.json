@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "batterfly",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/batterfly.png",
 	"starting_skill_ids": [
 		"attack"
 	],

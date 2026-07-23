@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "drakularge",
 	"rank": "D",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↓",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/drakularge.png",
 	"starting_skill_ids": [
 		"attack"
 	],

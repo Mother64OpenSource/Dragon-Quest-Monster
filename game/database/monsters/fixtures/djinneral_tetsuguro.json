@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_tetsuguro",
 	"rank": "D",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fre": "↓",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_tetsuguro.png",
 	"starting_skill_ids": [
 		"attack"
 	],

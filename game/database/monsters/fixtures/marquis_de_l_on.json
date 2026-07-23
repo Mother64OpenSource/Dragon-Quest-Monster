@@ -9,6 +9,28 @@
 	"family": "Beast",
 	"id": "marquis_de_l_on",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Gbs": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Siz": "HP",
+		"Slp": "↑",
+		"Wck": "0"
+	},
 	"sprite_path": "res://assets/monsters/marquis_de_l_on.webp",
 	"starting_skill_ids": [
 		"attack"

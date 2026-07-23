@@ -9,6 +9,28 @@
 	"family": "Beast",
 	"id": "missing_lynx",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Ice": "↓",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "↑↑",
+		"Wsh": "HP"
+	},
+	"sprite_path": "res://assets/monsters/missing_lynx.png",
 	"starting_skill_ids": [
 		"attack"
 	],

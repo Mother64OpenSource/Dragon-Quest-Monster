@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "fire_eater_ice_eater",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "↓",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "0",
+		"Fzl": "⁎",
+		"Ice": "½",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/fire_eater_ice_eater.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "heligator",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "⁎",
+		"Crk": "↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "0",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↓",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/heligator.png",
 	"starting_skill_ids": [
 		"attack"
 	],

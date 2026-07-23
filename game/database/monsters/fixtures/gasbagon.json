@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "gasbagon",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/gasbagon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

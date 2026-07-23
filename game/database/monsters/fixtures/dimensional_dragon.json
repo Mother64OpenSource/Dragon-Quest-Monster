@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "dimensional_dragon",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "↑",
+		"Dim": "½",
+		"Dnk": "0",
+		"Dzl": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/dimensional_dragon.webp",
 	"starting_skill_ids": [
 		"attack"

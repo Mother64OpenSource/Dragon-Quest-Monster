@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "alchemy_hat",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "0",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/alchemy_hat.png",
 	"starting_skill_ids": [
 		"attack"
 	],

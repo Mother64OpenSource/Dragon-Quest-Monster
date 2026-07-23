@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "cluboon_ace",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "0",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/cluboon_ace.webp",
 	"starting_skill_ids": [
 		"attack"

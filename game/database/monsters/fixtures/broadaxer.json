@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "broadaxer",
 	"rank": "E",
+	"resistances": {
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/broadaxer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

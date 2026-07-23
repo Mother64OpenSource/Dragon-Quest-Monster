@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "the_time_being",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "0",
+		"Fzl": "0",
+		"Par": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/the_time_being.png",
 	"starting_skill_ids": [
 		"attack"
 	],

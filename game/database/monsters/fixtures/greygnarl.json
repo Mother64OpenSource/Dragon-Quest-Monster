@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "greygnarl",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/greygnarl.webp",
 	"starting_skill_ids": [
 		"attack"

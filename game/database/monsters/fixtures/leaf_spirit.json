@@ -9,6 +9,19 @@
 	"family": "Nature",
 	"id": "leaf_spirit",
 	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/leaf_spirit.webp",
 	"starting_skill_ids": [
 		"attack"

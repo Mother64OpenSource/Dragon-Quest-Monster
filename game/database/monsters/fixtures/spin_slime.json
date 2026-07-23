@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "spin_slime",
 	"rank": "D",
+	"resistances": {
+		"Bng": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/spin_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

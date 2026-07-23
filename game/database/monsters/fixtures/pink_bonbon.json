@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "pink_bonbon",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/pink_bonbon.webp",
 	"starting_skill_ids": [
 		"attack"

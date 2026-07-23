@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "gryphynx",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "↑↑",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/gryphynx.webp",
 	"starting_skill_ids": [
 		"attack"

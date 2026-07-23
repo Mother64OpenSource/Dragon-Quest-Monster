@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "sintaur",
 	"rank": "A",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/sintaur.png",
 	"starting_skill_ids": [
 		"attack"
 	],

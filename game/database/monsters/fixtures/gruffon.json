@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "gruffon",
 	"rank": "E",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "½",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Hck": "↓",
+		"Par": "↓",
+		"Slp": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gruffon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

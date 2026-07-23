@@ -9,6 +9,22 @@
 	"family": "unknown",
 	"id": "sorcerer_bedora",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dnk": "½",
+		"DrM": "½",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/sorcerer_bedora.webp",
 	"starting_skill_ids": [
 		"attack"

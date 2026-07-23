@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "mechan_o_wyrm",
 	"rank": "A",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mechan_o_wyrm.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "malevolantern",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Crs": "0",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/malevolantern.png",
 	"starting_skill_ids": [
 		"attack"
 	],

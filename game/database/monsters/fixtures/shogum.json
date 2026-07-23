@@ -9,6 +9,23 @@
 	"family": "Slime",
 	"id": "shogum",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Bng": "⇄",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "0",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
+	"sprite_path": "res://assets/monsters/shogum.png",
 	"starting_skill_ids": [
 		"attack"
 	],

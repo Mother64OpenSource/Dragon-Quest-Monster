@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "leafy_larrikin",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/leafy_larrikin.png",
 	"starting_skill_ids": [
 		"attack"
 	],

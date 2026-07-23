@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "leonyx",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "0",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Frz": "0",
+		"Fzl": "↓",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "⇄",
+		"Wsh": "½",
+		"Zap": "⇄"
+	},
 	"sprite_path": "res://assets/monsters/leonyx.webp",
 	"starting_skill_ids": [
 		"attack"

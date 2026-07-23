@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "swingin_hipster",
 	"rank": "E",
+	"resistances": {
+		"Blt": "↑",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "↓",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sap": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/swingin_hipster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

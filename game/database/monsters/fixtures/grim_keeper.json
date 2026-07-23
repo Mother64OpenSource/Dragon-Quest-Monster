@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "grim_keeper",
 	"rank": "C",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "0",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/grim_keeper.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "escudogre",
 	"rank": "A",
+	"resistances": {
+		"Bng": "⇄",
+		"Cnf": "↓",
+		"Dec": "↓",
+		"Dnk": "½",
+		"DrM": "0",
+		"Gbs": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "0",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/escudogre.png",
 	"starting_skill_ids": [
 		"attack"
 	],

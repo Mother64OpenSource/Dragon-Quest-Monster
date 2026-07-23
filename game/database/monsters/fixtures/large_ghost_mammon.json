@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "large_ghost_mammon",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "0",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/large_ghost_mammon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

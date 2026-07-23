@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "fishrider",
 	"rank": "D",
+	"resistances": {
+		"Abi": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/fishrider.png",
 	"starting_skill_ids": [
 		"attack"
 	],

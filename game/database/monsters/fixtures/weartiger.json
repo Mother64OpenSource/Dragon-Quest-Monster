@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "weartiger",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/weartiger.png",
 	"starting_skill_ids": [
 		"attack"
 	],

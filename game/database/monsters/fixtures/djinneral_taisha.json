@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_taisha",
 	"rank": "D",
+	"resistances": {
+		"Abi": "0",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Imm": "½",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_taisha.png",
 	"starting_skill_ids": [
 		"attack"
 	],

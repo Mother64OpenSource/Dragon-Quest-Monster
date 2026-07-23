@@ -9,6 +9,26 @@
 	"family": "Material",
 	"id": "type_g",
 	"rank": "B",
+	"resistances": {
+		"Blt": "½",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fzl": "↓",
+		"Par": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/type_g.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "fire_weed",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "HP",
+		"Frz": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "↓",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/fire_weed.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "sebastian",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "0",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "0",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/sebastian.png",
 	"starting_skill_ids": [
 		"attack"
 	],

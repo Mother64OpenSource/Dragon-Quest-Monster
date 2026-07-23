@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "king_kelp",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/king_kelp.png",
 	"starting_skill_ids": [
 		"attack"
 	],

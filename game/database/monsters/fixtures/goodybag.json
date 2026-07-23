@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "goodybag",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/goodybag.png",
 	"starting_skill_ids": [
 		"attack"
 	],

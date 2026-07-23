@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "puppeteer",
 	"rank": "D",
+	"resistances": {
+		"Abi": "0",
+		"Ban": "½",
+		"Blt": "↓",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/puppeteer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

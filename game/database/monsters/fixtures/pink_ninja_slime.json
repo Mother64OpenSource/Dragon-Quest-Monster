@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "pink_ninja_slime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "0",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/pink_ninja_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "mummy",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "0",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/mummy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

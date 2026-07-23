@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "rhinoceraxe",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/rhinoceraxe.png",
 	"starting_skill_ids": [
 		"attack"
 	],

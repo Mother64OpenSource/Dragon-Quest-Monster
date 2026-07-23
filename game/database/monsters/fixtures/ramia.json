@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "ramia",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↑",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dec": "0",
+		"DrM": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "HP",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/ramia.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,27 @@
 	"family": "Devil",
 	"id": "quadrahead",
 	"rank": "C",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "↓",
+		"Bng": "0",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "↑",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/quadrahead.png",
 	"starting_skill_ids": [
 		"attack"
 	],

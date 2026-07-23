@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "eyevory_tusk_tusk",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/eyevory_tusk_tusk.png",
 	"starting_skill_ids": [
 		"attack"
 	],

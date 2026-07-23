@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "poxtongue",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Par": "0",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/poxtongue.webp",
 	"starting_skill_ids": [
 		"attack"

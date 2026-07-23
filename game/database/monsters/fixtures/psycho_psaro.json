@@ -1,19 +1,35 @@
 {
-    "id":  "psycho_psaro",
-    "display_name":  "Psycho Psaro",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2085,
-    "base_mp":  750,
-    "base_attack":  559,
-    "base_defense":  539,
-    "base_agility":  580,
-    "base_wisdom":  442,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/psycho_psaro.png"
+	"base_agility": 580.0,
+	"base_attack": 559.0,
+	"base_defense": 539.0,
+	"base_hp": 2085.0,
+	"base_mp": 750.0,
+	"base_wisdom": 442.0,
+	"display_name": "Psycho Psaro",
+	"family": "unknown",
+	"id": "psycho_psaro",
+	"rank": "SS",
+	"resistances": {
+		"Abi": "0",
+		"Bng": "↑",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"Dec": "½",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/psycho_psaro.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

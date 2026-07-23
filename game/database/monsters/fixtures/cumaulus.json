@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "cumaulus",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/cumaulus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

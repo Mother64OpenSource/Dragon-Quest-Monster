@@ -9,6 +9,25 @@
 	"family": "Devil",
 	"id": "kabalna_the_divine",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Bng": "½",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/kabalna_the_divine.png",
 	"starting_skill_ids": [
 		"attack"
 	],

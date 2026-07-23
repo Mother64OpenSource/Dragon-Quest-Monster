@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "great_sabrecat",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↑",
+		"Bng": "⁎",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Crs": "↓",
+		"Dec": "0",
+		"Dim": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Par": "↓",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/great_sabrecat.png",
 	"starting_skill_ids": [
 		"attack"
 	],

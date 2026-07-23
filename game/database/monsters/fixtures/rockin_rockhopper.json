@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "rockin_rockhopper",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/rockin_rockhopper.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "flying_flayer",
 	"rank": "D",
+	"resistances": {
+		"Abi": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/flying_flayer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

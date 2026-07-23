@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "great_dragon",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Ice": "0",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/great_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,22 @@
 	"family": "unknown",
 	"id": "hawkhart",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "½",
+		"DrM": "½",
+		"Frz": "½",
+		"Hck": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/hawkhart.png",
 	"starting_skill_ids": [
 		"attack"
 	],

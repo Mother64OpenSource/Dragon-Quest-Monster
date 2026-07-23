@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "tyrant_basagrande",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/tyrant_basagrande.webp",
 	"starting_skill_ids": [
 		"attack"

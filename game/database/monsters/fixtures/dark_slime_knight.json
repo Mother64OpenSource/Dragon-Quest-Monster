@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "dark_slime_knight",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "⇄"
+	},
+	"sprite_path": "res://assets/monsters/dark_slime_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

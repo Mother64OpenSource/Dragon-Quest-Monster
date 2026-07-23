@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "beelzebuzz",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/beelzebuzz.png",
 	"starting_skill_ids": [
 		"attack"
 	],

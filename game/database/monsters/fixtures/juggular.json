@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "juggular",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/juggular.png",
 	"starting_skill_ids": [
 		"attack"
 	],

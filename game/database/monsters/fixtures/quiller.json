@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "quiller",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Siz": "½",
+		"Slp": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/quiller.webp",
 	"starting_skill_ids": [
 		"attack"

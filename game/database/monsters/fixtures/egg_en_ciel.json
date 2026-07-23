@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "egg_en_ciel",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wsh": "↓",
+		"Zam": "0",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/egg_en_ciel.webp",
 	"starting_skill_ids": [
 		"attack"

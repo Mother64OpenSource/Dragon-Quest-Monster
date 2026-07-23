@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "bantamweight",
 	"rank": "F",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "↑",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/bantamweight.webp",
 	"starting_skill_ids": [
 		"attack"

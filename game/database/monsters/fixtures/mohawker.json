@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "mohawker",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "½",
+		"Imm": "½",
+		"Psn": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "0"
+	},
+	"sprite_path": "res://assets/monsters/mohawker.png",
 	"starting_skill_ids": [
 		"attack"
 	],

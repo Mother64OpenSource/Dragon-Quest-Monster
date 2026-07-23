@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "will_o_whips",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/will_o_whips.webp",
 	"starting_skill_ids": [
 		"attack"

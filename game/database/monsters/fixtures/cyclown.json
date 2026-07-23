@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "cyclown",
 	"rank": "E",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "HP"
+	},
+	"sprite_path": "res://assets/monsters/cyclown.png",
 	"starting_skill_ids": [
 		"attack"
 	],

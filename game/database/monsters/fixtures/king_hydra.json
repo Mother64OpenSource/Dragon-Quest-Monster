@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "king_hydra",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Frz": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/king_hydra.webp",
 	"starting_skill_ids": [
 		"attack"

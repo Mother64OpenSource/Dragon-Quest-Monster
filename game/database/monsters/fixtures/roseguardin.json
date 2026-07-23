@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "roseguardin",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/roseguardin.png",
 	"starting_skill_ids": [
 		"attack"
 	],

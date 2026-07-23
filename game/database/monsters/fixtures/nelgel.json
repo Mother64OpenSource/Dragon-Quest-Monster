@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "nelgel",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dnk": "0",
+		"DrM": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/nelgel.webp",
 	"starting_skill_ids": [
 		"attack"

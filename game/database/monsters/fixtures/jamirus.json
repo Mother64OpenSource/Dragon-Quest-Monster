@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "jamirus",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Imm": "0",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/jamirus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

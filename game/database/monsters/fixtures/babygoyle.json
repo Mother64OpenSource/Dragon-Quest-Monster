@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "babygoyle",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Siz": "0",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/babygoyle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

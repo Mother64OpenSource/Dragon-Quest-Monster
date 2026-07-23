@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "funky_bird",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↑",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Gbs": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/funky_bird.png",
 	"starting_skill_ids": [
 		"attack"
 	],

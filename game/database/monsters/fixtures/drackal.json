@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "drackal",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/drackal.png",
 	"starting_skill_ids": [
 		"attack"
 	],

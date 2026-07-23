@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "trap_box",
 	"rank": "A",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/trap_box.png",
 	"starting_skill_ids": [
 		"attack"
 	],

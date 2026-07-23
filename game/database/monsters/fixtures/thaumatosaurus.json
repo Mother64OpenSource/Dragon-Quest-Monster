@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "thaumatosaurus",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dim": "½",
+		"Dnk": "↑",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/thaumatosaurus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

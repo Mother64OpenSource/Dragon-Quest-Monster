@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "excalipurr",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "0",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/excalipurr.webp",
 	"starting_skill_ids": [
 		"attack"

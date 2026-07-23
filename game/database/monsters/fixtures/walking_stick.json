@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "walking_stick",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/walking_stick.webp",
 	"starting_skill_ids": [
 		"attack"

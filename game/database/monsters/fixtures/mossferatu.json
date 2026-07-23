@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "mossferatu",
 	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "0",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Gbs": "½",
+		"Ice": "0",
+		"Imm": "½",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wsh": "0"
+	},
 	"sprite_path": "res://assets/monsters/mossferatu.webp",
 	"starting_skill_ids": [
 		"attack"

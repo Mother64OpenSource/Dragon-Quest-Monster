@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "estark",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "0",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "½",
+		"DrM": "½",
+		"Dzl": "0",
+		"Fre": "½",
+		"Fzl": "0",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/estark.webp",
 	"starting_skill_ids": [
 		"attack"

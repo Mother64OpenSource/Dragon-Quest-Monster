@@ -24,3 +24,11 @@ enum Rank { F, E, D, C, B, A, S, SS }
 
 ## "" means no artwork available yet — callers must handle the missing case.
 @export var sprite_path: String = ""
+
+## Sparse map of resistance-code -> raw symbol from the source spreadsheet
+## (e.g. "Psn": "½", "Zap": "0"). Only non-blank entries are stored; a code
+## absent from this dict means normal (unmodified) susceptibility. Symbol
+## meaning is not yet formalized into game mechanics -- see
+## wiki/decisions or the log for the open question on exact semantics
+## (½ = resist, ↓ = weak, 0 = immune, ⁎/↑/↑↑/⇄ still unconfirmed).
+@export var resistances: Dictionary = {}

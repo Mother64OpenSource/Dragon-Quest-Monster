@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "barbaru",
 	"rank": "S",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dim": "½",
+		"DrM": "½",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "HP",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/barbaru.webp",
 	"starting_skill_ids": [
 		"attack"

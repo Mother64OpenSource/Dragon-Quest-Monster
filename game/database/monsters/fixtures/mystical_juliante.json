@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "mystical_juliante",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/mystical_juliante.webp",
 	"starting_skill_ids": [
 		"attack"

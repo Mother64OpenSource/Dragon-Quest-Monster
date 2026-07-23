@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "mottle_slime",
 	"rank": "E",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↑",
+		"Dim": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/mottle_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

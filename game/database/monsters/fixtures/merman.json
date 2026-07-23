@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "merman",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "½",
+		"Dzl": "0",
+		"Fre": "↓",
+		"Frz": "½",
+		"Fzl": "½",
+		"Ice": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/merman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

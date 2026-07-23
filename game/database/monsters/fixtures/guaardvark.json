@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "guaardvark",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/guaardvark.webp",
 	"starting_skill_ids": [
 		"attack"

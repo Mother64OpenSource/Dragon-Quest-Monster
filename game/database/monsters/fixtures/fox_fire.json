@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "fox_fire",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "↓",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "0",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/fox_fire.png",
 	"starting_skill_ids": [
 		"attack"
 	],

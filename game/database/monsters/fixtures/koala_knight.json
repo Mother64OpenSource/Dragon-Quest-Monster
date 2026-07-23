@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "koala_knight",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↑",
+		"Siz": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/koala_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

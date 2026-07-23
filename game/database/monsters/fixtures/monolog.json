@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "monolog",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/monolog.png",
 	"starting_skill_ids": [
 		"attack"
 	],

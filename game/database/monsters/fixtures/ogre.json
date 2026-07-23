@@ -9,6 +9,25 @@
 	"family": "Devil",
 	"id": "ogre",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/ogre.png",
 	"starting_skill_ids": [
 		"attack"
 	],

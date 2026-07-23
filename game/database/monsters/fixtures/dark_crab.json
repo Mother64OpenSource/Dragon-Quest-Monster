@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "dark_crab",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Bng": "0",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/dark_crab.png",
 	"starting_skill_ids": [
 		"attack"
 	],

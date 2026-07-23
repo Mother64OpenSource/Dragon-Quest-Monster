@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "pearl_gel",
 	"rank": "E",
+	"resistances": {
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/pearl_gel.png",
 	"starting_skill_ids": [
 		"attack"
 	],

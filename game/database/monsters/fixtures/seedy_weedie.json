@@ -9,6 +9,22 @@
 	"family": "Slime",
 	"id": "seedy_weedie",
 	"rank": "B",
+	"resistances": {
+		"Ban": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "0",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/seedy_weedie.png",
 	"starting_skill_ids": [
 		"attack"
 	],

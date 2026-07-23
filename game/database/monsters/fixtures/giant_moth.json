@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "giant_moth",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "0",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/giant_moth.png",
 	"starting_skill_ids": [
 		"attack"
 	],

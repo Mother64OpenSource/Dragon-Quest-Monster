@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "puppetor",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "↓",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/puppetor.png",
 	"starting_skill_ids": [
 		"attack"
 	],

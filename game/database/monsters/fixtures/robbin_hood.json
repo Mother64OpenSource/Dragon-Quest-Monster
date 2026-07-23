@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "robbin_hood",
 	"rank": "A",
+	"resistances": {
+		"Blt": "0",
+		"Bng": "↓",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/robbin_hood.png",
 	"starting_skill_ids": [
 		"attack"
 	],

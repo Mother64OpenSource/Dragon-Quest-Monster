@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "baramos",
 	"rank": "S",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "↓",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "0",
+		"Fzl": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/baramos.webp",
 	"starting_skill_ids": [
 		"attack"

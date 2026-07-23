@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "skeleton_soldier",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/skeleton_soldier.png",
 	"starting_skill_ids": [
 		"attack"
 	],

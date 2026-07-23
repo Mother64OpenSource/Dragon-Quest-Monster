@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "psaro_s_pawn",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Siz": "0",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/psaro_s_pawn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

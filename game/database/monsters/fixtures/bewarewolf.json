@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "bewarewolf",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Par": "⁎",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/bewarewolf.png",
 	"starting_skill_ids": [
 		"attack"
 	],

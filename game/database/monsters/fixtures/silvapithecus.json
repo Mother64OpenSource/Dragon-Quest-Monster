@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "silvapithecus",
 	"rank": "D",
+	"resistances": {
+		"Ban": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↓",
+		"Siz": "↑",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/silvapithecus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

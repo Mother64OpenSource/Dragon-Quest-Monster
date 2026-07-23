@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "barbatos",
 	"rank": "S",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Par": "↓",
+		"Sag": "0",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/barbatos.webp",
 	"starting_skill_ids": [
 		"attack"

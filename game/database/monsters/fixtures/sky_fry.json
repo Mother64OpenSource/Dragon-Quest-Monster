@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "sky_fry",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓"
+	},
+	"sprite_path": "res://assets/monsters/sky_fry.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "lunar_chimaera",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/lunar_chimaera.png",
 	"starting_skill_ids": [
 		"attack"
 	],

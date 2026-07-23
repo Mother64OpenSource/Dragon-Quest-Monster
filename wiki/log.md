@@ -138,3 +138,79 @@ any previously-recorded value — 220 fixtures corrected to their real image,
 has confirmed stats but no artwork). Artwork coverage is back to its last
 known-good state: 237 real images. All three headless suites pass after
 reimport.
+
+## [2026-07-23] build | Sheet sprites, take two: found the real mapping, full artwork coverage
+
+The previous entry's row-order mapping was wrong, but the underlying image set
+turned out to be legitimate — the error was in decoding *where* each image
+belonged, not the images themselves. Reconstructed the real mechanism: each
+embedded image is positioned via a `posObj(sheet, id, row, col, x, y)` call in
+the exported HTML's script, giving each image's true spreadsheet row rather
+than upload-filename order. Two things had thrown off the first attempt: the
+sheet has *two* header rows, not one (so row 2 is monster No.1, not No.0), and
+the very first uploaded image is saved as bare `unnamed.png` with no
+parenthetical index, which earlier extraction missed entirely, misaligning
+everything downstream. Cross-checking a dozen samples against real monster
+names confirmed it — "Weaken Beakon" (a bird/vulture icon), "Metal Dragon" (a
+robotic-looking icon), "Maulusc" (a crab/shellfish icon), "Exorsus" (a Zombie
+demon-mask icon), and an exact match on Slime's icon — where the first
+attempt's naive sequential order had produced nonsense for these same rows.
+
+Also surfaced 5 monsters present in the source spreadsheet with confirmed
+stats but never given a fixture in any earlier import pass (`florajay.json`,
+`whipped_scream.json`, `tree_slime.json`, `golden_cacti.json`,
+`drak_slime.json`, all rank F) — created now using the same
+structural-fields-only convention as the rest of the roster.
+
+Copied the sheet's icon for every one of the 572 monsters that had no
+existing artwork (leaving the 237 already-sourced Fandom-wiki images and the
+4 hand-tuned M1 test fixtures — slime/dracky/healslime/golem — untouched, since
+those are higher resolution than these 44×44 sheet icons). Extended
+`inspect_transparency.gd`/`remove_background.gd` to scan and flood-fill every
+opaque image in the directory dynamically instead of a hardcoded id list, and
+ran both — all 572 new icons needed the background removed and now report
+transparent. Re-ran `fix_sprite_paths.gd` to reconcile `sprite_path` from disk
+state. **Artwork coverage is now 808/808 fixtures (100%).** All three headless
+suites pass after reimport.
+
+## [2026-07-23] build | Base resistance data for all 803 monsters
+
+Added the source spreadsheet's "Base Resistances" section (30 columns, one per
+element/status: Frz, Siz, Bng, Wsh, Crk, Rbl, Zap, Zam, Dnk, Fre, Ice, Wck,
+Psn, Crs, Imm, Cnf, Par, Slp, Dzl, DrM, Hck, Fzl, Blt, Abi, Gbs, Ban, Sag, Sap,
+Dec, Dim) to `MonsterSpecies` as a new sparse `resistances: Dictionary` field
+(code -> raw symbol; a code absent from the dict means normal/unmodified
+susceptibility). The raw CSV pull from the earlier stats import
+(`sheet1.csv`) already contained these columns — no new scraping needed, just
+parsing the two-row merged header properly and pulling 30 more fields per
+row alongside the No. column already used to key everything else.
+
+Deliberately stored the **raw symbol** per code rather than converting to a
+numeric multiplier: the sheet uses `½` (haldef, presumably "resist"), `↓`
+(presumably "weak"), `0` (presumably "immune"), plus `⁎`, `↑`, `↑↑`, and `⇄`
+whose exact meaning isn't confirmed yet, and a stray literal `"HP"` value in
+~100 scattered cells that looks like a source-spreadsheet data-entry artifact
+rather than a parsing bug (it lands in different columns for different
+monsters, not a consistent column-shift pattern). Converting to a damage
+multiplier now would mean guessing at semantics that matter for the eventual
+real battle formula — better to preserve the source data faithfully and
+resolve the symbol legend as its own follow-up (same deferral rationale as
+the real DQM damage formula work).
+
+All 803 CSV-sourced fixtures got a `resistances` entry, including the 5
+created in the previous log entry and the 4 hand-tuned M1 test fixtures
+(their stats/skills were left untouched; resistances is a new, previously
+empty field so this doesn't affect the battle test's verified numbers). All
+three headless suites still pass.
+
+Also fixed a small regression from the previous entry's sprite pass:
+`remove_background.gd` was broadened to flood-fill every opaque image
+directory-wide, which ran over `montner.webp`/`montner_2nd_form.webp` too —
+exactly the pair a much earlier log entry had deliberately left alone
+("their only available image is an in-game customization screen with a
+varied, non-uniform background, a bad candidate for naive flood-fill"). The
+flood-fill did run and produced a bad result (a large framed illustration,
+mostly still opaque). Replaced both with their sheet-sourced icons instead
+(`unnamed(1).png`/`unnamed(801).png`, the same ones validated earlier in the
+sprite-mapping work), which are simple enough for flood-fill to handle
+cleanly.

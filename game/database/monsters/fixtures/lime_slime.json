@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "lime_slime",
 	"rank": "C",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "0",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/lime_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

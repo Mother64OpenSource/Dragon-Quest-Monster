@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "powie_yowie",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Fre": "↓",
+		"Gbs": "0",
+		"Ice": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/powie_yowie.webp",
 	"starting_skill_ids": [
 		"attack"

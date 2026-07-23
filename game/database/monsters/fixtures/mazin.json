@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "mazin",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "↑",
+		"Crs": "⁎",
+		"Dnk": "½",
+		"Fre": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "½",
+		"Sag": "0",
+		"Sap": "↓",
+		"Slp": "⁎",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mazin.png",
 	"starting_skill_ids": [
 		"attack"
 	],

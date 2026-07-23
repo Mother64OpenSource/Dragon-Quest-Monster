@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "mum",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mum.png",
 	"starting_skill_ids": [
 		"attack"
 	],

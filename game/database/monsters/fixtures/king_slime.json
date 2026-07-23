@@ -9,6 +9,22 @@
 	"family": "Slime",
 	"id": "king_slime",
 	"rank": "C",
+	"resistances": {
+		"Ban": "↓",
+		"Bng": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wck": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/king_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

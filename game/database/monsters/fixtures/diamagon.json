@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "diamagon",
 	"rank": "A",
+	"resistances": {
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fzl": "↓",
+		"Ice": "⁎",
+		"Imm": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/diamagon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

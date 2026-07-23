@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "khalamari_kid",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/khalamari_kid.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "beavern",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↑",
+		"Slp": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/beavern.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "great_dracky",
 	"rank": "D",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Fre": "↓",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/great_dracky.png",
 	"starting_skill_ids": [
 		"attack"
 	],

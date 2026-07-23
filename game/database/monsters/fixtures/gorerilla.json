@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "gorerilla",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "½",
+		"Sag": "½",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/gorerilla.png",
 	"starting_skill_ids": [
 		"attack"
 	],

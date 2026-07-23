@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "skelegon",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/skelegon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "phantom_swordsman",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/phantom_swordsman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,19 @@
 	"family": "Slime",
 	"id": "orange_ninja_slime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↑↑",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/orange_ninja_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

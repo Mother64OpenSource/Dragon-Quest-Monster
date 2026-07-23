@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "robbin_huddle",
 	"rank": "D",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Dzl": "½",
+		"Imm": "0",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/robbin_huddle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

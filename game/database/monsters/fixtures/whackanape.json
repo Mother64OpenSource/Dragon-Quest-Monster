@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "whackanape",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "½",
+		"Sag": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/whackanape.png",
 	"starting_skill_ids": [
 		"attack"
 	],

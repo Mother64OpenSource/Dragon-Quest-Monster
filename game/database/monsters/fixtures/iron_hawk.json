@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "iron_hawk",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "½",
+		"Sap": "0",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/iron_hawk.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "fencing_fox",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Crs": "↓",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Par": "↓",
+		"Psn": "↓",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/fencing_fox.png",
 	"starting_skill_ids": [
 		"attack"
 	],

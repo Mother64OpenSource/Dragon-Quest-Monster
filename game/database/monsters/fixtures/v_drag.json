@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "v_drag",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Cnf": "0",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Frz": "0",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/v_drag.png",
 	"starting_skill_ids": [
 		"attack"
 	],

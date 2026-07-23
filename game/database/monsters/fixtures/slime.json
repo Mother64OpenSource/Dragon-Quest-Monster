@@ -9,6 +9,19 @@
 	"family": "slime",
 	"id": "slime",
 	"rank": "F",
+	"resistances": {
+		"Bng": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/slime.webp",
 	"starting_skill_ids": [
 		"attack",

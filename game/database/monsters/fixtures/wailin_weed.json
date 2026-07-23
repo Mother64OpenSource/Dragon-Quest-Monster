@@ -9,6 +9,27 @@
 	"family": "Zombie",
 	"id": "wailin_weed",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wailin_weed.png",
 	"starting_skill_ids": [
 		"attack"
 	],

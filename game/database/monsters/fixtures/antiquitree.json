@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "antiquitree",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "0",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/antiquitree.png",
 	"starting_skill_ids": [
 		"attack"
 	],

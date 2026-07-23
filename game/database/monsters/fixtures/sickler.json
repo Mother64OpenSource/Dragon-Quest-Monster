@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "sickler",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/sickler.png",
 	"starting_skill_ids": [
 		"attack"
 	],

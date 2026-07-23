@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "spinchilla",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/spinchilla.png",
 	"starting_skill_ids": [
 		"attack"
 	],

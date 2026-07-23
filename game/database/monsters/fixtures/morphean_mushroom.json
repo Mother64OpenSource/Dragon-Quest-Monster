@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "morphean_mushroom",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/morphean_mushroom.png",
 	"starting_skill_ids": [
 		"attack"
 	],

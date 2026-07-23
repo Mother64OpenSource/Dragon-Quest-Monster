@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "mortamor",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↓",
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dim": "½",
+		"DrM": "½",
+		"Fre": "½",
+		"Gbs": "↓",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/mortamor.png",
 	"starting_skill_ids": [
 		"attack"
 	],

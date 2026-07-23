@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "woebergine",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Hck": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/woebergine.png",
 	"starting_skill_ids": [
 		"attack"
 	],

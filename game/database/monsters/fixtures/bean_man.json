@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "bean_man",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/bean_man.png",
 	"starting_skill_ids": [
 		"attack"
 	],

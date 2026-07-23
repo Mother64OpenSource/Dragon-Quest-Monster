@@ -9,6 +9,24 @@
 	"family": "Dragon",
 	"id": "metal_dragon",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/metal_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "gryphon",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↑",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gryphon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,28 @@
 	"family": "Beast",
 	"id": "jumping_jackal",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Crs": "↓",
+		"Dec": "½",
+		"DrM": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Par": "↓",
+		"Psn": "↓",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/jumping_jackal.png",
 	"starting_skill_ids": [
 		"attack"
 	],

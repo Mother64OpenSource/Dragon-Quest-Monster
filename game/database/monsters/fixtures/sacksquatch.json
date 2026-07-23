@@ -9,6 +9,19 @@
 	"family": "Material",
 	"id": "sacksquatch",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "0",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/sacksquatch.webp",
 	"starting_skill_ids": [
 		"attack"

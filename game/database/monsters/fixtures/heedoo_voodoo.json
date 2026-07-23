@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "heedoo_voodoo",
 	"rank": "F",
+	"resistances": {
+		"Ban": "↑↑",
+		"Crk": "½",
+		"Dec": "0",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zam": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/heedoo_voodoo.webp",
 	"starting_skill_ids": [
 		"attack"

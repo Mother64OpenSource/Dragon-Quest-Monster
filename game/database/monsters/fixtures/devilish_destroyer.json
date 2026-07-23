@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "devilish_destroyer",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "½",
+		"Crs": "↑↑",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/devilish_destroyer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "pyuro",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "0",
+		"Cnf": "↓",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Gbs": "½",
+		"Imm": "↓",
+		"Psn": "↓",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/pyuro.png",
 	"starting_skill_ids": [
 		"attack"
 	],

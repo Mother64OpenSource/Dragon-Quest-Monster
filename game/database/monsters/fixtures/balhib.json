@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "balhib",
 	"rank": "S",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dim": "0",
+		"Dnk": "½",
+		"DrM": "0",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/balhib.webp",
 	"starting_skill_ids": [
 		"attack"

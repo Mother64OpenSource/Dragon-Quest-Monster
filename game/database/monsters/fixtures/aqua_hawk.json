@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "aqua_hawk",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crs": "↓",
+		"Dec": "↑",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Psn": "↓",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/aqua_hawk.webp",
 	"starting_skill_ids": [
 		"attack"

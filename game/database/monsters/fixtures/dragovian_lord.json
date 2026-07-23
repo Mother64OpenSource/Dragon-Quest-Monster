@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "dragovian_lord",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/dragovian_lord.webp",
 	"starting_skill_ids": [
 		"attack"

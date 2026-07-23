@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "frightbait",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/frightbait.png",
 	"starting_skill_ids": [
 		"attack"
 	],

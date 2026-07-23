@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "azurite",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "0",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/azurite.webp",
 	"starting_skill_ids": [
 		"attack"

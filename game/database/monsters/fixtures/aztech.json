@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "aztech",
 	"rank": "S",
+	"resistances": {
+		"Cnf": "½",
+		"Crs": "↑↑",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Frz": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/aztech.png",
 	"starting_skill_ids": [
 		"attack"
 	],

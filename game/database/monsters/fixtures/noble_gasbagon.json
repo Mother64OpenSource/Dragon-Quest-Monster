@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "noble_gasbagon",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "0",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/noble_gasbagon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

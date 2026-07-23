@@ -9,6 +9,19 @@
 	"family": "Nature",
 	"id": "bludgerigar",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/bludgerigar.webp",
 	"starting_skill_ids": [
 		"attack"

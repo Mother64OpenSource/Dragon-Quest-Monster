@@ -9,6 +9,19 @@
 	"family": "Beast",
 	"id": "wild_chappy",
 	"rank": "B",
+	"resistances": {
+		"Abi": "0",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "½",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/wild_chappy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

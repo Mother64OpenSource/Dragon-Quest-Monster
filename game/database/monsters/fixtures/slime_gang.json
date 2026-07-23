@@ -9,6 +9,26 @@
 	"family": "Slime",
 	"id": "slime_gang",
 	"rank": "A",
+	"resistances": {
+		"Abi": "0",
+		"Ban": "0",
+		"Cnf": "↑↑",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/slime_gang.png",
 	"starting_skill_ids": [
 		"attack"
 	],

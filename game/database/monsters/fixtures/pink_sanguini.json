@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "pink_sanguini",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "½",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/pink_sanguini.png",
 	"starting_skill_ids": [
 		"attack"
 	],

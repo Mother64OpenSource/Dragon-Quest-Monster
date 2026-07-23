@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "green_dragon",
 	"rank": "E",
+	"resistances": {
+		"Ban": "½",
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "⁎",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/green_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

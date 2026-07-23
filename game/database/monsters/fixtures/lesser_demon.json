@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "lesser_demon",
 	"rank": "E",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/lesser_demon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

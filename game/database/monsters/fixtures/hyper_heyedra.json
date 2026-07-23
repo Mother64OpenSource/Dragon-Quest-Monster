@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "hyper_heyedra",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/hyper_heyedra.png",
 	"starting_skill_ids": [
 		"attack"
 	],

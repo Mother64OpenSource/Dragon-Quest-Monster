@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "wraithwand",
 	"rank": "C",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fre": "½",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/wraithwand.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "lexicon",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dim": "0",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fzl": "0",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/lexicon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

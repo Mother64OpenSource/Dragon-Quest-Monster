@@ -1,0 +1,30 @@
+{
+	"base_agility": 600.0,
+	"base_attack": 900.0,
+	"base_defense": 500.0,
+	"base_hp": 1580.0,
+	"base_mp": 640.0,
+	"base_wisdom": 700.0,
+	"display_name": "Golden Cacti",
+	"family": "Nature",
+	"id": "golden_cacti",
+	"rank": "F",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "½",
+		"Dec": "↓",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/golden_cacti.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

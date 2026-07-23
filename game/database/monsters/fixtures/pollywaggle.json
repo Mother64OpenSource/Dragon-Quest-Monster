@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "pollywaggle",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/pollywaggle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

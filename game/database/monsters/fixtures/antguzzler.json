@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "antguzzler",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/antguzzler.webp",
 	"starting_skill_ids": [
 		"attack"

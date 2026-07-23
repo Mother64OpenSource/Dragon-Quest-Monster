@@ -9,6 +9,28 @@
 	"family": "Dragon",
 	"id": "zenith_dragon",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "HP",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Ice": "HP",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/zenith_dragon.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "knight_aberrant",
 	"rank": "B",
+	"resistances": {
+		"Blt": "↑",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/knight_aberrant.png",
 	"starting_skill_ids": [
 		"attack"
 	],

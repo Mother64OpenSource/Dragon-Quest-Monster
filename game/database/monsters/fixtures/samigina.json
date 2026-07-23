@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "samigina",
 	"rank": "B",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↓",
+		"Sap": "↓",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/samigina.png",
 	"starting_skill_ids": [
 		"attack"
 	],

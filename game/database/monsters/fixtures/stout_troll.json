@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "stout_troll",
 	"rank": "A",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↑",
+		"Psn": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/stout_troll.png",
 	"starting_skill_ids": [
 		"attack"
 	],

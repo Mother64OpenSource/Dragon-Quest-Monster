@@ -9,6 +9,27 @@
 	"family": "Nature",
 	"id": "empyrea",
 	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "½",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Fzl": "↑",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/empyrea.webp",
 	"starting_skill_ids": [
 		"attack"

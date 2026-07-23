@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "togrus_maximus",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/togrus_maximus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

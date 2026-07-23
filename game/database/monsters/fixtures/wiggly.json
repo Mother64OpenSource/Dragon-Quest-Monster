@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "wiggly",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "0",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wiggly.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "baby_bjorn",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Gbs": "½",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Slp": "↑"
+	},
+	"sprite_path": "res://assets/monsters/baby_bjorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

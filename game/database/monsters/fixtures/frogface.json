@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "frogface",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/frogface.webp",
 	"starting_skill_ids": [
 		"attack"

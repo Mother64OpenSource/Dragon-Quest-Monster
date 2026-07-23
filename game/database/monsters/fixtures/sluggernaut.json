@@ -9,6 +9,27 @@
 	"family": "Nature",
 	"id": "sluggernaut",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Gbs": "½",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/sluggernaut.png",
 	"starting_skill_ids": [
 		"attack"
 	],

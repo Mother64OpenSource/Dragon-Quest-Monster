@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "corvus",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "↓",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "⇄",
+		"Zap": "⇄"
+	},
 	"sprite_path": "res://assets/monsters/corvus.webp",
 	"starting_skill_ids": [
 		"attack"

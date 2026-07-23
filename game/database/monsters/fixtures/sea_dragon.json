@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "sea_dragon",
 	"rank": "C",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "⁎",
+		"Bng": "0",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/sea_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

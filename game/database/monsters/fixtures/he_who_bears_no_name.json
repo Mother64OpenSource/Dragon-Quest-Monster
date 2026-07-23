@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "he_who_bears_no_name",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fre": "½",
+		"Ice": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/he_who_bears_no_name.png",
 	"starting_skill_ids": [
 		"attack"
 	],

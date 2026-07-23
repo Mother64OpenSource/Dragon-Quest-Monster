@@ -9,6 +9,25 @@
 	"family": "Devil",
 	"id": "madusa",
 	"rank": "D",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/madusa.png",
 	"starting_skill_ids": [
 		"attack"
 	],

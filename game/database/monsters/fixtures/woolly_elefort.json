@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "woolly_elefort",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "0",
+		"Crk": "0",
+		"Crs": "0",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Slp": "↑↑",
+		"Wck": "0"
+	},
 	"sprite_path": "res://assets/monsters/woolly_elefort.webp",
 	"starting_skill_ids": [
 		"attack"

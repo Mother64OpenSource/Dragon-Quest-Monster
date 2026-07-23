@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "ace_of_spades",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "↓",
+		"DrM": "½",
+		"Fre": "0",
+		"Fzl": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/ace_of_spades.webp",
 	"starting_skill_ids": [
 		"attack"

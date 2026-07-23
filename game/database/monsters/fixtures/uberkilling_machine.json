@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "uberkilling_machine",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "½",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Par": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/uberkilling_machine.webp",
 	"starting_skill_ids": [
 		"attack"

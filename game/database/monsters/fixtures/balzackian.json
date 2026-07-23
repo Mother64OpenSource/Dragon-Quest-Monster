@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "balzackian",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Imm": "½",
+		"Sag": "↓",
+		"Siz": "½",
+		"Slp": "↓",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/balzackian.png",
 	"starting_skill_ids": [
 		"attack"
 	],

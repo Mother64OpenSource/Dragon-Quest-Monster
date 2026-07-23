@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "mortoad",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Gbs": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/mortoad.png",
 	"starting_skill_ids": [
 		"attack"
 	],

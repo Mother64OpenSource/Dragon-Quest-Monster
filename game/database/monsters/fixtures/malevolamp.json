@@ -9,6 +9,26 @@
 	"family": "Material",
 	"id": "malevolamp",
 	"rank": "E",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "0",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/malevolamp.png",
 	"starting_skill_ids": [
 		"attack"
 	],

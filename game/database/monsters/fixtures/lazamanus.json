@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "lazamanus",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "0",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/lazamanus.webp",
 	"starting_skill_ids": [
 		"attack"

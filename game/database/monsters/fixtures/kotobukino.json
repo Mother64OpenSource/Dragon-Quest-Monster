@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "kotobukino",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/kotobukino.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "green_ninja_slime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/green_ninja_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

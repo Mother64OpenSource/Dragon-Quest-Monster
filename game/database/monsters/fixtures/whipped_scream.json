@@ -1,0 +1,32 @@
+{
+	"base_agility": 670.0,
+	"base_attack": 630.0,
+	"base_defense": 840.0,
+	"base_hp": 1670.0,
+	"base_mp": 540.0,
+	"base_wisdom": 680.0,
+	"display_name": "Whipped Scream",
+	"family": "Zombie",
+	"id": "whipped_scream",
+	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/whipped_scream.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "snowbird",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "HP",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "HP",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/snowbird.png",
 	"starting_skill_ids": [
 		"attack"
 	],

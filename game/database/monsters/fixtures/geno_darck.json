@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "geno_darck",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fzl": "½",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/geno_darck.png",
 	"starting_skill_ids": [
 		"attack"
 	],

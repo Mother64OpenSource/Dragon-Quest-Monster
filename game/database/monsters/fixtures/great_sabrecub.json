@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "great_sabrecub",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "↓",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/great_sabrecub.png",
 	"starting_skill_ids": [
 		"attack"
 	],

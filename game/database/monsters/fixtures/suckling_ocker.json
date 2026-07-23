@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "suckling_ocker",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/suckling_ocker.png",
 	"starting_skill_ids": [
 		"attack"
 	],

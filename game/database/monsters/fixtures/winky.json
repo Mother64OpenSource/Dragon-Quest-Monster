@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "winky",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/winky.png",
 	"starting_skill_ids": [
 		"attack"
 	],

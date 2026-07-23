@@ -1,19 +1,38 @@
 {
-    "id":  "gold_ninja_slime",
-    "display_name":  "Gold Ninja Slime",
-    "family":  "Slime",
-    "rank":  "S",
-    "base_hp":  1638,
-    "base_mp":  540,
-    "base_attack":  821,
-    "base_defense":  487,
-    "base_agility":  1176,
-    "base_wisdom":  487,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/gold_ninja_slime.png"
+	"base_agility": 1176.0,
+	"base_attack": 821.0,
+	"base_defense": 487.0,
+	"base_hp": 1638.0,
+	"base_mp": 540.0,
+	"base_wisdom": 487.0,
+	"display_name": "Gold Ninja Slime",
+	"family": "Slime",
+	"id": "gold_ninja_slime",
+	"rank": "S",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "⇄",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "0",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/gold_ninja_slime.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

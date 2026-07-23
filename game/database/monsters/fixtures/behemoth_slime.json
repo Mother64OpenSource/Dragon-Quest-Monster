@@ -9,6 +9,23 @@
 	"family": "Slime",
 	"id": "behemoth_slime",
 	"rank": "D",
+	"resistances": {
+		"Abi": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Slp": "↓",
+		"Wck": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/behemoth_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

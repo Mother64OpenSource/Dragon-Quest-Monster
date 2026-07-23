@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "float_o_copier",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↑",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/float_o_copier.png",
 	"starting_skill_ids": [
 		"attack"
 	],

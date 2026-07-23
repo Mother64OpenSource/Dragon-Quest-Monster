@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "monster_parade",
 	"rank": "S",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"DrM": "0",
+		"Fzl": "0",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/monster_parade.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,19 @@
 	"family": "Devil",
 	"id": "lunatick",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/lunatick.webp",
 	"starting_skill_ids": [
 		"attack"

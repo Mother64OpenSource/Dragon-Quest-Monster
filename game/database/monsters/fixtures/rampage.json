@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "rampage",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "½",
+		"Imm": "0",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/rampage.png",
 	"starting_skill_ids": [
 		"attack"
 	],

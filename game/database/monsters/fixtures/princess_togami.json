@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "princess_togami",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑↑",
+		"Dnk": "0",
+		"DrM": "½",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/princess_togami.webp",
 	"starting_skill_ids": [
 		"attack"

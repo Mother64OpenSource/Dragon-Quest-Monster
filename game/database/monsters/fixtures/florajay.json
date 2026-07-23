@@ -1,0 +1,30 @@
+{
+	"base_agility": 800.0,
+	"base_attack": 544.0,
+	"base_defense": 552.0,
+	"base_hp": 980.0,
+	"base_mp": 440.0,
+	"base_wisdom": 480.0,
+	"display_name": "Florajay",
+	"family": "Nature",
+	"id": "florajay",
+	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/florajay.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

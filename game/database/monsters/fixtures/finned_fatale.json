@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "finned_fatale",
 	"rank": "D",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/finned_fatale.png",
 	"starting_skill_ids": [
 		"attack"
 	],

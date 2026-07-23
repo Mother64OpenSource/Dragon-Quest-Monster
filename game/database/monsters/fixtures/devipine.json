@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "devipine",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zam": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/devipine.webp",
 	"starting_skill_ids": [
 		"attack"

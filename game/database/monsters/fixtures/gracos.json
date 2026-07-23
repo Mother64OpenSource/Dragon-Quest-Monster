@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "gracos",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Ice": "½",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gracos.png",
 	"starting_skill_ids": [
 		"attack"
 	],

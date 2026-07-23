@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "frou_frou",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/frou_frou.png",
 	"starting_skill_ids": [
 		"attack"
 	],

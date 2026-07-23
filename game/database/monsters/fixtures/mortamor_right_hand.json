@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "mortamor_right_hand",
 	"rank": "D",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dim": "½",
+		"DrM": "½",
+		"Ice": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mortamor_right_hand.png",
 	"starting_skill_ids": [
 		"attack"
 	],

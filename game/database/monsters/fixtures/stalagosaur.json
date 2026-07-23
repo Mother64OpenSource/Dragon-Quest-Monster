@@ -9,6 +9,24 @@
 	"family": "Dragon",
 	"id": "stalagosaur",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Rbl": "0",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/stalagosaur.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "mummy_boy",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "↓",
+		"Wck": "0",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/mummy_boy.webp",
 	"starting_skill_ids": [
 		"attack"

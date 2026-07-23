@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "feralball",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "½"
+	},
 	"sprite_path": "res://assets/monsters/feralball.webp",
 	"starting_skill_ids": [
 		"attack"

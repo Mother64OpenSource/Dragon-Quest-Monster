@@ -9,6 +9,28 @@
 	"family": "Zombie",
 	"id": "misty_wing",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Cnf": "↑",
+		"Crk": "0",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/misty_wing.png",
 	"starting_skill_ids": [
 		"attack"
 	],

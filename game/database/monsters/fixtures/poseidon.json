@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "poseidon",
 	"rank": "S",
+	"resistances": {
+		"Abi": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "0",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fzl": "½",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/poseidon.webp",
 	"starting_skill_ids": [
 		"attack"

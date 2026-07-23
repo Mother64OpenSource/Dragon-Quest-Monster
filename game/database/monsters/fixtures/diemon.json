@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "diemon",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "0",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/diemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

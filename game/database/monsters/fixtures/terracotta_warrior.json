@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "terracotta_warrior",
 	"rank": "A",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "½",
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/terracotta_warrior.png",
 	"starting_skill_ids": [
 		"attack"
 	],

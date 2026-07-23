@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "elder_pippit",
 	"rank": "A",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fzl": "½",
+		"Ice": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "⇄"
+	},
+	"sprite_path": "res://assets/monsters/elder_pippit.png",
 	"starting_skill_ids": [
 		"attack"
 	],

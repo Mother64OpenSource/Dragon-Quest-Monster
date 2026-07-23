@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "pumpoise",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/pumpoise.png",
 	"starting_skill_ids": [
 		"attack"
 	],

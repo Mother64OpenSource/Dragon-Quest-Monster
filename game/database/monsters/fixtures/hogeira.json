@@ -9,6 +9,19 @@
 	"family": "Nature",
 	"id": "hogeira",
 	"rank": "SS",
+	"resistances": {
+		"Dec": "↓",
+		"Dnk": "0",
+		"DrM": "↓",
+		"Dzl": "0",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "0",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/hogeira.webp",
 	"starting_skill_ids": [
 		"attack"

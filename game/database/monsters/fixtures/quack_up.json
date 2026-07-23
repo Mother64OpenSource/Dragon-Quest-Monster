@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "quack_up",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Gbs": "½",
+		"Hck": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/quack_up.png",
 	"starting_skill_ids": [
 		"attack"
 	],

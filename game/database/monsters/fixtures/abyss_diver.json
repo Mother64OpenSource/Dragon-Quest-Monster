@@ -9,6 +9,24 @@
 	"family": "Dragon",
 	"id": "abyss_diver",
 	"rank": "B",
+	"resistances": {
+		"Ban": "½",
+		"Blt": "⁎",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Wsh": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/abyss_diver.png",
 	"starting_skill_ids": [
 		"attack"
 	],

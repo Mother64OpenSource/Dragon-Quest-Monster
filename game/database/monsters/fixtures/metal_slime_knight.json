@@ -9,6 +9,28 @@
 	"family": "Slime",
 	"id": "metal_slime_knight",
 	"rank": "C",
+	"resistances": {
+		"Blt": "0",
+		"Bng": "↑↑",
+		"Crk": "↑",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "↑",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "↑",
+		"Frz": "↑",
+		"Fzl": "⁎",
+		"Ice": "↑",
+		"Par": "0",
+		"Rbl": "↑",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "⁎",
+		"Wsh": "↑",
+		"Zap": "↑↑"
+	},
+	"sprite_path": "res://assets/monsters/metal_slime_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

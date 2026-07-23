@@ -9,6 +9,20 @@
 	"family": "Material",
 	"id": "coil_bird",
 	"rank": "F",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Ice": "0",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/coil_bird.webp",
 	"starting_skill_ids": [
 		"attack"

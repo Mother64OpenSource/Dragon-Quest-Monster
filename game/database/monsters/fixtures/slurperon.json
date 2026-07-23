@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "slurperon",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "0",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/slurperon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -1,19 +1,32 @@
 {
-    "id":  "maizar",
-    "display_name":  "Maizar",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1125,
-    "base_mp":  900,
-    "base_attack":  630,
-    "base_defense":  918,
-    "base_agility":  432,
-    "base_wisdom":  1008,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/maizar.png"
+	"base_agility": 432.0,
+	"base_attack": 630.0,
+	"base_defense": 918.0,
+	"base_hp": 1125.0,
+	"base_mp": 900.0,
+	"base_wisdom": 1008.0,
+	"display_name": "Maizar",
+	"family": "unknown",
+	"id": "maizar",
+	"rank": "SS",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "0",
+		"Fzl": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/maizar.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

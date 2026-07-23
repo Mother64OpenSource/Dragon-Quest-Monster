@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "slider_kids",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↑",
+		"Bng": "0",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/slider_kids.png",
 	"starting_skill_ids": [
 		"attack"
 	],

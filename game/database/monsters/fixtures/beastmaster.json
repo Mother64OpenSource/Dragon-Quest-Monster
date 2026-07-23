@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "beastmaster",
 	"rank": "C",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/beastmaster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

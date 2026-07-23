@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "brownie",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Siz": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/brownie.png",
 	"starting_skill_ids": [
 		"attack"
 	],

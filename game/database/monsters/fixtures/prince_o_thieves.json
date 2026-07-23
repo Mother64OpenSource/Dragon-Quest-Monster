@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "prince_o_thieves",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⇄",
+		"Ban": "↓",
+		"Blt": "⇄",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/prince_o_thieves.webp",
 	"starting_skill_ids": [
 		"attack"

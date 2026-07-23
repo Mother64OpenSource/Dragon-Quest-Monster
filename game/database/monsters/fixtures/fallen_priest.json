@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "fallen_priest",
 	"rank": "C",
+	"resistances": {
+		"Ban": "↑",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/fallen_priest.png",
 	"starting_skill_ids": [
 		"attack"
 	],

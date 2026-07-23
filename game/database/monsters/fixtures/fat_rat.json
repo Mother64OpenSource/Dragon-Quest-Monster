@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "fat_rat",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/fat_rat.png",
 	"starting_skill_ids": [
 		"attack"
 	],

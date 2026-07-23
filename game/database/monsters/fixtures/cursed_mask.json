@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "cursed_mask",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/cursed_mask.png",
 	"starting_skill_ids": [
 		"attack"
 	],

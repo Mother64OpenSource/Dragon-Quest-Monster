@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "cobra_cardinal",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "½",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/cobra_cardinal.png",
 	"starting_skill_ids": [
 		"attack"
 	],

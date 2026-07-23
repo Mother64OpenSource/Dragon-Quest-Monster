@@ -9,6 +9,23 @@
 	"family": "Zombie",
 	"id": "tortured_soul",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/tortured_soul.png",
 	"starting_skill_ids": [
 		"attack"
 	],

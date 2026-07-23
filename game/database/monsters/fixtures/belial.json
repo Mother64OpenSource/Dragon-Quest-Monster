@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "belial",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "↓",
+		"Bng": "HP",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Sap": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/belial.png",
 	"starting_skill_ids": [
 		"attack"
 	],

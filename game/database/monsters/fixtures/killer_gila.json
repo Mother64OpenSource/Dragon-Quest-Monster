@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "killer_gila",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/killer_gila.png",
 	"starting_skill_ids": [
 		"attack"
 	],

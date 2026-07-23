@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "tyrantosaurus",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sag": "0",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/tyrantosaurus.png",
 	"starting_skill_ids": [
 		"attack"
 	],

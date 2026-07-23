@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "phantom_fencer",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/phantom_fencer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "cheeky_tiki",
 	"rank": "F",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/cheeky_tiki.webp",
 	"starting_skill_ids": [
 		"attack"

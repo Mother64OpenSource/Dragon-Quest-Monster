@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "mecha_mynah",
 	"rank": "D",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "½",
+		"Cnf": "↓",
+		"Dec": "0",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mecha_mynah.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "raven_lunatic",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Gbs": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/raven_lunatic.png",
 	"starting_skill_ids": [
 		"attack"
 	],

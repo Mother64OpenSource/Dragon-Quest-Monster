@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "magarugi",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"DrM": "½",
+		"Fzl": "↓",
+		"Gbs": "0",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/magarugi.webp",
 	"starting_skill_ids": [
 		"attack"

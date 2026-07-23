@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "king_squid",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Imm": "↑",
+		"Par": "½",
+		"Psn": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/king_squid.png",
 	"starting_skill_ids": [
 		"attack"
 	],

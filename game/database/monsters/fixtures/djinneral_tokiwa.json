@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_tokiwa",
 	"rank": "D",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fre": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "0"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_tokiwa.png",
 	"starting_skill_ids": [
 		"attack"
 	],

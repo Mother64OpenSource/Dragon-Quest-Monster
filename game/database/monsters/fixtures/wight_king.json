@@ -1,19 +1,41 @@
 {
-    "id":  "wight_king",
-    "display_name":  "Wight King",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1400,
-    "base_mp":  900,
-    "base_attack":  300,
-    "base_defense":  900,
-    "base_agility":  920,
-    "base_wisdom":  960,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/wight_king.png"
+	"base_agility": 920.0,
+	"base_attack": 300.0,
+	"base_defense": 900.0,
+	"base_hp": 1400.0,
+	"base_mp": 900.0,
+	"base_wisdom": 960.0,
+	"display_name": "Wight King",
+	"family": "Zombie",
+	"id": "wight_king",
+	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Bng": "0",
+		"Cnf": "↓",
+		"Crk": "0",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Gbs": "0",
+		"Hck": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "↓",
+		"Wck": "½",
+		"Wsh": "0",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/wight_king.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

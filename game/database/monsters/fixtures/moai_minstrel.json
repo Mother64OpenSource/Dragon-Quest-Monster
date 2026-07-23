@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "moai_minstrel",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fzl": "0",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/moai_minstrel.png",
 	"starting_skill_ids": [
 		"attack"
 	],

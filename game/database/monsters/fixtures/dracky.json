@@ -9,6 +9,20 @@
 	"family": "dracky",
 	"id": "dracky",
 	"rank": "E",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/dracky.webp",
 	"starting_skill_ids": [
 		"attack",

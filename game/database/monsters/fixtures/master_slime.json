@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "master_slime",
 	"rank": "A",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/master_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

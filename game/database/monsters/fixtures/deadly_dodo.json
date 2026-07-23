@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "deadly_dodo",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↑",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Gbs": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/deadly_dodo.png",
 	"starting_skill_ids": [
 		"attack"
 	],

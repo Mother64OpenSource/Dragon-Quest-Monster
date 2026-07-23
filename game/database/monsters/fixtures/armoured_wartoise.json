@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "armoured_wartoise",
 	"rank": "D",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "0",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/armoured_wartoise.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Zombie",
 	"id": "cross_bones",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/cross_bones.png",
 	"starting_skill_ids": [
 		"attack"
 	],

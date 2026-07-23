@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "axecutioner",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/axecutioner.png",
 	"starting_skill_ids": [
 		"attack"
 	],

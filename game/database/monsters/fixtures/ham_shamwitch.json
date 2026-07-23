@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "ham_shamwitch",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "0",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/ham_shamwitch.png",
 	"starting_skill_ids": [
 		"attack"
 	],

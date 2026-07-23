@@ -9,6 +9,20 @@
 	"family": "unknown",
 	"id": "twiney",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "0",
+		"DrM": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/twiney.png",
 	"starting_skill_ids": [
 		"attack"
 	],

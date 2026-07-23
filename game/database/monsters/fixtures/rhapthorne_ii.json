@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "rhapthorne_ii",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "0",
+		"DrM": "½",
+		"Frz": "HP",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "HP"
+	},
 	"sprite_path": "res://assets/monsters/rhapthorne_ii.webp",
 	"starting_skill_ids": [
 		"attack"

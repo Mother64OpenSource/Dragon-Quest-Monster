@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "town_frog",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Slp": "½",
+		"Wck": "↑↑",
+		"Wsh": "0"
+	},
+	"sprite_path": "res://assets/monsters/town_frog.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "tyrannasaura_wrecks",
 	"rank": "S",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/tyrannasaura_wrecks.webp",
 	"starting_skill_ids": [
 		"attack"

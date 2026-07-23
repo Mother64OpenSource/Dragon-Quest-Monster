@@ -9,6 +9,28 @@
 	"family": "Zombie",
 	"id": "syphon",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "0",
+		"Ban": "↓",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "0",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "0",
+		"Hck": "↓",
+		"Ice": "⇄",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Zam": "HP"
+	},
 	"sprite_path": "res://assets/monsters/syphon.webp",
 	"starting_skill_ids": [
 		"attack"

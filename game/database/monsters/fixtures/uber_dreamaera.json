@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "uber_dreamaera",
 	"rank": "A",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "⁎",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/uber_dreamaera.png",
 	"starting_skill_ids": [
 		"attack"
 	],

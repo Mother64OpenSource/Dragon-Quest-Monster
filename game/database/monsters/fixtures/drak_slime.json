@@ -1,0 +1,31 @@
+{
+	"base_agility": 688.0,
+	"base_attack": 612.0,
+	"base_defense": 461.0,
+	"base_hp": 1084.0,
+	"base_mp": 459.0,
+	"base_wisdom": 408.0,
+	"display_name": "Drak Slime",
+	"family": "Slime",
+	"id": "drak_slime",
+	"rank": "F",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Fzl": "⁎",
+		"Ice": "½",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/drak_slime.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
+}

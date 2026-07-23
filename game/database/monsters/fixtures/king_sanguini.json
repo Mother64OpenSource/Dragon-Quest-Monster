@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "king_sanguini",
 	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "0",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/king_sanguini.webp",
 	"starting_skill_ids": [
 		"attack"

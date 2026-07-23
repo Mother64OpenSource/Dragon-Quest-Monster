@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "octavian_sentry",
 	"rank": "C",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Ice": "½",
+		"Imm": "0",
+		"Par": "↓",
+		"Wck": "↓",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/octavian_sentry.png",
 	"starting_skill_ids": [
 		"attack"
 	],

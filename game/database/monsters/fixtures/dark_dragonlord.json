@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "dark_dragonlord",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/dark_dragonlord.webp",
 	"starting_skill_ids": [
 		"attack"

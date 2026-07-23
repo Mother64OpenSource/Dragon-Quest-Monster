@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "anchorman",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/anchorman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

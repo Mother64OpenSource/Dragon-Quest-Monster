@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "orgodemir",
 	"rank": "A",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fre": "↑↑",
+		"Ice": "↑↑",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/orgodemir.png",
 	"starting_skill_ids": [
 		"attack"
 	],

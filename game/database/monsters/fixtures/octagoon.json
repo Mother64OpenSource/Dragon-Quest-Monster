@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "octagoon",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "½",
+		"Zam": "↓"
+	},
+	"sprite_path": "res://assets/monsters/octagoon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

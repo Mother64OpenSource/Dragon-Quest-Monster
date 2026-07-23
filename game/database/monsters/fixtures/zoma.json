@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "zoma",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "0",
+		"Crs": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fzl": "0",
+		"Gbs": "½",
+		"Ice": "0",
+		"Imm": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "↑",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/zoma.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "face_invader",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "0",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/face_invader.png",
 	"starting_skill_ids": [
 		"attack"
 	],

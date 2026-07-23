@@ -9,6 +9,19 @@
 	"family": "Devil",
 	"id": "lips",
 	"rank": "F",
+	"resistances": {
+		"Ban": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/lips.webp",
 	"starting_skill_ids": [
 		"attack"

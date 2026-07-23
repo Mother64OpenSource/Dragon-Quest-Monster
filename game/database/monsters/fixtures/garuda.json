@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "garuda",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/garuda.png",
 	"starting_skill_ids": [
 		"attack"
 	],

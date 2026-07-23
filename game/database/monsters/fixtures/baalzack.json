@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "baalzack",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "↓",
+		"Dzl": "⁎",
+		"Fre": "0",
+		"Frz": "0",
+		"Fzl": "↓",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Siz": "0",
+		"Slp": "↑",
+		"Wck": "½"
+	},
 	"sprite_path": "res://assets/monsters/baalzack.webp",
 	"starting_skill_ids": [
 		"attack"

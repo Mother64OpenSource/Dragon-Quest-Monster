@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "araniad_the_enigma",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Rbl": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/araniad_the_enigma.png",
 	"starting_skill_ids": [
 		"attack"
 	],

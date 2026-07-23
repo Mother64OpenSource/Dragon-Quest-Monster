@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "she_stroyer",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/she_stroyer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

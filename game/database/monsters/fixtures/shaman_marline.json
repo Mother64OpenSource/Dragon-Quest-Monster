@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "shaman_marline",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/shaman_marline.png",
 	"starting_skill_ids": [
 		"attack"
 	],

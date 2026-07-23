@@ -9,6 +9,20 @@
 	"family": "Zombie",
 	"id": "stump_chump",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "0",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/stump_chump.webp",
 	"starting_skill_ids": [
 		"attack"

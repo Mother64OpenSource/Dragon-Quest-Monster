@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "pazuzu",
 	"rank": "A",
+	"resistances": {
+		"Ban": "↓",
+		"Cnf": "½",
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/pazuzu.png",
 	"starting_skill_ids": [
 		"attack"
 	],

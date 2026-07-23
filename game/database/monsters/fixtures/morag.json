@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "morag",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/morag.png",
 	"starting_skill_ids": [
 		"attack"
 	],

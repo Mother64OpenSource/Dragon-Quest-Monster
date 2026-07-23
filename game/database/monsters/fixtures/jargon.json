@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "jargon",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "0",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/jargon.webp",
 	"starting_skill_ids": [
 		"attack"

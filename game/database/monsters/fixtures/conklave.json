@@ -9,6 +9,19 @@
 	"family": "Devil",
 	"id": "conklave",
 	"rank": "F",
+	"resistances": {
+		"Abi": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "0",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/conklave.webp",
 	"starting_skill_ids": [
 		"attack"

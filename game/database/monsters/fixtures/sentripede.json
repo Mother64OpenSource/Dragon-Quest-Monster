@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "sentripede",
 	"rank": "B",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/sentripede.png",
 	"starting_skill_ids": [
 		"attack"
 	],

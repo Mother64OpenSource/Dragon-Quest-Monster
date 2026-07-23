@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "valgirt",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "HP",
+		"Fzl": "0",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/valgirt.webp",
 	"starting_skill_ids": [
 		"attack"

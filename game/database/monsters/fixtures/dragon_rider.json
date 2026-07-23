@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "dragon_rider",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Par": "½",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/dragon_rider.png",
 	"starting_skill_ids": [
 		"attack"
 	],

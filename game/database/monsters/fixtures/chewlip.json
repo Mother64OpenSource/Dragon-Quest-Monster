@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "chewlip",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/chewlip.png",
 	"starting_skill_ids": [
 		"attack"
 	],

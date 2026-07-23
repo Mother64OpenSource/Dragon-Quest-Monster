@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "automaton",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Par": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/automaton.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "tigergram",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Fzl": "0",
+		"Ice": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/tigergram.png",
 	"starting_skill_ids": [
 		"attack"
 	],

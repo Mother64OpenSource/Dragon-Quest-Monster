@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "kon_the_knight",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Ice": "0",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wsh": "0"
+	},
+	"sprite_path": "res://assets/monsters/kon_the_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

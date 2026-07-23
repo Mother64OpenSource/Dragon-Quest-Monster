@@ -1,19 +1,31 @@
 {
-    "id":  "dark_matter",
-    "display_name":  "Dark Matter",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1650,
-    "base_mp":  530,
-    "base_attack":  750,
-    "base_defense":  1000,
-    "base_agility":  530,
-    "base_wisdom":  610,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/dark_matter.png"
+	"base_agility": 530.0,
+	"base_attack": 750.0,
+	"base_defense": 1000.0,
+	"base_hp": 1650.0,
+	"base_mp": 530.0,
+	"base_wisdom": 610.0,
+	"display_name": "Dark Matter",
+	"family": "Material",
+	"id": "dark_matter",
+	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/dark_matter.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

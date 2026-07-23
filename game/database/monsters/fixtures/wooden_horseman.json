@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "wooden_horseman",
 	"rank": "A",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/wooden_horseman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

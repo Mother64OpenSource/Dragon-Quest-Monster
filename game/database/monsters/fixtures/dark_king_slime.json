@@ -9,6 +9,22 @@
 	"family": "Slime",
 	"id": "dark_king_slime",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "0",
+		"Blt": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "⇄"
+	},
+	"sprite_path": "res://assets/monsters/dark_king_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

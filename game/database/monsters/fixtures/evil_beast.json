@@ -1,19 +1,37 @@
 {
-    "id":  "evil_beast",
-    "display_name":  "Evil Beast",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  1654,
-    "base_mp":  518,
-    "base_attack":  470,
-    "base_defense":  609,
-    "base_agility":  663,
-    "base_wisdom":  924,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/evil_beast.png"
+	"base_agility": 663.0,
+	"base_attack": 470.0,
+	"base_defense": 609.0,
+	"base_hp": 1654.0,
+	"base_mp": 518.0,
+	"base_wisdom": 924.0,
+	"display_name": "Evil Beast",
+	"family": "unknown",
+	"id": "evil_beast",
+	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dnk": "0",
+		"DrM": "½",
+		"Fzl": "↓",
+		"Ice": "0",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/evil_beast.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

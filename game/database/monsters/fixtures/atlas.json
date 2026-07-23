@@ -9,6 +9,27 @@
 	"family": "Devil",
 	"id": "atlas",
 	"rank": "S",
+	"resistances": {
+		"Ban": "0",
+		"Cnf": "0",
+		"Crk": "0",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "↑",
+		"Psn": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/atlas.webp",
 	"starting_skill_ids": [
 		"attack"

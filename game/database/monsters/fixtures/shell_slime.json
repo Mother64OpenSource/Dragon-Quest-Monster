@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "shell_slime",
 	"rank": "E",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Sap": "0",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/shell_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "blue_ninja_slime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Ice": "0",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/blue_ninja_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

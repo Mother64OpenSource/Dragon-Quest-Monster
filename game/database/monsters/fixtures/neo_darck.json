@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "neo_darck",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"Dnk": "½",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "0",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/neo_darck.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "gorago",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "↑",
+		"Wck": "½",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/gorago.webp",
 	"starting_skill_ids": [
 		"attack"

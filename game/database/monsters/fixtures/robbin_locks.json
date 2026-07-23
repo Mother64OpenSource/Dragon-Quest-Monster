@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "robbin_locks",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "0",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "↑↑",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "0",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/robbin_locks.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "hootingham_gore",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/hootingham_gore.png",
 	"starting_skill_ids": [
 		"attack"
 	],

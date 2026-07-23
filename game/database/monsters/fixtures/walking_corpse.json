@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "walking_corpse",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/walking_corpse.png",
 	"starting_skill_ids": [
 		"attack"
 	],

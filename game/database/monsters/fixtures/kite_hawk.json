@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "kite_hawk",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/kite_hawk.png",
 	"starting_skill_ids": [
 		"attack"
 	],

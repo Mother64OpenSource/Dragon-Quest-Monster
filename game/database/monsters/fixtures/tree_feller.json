@@ -9,6 +9,19 @@
 	"family": "Devil",
 	"id": "tree_feller",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/tree_feller.webp",
 	"starting_skill_ids": [
 		"attack"

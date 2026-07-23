@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "shadow",
 	"rank": "E",
+	"resistances": {
+		"Ban": "↓",
+		"Cnf": "↓",
+		"Crs": "½",
+		"Dnk": "⁎",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/shadow.png",
 	"starting_skill_ids": [
 		"attack"
 	],

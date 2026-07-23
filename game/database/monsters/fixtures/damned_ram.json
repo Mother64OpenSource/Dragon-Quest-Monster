@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "damned_ram",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "½",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "½"
+	},
+	"sprite_path": "res://assets/monsters/damned_ram.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -1,19 +1,36 @@
 {
-    "id":  "geno_malroth",
-    "display_name":  "Geno Malroth",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2295,
-    "base_mp":  900,
-    "base_attack":  552,
-    "base_defense":  442,
-    "base_agility":  504,
-    "base_wisdom":  442,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/geno_malroth.png"
+	"base_agility": 504.0,
+	"base_attack": 552.0,
+	"base_defense": 442.0,
+	"base_hp": 2295.0,
+	"base_mp": 900.0,
+	"base_wisdom": 442.0,
+	"display_name": "Geno Malroth",
+	"family": "unknown",
+	"id": "geno_malroth",
+	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fzl": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/geno_malroth.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

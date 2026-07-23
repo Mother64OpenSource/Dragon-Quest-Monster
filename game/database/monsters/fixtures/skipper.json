@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "skipper",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "↓",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Par": "0",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/skipper.png",
 	"starting_skill_ids": [
 		"attack"
 	],

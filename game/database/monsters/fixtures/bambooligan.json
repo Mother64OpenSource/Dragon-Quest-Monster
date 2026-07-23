@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "bambooligan",
 	"rank": "B",
+	"resistances": {
+		"Blt": "0",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/bambooligan.png",
 	"starting_skill_ids": [
 		"attack"
 	],

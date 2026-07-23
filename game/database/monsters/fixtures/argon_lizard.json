@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "argon_lizard",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Imm": "⁎",
+		"Par": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/argon_lizard.webp",
 	"starting_skill_ids": [
 		"attack"

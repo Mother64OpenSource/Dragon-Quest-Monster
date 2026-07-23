@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_seiran",
 	"rank": "D",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_seiran.png",
 	"starting_skill_ids": [
 		"attack"
 	],

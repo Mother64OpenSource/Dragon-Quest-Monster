@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "axeshark",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/axeshark.png",
 	"starting_skill_ids": [
 		"attack"
 	],

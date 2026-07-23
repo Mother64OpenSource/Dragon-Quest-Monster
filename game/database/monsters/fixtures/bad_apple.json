@@ -9,6 +9,20 @@
 	"family": "Zombie",
 	"id": "bad_apple",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/bad_apple.webp",
 	"starting_skill_ids": [
 		"attack"

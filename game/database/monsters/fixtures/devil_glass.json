@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "devil_glass",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "↓",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/devil_glass.png",
 	"starting_skill_ids": [
 		"attack"
 	],

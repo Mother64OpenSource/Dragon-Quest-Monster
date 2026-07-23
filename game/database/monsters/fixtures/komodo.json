@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "komodo",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "0",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/komodo.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "gremlin",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gremlin.png",
 	"starting_skill_ids": [
 		"attack"
 	],

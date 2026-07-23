@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "wooper_trooper",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↑",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎",
+		"Zam": "½",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/wooper_trooper.png",
 	"starting_skill_ids": [
 		"attack"
 	],

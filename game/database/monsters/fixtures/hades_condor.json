@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "hades_condor",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "½",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/hades_condor.png",
 	"starting_skill_ids": [
 		"attack"
 	],

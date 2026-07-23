@@ -9,6 +9,24 @@
 	"family": "Material",
 	"id": "frostburn",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "HP",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Ice": "HP",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "↓"
+	},
+	"sprite_path": "res://assets/monsters/frostburn.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "jum",
 	"rank": "A",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/jum.png",
 	"starting_skill_ids": [
 		"attack"
 	],

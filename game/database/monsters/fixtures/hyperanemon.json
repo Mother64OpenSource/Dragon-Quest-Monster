@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "hyperanemon",
 	"rank": "A",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "½",
+		"Siz": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/hyperanemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

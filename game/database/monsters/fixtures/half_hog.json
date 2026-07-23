@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "half_hog",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/half_hog.png",
 	"starting_skill_ids": [
 		"attack"
 	],

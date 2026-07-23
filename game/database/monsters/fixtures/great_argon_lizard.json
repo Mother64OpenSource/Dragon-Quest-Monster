@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "great_argon_lizard",
 	"rank": "B",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "0",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/great_argon_lizard.png",
 	"starting_skill_ids": [
 		"attack"
 	],

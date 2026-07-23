@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "extreme_killing_machine",
 	"rank": "S",
+	"resistances": {
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "0",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Imm": "↑↑",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/extreme_killing_machine.webp",
 	"starting_skill_ids": [
 		"attack"

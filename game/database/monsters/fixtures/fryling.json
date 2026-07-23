@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "fryling",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "↑",
+		"Crk": "↑",
+		"Dim": "½",
+		"Dzl": "½",
+		"Fre": "↑",
+		"Frz": "↑",
+		"Gbs": "⁎",
+		"Ice": "↑",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Sap": "↑↑",
+		"Siz": "↑↑",
+		"Wsh": "↑",
+		"Zam": "⁎",
+		"Zap": "↑"
+	},
+	"sprite_path": "res://assets/monsters/fryling.png",
 	"starting_skill_ids": [
 		"attack"
 	],

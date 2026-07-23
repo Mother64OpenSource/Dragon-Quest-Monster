@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "tortoceratops",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/tortoceratops.png",
 	"starting_skill_ids": [
 		"attack"
 	],

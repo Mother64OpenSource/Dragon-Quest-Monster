@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "mumboh_jumboe",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "↓",
+		"Par": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/mumboh_jumboe.webp",
 	"starting_skill_ids": [
 		"attack"

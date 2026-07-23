@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "drag_racer",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/drag_racer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

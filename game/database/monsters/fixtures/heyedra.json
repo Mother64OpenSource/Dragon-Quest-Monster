@@ -9,6 +9,23 @@
 	"family": "Zombie",
 	"id": "heyedra",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/heyedra.png",
 	"starting_skill_ids": [
 		"attack"
 	],

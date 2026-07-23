@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "spiked_clubber",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "0",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/spiked_clubber.png",
 	"starting_skill_ids": [
 		"attack"
 	],

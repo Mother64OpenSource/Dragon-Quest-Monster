@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "quayhorse",
 	"rank": "D",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "0",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/quayhorse.png",
 	"starting_skill_ids": [
 		"attack"
 	],

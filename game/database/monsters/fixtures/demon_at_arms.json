@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "demon_at_arms",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↓",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/demon_at_arms.png",
 	"starting_skill_ids": [
 		"attack"
 	],

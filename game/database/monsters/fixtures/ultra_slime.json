@@ -9,6 +9,26 @@
 	"family": "Slime",
 	"id": "ultra_slime",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Dec": "↓",
+		"Dnk": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "↓",
+		"Sag": "½",
+		"Siz": "0",
+		"Slp": "↓",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/ultra_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "moosifer",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/moosifer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

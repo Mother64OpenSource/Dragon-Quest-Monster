@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "prickly_prankster",
 	"rank": "D",
+	"resistances": {
+		"Blt": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/prickly_prankster.png",
 	"starting_skill_ids": [
 		"attack"
 	],

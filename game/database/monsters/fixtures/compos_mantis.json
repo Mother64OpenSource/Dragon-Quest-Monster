@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "compos_mantis",
 	"rank": "B",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Psn": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/compos_mantis.png",
 	"starting_skill_ids": [
 		"attack"
 	],

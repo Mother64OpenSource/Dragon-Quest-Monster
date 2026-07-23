@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "killerpillar",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Frz": "0",
+		"Ice": "↓",
+		"Imm": "↓",
+		"Par": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/killerpillar.webp",
 	"starting_skill_ids": [
 		"attack"

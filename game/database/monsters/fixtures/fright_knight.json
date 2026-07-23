@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "fright_knight",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Crk": "0",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/fright_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

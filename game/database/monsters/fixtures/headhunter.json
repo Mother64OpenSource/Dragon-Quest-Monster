@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "headhunter",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/headhunter.png",
 	"starting_skill_ids": [
 		"attack"
 	],

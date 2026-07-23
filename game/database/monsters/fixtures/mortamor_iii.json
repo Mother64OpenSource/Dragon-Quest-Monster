@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "mortamor_iii",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"DrM": "½",
+		"Fre": "0",
+		"Gbs": "↓",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/mortamor_iii.webp",
 	"starting_skill_ids": [
 		"attack"

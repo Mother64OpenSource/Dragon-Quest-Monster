@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "coatol",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "HP",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/coatol.png",
 	"starting_skill_ids": [
 		"attack"
 	],

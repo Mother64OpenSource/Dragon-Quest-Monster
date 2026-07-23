@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "genji_beetle",
 	"rank": "B",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Sap": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/genji_beetle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

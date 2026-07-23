@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "small_fry",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/small_fry.webp",
 	"starting_skill_ids": [
 		"attack"

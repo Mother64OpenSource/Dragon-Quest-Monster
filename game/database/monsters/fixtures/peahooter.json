@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "peahooter",
 	"rank": "C",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/peahooter.png",
 	"starting_skill_ids": [
 		"attack"
 	],

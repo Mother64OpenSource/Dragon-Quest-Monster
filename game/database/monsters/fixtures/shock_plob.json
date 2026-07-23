@@ -9,6 +9,28 @@
 	"family": "Beast",
 	"id": "shock_plob",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "↑↑",
+		"Crk": "↓",
+		"Crs": "↑↑",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Fre": "½",
+		"Frz": "½",
+		"Ice": "½",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "½",
+		"Wck": "↑↑"
+	},
+	"sprite_path": "res://assets/monsters/shock_plob.png",
 	"starting_skill_ids": [
 		"attack"
 	],

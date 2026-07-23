@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "great_muddy_hand",
 	"rank": "C",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Gbs": "½",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/great_muddy_hand.png",
 	"starting_skill_ids": [
 		"attack"
 	],

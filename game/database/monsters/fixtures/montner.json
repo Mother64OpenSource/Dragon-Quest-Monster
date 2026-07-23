@@ -9,7 +9,21 @@
 	"family": "unknown",
 	"id": "montner",
 	"rank": "F",
-	"sprite_path": "res://assets/monsters/montner.webp",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "½",
+		"DrM": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/montner.png",
 	"starting_skill_ids": [
 		"attack"
 	],

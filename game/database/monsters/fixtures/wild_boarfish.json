@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "wild_boarfish",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/wild_boarfish.png",
 	"starting_skill_ids": [
 		"attack"
 	],

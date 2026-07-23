@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "emyu",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "½",
+		"Imm": "↓",
+		"Psn": "↓",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/emyu.png",
 	"starting_skill_ids": [
 		"attack"
 	],

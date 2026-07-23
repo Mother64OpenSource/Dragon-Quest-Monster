@@ -9,6 +9,20 @@
 	"family": "Zombie",
 	"id": "putrefido",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "0",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/putrefido.webp",
 	"starting_skill_ids": [
 		"attack"

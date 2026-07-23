@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_shion",
 	"rank": "D",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Gbs": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_shion.png",
 	"starting_skill_ids": [
 		"attack"
 	],

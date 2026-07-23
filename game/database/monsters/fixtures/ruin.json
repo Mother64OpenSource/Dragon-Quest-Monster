@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "ruin",
 	"rank": "S",
+	"resistances": {
+		"Abi": "½",
+		"Bng": "½",
+		"Cnf": "0",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "½",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Hck": "↓",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "0",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/ruin.webp",
 	"starting_skill_ids": [
 		"attack"

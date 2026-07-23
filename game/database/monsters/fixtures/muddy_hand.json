@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "muddy_hand",
 	"rank": "F",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "½",
+		"Cnf": "↓",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/muddy_hand.webp",
 	"starting_skill_ids": [
 		"attack"

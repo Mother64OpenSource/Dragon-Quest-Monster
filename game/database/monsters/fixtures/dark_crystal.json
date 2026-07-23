@@ -1,19 +1,38 @@
 {
-    "id":  "dark_crystal",
-    "display_name":  "Dark Crystal",
-    "family":  "Material",
-    "rank":  "S",
-    "base_hp":  1967,
-    "base_mp":  482,
-    "base_attack":  849,
-    "base_defense":  1049,
-    "base_agility":  587,
-    "base_wisdom":  550,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/dark_crystal.png"
+	"base_agility": 587.0,
+	"base_attack": 849.0,
+	"base_defense": 1049.0,
+	"base_hp": 1967.0,
+	"base_mp": 482.0,
+	"base_wisdom": 550.0,
+	"display_name": "Dark Crystal",
+	"family": "Material",
+	"id": "dark_crystal",
+	"rank": "S",
+	"resistances": {
+		"Bng": "↑",
+		"Cnf": "↑",
+		"Crk": "↑",
+		"Crs": "½",
+		"Dim": "½",
+		"DrM": "0",
+		"Frz": "↑",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↑",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zam": "↑",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/dark_crystal.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

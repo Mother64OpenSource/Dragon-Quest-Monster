@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "bona_constrictor",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dec": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/bona_constrictor.png",
 	"starting_skill_ids": [
 		"attack"
 	],

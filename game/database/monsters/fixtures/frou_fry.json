@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "frou_fry",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/frou_fry.webp",
 	"starting_skill_ids": [
 		"attack"

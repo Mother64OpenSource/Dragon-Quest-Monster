@@ -9,6 +9,20 @@
 	"family": "slime",
 	"id": "healslime",
 	"rank": "D",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/healslime.webp",
 	"starting_skill_ids": [
 		"attack",

@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "platypunk",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "0",
+		"Gbs": "↓",
+		"Ice": "½",
+		"Imm": "½",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/platypunk.webp",
 	"starting_skill_ids": [
 		"attack"

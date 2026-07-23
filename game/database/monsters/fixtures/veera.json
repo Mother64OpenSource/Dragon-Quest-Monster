@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "veera",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "½",
+		"Bng": "0",
+		"Crk": "↓",
+		"Dec": "0",
+		"Dnk": "½",
+		"Dzl": "⁎",
+		"Frz": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "↓",
+		"Wck": "0"
+	},
 	"sprite_path": "res://assets/monsters/veera.webp",
 	"starting_skill_ids": [
 		"attack"

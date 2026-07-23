@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "trauminator",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "0",
+		"Cnf": "↑",
+		"Crk": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "0",
+		"Rbl": "↓",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "0"
+	},
 	"sprite_path": "res://assets/monsters/trauminator.webp",
 	"starting_skill_ids": [
 		"attack"

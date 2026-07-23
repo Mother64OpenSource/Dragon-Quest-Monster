@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "weedbug",
 	"rank": "C",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↑",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/weedbug.png",
 	"starting_skill_ids": [
 		"attack"
 	],

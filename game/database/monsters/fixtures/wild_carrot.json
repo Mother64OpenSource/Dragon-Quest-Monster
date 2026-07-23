@@ -9,6 +9,28 @@
 	"family": "Zombie",
 	"id": "wild_carrot",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wild_carrot.png",
 	"starting_skill_ids": [
 		"attack"
 	],

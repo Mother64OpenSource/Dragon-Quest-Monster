@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "yabby",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/yabby.png",
 	"starting_skill_ids": [
 		"attack"
 	],

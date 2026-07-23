@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "dierantula",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/dierantula.png",
 	"starting_skill_ids": [
 		"attack"
 	],

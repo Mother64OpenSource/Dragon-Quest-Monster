@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "queen_slime",
 	"rank": "B",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/queen_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

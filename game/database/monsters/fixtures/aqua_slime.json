@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "aqua_slime",
 	"rank": "E",
+	"resistances": {
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/aqua_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

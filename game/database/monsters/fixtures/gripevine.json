@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "gripevine",
 	"rank": "S",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "0",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Gbs": "½",
+		"Ice": "↓",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "0",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "½",
+		"Wsh": "0"
+	},
 	"sprite_path": "res://assets/monsters/gripevine.webp",
 	"starting_skill_ids": [
 		"attack"

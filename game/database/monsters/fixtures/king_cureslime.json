@@ -9,6 +9,22 @@
 	"family": "Slime",
 	"id": "king_cureslime",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dzl": "⁎",
+		"Fzl": "0",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wck": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/king_cureslime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

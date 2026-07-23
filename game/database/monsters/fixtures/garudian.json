@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "garudian",
 	"rank": "D",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/garudian.png",
 	"starting_skill_ids": [
 		"attack"
 	],

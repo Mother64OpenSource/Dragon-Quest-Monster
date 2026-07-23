@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "nimzo",
 	"rank": "A",
+	"resistances": {
+		"Abi": "↓",
+		"Bng": "↓",
+		"Cnf": "⁎",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"DrM": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/nimzo.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "growlbear",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/growlbear.png",
 	"starting_skill_ids": [
 		"attack"
 	],

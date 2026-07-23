@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "black_dragon",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Bng": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "↓",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/black_dragon.webp",
 	"starting_skill_ids": [
 		"attack"

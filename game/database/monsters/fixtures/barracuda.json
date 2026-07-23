@@ -9,6 +9,24 @@
 	"family": "Nature",
 	"id": "barracuda",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Crs": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↓",
+		"Psn": "↓",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/barracuda.png",
 	"starting_skill_ids": [
 		"attack"
 	],

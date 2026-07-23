@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "cerberwretch",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Cnf": "↓",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Fre": "½",
+		"Frz": "½",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/cerberwretch.png",
 	"starting_skill_ids": [
 		"attack"
 	],

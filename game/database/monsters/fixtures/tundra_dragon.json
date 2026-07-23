@@ -9,6 +9,24 @@
 	"family": "Dragon",
 	"id": "tundra_dragon",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Crk": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "0",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/tundra_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

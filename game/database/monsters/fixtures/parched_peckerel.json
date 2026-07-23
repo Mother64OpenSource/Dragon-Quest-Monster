@@ -9,6 +9,19 @@
 	"family": "Nature",
 	"id": "parched_peckerel",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "0",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/parched_peckerel.png",
 	"starting_skill_ids": [
 		"attack"
 	],

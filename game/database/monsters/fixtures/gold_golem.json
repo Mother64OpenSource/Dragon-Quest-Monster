@@ -9,6 +9,20 @@
 	"family": "Material",
 	"id": "gold_golem",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "0",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/gold_golem.png",
 	"starting_skill_ids": [
 		"attack"
 	],

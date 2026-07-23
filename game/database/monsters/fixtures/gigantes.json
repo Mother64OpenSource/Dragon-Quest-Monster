@@ -9,6 +9,27 @@
 	"family": "Devil",
 	"id": "gigantes",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "0",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gigantes.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "sneezy",
 	"rank": "S",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dim": "½",
+		"DrM": "½",
+		"Fre": "HP",
+		"Frz": "HP",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Ice": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zam": "↓"
+	},
+	"sprite_path": "res://assets/monsters/sneezy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,23 @@
 	"family": "Nature",
 	"id": "cruelcumber",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↑",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "½",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/cruelcumber.webp",
 	"starting_skill_ids": [
 		"attack"

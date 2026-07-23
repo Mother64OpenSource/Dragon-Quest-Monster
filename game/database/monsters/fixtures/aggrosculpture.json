@@ -9,6 +9,23 @@
 	"family": "Devil",
 	"id": "aggrosculpture",
 	"rank": "B",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/aggrosculpture.png",
 	"starting_skill_ids": [
 		"attack"
 	],

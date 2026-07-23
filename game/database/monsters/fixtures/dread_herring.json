@@ -9,6 +9,18 @@
 	"family": "Nature",
 	"id": "dread_herring",
 	"rank": "F",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↑↑",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/dread_herring.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,28 @@
 	"family": "Devil",
 	"id": "knight_abhorrent",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Hck": "↓",
+		"Imm": "0",
+		"Par": "↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "⇄",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/knight_abhorrent.webp",
 	"starting_skill_ids": [
 		"attack"

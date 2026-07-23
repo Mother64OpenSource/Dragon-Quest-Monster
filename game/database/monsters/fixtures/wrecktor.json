@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "wrecktor",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/wrecktor.png",
 	"starting_skill_ids": [
 		"attack"
 	],

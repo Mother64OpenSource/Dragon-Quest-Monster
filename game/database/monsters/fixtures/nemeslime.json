@@ -9,6 +9,25 @@
 	"family": "Slime",
 	"id": "nemeslime",
 	"rank": "B",
+	"resistances": {
+		"Bng": "↓",
+		"Crk": "0",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "⁎",
+		"Par": "0",
+		"Sag": "½",
+		"Siz": "0",
+		"Wck": "⇄",
+		"Wsh": "↓",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/nemeslime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

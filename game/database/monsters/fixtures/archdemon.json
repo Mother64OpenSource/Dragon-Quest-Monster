@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "archdemon",
 	"rank": "B",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/archdemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

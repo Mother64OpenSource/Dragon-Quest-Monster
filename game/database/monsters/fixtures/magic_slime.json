@@ -9,6 +9,21 @@
 	"family": "Slime",
 	"id": "magic_slime",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "0",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↑",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/magic_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

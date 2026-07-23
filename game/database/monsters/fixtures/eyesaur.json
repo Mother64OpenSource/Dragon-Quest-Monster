@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "eyesaur",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/eyesaur.png",
 	"starting_skill_ids": [
 		"attack"
 	],

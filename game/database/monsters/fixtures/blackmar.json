@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "blackmar",
 	"rank": "S",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "↓",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "0",
+		"Imm": "½",
+		"Par": "↓",
+		"Psn": "½",
+		"Wck": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/blackmar.webp",
 	"starting_skill_ids": [
 		"attack"

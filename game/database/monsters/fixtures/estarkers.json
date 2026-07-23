@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "estarkers",
 	"rank": "A",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fzl": "½",
+		"Hck": "↓",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "½",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/estarkers.png",
 	"starting_skill_ids": [
 		"attack"
 	],

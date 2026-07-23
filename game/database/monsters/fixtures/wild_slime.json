@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "wild_slime",
 	"rank": "F",
+	"resistances": {
+		"Ban": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "0",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/wild_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

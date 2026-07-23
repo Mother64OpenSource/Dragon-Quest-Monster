@@ -9,6 +9,19 @@
 	"family": "Beast",
 	"id": "mischievous_mole",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Fre": "0",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/mischievous_mole.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "robbin_ladies",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "0",
+		"Blt": "½",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dnk": "0",
+		"DrM": "½",
+		"Gbs": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Wsh": "½",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/robbin_ladies.webp",
 	"starting_skill_ids": [
 		"attack"

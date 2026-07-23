@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "capsichum",
 	"rank": "F",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/capsichum.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "styrmling",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Zam": "⇄",
+		"Zap": "⇄"
+	},
 	"sprite_path": "res://assets/monsters/styrmling.webp",
 	"starting_skill_ids": [
 		"attack"

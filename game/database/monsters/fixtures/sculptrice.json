@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "sculptrice",
 	"rank": "C",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/sculptrice.png",
 	"starting_skill_ids": [
 		"attack"
 	],

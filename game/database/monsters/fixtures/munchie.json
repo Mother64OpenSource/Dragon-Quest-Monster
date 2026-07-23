@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "munchie",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Fre": "0",
+		"Ice": "0",
+		"Imm": "↓",
+		"Par": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zap": "HP"
+	},
 	"sprite_path": "res://assets/monsters/munchie.webp",
 	"starting_skill_ids": [
 		"attack"

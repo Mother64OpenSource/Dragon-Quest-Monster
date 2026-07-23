@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "wight_knight",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "0",
+		"Cnf": "↓",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wight_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

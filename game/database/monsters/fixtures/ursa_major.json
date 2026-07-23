@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "ursa_major",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/ursa_major.png",
 	"starting_skill_ids": [
 		"attack"
 	],

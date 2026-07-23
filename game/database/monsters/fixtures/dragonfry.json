@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "dragonfry",
 	"rank": "F",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wsh": "0",
+		"Zam": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/dragonfry.webp",
 	"starting_skill_ids": [
 		"attack"

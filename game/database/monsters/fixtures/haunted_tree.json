@@ -9,6 +9,27 @@
 	"family": "Zombie",
 	"id": "haunted_tree",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/haunted_tree.png",
 	"starting_skill_ids": [
 		"attack"
 	],

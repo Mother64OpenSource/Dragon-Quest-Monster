@@ -9,6 +9,23 @@
 	"family": "Zombie",
 	"id": "oren_wraithblade",
 	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "0",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/oren_wraithblade.webp",
 	"starting_skill_ids": [
 		"attack"

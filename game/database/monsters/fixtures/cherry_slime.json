@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "cherry_slime",
 	"rank": "C",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "0",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/cherry_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -1,19 +1,34 @@
 {
-    "id":  "holy_dragon_miraclea",
-    "display_name":  "Holy Dragon Miraclea",
-    "family":  "unknown",
-    "rank":  "SS",
-    "base_hp":  2025,
-    "base_mp":  1050,
-    "base_attack":  483,
-    "base_defense":  552,
-    "base_agility":  552,
-    "base_wisdom":  552,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/holy_dragon_miraclea.png"
+	"base_agility": 552.0,
+	"base_attack": 483.0,
+	"base_defense": 552.0,
+	"base_hp": 2025.0,
+	"base_mp": 1050.0,
+	"base_wisdom": 552.0,
+	"display_name": "Holy Dragon Miraclea",
+	"family": "unknown",
+	"id": "holy_dragon_miraclea",
+	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "0",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/holy_dragon_miraclea.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

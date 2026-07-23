@@ -9,6 +9,25 @@
 	"family": "Nature",
 	"id": "scorpion",
 	"rank": "E",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Crk": "↓",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Ice": "↓",
+		"Imm": "↓",
+		"Par": "0",
+		"Psn": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/scorpion.png",
 	"starting_skill_ids": [
 		"attack"
 	],

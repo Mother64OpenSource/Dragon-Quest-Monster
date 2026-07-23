@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "gigalumph",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wsh": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/gigalumph.png",
 	"starting_skill_ids": [
 		"attack"
 	],

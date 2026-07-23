@@ -9,6 +9,20 @@
 	"family": "Zombie",
 	"id": "skull_rider",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "0",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/skull_rider.webp",
 	"starting_skill_ids": [
 		"attack"

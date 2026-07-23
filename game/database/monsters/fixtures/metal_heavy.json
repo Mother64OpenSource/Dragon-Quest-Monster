@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "metal_heavy",
 	"rank": "D",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/metal_heavy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

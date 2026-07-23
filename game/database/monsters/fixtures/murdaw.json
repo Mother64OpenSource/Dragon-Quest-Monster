@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "murdaw",
 	"rank": "S",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Gbs": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/murdaw.webp",
 	"starting_skill_ids": [
 		"attack"

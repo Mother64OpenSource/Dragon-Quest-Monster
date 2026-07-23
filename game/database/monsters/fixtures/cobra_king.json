@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "cobra_king",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Crk": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/cobra_king.png",
 	"starting_skill_ids": [
 		"attack"
 	],

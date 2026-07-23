@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "meowgician",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"DrM": "½",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "0",
+		"Imm": "½",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/meowgician.png",
 	"starting_skill_ids": [
 		"attack"
 	],

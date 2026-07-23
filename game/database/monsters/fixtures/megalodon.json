@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "megalodon",
 	"rank": "B",
+	"resistances": {
+		"Ban": "↑",
+		"Blt": "⁎",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/megalodon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "flyguy",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/flyguy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "tri_winder",
 	"rank": "B",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/tri_winder.png",
 	"starting_skill_ids": [
 		"attack"
 	],

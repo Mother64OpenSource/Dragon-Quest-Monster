@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "tome",
 	"rank": "D",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/tome.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,28 @@
 	"family": "Nature",
 	"id": "wormonger",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Bng": "0",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "⁎",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "⁎",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wormonger.png",
 	"starting_skill_ids": [
 		"attack"
 	],

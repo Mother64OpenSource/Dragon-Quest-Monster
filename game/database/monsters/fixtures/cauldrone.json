@@ -9,6 +9,19 @@
 	"family": "Devil",
 	"id": "cauldrone",
 	"rank": "E",
+	"resistances": {
+		"Crk": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sap": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/cauldrone.png",
 	"starting_skill_ids": [
 		"attack"
 	],

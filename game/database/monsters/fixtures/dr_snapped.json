@@ -9,6 +9,28 @@
 	"family": "Zombie",
 	"id": "dr_snapped",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Crs": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/dr_snapped.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "dark_slime",
 	"rank": "B",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/dark_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "terrordactyl",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Wsh": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/terrordactyl.png",
 	"starting_skill_ids": [
 		"attack"
 	],

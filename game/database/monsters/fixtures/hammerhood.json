@@ -9,6 +9,20 @@
 	"family": "Beast",
 	"id": "hammerhood",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Fre": "½",
+		"Frz": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/hammerhood.webp",
 	"starting_skill_ids": [
 		"attack"

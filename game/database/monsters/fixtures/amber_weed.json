@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "amber_weed",
 	"rank": "C",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↑",
+		"Crk": "½",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/amber_weed.png",
 	"starting_skill_ids": [
 		"attack"
 	],

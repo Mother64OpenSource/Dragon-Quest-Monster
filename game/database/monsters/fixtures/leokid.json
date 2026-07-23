@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "leokid",
 	"rank": "B",
+	"resistances": {
+		"Blt": "↓",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dim": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Frz": "½",
+		"Fzl": "↓",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/leokid.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "wulfspade",
 	"rank": "A",
+	"resistances": {
+		"Ban": "½",
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fre": "½",
+		"Fzl": "↓",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "HP"
+	},
+	"sprite_path": "res://assets/monsters/wulfspade.png",
 	"starting_skill_ids": [
 		"attack"
 	],

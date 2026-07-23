@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "potentate_of_portals",
 	"rank": "SS",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dnk": "½",
+		"DrM": "½",
+		"Fre": "½",
+		"Ice": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "0"
+	},
 	"sprite_path": "res://assets/monsters/potentate_of_portals.webp",
 	"starting_skill_ids": [
 		"attack"

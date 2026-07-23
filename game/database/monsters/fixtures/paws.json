@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "paws",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Crk": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/paws.png",
 	"starting_skill_ids": [
 		"attack"
 	],

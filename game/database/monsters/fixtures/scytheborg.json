@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "scytheborg",
 	"rank": "C",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Ice": "½",
+		"Par": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/scytheborg.png",
 	"starting_skill_ids": [
 		"attack"
 	],

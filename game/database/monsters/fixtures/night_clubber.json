@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "night_clubber",
 	"rank": "S",
+	"resistances": {
+		"Ban": "0",
+		"Blt": "0",
+		"Bng": "0",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "↑",
+		"Wck": "0"
+	},
 	"sprite_path": "res://assets/monsters/night_clubber.webp",
 	"starting_skill_ids": [
 		"attack"

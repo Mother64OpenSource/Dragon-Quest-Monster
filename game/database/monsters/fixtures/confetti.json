@@ -9,6 +9,20 @@
 	"family": "Slime",
 	"id": "confetti",
 	"rank": "C",
+	"resistances": {
+		"Bng": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/confetti.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,18 @@
 	"family": "Material",
 	"id": "ragged_reaper",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/ragged_reaper.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "maniacal_mole",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "0",
+		"Dzl": "½",
+		"Frz": "½",
+		"Imm": "½",
+		"Psn": "½",
+		"Rbl": "0",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/maniacal_mole.png",
 	"starting_skill_ids": [
 		"attack"
 	],

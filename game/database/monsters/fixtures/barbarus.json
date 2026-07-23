@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "barbarus",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Ice": "0",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/barbarus.webp",
 	"starting_skill_ids": [
 		"attack"

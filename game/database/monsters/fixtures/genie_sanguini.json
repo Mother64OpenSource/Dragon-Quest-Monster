@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "genie_sanguini",
 	"rank": "A",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "⁎",
+		"Cnf": "0",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/genie_sanguini.png",
 	"starting_skill_ids": [
 		"attack"
 	],

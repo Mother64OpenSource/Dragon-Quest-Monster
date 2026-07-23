@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "skeleton_swordsman",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/skeleton_swordsman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

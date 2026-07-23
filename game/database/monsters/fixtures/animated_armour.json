@@ -9,6 +9,25 @@
 	"family": "Zombie",
 	"id": "animated_armour",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "½",
+		"Cnf": "↓",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "↓",
+		"Par": "↓",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/animated_armour.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "maizarugius",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "0",
+		"Bng": "↓",
+		"Cnf": "↑↑",
+		"Crk": "⁎",
+		"Crs": "½",
+		"DrM": "0",
+		"Imm": "↑↑",
+		"Par": "↑↑",
+		"Psn": "↑↑",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/maizarugius.png",
 	"starting_skill_ids": [
 		"attack"
 	],

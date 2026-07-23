@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "death_maestro",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Crs": "⁎",
+		"Dim": "0",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/death_maestro.png",
 	"starting_skill_ids": [
 		"attack"
 	],

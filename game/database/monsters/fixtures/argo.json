@@ -1,19 +1,36 @@
 {
-    "id":  "argo",
-    "display_name":  "Argo",
-    "family":  "Devil",
-    "rank":  "SS",
-    "base_hp":  1143,
-    "base_mp":  633,
-    "base_attack":  837,
-    "base_defense":  905,
-    "base_agility":  389,
-    "base_wisdom":  926,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/argo.png"
+	"base_agility": 389.0,
+	"base_attack": 837.0,
+	"base_defense": 905.0,
+	"base_hp": 1143.0,
+	"base_mp": 633.0,
+	"base_wisdom": 926.0,
+	"display_name": "Argo",
+	"family": "Devil",
+	"id": "argo",
+	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "↓",
+		"Bng": "⇄",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "0",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Par": "↓",
+		"Sag": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/argo.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

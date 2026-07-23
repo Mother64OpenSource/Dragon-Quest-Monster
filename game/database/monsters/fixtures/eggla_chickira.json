@@ -9,6 +9,28 @@
 	"family": "unknown",
 	"id": "eggla_chickira",
 	"rank": "S",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "½",
+		"Gbs": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/eggla_chickira.png",
 	"starting_skill_ids": [
 		"attack"
 	],

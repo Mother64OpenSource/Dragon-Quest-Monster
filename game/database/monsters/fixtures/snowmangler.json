@@ -9,6 +9,24 @@
 	"family": "Slime",
 	"id": "snowmangler",
 	"rank": "E",
+	"resistances": {
+		"Crk": "HP",
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "⁎",
+		"Gbs": "0",
+		"Ice": "HP",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "↓",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/snowmangler.png",
 	"starting_skill_ids": [
 		"attack"
 	],

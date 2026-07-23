@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "grim_grinner",
 	"rank": "B",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/grim_grinner.png",
 	"starting_skill_ids": [
 		"attack"
 	],

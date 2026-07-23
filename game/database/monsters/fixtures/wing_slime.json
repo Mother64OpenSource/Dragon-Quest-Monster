@@ -9,6 +9,19 @@
 	"family": "Slime",
 	"id": "wing_slime",
 	"rank": "F",
+	"resistances": {
+		"Crs": "½",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/wing_slime.webp",
 	"starting_skill_ids": [
 		"attack"

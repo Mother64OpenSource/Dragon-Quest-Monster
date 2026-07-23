@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "teeny_sanguini",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "0",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "0"
+	},
+	"sprite_path": "res://assets/monsters/teeny_sanguini.png",
 	"starting_skill_ids": [
 		"attack"
 	],

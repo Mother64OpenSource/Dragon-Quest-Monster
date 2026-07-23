@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "bullfinch",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Sag": "0",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/bullfinch.png",
 	"starting_skill_ids": [
 		"attack"
 	],

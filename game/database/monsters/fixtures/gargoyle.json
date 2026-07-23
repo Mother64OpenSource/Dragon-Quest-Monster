@@ -9,6 +9,24 @@
 	"family": "Beast",
 	"id": "gargoyle",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Fzl": "½",
+		"Gbs": "½",
+		"Imm": "0",
+		"Rbl": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/gargoyle.png",
 	"starting_skill_ids": [
 		"attack"
 	],

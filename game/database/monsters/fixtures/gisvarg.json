@@ -9,6 +9,24 @@
 	"family": "unknown",
 	"id": "gisvarg",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "↓",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"DrM": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zam": "⇄"
+	},
 	"sprite_path": "res://assets/monsters/gisvarg.webp",
 	"starting_skill_ids": [
 		"attack"

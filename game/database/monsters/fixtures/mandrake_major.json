@@ -9,6 +9,22 @@
 	"family": "Dragon",
 	"id": "mandrake_major",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Bng": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/mandrake_major.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "drohl_diabolist",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Blt": "↓",
+		"Crs": "⁎",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "0",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "0"
+	},
+	"sprite_path": "res://assets/monsters/drohl_diabolist.png",
 	"starting_skill_ids": [
 		"attack"
 	],

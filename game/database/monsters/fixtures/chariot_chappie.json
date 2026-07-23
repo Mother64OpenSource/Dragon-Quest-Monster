@@ -9,6 +9,21 @@
 	"family": "Material",
 	"id": "chariot_chappie",
 	"rank": "E",
+	"resistances": {
+		"Bng": "0",
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/chariot_chappie.png",
 	"starting_skill_ids": [
 		"attack"
 	],

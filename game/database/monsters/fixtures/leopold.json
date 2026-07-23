@@ -9,6 +9,26 @@
 	"family": "Beast",
 	"id": "leopold",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "0",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "½",
+		"Par": "↓",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "0",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/leopold.webp",
 	"starting_skill_ids": [
 		"attack"

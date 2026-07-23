@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "stormgate_citadel",
 	"rank": "A",
+	"resistances": {
+		"Ban": "½",
+		"Cnf": "0",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "0",
+		"DrM": "0",
+		"Hck": "↓",
+		"Ice": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "0",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zam": "½",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/stormgate_citadel.png",
 	"starting_skill_ids": [
 		"attack"
 	],

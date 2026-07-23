@@ -7,15 +7,13 @@ extends SceneTree
 ##
 ## Run via: godot --headless --script res://tests/tools/remove_background.gd
 
-const TARGET_IDS: Array[String] = [
-	"argo", "dark_crystal", "gold_ninja_slime", "hammibal", "king_godfrey",
-	"maizar", "silver_ninja_slime", "numen", "holy_dragon_miraclea", "leida_metes_temple"
-]
 const COLOR_TOLERANCE := 0.06
 
 func _initialize() -> void:
 	var assets_dir := "res://assets/monsters"
-	for id in TARGET_IDS:
+	var target_ids := _find_opaque_ids(assets_dir)
+	print("Processing %d opaque images" % target_ids.size())
+	for id in target_ids:
 		var path := _find_existing_path(assets_dir, id)
 		if path.is_empty():
 			print("SKIP (not found): %s" % id)
@@ -40,6 +38,37 @@ func _initialize() -> void:
 			DirAccess.remove_absolute(old_global)
 		print("OK: %s -> %s.png" % [id, id])
 	quit(0)
+
+func _find_opaque_ids(dir_path: String) -> Array[String]:
+	var ids: Array[String] = []
+	var dir := DirAccess.open(dir_path)
+	if dir == null:
+		return ids
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir() and not file_name.ends_with(".import"):
+			var path := dir_path + "/" + file_name
+			var image := Image.load_from_file(ProjectSettings.globalize_path(path))
+			if image != null and not _has_transparent_background(image):
+				ids.append(file_name.get_basename())
+		file_name = dir.get_next()
+	dir.list_dir_end()
+	return ids
+
+func _has_transparent_background(image: Image) -> bool:
+	var w := image.get_width()
+	var h := image.get_height()
+	if w == 0 or h == 0:
+		return false
+	var corners := [
+		Vector2i(0, 0), Vector2i(w - 1, 0), Vector2i(0, h - 1), Vector2i(w - 1, h - 1)
+	]
+	for c in corners:
+		var pixel := image.get_pixel(c.x, c.y)
+		if pixel.a < 0.95:
+			return true
+	return false
 
 func _find_existing_path(dir_path: String, id: String) -> String:
 	for ext in ["webp", "png", "jpg", "jpeg"]:

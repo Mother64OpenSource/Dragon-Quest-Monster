@@ -1,19 +1,36 @@
 {
-    "id":  "silver_ninja_slime",
-    "display_name":  "Silver Ninja Slime",
-    "family":  "Slime",
-    "rank":  "S",
-    "base_hp":  2035,
-    "base_mp":  965,
-    "base_attack":  503,
-    "base_defense":  1144,
-    "base_agility":  571,
-    "base_wisdom":  1181,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/silver_ninja_slime.png"
+	"base_agility": 571.0,
+	"base_attack": 503.0,
+	"base_defense": 1144.0,
+	"base_hp": 2035.0,
+	"base_mp": 965.0,
+	"base_wisdom": 1181.0,
+	"display_name": "Silver Ninja Slime",
+	"family": "Slime",
+	"id": "silver_ninja_slime",
+	"rank": "S",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "⇄",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dnk": "0",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sap": "↓",
+		"Siz": "0",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/silver_ninja_slime.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

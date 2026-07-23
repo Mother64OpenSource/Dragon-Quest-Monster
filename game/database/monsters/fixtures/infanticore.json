@@ -9,6 +9,27 @@
 	"family": "Beast",
 	"id": "infanticore",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "½",
+		"Crk": "↓",
+		"Crs": "½",
+		"Dec": "½",
+		"Dnk": "½",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "½",
+		"Slp": "↑",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/infanticore.png",
 	"starting_skill_ids": [
 		"attack"
 	],

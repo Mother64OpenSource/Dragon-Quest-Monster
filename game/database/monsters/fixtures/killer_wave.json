@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "killer_wave",
 	"rank": "E",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/killer_wave.png",
 	"starting_skill_ids": [
 		"attack"
 	],

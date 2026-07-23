@@ -9,6 +9,22 @@
 	"family": "Material",
 	"id": "aquarella",
 	"rank": "E",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/aquarella.png",
 	"starting_skill_ids": [
 		"attack"
 	],

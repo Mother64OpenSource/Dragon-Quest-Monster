@@ -9,6 +9,27 @@
 	"family": "Dragon",
 	"id": "rugius",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "½",
+		"Blt": "⁎",
+		"Crk": "↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Dzl": "½",
+		"Fzl": "↑",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Wck": "0",
+		"Zam": "0",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/rugius.webp",
 	"starting_skill_ids": [
 		"attack"

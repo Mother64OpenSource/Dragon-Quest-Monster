@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "boh",
 	"rank": "A",
+	"resistances": {
+		"Bng": "½",
+		"Cnf": "↓",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fzl": "0",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/boh.png",
 	"starting_skill_ids": [
 		"attack"
 	],

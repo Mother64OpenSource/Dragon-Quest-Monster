@@ -9,6 +9,20 @@
 	"family": "Material",
 	"id": "wax_murderer",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "0",
+		"Sap": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/wax_murderer.webp",
 	"starting_skill_ids": [
 		"attack"

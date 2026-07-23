@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "peeper",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "↓",
+		"Wck": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/peeper.png",
 	"starting_skill_ids": [
 		"attack"
 	],

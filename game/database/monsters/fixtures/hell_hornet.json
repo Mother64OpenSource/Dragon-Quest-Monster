@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "hell_hornet",
 	"rank": "B",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Frz": "½",
+		"Gbs": "↓",
+		"Imm": "↓",
+		"Par": "0",
+		"Psn": "0",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/hell_hornet.png",
 	"starting_skill_ids": [
 		"attack"
 	],

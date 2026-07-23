@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "cat_riberio",
 	"rank": "S",
+	"resistances": {
+		"Ban": "↓",
+		"Blt": "½",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"DrM": "½",
+		"Dzl": "½",
+		"Imm": "0",
+		"Par": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/cat_riberio.png",
 	"starting_skill_ids": [
 		"attack"
 	],

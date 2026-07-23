@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "mudslinger",
 	"rank": "E",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/mudslinger.png",
 	"starting_skill_ids": [
 		"attack"
 	],

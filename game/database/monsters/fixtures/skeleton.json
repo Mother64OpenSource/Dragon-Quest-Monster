@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "skeleton",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Siz": "↓",
+		"Wck": "0",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/skeleton.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,27 @@
 	"family": "Slime",
 	"id": "slabbit",
 	"rank": "C",
+	"resistances": {
+		"Abi": "↓",
+		"Ban": "0",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Imm": "½",
+		"Par": "⁎",
+		"Psn": "½",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Slp": "½",
+		"Wck": "½",
+		"Wsh": "½",
+		"Zam": "↓",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/slabbit.png",
 	"starting_skill_ids": [
 		"attack"
 	],

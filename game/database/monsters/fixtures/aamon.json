@@ -9,6 +9,25 @@
 	"family": "Devil",
 	"id": "aamon",
 	"rank": "S",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "⁎",
+		"Fzl": "0",
+		"Gbs": "½",
+		"Imm": "0",
+		"Par": "↑",
+		"Psn": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/aamon.webp",
 	"starting_skill_ids": [
 		"attack"

@@ -9,6 +9,25 @@
 	"family": "Beast",
 	"id": "prism_peacock",
 	"rank": "S",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dzl": "⁎",
+		"Fre": "0",
+		"Frz": "0",
+		"Gbs": "½",
+		"Ice": "0",
+		"Par": "↓",
+		"Psn": "↓",
+		"Sag": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/prism_peacock.webp",
 	"starting_skill_ids": [
 		"attack"

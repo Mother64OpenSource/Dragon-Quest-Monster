@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "herb_man",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⇄",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/herb_man.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,20 @@
 	"family": "Devil",
 	"id": "pan_piper",
 	"rank": "F",
+	"resistances": {
+		"Abi": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/pan_piper.webp",
 	"starting_skill_ids": [
 		"attack"

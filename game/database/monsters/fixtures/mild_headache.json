@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "mild_headache",
 	"rank": "D",
+	"resistances": {
+		"Abi": "⁎",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/mild_headache.png",
 	"starting_skill_ids": [
 		"attack"
 	],

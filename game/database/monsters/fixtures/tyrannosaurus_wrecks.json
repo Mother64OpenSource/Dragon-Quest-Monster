@@ -9,6 +9,25 @@
 	"family": "unknown",
 	"id": "tyrannosaurus_wrecks",
 	"rank": "S",
+	"resistances": {
+		"Abi": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "½",
+		"Dim": "↓",
+		"DrM": "½",
+		"Fzl": "½",
+		"Hck": "↓",
+		"Imm": "0",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
 	"sprite_path": "res://assets/monsters/tyrannosaurus_wrecks.webp",
 	"starting_skill_ids": [
 		"attack"

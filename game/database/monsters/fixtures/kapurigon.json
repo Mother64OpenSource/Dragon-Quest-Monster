@@ -9,6 +9,28 @@
 	"family": "Zombie",
 	"id": "kapurigon",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "½",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Wsh": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/kapurigon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

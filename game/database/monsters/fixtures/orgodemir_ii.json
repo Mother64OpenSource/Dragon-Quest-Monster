@@ -9,6 +9,27 @@
 	"family": "unknown",
 	"id": "orgodemir_ii",
 	"rank": "SS",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "↓",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↑",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Fre": "⇄",
+		"Ice": "⇄",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Rbl": "↓",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "½"
+	},
 	"sprite_path": "res://assets/monsters/orgodemir_ii.webp",
 	"starting_skill_ids": [
 		"attack"

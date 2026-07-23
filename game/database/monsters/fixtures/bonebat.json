@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "bonebat",
 	"rank": "B",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "⁎",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/bonebat.png",
 	"starting_skill_ids": [
 		"attack"
 	],

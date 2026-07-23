@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "night_knight",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "↓",
+		"Crk": "0",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"DrM": "↓",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sag": "½",
+		"Sap": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/night_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],

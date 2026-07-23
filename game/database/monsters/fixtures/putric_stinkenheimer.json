@@ -9,6 +9,27 @@
 	"family": "Zombie",
 	"id": "putric_stinkenheimer",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Cnf": "↓",
+		"Crk": "½",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "½",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/putric_stinkenheimer.png",
 	"starting_skill_ids": [
 		"attack"
 	],

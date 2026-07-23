@@ -9,6 +9,27 @@
 	"family": "Devil",
 	"id": "delusionist",
 	"rank": "A",
+	"resistances": {
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "↓",
+		"Sag": "↓",
+		"Sap": "↓",
+		"Wck": "0",
+		"Wsh": "↓",
+		"Zam": "0",
+		"Zap": "↑"
+	},
+	"sprite_path": "res://assets/monsters/delusionist.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,23 @@
 	"family": "Dragon",
 	"id": "mandrake_marshal",
 	"rank": "C",
+	"resistances": {
+		"Abi": "0",
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/mandrake_marshal.png",
 	"starting_skill_ids": [
 		"attack"
 	],

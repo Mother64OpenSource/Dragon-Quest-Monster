@@ -9,6 +9,22 @@
 	"family": "Beast",
 	"id": "tigertaur",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Blt": "0",
+		"Bng": "⁎",
+		"Cnf": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Imm": "½",
+		"Par": "½",
+		"Sag": "↓",
+		"Slp": "↓",
+		"Wck": "½"
+	},
+	"sprite_path": "res://assets/monsters/tigertaur.png",
 	"starting_skill_ids": [
 		"attack"
 	],

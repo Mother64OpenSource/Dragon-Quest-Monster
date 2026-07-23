@@ -9,6 +9,28 @@
 	"family": "Dragon",
 	"id": "ethereal_serpent",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "⁎",
+		"Cnf": "½",
+		"Crs": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fre": "0",
+		"Gbs": "⁎",
+		"Imm": "0",
+		"Par": "½",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "½",
+		"Wck": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/ethereal_serpent.png",
 	"starting_skill_ids": [
 		"attack"
 	],

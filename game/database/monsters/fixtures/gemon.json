@@ -9,6 +9,26 @@
 	"family": "Devil",
 	"id": "gemon",
 	"rank": "A",
+	"resistances": {
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Gbs": "0",
+		"Hck": "↓",
+		"Imm": "½",
+		"Par": "↑",
+		"Psn": "½",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Zam": "0",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/gemon.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "bishop_ladja",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Blt": "↓",
+		"Bng": "↑",
+		"Crk": "↑",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "0",
+		"Dzl": "↓",
+		"Fre": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "↑",
+		"Zam": "HP",
+		"Zap": "↑"
+	},
+	"sprite_path": "res://assets/monsters/bishop_ladja.png",
 	"starting_skill_ids": [
 		"attack"
 	],

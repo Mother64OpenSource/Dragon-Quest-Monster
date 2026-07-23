@@ -9,6 +9,26 @@
 	"family": "Dragon",
 	"id": "beast_of_the_sea",
 	"rank": "SS",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Crk": "0",
+		"Crs": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Slp": "0",
+		"Wck": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/beast_of_the_sea.png",
 	"starting_skill_ids": [
 		"attack"
 	],

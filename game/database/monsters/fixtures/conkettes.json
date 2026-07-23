@@ -9,6 +9,22 @@
 	"family": "Devil",
 	"id": "conkettes",
 	"rank": "A",
+	"resistances": {
+		"Abi": "½",
+		"Blt": "↓",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Wck": "⁎",
+		"Wsh": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/conkettes.png",
 	"starting_skill_ids": [
 		"attack"
 	],

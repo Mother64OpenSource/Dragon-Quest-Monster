@@ -9,6 +9,23 @@
 	"family": "Material",
 	"id": "lucky_bag",
 	"rank": "D",
+	"resistances": {
+		"Cnf": "↓",
+		"Crk": "½",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Psn": "⁎",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zam": "0",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/lucky_bag.png",
 	"starting_skill_ids": [
 		"attack"
 	],

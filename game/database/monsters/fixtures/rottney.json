@@ -9,6 +9,23 @@
 	"family": "unknown",
 	"id": "rottney",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "½",
+		"Bng": "↓",
+		"Cnf": "0",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "HP",
+		"Zam": "HP",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/rottney.png",
 	"starting_skill_ids": [
 		"attack"
 	],

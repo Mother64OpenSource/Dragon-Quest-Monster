@@ -9,6 +9,22 @@
 	"family": "Nature",
 	"id": "beetleboy",
 	"rank": "B",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Blt": "↓",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "0",
+		"Wsh": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/beetleboy.png",
 	"starting_skill_ids": [
 		"attack"
 	],

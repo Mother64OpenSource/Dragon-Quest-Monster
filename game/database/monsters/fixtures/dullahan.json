@@ -9,6 +9,22 @@
 	"family": "Zombie",
 	"id": "dullahan",
 	"rank": "A",
+	"resistances": {
+		"Abi": "0",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/dullahan.png",
 	"starting_skill_ids": [
 		"attack"
 	],

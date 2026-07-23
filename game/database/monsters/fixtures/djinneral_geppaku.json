@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_geppaku",
 	"rank": "D",
+	"resistances": {
+		"Blt": "0",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"Dnk": "0",
+		"DrM": "½",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_geppaku.png",
 	"starting_skill_ids": [
 		"attack"
 	],

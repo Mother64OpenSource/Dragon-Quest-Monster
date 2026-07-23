@@ -9,6 +9,25 @@
 	"family": "Material",
 	"id": "sand_wave",
 	"rank": "D",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↑↑",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Rbl": "0",
+		"Siz": "↓",
+		"Slp": "↑↑",
+		"Wck": "0",
+		"Wsh": "0"
+	},
+	"sprite_path": "res://assets/monsters/sand_wave.png",
 	"starting_skill_ids": [
 		"attack"
 	],

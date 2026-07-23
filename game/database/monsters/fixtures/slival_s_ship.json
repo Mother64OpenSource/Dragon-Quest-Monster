@@ -9,6 +9,23 @@
 	"family": "Slime",
 	"id": "slival_s_ship",
 	"rank": "SS",
+	"resistances": {
+		"Cnf": "↑↑",
+		"Crs": "0",
+		"Dec": "↓",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Imm": "↑↑",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Sag": "½",
+		"Siz": "0",
+		"Slp": "↑↑",
+		"Wck": "↑↑",
+		"Wsh": "HP",
+		"Zap": "0"
+	},
+	"sprite_path": "res://assets/monsters/slival_s_ship.png",
 	"starting_skill_ids": [
 		"attack"
 	],

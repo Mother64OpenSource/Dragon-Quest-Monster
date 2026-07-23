@@ -9,6 +9,21 @@
 	"family": "Nature",
 	"id": "stark_raven",
 	"rank": "F",
+	"resistances": {
+		"Abi": "½",
+		"Ban": "⁎",
+		"Bng": "½",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Dzl": "½",
+		"Gbs": "↓",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wsh": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/stark_raven.webp",
 	"starting_skill_ids": [
 		"attack"

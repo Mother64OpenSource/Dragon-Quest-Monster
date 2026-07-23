@@ -9,6 +9,25 @@
 	"family": "Dragon",
 	"id": "seasaur",
 	"rank": "D",
+	"resistances": {
+		"Abi": "↓",
+		"Blt": "⁎",
+		"Crk": "½",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Ice": "½",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/seasaur.png",
 	"starting_skill_ids": [
 		"attack"
 	],

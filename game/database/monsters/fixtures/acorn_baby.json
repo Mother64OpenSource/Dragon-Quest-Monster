@@ -9,6 +9,20 @@
 	"family": "Nature",
 	"id": "acorn_baby",
 	"rank": "E",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "0",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Imm": "↓",
+		"Par": "½",
+		"Siz": "↓",
+		"Slp": "⁎",
+		"Wsh": "⁎",
+		"Zap": "½"
+	},
+	"sprite_path": "res://assets/monsters/acorn_baby.png",
 	"starting_skill_ids": [
 		"attack"
 	],

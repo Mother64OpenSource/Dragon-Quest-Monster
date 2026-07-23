@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "brushead",
 	"rank": "F",
+	"resistances": {
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Fre": "½",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Rbl": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/brushead.png",
 	"starting_skill_ids": [
 		"attack"
 	],

@@ -1,19 +1,44 @@
 {
-    "id":  "king_godfrey",
-    "display_name":  "King Godfrey",
-    "family":  "Zombie",
-    "rank":  "S",
-    "base_hp":  1584,
-    "base_mp":  756,
-    "base_attack":  546,
-    "base_defense":  546,
-    "base_agility":  664,
-    "base_wisdom":  1008,
-    "starting_skill_ids":  [
-                               "attack"
-                           ],
-    "starting_trait_ids":  [
-
-                           ],
-    "sprite_path":  "res://assets/monsters/king_godfrey.png"
+	"base_agility": 664.0,
+	"base_attack": 546.0,
+	"base_defense": 546.0,
+	"base_hp": 1584.0,
+	"base_mp": 756.0,
+	"base_wisdom": 1008.0,
+	"display_name": "King Godfrey",
+	"family": "Zombie",
+	"id": "king_godfrey",
+	"rank": "S",
+	"resistances": {
+		"Abi": "⁎",
+		"Bng": "HP",
+		"Cnf": "↑",
+		"Crk": "↓",
+		"Crs": "0",
+		"Dec": "↓",
+		"Dim": "↓",
+		"Dnk": "0",
+		"DrM": "½",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "½",
+		"Gbs": "⁎",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "⁎",
+		"Sag": "↓",
+		"Sap": "½",
+		"Siz": "↓",
+		"Slp": "½",
+		"Wck": "½",
+		"Wsh": "HP",
+		"Zam": "½",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/king_godfrey.png",
+	"starting_skill_ids": [
+		"attack"
+	],
+	"starting_trait_ids": []
 }

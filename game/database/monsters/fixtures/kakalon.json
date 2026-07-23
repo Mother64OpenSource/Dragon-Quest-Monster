@@ -9,6 +9,26 @@
 	"family": "unknown",
 	"id": "kakalon",
 	"rank": "S",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "HP",
+		"Crs": "↑",
+		"Dim": "½",
+		"Dnk": "↓",
+		"DrM": "½",
+		"Fzl": "½",
+		"Gbs": "↓",
+		"Ice": "HP",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Slp": "½",
+		"Wck": "0",
+		"Zap": "⁎"
+	},
 	"sprite_path": "res://assets/monsters/kakalon.webp",
 	"starting_skill_ids": [
 		"attack"

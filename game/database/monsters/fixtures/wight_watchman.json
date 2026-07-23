@@ -9,6 +9,24 @@
 	"family": "Zombie",
 	"id": "wight_watchman",
 	"rank": "C",
+	"resistances": {
+		"Abi": "⁎",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "⁎",
+		"Hck": "↓",
+		"Imm": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wsh": "½",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/wight_watchman.png",
 	"starting_skill_ids": [
 		"attack"
 	],

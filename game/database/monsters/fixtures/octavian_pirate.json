@@ -9,6 +9,21 @@
 	"family": "Devil",
 	"id": "octavian_pirate",
 	"rank": "B",
+	"resistances": {
+		"Blt": "½",
+		"Cnf": "½",
+		"Crk": "½",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "⁎",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Par": "↓",
+		"Sag": "½",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/octavian_pirate.png",
 	"starting_skill_ids": [
 		"attack"
 	],

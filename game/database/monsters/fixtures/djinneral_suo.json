@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "djinneral_suo",
 	"rank": "D",
+	"resistances": {
+		"Abi": "0",
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Frz": "0",
+		"Imm": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½"
+	},
+	"sprite_path": "res://assets/monsters/djinneral_suo.png",
 	"starting_skill_ids": [
 		"attack"
 	],

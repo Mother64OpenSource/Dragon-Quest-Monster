@@ -9,6 +9,21 @@
 	"family": "Dragon",
 	"id": "damselfly",
 	"rank": "E",
+	"resistances": {
+		"Blt": "⁎",
+		"Cnf": "0",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↓",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "½",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/damselfly.png",
 	"starting_skill_ids": [
 		"attack"
 	],

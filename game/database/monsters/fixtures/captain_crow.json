@@ -9,6 +9,21 @@
 	"family": "Zombie",
 	"id": "captain_crow",
 	"rank": "S",
+	"resistances": {
+		"Abi": "0",
+		"Crs": "⁎",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Gbs": "0",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Wck": "0",
+		"Zam": "½"
+	},
 	"sprite_path": "res://assets/monsters/captain_crow.webp",
 	"starting_skill_ids": [
 		"attack"

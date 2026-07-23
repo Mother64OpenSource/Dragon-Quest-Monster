@@ -9,6 +9,26 @@
 	"family": "Nature",
 	"id": "yggdrasil",
 	"rank": "SS",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "½",
+		"Cnf": "↑↑",
+		"Crk": "½",
+		"Crs": "↑↑",
+		"Dec": "↓",
+		"Dim": "½",
+		"DrM": "⁎",
+		"Fre": "↓",
+		"Ice": "0",
+		"Imm": "½",
+		"Par": "0",
+		"Psn": "↑↑",
+		"Siz": "↓",
+		"Slp": "0",
+		"Wck": "↑↑",
+		"Wsh": "0",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/yggdrasil.webp",
 	"starting_skill_ids": [
 		"attack"

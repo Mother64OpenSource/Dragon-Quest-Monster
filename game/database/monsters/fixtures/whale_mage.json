@@ -9,6 +9,24 @@
 	"family": "Devil",
 	"id": "whale_mage",
 	"rank": "A",
+	"resistances": {
+		"Ban": "0",
+		"Cnf": "0",
+		"Crk": "½",
+		"Crs": "0",
+		"Dec": "½",
+		"Dim": "↓",
+		"DrM": "0",
+		"Frz": "⁎",
+		"Fzl": "⁎",
+		"Imm": "0",
+		"Par": "↑↑",
+		"Psn": "0",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Zap": "↓"
+	},
+	"sprite_path": "res://assets/monsters/whale_mage.png",
 	"starting_skill_ids": [
 		"attack"
 	],

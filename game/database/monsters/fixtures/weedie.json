@@ -9,6 +9,19 @@
 	"family": "Slime",
 	"id": "weedie",
 	"rank": "F",
+	"resistances": {
+		"Ban": "½",
+		"Crs": "½",
+		"Dec": "↑",
+		"DrM": "↓",
+		"Dzl": "⁎",
+		"Fzl": "⁎",
+		"Par": "⁎",
+		"Sag": "½",
+		"Siz": "⁎",
+		"Zam": "↓",
+		"Zap": "½"
+	},
 	"sprite_path": "res://assets/monsters/weedie.webp",
 	"starting_skill_ids": [
 		"attack"

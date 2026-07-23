@@ -9,6 +9,21 @@
 	"family": "unknown",
 	"id": "kukri",
 	"rank": "C",
+	"resistances": {
+		"Bng": "↓",
+		"Cnf": "½",
+		"Crk": "⁎",
+		"Crs": "↓",
+		"DrM": "½",
+		"Fzl": "½",
+		"Ice": "½",
+		"Sag": "↓",
+		"Sap": "½",
+		"Wck": "0",
+		"Wsh": "½",
+		"Zap": "⇄"
+	},
+	"sprite_path": "res://assets/monsters/kukri.png",
 	"starting_skill_ids": [
 		"attack"
 	],

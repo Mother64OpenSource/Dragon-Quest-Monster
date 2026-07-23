@@ -9,6 +9,20 @@
 	"family": "Dragon",
 	"id": "wormbat",
 	"rank": "C",
+	"resistances": {
+		"Blt": "⁎",
+		"Dim": "½",
+		"Dnk": "↓",
+		"Dzl": "½",
+		"Gbs": "⁎",
+		"Imm": "⁎",
+		"Psn": "↑",
+		"Rbl": "↓",
+		"Sap": "↓",
+		"Siz": "0",
+		"Zam": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/wormbat.png",
 	"starting_skill_ids": [
 		"attack"
 	],

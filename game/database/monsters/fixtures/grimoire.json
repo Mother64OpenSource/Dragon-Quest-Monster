@@ -9,6 +9,27 @@
 	"family": "Material",
 	"id": "grimoire",
 	"rank": "C",
+	"resistances": {
+		"Abi": "½",
+		"Cnf": "↑",
+		"Crs": "½",
+		"Dim": "½",
+		"Dnk": "½",
+		"DrM": "0",
+		"Fzl": "0",
+		"Gbs": "↓",
+		"Imm": "½",
+		"Par": "½",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Slp": "0",
+		"Wck": "⁎",
+		"Wsh": "↓",
+		"Zap": "⁎"
+	},
+	"sprite_path": "res://assets/monsters/grimoire.png",
 	"starting_skill_ids": [
 		"attack"
 	],

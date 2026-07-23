@@ -9,6 +9,21 @@
 	"family": "Beast",
 	"id": "vampire_cat",
 	"rank": "F",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Crs": "↓",
+		"Dec": "½",
+		"Dzl": "0",
+		"Frz": "½",
+		"Fzl": "0",
+		"Par": "↓",
+		"Psn": "↓",
+		"Slp": "↓"
+	},
 	"sprite_path": "res://assets/monsters/vampire_cat.webp",
 	"starting_skill_ids": [
 		"attack"

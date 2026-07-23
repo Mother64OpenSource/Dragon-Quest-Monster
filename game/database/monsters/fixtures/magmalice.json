@@ -9,6 +9,28 @@
 	"family": "Material",
 	"id": "magmalice",
 	"rank": "D",
+	"resistances": {
+		"Ban": "↓",
+		"Cnf": "↓",
+		"Crk": "↓",
+		"Dim": "↓",
+		"Dnk": "½",
+		"DrM": "⁎",
+		"Fre": "HP",
+		"Frz": "HP",
+		"Fzl": "↓",
+		"Gbs": "↓",
+		"Ice": "↓",
+		"Psn": "0",
+		"Rbl": "½",
+		"Sag": "½",
+		"Sap": "↓",
+		"Siz": "0",
+		"Slp": "½",
+		"Wck": "⁎",
+		"Wsh": "↓"
+	},
+	"sprite_path": "res://assets/monsters/magmalice.png",
 	"starting_skill_ids": [
 		"attack"
 	],

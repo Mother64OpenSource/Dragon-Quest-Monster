@@ -9,6 +9,26 @@
 	"family": "Zombie",
 	"id": "monkey_zombie",
 	"rank": "A",
+	"resistances": {
+		"Abi": "⁎",
+		"Ban": "↓",
+		"Crk": "½",
+		"Crs": "0",
+		"Dim": "↓",
+		"Dnk": "⁎",
+		"Dzl": "↓",
+		"Frz": "↓",
+		"Fzl": "↓",
+		"Gbs": "⁎",
+		"Ice": "½",
+		"Psn": "½",
+		"Rbl": "⁎",
+		"Sap": "½",
+		"Slp": "↓",
+		"Wck": "0",
+		"Zam": "½"
+	},
+	"sprite_path": "res://assets/monsters/monkey_zombie.png",
 	"starting_skill_ids": [
 		"attack"
 	],

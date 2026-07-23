@@ -9,6 +9,23 @@
 	"family": "Beast",
 	"id": "don_mole",
 	"rank": "A",
+	"resistances": {
+		"Ban": "⁎",
+		"Bng": "⁎",
+		"Crk": "↓",
+		"Dec": "½",
+		"Dim": "↓",
+		"Dnk": "⇄",
+		"DrM": "½",
+		"Dzl": "⁎",
+		"Frz": "½",
+		"Gbs": "↓",
+		"Imm": "0",
+		"Sag": "↓",
+		"Siz": "½",
+		"Slp": "↓"
+	},
+	"sprite_path": "res://assets/monsters/don_mole.png",
 	"starting_skill_ids": [
 		"attack"
 	],
