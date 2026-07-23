@@ -1,0 +1,36 @@
+{
+	"display_name": "Frizz & Zam",
+	"id": "frizz_zam",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizz",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zam",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shade_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 70
+		}
+	]
+}

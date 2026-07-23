@@ -1,0 +1,51 @@
+{
+	"display_name": "Hive Mind",
+	"id": "hive_mind",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nature_nerfer",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 100
+		}
+	]
+}

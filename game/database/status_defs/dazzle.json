@@ -1,0 +1,15 @@
+{
+	"display_name": "Dazzle",
+	"duration_turns": 3,
+	"id": "dazzle",
+	"skip_turn_chance": 0.0,
+	"stat_mods_on_apply": [
+		{
+			"chance": 1.0,
+			"stages": -1,
+			"stat_name": "agility",
+			"target_self": true
+		}
+	],
+	"tick_damage_percent": 0.0
+}

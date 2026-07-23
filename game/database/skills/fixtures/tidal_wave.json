@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Tidal Wave",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 147,
+			"type": "damage"
+		}
+	],
+	"id": "tidal_wave",
+	"mp_cost": 44,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"dance_breaker",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 662.0,
 	"base_attack": 728.0,
 	"base_defense": 785.0,
@@ -32,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

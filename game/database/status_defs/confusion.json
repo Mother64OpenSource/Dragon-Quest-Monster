@@ -1,0 +1,8 @@
+{
+	"display_name": "Confusion",
+	"duration_turns": 3,
+	"id": "confusion",
+	"skip_turn_chance": 0.33,
+	"stat_mods_on_apply": [],
+	"tick_damage_percent": 0.0
+}

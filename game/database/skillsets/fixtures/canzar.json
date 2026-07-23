@@ -1,0 +1,46 @@
+{
+	"display_name": "Canzar",
+	"id": "canzar",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slime_dunk",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_locust",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "pearly_gates",
+			"sp": 120
+		}
+	]
+}

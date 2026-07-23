@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Mist Me",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 45,
+			"type": "damage"
+		}
+	],
+	"id": "mist_me",
+	"mp_cost": 10,
+	"priority": 0,
+	"target_type": "self"
+}

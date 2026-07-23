@@ -1,0 +1,41 @@
+{
+	"display_name": "Urnhaler",
+	"id": "urnhaler",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomph",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lift_demerit",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 200
+		}
+	]
+}

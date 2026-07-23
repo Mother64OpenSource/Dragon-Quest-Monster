@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Flute of Fortification",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 105,
+			"type": "damage"
+		}
+	],
+	"id": "flute_of_fortification",
+	"mp_cost": 30,
+	"priority": 0,
+	"target_type": "self"
+}

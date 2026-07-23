@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"barricade",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 550.0,
 	"base_attack": 831.0,
 	"base_defense": 1056.0,
@@ -29,5 +34,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

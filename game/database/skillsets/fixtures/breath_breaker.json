@@ -1,0 +1,41 @@
+{
+	"display_name": "Breath Breaker",
+	"id": "breath_breaker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "dragon_slash",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gobstopper",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "breathtaking_bash",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 64
+		}
+	]
+}

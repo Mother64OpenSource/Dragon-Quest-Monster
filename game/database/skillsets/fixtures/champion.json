@@ -1,0 +1,41 @@
+{
+	"display_name": "Champion",
+	"id": "champion",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 7
+		},
+		{
+			"kind": "skill",
+			"skill_id": "demon_demeaner",
+			"sp": 13
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 19
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 31
+		},
+		{
+			"kind": "skill",
+			"skill_id": "undead_undoer",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 52
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 70
+		}
+	]
+}

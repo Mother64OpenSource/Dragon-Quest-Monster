@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Thwack",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 51,
+			"type": "damage"
+		}
+	],
+	"id": "thwack",
+	"mp_cost": 12,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

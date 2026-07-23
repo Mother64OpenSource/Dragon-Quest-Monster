@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"cursader",
+		"graveheart",
+		"white_knight"
+	],
 	"base_agility": 837.0,
 	"base_attack": 446.0,
 	"base_defense": 803.0,
@@ -29,5 +34,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

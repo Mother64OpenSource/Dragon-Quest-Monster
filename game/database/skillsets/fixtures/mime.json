@@ -1,0 +1,41 @@
+{
+	"display_name": "Mime",
+	"id": "mime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tap_dance",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gobstopper",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 52
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 76
+		}
+	]
+}

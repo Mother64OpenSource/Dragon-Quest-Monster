@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"nightmare"
+	],
 	"base_agility": 796.0,
 	"base_attack": 637.0,
 	"base_defense": 716.0,
@@ -33,5 +36,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

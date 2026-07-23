@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"king_sanguini",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 895.0,
 	"base_attack": 448.0,
 	"base_defense": 627.0,
@@ -32,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

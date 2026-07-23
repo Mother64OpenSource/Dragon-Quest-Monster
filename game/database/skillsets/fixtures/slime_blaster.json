@@ -1,0 +1,41 @@
+{
+	"display_name": "Slime Blaster",
+	"id": "slime_blaster",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "peep_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_dance",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_attack",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_magic",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 150
+		}
+	]
+}

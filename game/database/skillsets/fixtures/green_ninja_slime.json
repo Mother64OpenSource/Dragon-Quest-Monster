@@ -1,0 +1,53 @@
+{
+	"display_name": "Green Ninja Slime",
+	"id": "green_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flawless_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 40
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 150
+		}
+	]
+}

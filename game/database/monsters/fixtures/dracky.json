@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"dark_knight",
+		"sizz_zam",
+		"hypnotist"
+	],
 	"base_agility": 16.0,
 	"base_attack": 8.0,
 	"base_defense": 10.0,
@@ -25,9 +30,8 @@
 	},
 	"sprite_path": "res://assets/monsters/dracky.webp",
 	"starting_skill_ids": [
-		"attack",
-		"frizz",
-		"poison_breath"
+		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 130
 }

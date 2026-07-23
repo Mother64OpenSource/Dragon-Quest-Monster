@@ -1,0 +1,36 @@
+{
+	"display_name": "Cold Sleep",
+	"id": "cold_sleep",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cool_breath",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 22
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 34
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 44
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 56
+		}
+	]
+}

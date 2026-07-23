@@ -1,0 +1,46 @@
+{
+	"display_name": "Bad Breath",
+	"id": "bad_breath",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poison_breath",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 14
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 22
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 42
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 58
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deadly_breath",
+			"sp": 150
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Shaman Marline",
+	"id": "shaman_marline",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

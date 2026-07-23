@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "One-on-One",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 60,
+			"type": "damage"
+		}
+	],
+	"id": "one_on_one",
+	"mp_cost": 15,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

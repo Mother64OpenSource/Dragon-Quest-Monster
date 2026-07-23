@@ -1,0 +1,41 @@
+{
+	"display_name": "Robbin's Old Lady",
+	"id": "robbin_s_old_lady",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 200
+		}
+	]
+}

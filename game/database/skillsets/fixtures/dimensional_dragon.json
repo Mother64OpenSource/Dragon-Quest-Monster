@@ -1,0 +1,46 @@
+{
+	"display_name": "Dimensional Dragon",
+	"id": "dimensional_dragon",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "peep_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "anchor_knuckle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stop_tactic",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chain",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Vile Void",
+	"id": "vile_void",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "cold_blizzard",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 115
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 125
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		}
+	]
+}

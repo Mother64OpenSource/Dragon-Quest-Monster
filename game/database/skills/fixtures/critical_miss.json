@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Critical Miss",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 33,
+			"type": "damage"
+		}
+	],
+	"id": "critical_miss",
+	"mp_cost": 6,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

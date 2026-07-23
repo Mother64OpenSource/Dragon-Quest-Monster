@@ -1,0 +1,56 @@
+{
+	"display_name": "Seal",
+	"id": "seal",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gobstopper",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "abiliterator",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomphle",
+			"sp": 150
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"display_name": "Leonyx",
+	"id": "leonyx",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 150
+		}
+	]
+}

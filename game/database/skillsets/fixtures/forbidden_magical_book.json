@@ -1,0 +1,56 @@
+{
+	"display_name": "Forbidden Magical Book",
+	"id": "forbidden_magical_book",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_pocus",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 190
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 220
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 250
+		}
+	]
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"sizz_zam",
+		"dark_knight",
+		"hypnotist"
+	],
 	"base_agility": 700.0,
 	"base_attack": 860.0,
 	"base_defense": 690.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

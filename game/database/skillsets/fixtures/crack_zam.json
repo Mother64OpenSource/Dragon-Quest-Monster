@@ -1,0 +1,36 @@
+{
+	"display_name": "Crack & Zam",
+	"id": "crack_zam",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crack",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zam",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frost_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shade_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 70
+		}
+	]
+}

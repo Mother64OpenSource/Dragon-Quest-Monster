@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Meditation",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 120,
+			"type": "damage"
+		}
+	],
+	"id": "meditation",
+	"mp_cost": 35,
+	"priority": 0,
+	"target_type": "self"
+}

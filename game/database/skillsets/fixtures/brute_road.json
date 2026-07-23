@@ -1,0 +1,46 @@
+{
+	"display_name": "Brute Road",
+	"id": "brute_road",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 75
+		}
+	]
+}

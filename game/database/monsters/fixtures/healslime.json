@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"healer",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 9.0,
 	"base_attack": 6.0,
 	"base_defense": 8.0,
@@ -25,9 +30,8 @@
 	},
 	"sprite_path": "res://assets/monsters/healslime.webp",
 	"starting_skill_ids": [
-		"attack",
-		"heal",
-		"sap"
+		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

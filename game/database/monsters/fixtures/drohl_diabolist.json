@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"woosh_zam",
+		"graveheart",
+		"white_knight"
+	],
 	"base_agility": 840.0,
 	"base_attack": 667.0,
 	"base_defense": 702.0,
@@ -32,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 130
 }

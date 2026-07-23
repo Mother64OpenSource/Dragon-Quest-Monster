@@ -1,0 +1,53 @@
+{
+	"display_name": "Brown Ninja Slime",
+	"id": "brown_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "universal_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaclang",
+			"sp": 40
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 150
+		}
+	]
+}

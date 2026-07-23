@@ -1,0 +1,36 @@
+{
+	"display_name": "Syphon",
+	"id": "syphon",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 200
+		}
+	]
+}

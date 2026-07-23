@@ -1,0 +1,56 @@
+{
+	"display_name": "Healer",
+	"id": "healer",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sheen",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 150
+		}
+	]
+}

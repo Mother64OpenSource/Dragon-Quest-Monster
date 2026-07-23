@@ -1,0 +1,17 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Poisonous Poke",
+	"effects": [
+		{
+			"chance": 0.5,
+			"status_id": "poison",
+			"target_self": false,
+			"type": "status"
+		}
+	],
+	"id": "poisonous_poke",
+	"mp_cost": 2,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Knight Abhorrent",
+	"id": "knight_abhorrent",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "smelly_slash",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 200
+		}
+	]
+}

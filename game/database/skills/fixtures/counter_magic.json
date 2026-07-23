@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Counter Magic",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 111,
+			"type": "damage"
+		}
+	],
+	"id": "counter_magic",
+	"mp_cost": 32,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Wormonger",
+	"id": "wormonger",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poison_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "beast_bopper",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulderbringer",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "material_whirl",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venomous_volley",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mountainmover",
+			"sp": 85
+		}
+	]
+}

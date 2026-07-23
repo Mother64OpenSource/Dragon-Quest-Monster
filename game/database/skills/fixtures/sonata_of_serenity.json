@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Sonata of Serenity",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 105,
+			"type": "damage"
+		}
+	],
+	"id": "sonata_of_serenity",
+	"mp_cost": 30,
+	"priority": 0,
+	"target_type": "self"
+}

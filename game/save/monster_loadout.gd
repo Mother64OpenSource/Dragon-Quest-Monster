@@ -8,3 +8,8 @@ extends Resource
 @export var species_id: String = ""
 @export var nickname: String = ""
 @export var equipped_skill_ids: Array[String] = []
+
+## skillset_id -> points invested. Keys should be a subset of the species'
+## available_skill_sets; sum should not exceed species.total_skill_points
+## (enforced by TeamRosterManager.validate_member, not here).
+@export var skill_point_allocation: Dictionary = {}

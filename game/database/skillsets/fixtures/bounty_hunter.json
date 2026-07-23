@@ -1,0 +1,46 @@
+{
+	"display_name": "Bounty Hunter",
+	"id": "bounty_hunter",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "klepto_clobber",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "material_whirl",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "penny_pincher",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "metal_slash",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 150
+		}
+	]
+}

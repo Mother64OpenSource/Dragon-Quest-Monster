@@ -1,0 +1,55 @@
+{
+	"display_name": "Montner",
+	"id": "montner",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zap",
+			"sp": 3
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 9,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 18
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "rubblerouser",
+			"sp": 45
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multislash",
+			"sp": 80
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 150
+		}
+	]
+}

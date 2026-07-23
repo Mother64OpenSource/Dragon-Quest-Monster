@@ -1,0 +1,56 @@
+{
+	"display_name": "Diminisher",
+	"id": "diminisher",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slowing_slug",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stupefying_strike",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blinding_blow",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "breathtaking_bash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "break_dance_beat",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 100
+		}
+	]
+}

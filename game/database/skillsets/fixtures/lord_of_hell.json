@@ -1,0 +1,56 @@
+{
+	"display_name": "Lord of Hell",
+	"id": "lord_of_hell",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_pocus",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 250
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Cleanser",
+	"id": "cleanser",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "squelch",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tingle",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defuddle",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sheen",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Reaper",
+	"id": "reaper",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cool_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 200
+		}
+	]
+}

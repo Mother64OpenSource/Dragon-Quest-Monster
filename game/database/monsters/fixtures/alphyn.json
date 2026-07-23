@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"bang_woosh",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 772.0,
 	"base_attack": 710.0,
 	"base_defense": 619.0,
@@ -33,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

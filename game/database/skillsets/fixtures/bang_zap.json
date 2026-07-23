@@ -1,0 +1,36 @@
+{
+	"display_name": "Bang & Zap",
+	"id": "bang_zap",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "bang",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zap",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bomb_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hallowed_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 70
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Miracle of the Stars",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 315,
+			"type": "damage"
+		}
+	],
+	"id": "miracle_of_the_stars",
+	"mp_cost": 100,
+	"priority": 0,
+	"target_type": "self"
+}

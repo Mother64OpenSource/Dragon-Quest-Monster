@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Underworld Fog",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 180,
+			"type": "damage"
+		}
+	],
+	"id": "underworld_fog",
+	"mp_cost": 55,
+	"priority": 0,
+	"target_type": "self"
+}

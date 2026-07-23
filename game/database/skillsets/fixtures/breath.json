@@ -1,0 +1,36 @@
+{
+	"display_name": "Breath",
+	"id": "breath",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fire_breath",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cool_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_breath",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 70
+		}
+	]
+}

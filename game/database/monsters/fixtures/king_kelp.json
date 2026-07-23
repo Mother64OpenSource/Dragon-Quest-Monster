@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"all_rounder",
+		"graveheart",
+		"white_knight"
+	],
 	"base_agility": 758.0,
 	"base_attack": 828.0,
 	"base_defense": 796.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

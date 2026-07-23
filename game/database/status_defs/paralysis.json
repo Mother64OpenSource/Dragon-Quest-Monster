@@ -1,0 +1,8 @@
+{
+	"display_name": "Paralysis",
+	"duration_turns": 4,
+	"id": "paralysis",
+	"skip_turn_chance": 0.5,
+	"stat_mods_on_apply": [],
+	"tick_damage_percent": 0.0
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Barricade",
+	"id": "barricade",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaclang",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flute_of_fortification",
+			"sp": 150
+		}
+	]
+}

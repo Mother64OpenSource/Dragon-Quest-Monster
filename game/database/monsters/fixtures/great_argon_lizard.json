@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"breath",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 630.0,
 	"base_attack": 930.0,
 	"base_defense": 940.0,
@@ -28,5 +33,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

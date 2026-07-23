@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"cleanser",
+		"graveheart",
+		"white_knight"
+	],
 	"base_agility": 528.0,
 	"base_attack": 898.0,
 	"base_defense": 494.0,
@@ -31,5 +36,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

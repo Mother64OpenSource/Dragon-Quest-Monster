@@ -1,0 +1,46 @@
+{
+	"display_name": "Stormgate Citadel",
+	"id": "stormgate_citadel",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "wind_sickles",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswoosh",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadim",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thin_air",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deadly_breath",
+			"sp": 130
+		}
+	]
+}

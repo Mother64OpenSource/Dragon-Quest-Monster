@@ -1,0 +1,36 @@
+{
+	"display_name": "Woosh & Crack",
+	"id": "woosh_crack",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "woosh",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crack",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gust_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frost_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "swoosh",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 70
+		}
+	]
+}

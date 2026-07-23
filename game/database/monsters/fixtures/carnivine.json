@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"cold_sleep",
+		"princess",
+		"champion"
+	],
 	"base_agility": 642.0,
 	"base_attack": 821.0,
 	"base_defense": 632.0,
@@ -36,5 +41,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

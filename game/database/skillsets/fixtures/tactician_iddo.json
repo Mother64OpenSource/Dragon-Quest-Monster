@@ -1,0 +1,41 @@
+{
+	"display_name": "Tactician Iddo",
+	"id": "tactician_iddo",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "great_swing",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

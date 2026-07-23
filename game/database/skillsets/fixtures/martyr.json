@@ -1,0 +1,56 @@
+{
+	"display_name": "Martyr",
+	"id": "martyr",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "selflessness",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "possessed_polka",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 200
+		}
+	]
+}

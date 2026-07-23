@@ -1,0 +1,46 @@
+{
+	"display_name": "Baboon Beast",
+	"id": "baboon_beast",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_dance",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_magic",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_attack",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_slash",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomphle",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 200
+		}
+	]
+}

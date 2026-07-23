@@ -1,0 +1,56 @@
+{
+	"display_name": "Guerrilla",
+	"id": "guerrilla",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slowing_slug",
+			"sp": 11
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 19
+		},
+		{
+			"kind": "skill",
+			"skill_id": "baffling_bonk",
+			"sp": 29
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blinding_blow",
+			"sp": 39
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dodgy_dance",
+			"sp": 51
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 63
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venomous_volley",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 150
+		}
+	]
+}

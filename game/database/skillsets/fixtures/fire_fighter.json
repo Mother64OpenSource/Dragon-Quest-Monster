@@ -1,0 +1,41 @@
+{
+	"display_name": "Fire Fighter",
+	"id": "fire_fighter",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizz",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slime_dunk",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tingle",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 75
+		}
+	]
+}

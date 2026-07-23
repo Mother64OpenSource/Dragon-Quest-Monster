@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"frizz_zap",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 908.0,
 	"base_attack": 794.0,
 	"base_defense": 671.0,
@@ -36,5 +41,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

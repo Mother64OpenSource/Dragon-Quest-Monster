@@ -1,0 +1,36 @@
+{
+	"display_name": "Cat Riberio",
+	"id": "cat_riberio",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Yggdrasil",
+	"id": "yggdrasil",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "share_magic",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lift_demerit",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "focus_pocus",
+			"sp": 200
+		}
+	]
+}

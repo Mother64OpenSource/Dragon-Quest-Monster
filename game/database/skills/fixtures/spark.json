@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Spark",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 30,
+			"type": "damage"
+		}
+	],
+	"id": "spark",
+	"mp_cost": 5,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

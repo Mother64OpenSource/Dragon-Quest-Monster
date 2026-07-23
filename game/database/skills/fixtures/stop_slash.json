@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Stop Slash",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 51,
+			"type": "damage"
+		}
+	],
+	"id": "stop_slash",
+	"mp_cost": 12,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

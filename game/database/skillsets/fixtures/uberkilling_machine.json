@@ -1,0 +1,46 @@
+{
+	"display_name": "Uberkilling Machine",
+	"id": "uberkilling_machine",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "persecutter",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sword_dance",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ocean_slash",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 200
+		}
+	]
+}

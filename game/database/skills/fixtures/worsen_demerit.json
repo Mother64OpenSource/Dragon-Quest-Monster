@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Worsen Demerit",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 255,
+			"type": "damage"
+		}
+	],
+	"id": "worsen_demerit",
+	"mp_cost": 80,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

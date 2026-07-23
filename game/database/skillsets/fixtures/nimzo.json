@@ -1,0 +1,56 @@
+{
+	"display_name": "Nimzo",
+	"id": "nimzo",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaping",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nightmarish_shriek",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		}
+	]
+}

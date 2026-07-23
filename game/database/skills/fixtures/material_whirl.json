@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Material Whirl",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 27,
+			"type": "damage"
+		}
+	],
+	"id": "material_whirl",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

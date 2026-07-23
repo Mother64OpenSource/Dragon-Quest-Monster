@@ -1,0 +1,36 @@
+{
+	"display_name": "Argo",
+	"id": "argo",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 200
+		}
+	]
+}

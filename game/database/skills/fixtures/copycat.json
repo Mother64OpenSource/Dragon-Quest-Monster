@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Copycat",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 207,
+			"type": "damage"
+		}
+	],
+	"id": "copycat",
+	"mp_cost": 64,
+	"priority": 0,
+	"target_type": "self"
+}

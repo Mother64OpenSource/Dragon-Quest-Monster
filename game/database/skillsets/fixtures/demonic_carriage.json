@@ -1,0 +1,36 @@
+{
+	"display_name": "Demonic Carriage",
+	"id": "demonic_carriage",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "pearly_gates",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 200
+		}
+	]
+}

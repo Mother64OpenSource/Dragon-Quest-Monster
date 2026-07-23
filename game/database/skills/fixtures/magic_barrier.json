@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Magic Barrier",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 27,
+			"type": "damage"
+		}
+	],
+	"id": "magic_barrier",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "self"
+}

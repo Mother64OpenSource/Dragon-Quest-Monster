@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"pipitto"
+	],
 	"base_agility": 920.0,
 	"base_attack": 280.0,
 	"base_defense": 536.0,
@@ -27,5 +30,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

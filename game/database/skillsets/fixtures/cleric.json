@@ -1,0 +1,46 @@
+{
+	"display_name": "Cleric",
+	"id": "cleric",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "pearly_gates",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigaslash",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 150
+		}
+	]
+}

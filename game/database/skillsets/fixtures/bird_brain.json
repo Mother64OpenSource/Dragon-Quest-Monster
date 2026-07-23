@@ -1,0 +1,51 @@
+{
+	"display_name": "Bird Brain",
+	"id": "bird_brain",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_sickles",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multislash",
+			"sp": 53
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thin_air",
+			"sp": 100
+		}
+	]
+}

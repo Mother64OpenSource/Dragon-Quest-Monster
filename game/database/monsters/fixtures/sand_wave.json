@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"guerrilla",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 692.0,
 	"base_attack": 719.0,
 	"base_defense": 758.0,
@@ -31,5 +36,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Smelly Slash",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 63,
+			"type": "damage"
+		}
+	],
+	"id": "smelly_slash",
+	"mp_cost": 16,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

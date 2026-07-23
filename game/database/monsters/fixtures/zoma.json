@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"zoma"
+	],
 	"base_agility": 622.0,
 	"base_attack": 642.0,
 	"base_defense": 836.0,
@@ -31,5 +34,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

@@ -1,0 +1,41 @@
+{
+	"display_name": "Wulfspade",
+	"id": "wulfspade",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zap",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 11
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_slash",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spark",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sag",
+			"sp": 48
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning",
+			"sp": 60
+		}
+	]
+}

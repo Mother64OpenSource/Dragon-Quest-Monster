@@ -1,0 +1,51 @@
+{
+	"display_name": "Ramia",
+	"id": "ramia",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "star_fall",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 200
+		}
+	]
+}

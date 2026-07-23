@@ -1,0 +1,46 @@
+{
+	"display_name": "Green Finger",
+	"id": "green_finger",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "squelch",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tingle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defuddle",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "share_magic",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weird_dance",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sheen",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 75
+		}
+	]
+}

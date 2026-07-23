@@ -1,0 +1,46 @@
+{
+	"display_name": "Munchie",
+	"id": "munchie",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 115
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 200
+		}
+	]
+}

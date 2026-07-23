@@ -1,0 +1,46 @@
+{
+	"display_name": "Rhapthorne II",
+	"id": "rhapthorne_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 12
+		}
+	]
+}

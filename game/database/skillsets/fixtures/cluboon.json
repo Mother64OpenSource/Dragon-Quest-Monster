@@ -1,0 +1,41 @@
+{
+	"display_name": "Cluboon",
+	"id": "cluboon",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "bang",
+			"sp": 7
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_dash",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bomb_slash",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sap",
+			"sp": 48
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 60
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"display_name": "Tornado",
+	"id": "tornado",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "abiliterator",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_attack",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 150
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"display_name": "Strong Ability Breaker",
+	"id": "strong_ability_breaker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stop_attack",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 14
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_attack",
+			"sp": 150
+		}
+	]
+}

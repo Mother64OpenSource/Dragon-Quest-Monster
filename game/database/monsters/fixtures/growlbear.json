@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"berserker",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 715.0,
 	"base_attack": 789.0,
 	"base_defense": 653.0,
@@ -32,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

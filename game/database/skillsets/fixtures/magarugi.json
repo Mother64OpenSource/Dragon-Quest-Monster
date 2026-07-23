@@ -1,0 +1,46 @@
+{
+	"display_name": "Magarugi",
+	"id": "magarugi",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stop_slash",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 200
+		}
+	]
+}

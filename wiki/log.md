@@ -214,3 +214,123 @@ mostly still opaque). Replaced both with their sheet-sourced icons instead
 (`unnamed(1).png`/`unnamed(801).png`, the same ones validated earlier in the
 sprite-mapping work), which are simple enough for flood-fill to handle
 cleanly.
+
+## [2026-07-23] build | Real per-monster movesets, all 803 monsters
+
+Every monster previously defaulted to a single generic "attack" skill. The
+source spreadsheet's "Skill" column (e.g. Slime's "Slimer") turned out to be
+an exact key into a separate "Skills" tab — 384 rows (326 real skill sets +
+58 pure stat-boost sets), each listing up to 10 unlocked actions by SP
+threshold. A third "Abilities" tab (285 rows) gives each action's real MP
+cost, Type (Spell/Slash/Body/Dance/Breath/Other), Attribute (element or
+status), and Range (target scope) — pulled via direct CSV export
+(`export?format=csv&gid=...`) rather than WebFetch, since WebFetch's
+summarizing model refused to return raw tabular data verbatim. Only these
+structural fields were extracted, per the established convention — the
+Abilities tab's "Description" column (short mechanical blurbs like move
+function) was deliberately not imported, same as monster flavor text never
+has been.
+
+Scope was explicitly narrowed before implementing (confirmed with the user):
+make real movesets *selectable* with correct names/MP costs, and give each a
+*generic* effect inferred from its Type/Attribute/Range — not a bespoke,
+game-accurate implementation per move (that would rival the entire original
+battle engine in size, and blocks on the same damage-formula research
+already flagged as open elsewhere in this log).
+
+Categorization heuristic (`game/tests/tools/import_movesets.gd`), in
+priority order: (1) Attribute is a recognized status name (Poison, Sleep,
+Paralysis, Confusion, Curse, Dazzle, Silence, Gobstop, Immobilize) → status
+effect, creating a new `StatusData` fixture per status with hand-picked
+placeholder values the first time it's seen (only `poison` pre-existed); (2)
+display name contains "heal" → heal effect; (3) Attribute is a recognized
+stat-down name (Sap→defense, Sag→attack, Decelerate→agility) → stat-mod
+effect on the enemy; (4) Type is "Dance" → stat-mod buff on self, stat
+guessed from name keywords; (5) otherwise → damage effect, magic if
+Type=="Spell" else physical, power = `15 + mp*3` (an invented placeholder
+scaling, same honesty-about-approximation as the existing damage formula).
+Target scope collapses to just SELF or SINGLE_ENEMY — Range values like "All
+Enemies"/"All Allies" don't have real multi-target resolution in the battle
+engine yet, so they're approximated to the nearer of those two rather than
+building real AoE/ally-targeting support in this pass.
+
+62 skill-set entries matching a stat-boost pattern (`ATK +4`, `DEF +8`, etc.)
+were excluded from movesets entirely — passive incremental growth via SP
+investment, not a battle action, and there's no leveling/SP system to hang
+them off yet. A further 57 distinct action names (things like "Frizz Ward",
+"AGI Roulette", "Metal Killer", "Steady Recovery") had no matching Abilities
+row and were also excluded — these read as passive perks/resistance wards/
+traits rather than usable moves (the project already has a separate
+`starting_trait_ids` field for passives, but populating it from this data is
+its own follow-up, not done here, since these names don't yet have matching
+`TraitEffect` implementations).
+
+280 new `SkillData` fixtures and 8 new `StatusData` fixtures were created;
+the 7 Milestone-1 hand-tuned skill fixtures (attack, frizz, heal, oomph, sap,
+double_slash, poison_breath) were left untouched wherever their id was
+already referenced by real data (`id = slugify(display_name)`, matching the
+existing convention, means real data naturally lines up with hand-tuned ids
+without needing special-casing). One side effect worth noting: Slime's
+canonical moveset doesn't include Oomph (that was only ever a Milestone-1
+placeholder choice), so two team-roster/UI tests that assumed Oomph was
+valid for Slime and Frizz was not needed updating — Slime legitimately knows
+Frizz now. `TeamMemberRow` checkboxes now show each skill's MP cost
+alongside its name. Also loosened the two remaining hardcoded skill-count
+assertions (`== 7`) to a floor check, same recurring pattern as the roster
+growing past earlier hardcoded expectations. All three headless suites
+pass after reimport.
+
+## [2026-07-23] build | Real skill-point allocation across multiple panels
+
+The previous entry gave each monster one flat, always-known moveset. This
+replaces that with the actual DQM mechanic: a monster has several selectable
+skill panels, and the player invests a shared pool of skill points across
+them, unlocking moves at SP thresholds within whichever panels they choose.
+
+The source spreadsheet doesn't actually contain "which panels can monster X
+choose from" — its Monsters-tab "Skill" column only gives ONE panel per
+monster, and the Skills-tab reverse-lookup column ("Monsters with this
+Skill") turned out to be a redundant re-listing of that same one-to-one
+assignment, not real sharing data (verified directly: Dragon Rider's own
+"Skill" column already reads "Frizz & Bang", so its appearance in that
+panel's monster list isn't additional information). Confirmed with the user
+before proceeding: family-based approximation — each monster gets its own
+personal panel plus up to 2 more panels drawn from other monsters sharing
+its Family — accepted as a reasonable approximation grounded in the source
+data, not a claim that it's the game's real per-monster panel assignment.
+705 of 803 monsters end up with more than one panel this way; the rest have
+an unknown/"???" Family or an isolated one with nothing else to draw from,
+so they keep just their personal panel.
+
+New `SkillSetData` resource (`game/database/skillsets/`) models a panel as
+an ordered list of thresholds, each either `{sp, kind: "skill", skill_id}`
+or `{sp, kind: "stat_boost", stat_name, amount}` (e.g. Montner's own panel:
+Zap at 3 SP, ATK+4 at 9 SP, Miracle Slash at 18 SP, DEF+8 at 30 SP...). Stat
+boosts are tracked as real data but not yet applied to battle stats — there
+is no MonsterLoadout → MonsterInstance bridge in the engine at all yet
+(MonsterInstance reads species base stats directly), and building that
+bridge is a distinct, substantial integration task of its own, out of scope
+here. 220 panels were built (only the ones actually used as some monster's
+personal or family-shared panel); `MonsterSpecies` gained
+`available_skill_sets` (panel ids) and `total_skill_points`, the latter a
+rank-based placeholder (F:100 up to SS:500) pending a real leveling/EXP
+system to derive it from properly.
+
+`MonsterLoadout` gained `skill_point_allocation` (panel id → points spent).
+`TeamRosterManager.get_unlocked_skill_ids()` computes the live "known" set
+from a species' baseline (just "attack") plus whatever each allocated
+panel's investment has unlocked; `validate_member` now checks total
+allocation against the species' pool and that every equipped skill is
+actually unlocked, not just a static list membership check.
+
+UI-wise, cramming multiple panels x up to 10 thresholds each into the
+existing compact member row stopped being feasible, so `TeamMemberRow`'s
+inline skill checkboxes became a "Skills (n)" button opening a new
+`SkillPointDialog` — one SpinBox per available panel (capped by whatever's
+left of the shared pool) with that panel's thresholds listed below as
+checkboxes, disabled until unlocked. Toggling a threshold off — including
+automatically, if a reallocation re-locks something already equipped —
+removes it from the loadout the same way the old inline checkboxes did.
+All three headless suites pass, including new coverage for allocation,
+threshold unlocking/re-locking, and the dialog not crashing on an
+out-of-panel equipped skill left over from the previous data model.

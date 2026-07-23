@@ -1,0 +1,51 @@
+{
+	"display_name": "Dhoulmagus",
+	"id": "dhoulmagus",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswoosh",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		}
+	]
+}

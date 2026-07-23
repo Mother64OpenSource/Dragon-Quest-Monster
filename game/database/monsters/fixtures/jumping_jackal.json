@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"speedster",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 1004.0,
 	"base_attack": 875.0,
 	"base_defense": 654.0,
@@ -34,5 +39,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 200
 }

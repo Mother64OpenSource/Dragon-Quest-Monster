@@ -1,0 +1,36 @@
+{
+	"display_name": "Ice",
+	"id": "ice",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "cool_breath",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crack",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frost_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 70
+		}
+	]
+}

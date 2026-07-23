@@ -1,0 +1,26 @@
+{
+	"display_name": "Ability Breaker",
+	"id": "ability_breaker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "abiliterator",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 20
+		}
+	]
+}

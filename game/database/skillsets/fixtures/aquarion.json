@@ -1,0 +1,46 @@
+{
+	"display_name": "Aquarion",
+	"id": "aquarion",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "geyser",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "material_whirl",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "beast_bopper",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blinding_blow",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "pearly_gates",
+			"sp": 110
+		}
+	]
+}

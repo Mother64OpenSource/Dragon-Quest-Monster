@@ -1,0 +1,46 @@
+{
+	"display_name": "Crusader",
+	"id": "crusader",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "benediction",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		}
+	]
+}

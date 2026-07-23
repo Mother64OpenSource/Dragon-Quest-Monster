@@ -1,0 +1,51 @@
+{
+	"display_name": "Dr. Snapped",
+	"id": "dr_snapped",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaclang",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		}
+	]
+}

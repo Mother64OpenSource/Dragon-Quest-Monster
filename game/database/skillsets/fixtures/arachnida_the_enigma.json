@@ -1,0 +1,46 @@
+{
+	"display_name": "Arachnida the Enigma",
+	"id": "arachnida_the_enigma",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nightmarish_shriek",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"display_name": "Princess Togami",
+	"id": "princess_togami",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "requiem_of_restoration",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sonata_of_serenity",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "horns_of_battle",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flute_of_fortification",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "call_of_the_falcon",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whistle_of_wisdom",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 200
+		}
+	]
+}

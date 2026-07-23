@@ -1,0 +1,51 @@
+{
+	"display_name": "Diamagon III",
+	"id": "diamagon_iii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigaslash",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

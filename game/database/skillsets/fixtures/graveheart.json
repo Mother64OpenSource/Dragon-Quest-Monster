@@ -1,0 +1,46 @@
+{
+	"display_name": "Graveheart",
+	"id": "graveheart",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slowing_slug",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venomous_volley",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 75
+		}
+	]
+}

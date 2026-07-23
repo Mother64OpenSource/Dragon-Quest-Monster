@@ -1,0 +1,51 @@
+{
+	"display_name": "Beast of the Sea",
+	"id": "beast_of_the_sea",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "geyser",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venomous_volley",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "baffling_bonk",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 200
+		}
+	]
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"sword_breaker",
+		"princess",
+		"champion"
+	],
 	"base_agility": 906.0,
 	"base_attack": 887.0,
 	"base_defense": 1086.0,
@@ -42,5 +47,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

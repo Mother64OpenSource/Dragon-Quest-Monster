@@ -13,6 +13,7 @@ const TeamMemberRowScene := preload("res://ui/team_builder/team_member_row.tscn"
 var roster: TeamRosterManager
 var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
+var skillset_db: SkillSetDatabase
 var current_team: SavedTeam = null
 
 @onready var _content: Control = $Content
@@ -30,10 +31,11 @@ func _ready() -> void:
 	_monster_picker.species_chosen.connect(_on_species_chosen)
 	load_team("")
 
-func setup(p_roster: TeamRosterManager, p_monster_db: MonsterDatabase, p_skill_db: SkillDatabase) -> void:
+func setup(p_roster: TeamRosterManager, p_monster_db: MonsterDatabase, p_skill_db: SkillDatabase, p_skillset_db: SkillSetDatabase) -> void:
 	roster = p_roster
 	monster_db = p_monster_db
 	skill_db = p_skill_db
+	skillset_db = p_skillset_db
 	_monster_picker.setup(monster_db)
 
 ## "" means "no team selected" — shows the empty state.
@@ -61,7 +63,7 @@ func _rebuild_rows() -> void:
 	for i in range(current_team.members.size()):
 		var row: TeamMemberRow = TeamMemberRowScene.instantiate()
 		_members_list.add_child(row)
-		row.setup(current_team.members[i], i, monster_db, skill_db)
+		row.setup(current_team.members[i], i, monster_db, skill_db, skillset_db)
 		row.loadout_edited.connect(_on_row_loadout_edited)
 		row.remove_requested.connect(_on_row_remove_requested.bind(row))
 		row.reorder_requested.connect(_on_row_reorder_requested)
@@ -69,7 +71,7 @@ func _rebuild_rows() -> void:
 func _update_validation_banner() -> void:
 	var issue_count := 0
 	for member in current_team.members:
-		if not roster.validate_member(member, monster_db).is_empty():
+		if not roster.validate_member(member, monster_db, skillset_db).is_empty():
 			issue_count += 1
 	_validation_banner.visible = issue_count > 0
 	if issue_count > 0:
@@ -121,6 +123,7 @@ func _on_species_chosen(species_id: String) -> void:
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = species_id
 	loadout.equipped_skill_ids = species.starting_skill_ids.duplicate() if species != null else []
+	loadout.skill_point_allocation = {}
 	roster.add_member(current_team, loadout)
 	_save_and_notify()
 	_rebuild_rows()

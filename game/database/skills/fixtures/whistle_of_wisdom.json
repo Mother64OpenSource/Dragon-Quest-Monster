@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Whistle of Wisdom",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 105,
+			"type": "damage"
+		}
+	],
+	"id": "whistle_of_wisdom",
+	"mp_cost": 30,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Dragovian Lord",
+	"id": "dragovian_lord",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "soothing_vortex",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 150
+		}
+	]
+}

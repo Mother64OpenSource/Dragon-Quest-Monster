@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Counter Dance",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 111,
+			"type": "damage"
+		}
+	],
+	"id": "counter_dance",
+	"mp_cost": 32,
+	"priority": 0,
+	"target_type": "self"
+}

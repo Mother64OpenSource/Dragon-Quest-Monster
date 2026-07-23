@@ -1,0 +1,17 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Burning Breath",
+	"effects": [
+		{
+			"chance": 0.5,
+			"status_id": "paralysis",
+			"target_self": false,
+			"type": "status"
+		}
+	],
+	"id": "burning_breath",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

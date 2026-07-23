@@ -1,0 +1,46 @@
+{
+	"display_name": "Cursader",
+	"id": "cursader",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "spike_attack",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		}
+	]
+}

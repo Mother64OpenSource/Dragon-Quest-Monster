@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"trickster",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 553.0,
 	"base_attack": 855.0,
 	"base_defense": 1031.0,
@@ -31,5 +36,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

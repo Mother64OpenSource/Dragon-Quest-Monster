@@ -1,0 +1,51 @@
+{
+	"display_name": "Hawkhart III",
+	"id": "hawkhart_iii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 200
+		}
+	]
+}

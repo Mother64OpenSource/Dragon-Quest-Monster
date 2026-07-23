@@ -1,0 +1,46 @@
+{
+	"display_name": "Berserker",
+	"id": "berserker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 13
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 36
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 150
+		}
+	]
+}

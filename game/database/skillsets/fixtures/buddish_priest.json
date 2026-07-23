@@ -1,0 +1,56 @@
+{
+	"display_name": "Buddish Priest",
+	"id": "buddish_priest",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 170
+		},
+		{
+			"kind": "skill",
+			"skill_id": "copycat",
+			"sp": 200
+		}
+	]
+}

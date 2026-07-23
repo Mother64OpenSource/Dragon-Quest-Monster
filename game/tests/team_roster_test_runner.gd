@@ -17,13 +17,14 @@ func run() -> bool:
 
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 	var roster := TeamRosterManager.new(TEST_TEAMS_DIR)
 
 	_check_database(monster_db, skill_db)
 	_check_crud(roster)
 	_check_reorder_and_members(roster)
 	_check_import_export(roster)
-	_check_validation(roster, monster_db)
+	_check_validation(roster, monster_db, skillset_db)
 	_check_malformed_import(roster)
 
 	_clear_test_dir()
@@ -85,7 +86,9 @@ func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> vo
 	# membership rather than an exact single match.
 	_check("find(rank=F,family=slime) includes slime", combined_ids.has("slime"))
 
-	_check("SkillDatabase loads 7 skills", skill_db.get_all_skills().size() == 7)
+	# Real fixture data adds many more skills from imported movesets, so check
+	# a floor rather than the exact Milestone 1 count.
+	_check("SkillDatabase loads at least 7 skills", skill_db.get_all_skills().size() >= 7)
 	var frizz := skill_db.get_skill("frizz")
 	_check("get_skill('frizz') resolves", frizz != null and frizz.id == "frizz")
 
@@ -170,20 +173,31 @@ func _check_import_export(roster: TeamRosterManager) -> void:
 
 	roster.delete_team(team.id)
 
-func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase) -> void:
+func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase) -> void:
+	# "frizz" unlocks at 2 SP in slime's "slimer" panel; "double_slash" isn't
+	# reachable from any of slime's panels at all.
 	var valid_loadout := MonsterLoadout.new()
 	valid_loadout.species_id = "slime"
-	valid_loadout.equipped_skill_ids = ["attack", "oomph"]
-	_check("valid loadout has no errors", roster.validate_member(valid_loadout, monster_db).is_empty())
+	valid_loadout.skill_point_allocation = {"slimer": 2}
+	valid_loadout.equipped_skill_ids = ["attack", "frizz"]
+	_check("valid loadout has no errors", roster.validate_member(valid_loadout, monster_db, skillset_db).is_empty())
 
 	var bad_skill_loadout := MonsterLoadout.new()
 	bad_skill_loadout.species_id = "slime"
-	bad_skill_loadout.equipped_skill_ids = ["frizz"]
-	_check("loadout with unknown-to-species skill flagged", roster.validate_member(bad_skill_loadout, monster_db).size() == 1)
+	bad_skill_loadout.equipped_skill_ids = ["double_slash"]
+	_check("loadout with unknown-to-species skill flagged", roster.validate_member(bad_skill_loadout, monster_db, skillset_db).size() == 1)
+
+	var over_allocated_loadout := MonsterLoadout.new()
+	over_allocated_loadout.species_id = "slime"
+	over_allocated_loadout.skill_point_allocation = {"slimer": 999}
+	_check(
+		"loadout allocating more points than the species has is flagged",
+		roster.validate_member(over_allocated_loadout, monster_db, skillset_db).size() == 1
+	)
 
 	var bad_species_loadout := MonsterLoadout.new()
 	bad_species_loadout.species_id = "nonexistent_species"
-	_check("loadout with unknown species flagged", roster.validate_member(bad_species_loadout, monster_db).size() == 1)
+	_check("loadout with unknown species flagged", roster.validate_member(bad_species_loadout, monster_db, skillset_db).size() == 1)
 
 func _check_malformed_import(roster: TeamRosterManager) -> void:
 	var result := roster.import_team_from_string("{ this is not valid json ][")

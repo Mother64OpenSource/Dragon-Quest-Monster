@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kaboomle",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 195,
+			"type": "damage"
+		}
+	],
+	"id": "kaboomle",
+	"mp_cost": 60,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

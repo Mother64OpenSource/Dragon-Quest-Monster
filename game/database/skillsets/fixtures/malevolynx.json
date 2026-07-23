@@ -1,0 +1,41 @@
+{
+	"display_name": "Malevolynx",
+	"id": "malevolynx",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stop_attack",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 200
+		}
+	]
+}

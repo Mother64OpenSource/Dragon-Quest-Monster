@@ -1,0 +1,46 @@
+{
+	"display_name": "Mortella",
+	"id": "mortella",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "demon_demeaner",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thin_air",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 150
+		}
+	]
+}

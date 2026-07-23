@@ -1,0 +1,51 @@
+{
+	"display_name": "Extreme Killing Machine",
+	"id": "extreme_killing_machine",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "anchor_knuckle",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 200
+		}
+	]
+}

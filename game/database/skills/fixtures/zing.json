@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Zing",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 135,
+			"type": "damage"
+		}
+	],
+	"id": "zing",
+	"mp_cost": 40,
+	"priority": 0,
+	"target_type": "self"
+}

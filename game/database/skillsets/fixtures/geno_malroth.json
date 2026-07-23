@@ -1,0 +1,41 @@
+{
+	"display_name": "Geno Malroth",
+	"id": "geno_malroth",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deadly_breath",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "pearly_gates",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 250
+		}
+	]
+}

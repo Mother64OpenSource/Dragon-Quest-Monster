@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"hawkhart_iii"
+	],
 	"base_agility": 901.0,
 	"base_attack": 485.0,
 	"base_defense": 775.0,
@@ -36,5 +39,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

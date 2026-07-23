@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"speedster",
+		"princess",
+		"champion"
+	],
 	"base_agility": 1090.0,
 	"base_attack": 620.0,
 	"base_defense": 670.0,
@@ -28,5 +33,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 200
 }

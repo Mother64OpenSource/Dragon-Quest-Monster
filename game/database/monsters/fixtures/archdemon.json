@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"frizz_bang",
+		"sizz_zam",
+		"dark_knight"
+	],
 	"base_agility": 583.0,
 	"base_attack": 808.0,
 	"base_defense": 852.0,
@@ -28,5 +33,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"liquid_metal_king_slime",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 1310.0,
 	"base_attack": 211.0,
 	"base_defense": 1500.0,
@@ -45,5 +50,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

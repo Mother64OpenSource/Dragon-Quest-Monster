@@ -1,0 +1,51 @@
+{
+	"display_name": "Diabolist",
+	"id": "diabolist",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fizzle",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aha",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 24
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 36
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sag",
+			"sp": 53
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 100
+		}
+	]
+}

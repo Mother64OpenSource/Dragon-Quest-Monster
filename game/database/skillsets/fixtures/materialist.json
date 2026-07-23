@@ -1,0 +1,51 @@
+{
+	"display_name": "Materialist",
+	"id": "materialist",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "metal_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 150
+		}
+	]
+}

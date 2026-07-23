@@ -1,0 +1,56 @@
+{
+	"display_name": "Saboteur",
+	"id": "saboteur",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "peep_slash",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "great_swing",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 100
+		}
+	]
+}

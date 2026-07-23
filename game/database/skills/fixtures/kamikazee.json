@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kamikazee",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 15,
+			"type": "damage"
+		}
+	],
+	"id": "kamikazee",
+	"mp_cost": 0,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

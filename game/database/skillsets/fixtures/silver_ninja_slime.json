@@ -1,0 +1,53 @@
+{
+	"display_name": "Silver Ninja Slime",
+	"id": "silver_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "universal_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 40
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 150
+		}
+	]
+}

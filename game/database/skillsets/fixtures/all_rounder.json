@@ -1,0 +1,51 @@
+{
+	"display_name": "All-Rounder",
+	"id": "all_rounder",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poison_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weird_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "break_dance_beat",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 150
+		}
+	]
+}

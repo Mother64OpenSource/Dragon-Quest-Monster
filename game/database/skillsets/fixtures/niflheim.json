@@ -1,0 +1,51 @@
+{
+	"display_name": "Niflheim",
+	"id": "niflheim",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazam",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 200
+		}
+	]
+}

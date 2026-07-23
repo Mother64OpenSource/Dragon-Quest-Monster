@@ -1,0 +1,56 @@
+{
+	"display_name": "Grand Estark",
+	"id": "grand_estark",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ocean_slash",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 250
+		}
+	]
+}

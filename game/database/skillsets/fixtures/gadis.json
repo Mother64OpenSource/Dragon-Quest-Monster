@@ -1,0 +1,41 @@
+{
+	"display_name": "Gadis",
+	"id": "gadis",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

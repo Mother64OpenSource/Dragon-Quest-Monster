@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"green_finger",
+		"princess",
+		"champion"
+	],
 	"base_agility": 666.0,
 	"base_attack": 718.0,
 	"base_defense": 771.0,
@@ -34,5 +39,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 200
 }

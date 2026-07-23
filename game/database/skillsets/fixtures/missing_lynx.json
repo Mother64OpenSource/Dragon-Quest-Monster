@@ -1,0 +1,51 @@
+{
+	"display_name": "Missing Lynx",
+	"id": "missing_lynx",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sear",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thin_air",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cremate",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 90
+		}
+	]
+}

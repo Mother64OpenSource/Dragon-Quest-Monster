@@ -1,0 +1,46 @@
+{
+	"display_name": "King Godwyn II",
+	"id": "king_godwyn_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 200
+		}
+	]
+}

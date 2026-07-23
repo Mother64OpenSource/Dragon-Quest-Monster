@@ -1,0 +1,51 @@
+{
+	"display_name": "Defender",
+	"id": "defender",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 24
+		},
+		{
+			"kind": "skill",
+			"skill_id": "benediction",
+			"sp": 34
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 46
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 59
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 72
+		},
+		{
+			"kind": "skill",
+			"skill_id": "selflessness",
+			"sp": 86
+		}
+	]
+}

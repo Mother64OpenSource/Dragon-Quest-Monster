@@ -1,0 +1,53 @@
+{
+	"display_name": "Guardian Lazuvann",
+	"id": "guardian_lazuvann",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "multislash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 120,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"slimer",
+		"aquapothecary",
+		"crack_sizz"
+	],
 	"base_agility": 12.0,
 	"base_attack": 10.0,
 	"base_defense": 10.0,
@@ -24,8 +29,8 @@
 	},
 	"sprite_path": "res://assets/monsters/slime.webp",
 	"starting_skill_ids": [
-		"attack",
-		"oomph"
+		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

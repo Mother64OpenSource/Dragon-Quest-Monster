@@ -1,0 +1,36 @@
+{
+	"display_name": "Bang & Sizz",
+	"id": "bang_sizz",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "bang",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizz",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bomb_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 70
+		}
+	]
+}

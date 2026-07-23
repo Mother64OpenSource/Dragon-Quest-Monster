@@ -1,0 +1,41 @@
+{
+	"display_name": "Prism Peacock",
+	"id": "prism_peacock",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 200
+		}
+	]
+}

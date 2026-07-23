@@ -1,0 +1,26 @@
+{
+	"display_name": "Slider Girl",
+	"id": "slider_girl",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "call_of_the_falcon",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 150
+		}
+	]
+}

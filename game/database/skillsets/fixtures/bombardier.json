@@ -1,0 +1,41 @@
+{
+	"display_name": "Bombardier",
+	"id": "bombardier",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "boulder_dash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bomb_slash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 150
+		}
+	]
+}

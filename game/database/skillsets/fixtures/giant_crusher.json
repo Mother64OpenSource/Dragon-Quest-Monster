@@ -1,0 +1,41 @@
+{
+	"display_name": "Giant Crusher",
+	"id": "giant_crusher",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_slash",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 150
+		}
+	]
+}

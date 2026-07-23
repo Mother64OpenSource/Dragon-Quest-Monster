@@ -1,0 +1,46 @@
+{
+	"display_name": "King Sanguini",
+	"id": "king_sanguini",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tap_dance",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sword_dance",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "focus_pocus",
+			"sp": 150
+		}
+	]
+}

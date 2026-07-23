@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"barricade",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 472.0,
 	"base_attack": 803.0,
 	"base_defense": 991.0,
@@ -33,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

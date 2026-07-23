@@ -1,0 +1,51 @@
+{
+	"display_name": "Float-O-Copier",
+	"id": "float_o_copier",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "counter_dance",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_magic",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_attack",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_slash",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "copycat",
+			"sp": 150
+		}
+	]
+}

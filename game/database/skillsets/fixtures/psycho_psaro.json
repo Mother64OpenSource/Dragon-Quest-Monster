@@ -1,0 +1,41 @@
+{
+	"display_name": "Psycho Psaro",
+	"id": "psycho_psaro",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ice_age",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 250
+		}
+	]
+}

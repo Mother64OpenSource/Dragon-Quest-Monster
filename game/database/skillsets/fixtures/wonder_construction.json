@@ -1,0 +1,41 @@
+{
+	"display_name": "Wonder Construction",
+	"id": "wonder_construction",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "boulder_dash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singe",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spark",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "waterspout",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_sickles",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 100
+		}
+	]
+}

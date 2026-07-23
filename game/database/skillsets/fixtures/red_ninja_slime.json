@@ -1,0 +1,53 @@
+{
+	"display_name": "Red Ninja Slime",
+	"id": "red_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "universal_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 40
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 150
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Frost Slash",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 27,
+			"type": "damage"
+		}
+	],
+	"id": "frost_slash",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

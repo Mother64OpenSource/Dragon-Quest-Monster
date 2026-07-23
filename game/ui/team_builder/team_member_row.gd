@@ -4,6 +4,9 @@ extends PanelContainer
 ## One draggable MonsterLoadout row. Field edits mutate `loadout` directly
 ## (it's a plain Resource, no manager call needed) then emit loadout_edited()
 ## — the parent panel is the one that calls TeamRosterManager.save_team().
+## Skill-point allocation across panels lives in SkillPointDialog, opened via
+## the "Skills..." button — too much content (multiple panels x up to 10
+## thresholds each) to show inline in this compact row.
 
 signal loadout_edited()
 signal remove_requested()
@@ -14,22 +17,28 @@ var member_index: int
 
 var _species: MonsterSpecies
 var _skill_db: SkillDatabase
+var _skillset_db: SkillSetDatabase
 
 @onready var _species_icon: TextureRect = $HBoxContainer/SpeciesIcon
 @onready var _nickname_edit: LineEdit = $HBoxContainer/NicknameEdit
 @onready var _species_label: Label = $HBoxContainer/SpeciesLabel
 @onready var _skills_box: HBoxContainer = $HBoxContainer/SkillsBox
+@onready var _skills_button: Button = $HBoxContainer/SkillsButton
 @onready var _remove_button: Button = $HBoxContainer/RemoveButton
+@onready var _skill_point_dialog: SkillPointDialog = $SkillPointDialog
 
 func _ready() -> void:
 	_nickname_edit.text_submitted.connect(_on_nickname_submitted)
 	_nickname_edit.focus_exited.connect(_on_nickname_focus_exited)
 	_remove_button.pressed.connect(func() -> void: remove_requested.emit())
+	_skills_button.pressed.connect(_on_skills_pressed)
+	_skill_point_dialog.allocation_changed.connect(_on_allocation_changed)
 
-func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase) -> void:
+func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase) -> void:
 	loadout = p_loadout
 	member_index = p_index
 	_skill_db = skill_db
+	_skillset_db = skillset_db
 	_species = monster_db.get_species(loadout.species_id)
 
 	_nickname_edit.text = loadout.nickname
@@ -41,12 +50,16 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 	if _species == null:
 		_species_icon.texture = null
 		_species_label.text = "Unknown species: '%s'" % loadout.species_id
+		_skills_button.visible = false
+		_skills_box.visible = true
 		_build_unknown_species_label()
 		return
 
 	_species_icon.texture = load(_species.sprite_path) if not _species.sprite_path.is_empty() else null
 	_species_label.text = _species.display_name
-	_build_skill_checkboxes()
+	_skills_box.visible = false
+	_skills_button.visible = true
+	_update_skills_button_text()
 
 func _build_unknown_species_label() -> void:
 	var extra_text := ""
@@ -58,30 +71,14 @@ func _build_unknown_species_label() -> void:
 	label.text = "(species unknown — skills not editable): %s" % extra_text
 	_skills_box.add_child(label)
 
-func _build_skill_checkboxes() -> void:
-	for skill_id in _species.starting_skill_ids:
-		_add_skill_checkbox(skill_id, loadout.equipped_skill_ids.has(skill_id), false)
-	for skill_id in loadout.equipped_skill_ids:
-		if not _species.starting_skill_ids.has(skill_id):
-			_add_skill_checkbox(skill_id, true, true)
+func _update_skills_button_text() -> void:
+	_skills_button.text = "Skills (%d)" % loadout.equipped_skill_ids.size()
 
-func _add_skill_checkbox(skill_id: String, checked: bool, is_extra: bool) -> void:
-	var checkbox := CheckBox.new()
-	var skill := _skill_db.get_skill(skill_id)
-	var label_text := skill.display_name if skill != null else skill_id
-	if is_extra:
-		label_text += " (not known by species)"
-	checkbox.text = label_text
-	checkbox.button_pressed = checked
-	checkbox.toggled.connect(_on_skill_toggled.bind(skill_id))
-	_skills_box.add_child(checkbox)
+func _on_skills_pressed() -> void:
+	_skill_point_dialog.show_for(loadout, _species, _skill_db, _skillset_db)
 
-func _on_skill_toggled(is_checked: bool, skill_id: String) -> void:
-	if is_checked:
-		if not loadout.equipped_skill_ids.has(skill_id):
-			loadout.equipped_skill_ids.append(skill_id)
-	else:
-		loadout.equipped_skill_ids.erase(skill_id)
+func _on_allocation_changed() -> void:
+	_update_skills_button_text()
 	loadout_edited.emit()
 
 func _on_nickname_submitted(new_text: String) -> void:

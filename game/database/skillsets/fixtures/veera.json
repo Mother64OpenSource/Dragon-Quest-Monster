@@ -1,0 +1,36 @@
+{
+	"display_name": "Veera",
+	"id": "veera",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger_dance",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stealth_strike",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 200
+		}
+	]
+}

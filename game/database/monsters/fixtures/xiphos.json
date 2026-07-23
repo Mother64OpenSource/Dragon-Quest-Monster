@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"xiphos",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 809.0,
 	"base_attack": 539.0,
 	"base_defense": 455.0,
@@ -37,5 +42,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

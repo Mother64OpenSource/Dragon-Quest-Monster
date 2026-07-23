@@ -1,0 +1,53 @@
+{
+	"display_name": "Orange Ninja Slime",
+	"id": "orange_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cremate",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flawless_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 40
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 150
+		}
+	]
+}

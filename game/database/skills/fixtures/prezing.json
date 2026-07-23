@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Prezing",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 195,
+			"type": "damage"
+		}
+	],
+	"id": "prezing",
+	"mp_cost": 60,
+	"priority": 0,
+	"target_type": "self"
+}

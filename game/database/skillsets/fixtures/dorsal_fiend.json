@@ -1,0 +1,41 @@
+{
+	"display_name": "Dorsal Fiend",
+	"id": "dorsal_fiend",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nature_nerfer",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "undead_undoer",
+			"sp": 39
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_locust",
+			"sp": 58
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 85
+		}
+	]
+}

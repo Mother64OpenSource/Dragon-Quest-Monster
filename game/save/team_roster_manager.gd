@@ -109,15 +109,43 @@ func _finish_import(team: SavedTeam, preserve_id: bool) -> SavedTeam:
 	save_team(team)
 	return team
 
+## Every skill id currently unlocked for this loadout: the species' always-
+## known baseline (starting_skill_ids, e.g. "attack") plus whatever each
+## allocated skillset's point investment has unlocked so far.
+static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpecies, skillset_db: SkillSetDatabase) -> Array[String]:
+	var result: Array[String] = species.starting_skill_ids.duplicate()
+	for skillset_id in loadout.skill_point_allocation:
+		if not species.available_skill_sets.has(skillset_id):
+			continue
+		var skillset := skillset_db.get_skillset(skillset_id)
+		if skillset == null:
+			continue
+		var points: int = loadout.skill_point_allocation[skillset_id]
+		for skill_id in skillset.unlocked_skill_ids(points):
+			if not result.has(skill_id):
+				result.append(skill_id)
+	return result
+
 ## Empty result means the loadout is valid.
-func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase) -> Array[String]:
+func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase) -> Array[String]:
 	var errors: Array[String] = []
 	var species := monster_db.get_species(loadout.species_id)
 	if species == null:
 		errors.append("Unknown species id: %s" % loadout.species_id)
 		return errors
+
+	var total_allocated := 0
+	for skillset_id in loadout.skill_point_allocation:
+		var points: int = loadout.skill_point_allocation[skillset_id]
+		if not species.available_skill_sets.has(skillset_id):
+			errors.append("Skillset '%s' is not available to species '%s'" % [skillset_id, loadout.species_id])
+		total_allocated += points
+	if total_allocated > species.total_skill_points:
+		errors.append("Allocated %d skill points but '%s' only has %d" % [total_allocated, loadout.species_id, species.total_skill_points])
+
+	var unlocked := get_unlocked_skill_ids(loadout, species, skillset_db)
 	for skill_id in loadout.equipped_skill_ids:
-		if not species.starting_skill_ids.has(skill_id):
+		if not unlocked.has(skill_id):
 			errors.append("Skill '%s' is not known by species '%s'" % [skill_id, loadout.species_id])
 	return errors
 

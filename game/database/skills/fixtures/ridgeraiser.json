@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Ridgeraiser",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 195,
+			"type": "damage"
+		}
+	],
+	"id": "ridgeraiser",
+	"mp_cost": 60,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

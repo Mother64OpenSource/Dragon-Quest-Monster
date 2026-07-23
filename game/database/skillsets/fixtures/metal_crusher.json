@@ -1,0 +1,46 @@
+{
+	"display_name": "Metal Crusher",
+	"id": "metal_crusher",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scapegoat_seal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "smelly_slash",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 200
+		}
+	]
+}

@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"healer"
+	],
 	"base_agility": 410.0,
 	"base_attack": 665.0,
 	"base_defense": 655.0,
@@ -34,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

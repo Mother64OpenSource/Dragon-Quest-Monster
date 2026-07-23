@@ -1,0 +1,36 @@
+{
+	"display_name": "Schwarzman Tank",
+	"id": "schwarzman_tank",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 200
+		}
+	]
+}

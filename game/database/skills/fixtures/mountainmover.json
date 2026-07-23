@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Mountainmover",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 87,
+			"type": "damage"
+		}
+	],
+	"id": "mountainmover",
+	"mp_cost": 24,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

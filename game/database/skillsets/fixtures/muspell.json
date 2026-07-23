@@ -1,0 +1,56 @@
+{
+	"display_name": "Muspell",
+	"id": "muspell",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fuddle",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singe",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 22
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 32
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 42
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 56
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sear",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 150
+		}
+	]
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"bad_breath",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 634.0,
 	"base_attack": 871.0,
 	"base_defense": 673.0,
@@ -29,5 +34,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

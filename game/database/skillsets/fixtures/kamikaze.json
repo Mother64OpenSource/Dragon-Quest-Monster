@@ -1,0 +1,56 @@
+{
+	"display_name": "Kamikaze",
+	"id": "kamikaze",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "smelly_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flawless_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "universal_slash",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "persecutter",
+			"sp": 170
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 200
+		}
+	]
+}

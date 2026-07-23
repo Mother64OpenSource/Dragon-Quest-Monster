@@ -1,0 +1,41 @@
+{
+	"display_name": "Pipitto",
+	"id": "pipitto",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "gust_slash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flawless_slash",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 200
+		}
+	]
+}

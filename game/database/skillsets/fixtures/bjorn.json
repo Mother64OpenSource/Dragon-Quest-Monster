@@ -1,0 +1,46 @@
+{
+	"display_name": "Bjorn",
+	"id": "bjorn",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nature_nerfer",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "beast_bopper",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigaslash",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mountainmover",
+			"sp": 75
+		}
+	]
+}

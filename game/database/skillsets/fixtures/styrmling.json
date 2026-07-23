@@ -1,0 +1,46 @@
+{
+	"display_name": "Styrmling",
+	"id": "styrmling",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 200
+		}
+	]
+}

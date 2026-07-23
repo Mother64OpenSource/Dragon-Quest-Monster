@@ -1,0 +1,41 @@
+{
+	"display_name": "Hypnotist",
+	"id": "hypnotist",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 24
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 34
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 44
+		}
+	]
+}

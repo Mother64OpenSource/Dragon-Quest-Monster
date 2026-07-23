@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Stupefying Strike",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 27,
+			"type": "damage"
+		}
+	],
+	"id": "stupefying_strike",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

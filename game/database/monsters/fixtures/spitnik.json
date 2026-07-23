@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"frizz_bang",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 740.0,
 	"base_attack": 840.0,
 	"base_defense": 889.0,
@@ -36,5 +41,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

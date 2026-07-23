@@ -1,0 +1,26 @@
+{
+	"display_name": "Dance Breaker",
+	"id": "dance_breaker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "break_dance_beat",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 26
+		}
+	]
+}

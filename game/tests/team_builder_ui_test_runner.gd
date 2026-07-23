@@ -36,6 +36,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	await _check_degradation()
 	_check_validation_banner()
 	_check_resistances_shown()
+	await _check_skill_point_allocation()
 
 	_screen.queue_free()
 	_clear_test_dir()
@@ -50,7 +51,9 @@ func _check_wiring() -> void:
 	_check("team_list_panel resolved", _screen._team_list_panel != null)
 	_check("team_editor_panel resolved", _screen._team_editor_panel != null)
 	_check("at least 4 species loaded", _screen.monster_db.get_all_species().size() >= 4)
-	_check("skill_db loaded 7 skills", _screen.skill_db.get_all_skills().size() == 7)
+	# Real fixture data adds many more skills from imported movesets, so check
+	# a floor rather than the exact Milestone 1 count.
+	_check("skill_db loaded at least 7 skills", _screen.skill_db.get_all_skills().size() >= 7)
 
 func _check_crud_and_selection() -> void:
 	var list_panel := _screen._team_list_panel
@@ -120,10 +123,16 @@ func _check_row_edits() -> void:
 	var reloaded := _screen.roster.get_team(team_id)
 	_check("nickname edit persists to disk", reloaded.members[0].nickname == "Nicky")
 
-	row._on_skill_toggled(false, "attack")
+	# "zam" unlocks at 3 SP in dracky's "dark_knight" panel.
+	row._skill_point_dialog.show_for(editor.current_team.members[0], row._species, _screen.skill_db, _screen.skillset_db)
+	row._skill_point_dialog._on_points_changed(3.0, "dark_knight")
+	row._skill_point_dialog._on_skill_toggled(true, "zam")
+	_check("toggling a skill on via the row's dialog equips it", editor.current_team.members[0].equipped_skill_ids.has("zam"))
+
+	row._skill_point_dialog._on_skill_toggled(false, "zam")
 	_check(
-		"unchecking a skill removes it from equipped_skill_ids",
-		not editor.current_team.members[0].equipped_skill_ids.has("attack")
+		"toggling a skill off via the row's dialog removes it from equipped_skill_ids",
+		not editor.current_team.members[0].equipped_skill_ids.has("zam")
 	)
 
 	_screen.roster.delete_team(team_id)
@@ -151,9 +160,12 @@ func _check_degradation() -> void:
 	var row1: TeamMemberRow = RowScene.instantiate()
 	_tree.root.add_child(row1)
 
+	# "double_slash" isn't reachable from any of slime's available panels --
+	# exercises the row/dialog not crashing on an out-of-sync equipped skill
+	# (e.g. left over from an import or a since-changed allocation).
 	var extra_skill_loadout := MonsterLoadout.new()
 	extra_skill_loadout.species_id = "slime"
-	extra_skill_loadout.equipped_skill_ids = ["attack", "frizz"]
+	extra_skill_loadout.equipped_skill_ids = ["attack", "double_slash"]
 	var row2: TeamMemberRow = RowScene.instantiate()
 	_tree.root.add_child(row2)
 
@@ -161,20 +173,58 @@ func _check_degradation() -> void:
 	# the screen itself did in run().
 	await _tree.process_frame
 
-	row1.setup(bad_species_loadout, 0, _screen.monster_db, _screen.skill_db)
+	row1.setup(bad_species_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db)
 	_check(
 		"unknown species_id renders a degraded label instead of crashing",
 		row1._species_label.text.begins_with("Unknown species")
 	)
 	row1.queue_free()
 
-	row2.setup(extra_skill_loadout, 0, _screen.monster_db, _screen.skill_db)
-	var found_extra := false
-	for child in row2._skills_box.get_children():
-		if child is CheckBox and (child as CheckBox).text.contains("not known by species"):
-			found_extra = true
-	_check("skill unknown to species renders as a flagged extra checkbox", found_extra)
+	row2.setup(extra_skill_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db)
+	_check("known species with an out-of-panel skill doesn't crash the row", row2._skills_button.visible)
+	_check("skills button shows the raw equipped count", row2._skills_button.text == "Skills (2)")
+
+	var slime_species := _screen.monster_db.get_species("slime")
+	row2._skill_point_dialog.show_for(extra_skill_loadout, slime_species, _screen.skill_db, _screen.skillset_db)
+	_check(
+		"opening the dialog prunes an equipped skill no panel allocation unlocks",
+		not extra_skill_loadout.equipped_skill_ids.has("double_slash")
+	)
 	row2.queue_free()
+
+func _check_skill_point_allocation() -> void:
+	var loadout := MonsterLoadout.new()
+	loadout.species_id = "slime"
+	var slime_species := _screen.monster_db.get_species("slime")
+	_check("slime has more than one available skill panel", slime_species.available_skill_sets.size() > 1)
+
+	# Build a standalone dialog instance rather than digging one out of a row,
+	# to keep this check independent of row/dialog wiring internals.
+	var dialog_scene := preload("res://ui/team_builder/skill_point_dialog.tscn")
+	var dialog: SkillPointDialog = dialog_scene.instantiate()
+	_tree.root.add_child(dialog)
+	await _tree.process_frame
+
+	dialog.show_for(loadout, slime_species, _screen.skill_db, _screen.skillset_db)
+	_check("frizz starts locked with 0 points allocated", not TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz"))
+
+	dialog._on_points_changed(2.0, "slimer")
+	_check(
+		"allocating 2 points in slimer unlocks frizz (2 SP threshold)",
+		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz")
+	)
+	_check("allocation is recorded on the loadout", int(loadout.skill_point_allocation.get("slimer", 0)) == 2)
+
+	dialog._on_skill_toggled(true, "frizz")
+	_check("toggling an unlocked skill's checkbox equips it", loadout.equipped_skill_ids.has("frizz"))
+
+	dialog._on_points_changed(0.0, "slimer")
+	_check(
+		"reallocating away from a threshold re-locks and unequips its skill",
+		not loadout.equipped_skill_ids.has("frizz")
+	)
+
+	dialog.queue_free()
 
 func _check_validation_banner() -> void:
 	var editor := _screen._team_editor_panel

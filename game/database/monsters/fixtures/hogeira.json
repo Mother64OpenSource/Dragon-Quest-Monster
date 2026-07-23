@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"hogeira",
+		"princess",
+		"champion"
+	],
 	"base_agility": 607.0,
 	"base_attack": 810.0,
 	"base_defense": 800.0,
@@ -26,5 +31,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

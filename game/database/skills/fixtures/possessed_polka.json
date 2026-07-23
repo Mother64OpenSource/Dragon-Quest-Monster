@@ -1,0 +1,17 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Possessed Polka",
+	"effects": [
+		{
+			"stages": 1,
+			"stat_name": "attack",
+			"target_self": true,
+			"type": "stat_mod"
+		}
+	],
+	"id": "possessed_polka",
+	"mp_cost": 100,
+	"priority": 0,
+	"target_type": "self"
+}

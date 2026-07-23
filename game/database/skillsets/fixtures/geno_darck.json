@@ -1,0 +1,51 @@
+{
+	"display_name": "Geno Darck",
+	"id": "geno_darck",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "meditation",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 200
+		}
+	]
+}

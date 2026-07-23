@@ -1,0 +1,36 @@
+{
+	"display_name": "Rugius",
+	"id": "rugius",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shuffle",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 200
+		}
+	]
+}

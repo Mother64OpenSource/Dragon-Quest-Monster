@@ -1,0 +1,51 @@
+{
+	"display_name": "Stalagosaur",
+	"id": "stalagosaur",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "boulderbringer",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mountainmover",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ridgeraiser",
+			"sp": 200
+		}
+	]
+}

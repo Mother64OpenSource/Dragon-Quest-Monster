@@ -1,0 +1,56 @@
+{
+	"display_name": "Trickster",
+	"id": "trickster",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "decelerate",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weird_dance",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dim",
+			"sp": 39
+		},
+		{
+			"kind": "skill",
+			"skill_id": "benediction",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "breathtaking_bash",
+			"sp": 62
+		},
+		{
+			"kind": "skill",
+			"skill_id": "break_dance_beat",
+			"sp": 74
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stupefying_strike",
+			"sp": 87
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 100
+		}
+	]
+}

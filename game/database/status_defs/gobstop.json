@@ -1,0 +1,8 @@
+{
+	"display_name": "Gobstop",
+	"duration_turns": 3,
+	"id": "gobstop",
+	"skip_turn_chance": 0.3,
+	"stat_mods_on_apply": [],
+	"tick_damage_percent": 0.0
+}

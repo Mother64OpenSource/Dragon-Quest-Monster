@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Tension Giver",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 63,
+			"type": "damage"
+		}
+	],
+	"id": "tension_giver",
+	"mp_cost": 16,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Exorsus",
+	"id": "exorsus",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "ping",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 23
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizz",
+			"sp": 33
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 90
+		}
+	]
+}

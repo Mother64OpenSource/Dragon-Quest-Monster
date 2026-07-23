@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Megaheal",
+	"effects": [
+		{
+			"power": 735,
+			"target_self": true,
+			"type": "heal"
+		}
+	],
+	"id": "megaheal",
+	"mp_cost": 90,
+	"priority": 0,
+	"target_type": "self"
+}

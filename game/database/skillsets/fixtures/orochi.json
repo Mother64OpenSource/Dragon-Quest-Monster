@@ -1,0 +1,46 @@
+{
+	"display_name": "Orochi",
+	"id": "orochi",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fire_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gobstopper",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_breath",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_locust",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 120
+		}
+	]
+}

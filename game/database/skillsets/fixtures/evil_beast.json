@@ -1,0 +1,41 @@
+{
+	"display_name": "Evil Beast",
+	"id": "evil_beast",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stop_attack",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomphle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 200
+		}
+	]
+}

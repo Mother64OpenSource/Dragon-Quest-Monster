@@ -1,0 +1,46 @@
+{
+	"display_name": "Thunderwind Slashes",
+	"id": "thunderwind_slashes",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "gust_slash",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shade_slash",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_slash",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 100
+		}
+	]
+}

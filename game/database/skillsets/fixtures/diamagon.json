@@ -1,0 +1,41 @@
+{
+	"display_name": "Diamagon",
+	"id": "diamagon",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crack",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 13
+		},
+		{
+			"kind": "skill",
+			"skill_id": "waterspout",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frost_slash",
+			"sp": 23
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 33
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 48
+		},
+		{
+			"kind": "skill",
+			"skill_id": "geyser",
+			"sp": 60
+		}
+	]
+}

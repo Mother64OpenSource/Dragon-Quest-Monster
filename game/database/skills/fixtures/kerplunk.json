@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kerplunk",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 15,
+			"type": "damage"
+		}
+	],
+	"id": "kerplunk",
+	"mp_cost": 0,
+	"priority": 0,
+	"target_type": "self"
+}

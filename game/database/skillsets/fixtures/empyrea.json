@@ -1,0 +1,41 @@
+{
+	"display_name": "Empyrea",
+	"id": "empyrea",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "ping",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "soothing_vortex",
+			"sp": 120
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Spell Breaker II",
+	"id": "spell_breaker_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "great_swing",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadim",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bounce",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_magic",
+			"sp": 150
+		}
+	]
+}

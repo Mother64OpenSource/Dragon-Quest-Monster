@@ -1,0 +1,46 @@
+{
+	"display_name": "Slimer",
+	"id": "slimer",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizz",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zap",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sag",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "share_magic",
+			"sp": 75
+		}
+	]
+}

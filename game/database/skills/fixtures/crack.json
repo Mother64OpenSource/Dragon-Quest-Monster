@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Crack",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 24,
+			"type": "damage"
+		}
+	],
+	"id": "crack",
+	"mp_cost": 3,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

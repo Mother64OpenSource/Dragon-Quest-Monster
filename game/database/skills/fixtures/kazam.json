@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kazam",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 45,
+			"type": "damage"
+		}
+	],
+	"id": "kazam",
+	"mp_cost": 10,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

@@ -1,0 +1,53 @@
+{
+	"display_name": "Yellow Ninja Slime",
+	"id": "yellow_ninja_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "universal_slash",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 40
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 150
+		}
+	]
+}

@@ -17,6 +17,8 @@ static func load_from_dict(data: Dictionary) -> MonsterSpecies:
 	species.starting_trait_ids = _to_string_array(data.get("starting_trait_ids", []))
 	species.sprite_path = data.get("sprite_path", "")
 	species.resistances = data.get("resistances", {})
+	species.available_skill_sets = _to_string_array(data.get("available_skill_sets", []))
+	species.total_skill_points = int(data.get("total_skill_points", 0))
 	return species
 
 static func load_from_file(path: String) -> MonsterSpecies:

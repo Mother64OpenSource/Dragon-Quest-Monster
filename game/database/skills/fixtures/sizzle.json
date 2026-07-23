@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Sizzle",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 48,
+			"type": "damage"
+		}
+	],
+	"id": "sizzle",
+	"mp_cost": 11,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

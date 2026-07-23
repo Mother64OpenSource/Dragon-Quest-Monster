@@ -1,0 +1,41 @@
+{
+	"display_name": "Sword Breaker",
+	"id": "sword_breaker",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dodgy_dance",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 64
+		}
+	]
+}

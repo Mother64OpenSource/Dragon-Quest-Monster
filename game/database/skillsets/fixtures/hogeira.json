@@ -1,0 +1,36 @@
+{
+	"display_name": "Hogeira",
+	"id": "hogeira",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "anchor_knuckle",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "selflessness",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 200
+		}
+	]
+}

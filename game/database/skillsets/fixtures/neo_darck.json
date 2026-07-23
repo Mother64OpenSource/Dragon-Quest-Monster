@@ -1,0 +1,56 @@
+{
+	"display_name": "Neo Darck",
+	"id": "neo_darck",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "penny_pincher",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "klepto_clobber",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chain",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shuffle",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nightmarish_shriek",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "balancing_tango",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 250
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"display_name": "Boom Boxer",
+	"id": "boom_boxer",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "bang",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "beast_bopper",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slowing_slug",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "squelch",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 75
+		}
+	]
+}

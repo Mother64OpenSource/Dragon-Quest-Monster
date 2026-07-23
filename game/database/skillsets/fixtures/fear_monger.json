@@ -1,0 +1,46 @@
+{
+	"display_name": "Fear-monger",
+	"id": "fear_monger",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spike_attack",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tongue_lashing",
+			"sp": 14
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sheen",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 36
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 46
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 60
+		}
+	]
+}

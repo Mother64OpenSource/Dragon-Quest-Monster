@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"green_finger",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 430.0,
 	"base_attack": 476.0,
 	"base_defense": 864.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

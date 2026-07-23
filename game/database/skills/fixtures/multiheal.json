@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Multiheal",
+	"effects": [
+		{
+			"power": 495,
+			"target_self": true,
+			"type": "heal"
+		}
+	],
+	"id": "multiheal",
+	"mp_cost": 60,
+	"priority": 0,
+	"target_type": "self"
+}

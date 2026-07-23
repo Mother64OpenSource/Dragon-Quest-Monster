@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Black Fog",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 180,
+			"type": "damage"
+		}
+	],
+	"id": "black_fog",
+	"mp_cost": 55,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Focus Pocus",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 60,
+			"type": "damage"
+		}
+	],
+	"id": "focus_pocus",
+	"mp_cost": 15,
+	"priority": 0,
+	"target_type": "self"
+}

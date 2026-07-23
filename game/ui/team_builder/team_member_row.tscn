@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://ui/team_builder/team_member_row.gd" id="1"]
+[ext_resource type="PackedScene" path="res://ui/team_builder/skill_point_dialog.tscn" id="2"]
 
 [node name="TeamMemberRow" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 48)
@@ -32,6 +33,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="SkillsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Skills..."
+
 [node name="RemoveButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Remove"
+
+[node name="SkillPointDialog" parent="." instance=ExtResource("2")]

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"dragon_lore",
+		"defender",
+		"icemeister"
+	],
 	"base_agility": 930.0,
 	"base_attack": 800.0,
 	"base_defense": 830.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 130
 }

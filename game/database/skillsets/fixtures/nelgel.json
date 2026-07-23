@@ -1,0 +1,46 @@
+{
+	"display_name": "Nelgel",
+	"id": "nelgel",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 200
+		}
+	]
+}

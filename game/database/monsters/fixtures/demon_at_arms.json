@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"crack_zam",
+		"sizz_zam",
+		"dark_knight"
+	],
 	"base_agility": 429.0,
 	"base_attack": 700.0,
 	"base_defense": 632.0,
@@ -32,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 300
 }

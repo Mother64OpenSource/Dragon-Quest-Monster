@@ -1,0 +1,42 @@
+{
+	"display_name": "Hunter Mech",
+	"id": "hunter_mech",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "metal_slash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 35
+		},
+		{
+			"amount": 30,
+			"kind": "stat_boost",
+			"sp": 55,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hatchet_man",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 150
+		}
+	]
+}

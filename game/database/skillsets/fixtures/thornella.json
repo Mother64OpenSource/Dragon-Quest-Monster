@@ -1,0 +1,51 @@
+{
+	"display_name": "Thornella",
+	"id": "thornella",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_multiplier",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "abiliterator",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "balancing_tango",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		}
+	]
+}

@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"defender",
+		"princess",
+		"champion"
+	],
 	"base_agility": 467.0,
 	"base_attack": 866.0,
 	"base_defense": 1025.0,
@@ -37,5 +42,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

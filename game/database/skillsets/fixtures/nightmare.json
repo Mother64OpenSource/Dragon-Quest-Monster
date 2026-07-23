@@ -1,0 +1,41 @@
+{
+	"display_name": "Nightmare",
+	"id": "nightmare",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 200
+		}
+	]
+}

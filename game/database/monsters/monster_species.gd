@@ -25,6 +25,17 @@ enum Rank { F, E, D, C, B, A, S, SS }
 ## "" means no artwork available yet — callers must handle the missing case.
 @export var sprite_path: String = ""
 
+## Skill panel ids this species can invest skill points into (see
+## SkillSetData). Order is significant only for UI display -- typically
+## [own dedicated panel, then 0-2 shared panels].
+@export var available_skill_sets: Array[String] = []
+
+## Total skill points this species has to allocate across available_skill_sets
+## (see MonsterLoadout.skill_point_allocation). A rank-based placeholder,
+## since there's no leveling/EXP system yet to derive this from -- see
+## wiki/log.md.
+@export var total_skill_points: int = 0
+
 ## Sparse map of resistance-code -> raw symbol from the source spreadsheet
 ## (e.g. "Psn": "½", "Zap": "0"). Only non-blank entries are stored; a code
 ## absent from this dict means normal (unmodified) susceptibility. Symbol

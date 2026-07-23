@@ -1,0 +1,51 @@
+{
+	"display_name": "Huntsman",
+	"id": "huntsman",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "penny_pincher",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "klepto_clobber",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "metal_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dragon_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slime_dunk",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nightmarish_shriek",
+			"sp": 150
+		}
+	]
+}

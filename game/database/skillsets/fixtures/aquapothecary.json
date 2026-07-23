@@ -1,0 +1,46 @@
+{
+	"display_name": "Aquapothecary",
+	"id": "aquapothecary",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "waterspout",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "geyser",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 150
+		}
+	]
+}

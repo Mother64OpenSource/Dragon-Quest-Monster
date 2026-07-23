@@ -1,0 +1,41 @@
+{
+	"display_name": "Diamond Slime",
+	"id": "diamond_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "give_magic",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 200
+		}
+	]
+}

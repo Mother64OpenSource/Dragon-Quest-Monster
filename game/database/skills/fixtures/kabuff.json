@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kabuff",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 27,
+			"type": "damage"
+		}
+	],
+	"id": "kabuff",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "self"
+}

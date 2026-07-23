@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"estark"
+	],
 	"base_agility": 599.0,
 	"base_attack": 660.0,
 	"base_defense": 660.0,
@@ -35,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

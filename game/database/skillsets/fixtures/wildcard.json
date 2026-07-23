@@ -1,0 +1,46 @@
+{
+	"display_name": "Wildcard",
+	"id": "wildcard",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "cremate",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 125
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 150
+		}
+	]
+}

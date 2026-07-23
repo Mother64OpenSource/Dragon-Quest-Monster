@@ -1,0 +1,46 @@
+{
+	"display_name": "Saggitar",
+	"id": "saggitar",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "dodgy_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nature_nerfer",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aha",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "baffling_bonk",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thin_air",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "abiliterator",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 110
+		}
+	]
+}

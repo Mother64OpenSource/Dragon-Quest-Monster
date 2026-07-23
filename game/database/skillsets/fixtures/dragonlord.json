@@ -1,0 +1,51 @@
+{
+	"display_name": "Dragonlord",
+	"id": "dragonlord",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cold_blizzard",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		}
+	]
+}

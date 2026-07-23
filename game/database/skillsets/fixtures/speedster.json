@@ -1,0 +1,51 @@
+{
+	"display_name": "Speedster",
+	"id": "speedster",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 11
+		},
+		{
+			"kind": "skill",
+			"skill_id": "decelerate",
+			"sp": 17
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dodgy_dance",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mercurial_thrust",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "call_of_the_falcon",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 100
+		}
+	]
+}

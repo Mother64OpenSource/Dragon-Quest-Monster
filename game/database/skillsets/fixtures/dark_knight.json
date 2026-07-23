@@ -1,0 +1,41 @@
+{
+	"display_name": "Dark Knight",
+	"id": "dark_knight",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zam",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "undead_undoer",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tap_dance",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defuddle",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weakening_wallop",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 75
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Mage Aid",
+	"id": "mage_aid",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "hocus_locust",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "share_magic",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fizzle",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_multiplier",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "give_magic",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sonata_of_serenity",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 150
+		}
+	]
+}

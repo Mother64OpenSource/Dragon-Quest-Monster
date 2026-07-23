@@ -1,0 +1,41 @@
+{
+	"display_name": "Dark Dragonlord",
+	"id": "dark_dragonlord",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "focus_pocus",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 250
+		}
+	]
+}

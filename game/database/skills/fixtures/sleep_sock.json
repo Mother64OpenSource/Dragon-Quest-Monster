@@ -1,0 +1,17 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Sleep Sock",
+	"effects": [
+		{
+			"chance": 0.5,
+			"status_id": "sleep",
+			"target_self": false,
+			"type": "status"
+		}
+	],
+	"id": "sleep_sock",
+	"mp_cost": 4,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

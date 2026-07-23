@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Dodgy Dance",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 18,
+			"type": "damage"
+		}
+	],
+	"id": "dodgy_dance",
+	"mp_cost": 1,
+	"priority": 0,
+	"target_type": "self"
+}

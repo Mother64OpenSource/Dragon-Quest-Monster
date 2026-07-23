@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Zapall",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 150,
+			"type": "damage"
+		}
+	],
+	"id": "zapall",
+	"mp_cost": 45,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

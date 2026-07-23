@@ -1,0 +1,36 @@
+{
+	"display_name": "Maizar",
+	"id": "maizar",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chain",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 170
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 200
+		}
+	]
+}

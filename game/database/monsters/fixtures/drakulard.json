@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"toughie",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 550.0,
 	"base_attack": 900.0,
 	"base_defense": 1000.0,
@@ -36,5 +41,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

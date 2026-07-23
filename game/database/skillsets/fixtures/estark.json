@@ -1,0 +1,46 @@
+{
+	"display_name": "Estark",
+	"id": "estark",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_edged_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multislash",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 120
+		}
+	]
+}

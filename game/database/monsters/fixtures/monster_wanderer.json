@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"bang_zap",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 513.0,
 	"base_attack": 563.0,
 	"base_defense": 807.0,
@@ -33,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

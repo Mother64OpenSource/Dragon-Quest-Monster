@@ -1,0 +1,41 @@
+{
+	"display_name": "Asura Zoma",
+	"id": "asura_zoma",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "focus_pocus",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ice_age",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 250
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"display_name": "Cure-all",
+	"id": "cure_all",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "benediction",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "amor_seco_rain",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_of_restoration",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sonata_of_serenity",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 150
+		}
+	]
+}

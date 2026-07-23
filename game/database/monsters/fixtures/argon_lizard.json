@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"toxifier",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 480.0,
 	"base_attack": 728.0,
 	"base_defense": 568.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

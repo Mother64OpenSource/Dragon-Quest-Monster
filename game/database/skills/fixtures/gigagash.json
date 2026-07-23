@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Gigagash",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 183,
+			"type": "damage"
+		}
+	],
+	"id": "gigagash",
+	"mp_cost": 56,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

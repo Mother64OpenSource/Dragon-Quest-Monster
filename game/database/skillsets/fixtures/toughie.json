@@ -1,0 +1,46 @@
+{
+	"display_name": "Toughie",
+	"id": "toughie",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 100
+		}
+	]
+}

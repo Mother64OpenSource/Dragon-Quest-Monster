@@ -1,0 +1,51 @@
+{
+	"display_name": "Guard",
+	"id": "guard",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sheen",
+			"sp": 24
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 34
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 44
+		},
+		{
+			"kind": "skill",
+			"skill_id": "selflessness",
+			"sp": 56
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 68
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 82
+		}
+	]
+}

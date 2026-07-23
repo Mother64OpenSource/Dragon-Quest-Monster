@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"frizz_zam",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 380.0,
 	"base_attack": 853.0,
 	"base_defense": 900.0,
@@ -29,5 +34,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 200
 }

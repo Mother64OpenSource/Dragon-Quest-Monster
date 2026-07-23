@@ -1,0 +1,58 @@
+{
+	"display_name": "Princess",
+	"id": "princess",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "benediction",
+			"sp": 18
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scapegoat_seal",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 60
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 80,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_breath",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigabreak",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 150
+		}
+	]
+}

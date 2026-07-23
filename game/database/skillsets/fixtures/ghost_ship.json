@@ -1,0 +1,36 @@
+{
+	"display_name": "Ghost Ship",
+	"id": "ghost_ship",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_magic",
+			"sp": 105
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapall",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 200
+		}
+	]
+}

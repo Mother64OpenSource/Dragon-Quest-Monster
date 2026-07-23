@@ -1,0 +1,51 @@
+{
+	"display_name": "Captain Crow",
+	"id": "captain_crow",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "penny_pincher",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "klepto_clobber",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blinding_blow",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multislash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "assassin_s_stab",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigaslash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 150
+		}
+	]
+}

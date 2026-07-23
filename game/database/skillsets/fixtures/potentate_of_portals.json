@@ -1,0 +1,56 @@
+{
+	"display_name": "Potentate of Portals",
+	"id": "potentate_of_portals",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kaoomphle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 250
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Nightmarish Shriek",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 165,
+			"type": "damage"
+		}
+	],
+	"id": "nightmarish_shriek",
+	"mp_cost": 50,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

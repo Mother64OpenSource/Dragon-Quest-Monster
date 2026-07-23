@@ -1,0 +1,36 @@
+{
+	"display_name": "Sizz & Zam",
+	"id": "sizz_zam",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sizz",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zam",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shade_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 70
+		}
+	]
+}

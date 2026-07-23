@@ -1,0 +1,41 @@
+{
+	"display_name": "Kabalna the Divine",
+	"id": "kabalna_the_divine",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "roundhouse_kick",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazam",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

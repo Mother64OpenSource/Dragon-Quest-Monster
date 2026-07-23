@@ -1,0 +1,51 @@
+{
+	"display_name": "Gisvarg",
+	"id": "gisvarg",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_breath",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sword_dance",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ocean_slash",
+			"sp": 200
+		}
+	]
+}

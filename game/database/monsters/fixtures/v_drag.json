@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"crusader",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 704.0,
 	"base_attack": 792.0,
 	"base_defense": 660.0,
@@ -33,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

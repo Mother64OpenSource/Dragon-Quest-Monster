@@ -1,0 +1,46 @@
+{
+	"display_name": "Corvus",
+	"id": "corvus",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 160
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 200
+		}
+	]
+}

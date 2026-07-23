@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"brown_ninja_slime",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 983.0,
 	"base_attack": 855.0,
 	"base_defense": 512.0,
@@ -26,5 +31,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

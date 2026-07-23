@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Fissure Strike",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 435,
+			"type": "damage"
+		}
+	],
+	"id": "fissure_strike",
+	"mp_cost": 140,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

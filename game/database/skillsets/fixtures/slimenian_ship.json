@@ -1,0 +1,46 @@
+{
+	"display_name": "Slimenian Ship",
+	"id": "slimenian_ship",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "stealth_strike",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shuffle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "anchor_knuckle",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "song_of_salvation",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_drain_magic",
+			"sp": 150
+		}
+	]
+}

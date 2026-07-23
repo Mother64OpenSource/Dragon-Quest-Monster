@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Inferno Slash",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 75,
+			"type": "damage"
+		}
+	],
+	"id": "inferno_slash",
+	"mp_cost": 20,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

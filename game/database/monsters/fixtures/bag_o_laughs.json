@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"fear_monger",
+		"fire_fighter",
+		"dancer"
+	],
 	"base_agility": 827.0,
 	"base_attack": 642.0,
 	"base_defense": 716.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 100
 }

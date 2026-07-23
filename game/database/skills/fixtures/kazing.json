@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Kazing",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 375,
+			"type": "damage"
+		}
+	],
+	"id": "kazing",
+	"mp_cost": 120,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Candy Carnival",
+	"id": "candy_carnival",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sonata_of_serenity",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "balancing_tango",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whistle_of_wisdom",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "horns_of_battle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dire_dirge",
+			"sp": 200
+		}
+	]
+}

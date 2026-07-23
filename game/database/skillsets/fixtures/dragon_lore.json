@@ -1,0 +1,46 @@
+{
+	"display_name": "Dragon Lore",
+	"id": "dragon_lore",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fire_breath",
+			"sp": 2
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cool_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sandstorm",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stupefying_strike",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_breath",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 75
+		}
+	]
+}

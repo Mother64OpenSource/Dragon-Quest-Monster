@@ -1,0 +1,51 @@
+{
+	"display_name": "Hero of the Heavens",
+	"id": "hero_of_the_heavens",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "inferno",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lift_demerit",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		}
+	]
+}

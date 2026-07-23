@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"materialist",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 773.0,
 	"base_attack": 677.0,
 	"base_defense": 1062.0,
@@ -27,5 +32,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 130
 }

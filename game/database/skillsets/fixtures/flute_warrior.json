@@ -1,0 +1,31 @@
+{
+	"display_name": "Flute Warrior",
+	"id": "flute_warrior",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sap",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "decelerate",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "give_magic",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 150
+		}
+	]
+}

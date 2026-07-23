@@ -1,0 +1,46 @@
+{
+	"display_name": "Cottney",
+	"id": "cottney",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "balancing_tango",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "star_fall",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_of_the_stars",
+			"sp": 170
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 200
+		}
+	]
+}

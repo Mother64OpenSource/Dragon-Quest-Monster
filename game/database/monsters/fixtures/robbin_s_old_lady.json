@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"robbin_s_old_lady"
+	],
 	"base_agility": 674.0,
 	"base_attack": 732.0,
 	"base_defense": 579.0,
@@ -35,5 +38,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

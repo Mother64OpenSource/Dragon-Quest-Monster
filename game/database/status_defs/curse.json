@@ -1,0 +1,15 @@
+{
+	"display_name": "Curse",
+	"duration_turns": 5,
+	"id": "curse",
+	"skip_turn_chance": 0.0,
+	"stat_mods_on_apply": [
+		{
+			"chance": 1.0,
+			"stages": -1,
+			"stat_name": "attack",
+			"target_self": true
+		}
+	],
+	"tick_damage_percent": 0.0
+}

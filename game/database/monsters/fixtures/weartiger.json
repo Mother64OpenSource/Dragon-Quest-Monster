@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"boom_boxer",
+		"brute_road",
+		"guerrilla"
+	],
 	"base_agility": 669.0,
 	"base_attack": 842.0,
 	"base_defense": 953.0,
@@ -28,5 +33,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 160
 }

@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"rhapthorne_ii"
+	],
 	"base_agility": 379.0,
 	"base_attack": 564.0,
 	"base_defense": 748.0,
@@ -32,5 +35,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

@@ -1,0 +1,41 @@
+{
+	"display_name": "Rigor Mortex",
+	"id": "rigor_mortex",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "aha",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaclang",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 150
+		}
+	]
+}

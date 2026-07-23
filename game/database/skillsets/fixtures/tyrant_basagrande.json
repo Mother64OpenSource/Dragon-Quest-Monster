@@ -1,0 +1,54 @@
+{
+	"display_name": "Tyrant Basagrande",
+	"id": "tyrant_basagrande",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "war_cry",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 80,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 200
+		}
+	]
+}

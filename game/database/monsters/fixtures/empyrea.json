@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"empyrea",
+		"princess",
+		"champion"
+	],
 	"base_agility": 880.0,
 	"base_attack": 555.0,
 	"base_defense": 757.0,
@@ -34,5 +39,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 400
 }

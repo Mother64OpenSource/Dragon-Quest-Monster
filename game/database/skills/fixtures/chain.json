@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "magic",
+	"display_name": "Chain",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 123,
+			"type": "damage"
+		}
+	],
+	"id": "chain",
+	"mp_cost": 36,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,56 @@
+{
+	"display_name": "Zoma",
+	"id": "zoma",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "blunt",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cold_blizzard",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "spooky_aura",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomph",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "disruptive_wave",
+			"sp": 150
+		}
+	]
+}

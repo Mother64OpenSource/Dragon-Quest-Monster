@@ -1,0 +1,36 @@
+{
+	"display_name": "Toxifier",
+	"id": "toxifier",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 6
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poison_breath",
+			"sp": 12
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venomous_volley",
+			"sp": 50
+		}
+	]
+}

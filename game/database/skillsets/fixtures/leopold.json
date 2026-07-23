@@ -1,0 +1,46 @@
+{
+	"display_name": "Leopold",
+	"id": "leopold",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whack",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cold_blizzard",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thwack",
+			"sp": 85
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 100
+		}
+	]
+}

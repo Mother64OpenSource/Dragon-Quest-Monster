@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Soothing Vortex",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 195,
+			"type": "damage"
+		}
+	],
+	"id": "soothing_vortex",
+	"mp_cost": 60,
+	"priority": 0,
+	"target_type": "self"
+}

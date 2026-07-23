@@ -1,0 +1,41 @@
+{
+	"display_name": "Hawkhart",
+	"id": "hawkhart",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizz",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 11
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_slash",
+			"sp": 19
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singe",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 48
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sear",
+			"sp": 60
+		}
+	]
+}

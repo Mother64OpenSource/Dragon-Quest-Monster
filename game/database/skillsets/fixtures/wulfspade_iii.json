@@ -1,0 +1,51 @@
+{
+	"display_name": "Wulfspade III",
+	"id": "wulfspade_iii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "critical_miss",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tacticlamp",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 200
+		}
+	]
+}

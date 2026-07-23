@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"cure_all",
+		"slimer",
+		"aquapothecary"
+	],
 	"base_agility": 675.0,
 	"base_attack": 412.0,
 	"base_defense": 893.0,
@@ -28,5 +33,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 250
 }

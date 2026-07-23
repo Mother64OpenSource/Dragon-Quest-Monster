@@ -1,0 +1,17 @@
+{
+	"accuracy": 1.0,
+	"category": "status",
+	"display_name": "Fuddle",
+	"effects": [
+		{
+			"chance": 0.5,
+			"status_id": "confusion",
+			"target_self": false,
+			"type": "status"
+		}
+	],
+	"id": "fuddle",
+	"mp_cost": 5,
+	"priority": 0,
+	"target_type": "single_enemy"
+}

@@ -1,0 +1,58 @@
+{
+	"display_name": "Prince",
+	"id": "prince",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "peep_slash",
+			"sp": 5
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "rubblerouser",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 40
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulderbringer",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "anchor_knuckle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sword_dance",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Firewind Slashes",
+	"id": "firewind_slashes",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "flame_slash",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gust_slash",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bomb_slash",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dragon_slash",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 100
+		}
+	]
+}

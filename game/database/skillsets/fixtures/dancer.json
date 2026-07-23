@@ -1,0 +1,51 @@
+{
+	"display_name": "Dancer",
+	"id": "dancer",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "dodgy_dance",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "weird_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sultry_dance",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 35
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tap_dance",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "possessed_polka",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 200
+		}
+	]
+}

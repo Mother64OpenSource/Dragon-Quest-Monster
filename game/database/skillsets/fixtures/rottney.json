@@ -1,0 +1,41 @@
+{
+	"display_name": "Rottney",
+	"id": "rottney",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tame_tiger",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "star_fall",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_pocus",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_of_the_stars",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 200
+		}
+	]
+}

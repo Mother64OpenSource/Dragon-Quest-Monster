@@ -1,0 +1,41 @@
+{
+	"display_name": "Dark Mecha-Slime",
+	"id": "dark_mecha_slime",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chain",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_panic",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"display_name": "Darklight Slashes",
+	"id": "darklight_slashes",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frost_slash",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hallowed_slash",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shade_slash",
+			"sp": 26
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mysterian_mauler",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 65
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_slash",
+			"sp": 100
+		}
+	]
+}

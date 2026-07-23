@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"materialist",
+		"fire_fighter",
+		"fear_monger"
+	],
 	"base_agility": 4.0,
 	"base_attack": 14.0,
 	"base_defense": 20.0,
@@ -27,10 +32,10 @@
 	},
 	"sprite_path": "res://assets/monsters/golem.webp",
 	"starting_skill_ids": [
-		"attack",
-		"double_slash"
+		"attack"
 	],
 	"starting_trait_ids": [
 		"metal_body"
-	]
+	],
+	"total_skill_points": 200
 }

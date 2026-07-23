@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Call of the Falcon",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 105,
+			"type": "damage"
+		}
+	],
+	"id": "call_of_the_falcon",
+	"mp_cost": 30,
+	"priority": 0,
+	"target_type": "self"
+}

@@ -1,0 +1,56 @@
+{
+	"display_name": "Fortifier",
+	"id": "fortifier",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heal",
+			"sp": 4
+		},
+		{
+			"kind": "skill",
+			"skill_id": "accelerate",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "buff",
+			"sp": 14
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ping",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 28
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 38
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaping",
+			"sp": 64
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "midheal",
+			"sp": 100
+		}
+	]
+}

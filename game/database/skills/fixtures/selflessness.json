@@ -1,0 +1,16 @@
+{
+	"accuracy": 1.0,
+	"category": "physical",
+	"display_name": "Selflessness",
+	"effects": [
+		{
+			"category": "physical",
+			"power": 30,
+			"type": "damage"
+		}
+	],
+	"id": "selflessness",
+	"mp_cost": 5,
+	"priority": 0,
+	"target_type": "self"
+}

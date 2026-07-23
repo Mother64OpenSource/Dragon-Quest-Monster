@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"fear_monger",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 875.0,
 	"base_attack": 662.0,
 	"base_defense": 777.0,
@@ -26,5 +31,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 200
 }

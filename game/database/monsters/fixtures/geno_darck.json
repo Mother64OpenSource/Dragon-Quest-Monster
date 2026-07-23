@@ -1,4 +1,7 @@
 {
+	"available_skill_sets": [
+		"geno_darck"
+	],
 	"base_agility": 790.0,
 	"base_attack": 656.0,
 	"base_defense": 320.0,
@@ -34,5 +37,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }

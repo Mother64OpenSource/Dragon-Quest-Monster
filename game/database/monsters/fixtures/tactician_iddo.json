@@ -1,4 +1,9 @@
 {
+	"available_skill_sets": [
+		"tactician_iddo",
+		"dragon_lore",
+		"defender"
+	],
 	"base_agility": 574.0,
 	"base_attack": 515.0,
 	"base_defense": 544.0,
@@ -31,5 +36,6 @@
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": []
+	"starting_trait_ids": [],
+	"total_skill_points": 500
 }
