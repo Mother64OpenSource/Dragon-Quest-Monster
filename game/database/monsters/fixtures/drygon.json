@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"brute_road",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 605.0,
 	"base_attack": 773.0,
@@ -34,10 +35,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/drygon.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

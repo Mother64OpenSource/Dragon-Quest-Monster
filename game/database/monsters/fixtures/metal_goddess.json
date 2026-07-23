@@ -2,7 +2,10 @@
 	"available_skill_sets": [
 		"giant_crusher",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz",
+		"saboteur",
+		"healer"
 	],
 	"base_agility": 1000.0,
 	"base_attack": 216.0,
@@ -46,10 +49,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"slots": 4,
 	"sprite_path": "res://assets/monsters/metal_goddess.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

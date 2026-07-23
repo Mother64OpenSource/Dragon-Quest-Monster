@@ -334,3 +334,230 @@ removes it from the loadout the same way the old inline checkboxes did.
 All three headless suites pass, including new coverage for allocation,
 threshold unlocking/re-locking, and the dialog not crashing on an
 out-of-panel equipped skill left over from the previous data model.
+
+## [2026-07-23] build | Milestone 4: playable battle screen (two-window local duel)
+
+The battle engine (Milestone 1) was fully built and headless-tested but had
+never been wired to anything visual, and separately nothing anywhere ever
+turned a saved team into a real battle — `MonsterInstance` always read
+straight from `MonsterSpecies`, with no bridge from `MonsterLoadout`. The
+user wanted an actually playable battle: no AI needed, just two windows so
+they can control both sides themselves. Planned formally (plan file, same
+as Milestone 3) before implementing, given the size and the architectural
+questions involved.
+
+Investigated `TurnManager.run_turn()` first and confirmed it's fully
+synchronous end to end — no `await` anywhere in the call chain, and
+`ActionProvider.get_action()` returns a value immediately. A real UI can't
+make `get_action()` itself wait on a click, so rather than touching the
+engine, the UI pre-collects one `Action` per active monster into the
+existing `ScriptedActionProvider` (reused as-is via `set_queue()`) and only
+calls `run_turn()` once both sides have submitted for the round — which
+also happens to be the classic "pick everyone's move, then watch it play
+out" DQM turn structure, not just a technical workaround.
+
+New `TeamToBattleBridge.build_team()` (`game/battle/bridge/`) turns a
+`SavedTeam` into `Array[MonsterInstance]`, mirroring the existing
+test-fixture builder's construction pattern but sourcing `learned_skills`
+from the player's actual `equipped_skill_ids` rather than a species'
+full default list. New `game/ui/battle/`: `BattleController` (owns the
+`BattleEngine` + two action-queue providers, gates `run_turn()` on both
+sides submitting, exposes `turn_resolved`/`battle_ended` signals),
+`BattleSideView` (per-window UI: both parties' HP/MP, the active monster's
+skill buttons disabled by MP cost, a translated event log, win/lose
+screen), and `BattleSetupScreen` (pick two saved teams, launch the duel).
+`active_slot_count` is fixed at 1 for this milestone — the only slot count
+the engine has ever been tested with; bench members still auto-backfill on
+faint (already engine behavior), but there's no player-chosen switch-in
+hook, so with one active slot there's always exactly one legal target and
+the UI auto-targets rather than showing a target picker.
+
+Two real OS windows, one process, no networking: the main window becomes
+side_a's view, and a second `Window` node is spawned for side_b, both
+holding a `BattleSideView` pointed at the same in-memory `BattleController`
+— no serialization or loopback connection involved, just two Control trees
+sharing one Godot process's memory, matching "control both, fight myself."
+
+Hit a real GDScript gotcha writing the headless tests: lambdas capture
+local variables *by value*, so a probe like `func(x): my_var = x` never
+propagates back to the enclosing scope, while `func(x): my_array.append(x)`
+does (appending mutates the same underlying Array object) — three tests
+silently read stale initial values (a count stuck at 0, a string stuck at
+"") until switched to the append pattern already used elsewhere in this
+project's tests. Also hit a plain type bug: `ScriptedActionProvider.set_queue()`
+expects a strictly-typed `Array[Action]`, and passing an untyped `[action]`
+literal fails at runtime.
+
+New `BattleUiTestRunner` (15 checks): bridge construction, both-sides-must-
+submit gating, auto-targeting for enemy- vs self-targeted skills, a full
+scripted 1v1 battle running to a deterministic winner, and
+`BattleSideView` rendering/disabling the right skill buttons. All four
+headless suites (this one plus the three from earlier milestones) pass.
+Real dual-window behavior (titles, live updates in both windows, actually
+clicking through a duel) can't be exercised by a headless `SceneTree` and
+is manual-only, same as Milestone 3's drag-and-drop — needs an in-editor
+F5 run to confirm.
+
+## [2026-07-23] build | Correction: real slot-based skill panel quota
+
+The family-based panel system shipped with a flat "personal panel + up to 2
+shared" cap for every monster (3 panels max, regardless of species). The
+user pointed out the real games vary this by the monster's "slots" — 1 slot
+→ 3 total panels, 2 slots → 4, 3 slots → 5, 4 slots → 6 (i.e.
+`total = slots + 2`). Web research into wiki pages for this specific title
+turned up mostly stub sections (e.g. Dragon Rider's own "Iru and Luca"
+entry has an empty "Rank and Slot No." section), so this came from the
+user's own knowledge of the games rather than a source found here.
+
+The slot count itself was already sitting unused in the data: the source
+spreadsheet's "Size" column (e.g. "S [1]", "P [2]", "H [3]", "G [4]") has
+exactly this number in brackets — 577 monsters at 1 slot, 134 at 2, 79 at
+3, 13 at 4. Updated `build_family_panels.ps1` to read it and compute each
+monster's shared-panel quota as `slots + 1` instead of a flat `2`, then
+re-ran `import_skill_panels.gd` to regenerate all 803 monsters'
+`available_skill_sets`. Verified against a 4-slot monster (Stalagosaur,
+"G [4]"): now gets 6 panels (1 personal + 5 shared) as expected; 1-slot
+monsters like Slime are unaffected (quota was already 2, matching the old
+flat cap). All four headless suites still pass.
+
+## [2026-07-23] build | Milestone 5: multi-slot grid battles, real dual windows, Orders
+
+Milestone 4 shipped a playable but limited duel: exactly one monster active
+per side, auto-targeted (since only one legal target ever existed), and a
+"2 windows" claim that turned out not to actually separate. The user wanted
+what the real games look like: up to 4 monsters active and individually
+commandable per side, arranged in a grid, real separate OS windows, and a
+working "Orders" command (previously a disabled stub).
+
+Before touching anything, verified the engine could take this with zero
+modification (the whole point of Milestone 4's design was staying out of
+`game/battle/**`): read `battle_setup.gd`, `faint_handler.gd`,
+`turn_manager.gd`, `action_resolver.gd`, `action_executor.gd`, and
+`battle_state.gd` directly and confirmed every one of them is already
+slot-count-generic — `send_out_initial` loops `for slot in
+range(active_slot_count)` with no hardcoded slot 0, `FaintHandler` backfills
+into the specific vacated slot, and `TurnManager`/`ActionResolver`/
+`ActionExecutor` key everything off `instance_id`, never slot index, so
+several simultaneous actions per side already resolve correctly through the
+existing priority/agility/RNG/submission-index ordering. `BattleState.set_active_at(side,
+slot, team_index)` already existed and was genuinely unused for anything
+except the two automatic paths (initial send-out, faint backfill) — a
+voluntary mid-battle swap needed no new engine API, just a caller.
+
+Also found the actual cause of the windows not separating: Godot's project
+setting `display/window/subwindows/embed_subwindows` defaults to `true` and
+nothing in `project.godot` overrode it, so the `Window` node
+`BattleSetupScreen` spawns for side_b was rendering embedded inside the main
+window instead of as a real separate OS window. Added
+`window/subwindows/embed_subwindows=false` to `project.godot`'s `[display]`
+section — a one-line project setting, not a UI bug.
+
+`active_slot_count` is now fixed at 4 for both sides (was 1) — a team
+smaller than 4 just leaves the remaining slots empty, already handled
+gracefully by the engine (`get_monster_at` returns `null` past a team's
+size, and `TurnManager` already skips a null/fainted monster). `BattleController`
+was restructured from one ready-flag per side to per-slot tracking:
+`_pending_slots[side]` snapshots which slots have a living monster at the
+start of each round, `_submitted_slots[side]` tracks which of those have
+acted, and the round resolves once every pending slot on both sides has
+submitted. New `submit_fight(side, slot, skill_id, target_instance_id)`
+replaces the old single-target auto-targeting — with up to 4 enemies now
+possibly active, the player has to actually pick one, so `BattleSideView`'s
+battlefield grid switches into a clickable target-picker once a
+single-enemy skill is chosen (self-targeted skills still submit
+immediately, no picker needed). New `submit_swap(side, slot,
+bench_instance_id)` implements "Orders": swaps a living bench monster into
+the given slot via the existing `set_active_at`, consuming that slot's
+action for the round — the incoming monster gets no queued action and
+naturally does nothing this turn (already-existing engine behavior for a
+null action), then acts normally starting next round. Disabled with a
+tooltip when a side has no living bench monster. "Tactics" remains an
+inert stub — only Orders was requested to work.
+
+`BattleSideView` now renders both parties as 2x2 `GridContainer`s labeled
+"Position 1-4" (deliberately distinct wording from the earlier
+`species.slots` "[Slot N]" display, an unrelated concept that happens to
+share the numbers 1-4) and cycles the command panel through each of your
+side's not-yet-submitted pending slots in turn. Extended
+`BattleUiTestRunner` with checks for: multi-slot pending/ready gating on
+asymmetric team sizes (2-member vs 1-member), explicit-target submission,
+and the full Orders/swap flow (5-member team, 5th starts on the bench,
+swap moves it into an active slot and queues no action for it). All four
+headless suites pass. Actually launching two separate OS windows and
+clicking through the grid/target-pick/Orders flow live is manual-only,
+same category as Milestone 3's drag-and-drop — needs an in-editor F5 run.
+
+## [2026-07-23] build | Window movability + first real visual theme
+
+Two smaller fixes/polish requested after trying Milestone 5: the second
+battle window appeared unmovable, and the whole UI was still 100% bare
+default Godot gray theme (never styled since Milestone 3). For the window,
+explicitly set `unresizable`/`borderless`/`exclusive`/`transient` to their
+normal values (rather than relying on defaults) and positioned it offset to
+the right of the main window on open, rather than stacked exactly on top of
+it — the likely real cause of "it won't move," since dragging the top
+window off an identically-positioned pair can look like nothing happened.
+
+Added `game/ui/theme.tres`, a small dark-slate theme (rounded panels,
+amber accent on hover/press, styled progress bars) applied project-wide via
+`project.godot`'s new `[gui]` `theme/custom` setting — affects the team
+builder too, not just battle. Added the "Opponent"/"Your Party" section
+headers the battle screen was missing entirely, and color-coded HP bars
+(green/amber/red by percentage) for an at-a-glance read.
+
+## [2026-07-23] build | Milestone 6: a monster's own slots consume real space
+
+Milestone 5 gave every monster exactly one of the 4 active positions
+regardless of its own `species.slots` (1-4, the synthesis-size field shown
+as "[Slot N]"). The user wanted that field to actually matter: a 2-slot
+monster occupies 2 of the 4 positions, a 4-slot monster all of them —
+matching the real games, where bigger monsters take up more formation room.
+
+Unlike Milestone 5 (confirmed zero engine changes needed), this genuinely
+required touching engine code — `BattleSetup._send_out_side` and
+`FaintHandler`'s backfill both assumed a strict 1 team-member : 1 slot
+mapping. `TurnManager`/`ActionResolver` still needed no changes at all:
+they already key everything off `instance_id`, so a monster spanning 2 slot
+indices just means `get_monster_at` returns the same instance for both —
+the existing per-instance action queue already treats the second lookup as
+a harmless no-op, the same way a fainted/empty slot already was.
+
+`BattleSetup._send_out_side` now greedily packs the team in order: a
+monster that fits the remaining slot budget claims all its slots at once
+and packing advances; one that doesn't fit is left on the bench and
+packing tries the *next* team member (who might be smaller and fit)
+rather than giving up on the rest of the team. `FaintHandler` applies the
+same greedy logic to backfill: a fainted monster's full *vacated slot
+range* (always contiguous, since it was placed as one contiguous run) gets
+refilled by one or more fitting reserves in team order; if nothing fits
+the remainder, those slots just stay empty until a future faint/backfill
+cycle rather than forcing a fit or crashing. New `BattleState` helpers:
+`get_slots_for_team_index` (which active-slot indices a team member
+currently occupies) and an extended `get_first_reserve_index(side,
+max_size)` (skips a reserve too big for the room actually available).
+
+`BattleSideView` dropped the rigid 2x2 `GridContainer` for an
+`HFlowContainer` — a 3-of-4-slots monster can't be expressed as a clean
+rectangle in a fixed 2-column grid (it'd cover one full row plus half of
+the next), so a flow layout that wraps naturally was simpler and more
+honest than fighting grid geometry. Cards render once per unique active
+monster (not once per raw slot index — a multi-slot monster would
+otherwise draw its own card 2-4 times), with width scaled by
+`species.slots`: a 4-slot monster's card is roughly 4x as wide as a 1-slot
+one and ends up alone on its own row simply because nothing else fits
+beside it. The "Position N" per-card labels from Milestone 5 were dropped
+along with the rigid grid (no longer a stable, meaningful number once
+cards flow and resize); the command panel's "Commanding" indicator now
+names the actual monster instead.
+
+Extended `BattleUiTestRunner` with real fixtures at each slot size (aamon=2,
+aquarion=3, asura_zoma=4) covering: a 2-slot + two 1-slot team packing
+correctly; a 4-slot monster occupying the whole roster alone; a 3-slot +
+4-slot + 1-slot team where the 4-slot monster is skipped (doesn't fit the
+remaining room) while the smaller, later 1-slot monster still gets placed;
+and fainting a 2-slot monster backfilling both vacated slots from two
+1-slot bench reserves. Re-ran the Milestone 1 hand-scripted battle test
+specifically to confirm the packing change is fully backward-compatible —
+all of its fixtures are 1-slot, so packing degenerates to the old 1:1
+behavior, and it still passes byte-for-byte identical. All four headless
+suites pass.

@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"aquapothecary",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist"
 	],
 	"base_agility": 294.0,
 	"base_attack": 714.0,
@@ -31,10 +32,11 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/whale_mage.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"niflheim",
 		"graveheart",
-		"white_knight"
+		"white_knight",
+		"green_finger"
 	],
 	"base_agility": 626.0,
 	"base_attack": 813.0,
@@ -32,10 +33,11 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/dierantula.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

@@ -32,10 +32,11 @@
 		"Wsh": "½",
 		"Zam": "HP"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/gadis.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

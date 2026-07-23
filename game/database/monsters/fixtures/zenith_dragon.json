@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"zenith_dragon",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 546.0,
 	"base_attack": 678.0,
@@ -36,10 +38,11 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/zenith_dragon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

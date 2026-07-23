@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"cold_sleep",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 642.0,
 	"base_attack": 821.0,
@@ -37,10 +38,11 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/carnivine.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 250
+	"total_skill_points": 250.0
 }

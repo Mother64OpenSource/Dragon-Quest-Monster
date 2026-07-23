@@ -31,10 +31,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/belial.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

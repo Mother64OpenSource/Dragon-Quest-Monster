@@ -2,7 +2,10 @@
 	"available_skill_sets": [
 		"dark_dragonlord",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder",
+		"toxifier"
 	],
 	"base_agility": 580.0,
 	"base_attack": 511.0,
@@ -33,10 +36,11 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"slots": 4,
 	"sprite_path": "res://assets/monsters/dark_dragonlord.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

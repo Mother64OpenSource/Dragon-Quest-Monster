@@ -68,7 +68,10 @@ func all_fainted(side: String) -> bool:
 ## slot on this side, or -1 if none remain — used for automatic backfill
 ## after a faint (M1 has no strategic switch choice to make, so this is
 ## deterministic "next in list" rather than a provider-driven decision).
-func get_first_reserve_index(side: String) -> int:
+## max_size skips a reserve whose own species.slots wouldn't fit in the
+## space actually available (see BattleSetup/FaintHandler's size-aware
+## packing) — the default keeps every pre-existing caller's behavior.
+func get_first_reserve_index(side: String, max_size: int = 999999) -> int:
 	var team := _team_for_side(side)
 	var slots := _active_slots_for_side(side)
 	for i in range(team.size()):
@@ -76,8 +79,21 @@ func get_first_reserve_index(side: String) -> int:
 			continue
 		if slots.has(i):
 			continue
+		if team[i].species.slots > max_size:
+			continue
 		return i
 	return -1
+
+## Every active-slot index currently occupied by this team_index (a
+## multi-slot monster occupies more than one) — used to find the full
+## vacated range to backfill when such a monster faints.
+func get_slots_for_team_index(side: String, team_index: int) -> Array[int]:
+	var slots := _active_slots_for_side(side)
+	var result: Array[int] = []
+	for i in range(slots.size()):
+		if slots[i] == team_index:
+			result.append(i)
+	return result
 
 func _team_for_side(side: String) -> Array[MonsterInstance]:
 	match side:

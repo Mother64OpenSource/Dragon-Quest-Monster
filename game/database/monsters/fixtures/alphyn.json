@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bang_woosh",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 772.0,
 	"base_attack": 710.0,
@@ -34,10 +35,11 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/alphyn.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

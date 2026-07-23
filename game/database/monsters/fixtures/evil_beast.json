@@ -32,10 +32,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/evil_beast.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

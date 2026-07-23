@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"saggitar",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 704.0,
 	"base_attack": 564.0,
@@ -37,10 +39,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/saggitar.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

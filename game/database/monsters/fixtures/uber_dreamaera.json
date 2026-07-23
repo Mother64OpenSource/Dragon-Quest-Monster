@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"healer",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 546.0,
 	"base_attack": 597.0,
@@ -31,10 +32,11 @@
 		"Wsh": "⁎",
 		"Zap": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/uber_dreamaera.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

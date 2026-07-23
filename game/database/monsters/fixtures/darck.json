@@ -30,10 +30,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/darck.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

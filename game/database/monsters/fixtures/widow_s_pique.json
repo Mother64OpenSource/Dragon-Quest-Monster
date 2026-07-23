@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"fear_monger",
 		"graveheart",
-		"white_knight"
+		"white_knight",
+		"green_finger"
 	],
 	"base_agility": 808.0,
 	"base_attack": 797.0,
@@ -36,10 +37,11 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/widow_s_pique.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 250
+	"total_skill_points": 250.0
 }

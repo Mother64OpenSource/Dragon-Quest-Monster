@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"slime_blaster",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz",
+		"saboteur"
 	],
 	"base_agility": 308.0,
 	"base_attack": 432.0,
@@ -37,10 +39,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/slime_blaster.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

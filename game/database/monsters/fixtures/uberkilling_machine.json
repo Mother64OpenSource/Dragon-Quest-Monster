@@ -36,10 +36,11 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/uberkilling_machine.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

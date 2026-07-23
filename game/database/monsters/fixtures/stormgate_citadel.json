@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"stormgate_citadel",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 511.0,
 	"base_attack": 649.0,
@@ -34,10 +36,11 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/stormgate_citadel.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"metal_crusher",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower",
+		"dancer"
 	],
 	"base_agility": 590.0,
 	"base_attack": 590.0,
@@ -32,10 +34,11 @@
 		"Wck": "↑↑",
 		"Wsh": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/town_frog.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 200
+	"total_skill_points": 200.0
 }

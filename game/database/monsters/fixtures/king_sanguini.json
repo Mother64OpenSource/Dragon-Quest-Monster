@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"king_sanguini",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 895.0,
 	"base_attack": 448.0,
@@ -33,10 +34,11 @@
 		"Wck": "½",
 		"Zap": "HP"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/king_sanguini.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

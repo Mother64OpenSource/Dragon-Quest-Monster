@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"hunter_mech",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 587.0,
 	"base_attack": 722.0,
@@ -32,10 +33,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/war_mantis.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

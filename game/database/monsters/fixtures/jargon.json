@@ -28,10 +28,11 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/jargon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 100
+	"total_skill_points": 100.0
 }

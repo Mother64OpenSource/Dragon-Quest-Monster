@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"bjorn",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower",
+		"dancer"
 	],
 	"base_agility": 546.0,
 	"base_attack": 660.0,
@@ -36,10 +38,11 @@
 		"Wck": "↑↑",
 		"Zap": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/bjorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

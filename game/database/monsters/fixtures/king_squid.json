@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"cleanser",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 609.0,
 	"base_attack": 772.0,
@@ -33,10 +34,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/king_squid.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

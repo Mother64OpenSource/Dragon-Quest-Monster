@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"dimensional_dragon",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 723.0,
 	"base_attack": 588.0,
@@ -31,10 +32,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/dimensional_dragon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

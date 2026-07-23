@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"tornado",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz"
 	],
 	"base_agility": 1260.0,
 	"base_attack": 416.0,
@@ -46,10 +47,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/darkonium_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

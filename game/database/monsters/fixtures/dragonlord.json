@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"dragonlord",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 560.0,
 	"base_attack": 728.0,
@@ -36,10 +37,11 @@
 		"Zam": "0",
 		"Zap": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/dragonlord.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

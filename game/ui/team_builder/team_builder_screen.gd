@@ -17,8 +17,10 @@ var roster: TeamRosterManager
 
 @onready var _team_list_panel: TeamListPanel = $HSplitContainer/TeamListPanel
 @onready var _team_editor_panel: TeamEditorPanel = $HSplitContainer/TeamEditorPanel
+@onready var _battle_button: Button = $TopBar/BattleButton
 
 func _ready() -> void:
+	_battle_button.pressed.connect(_on_battle_pressed)
 	monster_db = MonsterDatabase.new()
 	skill_db = SkillDatabase.new()
 	skillset_db = SkillSetDatabase.new()
@@ -37,3 +39,6 @@ func _on_team_selected(team_id: String) -> void:
 
 func _on_team_updated(_team: SavedTeam) -> void:
 	_team_list_panel.refresh_list()
+
+func _on_battle_pressed() -> void:
+	get_tree().change_scene_to_file("res://ui/battle/battle_setup_screen.tscn")

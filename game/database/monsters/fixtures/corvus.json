@@ -34,10 +34,11 @@
 		"Zam": "⇄",
 		"Zap": "⇄"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/corvus.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

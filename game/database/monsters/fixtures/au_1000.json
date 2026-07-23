@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"metal_crusher",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer"
 	],
 	"base_agility": 471.0,
 	"base_attack": 748.0,
@@ -39,10 +40,11 @@
 		"Zam": "↑",
 		"Zap": "HP"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/au_1000.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

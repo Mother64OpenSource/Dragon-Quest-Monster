@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"realm_of_the_mighty",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 335.0,
 	"base_attack": 704.0,
@@ -40,10 +42,11 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/realm_of_the_mighty.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

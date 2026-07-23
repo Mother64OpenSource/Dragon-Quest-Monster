@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bang_zap",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 538.0,
 	"base_attack": 703.0,
@@ -33,10 +34,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/wishmaster.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 250
+	"total_skill_points": 250.0
 }

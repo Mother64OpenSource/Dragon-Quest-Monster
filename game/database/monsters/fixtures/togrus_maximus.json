@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"dance_breaker",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist",
+		"cleanser"
 	],
 	"base_agility": 580.0,
 	"base_attack": 500.0,
@@ -33,10 +35,11 @@
 		"Wsh": "0",
 		"Zap": "↓"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/togrus_maximus.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 250
+	"total_skill_points": 250.0
 }

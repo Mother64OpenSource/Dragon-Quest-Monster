@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bombardier",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 670.0,
 	"base_attack": 819.0,
@@ -32,10 +33,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/drackal.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 130
+	"total_skill_points": 130.0
 }

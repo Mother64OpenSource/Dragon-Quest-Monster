@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"frizz_zam",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist"
 	],
 	"base_agility": 454.0,
 	"base_attack": 563.0,
@@ -37,10 +38,11 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/titanis.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

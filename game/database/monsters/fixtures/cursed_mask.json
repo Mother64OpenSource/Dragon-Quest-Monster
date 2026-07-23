@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"cursader",
 		"graveheart",
-		"white_knight"
+		"white_knight",
+		"green_finger"
 	],
 	"base_agility": 508.0,
 	"base_attack": 427.0,
@@ -32,10 +33,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/cursed_mask.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

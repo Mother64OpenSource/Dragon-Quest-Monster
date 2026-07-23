@@ -56,7 +56,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		return
 
 	_species_icon.texture = load(_species.sprite_path) if not _species.sprite_path.is_empty() else null
-	_species_label.text = _species.display_name
+	_species_label.text = "%s [Slot %d]" % [_species.display_name, _species.slots]
 	_skills_box.visible = false
 	_skills_button.visible = true
 	_update_skills_button_text()

@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"frizz_sizz",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 437.0,
 	"base_attack": 793.0,
@@ -35,10 +36,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/baalzack.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

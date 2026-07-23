@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bang_zam",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz"
 	],
 	"base_agility": 1360.0,
 	"base_attack": 542.0,
@@ -46,10 +47,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/metal_kaiser_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

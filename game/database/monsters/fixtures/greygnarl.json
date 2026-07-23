@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"hero_of_the_heavens",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 639.0,
 	"base_attack": 681.0,
@@ -33,10 +34,11 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/greygnarl.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

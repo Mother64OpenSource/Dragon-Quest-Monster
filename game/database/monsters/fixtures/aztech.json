@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"berserker",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 326.0,
 	"base_attack": 836.0,
@@ -32,10 +34,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/aztech.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

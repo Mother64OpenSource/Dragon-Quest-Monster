@@ -1,20 +1,32 @@
 class_name BattleSetup
 extends RefCounted
 
-## Sends out each side's initial active monster(s) — the first N team
-## members fill the N active slots, matching typical team-order semantics
-## the later team builder will produce. Emits MonsterEnteredEvent per slot.
+## Sends out each side's initial active monster(s) — team members fill the
+## active-slot budget in team order, each claiming as many slots as its own
+## species.slots (1-4) costs. Greedy, not optimal bin-packing: a monster that
+## doesn't fit the room left is skipped (stays on the bench) and packing
+## tries the *next* team member, who might be smaller and fit; it does not
+## give up on the rest of the team just because one member didn't fit.
+## Emits MonsterEnteredEvent once per monster placed (not once per slot).
 static func send_out_initial(ctx: BattleContext, active_slot_count: int = 1) -> void:
 	_send_out_side(ctx, "side_a", active_slot_count)
 	_send_out_side(ctx, "side_b", active_slot_count)
 
 static func _send_out_side(ctx: BattleContext, side: String, active_slot_count: int) -> void:
-	for slot in range(active_slot_count):
-		ctx.state.set_active_at(side, slot, slot)
-		var monster := ctx.state.get_monster_at(side, slot)
-		if monster != null:
-			monster.slot = slot
-			ctx.event_bus.emit_event(
-				MonsterEnteredEvent.new(monster.instance_id, monster.species.id, side, slot),
-				ctx.state.turn_number
-			)
+	var team := ctx.state.side_a_team if side == "side_a" else ctx.state.side_b_team
+	var next_slot := 0
+	for team_index in range(team.size()):
+		if next_slot >= active_slot_count:
+			break
+		var monster := team[team_index]
+		var size := monster.species.slots
+		if next_slot + size > active_slot_count:
+			continue
+		for slot in range(next_slot, next_slot + size):
+			ctx.state.set_active_at(side, slot, team_index)
+		monster.slot = next_slot
+		ctx.event_bus.emit_event(
+			MonsterEnteredEvent.new(monster.instance_id, monster.species.id, side, next_slot),
+			ctx.state.turn_number
+		)
+		next_slot += size

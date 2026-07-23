@@ -29,10 +29,11 @@
 		"Siz": "½",
 		"Zam": "½"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/eyelasher.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

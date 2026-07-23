@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bang_woosh",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 719.0,
 	"base_attack": 743.0,
@@ -34,10 +35,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/mortoad.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"crusader",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 704.0,
 	"base_attack": 792.0,
@@ -34,10 +36,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/v_drag.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

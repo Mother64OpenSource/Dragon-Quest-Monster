@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"assassin",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 537.0,
 	"base_attack": 728.0,
@@ -35,10 +36,11 @@
 		"Wck": "½",
 		"Zap": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/gorago.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"mortella",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist"
 	],
 	"base_agility": 983.0,
 	"base_attack": 730.0,
@@ -37,10 +38,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/mortella.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

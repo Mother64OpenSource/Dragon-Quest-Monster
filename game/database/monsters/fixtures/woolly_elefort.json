@@ -2,7 +2,10 @@
 	"available_skill_sets": [
 		"woolly_elefort",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower",
+		"dancer",
+		"huntsman"
 	],
 	"base_agility": 571.0,
 	"base_attack": 571.0,
@@ -34,10 +37,11 @@
 		"Slp": "↑↑",
 		"Wck": "0"
 	},
+	"slots": 4,
 	"sprite_path": "res://assets/monsters/woolly_elefort.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

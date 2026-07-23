@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"cleric",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 599.0,
 	"base_attack": 823.0,
@@ -39,10 +40,11 @@
 		"Zam": "0",
 		"Zap": "HP"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/alabast_dragon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

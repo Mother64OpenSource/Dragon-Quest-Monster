@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"saboteur",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower",
+		"dancer"
 	],
 	"base_agility": 352.0,
 	"base_attack": 757.0,
@@ -37,10 +39,11 @@
 		"Slp": "0",
 		"Wck": "↑↑"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/pruslas.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

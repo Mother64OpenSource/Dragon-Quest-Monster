@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"tactician_iddo",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 574.0,
 	"base_attack": 515.0,
@@ -32,10 +33,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/tactician_iddo.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

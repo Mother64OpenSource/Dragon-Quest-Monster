@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"bang_sizz",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower"
 	],
 	"base_agility": 584.0,
 	"base_attack": 712.0,
@@ -36,10 +37,11 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/marquis_de_l_on.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

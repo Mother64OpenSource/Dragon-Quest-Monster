@@ -2,7 +2,10 @@
 	"available_skill_sets": [
 		"stalagosaur",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder",
+		"toxifier"
 	],
 	"base_agility": 386.0,
 	"base_attack": 621.0,
@@ -32,10 +35,11 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"slots": 4,
 	"sprite_path": "res://assets/monsters/stalagosaur.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

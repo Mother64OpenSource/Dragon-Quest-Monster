@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"float_o_copier",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer"
 	],
 	"base_agility": 927.0,
 	"base_attack": 738.0,
@@ -39,10 +40,11 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/mecha_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

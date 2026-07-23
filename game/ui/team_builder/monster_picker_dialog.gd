@@ -78,7 +78,7 @@ func _refresh_results() -> void:
 	_results_list.clear()
 	for species in results:
 		var idx := _results_list.add_item(
-			"%s (%s)" % [species.display_name, MonsterLoader.rank_to_string(species.rank)],
+			"%s (%s) [Slot %d]" % [species.display_name, MonsterLoader.rank_to_string(species.rank), species.slots],
 			_load_icon(species)
 		)
 		_results_list.set_item_metadata(idx, species.id)
@@ -110,9 +110,9 @@ func _show_details(species: MonsterSpecies) -> void:
 		return
 	_details_icon.texture = _load_icon(species)
 	_details_label.text = (
-		"%s\nFamily: %s   Rank: %s\n\nHP: %d   MP: %d\nATK: %d   DEF: %d\nAGI: %d   WIS: %d\n\n%s"
+		"%s [Slot %d]\nFamily: %s   Rank: %s\n\nHP: %d   MP: %d\nATK: %d   DEF: %d\nAGI: %d   WIS: %d\n\n%s"
 		% [
-			species.display_name, species.family, MonsterLoader.rank_to_string(species.rank),
+			species.display_name, species.slots, species.family, MonsterLoader.rank_to_string(species.rank),
 			species.base_hp, species.base_mp,
 			species.base_attack, species.base_defense,
 			species.base_agility, species.base_wisdom,

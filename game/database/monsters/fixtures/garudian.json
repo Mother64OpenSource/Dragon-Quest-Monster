@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"woosh_crack",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 798.0,
 	"base_attack": 530.0,
@@ -32,10 +33,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/garudian.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

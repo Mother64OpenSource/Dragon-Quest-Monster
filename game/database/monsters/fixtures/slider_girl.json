@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"slider_girl",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz"
 	],
 	"base_agility": 1244.0,
 	"base_attack": 614.0,
@@ -38,10 +39,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/slider_girl.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

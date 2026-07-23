@@ -29,10 +29,11 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/chainine.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 130
+	"total_skill_points": 130.0
 }

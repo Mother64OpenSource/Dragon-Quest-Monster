@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"demonic_carriage",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 432.0,
 	"base_attack": 653.0,
@@ -37,10 +39,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/demonic_carriage.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

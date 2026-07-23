@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"canzar",
 		"slimer",
-		"aquapothecary"
+		"aquapothecary",
+		"crack_sizz",
+		"saboteur"
 	],
 	"base_agility": 352.0,
 	"base_attack": 731.0,
@@ -39,10 +41,11 @@
 		"Wsh": "⇄",
 		"Zap": "⇄"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/canzar.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

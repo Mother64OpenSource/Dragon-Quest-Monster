@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"iceplosion_slashes",
 		"graveheart",
-		"white_knight"
+		"white_knight",
+		"green_finger"
 	],
 	"base_agility": 664.0,
 	"base_attack": 546.0,
@@ -41,10 +42,11 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/king_godfrey.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

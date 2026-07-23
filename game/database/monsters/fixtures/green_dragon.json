@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"dragon_lore",
 		"defender",
-		"icemeister"
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 728.0,
 	"base_attack": 832.0,
@@ -34,10 +35,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/green_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 130
+	"total_skill_points": 130.0
 }

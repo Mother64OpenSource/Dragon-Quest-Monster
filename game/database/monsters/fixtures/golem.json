@@ -30,6 +30,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/golem.webp",
 	"starting_skill_ids": [
 		"attack"
@@ -37,5 +38,5 @@
 	"starting_trait_ids": [
 		"metal_body"
 	],
-	"total_skill_points": 200
+	"total_skill_points": 200.0
 }

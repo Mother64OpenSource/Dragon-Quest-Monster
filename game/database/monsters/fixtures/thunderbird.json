@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"sizz_zap",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 827.0,
 	"base_attack": 690.0,
@@ -34,10 +35,11 @@
 		"Wsh": "0",
 		"Zap": "HP"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/thunderbird.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 300
+	"total_skill_points": 300.0
 }

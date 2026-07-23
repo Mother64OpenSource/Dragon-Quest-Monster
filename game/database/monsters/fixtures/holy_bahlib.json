@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"barricade",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister"
 	],
 	"base_agility": 567.0,
 	"base_attack": 662.0,
@@ -38,10 +39,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/holy_bahlib.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

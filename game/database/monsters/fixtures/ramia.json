@@ -30,10 +30,11 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/ramia.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

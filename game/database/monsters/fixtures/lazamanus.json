@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"reaper",
 		"graveheart",
-		"white_knight"
+		"white_knight",
+		"green_finger"
 	],
 	"base_agility": 647.0,
 	"base_attack": 555.0,
@@ -33,10 +34,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/lazamanus.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

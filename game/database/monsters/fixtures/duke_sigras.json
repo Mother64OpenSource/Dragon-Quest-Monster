@@ -27,10 +27,11 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"slots": 1,
 	"sprite_path": "res://assets/monsters/duke_sigras.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

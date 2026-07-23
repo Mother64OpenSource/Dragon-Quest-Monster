@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"styrmling",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 643.0,
 	"base_attack": 669.0,
@@ -34,10 +36,11 @@
 		"Zam": "⇄",
 		"Zap": "⇄"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/styrmling.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

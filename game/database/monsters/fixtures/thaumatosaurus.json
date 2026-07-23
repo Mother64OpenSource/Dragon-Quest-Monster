@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"huntsman",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 608.0,
 	"base_attack": 819.0,
@@ -33,10 +35,11 @@
 		"Wck": "↑↑",
 		"Zam": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/thaumatosaurus.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 250
+	"total_skill_points": 250.0
 }

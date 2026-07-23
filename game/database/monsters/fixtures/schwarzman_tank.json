@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"schwarzman_tank",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 476.0,
 	"base_attack": 669.0,
@@ -40,10 +42,11 @@
 		"Zam": "HP",
 		"Zap": "⁎"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/schwarzman_tank.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

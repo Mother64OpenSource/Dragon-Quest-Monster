@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"shaman_marline",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist"
 	],
 	"base_agility": 437.0,
 	"base_attack": 656.0,
@@ -30,10 +31,11 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/shaman_marline.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

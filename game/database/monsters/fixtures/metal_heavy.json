@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"woosh_zap",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer"
 	],
 	"base_agility": 532.0,
 	"base_attack": 905.0,
@@ -32,10 +33,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/metal_heavy.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

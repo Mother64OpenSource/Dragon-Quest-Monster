@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"guerrilla",
 		"fire_fighter",
-		"fear_monger"
+		"fear_monger",
+		"dancer",
+		"bird_brain"
 	],
 	"base_agility": 692.0,
 	"base_attack": 719.0,
@@ -32,10 +34,11 @@
 		"Wck": "0",
 		"Wsh": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/sand_wave.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 160
+	"total_skill_points": 160.0
 }

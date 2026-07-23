@@ -2,7 +2,8 @@
 	"available_skill_sets": [
 		"niflheim",
 		"princess",
-		"champion"
+		"champion",
+		"guerrilla"
 	],
 	"base_agility": 318.0,
 	"base_attack": 636.0,
@@ -34,10 +35,11 @@
 		"Wck": "½",
 		"Wsh": "0"
 	},
+	"slots": 2,
 	"sprite_path": "res://assets/monsters/gripevine.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 400
+	"total_skill_points": 400.0
 }

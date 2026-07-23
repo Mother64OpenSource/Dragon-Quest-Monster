@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"kabalna_the_divine",
 		"sizz_zam",
-		"dark_knight"
+		"dark_knight",
+		"hypnotist",
+		"cleanser"
 	],
 	"base_agility": 880.0,
 	"base_attack": 792.0,
@@ -32,10 +34,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/kabalna_the_divine.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }

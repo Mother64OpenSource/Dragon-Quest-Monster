@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"berserker",
 		"brute_road",
-		"guerrilla"
+		"guerrilla",
+		"wind_blower",
+		"dancer"
 	],
 	"base_agility": 493.0,
 	"base_attack": 854.0,
@@ -34,10 +36,11 @@
 		"Wck": "↑↑",
 		"Wsh": "½"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/mertiger.png",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 200
+	"total_skill_points": 200.0
 }

@@ -2,7 +2,9 @@
 	"available_skill_sets": [
 		"breath",
 		"dragon_lore",
-		"defender"
+		"defender",
+		"icemeister",
+		"all_rounder"
 	],
 	"base_agility": 753.0,
 	"base_attack": 743.0,
@@ -35,10 +37,11 @@
 		"Wck": "↑↑",
 		"Zam": "0"
 	},
+	"slots": 3,
 	"sprite_path": "res://assets/monsters/king_hydra.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
 	"starting_trait_ids": [],
-	"total_skill_points": 500
+	"total_skill_points": 500.0
 }
