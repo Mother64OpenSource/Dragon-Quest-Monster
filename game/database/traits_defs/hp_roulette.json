@@ -1,0 +1,5 @@
+{
+	"description": "Maximum HP may increase or decrease in battle.",
+	"display_name": "HP Roulette",
+	"id": "hp_roulette"
+}

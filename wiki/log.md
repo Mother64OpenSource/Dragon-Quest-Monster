@@ -1718,3 +1718,653 @@ changed/new files across this and prior sessions -- multi-slot battles,
 online PvP, the 3D arena, move descriptions/tooltips, real status-effect
 mechanics + icons, and this entry's fixes) to the existing
 `Mother64OpenSource/Dragon-Quest-Monster` origin remote.
+
+## [2026-07-24] build | Visible formation-grid tiles on the arena ground
+
+User shared a mockup (a screenshot of the actual game with rectangular
+boxes hand-drawn on top) showing what they wanted: each of the 4 slots
+per side visibly marked on the ground, not purely implicit the way the
+`Marker3D` anchors have been since Milestone 10. Added
+`BattleArena3D._build_slot_tiles()`, called from `_ready()`: one
+rectangular outline per anchor (8 total, both rows), each built from four
+thin unshaded `BoxMesh` "bars" forming a picture-frame border rather than
+a filled tile (`TILE_WIDTH`/`TILE_DEPTH` = 1.05x0.9, leaving a small gap
+below the 1.2-unit anchor spacing so adjacent tiles read as separate
+cells), sitting just above the sand (`TILE_GROUND_Y` = 0.01, avoiding
+z-fighting with the `Ground` plane) in a warm semi-transparent brown that
+reads against the desert palette from the earlier skybox pass.
+
+The tiles are always exactly 4 fixed-size boxes per row -- a multi-slot
+monster doesn't merge cells into one big box, it visibly spans however
+many of these tiles its sprite (already scaled per slot tier via
+`SLOT_TARGET_HEIGHT`, see the previous entry) covers once centered across
+them by the existing `_anchor_midpoint()` logic, matching what the user
+asked for ("2 slot monster should scale 2 boxes"). Generated in script
+rather than hand-placed in the `.tscn` (32 total mesh nodes across 8
+tiles) so it can't drift out of sync with the anchors' actual positions.
+Purely decorative, non-interactive geometry, same as the rest of this
+arena -- no headless-testable behavior changed, so this was verified by
+running the full seven-suite regression to confirm the extra child nodes
+don't break anything that inspects the Arena's tree, rather than by
+adding new assertions of its own. All seven pass.
+
+## [2026-07-24] build | Monsters actually stand on the ground; bigger slot-tier spread
+
+User's screenshot of the new tile grid showed every monster floating well
+above its tile instead of standing on it, and Alphyn (2-slot) sitting off
+to the side looking like an odd oversized square rather than clearly
+"bigger and taller." Investigated both.
+
+**Floating fix, real root cause found:** `_sync_side()` was setting each
+sprite's `global_position` directly to the anchor's own position --
+including its Y, a flat `0.6` for every anchor regardless of a monster's
+actual rendered height. Since `Sprite3D` centers its texture on its own
+node position, placing that position at Y=0.6 put the sprite's *center*
+there, not its feet -- for a short 1-slot monster (now ~0.45 units tall
+after the height-normalization pass two entries back) that leaves its
+feet floating around Y=0.35, well above the tile plane at
+`TILE_GROUND_Y` (0.01). Fixed by decoupling ground XZ (still the anchor
+midpoint) from Y: `sprite.global_position.y` is now computed as
+`TILE_GROUND_Y + rendered_height / 2.0`, where `rendered_height =
+sprite.pixel_size * texture.get_height()` -- exactly the height the
+earlier normalization pass already computed, just now also used to
+*place* the sprite so its bottom edge, not its center, touches the
+ground. Every monster's feet now sit exactly on its tile regardless of
+slot tier.
+
+**Investigated Alphyn specifically** before assuming its art was broken:
+sampled its actual pixel data (a one-off scratch script, since a quick
+visual glance suggested a possible unremoved magenta background, matching
+past sprite-import bugs in this project) -- turned out to be a false
+alarm. `alphyn.png` is a genuinely transparent-background 44x44 image;
+what looked like a solid magenta block was legitimate magenta/pink
+character art (the jester's hood), not a background bug. The real issue
+was the ground-floating bug above (compounded by Alphyn's position being
+particularly visible off to the side) plus the height spread between slot
+tiers being too subtle to read as "really big and tall" at a glance.
+
+**Bigger spread:** `SLOT_TARGET_HEIGHT` changed from `{1: 0.5, 2: 0.7,
+3: 0.9, 4: 1.1}` (roughly +20% per tier) to `{1: 0.45, 2: 0.8, 3: 1.15,
+4: 1.55}` -- roughly +0.35-0.4 world units per tier, nearly doubling
+height from 1-slot to 2-slot specifically, so the size jump reads clearly
+rather than needing a side-by-side comparison to notice. Width still
+follows the source image's own aspect ratio (no independent horizontal
+stretch), so a multi-slot monster gets meaningfully bigger and taller
+across the board rather than literally spanning an exact N-tile width --
+stretching non-square art horizontally to force an exact width would
+distort it, which reads worse than "clearly bigger but not pixel-exact to
+the tile boundary."
+
+Updated `_check_arena_rendering`'s position assertion to match the new
+ground-anchored placement (XZ still the anchor midpoint, Y now
+`TILE_GROUND_Y + rendered_height/2` instead of the anchor's own flat Y).
+All seven headless suites pass.
+
+## [2026-07-24] build | Fainted monsters actually disappear
+
+Previously a fainted monster only darkened (`FAINTED_MODULATE`, alpha 1)
+and stayed fully opaque until it was eventually backfilled away and its
+sprite freed -- if there was no living reserve left to backfill it, it
+just stayed dimly visible forever. User asked for a real disappearance
+instead. Added `BattleArena3D.animate_faint(instance_id)`: fades the
+sprite's modulate from whatever it's currently showing down to fully
+transparent over `FAINT_FADE_TIME` (0.5s), wired into
+`battle_side_view.gd`'s `_animate_event()` alongside the existing
+`play_faint()` sound on `MonsterFaintedEvent` -- sequenced through the
+same per-event animation loop as attacks, so a fainting monster's fade
+plays out in its own turn before the next event's animation starts.
+
+Also changed `FAINTED_MODULATE` itself from `Color(0.35, 0.35, 0.35, 1)`
+to alpha `0` -- necessary, not cosmetic: a monster that faints with no
+living reserve left to backfill its slot keeps getting re-synced by
+every subsequent `_refresh()`/`sync_monsters()` call (it's still "the
+monster at that slot," just fainted), which reapplies
+`FAINTED_MODULATE` each time. With the old alpha-1 constant, that resync
+would silently undo `animate_faint()`'s fade-out the instant `_refresh()`
+ran at the end of the turn -- the monster would flash back to
+dim-but-visible right after fading away. Zero alpha in the constant
+itself means both paths (the animated fade, and the instant sync-driven
+snap for a monster that faints outside of an animated event, e.g. an
+end-of-turn poison tick) converge on the same fully-invisible end state.
+
+Updated `_check_arena_rendering`'s fainted-sprite assertion (now checks
+`modulate.a == 0` instead of the old dim-but-opaque color) and added a
+new check driving `animate_faint()` directly: confirms a sprite starts
+fully visible, is measurably partway faded one frame after the tween
+starts, and reaches full transparency once `FAINT_FADE_TIME` has
+elapsed -- proving the animation itself, not just the eventual resting
+state. All seven headless suites pass.
+
+## [2026-07-24] build | Team builder: 8-cell drag-and-drop formation grid
+
+User shared a mockup (drawn over a real screenshot of the Team Builder,
+same style as the earlier arena-tile mockup) showing an 8-square grid
+below the member list, asking to be able to drag added monsters into it.
+Interpreted the 8 squares as a hard team-size cap of 8 (4 potential
+active slots + 4 bench, matching this project's existing
+`active_slot_count = 4` architecture) rather than a new gameplay concept
+-- confirmed nothing about which grid position is "active vs. bench"
+needed inventing, since `BattleSetup`'s existing size-aware packing
+already treats list ORDER as priority for who gets an active slot; the
+grid is a visual reinterpretation of that same order, not a new rule.
+
+**MembersList** (`team_editor_panel.tscn`) changed from a `VBoxContainer`
+to a `GridContainer` (`columns = 4`), so a list of any length simply wraps
+into rows of 4. `TeamEditorPanel._rebuild_rows()` now pads the grid with
+new `EmptyTeamSlot` placeholders (`ui/team_builder/empty_team_slot.gd/.tscn`,
+a faint "+" cell) for every index from `current_team.members.size()` up
+to a new `MAX_TEAM_SIZE = 8`, so the grid always shows exactly 8 cells
+regardless of team size. `_add_monster_button.disabled` is now toggled by
+the same rebuild, and both `_on_add_monster_pressed()`/`_on_species_chosen()`
+early-return once already at `MAX_TEAM_SIZE` -- adding a 9th monster is a
+silent no-op rather than growing the array past what the grid can show.
+
+**Drag target:** `EmptyTeamSlot` accepts the exact same drag payload
+`TeamMemberRow._get_drag_data()` already produces (`{"source":
+"team_member_row", "from_index": ...}`, unchanged) and emits
+`member_dropped(from_index)`. Since the underlying array never has holes
+-- real members always occupy the front, empty cells only ever trail
+after them -- dropping onto *any* empty cell has exactly one meaning
+regardless of which cell was targeted: send that member to the end of the
+list. `_on_empty_slot_member_dropped()` just forwards to the existing
+`_on_row_reorder_requested(from_index, members.size() - 1)`, reusing 100%
+of the reorder/persist/rebuild logic dragging one row onto another
+already had.
+
+**Cell layout:** `TeamMemberRow`'s internal layout (`team_member_row.tscn`)
+changed from a single wide `HBoxContainer` row to a compact vertical
+`VBoxContainer` cell (icon + remove button on top, nickname field, species
+label, skills button below) so 4 of them fit side by side without
+crushing the nickname/skills controls -- same script, same signals, same
+functionality (nickname edit, per-skillset point allocation via the
+existing `SkillPointDialog`, remove), just re-laid-out. The root node kept
+its name `Layout` needing updated `@onready` paths in `team_member_row.gd`,
+otherwise zero script changes to the row itself.
+
+Hit two real snags: `_members_list`'s static type annotation in
+`team_editor_panel.gd` was `VBoxContainer` -- since `GridContainer` and
+`VBoxContainer` are sibling classes (both extend `Container`, neither
+extends the other), leaving the stale annotation would have failed the
+`@onready` node resolution at runtime; retyped to `GridContainer`.
+Separately, the brand-new `EmptyTeamSlot` class wasn't yet known to
+Godot's global script-class cache, so the first headless test run failed
+with "Could not find type EmptyTeamSlot" -- same class of issue as the
+new status icons needing an import pass two entries back, just for
+scripts instead of assets: fixed the same way, one
+`godot --headless --editor --quit-after 600 --path .` pass to let the
+editor's filesystem scan register the new `class_name` before running
+tests again.
+
+**New headless coverage** (`_check_formation_grid` in
+`team_builder_ui_test_runner.gd`, new `_count_member_rows()`/
+`_count_empty_slots()` helpers): filling the grid to `MAX_TEAM_SIZE`
+leaves zero empty cells and disables the Add Monster button; adding a 9th
+is a no-op; a partial team (3 members) shows exactly 3 real rows + 5 empty
+cells; and driving `_on_empty_slot_member_dropped()` directly (same
+call-the-handler-not-the-gesture approach `_check_reorder()` already uses
+for row-on-row dragging, since real drag-and-drop can't be exercised
+headlessly -- see the M3 plan) proves a drop sends the dragged member to
+the end of the list. All seven headless suites pass. The drag gesture
+itself, and whether the new compact cell layout actually looks right at
+real window sizes, are manual-only -- needs an in-editor look, same
+category as this project's original drag-and-drop reordering feature.
+
+## [2026-07-24] build | Correction: capacity is slot-points, not monster count
+
+User clarified the 8-cell grid from the previous entry was wrong: the
+first 4 "slots" are the Main Party (the active battle lineup), the last 4
+are the Second Party (the bench) -- and capacity is measured in each
+monster's own slot-points (`species.slots`, 1-4), not raw monster count. A
+2-slot monster should consume 2 of its party's 4 slot-points, a 4-slot
+monster all 4 by itself. This replaces (not extends) the flat "cap at 8
+monsters" grid from the immediately preceding entry.
+
+**New `TeamFormationLayout`** (`game/save/team_formation_layout.gd`,
+`compute(members, monster_db) -> Dictionary`): deliberately mirrors
+`BattleSetup._send_out_side()`'s real greedy packing exactly -- skip a
+member that doesn't fit the remaining budget, keep scanning in case a
+smaller one further down does fit, stop once the budget's used up --
+rather than a naive "fill in strict order" pass. This matters: a naive
+prefix-based split can wrongly reject a genuinely fittable arrangement
+depending on order alone (verified by hand: `[3, 3, 1, 1]` at capacity 4
+fails under naive strict-order filling — 3 fits, second 3 doesn't (would
+be 6), 1 fits (=4), second 1 has no room left even though total is 8 and
+a `{3,1}+{3,1}` split obviously exists — but succeeds under the
+skip-and-keep-scanning algorithm, which is exactly what `BattleSetup`
+already does). Applying the identical algorithm twice — once for Main
+Party (budget 4), then again on the leftovers for Second Party (budget
+4, a real NEW cap; the bench was never capped before) — means the team
+builder's Main Party preview now exactly predicts who deploys active in
+a real battle, and "second party capped at 4 slot-points too" falls out
+of the same code path rather than a separately-invented rule.
+
+**UI restructure**: `MembersList` (the GridContainer from last entry) is
+gone; `team_editor_panel.tscn` now has `MainPartyRow`/`SecondPartyRow`
+(plain `HBoxContainer`s) plus a hidden-until-needed `OverflowRow`/
+`OverflowLabel`. `TeamMemberRow.setup()` now sets its own
+`custom_minimum_size.x = SPACE_UNIT_WIDTH * species.slots` (120px per
+slot-point) instead of a flat cell width -- the same "wider card for a
+bigger monster" convention the battle screen's cards and the 3D arena's
+tiles already use, so a 4-slot monster's cell is visibly 4x as wide as a
+1-slot one, right in the team builder. `EmptyTeamSlot.configure(space_units)`
+sizes the single trailing placeholder per party to however many
+slot-points are actually left, rather than a fixed-width box.
+
+**Add-time validation**: `_on_species_chosen()` builds the candidate
+loadout, runs `TeamFormationLayout.compute()` on the members-plus-candidate
+list, and rejects the add outright if the candidate lands in `overflow`
+(doesn't fit either party) -- "cannot go past 4 slot-points in the Main
+Party, cannot go past 4 in the Second Party" enforced before anything is
+ever persisted. The old flat `MAX_TEAM_SIZE = 8` monster-count cap and
+its Add-button-disables-at-8 behavior are gone; whether a monster fits
+depends on its own slots cost, unknowable until it's actually picked, so
+the button always opens the picker now and rejection happens after.
+
+**Reordering is intentionally never blocked**, even though
+`TeamFormationLayout`'s packing is order-dependent and a drag COULD in
+principle produce an order where something doesn't fit either party (the
+`[3,3,1,1]`-style edge case above, if it happened to occur via manual
+reordering rather than sequential adds) -- silently reverting or refusing
+a drag reads as broken/janky, so an over-capacity result renders instead
+in the new `OverflowRow`/`OverflowLabel` (a visible warning state), the
+same non-blocking-but-visible pattern `_validation_banner` already uses
+for other loadout problems on this same screen.
+
+**New/updated headless coverage** (`_check_formation_grid` rewritten,
+`_count_member_rows`/`_count_empty_slots` retyped from `GridContainer` to
+the more general `Container`): a lone 4-slot monster (Asura Zoma) fills
+the entire Main Party by itself and the next add spills to Second Party;
+a 2-slot monster (Aamon) leaves an `EmptyTeamSlot` sized to exactly the
+remaining 2 slot-points (not a flat placeholder); four 1-slot monsters
+exactly fill Main Party with zero empty space left, a 5th correctly
+spills to Second Party; filling both parties to their combined 8
+slot-point capacity makes a further add a genuine no-op; and dropping a
+member onto an empty slot still sends it to the end of the whole list.
+Hit the same "brand-new `class_name` not yet in Godot's global script
+class cache" issue as the previous two entries (`TeamFormationLayout`
+this time) -- same fix, one `--headless --editor --quit-after 600`
+rescan pass before running tests. All seven headless suites pass.
+
+**Battle-side consistency, confirmed rather than changed**: no changes
+were needed to `BattleSetup`/`FaintHandler` -- since `TeamFormationLayout`
+deliberately mirrors `_send_out_side()`'s exact algorithm, and the team
+builder itself now never lets a saved team exceed 8 total slot-points,
+the "first 4 slot-points active, remainder benched" split the user asked
+for in battle was already exactly what `BattleSetup` computes today; it's
+now additionally guaranteed to never exceed 4 slot-points on the bench
+side either, purely as a consequence of the save-time cap.
+
+## [2026-07-24] build | Real swap bug fixed; Orders replaced by drag-and-drop Main/Second Party
+
+User reported two things after the team builder rework: a real bug where
+battle could end up with "too many slot monsters" active at once, and
+that they didn't want the ability the "Orders" command gave to change
+your monster mid-battle -- asking instead for a Main Party/Second Party
+drag-and-drop grid in the battle screen itself, matching the team
+builder's new one, where dragging actually triggers the swap in battle.
+
+**The real bug, found in `BattleController.submit_swap()`:** it wrote
+only the single raw slot index it was given, regardless of the incoming
+bench monster's own `species.slots`. Swapping in a 2+ slot monster via
+Orders left it silently overlapping whatever else already occupied the
+following raw indices instead of actually displacing it -- the engine's
+initial send-out (`BattleSetup._send_out_side`) and faint-triggered
+backfill (`FaintHandler`) were always size-aware, but this third path to
+change who's active never was. Rewrote it: the incoming monster's full
+needed range (`slot` through `slot + species.slots`) is computed first,
+every distinct monster currently occupying ANY index in that range is
+displaced -- its ENTIRE footprint freed, even the part outside the
+incoming monster's own range, in case that neighbor is itself
+multi-slot -- and only then does the incoming monster claim the range.
+This makes the operation always geometrically valid (no overlap is ever
+possible) rather than needing to reject overlapping cases; the only
+remaining rejection is the incoming monster simply not fitting within
+`ACTIVE_SLOT_COUNT` starting at `slot` at all. Also fixed a smaller latent
+bug while in there: a displaced monster's own `.slot` field was never
+reset to `-1`, which could have confused the "currently commanding" card
+highlight later.
+
+**Orders removed, replaced by direct drag-and-drop on "Your Party":**
+`battle_side_view.tscn`'s single `MyPartyGrid` is now `MainPartyRow`
+(your active lineup) + `SecondPartyRow` (bench, previously invisible
+except via Orders' bench-list) -- both `HFlowContainer`s, matching the
+existing "wider card for a bigger monster" convention `_build_monster_card`
+already had. The `OrdersButton`/`MODE_ORDERS`/`_rebuild_bench_buttons()`/
+`_on_bench_picked()` are gone entirely; `_set_command_visibility()` lost
+its `orders` parameter (fight/tactics/actions only now).
+
+Drag-and-drop uses `Control.set_drag_forwarding()` -- attaches
+drag/can-drop/drop `Callable`s directly to the dynamically-built `Button`
+cards without needing a dedicated script subclass, since these cards are
+already built generically by `_build_monster_card()` for both the
+opponent's read-only panel and your own. A card's payload is just
+`{"source": "battle_party_card", "instance_id": ...}`; `_wire_active_slot_drag()`
+wires a Main Party cell (by its real anchor `slot`, so dropping onto a
+genuinely *empty* active slot works too, not only swapping with an
+occupant) and `_wire_bench_card_drag()` wires a Second Party card (by
+`instance_id`). `_on_party_card_dropped()` figures out the swap direction
+from *which kind* of cell was dropped on -- landing on a Main Party slot
+means "bring this bench monster in," landing on a Second Party card means
+"bench this active monster" -- so either drag direction (bench→active or
+active→bench) produces the same underlying `submit_swap()` call; dropping
+a monster onto a card of its own kind (active-onto-active,
+bench-onto-bench) is a no-op. Wired only while `_mode == MODE_MENU`, so a
+drag can't fire mid skill-pick/target-pick; the engine's own
+pending/already-submitted checks inside `submit_swap()` provide a second,
+redundant safety net regardless.
+
+**New/updated headless coverage**: `_check_size_aware_swap` in
+`battle_ui_test_runner.gd` is the direct regression test for the actual
+bug -- swapping a 2-slot bench monster (Aamon) into a slot occupied by a
+1-slot monster confirms it claims BOTH needed raw indices (not just the
+one dropped on), that the SEPARATE 1-slot monster occupying the second
+index is also correctly displaced to the bench, that both displaced
+monsters' `.slot` resets to `-1`, and that a swap which can't fit within
+`ACTIVE_SLOT_COUNT` at all is still rejected cleanly. New
+`_check_party_grid_and_drag` confirms Main Party/Second Party render the
+right counts and, calling `_on_party_card_dropped()` directly (real
+drag-and-drop can't be exercised headlessly, same limitation as the team
+builder's own drag-to-reorder) exactly like `_check_reorder()` already
+does for row dragging elsewhere in this project, proves both a same-kind
+drop is a no-op and a real bench-to-active drop swaps correctly. Hit one
+real test bug while writing these: `MonsterInstance` doesn't have a
+`species_id` field (that's on `MonsterLoadout`) -- accessing it errored
+mid-check and silently aborted the rest of that check function without
+registering as a FAIL, since GDScript's "invalid property access" runtime
+error bails the current function rather than crashing the suite. Caught
+by manually confirming every expected PASS line actually printed, not
+just trusting "ALL CHECKS PASSED" -- fixed to `bench[0].species.id`.
+
+No changes were needed to `NetworkBattleRelay` -- `submit_swap()`'s public
+signature (`side, slot, bench_instance_id`) is unchanged, so online play's
+existing "swap" forwarding/replay path works as-is. All seven headless
+suites pass.
+
+## [2026-07-24] build | Third idle camera variant: rise up, keep looking down
+
+User asked for the idle camera to sometimes rise upward too, while still
+looking down on the monsters -- a third variant alongside the existing
+small drift and the orbit sweep. Added `_run_rise_and_look_down()`: moves
+the camera straight up by `RISE_HEIGHT` (0.7 units) from its resting
+position over `RISE_TIME` (2.5s), driven through `tween_method()` +
+`look_at(RISE_LOOK_TARGET, Vector3.UP)` every step -- the same reasoning
+the orbit sweep already established (a plain `Transform3D` lerp blends
+smoothly from the start angle to the end angle rather than actually
+tracking the subject throughout the move, so anything that needs to keep
+looking at something while moving has to re-derive its orientation each
+step instead). `RISE_LOOK_TARGET` (`Vector3(0, 0.6, 0)`) sits at roughly
+monster height, centered between the two rows rather than biased toward
+either side, so the rise reads as "looking down on the whole
+battlefield" rather than favoring one side. Eases back to the exact
+resting transform afterward, same as the other two variants.
+
+`_run_idle_camera_loop()`'s single `if roll < ORBIT_CHANCE` branch became
+a three-way roll (`ORBIT_CHANCE`, then `ORBIT_CHANCE + RISE_CHANCE`, else
+the default drift) -- `RISE_CHANCE` set to 0.2, the same weight as the
+orbit sweep, leaving the small drift as the majority (60%) default. All
+seven headless suites re-run and pass -- no assertions target the idle
+camera's exact path (purely atmospheric/visual, consistent with how the
+drift and orbit variants were verified two entries back), just confirmed
+nothing broke.
+
+## [2026-07-24] build | Formation drag-and-drop: staged edits + Apply, not immediate commit
+
+User reported "you can only choose one monster from your second team" --
+the actual cause: dragging a card called `submit_swap()` immediately,
+which marks that raw slot "submitted" for the round the instant it runs
+(the engine's real "one action per slot per round" rule, already correct
+and unchanged). So the FIRST drag onto a given slot permanently locked in
+that specific choice for the round -- there was no way to try a different
+bench monster for the same slot, or compare a couple of combinations,
+before committing. User asked for exactly the fix: freely arrange
+whatever combination, then press an explicit Apply.
+
+**New `_staged_active_ids: Array[int]`** (size `ACTIVE_SLOT_COUNT`,
+instance_id or `-1` per raw slot) is now the SOURCE OF TRUTH for what
+`_render_my_party()` draws in Main/Second Party -- not the engine's real
+active formation. Dragging (`_on_party_card_dropped()`) only ever mutates
+this local array via `_stage_drop_at_slot()` (places a monster at a slot,
+evicting -- whole footprint, not just the overlapping part -- every
+distinct monster currently staged anywhere in the incoming monster's
+needed range, mirroring `submit_swap()`'s real displacement logic exactly
+so the staged preview always matches what Apply will actually produce);
+it never calls `submit_swap()` directly anymore. A new "Apply Formation"
+button (disabled whenever the staged array matches the engine's real
+current formation, i.e. nothing to apply) commits everything at once in
+`_on_apply_formation_pressed()`: for each slot whose staged occupant
+differs from the real one, call `submit_swap()`, re-checking real state
+before each call since an earlier slot's swap can (correctly) already
+resolve a later one as a side effect for a multi-slot monster's
+footprint. `_staged_active_ids` resets from the real formation in
+`setup()` and at the top of every new round (`_on_turn_resolved()`) --
+deliberately NOT on every `_refresh()`, so staged edits survive
+Fight-commanding an unrelated slot mid-round; a round resolving without
+ever pressing Apply simply discards whatever was staged, same as never
+having dragged at all.
+
+**A real bug caught mid-implementation, before it ever shipped:** the
+first version of `_on_apply_formation_pressed()` blindly called
+`submit_swap()` for every differing slot. But `submit_swap()` has no
+notion of "relocate an already-active monster to a different slot" -- it
+only knows how to bring in a genuine BENCH monster, displacing whoever's
+in the target range. If a staged plan ever proposed moving a monster that
+was STILL REALLY ACTIVE elsewhere (e.g. staging it back into its original
+slot after briefly testing a different combination), calling
+`submit_swap()` with it as the "incoming" monster would duplicate that
+monster across two slots instead of moving it, since `submit_swap()` only
+clears the target range's occupants, never the incoming monster's own
+prior slot. Fixed by skipping any staged slot whose occupant is already
+real-active anywhere (`state.get_active_monsters(_my_side).has(staged_monster)`)
+-- raw slot index has no gameplay effect on an already-active monster
+anyway (though it can affect turn-order tiebreaking via `submission_index`,
+which is derived from iteration order over raw slot indices in
+`TurnManager.run_turn()` -- a subtlety not worth exposing as a
+user-facing "reorder your active lineup" feature, so repositioning two
+already-active monsters relative to each other is simply a no-op both at
+the staging level, via `_on_party_card_dropped()`'s own existing "already
+staged active" guard, which already makes this scenario unreachable
+through normal dragging, and independently at Apply time). Caught this
+via careful manual reasoning about the exact call semantics before even
+running the test, not by observing a failure -- worth noting since it's
+the kind of bug that would only ever surface as silent, hard-to-diagnose
+state corruption (a monster simultaneously "in" two slots) rather than a
+crash.
+
+**Highlight logic fix while in there:** `_highlight_if_commanding()`
+used to compare `monster.slot != _current_slot` (the monster's own real
+engine-side field). With rendering now driven by the staged array, a
+card can show a monster that ISN'T really at that slot yet -- so the
+check now looks up who's REALLY at `_current_slot` via
+`state.get_monster_at()` and compares by instance_id, which stays correct
+regardless of staging.
+
+**New/rewritten headless coverage**: `_check_party_grid_and_drag` now
+uses a 6-member team (2 bench reserves specifically, so the "changed my
+mind" step can pick between two genuinely-benched options without ever
+touching an already-active monster) and proves, in order: dropping
+bench-onto-bench stages nothing; staging a 2-slot bench monster into
+slot 0 doesn't touch the engine at all and correctly evicts the separate
+monster staged at slot 1 too (footprint eviction, not just the exact
+target slot); staging a DIFFERENT bench monster into the same slot before
+Apply works cleanly (the literal reported bug, now fixed) and frees the
+first choice's now-unneeded second slot; Apply commits the FINAL staged
+choice only, and the Apply button disables again once nothing's staged.
+A dedicated last section calls `_stage_drop_at_slot()` directly
+(bypassing `_on_party_card_dropped()`'s own guard on purpose) to drive
+the "reposition an already-active monster" edge case through Apply
+anyway, confirming it resolves as a safe no-op rather than duplicating
+that monster across two slots. All seven headless suites pass.
+
+## [2026-07-24] build | Real per-monster traits, all 803 monsters
+
+`MonsterSpecies.starting_trait_ids` had sat empty for every fixture since
+the trait system's own milestone (only `metal_body`, hand-assigned to the
+M1 test fixture Golem purely to exercise the plumbing, was ever in use).
+User asked to import real traits from the project's spreadsheet's
+"Traits" reference tab (`gid=437137927`) and "just copy them to the
+specific monster and make them work."
+
+**Source data**: the Monsters tab (`gid=0`, already fetched earlier this
+session as `sheet1.csv`) has a Traits column (index 16) per monster, a
+quoted cell with 3 newline-separated tiers: unconditional "By Default"
+traits, "If Size [P/H/G]" traits (synthesis size tier), and "If Rank
+Offset [+25/+50/+★]" traits (synthesis rank tier). Only the "By Default"
+tier was imported into `starting_trait_ids` — the other two tiers need a
+synthesis-rank/size progression system this engine doesn't have yet, same
+deliberate-scope-cut precedent as the skillset SP-threshold and moveset
+Type/Attribute/Range imports. The Traits reference tab (`traits_sheet.csv`,
+freshly pulled via the established `export?format=csv&gid=...` method)
+supplied each trait's real English name + description for building
+`TraitData` fixtures. 60 rows matching `^(HP|MP|ATK|DEF|AGI|WIS)\s+\+\d+$`
+(e.g. "WIS +40") were excluded — these are skillset SP-threshold stat
+boosts sharing the same sheet's numbering, not real innate traits (their
+own "By Default" monster column is always `None`), same exclusion regex
+already used for the moveset/skillset imports.
+
+New one-off tool `game/tests/tools/import_traits.gd` (same
+`extends SceneTree` + hand-written CSV state-machine parser convention as
+`import_skill_descriptions.gd`/`import_skill_panels.gd`, `no_id_fixed.tsv`
+for No.→fixture-id lookup): wrote 215 `TraitData` fixtures to
+`game/database/traits_defs/` and set `starting_trait_ids` on all 803
+monster fixtures — 2,635 total trait assignments, 0 unmatched trait names
+(the same `_slugify()` builds both the fixture id and the monster
+reference, so there's no drift to match against).
+
+**"Make them work" vs. what the engine can actually model**: confirmed via
+grep that this battle engine has no critical-hit, dodge/evasion,
+counterattack, turn-order-priority, flee, or tension subsystem at all —
+and the vast majority of the 215 real trait names describe exactly one of
+those (Artful Dodger, Critical Massacre, Counter Striker, Early Bird, Hit
+Squad, Escape Artist, Heat Up, etc.). Implementing bespoke behavior for
+all 215 wasn't reasonable at this scale, so `TraitEffect.create()`'s
+unknown-id fallback changed from a `push_error` + `null` (which would have
+spammed one error per unimplemented trait per monster at every battle
+setup) to a plain no-op `TraitEffect.new()` — the base class's hooks are
+already all no-ops by design, so this is exactly what it was built for.
+An id with valid `TraitData` but no bespoke case is still real,
+inspectable data (would show up in any future trait-tooltip UI); it just
+has no gameplay effect.
+
+Only traits with an explicit sheet-given numeric magnitude *and* a hook
+the engine already has got real generic `TraitEffect` subclasses (all in
+`game/battle/traits/`, registered in `TraitEffect.create()`):
+`DamageReductionTraitEffect` (parameterized `damage_reduction_percent`,
+generalizing the existing `MetalBodyTraitEffect` pattern) for Light/Hard/
+Superhard Metal Body (sheet says "take 1/2/1/4/1/5 damage" → 0.5/0.75/0.8
+reduction — `metal_body` itself keeps its own pre-existing class,
+untouched); `TurnEndHpDeltaTraitEffect`/`TurnEndMpDeltaTraitEffect`
+(signed `percent_of_max`, via the existing `on_turn_end` hook) for Steady
+Recovery (+6% HP), Magic Regenerator (+10% MP), and Disenchanted (-8%
+MP) — the sheet only says "a little"/"gradually" with no real number, so
+these percentages are a documented approximation, not sourced data;
+`BonusDamageVsMetalBodyTraitEffect` (flat `flat_bonus`, via
+`on_before_damage_dealt`, checking the *target's* active traits for any
+metal-body-family id rather than `species.family`, since Metal Slime's
+own family is "Slime") for Hunter Mech ("+1 point" vs. metal-bodied
+enemies — an explicit number). 8 traits total get real behavior; the
+other 207 are metadata-only by design by this same reasoning.
+
+**Regression surfaced by the import itself**: Golem (the M1 hand-tuned
+test fixture) previously carried the placeholder `["metal_body"]` —
+never real data, just the one example used to prove the trait system
+worked at all. Real data replaces it with Golem's actual traits
+(`standard_body`, `sudden_tension`, `crafty_debuffer`, none of which
+reduce damage), so Golem legitimately stopped taking half damage. This
+changed 4 of the M1 scripted battle test's hand-verified numbers (slime's
+attack: 10→20 dmg/hp40→30; dracky's attack: 7→13 dmg/hp27→11; the poison
+tick's resulting hp: 34→24; Golem's final hp: 27→11 — the poison tick's
+own 6-damage amount is unchanged, since status ticks bypass
+`on_before_damage_taken` entirely). Updated to match, same precedent as
+the moveset import's "Slime legitimately knows Frizz now" correction —
+real data superseding a placeholder is expected, not a bug.
+
+Extended `battle_test_runner.gd` with `_check_trait_mechanics()`: the
+no-op fallback returns a real (non-null) plain `TraitEffect` for an
+unknown id; Slime's 3 real (all metadata-only) starting traits load into
+`active_traits` cleanly; each of the 4 new generic classes tested as a
+pure function against hand-computed expected values (same philosophy as
+the existing `_effective_accuracy()` dazzle checks) rather than threaded
+through a full scripted battle. All seven headless suites pass.
+
+Hit one real environment issue while verifying: running
+`godot --headless --script res://tests/run_battle_headless.gd` right
+after adding the 4 new `class_name` script files failed to compile
+(`Identifier "DamageReductionTraitEffect" not declared in the current
+scope`, etc.) because Godot's global script-class cache hadn't picked up
+the brand-new classes yet — and since the script's `_initialize()`
+errored out before ever reaching `quit()`, the headless process never
+exited on its own, sitting idle indefinitely instead of failing fast
+(caught only because it had silently run for over an hour). Killing that
+stuck process and re-running once the class cache had a chance to
+refresh resolved it. Worth remembering: a headless test run that adds a
+brand-new `class_name` script for the first time can hang rather than
+error if something upstream fails before `quit()` — check `Get-Process`
+CPU/uptime if a headless run seems to be taking unusually long, rather
+than assuming it's just slow.
+
+## [2026-07-24] build | Six new battle subsystems: crit, dodge, counter, turn-order, flee, tension
+
+The trait import gave every monster real trait *data*, but ~207 of the 215 traits were metadata-only because this engine had zero code for the mechanics they describe — no stubbed enum, no unused field, nothing except a doc-comment acknowledging the gap (confirmed by grep before starting). User asked to build critical hits, dodge/evasion, counterattack, turn-order priority, flee/escape, and tension for real, wire up the traits that reference them, and make traits visible in the team builder (previously nowhere in `game/ui/**`). Planned formally first (two Explore-agent passes over the turn/damage pipeline and the team builder UI, then a Plan-agent design pass) given the size — comparable to M1/M5/M10-11 in scope — and because it touches the exact turn/damage code the M1 hand-scripted battle's hardcoded numbers depend on, which already forced one correction earlier this session (Golem's placeholder `metal_body` trait being replaced by real data).
+
+**Design, in one pass across four sub-milestones (A: turn-order + flee, B: crit + dodge, C: counter + tension, D: team builder UI), all in `game/battle/traits/` unless noted:**
+
+- **Turn-order**: new `get_priority_bonus() -> int` hook on `TraitEffect` (default 0), summed into `ActionResolver.resolve_order()`'s existing priority sort key alongside `SkillData.priority`. `PriorityBonusTraitEffect(priority_bonus)`: Early Bird (+100), Ultra Fast Action (+200, stacks above Early Bird), Last Word (-100) — magnitudes just need to dominate the existing small skill-priority range, no real sourced values exist for them.
+- **Flee**: new `Action.Type.FLEE` (previously only `SKILL` existed), routed through the *real* turn-order pipeline via a new `ActionResolver.FLEE_PRIORITY := 10000` rather than resolving instantly like `BattleController.forfeit()` does — deliberately, so a fast monster can flee before a slow enemy retaliates, which is the whole reason turn-order matters for this mechanic. `ActionExecutor._execute_flee` rolls `BASE_FLEE_CHANCE := 0.5` (placeholder) unless `forces_guaranteed_flee()` (Escape Artist) short-circuits it. On success, mirrors Forfeit's direct `state.is_battle_over`/`winner_side` mutation (side that *didn't* flee wins) rather than inventing a third `winner_side` value — `battle_side_view.gd`'s win/lose text does a direct `winner_side == _my_side` comparison, and a non-side sentinel there would've shown "You Lose!" to *both* players. Added `reason: String = "victory"` to `BattleEndedEvent` instead (set to `"fled"`), and had to extend `BattleController`'s own `battle_ended` **signal** to carry `reason` too, since it's a separate channel from the event-bus event and `BattleSideView` only listens to the signal. New `FleeAttemptEvent`, a `Flee` button next to Forfeit, and a `"flee"` case added to `NetworkBattleRelay`'s remote-action match (confirmed only `fight`/`swap`/`forfeit` existed — without this, online flee would silently do nothing on the remote peer).
+- **Critical hits**: `BASE_CRIT_CHANCE := 0.0625` placeholder, rolled per-hit in `DamageEffect.apply()`, multiplied by the attacker's `get_crit_chance_multiplier(owner, category)` traits (stacking multiplicatively, matching "doubles the chance" wording) and vetoed by the target's `blocks_critical_hits()` (Full Satisfaction Guard). On a confirmed crit, damage is recomputed with **defense forced to 0** — the one real, well-documented DQM crit property this project already researched and cited in an earlier log entry, honestly adapted into this engine's existing placeholder formula shape rather than grafting in the fully different real formula (which has no "power" term at all). `is_critical`/`was_negated` added to `DamageAppliedEvent`. New `on_critical_hit_taken` hook fires on the target *after* hooks resolve, gated on `final_damage > 0` — a dodged/blocked crit was never actually "taken," so Heat Up shouldn't build tension off one that didn't land.
+- **Dodge/block**: needed **no new pipeline stage at all** — both "dodge" (Artful Dodger) and "block" (Full Satisfaction Guard's anti-crit veto handles that one; Perilous Parrier's damage negation) are expressible via the *existing* `on_before_damage_taken -> int` hook returning 0. New `ChanceBasedDamageNegationTraitEffect(chance, blocked_by_trait_id, damage_multiplier_otherwise)`: Artful Dodger (~0.15, suppressed by Fly Swatter carrying the matching id — checked the same "read the other combatant's trait id" way `BonusDamageVsMetalBodyTraitEffect` already does), Perilous Parrier (0.5, a real sourced number — "50% chance" — `damage_multiplier_otherwise≈1.5` for the "greatly increases" case on a failed block). **Fly Swatter needed zero registration of its own** — it's only ever read externally via `blocked_by_trait_id`, so it falls through to the no-op default, one fewer class/case than expected.
+- **Counterattack**: also no new hook signature — `CounterAttackTraitEffect.on_before_damage_taken` rolls a chance, computes `DamageFormula.calculate(0, owner_atk, attacker_def)`, applies it via `attacker.take_damage()`, emits a new `CounterattackEvent`, and **must explicitly call `FaintHandler.handle_if_fainted(ctx, attacker)`** — a real gap: `EndOfTurnProcessor`'s own fainted pass does `if monster.is_fainted(): continue`, so a monster fainted mid-hook via counter would never get its `MonsterFaintedEvent`/backfill otherwise. `also_negates_damage: bool` covers Perfect Parry ("avoid all damage AND counter") in the same class as Counter Striker, no fusion class needed. Gamble Counter ("deal more damage to the enemy that attacked you") interpreted as a guaranteed (chance=1.0) version of the same mechanic — flagging this reading explicitly since the sheet's wording reads more like an immediate certainty than a probability.
+- **Tension**: new `tension_level: int = 0` on `MonsterInstance` (0-4, a plain escalating counter — deliberately *not* routed through `StatStages`, whose symmetric ±6 stage curve doesn't fit a one-directional buildup). Wired up the base `TraitEffect.on_turn_start` hook, which was declared since the trait system's original milestone but **never actually called anywhere** — new `StartOfTurnProcessor` (mirrors `EndOfTurnProcessor` exactly), called from `TurnManager.run_turn()` right after the `TurnStartedEvent`. Each tension level = +25% damage dealt, snapshotted **once before** a multi-hit skill's loop and reset to 0 **exactly once after** it — real DQM tension is spent once per action, not per hit, so a multi-hit skill must apply the same boost to every hit off one snapshot rather than re-reading (or worse, resetting mid-loop). `ChanceBasedTensionGainTraitEffect` (Sudden Tension / Random Tension ~0.15×1 level, Rare High Tension ~0.05×2 — the first two read as near-duplicate sheet entries, noted rather than hidden), `HpGatedTensionJumpTraitEffect` (Wrath of the Stars / One-Shot Reversal, both ≤25% HP → jump to level 4, same near-duplicate note), `HeatUpTraitEffect` (doubles tension on being crit, with a floor bump so 0→1 rather than 0→0).
+
+**21 traits get real behavior** (up from 8 before this entry): early_bird, ultra_fast_action, last_word, escape_artist, critical_massacre, spell_satisfaction, desperado, hopeful_hitter, full_satisfaction_guard, artful_dodger, perilous_parrier, fly_swatter (registration-free), counter_striker, perfect_parry, gamble_counter, sudden_tension, random_tension, rare_high_tension, wrath_of_the_stars, one_shot_reversal, heat_up. **Explicitly left metadata-only, with reasons** (same honest-scoping precedent as every prior trait decision): `stalwart_spirit` (reacts to a "stasis" status that doesn't exist among the 9 real `status_defs`); `heckling_hector`/`mutter`/`rival_riler`/`stress_relief`/`dust_of_the_clan` (manipulate the *opposing side's*/allies' tension — a materially more invasive hook shape); `rabble_rouser`/`sudden_accelerate` ("at the start of a *battle*," wanting the still-dead `on_monster_entered` hook — a separate wiring project); `counteractivist` (circular description, references a nonexistent status); `hit_squad` ("multiple attacks in succession" — an extra-action-grant mechanic, a 7th hook shape, not turn order); `agi_roulette`/`final_breath`/`hidden_power`/`hp_gambit` (mutate the existing `StatStages` stats, not one of the six requested subsystems).
+
+**Team builder trait UI** (Milestone D, genuinely greenfield beforehand): `TeamBuilderScreen` now owns a `TraitDatabase` (mirroring how `battle_setup_screen.gd`/`network_setup_screen.gd` each already own one), threaded through `TeamEditorPanel` to both `MonsterPickerDialog` and `TeamMemberRow`. `MonsterPickerDialog`'s details panel gets a new `TraitsBox` (one `Label` per trait, name visible, full description as `tooltip_text` — the confirmed uniform bare-`tooltip_text` convention already used everywhere else in this codebase, no custom tooltip Control introduced). `TeamMemberRow` gets a compact comma-joined `TraitsLabel` with a composed "Name: description" tooltip per trait joined by newlines, mirroring the battle status-badge's own composition precedent.
+
+**Regression note — remarkably, none needed**: the plan flagged M1 renumbering as *guaranteed*, not just at-risk (slime carries `critical_massacre`, dracky carries `artful_dodger`, golem carries `sudden_tension` — all now genuinely live — plus every damage roll gains a brand-new unconditional RNG draw for the crit check, which shifts the shared seeded stream for the rest of the battle). In practice, for this exact seed, none of the new rolls (7 new crit checks, 2 new dodge checks, 4 new tension-gain checks) happened to flip an outcome that mattered — no genuine agility ties for the tiebreak to decide, no crit ever landed, no dodge ever landed, tension never built up. Re-ran `run_battle_headless.gd` and confirmed byte-for-byte: every M1 hardcoded number is untouched. Recorded here since it directly contradicts the plan's own stated expectation — a lucky outcome, not a designed one.
+
+**New pure-function test coverage** in `battle_test_runner.gd` (`_check_priority_and_flee_mechanics`, `_check_crit_mechanics`, `_check_dodge_mechanics`, `_check_counter_mechanics`, `_check_tension_mechanics`, 39 new assertions), same hand-computed-values philosophy as the existing status/trait checks. Flee's "can succeed" vs. "can fail" paths use two pre-probed `DeterministicRng` seeds (1 → `chance(0.5)` true, 2 → false) rather than a statistical trial. The tension/damage-integration test deliberately gives the target `FullSatisfactionGuardTraitEffect` to neutralize the independent crit roll `DamageEffect.apply()` also makes on every hit — that test is about the snapshot/reset-once behavior, not crit, and shouldn't have its expected numbers depend on how an unrelated RNG roll happens to land.
+
+**Two real GDScript bugs hit and fixed while verifying, both worth remembering:**
+1. A plain `Array` literal (`[some_trait]` or `[]`) assigned directly to a property statically typed `Array[TraitEffect]` (e.g. `monster.active_traits = [x]`) fails at runtime with "Invalid assignment... value of type 'Array'" — silently logged, not fatal, execution continues with the property unchanged. GDScript's typed-array property setters check the *runtime* array's own typed-ness, not just element compatibility, and a bare literal produces an untyped `Array` regardless of what's inside it. Fix: declare an explicitly `Array[TraitEffect]`-typed local first (or `as Array[TraitEffect]` inline cast), then assign that. Three test functions had this bug; all three still reported their assertions as passing by coincidence (the pre-existing real fixture traits happened not to change the outcome) — a reminder that a silently-logged engine error can hide behind a green test run.
+2. Extending `BattleController.battle_ended`'s signal signature from one param to two broke two existing test callables (`func(winner: String) -> void: ...` and `func(winner_side): ...`) connected to it — Godot does *not* gracefully truncate extra emitted arguments for a callable with fewer declared parameters, contrary to an assumption made mid-session; the callback silently fails to receive the values it expects. Fixed by updating both lambdas to accept the new second parameter. Any future signal-signature change needs every *connected* callable checked, not just direct call sites.
+
+**Environment**: hit the from-a-previous-milestone stale-script-class-cache hang again on the very first compile after adding `PriorityBonusTraitEffect`/`EscapeArtistTraitEffect`/`FleeAttemptEvent`. This time root-caused properly instead of waiting it out: `godot --headless --editor --quit-after 1` forces a full project filesystem/class-name scan and writes a fresh `.godot/global_script_class_cache.cfg` in seconds, and is now the standard first step before any headless run that adds a new `class_name` script, rather than retrying blind. Separately, the machine's `C:` drive is essentially always at ~0 bytes free (cause not fully diagnosed — ruled out temp/shader-cache/Recycle-Bin/WinSxS/a suspected OneDrive project duplicate as the culprit, never found the actual source), which intermittently breaks that basic command execution needs on it. Worked around for the rest of this session by passing `--user-data-dir "D:/godot_user_data"` to every Godot invocation (redirects the engine's own editor-settings/cache writes to the project's own drive, which has 1.5+ TB free) and redirecting command output to files on `D:` directly rather than piping through the shell. The user's own project files were never at risk (already on `D:`) — this only affected ad-hoc tool/shell scratch space.
+
+All seven headless suites pass (`run_battle_headless.gd`, `run_team_roster_headless.gd`, `run_team_builder_ui_headless.gd`, `run_battle_ui_headless.gd`, `run_network_lockstep_headless.gd`, `run_network_relay_headless.gd`, `run_relay_server_logic_headless.gd`).
+
+## [2026-07-25] build | Visual hit feedback (Miss!/Critical!) + the Defend command
+
+Follow-up to the previous entry's trait subsystems: `is_critical`/`was_negated` were already being tracked on `DamageAppliedEvent`, but nothing ever showed them -- the battle log's damage line ignored both fields entirely, and there was no on-arena visual at all. User asked for a floating callout over the target when it dodges/misses or takes a crit. Separately asked "doesn't every monster have a Strength and Defend option" -- confirmed against the real games (Attack already existed, every monster's `starting_skill_ids` always includes it) and against this project's own command panel (Fight/Tactics/Flee/Forfeit, no Defend) that Defend -- the classic "halve incoming damage until your next turn" guard command -- was the missing universal option, and built it end to end alongside the visual work rather than just answering the question.
+
+**Floating text** (`BattleArena3D.show_floating_text(instance_id, text, color)`): a `Label3D` parented directly on the target's own `Sprite3D` (not the arena root), so it inherits the target's position for free and needs no per-frame tracking. Sprite3D centers its texture on its own origin (see the M10 log entry), so the label's local Y offset is derived the same way the arena already derives ground placement: half the sprite's own `pixel_size * texture.get_height()` above that origin reaches the top of the sprite's head, plus a small fixed gap. Rises and fades via one parallel tween, then `.chain()`s a `queue_free()` -- fire-and-forget, no caller needs to await it. Deliberately NOT added to the existing `_tweens` dedup dictionary that `animate_attack()`/`animate_faint()` use to kill a rapid re-fire's previous tween: those animate a single persistent sprite that would visibly jump if two tweens fought over its `position`, but each floating-text call owns its own standalone `Label3D`, so a multi-hit skill's callouts should stack independently rather than the second hit's canceling the first's.
+
+Wired into `BattleSideView._animate_event()`: `SkillUsedEvent.missed` (accuracy miss -- the attack was never even rolled against the target) and `DamageAppliedEvent.was_negated` (a trait fully blocked/dodged otherwise-positive damage) both show "Miss!"; `DamageAppliedEvent.is_critical` shows "Critical!". Also skipped `_audio.play_hit()` on a negated hit while in there -- it was previously firing unconditionally even for a fully dodged hit, a pre-existing rough edge (currently inaudible either way, since no real sound assets are assigned yet -- see the M11 log entry) worth correcting since it's the exact line being touched. Extended the battle log text to match: a dodge now reads "X dodged the attack!" instead of the misleading "X took 0 damage!", and a crit gets a "Critical hit!" prefix.
+
+**Defend**: new `Action.Type.DEFEND` alongside `SKILL`/`FLEE`. `ActionExecutor.execute()` sets `MonsterInstance.is_defending = true` and emits a new `DefendEvent` when the queued action IS Defend; otherwise it unconditionally clears `is_defending` at the very top of `execute()`, before any of the status-prevented-turn early returns -- so protection lasts exactly "until this monster's own next action, whatever that turns out to be" (matching the real games' "until your next turn" duration), including a turn that ends up skipped by sleep/paralysis, and including Flee. `DamageEffect._run_damage_hooks()` halves the post-trait-hooks damage when `target.is_defending` (`DEFEND_DAMAGE_MULTIPLIER := 0.5`, `MathUtils.round_half_up`) -- explicitly commented as a real, well-established DQ mechanic rather than an invented placeholder, unlike this file's other constants (`BASE_CRIT_CHANCE`, `TENSION_DAMAGE_PERCENT_PER_LEVEL`). Applying it after the trait-hook chain rather than before means a dodge/counter hook still overrides Defend entirely (0 stays 0), and a crit's defense-ignoring bonus still gets halved same as any other hit -- Defend reduces a crit, it just doesn't fully answer one. No priority special-case needed in `ActionResolver`: Defend has no `skill_id` to look up, so it naturally resolves at base priority (0) plus whatever trait priority bonuses the defender has, same as a plain Attack.
+
+Threaded through the same three places Flee already established the pattern for: `BattleController.submit_defend(side, slot)` (mirrors `submit_flee`, but always succeeds -- no chance roll to narrate), a `"defend"` case in `NetworkBattleRelay._on_remote_action_received` (online play forwards it for free via the existing `action_submitted` plumbing, same as every other command), and a new `DefendButton` in `battle_side_view.tscn` between Fight and Tactics (classic DQ command order), shown/hidden in lockstep with Fight/Flee/Forfeit via `_set_command_visibility`. `_build_monster_card` now marks a defending monster's name label "(Defending)", mutually exclusive with the existing "(fainted)" suffix.
+
+**Test coverage**: `battle_test_runner.gd._check_defend_mechanics()` -- `ActionExecutor.execute()` sets `is_defending` and emits `DefendEvent`, then clears it the moment the actor's next action executes; a direct `DamageEffect.apply()` call against a defending target (with `FullSatisfactionGuardTraitEffect` neutralizing the independent crit roll, the same trick the tension test already established) lands exactly the hand-computed halved amount. `battle_ui_test_runner.gd` adds `_check_floating_text()` (Label3D creation with the right text/starting-opacity, self-frees after `FLOATING_TEXT_DURATION`, unknown-instance-id no-op) and `_check_defend_button()` (visibility lockstep, `is_defending` actually flips once a real round resolves through `BattleController`, and the card's "(Defending)" marker renders) -- 8 new assertions across both files. All seven headless suites re-run clean (94+117+63+37+5+15+11 = 342 total checks), and the M1 hand-scripted battle's numbers (`golem final hp == 11`, `winner_side == "side_b"`, `turns_run == 4`) stayed byte-for-byte identical -- expected this time, unlike the previous entry's lucky outcome, since Defend introduces no new RNG roll anywhere in the pipeline and M1's scripted actions never invoke it.
+
+## [2026-07-25] build | Floating damage numbers, including poison ticks
+
+Same-session follow-up: the just-shipped "Critical!"/"Miss!" callouts told you an attack landed hard or not at all, but never the actual number -- and poison's damage-over-time ticks had no visual at all, only a battle-log line. User asked for a damage number over the target, explicitly calling out poison as a case that needed the same treatment.
+
+Reused `BattleArena3D.show_floating_text()` as-is (no signature change) rather than building a second mechanism -- it already takes arbitrary text and a color, so a number is just another string. Two new colors: `DAMAGE_TEXT_COLOR` (red, for a direct hit) and `STATUS_DAMAGE_TEXT_COLOR` (violet, for a status tick) -- distinct from `MISS_TEXT_COLOR`/`CRITICAL_TEXT_COLOR` so the callout's color alone communicates what kind of damage it was without reading the number. A crit's callout became two lines in one `Label3D` (`"Critical!\n%d" % amount`) rather than a second stacked node -- `Label3D.text` supports embedded `\n` natively, so this needed no new stacking/offset logic at all, just a different string.
+
+`BattleSideView._animate_event()` gained a new `StatusTickEvent` branch (previously unanimated -- poison ticks only ever produced a log line) that shows the tick's `damage` in `STATUS_DAMAGE_TEXT_COLOR` whenever it's `> 0` (confirmed via `StatusResolver.tick()` that `damage` is never anything but a nonnegative DoT amount -- no status in this engine currently heals via this path, so no sign-handling was needed). The `DamageAppliedEvent` branch's non-negated case now always shows a number (`DAMAGE_TEXT_COLOR` normally, or the crit's two-line callout), instead of a crit showing only the bare word and a normal hit showing nothing at all.
+
+**Test coverage**: `_check_damage_and_status_numbers()` in `battle_ui_test_runner.gd` runs a real round through `BattleController` (not `show_floating_text()` directly -- that primitive already has its own coverage from the previous entry) and confirms a numeric `Label3D` lands on the target, stripping a possible `"Critical!\n"` prefix first so the assertion holds regardless of whether this seed's hit happens to crit. A second case drives `StatusTickEvent` straight through `_animate_event()` and confirms the tick amount renders in the correct color over the afflicted monster's own sprite. All seven headless suites re-run clean (344 total checks, up from 342), and the M1 hand-scripted battle stayed byte-for-byte identical (no new RNG roll introduced by this change).
+
+## [2026-07-25] build | Removed the Flee command
+
+User decided they don't want Flee as a battle option. Pulled it out completely rather than just hiding the button, following this project's established anti-dead-code convention (e.g. the M6 slot-packing entry, the M-series trait entries' "explicitly left metadata-only, with reasons") -- an unused code path left lying around is worse than no code at all.
+
+Removed end to end: `Action.Type.FLEE` (and `new_flee()`), `ActionExecutor._execute_flee()`/`BASE_FLEE_CHANCE`, `ActionResolver.FLEE_PRIORITY` (its priority branch simplifies back to the same code path DEFEND already uses -- no skill_id means `skill_lookup.get("")` returns null and priority stays base + trait bonuses, so no special-case was ever needed for Defend, and now none is needed at all), `FleeAttemptEvent` (deleted), `BattleController.submit_flee`, the `"flee"` case in `NetworkBattleRelay`, and the Flee button/handler/narration in `battle_side_view.gd`/`.tscn`.
+
+Two things had no other reason to exist once Flee was gone, so they came out too rather than staying as unreachable optionality:
+- `BattleEndedEvent.reason` (and `BattleController.battle_ended`'s matching second parameter) only ever took two values -- "victory" (forfeit, or any normal win) and "fled" (a successful flee). With flee gone, "victory" is the only value that will ever fire, so the field was reverted out entirely rather than left as permanent dead optionality. `battle_side_view.gd`'s `_on_battle_ended` and its `BattleEndedEvent` narration branch dropped their "fled" cases to match.
+- `TraitEffect.forces_guaranteed_flee()` (the hook Escape Artist used) had exactly one caller, which is now gone -- removed the hook and deleted `EscapeArtistTraitEffect`. Its trait id falls back to the same no-op `TraitEffect.create()` path every other still-metadata-only trait already uses (same category as `stalwart_spirit`/`hit_squad`/etc. from the earlier trait milestone) -- `game/database/traits_defs/escape_artist.json`'s real sourced data was left untouched, only the behavior registration came out.
+
+Hit one real bug fixing the tests afterward: two callables in `battle_ui_test_runner.gd` were still connected to `battle_ended` with its old two-parameter signature (`func(winner, reason)`); Godot doesn't error on a callable expecting more parameters than a signal actually emits, it just silently never invokes it -- so both tests' "did battle_ended fire" probes silently stopped recording anything, failing 3 assertions. This is the exact inverse of a bug already logged from when `reason` was first *added* (a callable with too few declared params silently missing the extra emitted argument) -- worth remembering as a matched pair: **any** signal-signature change, in either direction, needs every connected callable checked, not just the emit call sites.
+
+`_check_priority_and_flee_mechanics` renamed to `_check_priority_mechanics`, with `_new_flee_harness` and its 7 flee-specific assertions removed (the turn-order/priority assertions it shared the function with are untouched). All seven headless suites re-run clean (337 total checks, down from 344 -- the 7 removed flee assertions), and the M1 hand-scripted battle stayed byte-for-byte identical.

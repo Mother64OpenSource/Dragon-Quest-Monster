@@ -35,11 +35,16 @@
 		"Wsh": "0",
 		"Zap": "↓"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/togrus_maximus.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_genius",
+		"hit_squad",
+		"stress_relief"
+	],
 	"total_skill_points": 250.0
 }

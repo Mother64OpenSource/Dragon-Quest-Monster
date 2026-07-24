@@ -42,11 +42,16 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/realm_of_the_mighty.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"hit_squad",
+		"double_trouble",
+		"random_underworld_fog"
+	],
 	"total_skill_points": 500.0
 }

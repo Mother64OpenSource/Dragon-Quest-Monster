@@ -1,0 +1,5 @@
+{
+	"description": "Monster recovers a little MP each time it acts in battle.",
+	"display_name": "Magic Regenerator",
+	"id": "magic_regenerator"
+}

@@ -26,10 +26,33 @@ extends Node3D
 ## slot tier, with each tier taller than the last; width follows
 ## automatically since pixel_size scales both axes via the texture's own
 ## aspect ratio.
-const SLOT_TARGET_HEIGHT := {1: 0.5, 2: 0.7, 3: 0.9, 4: 1.1}
-const DEFAULT_TARGET_HEIGHT := 0.5
+## A bigger spread than the first pass -- "1 slot small, 2 clearly bigger,
+## 3 bigger still, 4 biggest" needs each tier to read as a real size jump
+## at a glance, not a subtle ~20% difference.
+const SLOT_TARGET_HEIGHT := {1: 0.45, 2: 0.8, 3: 1.15, 4: 1.55}
+const DEFAULT_TARGET_HEIGHT := 0.45
+
+## A visible formation-grid outline on the ground -- one bordered box per
+## anchor (matches the spacing between adjacent Marker3Ds, 1.2 units, minus
+## a small gap so neighboring tiles read as separate cells), so a player
+## can see where each of the 4 slots per side actually is instead of it
+## being purely implicit. Built from four thin, unshaded BoxMesh "bars"
+## forming a picture-frame outline rather than a filled tile, so it reads
+## as a line marking on the sand rather than a solid platform.
+const TILE_WIDTH := 1.05
+const TILE_DEPTH := 0.9
+const TILE_BORDER_THICKNESS := 0.05
+const TILE_BORDER_HEIGHT := 0.02
+const TILE_GROUND_Y := 0.01
+const TILE_BORDER_COLOR := Color(0.5, 0.32, 0.2, 0.85)
 const FALLBACK_PIXEL_SIZE := 0.006  # only used if a sprite has no texture at all
-const FAINTED_MODULATE := Color(0.35, 0.35, 0.35, 1)
+## Alpha 0, not just dimmed -- a fainted monster should actually disappear,
+## not linger darkened-but-visible. Kept invisible rather than freed
+## outright, since a fainted-but-not-yet-backfilled monster (no living
+## reserve left) still occupies its slot and gets re-synced every refresh;
+## if this stayed opaque, animate_faint()'s fade-out would get undone the
+## moment the next _refresh() ran and re-applied this constant.
+const FAINTED_MODULATE := Color(0.35, 0.35, 0.35, 0)
 const ACTIVE_MODULATE := Color(1, 1, 1, 1)
 
 ## Attacking a real target: step most of the way toward them (not all the
@@ -39,6 +62,30 @@ const LUNGE_FRACTION := 0.55
 const LUNGE_HOP_HEIGHT := 0.15
 const LUNGE_OUT_TIME := 0.18
 const LUNGE_BACK_TIME := 0.18
+
+## How long a fainted monster takes to fade out of view once its
+## MonsterFaintedEvent is animated.
+const FAINT_FADE_TIME := 0.5
+
+## A short-lived callout (e.g. "Miss!"/"Critical!") floating above a
+## sprite's head, rising and fading over this long before freeing itself.
+const FLOATING_TEXT_RISE_HEIGHT := 0.35
+const FLOATING_TEXT_DURATION := 0.85
+const FLOATING_TEXT_FONT_SIZE := 40
+const FLOATING_TEXT_OUTLINE_SIZE := 10
+const FLOATING_TEXT_GAP_ABOVE_HEAD := 0.12
+## Smaller than Sprite3D's own default -- a flat font_size in pixels needs a
+## much finer world-units-per-pixel ratio than a full sprite texture does, or
+## the callout renders far taller than the monster it's floating above.
+const FLOATING_TEXT_PIXEL_SIZE := 0.004
+const MISS_TEXT_COLOR := Color(0.88, 0.88, 0.92, 1)
+const CRITICAL_TEXT_COLOR := Color(1.0, 0.78, 0.15, 1)
+## A direct hit's plain damage number -- distinct from CRITICAL_TEXT_COLOR so
+## a glance at the color alone tells crit from normal.
+const DAMAGE_TEXT_COLOR := Color(0.95, 0.35, 0.3, 1)
+## Poison/status-tick damage -- a sickly violet, distinct from a direct hit's
+## red so the source of the damage reads at a glance without parsing text.
+const STATUS_DAMAGE_TEXT_COLOR := Color(0.64, 0.4, 0.8, 1)
 
 ## Self-targeted skills have no "enemy" to step toward -- just a small
 ## bob in place instead.
@@ -72,6 +119,21 @@ const ORBIT_SWEEP_TIME := 2.2
 const ORBIT_SWEEP_ANGLE := PI * 0.28
 const ORBIT_PIVOT := Vector3(0, 0.6, -0.6)
 
+## Also occasional (see RISE_CHANCE): the camera rises straight up while
+## continuously re-aiming at RISE_LOOK_TARGET (roughly monster height, at
+## the midpoint between the two rows) via look_at() every step, the same
+## "can't just lerp a Transform3D, has to re-derive position/orientation
+## each step" reasoning the orbit sweep above already uses -- a straight
+## Transform3D lerp would tilt the camera smoothly from its start angle to
+## its end angle rather than continuously keeping the monsters in frame as
+## the height changes. Reads as a crane-style rise that keeps looking down
+## on the battlefield, rather than the camera drifting up and losing its
+## subject.
+const RISE_CHANCE := 0.2
+const RISE_HEIGHT := 0.7
+const RISE_TIME := 2.5
+const RISE_LOOK_TARGET := Vector3(0, 0.6, 0)
+
 var _sprites: Dictionary = {}   # instance_id (int) -> Sprite3D
 var _tweens: Dictionary = {}    # instance_id (int) -> Tween, so a rapid
                                  # re-fire kills the old one instead of stacking
@@ -81,7 +143,41 @@ var _tweens: Dictionary = {}    # instance_id (int) -> Tween, so a rapid
 @onready var _camera: Camera3D = $Camera3D
 
 func _ready() -> void:
+	_build_slot_tiles()
 	_run_idle_camera_loop()
+
+## One outline per anchor, both rows -- a multi-slot monster doesn't merge
+## cells, it just visibly spans however many of these fixed-size tiles its
+## (now slot-tier-scaled, see SLOT_TARGET_HEIGHT above) sprite covers when
+## centered across them, the same way _anchor_midpoint() already positions
+## it.
+func _build_slot_tiles() -> void:
+	for anchor in _opp_anchors + _my_anchors:
+		_add_tile_outline(Vector3(anchor.position.x, TILE_GROUND_Y, anchor.position.z))
+
+func _add_tile_outline(center: Vector3) -> void:
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = TILE_BORDER_COLOR
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+
+	var half_w := TILE_WIDTH / 2.0
+	var half_d := TILE_DEPTH / 2.0
+	var t := TILE_BORDER_THICKNESS
+
+	_add_bar(center + Vector3(0, 0, -half_d), Vector3(TILE_WIDTH, TILE_BORDER_HEIGHT, t), mat)
+	_add_bar(center + Vector3(0, 0, half_d), Vector3(TILE_WIDTH, TILE_BORDER_HEIGHT, t), mat)
+	_add_bar(center + Vector3(-half_w, 0, 0), Vector3(t, TILE_BORDER_HEIGHT, TILE_DEPTH), mat)
+	_add_bar(center + Vector3(half_w, 0, 0), Vector3(t, TILE_BORDER_HEIGHT, TILE_DEPTH), mat)
+
+func _add_bar(bar_position: Vector3, size: Vector3, mat: Material) -> void:
+	var box := MeshInstance3D.new()
+	var mesh := BoxMesh.new()
+	mesh.size = size
+	box.mesh = mesh
+	box.material_override = mat
+	box.position = bar_position
+	add_child(box)
 
 ## Loops for the lifetime of the node -- guarded after every await since
 ## queue_free() (e.g. a headless test tearing down its BattleSideView, or a
@@ -94,8 +190,11 @@ func _run_idle_camera_loop() -> void:
 		if not is_instance_valid(self) or not is_inside_tree():
 			return
 
-		if randf() < ORBIT_CHANCE:
+		var roll := randf()
+		if roll < ORBIT_CHANCE:
 			await _run_orbit_sweep(rest_transform)
+		elif roll < ORBIT_CHANCE + RISE_CHANCE:
+			await _run_rise_and_look_down(rest_transform)
 		else:
 			await _run_simple_drift(rest_transform)
 
@@ -110,6 +209,34 @@ func _run_simple_drift(rest_transform: Transform3D) -> void:
 	var tween_out := create_tween()
 	tween_out.tween_property(_camera, "transform", rest_transform, IDLE_CAMERA_RETURN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween_out.finished
+
+## Rises straight up from the resting height while continuously re-aiming
+## at RISE_LOOK_TARGET via look_at() each step -- a plain Transform3D lerp
+## would blend smoothly from the start angle to whatever angle looking
+## down from the new height would need, rather than actually tracking the
+## monsters throughout the rise, so this drives it through tween_method()
+## the same way the orbit sweep does.
+func _run_rise_and_look_down(rest_transform: Transform3D) -> void:
+	var start_pos := rest_transform.origin
+	var end_pos := start_pos + Vector3(0, RISE_HEIGHT, 0)
+	var tween := create_tween()
+	tween.tween_method(
+		_apply_rise.bind(start_pos, end_pos),
+		0.0, 1.0, RISE_TIME
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished
+	if not is_instance_valid(self) or not is_inside_tree():
+		return
+
+	var tween_back := create_tween()
+	tween_back.tween_property(_camera, "transform", rest_transform, IDLE_CAMERA_RETURN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween_back.finished
+
+func _apply_rise(t: float, start_pos: Vector3, end_pos: Vector3) -> void:
+	if not is_instance_valid(_camera):
+		return
+	_camera.global_position = start_pos.lerp(end_pos, t)
+	_camera.look_at(RISE_LOOK_TARGET, Vector3.UP)
 
 ## A straight Transform3D lerp between rest and some other pose would cut a
 ## straight line through the arena, not curve around it -- so this drives
@@ -164,7 +291,17 @@ func _sync_side(state: BattleState, side: String, anchors: Array[Marker3D], seen
 
 		var span := monster.species.slots
 		var sprite := _get_or_create(monster.instance_id, monster.species)
-		sprite.global_position = _anchor_midpoint(anchors, slot, span)
+		var ground_pos := _anchor_midpoint(anchors, slot, span)
+		# Sprite3D centers its texture on its own position, so placing it at
+		# the anchors' authored Y (a fixed 0.6 regardless of the sprite's
+		# actual rendered height) left every monster's feet floating well
+		# above the ground/tile plane instead of standing on it -- especially
+		# once shorter 1-slot monsters got their own smaller normalized
+		# height. Standing on the ground means the sprite's BOTTOM edge, not
+		# its center, belongs at ground level, so the center needs to sit
+		# half a sprite-height above TILE_GROUND_Y instead.
+		var rendered_height: float = sprite.pixel_size * sprite.texture.get_height() if sprite.texture != null else DEFAULT_TARGET_HEIGHT
+		sprite.global_position = Vector3(ground_pos.x, TILE_GROUND_Y + rendered_height / 2.0, ground_pos.z)
 		sprite.modulate = FAINTED_MODULATE if monster.is_fainted() else ACTIVE_MODULATE
 
 ## The arithmetic midpoint of the anchors a multi-slot monster spans --
@@ -232,3 +369,61 @@ func animate_attack(actor_instance_id: int, target_instance_id: int) -> void:
 		tween.tween_property(sprite, "position:y", base_pos.y, BOB_DOWN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 	await tween.finished
+
+## A monster's sprite fades out of view entirely rather than merely
+## darkening -- called once, right when its MonsterFaintedEvent is
+## animated. Fades from whatever modulate it's currently showing (so a
+## fully-visible monster fading straight to gone doesn't visibly "pop" to
+## FAINTED_MODULATE's dim tint first), down to fully transparent. A no-op
+## if the sprite is already gone (stale event).
+func animate_faint(instance_id: int) -> void:
+	var sprite := get_sprite(instance_id)
+	if sprite == null:
+		return
+	if _tweens.has(instance_id):
+		_tweens[instance_id].kill()
+
+	var current := sprite.modulate
+	var faded := Color(current.r, current.g, current.b, 0.0)
+	var tween := create_tween()
+	_tweens[instance_id] = tween
+	tween.tween_property(sprite, "modulate", faded, FAINT_FADE_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	await tween.finished
+
+## A short callout ("Miss!"/"Critical!") floating up from a sprite's own
+## head and fading out -- called from BattleSideView._animate_event() once a
+## hit's outcome (missed/dodged/crit) is known. Not tracked in _tweens
+## (unlike animate_attack/animate_faint): this owns its own standalone
+## Label3D node rather than animating a persistent shared sprite, so a
+## rapid re-fire (e.g. two hits of a multi-hit skill landing back to back)
+## just stacks a second independent callout instead of needing to kill/
+## replace anything. A no-op if the target has no sprite (already fainted
+## and backfilled away, or a stale event), matching animate_attack()/
+## animate_faint()'s own null-safety convention.
+func show_floating_text(instance_id: int, text: String, color: Color) -> void:
+	var sprite := get_sprite(instance_id)
+	if sprite == null:
+		return
+
+	var label := Label3D.new()
+	label.text = text
+	label.modulate = color
+	label.font_size = FLOATING_TEXT_FONT_SIZE
+	label.outline_size = FLOATING_TEXT_OUTLINE_SIZE
+	label.pixel_size = FLOATING_TEXT_PIXEL_SIZE
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	label.no_depth_test = true
+	sprite.add_child(label)
+
+	# Sprite3D centers its texture on its own position (see _sync_side), so
+	# the sprite's local origin sits at the vertical MIDPOINT of the
+	# rendered image, not its feet -- the top of its head is a further half
+	# a rendered-height above that same origin.
+	var rendered_height: float = sprite.pixel_size * sprite.texture.get_height() if sprite.texture != null else DEFAULT_TARGET_HEIGHT
+	label.position = Vector3(0, rendered_height / 2.0 + FLOATING_TEXT_GAP_ABOVE_HEAD, 0)
+
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label, "position:y", label.position.y + FLOATING_TEXT_RISE_HEIGHT, FLOATING_TEXT_DURATION).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label, "modulate:a", 0.0, FLOATING_TEXT_DURATION).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.chain().tween_callback(label.queue_free)

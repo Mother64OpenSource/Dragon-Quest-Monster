@@ -41,11 +41,16 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/king_godwyn_ii.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_mastermind",
+		"drain_magic_attack",
+		"disruptive_wave"
+	],
 	"total_skill_points": 400.0
 }

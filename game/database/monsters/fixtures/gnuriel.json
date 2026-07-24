@@ -38,11 +38,16 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gnuriel.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"hit_squad",
+		"sudden_shuffle"
+	],
 	"total_skill_points": 250.0
 }

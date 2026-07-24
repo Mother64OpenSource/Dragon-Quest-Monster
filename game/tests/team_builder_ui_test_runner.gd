@@ -37,6 +37,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_validation_banner()
 	_check_resistances_shown()
 	await _check_skill_point_allocation()
+	_check_formation_grid()
 
 	_screen.queue_free()
 	_clear_test_dir()
@@ -88,11 +89,15 @@ func _check_load_team_and_add_species() -> void:
 
 	editor.load_team(team_id)
 	_check("load_team populates name field", editor._team_name_edit.text == "Load Test")
-	_check("new team starts with 0 member rows", editor._members_list.get_child_count() == 0)
+	# An empty Main Party row still shows one EmptyTeamSlot spanning the
+	# full 4 slot-point budget, so "0 members" is checked by counting
+	# TeamMemberRow children specifically, not the row's raw child count.
+	_check("new team starts with 0 member rows", _count_member_rows(editor._main_party_row) == 0)
+	_check("empty Main Party shows one empty slot spanning all 4 slot-points", editor._main_party_row.get_child_count() == 1)
 
 	editor._on_species_chosen("slime")
 	var slime_species := _screen.monster_db.get_species("slime")
-	_check("member row added", editor._members_list.get_child_count() == 1)
+	_check("member row added to the Main Party", _count_member_rows(editor._main_party_row) == 1)
 	_check(
 		"new member defaults to all of the species' starting skills",
 		# NOTE: editor.current_team is the authoritative in-memory object the
@@ -116,7 +121,7 @@ func _check_row_edits() -> void:
 	editor.load_team(team_id)
 	editor._on_species_chosen("dracky")
 
-	var row: TeamMemberRow = editor._members_list.get_child(0)
+	var row: TeamMemberRow = editor._main_party_row.get_child(0)
 	row._apply_nickname("Nicky")
 	_check("nickname edit updates the loadout", editor.current_team.members[0].nickname == "Nicky")
 
@@ -173,14 +178,14 @@ func _check_degradation() -> void:
 	# the screen itself did in run().
 	await _tree.process_frame
 
-	row1.setup(bad_species_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db)
+	row1.setup(bad_species_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
 	_check(
 		"unknown species_id renders a degraded label instead of crashing",
 		row1._species_label.text.begins_with("Unknown species")
 	)
 	row1.queue_free()
 
-	row2.setup(extra_skill_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db)
+	row2.setup(extra_skill_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
 	_check("known species with an out-of-panel skill doesn't crash the row", row2._skills_button.visible)
 	_check("skills button shows the raw equipped count", row2._skills_button.text == "Skills (2)")
 
@@ -296,6 +301,114 @@ func _check_resistances_shown() -> void:
 
 	picker._show_details(null)
 	_check("clearing details hides resistance text", not picker._details_label.text.contains("Resistances:"))
+
+## Main/Second Party rows are capped by slot-POINTS (TeamFormationLayout),
+## not monster count: species used here are slime/dracky/golem/healslime
+## (all 1-slot), aamon (2-slot), and asura_zoma (4-slot). Real
+## drag-and-drop onto an EmptyTeamSlot can't be exercised headlessly (same
+## M3 limitation as row reordering), so _on_empty_slot_member_dropped() is
+## called directly here, exactly like _check_reorder() already does for
+## _on_row_reorder_requested() -- proving the data-mutation logic a real
+## drop would trigger, not the drag gesture itself.
+func _check_formation_grid() -> void:
+	var editor := _screen._team_editor_panel
+
+	# A single 4-slot monster fills the entire Main Party by itself --
+	# proving slot-points, not monster count, are what's actually capped.
+	var team_a := _screen.roster.create_team("Formation Big").id
+	editor.load_team(team_a)
+	editor._on_species_chosen("asura_zoma")
+	_check(
+		"a 4-slot monster alone fills the Main Party's 4 slot-points",
+		_count_member_rows(editor._main_party_row) == 1 and _count_empty_slots(editor._main_party_row) == 0
+	)
+	editor._on_species_chosen("slime")
+	_check(
+		"once the 4-slot monster fills Main Party, the next member spills into Second Party",
+		_count_member_rows(editor._main_party_row) == 1 and _count_member_rows(editor._second_party_row) == 1
+	)
+	_screen.roster.delete_team(team_a)
+
+	# A 2-slot monster should leave exactly 2 slot-points' worth of empty
+	# space, sized accordingly (not a flat 1-cell placeholder).
+	var team_b := _screen.roster.create_team("Formation TwoSlot").id
+	editor.load_team(team_b)
+	editor._on_species_chosen("aamon")
+	var main_empty: EmptyTeamSlot = editor._main_party_row.get_child(1)
+	_check(
+		"a 2-slot monster leaves an empty slot sized to the remaining 2 slot-points",
+		main_empty is EmptyTeamSlot and is_equal_approx(main_empty.custom_minimum_size.x, TeamMemberRow.SPACE_UNIT_WIDTH * 2.0)
+	)
+	_screen.roster.delete_team(team_b)
+
+	# Four 1-slot monsters exactly fill Main Party (4 slot-points); a 5th
+	# spills into Second Party rather than being rejected.
+	var team_c := _screen.roster.create_team("Formation FourOnes").id
+	editor.load_team(team_c)
+	for i in range(4):
+		editor._on_species_chosen("slime")
+	_check(
+		"four 1-slot monsters exactly fill the Main Party with no empty slot left",
+		_count_member_rows(editor._main_party_row) == 4 and _count_empty_slots(editor._main_party_row) == 0
+	)
+	editor._on_species_chosen("dracky")
+	_check(
+		"a 5th 1-slot monster spills into the Second Party",
+		_count_member_rows(editor._second_party_row) == 1
+	)
+
+	# Fill Second Party's remaining 3 slot-points exactly (3 more 1-slot
+	# monsters), then confirm the team is genuinely full: a monster that
+	# doesn't fit either party's remaining budget is rejected outright.
+	editor._on_species_chosen("golem")
+	editor._on_species_chosen("healslime")
+	editor._on_species_chosen("slime")
+	_check(
+		"Second Party is now also full (4 slot-points)",
+		_count_member_rows(editor._second_party_row) == 4 and _count_empty_slots(editor._second_party_row) == 0
+	)
+	var member_count_before := editor.current_team.members.size()
+	editor._on_species_chosen("dracky")
+	_check(
+		"adding beyond both parties' combined 8 slot-points is rejected, not appended",
+		editor.current_team.members.size() == member_count_before
+	)
+	_screen.roster.delete_team(team_c)
+
+	# A partially-filled team: dropping a member onto an empty slot sends
+	# it to the end of the whole list, regardless of which party's empty
+	# slot it was dropped on.
+	var team_d := _screen.roster.create_team("Formation Partial").id
+	editor.load_team(team_d)
+	editor._on_species_chosen("slime")
+	editor._on_species_chosen("dracky")
+	editor._on_species_chosen("golem")
+	_check(
+		"3 one-slot members all fit in the Main Party with 1 slot-point left over",
+		_count_member_rows(editor._main_party_row) == 3 and _count_empty_slots(editor._main_party_row) == 1
+	)
+
+	editor._on_empty_slot_member_dropped(0)
+	var ids: Array[String] = []
+	for member in editor.current_team.members:
+		ids.append(member.species_id)
+	_check("dropping the first member onto an empty slot sends it to the end", ids == ["dracky", "golem", "slime"])
+
+	_screen.roster.delete_team(team_d)
+
+func _count_member_rows(container: Container) -> int:
+	var count := 0
+	for child in container.get_children():
+		if child is TeamMemberRow:
+			count += 1
+	return count
+
+func _count_empty_slots(container: Container) -> int:
+	var count := 0
+	for child in container.get_children():
+		if child is EmptyTeamSlot:
+			count += 1
+	return count
 
 func _clear_test_dir() -> void:
 	var dir := DirAccess.open(TEST_TEAMS_DIR)

@@ -32,11 +32,16 @@
 		"Wsh": "↓",
 		"Zap": "↓"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/domedy.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"artful_dodger",
+		"crafty_banger"
+	],
 	"total_skill_points": 400.0
 }

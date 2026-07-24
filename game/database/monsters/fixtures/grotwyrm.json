@@ -32,11 +32,15 @@
 		"Wsh": "0",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/grotwyrm.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"poisonous",
+		"fly_swatter"
+	],
 	"total_skill_points": 300.0
 }

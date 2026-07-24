@@ -30,11 +30,15 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aggrosculpture.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"bangmeister",
+		"crafty_banger"
+	],
 	"total_skill_points": 250.0
 }

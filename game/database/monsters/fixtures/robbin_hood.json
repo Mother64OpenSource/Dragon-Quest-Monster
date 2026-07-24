@@ -29,11 +29,15 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/robbin_hood.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"random_tension",
+		"coercion"
+	],
 	"total_skill_points": 300.0
 }

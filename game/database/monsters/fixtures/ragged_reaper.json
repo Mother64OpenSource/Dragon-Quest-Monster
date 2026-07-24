@@ -26,11 +26,15 @@
 		"Wck": "⁎",
 		"Zap": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/ragged_reaper.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"standard_killer",
+		"deadly_touch"
+	],
 	"total_skill_points": 100.0
 }

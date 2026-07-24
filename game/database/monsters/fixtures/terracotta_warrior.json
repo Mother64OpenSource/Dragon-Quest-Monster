@@ -35,11 +35,16 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/terracotta_warrior.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_genius",
+		"wooshmeister",
+		"tension_relief_body"
+	],
 	"total_skill_points": 300.0
 }

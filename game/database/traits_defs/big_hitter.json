@@ -1,0 +1,5 @@
+{
+	"description": "Trait for large monsters. Has less HP, but Attack and Skill damage is increased.",
+	"display_name": "Big Hitter",
+	"id": "big_hitter"
+}

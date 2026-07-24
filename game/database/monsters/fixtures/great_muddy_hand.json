@@ -37,11 +37,16 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/great_muddy_hand.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"crafty_curser",
+		"crafty_sealer",
+		"crafty_debuffer"
+	],
 	"total_skill_points": 200.0
 }

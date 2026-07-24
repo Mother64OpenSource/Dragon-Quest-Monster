@@ -1,0 +1,5 @@
+{
+	"description": "Automatically decreases all enemy tension when one enemy increases tension during battle.",
+	"display_name": "Heckling Hector",
+	"id": "heckling_hector"
+}

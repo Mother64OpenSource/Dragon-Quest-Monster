@@ -27,11 +27,15 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/acorn_baby.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"small_body",
+		"hit_squad",
+		"last_gasp"
+	],
 	"total_skill_points": 130.0
 }

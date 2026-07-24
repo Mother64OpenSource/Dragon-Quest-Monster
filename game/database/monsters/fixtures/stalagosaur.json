@@ -35,11 +35,16 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
-	"slots": 4,
+	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/stalagosaur.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"ultra_body",
+		"tactical_uber",
+		"random_shuffle",
+		"crafty_rubblerouser"
+	],
 	"total_skill_points": 500.0
 }

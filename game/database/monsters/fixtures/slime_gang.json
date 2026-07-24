@@ -35,11 +35,16 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/slime_gang.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_mastermind",
+		"sudden_accelerate",
+		"strangely_alluring"
+	],
 	"total_skill_points": 300.0
 }

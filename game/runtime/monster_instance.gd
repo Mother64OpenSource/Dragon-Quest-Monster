@@ -18,6 +18,17 @@ var active_traits: Array[TraitEffect] = []
 var learned_skills: Array[SkillData] = []
 var has_been_processed_as_fainted: bool = false
 
+## Tension: a one-directional escalating counter (0-4), not a StatStages-style
+## symmetric stage -- each level boosts this monster's own next damage-
+## dealing action, then resets to 0 (see DamageEffect.apply()).
+var tension_level: int = 0
+
+## Set by a Defend action, cleared the moment this monster's own next
+## action executes (whatever it is) -- see ActionExecutor.execute(). Halves
+## incoming damage while true (DamageEffect._run_damage_hooks()), matching
+## the real DQ "Defend" command's "lasts until your next turn" duration.
+var is_defending: bool = false
+
 func _init(p_instance_id: int, p_species: MonsterSpecies, p_side: String, p_slot: int) -> void:
 	instance_id = p_instance_id
 	species = p_species

@@ -29,11 +29,15 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/weartiger.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"hit_squad",
+		"critical_massacre"
+	],
 	"total_skill_points": 160.0
 }

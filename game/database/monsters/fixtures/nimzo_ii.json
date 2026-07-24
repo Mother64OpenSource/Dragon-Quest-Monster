@@ -29,11 +29,16 @@
 		"Wsh": "½",
 		"Zam": "HP"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/nimzo_ii.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"bangmeister",
+		"disruptive_wave"
+	],
 	"total_skill_points": 500.0
 }

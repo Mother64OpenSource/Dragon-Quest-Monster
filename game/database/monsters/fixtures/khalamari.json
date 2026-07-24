@@ -40,11 +40,16 @@
 		"Wsh": "0",
 		"Zam": "↑"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/khalamari.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"double_trouble",
+		"hit_squad",
+		"crackmeister"
+	],
 	"total_skill_points": 400.0
 }

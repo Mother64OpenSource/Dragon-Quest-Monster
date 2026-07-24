@@ -49,11 +49,16 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
-	"slots": 4,
+	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/metal_goddess.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"ultra_body",
+		"tactical_uber",
+		"hit_squad",
+		"superhard_metal_body"
+	],
 	"total_skill_points": 500.0
 }

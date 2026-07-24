@@ -26,11 +26,15 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wulfspade_ace.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"close_scraper",
+		"hit_squad"
+	],
 	"total_skill_points": 500.0
 }

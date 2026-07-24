@@ -1,0 +1,5 @@
+{
+	"description": "Attacked enemy is inactive for 1 round.",
+	"display_name": "Whack Attack",
+	"id": "whack_attack"
+}

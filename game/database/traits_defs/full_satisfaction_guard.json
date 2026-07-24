@@ -1,0 +1,5 @@
+{
+	"description": "Blocks all incomming critical attacks and critical spells.",
+	"display_name": "Full Satisfaction Guard",
+	"id": "full_satisfaction_guard"
+}

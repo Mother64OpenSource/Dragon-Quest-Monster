@@ -11,10 +11,13 @@ static func resolve_order(actions: Array[Action], state: BattleState, skill_look
 	var entries: Array[Dictionary] = []
 	for action in actions:
 		var actor := state.get_monster_by_instance_id(action.actor_instance_id)
-		var skill: SkillData = skill_lookup.get(action.skill_id)
 		var priority := 0
+		var skill: SkillData = skill_lookup.get(action.skill_id)
 		if skill != null:
 			priority = skill.priority
+		if actor != null:
+			for trait_effect in actor.active_traits:
+				priority += trait_effect.get_priority_bonus()
 		var agility := 0
 		if actor != null:
 			agility = actor.get_effective_stat("agility")

@@ -36,11 +36,16 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
-	"slots": 4,
+	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/dark_dragonlord.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"ultra_body",
+		"quad_trouble",
+		"deadly_breath",
+		"coercion"
+	],
 	"total_skill_points": 500.0
 }

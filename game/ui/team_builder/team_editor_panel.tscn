@@ -25,17 +25,37 @@ text = "Team Name:"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MembersLabel" type="Label" parent="Content"]
-layout_mode = 2
-text = "Members"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MembersList" type="VBoxContainer" parent="Content/ScrollContainer"]
+[node name="Parties" type="VBoxContainer" parent="Content/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MainPartyLabel" type="Label" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+text = "Main Party (active in battle, up to 4 slot-points)"
+
+[node name="MainPartyRow" type="HBoxContainer" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+
+[node name="SecondPartyLabel" type="Label" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+text = "Second Party (bench, up to 4 slot-points)"
+
+[node name="SecondPartyRow" type="HBoxContainer" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+
+[node name="OverflowLabel" type="Label" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+visible = false
+text = "Over capacity — reorder members so each party fits within 4 slot-points:"
+modulate = Color(0.8, 0.2, 0.2, 1)
+
+[node name="OverflowRow" type="HBoxContainer" parent="Content/ScrollContainer/Parties"]
+layout_mode = 2
+visible = false
 
 [node name="AddMonsterButton" type="Button" parent="Content"]
 layout_mode = 2

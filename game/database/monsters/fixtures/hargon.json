@@ -35,11 +35,15 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hargon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"hit_squad",
+		"crafty_zapper"
+	],
 	"total_skill_points": 400.0
 }

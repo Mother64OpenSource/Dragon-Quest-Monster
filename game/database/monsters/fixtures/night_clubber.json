@@ -32,11 +32,15 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/night_clubber.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"last_word",
+		"giant_killer"
+	],
 	"total_skill_points": 400.0
 }

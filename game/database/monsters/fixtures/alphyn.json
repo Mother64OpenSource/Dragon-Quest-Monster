@@ -35,11 +35,16 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/alphyn.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"bangmeister",
+		"sudden_ping"
+	],
 	"total_skill_points": 300.0
 }

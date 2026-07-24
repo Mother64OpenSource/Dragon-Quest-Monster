@@ -49,6 +49,13 @@ stretch_mode = 5
 
 [node name="DetailsLabel" type="Label" parent="VBoxContainer/ResultsRow/DetailsPanel"]
 layout_mode = 2
-size_flags_vertical = 3
 autowrap_mode = 2
 text = "Select a monster to see its stats."
+
+[node name="TraitsScroll" type="ScrollContainer" parent="VBoxContainer/ResultsRow/DetailsPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TraitsBox" type="VBoxContainer" parent="VBoxContainer/ResultsRow/DetailsPanel/TraitsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3

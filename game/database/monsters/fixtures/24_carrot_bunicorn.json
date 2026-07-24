@@ -28,11 +28,15 @@
 		"Sap": "½",
 		"Slp": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/24_carrot_bunicorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"heat_up",
+		"gold_getter"
+	],
 	"total_skill_points": 130.0
 }

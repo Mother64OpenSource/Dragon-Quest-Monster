@@ -8,6 +8,7 @@ static func run_turn(ctx: BattleContext, action_providers: Dictionary, skill_loo
 	var state := ctx.state
 	state.turn_number += 1
 	ctx.event_bus.emit_event(TurnStartedEvent.new(), state.turn_number)
+	StartOfTurnProcessor.process(ctx)
 
 	var submitted: Array[Action] = []
 	var submission_index := 0

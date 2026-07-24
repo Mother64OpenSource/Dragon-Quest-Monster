@@ -34,11 +34,16 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/robbin_ladies.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_mastermind",
+		"counter_striker",
+		"heckling_hector"
+	],
 	"total_skill_points": 500.0
 }

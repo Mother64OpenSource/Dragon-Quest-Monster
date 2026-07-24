@@ -12,28 +12,46 @@ extends Control
 ## in the 3D view is ever clickable, it's pure display.
 ##
 ## Layout: a "battlefield" facing the opponent's up to 4 active monsters, a
-## row of your own active monsters, and a command panel that cycles through
-## each of your not-yet-submitted active slots in turn. Cards render once
-## per unique active monster (not once per raw slot index) in an
-## HFlowContainer, wide in proportion to that monster's own species.slots
-## (1-4) -- a 2-slot monster's card is twice as wide as a 1-slot one, a
-## 4-slot monster's card fills a whole row alone. A rigid fixed-column grid
-## can't cleanly represent an odd slot count like 3-of-4 as a rectangle, so
-## a flow layout that just wraps naturally was simpler and more honest than
-## fighting grid geometry. "Fight" drills into a skill list; picking a
-## single-enemy skill switches the battlefield into target-picking mode
-## (only living enemy cards are clickable). "Orders" swaps a living bench
-## monster into the current slot (consumes that slot's turn for the round).
-## "Tactics" remains an inert stub. Built from this project's own
-## default-theme controls and monster icons, not a copy of any specific
-## game's actual art/assets.
+## command panel that cycles through each of your not-yet-submitted active
+## slots in turn, and "Your Party" split into Main Party (your active
+## lineup, up to 4 slot-points) and Second Party (bench, also up to 4
+## slot-points -- see TeamFormationLayout in the team builder for the same
+## slot-point-capacity rule applied at save time). Cards render once per
+## unique active monster (not once per raw slot index) in an HFlowContainer,
+## wide in proportion to that monster's own species.slots (1-4) -- a 2-slot
+## monster's card is twice as wide as a 1-slot one, a 4-slot monster's card
+## fills a whole row alone. A rigid fixed-column grid can't cleanly
+## represent an odd slot count like 3-of-4 as a rectangle, so a flow layout
+## that just wraps naturally was simpler and more honest than fighting grid
+## geometry.
+##
+## Dragging a card between Main Party and Second Party stages a proposed
+## formation change -- nothing is submitted to the engine until "Apply
+## Formation" is pressed. Staging (not immediate commit) is deliberate: an
+## earlier version called submit_swap() straight from the drop handler,
+## which locks that raw slot in for the round the instant you drop (the
+## engine's own "one action per slot per round" rule) -- meaning you could
+## only ever swap each slot once, with no way to compare a few different
+## combinations before committing. Now you can rearrange freely (bench
+## monster X onto slot 0, then change your mind and put Y there instead,
+## drag someone else out, etc.) and only the FINAL staged arrangement gets
+## submitted, all at once, when you press Apply. This replaces the old
+## "Orders" command entirely. Dragging only while _mode == MODE_MENU (not
+## mid skill-pick/target-pick).
+##
+## "Fight" drills into a skill list; picking a single-enemy skill switches
+## the battlefield into target-picking mode (only living enemy cards are
+## clickable). "Defend" (halves incoming damage until this monster's own
+## next action -- see DamageEffect/ActionExecutor) submits immediately, no
+## sub-menu, same as Forfeit. "Tactics" remains an inert stub. Built
+## from this project's own default-theme controls and monster icons, not a
+## copy of any specific game's actual art/assets.
 
 const CARD_BASE_WIDTH := 140
 
 const MODE_MENU := "menu"
 const MODE_SKILLS := "skills"
 const MODE_TARGETING := "targeting"
-const MODE_ORDERS := "orders"
 
 var _controller: BattleController
 var _my_side: String
@@ -42,20 +60,31 @@ var _current_slot: int = -1
 var _mode: String = MODE_MENU
 var _pending_skill_id: String = ""
 
+## The proposed active lineup, per raw slot index -- instance_id, or -1 for
+## empty. Purely local UI state until "Apply Formation" is pressed; see the
+## class doc above for why staging replaced immediately calling
+## submit_swap() from the drop handler. Synced from the engine's actual
+## current formation in setup() and at the start of every new round
+## (_on_turn_resolved) -- NOT on every _refresh(), so staged edits persist
+## across, e.g., Fight-commanding an unrelated slot mid-round.
+var _staged_active_ids: Array[int] = []
+
 @onready var _opponent_panel_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/OpponentPanel
 @onready var _arena: BattleArena3D = $Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport/Arena
 @onready var _turn_counter_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/TurnCounterLabel
 @onready var _audio: BattleAudio = $Audio
 @onready var _current_slot_label: Label = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/CurrentSlotLabel
 @onready var _fight_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/FightButton
-@onready var _orders_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/OrdersButton
+@onready var _defend_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/DefendButton
 @onready var _tactics_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/TacticsButton
 @onready var _forfeit_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ForfeitButton
 @onready var _forfeit_confirm_dialog: ConfirmationDialog = $ForfeitConfirmDialog
 @onready var _actions_scroll: ScrollContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll
 @onready var _actions_box: VBoxContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox
 @onready var _actions_back_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox/BackButton
-@onready var _my_party_grid: HFlowContainer = $Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox/MyPartyGrid
+@onready var _main_party_row: HFlowContainer = $Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox/MainPartyRow
+@onready var _second_party_row: HFlowContainer = $Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox/SecondPartyRow
+@onready var _apply_formation_button: Button = $Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox/ApplyFormationButton
 @onready var _waiting_label: Label = $Root/MainColumn/WaitingLabel
 @onready var _targeting_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/TargetingLabel
 @onready var _log_label: Label = $Root/LogPanel/LogVBox/LogScroll/LogLabel
@@ -68,12 +97,14 @@ func _ready() -> void:
 	_result_panel.visible = false
 	_back_button.pressed.connect(_on_back_pressed)
 	_fight_button.pressed.connect(_on_fight_pressed)
-	_orders_button.pressed.connect(_on_orders_pressed)
+	_defend_button.pressed.connect(_on_defend_pressed)
+	_defend_button.tooltip_text = "Halves incoming damage until your next turn."
 	_actions_back_button.pressed.connect(_on_actions_back_pressed)
 	_tactics_button.disabled = true
 	_tactics_button.tooltip_text = "Not implemented yet -- no auto-battle to configure."
 	_forfeit_button.pressed.connect(_on_forfeit_pressed)
 	_forfeit_confirm_dialog.confirmed.connect(_on_forfeit_confirmed)
+	_apply_formation_button.pressed.connect(_on_apply_formation_pressed)
 
 func setup(controller: BattleController, my_side: String, skill_db: SkillDatabase) -> void:
 	_controller = controller
@@ -81,6 +112,7 @@ func setup(controller: BattleController, my_side: String, skill_db: SkillDatabas
 	_skill_db = skill_db
 	_controller.turn_resolved.connect(_on_turn_resolved)
 	_controller.battle_ended.connect(_on_battle_ended)
+	_sync_staged_formation()
 	_append_log("The battle begins!")
 	for event in _controller.get_opening_events():
 		var line := _describe_event(event)
@@ -141,42 +173,213 @@ func _render_battlefield(state: BattleState) -> void:
 			seen[monster.instance_id] = true
 		_opponent_panel_grid.add_child(_build_monster_card(monster, false))
 
-## mine parties show full HP/MP; the currently-selected monster is
-## highlighted (by its anchor slot, MonsterInstance.slot).
+## Main Party (your active lineup) and Second Party (bench) render as two
+## separate rows -- from the STAGED proposed formation (_staged_active_ids),
+## not necessarily what's actually active in the engine yet. Full HP/MP show
+## on every card; the currently-commanding monster is highlighted (matched
+## by instance_id against whoever the engine says is really at
+## _current_slot right now, since a staged-but-unapplied change means the
+## card shown there isn't necessarily that monster). Dragging a card
+## between the rows stages a proposed change (see _on_party_card_dropped())
+## rather than submitting it immediately -- wired only while
+## _mode == MODE_MENU, so a drag can't happen mid skill-pick/target-pick.
 func _render_my_party(state: BattleState) -> void:
-	for child in _my_party_grid.get_children():
-		_my_party_grid.remove_child(child)
-		child.queue_free()
+	_clear_flow(_main_party_row)
+	_clear_flow(_second_party_row)
 
 	var seen := {}
 	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
-		var monster := state.get_monster_at(_my_side, slot)
+		var instance_id: int = _staged_active_ids[slot]
+		var monster := state.get_monster_by_instance_id(instance_id) if instance_id != -1 else null
 		if monster != null:
 			if seen.has(monster.instance_id):
 				continue
 			seen[monster.instance_id] = true
 		var card := _build_monster_card(monster, true)
-		if monster != null and monster.slot == _current_slot:
-			# "mine" cards are always disabled (display-only, never clickable),
-			# so Button actually renders its "disabled" style -- overriding
-			# "panel" (not a real Button style key) silently did nothing.
-			var style := StyleBoxFlat.new()
-			style.bg_color = Color(0.85, 0.92, 1, 1)
-			style.border_width_left = 2
-			style.border_width_top = 2
-			style.border_width_right = 2
-			style.border_width_bottom = 2
-			style.border_color = Color(0.24, 0.45, 0.86, 1)
-			style.corner_radius_top_left = 5
-			style.corner_radius_top_right = 5
-			style.corner_radius_bottom_right = 5
-			style.corner_radius_bottom_left = 5
-			style.content_margin_left = 10.0
-			style.content_margin_top = 6.0
-			style.content_margin_right = 10.0
-			style.content_margin_bottom = 6.0
-			card.add_theme_stylebox_override("disabled", style)
-		_my_party_grid.add_child(card)
+		_highlight_if_commanding(card, monster)
+		if _mode == MODE_MENU:
+			_wire_active_slot_drag(card, slot, monster)
+		_main_party_row.add_child(card)
+
+	for monster in _team_for_side(state, _my_side):
+		if _staged_active_ids.has(monster.instance_id):
+			continue
+		var card := _build_monster_card(monster, true)
+		if _mode == MODE_MENU and not monster.is_fainted():
+			_wire_bench_card_drag(card, monster)
+		_second_party_row.add_child(card)
+
+	_apply_formation_button.disabled = not _has_staged_changes(state)
+
+func _clear_flow(container: HFlowContainer) -> void:
+	for child in container.get_children():
+		container.remove_child(child)
+		child.queue_free()
+
+## "mine" cards are always disabled (display-only, never clickable via
+## pressed -- drag/drop is wired separately), so Button actually renders
+## its "disabled" style -- overriding "panel" (not a real Button style
+## key) silently did nothing.
+func _highlight_if_commanding(card: Button, monster: MonsterInstance) -> void:
+	if monster == null:
+		return
+	var actually_commanding := _controller.get_state().get_monster_at(_my_side, _current_slot)
+	if actually_commanding == null or actually_commanding.instance_id != monster.instance_id:
+		return
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.85, 0.92, 1, 1)
+	style.border_width_left = 2
+	style.border_width_top = 2
+	style.border_width_right = 2
+	style.border_width_bottom = 2
+	style.border_color = Color(0.24, 0.45, 0.86, 1)
+	style.corner_radius_top_left = 5
+	style.corner_radius_top_right = 5
+	style.corner_radius_bottom_right = 5
+	style.corner_radius_bottom_left = 5
+	style.content_margin_left = 10.0
+	style.content_margin_top = 6.0
+	style.content_margin_right = 10.0
+	style.content_margin_bottom = 6.0
+	card.add_theme_stylebox_override("disabled", style)
+
+## A Main Party card (`slot` is always its real anchor slot, even for an
+## empty one -- so dropping a bench monster onto an empty active slot
+## works too, not just swapping with an existing occupant). `occupant`
+## null means nothing to drag FROM here, but it's still a valid drop
+## target.
+func _wire_active_slot_drag(card: Button, slot: int, occupant: MonsterInstance) -> void:
+	card.set_drag_forwarding(
+		func(_pos: Vector2) -> Variant: return _make_party_drag_data(card, occupant),
+		func(_pos: Vector2, data: Variant) -> bool: return _is_party_drag_data(data),
+		func(_pos: Vector2, data: Variant) -> void: _on_party_card_dropped(data["instance_id"], slot, -1)
+	)
+
+func _wire_bench_card_drag(card: Button, monster: MonsterInstance) -> void:
+	card.set_drag_forwarding(
+		func(_pos: Vector2) -> Variant: return _make_party_drag_data(card, monster),
+		func(_pos: Vector2, data: Variant) -> bool: return _is_party_drag_data(data),
+		func(_pos: Vector2, data: Variant) -> void: _on_party_card_dropped(data["instance_id"], -1, monster.instance_id)
+	)
+
+func _make_party_drag_data(card: Control, monster: MonsterInstance) -> Variant:
+	if monster == null or monster.is_fainted():
+		return null
+	var preview := Label.new()
+	preview.text = monster.species.display_name
+	card.set_drag_preview(preview)
+	return {"source": "battle_party_card", "instance_id": monster.instance_id}
+
+func _is_party_drag_data(data: Variant) -> bool:
+	return typeof(data) == TYPE_DICTIONARY and data.get("source") == "battle_party_card"
+
+## Exactly one of target_slot/target_bench_instance_id is meaningful (the
+## other is -1) -- which one tells us the intended direction. Both cases
+## reduce to the same operation, _stage_drop_at_slot(): dropping onto a
+## Main Party slot places the dragged monster there directly; dropping
+## onto a Second Party card means "put the bench monster at the dragged
+## (active) monster's current staged slot" -- i.e. swap them, the same as
+## before, just staged rather than immediate. Dropping a monster onto a
+## card of its own kind (active-onto-active, bench-onto-bench) is a no-op.
+## Never touches the engine -- see _on_apply_formation_pressed() for that.
+func _on_party_card_dropped(dragged_instance_id: int, target_slot: int, target_bench_instance_id: int) -> void:
+	var state := _controller.get_state()
+	var dragged := state.get_monster_by_instance_id(dragged_instance_id)
+	if dragged == null or dragged.side != _my_side or dragged.is_fainted():
+		return
+	var dragged_is_staged_active := _staged_active_ids.has(dragged.instance_id)
+
+	if target_slot != -1:
+		if dragged_is_staged_active:
+			return
+		_stage_drop_at_slot(dragged, target_slot)
+	else:
+		var target := state.get_monster_by_instance_id(target_bench_instance_id)
+		if target == null or not dragged_is_staged_active:
+			return
+		var dragged_slot := _staged_active_ids.find(dragged.instance_id)
+		_stage_drop_at_slot(target, dragged_slot)
+
+	_audio.play_menu_select()
+	_render_my_party(state)
+
+## Places `monster` at `slot` (through however many consecutive slots its
+## own species.slots needs), evicting -- whole footprint, not just the
+## overlapping part -- every distinct monster currently staged anywhere in
+## that range first. Mirrors BattleController.submit_swap()'s real
+## displacement logic exactly, applied to the plain staged array instead
+## of live BattleState, so the staged preview always matches precisely
+## what Apply will actually produce.
+func _stage_drop_at_slot(monster: MonsterInstance, slot: int) -> void:
+	var size := monster.species.slots
+	if slot + size > BattleController.ACTIVE_SLOT_COUNT:
+		return
+	var displaced_ids := {}
+	for s in range(slot, slot + size):
+		var occupant_id: int = _staged_active_ids[s]
+		if occupant_id != -1 and occupant_id != monster.instance_id:
+			displaced_ids[occupant_id] = true
+	for i in range(_staged_active_ids.size()):
+		if displaced_ids.has(_staged_active_ids[i]):
+			_staged_active_ids[i] = -1
+	for s in range(slot, slot + size):
+		_staged_active_ids[s] = monster.instance_id
+
+## Rebuilds _staged_active_ids from whatever's actually active in the
+## engine right now -- discards any not-yet-applied staged edits, which is
+## exactly right at the start of a new round (see setup()/_on_turn_resolved()),
+## since a resolved round's engine state is the only thing that still
+## matters going forward.
+func _sync_staged_formation() -> void:
+	var state := _controller.get_state()
+	_staged_active_ids = []
+	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
+		var monster := state.get_monster_at(_my_side, slot)
+		_staged_active_ids.append(monster.instance_id if monster != null else -1)
+
+func _has_staged_changes(state: BattleState) -> bool:
+	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
+		var current := state.get_monster_at(_my_side, slot)
+		var current_id := current.instance_id if current != null else -1
+		if _staged_active_ids[slot] != current_id:
+			return true
+	return false
+
+## Commits the staged formation: for each slot whose staged occupant
+## differs from who's really there, calls submit_swap() -- which is itself
+## fully size-aware (see wiki/log.md), so this naturally handles a staged
+## plan touching several slots at once, re-checking the ACTUAL state before
+## each call since an earlier slot's swap can (correctly) already resolve a
+## later one as a side effect for a multi-slot monster's footprint.
+##
+## submit_swap()'s "incoming" monster must be a genuine bench monster --
+## it displaces whoever's in its way but has no notion of "relocate an
+## already-active monster to a different slot." A staged plan that just
+## repositions two already-active monsters relative to each other (no
+## actual bench/active change) is skipped rather than passed to
+## submit_swap(): calling it with an incoming monster that's still really
+## active elsewhere would duplicate that monster across two slots instead
+## of moving it, since submit_swap() only ever clears the TARGET range's
+## occupant(s), never the incoming monster's own prior slot. Raw slot
+## index has no gameplay effect for an already-active monster anyway (see
+## wiki/log.md), so there's nothing meaningful to apply for that slot.
+func _on_apply_formation_pressed() -> void:
+	_audio.play_menu_select()
+	var state := _controller.get_state()
+	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
+		var staged_id: int = _staged_active_ids[slot]
+		if staged_id == -1:
+			continue
+		var current := state.get_monster_at(_my_side, slot)
+		if current != null and current.instance_id == staged_id:
+			continue
+		var staged_monster := state.get_monster_by_instance_id(staged_id)
+		if staged_monster == null or state.get_active_monsters(_my_side).has(staged_monster):
+			continue
+		_controller.submit_swap(_my_side, slot, staged_id)
+	_sync_staged_formation()
+	_advance_to_next_pending_slot()
+	_refresh()
 
 func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 	var cell := Button.new()
@@ -249,7 +452,12 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 
 	var name_label := Label.new()
 	var base_name := "%s [Slot %d]" % [instance.species.display_name, instance.species.slots]
-	name_label.text = base_name if not instance.is_fainted() else "%s (fainted)" % base_name
+	if instance.is_fainted():
+		name_label.text = "%s (fainted)" % base_name
+	elif instance.is_defending:
+		name_label.text = "%s (Defending)" % base_name
+	else:
+		name_label.text = base_name
 	name_label.clip_text = true
 	name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -342,12 +550,12 @@ func _advance_to_next_pending_slot() -> void:
 
 func _render_command_panel() -> void:
 	if _controller.is_over():
-		_set_command_visibility(false, false, false, false)
+		_set_command_visibility(false, false, false)
 		_waiting_label.visible = false
 		return
 
 	if _current_slot == -1:
-		_set_command_visibility(false, false, false, false)
+		_set_command_visibility(false, false, false)
 		_waiting_label.visible = true
 		_waiting_label.text = "Waiting for the other side..."
 		return
@@ -359,25 +567,25 @@ func _render_command_panel() -> void:
 	match _mode:
 		MODE_SKILLS:
 			_rebuild_skill_buttons()
-			_set_command_visibility(false, false, false, true)
+			_set_command_visibility(false, false, true)
 		MODE_TARGETING:
-			_set_command_visibility(false, false, false, false)
+			_set_command_visibility(false, false, false)
 		_:
-			var actor := _controller.get_state().get_monster_at(_my_side, _current_slot)
-			_orders_button.disabled = _controller.get_living_bench(_my_side).is_empty()
-			_orders_button.tooltip_text = "" if not _orders_button.disabled else "No living bench monster to swap in."
-			_set_command_visibility(true, true, true, false)
+			_set_command_visibility(true, true, false)
 
 ## Forfeit is a top-level choice, not a per-monster command -- it's shown
-## exactly when Fight/Orders/Tactics are (the main command screen), and
-## hidden the moment you drill into any of their sub-flows (Fight's skill
-## list, a target picker, Orders' bench list), same as they are. `fight`
-## doubles as that "are we on the main command screen" flag since every
-## call site already keeps fight/orders/tactics in lockstep with each other.
-func _set_command_visibility(fight: bool, orders: bool, tactics: bool, actions: bool) -> void:
+## exactly when Fight/Tactics are (the main command screen), and hidden the
+## moment you drill into either's sub-flow (Fight's skill list, a target
+## picker), same as they are. `fight` doubles as that "are we on the main
+## command screen" flag since every call site already keeps fight/tactics
+## in lockstep with each other. Formation changes no longer go through a
+## separate "Orders" sub-menu -- see _wire_active_slot_drag()/
+## _wire_bench_card_drag() -- so there's no bench-list visibility to track
+## here anymore.
+func _set_command_visibility(fight: bool, tactics: bool, actions: bool) -> void:
 	_fight_button.visible = fight
+	_defend_button.visible = fight
 	_forfeit_button.visible = fight
-	_orders_button.visible = orders
 	_tactics_button.visible = tactics
 	_actions_scroll.visible = actions
 
@@ -400,34 +608,23 @@ func _rebuild_skill_buttons() -> void:
 			button.tooltip_text = skill.description
 		_actions_box.add_child(button)
 
-func _rebuild_bench_buttons() -> void:
-	for child in _actions_box.get_children():
-		if child == _actions_back_button:
-			continue
-		_actions_box.remove_child(child)
-		child.queue_free()
-
-	for bench_monster in _controller.get_living_bench(_my_side):
-		var button := Button.new()
-		button.text = "Swap in: %s" % bench_monster.species.display_name
-		button.pressed.connect(_on_bench_picked.bind(bench_monster.instance_id))
-		_actions_box.add_child(button)
-
 func _on_fight_pressed() -> void:
 	_audio.play_menu_select()
 	_mode = MODE_SKILLS
 	_render_command_panel()
 
-func _on_orders_pressed() -> void:
-	_audio.play_menu_select()
-	_mode = MODE_ORDERS
-	_rebuild_bench_buttons()
-	_set_command_visibility(false, false, false, true)
-
 func _on_actions_back_pressed() -> void:
 	_audio.play_menu_select()
 	_mode = MODE_MENU
 	_render_command_panel()
+
+## Defend always succeeds -- no chance roll, just queues the
+## action for this slot.
+func _on_defend_pressed() -> void:
+	_audio.play_menu_select()
+	_controller.submit_defend(_my_side, _current_slot)
+	_advance_to_next_pending_slot()
+	_refresh()
 
 func _on_forfeit_pressed() -> void:
 	_audio.play_menu_select()
@@ -461,12 +658,6 @@ func _on_target_picked(target_instance_id: int) -> void:
 	_advance_to_next_pending_slot()
 	_refresh()
 
-func _on_bench_picked(bench_instance_id: int) -> void:
-	_audio.play_menu_select()
-	_controller.submit_swap(_my_side, _current_slot, bench_instance_id)
-	_advance_to_next_pending_slot()
-	_refresh()
-
 ## A coroutine: awaits each event's animation before moving to the next one,
 ## so a round with several attacks plays them out one at a time instead of
 ## all at once. The command panel is hidden for the whole sequence -- since
@@ -474,8 +665,9 @@ func _on_bench_picked(bench_instance_id: int) -> void:
 ## only runs at the very end, leaving the old buttons up while animations
 ## play would let the player click something stale mid-sequence.
 func _on_turn_resolved(events: Array[BattleEvent]) -> void:
+	_sync_staged_formation()
 	_advance_to_next_pending_slot()
-	_set_command_visibility(false, false, false, false)
+	_set_command_visibility(false, false, false)
 	_waiting_label.visible = true
 	_waiting_label.text = "Resolving turn..."
 	for event in events:
@@ -503,10 +695,23 @@ func _animate_event(event: BattleEvent) -> void:
 	if event is SkillUsedEvent and event.prevented_by_status.is_empty():
 		_audio.play_attack()
 		await _arena.animate_attack(event.actor_instance_id, event.target_instance_id)
+		if event.missed:
+			_arena.show_floating_text(event.target_instance_id, "Miss!", BattleArena3D.MISS_TEXT_COLOR)
 	elif event is DamageAppliedEvent:
-		_audio.play_hit()
+		if event.was_negated:
+			_arena.show_floating_text(event.target_instance_id, "Miss!", BattleArena3D.MISS_TEXT_COLOR)
+		else:
+			_audio.play_hit()
+			if event.is_critical:
+				_arena.show_floating_text(event.target_instance_id, "Critical!\n%d" % event.amount, BattleArena3D.CRITICAL_TEXT_COLOR)
+			else:
+				_arena.show_floating_text(event.target_instance_id, str(event.amount), BattleArena3D.DAMAGE_TEXT_COLOR)
+	elif event is StatusTickEvent:
+		if event.damage > 0:
+			_arena.show_floating_text(event.target_instance_id, str(event.damage), BattleArena3D.STATUS_DAMAGE_TEXT_COLOR)
 	elif event is MonsterFaintedEvent:
 		_audio.play_faint()
+		await _arena.animate_faint(event.instance_id)
 
 func _on_battle_ended(winner_side: String) -> void:
 	_result_panel.visible = true
@@ -544,6 +749,10 @@ func _describe_event(event: BattleEvent) -> String:
 		var e2: DamageAppliedEvent = event
 		var target := _find_instance(e2.target_instance_id)
 		var target_name := target.species.display_name if target != null else "???"
+		if e2.was_negated:
+			return "%s dodged the attack!" % target_name
+		if e2.is_critical:
+			return "Critical hit! %s took %d damage! (%d HP left)" % [target_name, e2.amount, e2.resulting_hp]
 		return "%s took %d damage! (%d HP left)" % [target_name, e2.amount, e2.resulting_hp]
 	if event is HealingAppliedEvent:
 		var e3: HealingAppliedEvent = event
@@ -588,6 +797,11 @@ func _describe_event(event: BattleEvent) -> String:
 		return "%s's %s %s%s!" % [target_name5, stat_name, direction, qualifier]
 	if event is TurnStartedEvent:
 		return "\nRound %d" % event.turn_number
+	if event is DefendEvent:
+		var e11: DefendEvent = event
+		var defender := _find_instance(e11.actor_instance_id)
+		var defender_name := defender.species.display_name if defender != null else "???"
+		return "%s is defending!" % defender_name
 	if event is BattleEndedEvent:
 		var e9: BattleEndedEvent = event
 		return "You win the battle!" if e9.winner_side == _my_side else "You lose the battle!"

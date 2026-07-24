@@ -1,0 +1,5 @@
+{
+	"description": "When you are afflicted by a status effect, the enemy will also be afflicted.",
+	"display_name": "Tit for Tat",
+	"id": "tit_for_tat"
+}

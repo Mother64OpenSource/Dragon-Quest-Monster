@@ -29,11 +29,15 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/axeshark.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"heat_up",
+		"rare_high_tension"
+	],
 	"total_skill_points": 250.0
 }

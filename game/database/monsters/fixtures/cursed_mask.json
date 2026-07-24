@@ -33,11 +33,16 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/cursed_mask.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_mastermind",
+		"cursed_attack",
+		"crafty_curser"
+	],
 	"total_skill_points": 160.0
 }

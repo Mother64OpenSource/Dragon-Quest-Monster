@@ -1,0 +1,5 @@
+{
+	"description": "During battle, MP is 2x Max MP, but Defense and Wisdom are halved.",
+	"display_name": "MP Gambit",
+	"id": "mp_gambit"
+}

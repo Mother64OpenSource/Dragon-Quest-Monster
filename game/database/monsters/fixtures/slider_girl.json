@@ -39,11 +39,16 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/slider_girl.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_genius",
+		"rabble_rouser",
+		"rocket_start"
+	],
 	"total_skill_points": 300.0
 }

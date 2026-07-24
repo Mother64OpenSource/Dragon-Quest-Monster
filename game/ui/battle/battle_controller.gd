@@ -115,8 +115,21 @@ func submit_fight(side: String, slot: int, skill_id: String, target_instance_id:
 	action_submitted.emit(side, slot, "fight", {"skill_id": skill_id, "target_instance_id": target_id})
 	_maybe_resolve_turn()
 
-## The "Orders" command: swap a living bench monster into `slot`, consuming
-## that slot's action for the round (it sits out until next round).
+## Swaps a living bench monster into `slot`, consuming that slot's action
+## for the round (it sits out until next round). Size-aware: the incoming
+## monster claims `species.slots` consecutive raw indices starting at
+## `slot`, not just `slot` itself -- a prior version wrote only the single
+## index regardless of the incoming monster's own size, so swapping in a
+## 2+ slot monster left it silently overlapping whatever else already
+## occupied the following indices instead of actually displacing it (see
+## wiki/log.md). EVERY distinct monster currently occupying any index the
+## incoming monster needs is displaced entirely (its whole footprint
+## freed, even the part outside the incoming monster's own range, in case
+## that neighbor is itself multi-slot) -- not just whatever's at `slot`
+## exactly -- so a bigger incoming monster correctly bumps every occupant
+## in its way rather than only ever considering the one slot it landed on.
+## The only real rejection case left is the incoming monster simply not
+## fitting within ACTIVE_SLOT_COUNT starting at `slot` at all.
 func submit_swap(side: String, slot: int, bench_instance_id: int) -> void:
 	if is_over() or not _pending_slots[side].has(slot) or _submitted_slots[side].has(slot):
 		return
@@ -129,8 +142,26 @@ func submit_swap(side: String, slot: int, bench_instance_id: int) -> void:
 			break
 	if team_index == -1:
 		return
-	state.set_active_at(side, slot, team_index)
+
+	var incoming_size := team[team_index].species.slots
+	if slot + incoming_size > ACTIVE_SLOT_COUNT:
+		return
+
+	var displaced_team_indices := {}
+	for s in range(slot, slot + incoming_size):
+		var occupant := state.get_monster_at(side, s)
+		if occupant != null:
+			displaced_team_indices[team.find(occupant)] = true
+
+	for displaced_index in displaced_team_indices:
+		for s in state.get_slots_for_team_index(side, displaced_index):
+			state.set_active_at(side, s, -1)
+		team[displaced_index].slot = -1
+
+	for s in range(slot, slot + incoming_size):
+		state.set_active_at(side, s, team_index)
 	team[team_index].slot = slot
+
 	_submitted_slots[side][slot] = true
 	action_submitted.emit(side, slot, "swap", {"bench_instance_id": bench_instance_id})
 	_maybe_resolve_turn()
@@ -150,6 +181,21 @@ func forfeit(side: String) -> void:
 	state.winner_side = "side_b" if side == "side_a" else "side_a"
 	action_submitted.emit(side, -1, "forfeit", {})
 	battle_ended.emit(state.winner_side)
+
+## Queues a Defend action for `slot` -- halves incoming damage until this
+## monster's own next action (see DamageEffect/ActionExecutor). Always
+## succeeds, so there's nothing to narrate beyond the DefendEvent itself.
+func submit_defend(side: String, slot: int) -> void:
+	if is_over() or not _pending_slots[side].has(slot) or _submitted_slots[side].has(slot):
+		return
+	var actor := engine.battle_state.get_monster_at(side, slot)
+	if actor == null:
+		return
+	var queue: Array[Action] = [Action.new_defend(actor.instance_id)]
+	_providers[side].set_queue(actor.instance_id, queue)
+	_submitted_slots[side][slot] = true
+	action_submitted.emit(side, slot, "defend", {})
+	_maybe_resolve_turn()
 
 func _maybe_resolve_turn() -> void:
 	if is_side_ready("side_a") and is_side_ready("side_b"):

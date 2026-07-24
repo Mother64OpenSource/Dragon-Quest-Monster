@@ -1,0 +1,5 @@
+{
+	"description": "Small increase in damage when attacking enemy that has already gone.",
+	"display_name": "Proactive Hunter",
+	"id": "proactive_hunter"
+}

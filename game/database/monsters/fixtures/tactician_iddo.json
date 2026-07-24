@@ -33,11 +33,16 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tactician_iddo.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_mastermind",
+		"suicidal_satisfaction",
+		"drain_magic_attack"
+	],
 	"total_skill_points": 500.0
 }

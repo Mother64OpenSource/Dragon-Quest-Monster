@@ -1,0 +1,5 @@
+{
+	"description": "Monster recovers a little HP each time it acts in battle.",
+	"display_name": "Steady Recovery",
+	"id": "steady_recovery"
+}

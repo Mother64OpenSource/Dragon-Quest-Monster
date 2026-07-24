@@ -1,0 +1,5 @@
+{
+	"description": "Absorbs MP from an enemy that directly attacks.",
+	"display_name": "Take Magic",
+	"id": "take_magic"
+}

@@ -1,0 +1,5 @@
+{
+	"description": "Chance to use Ping on oneself during a battle.",
+	"display_name": "Random Ping",
+	"id": "random_ping"
+}

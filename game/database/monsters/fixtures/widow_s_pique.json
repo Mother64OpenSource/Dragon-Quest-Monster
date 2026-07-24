@@ -37,11 +37,16 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/widow_s_pique.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"poisonous_poke",
+		"gamble_counter"
+	],
 	"total_skill_points": 250.0
 }

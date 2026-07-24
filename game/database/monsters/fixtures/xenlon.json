@@ -33,11 +33,16 @@
 		"Wck": "0",
 		"Zam": "↓"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/xenlon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_genius",
+		"zapmeister",
+		"crafty_fire_breather"
+	],
 	"total_skill_points": 500.0
 }

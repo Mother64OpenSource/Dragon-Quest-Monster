@@ -27,11 +27,15 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/slime_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"counter_striker",
+		"crafty_banger"
+	],
 	"total_skill_points": 160.0
 }

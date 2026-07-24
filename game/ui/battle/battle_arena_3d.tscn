@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bw7qjiprxelt3" path="res://Sand.png" id="2_uo011"]
 [ext_resource type="Texture2D" uid="uid://csf8pg70s286y" path="res://house.png" id="3_yxhln"]
 [ext_resource type="Texture2D" uid="uid://bj20fojlv3lke" path="res://stone1.png" id="4_0xpde"]
+[ext_resource type="Texture2D" uid="uid://b0ixhc4prs634" path="res://skelleton .png" id="5_yxhln"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
 sky_top_color = Color(0.16, 0.4, 0.85, 1)
@@ -72,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.6, 1.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0.6, 1.2)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=78711375]
-transform = Transform3D(3.9826493, 0, -3.0229955, 0, 5, 0, 3.0229955, 0, 3.9826493, 5.916376, 1.235317, 0.98969746)
+transform = Transform3D(3.240599, 0, -3.8076913, 0, 5, 0, 3.8076913, 0, 3.240599, 5.916376, 0.8123696, 2.5425997)
 texture = ExtResource("3_yxhln")
 
 [node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1765177737]
@@ -106,3 +107,7 @@ texture = ExtResource("4_0xpde")
 [node name="Sprite3D9" type="Sprite3D" parent="." unique_id=598796441]
 transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 17.827492, 1.2714543, -6.85433)
 texture = ExtResource("4_0xpde")
+
+[node name="Sprite3D10" type="Sprite3D" parent="." unique_id=1321821683]
+transform = Transform3D(11.801108, -5.444897, 0.29488528, 0, 0.7030249, 12.980975, -5.4528775, -11.783837, 0.63819015, -10.017226, 0.32942963, 1.7027922)
+texture = ExtResource("5_yxhln")

@@ -29,11 +29,15 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/killerpillar.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"desperado",
+		"poisonous_poke"
+	],
 	"total_skill_points": 100.0
 }

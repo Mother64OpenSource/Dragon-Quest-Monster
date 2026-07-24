@@ -30,11 +30,16 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/nelgel.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"random_underworld_fog",
+		"sudden_tension"
+	],
 	"total_skill_points": 500.0
 }

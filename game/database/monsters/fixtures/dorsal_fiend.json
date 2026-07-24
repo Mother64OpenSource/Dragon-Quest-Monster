@@ -35,11 +35,16 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dorsal_fiend.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"wooshmeister",
+		"crafty_whacker"
+	],
 	"total_skill_points": 300.0
 }

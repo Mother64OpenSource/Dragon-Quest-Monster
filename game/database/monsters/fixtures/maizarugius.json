@@ -31,11 +31,16 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/maizarugius.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_genius",
+		"wrath_of_the_stars",
+		"random_red_fog"
+	],
 	"total_skill_points": 500.0
 }

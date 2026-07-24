@@ -1,0 +1,5 @@
+{
+	"description": "Damage inflicted on enemies with metal bodies will increase by 1 point.",
+	"display_name": "Hunter Mech",
+	"id": "hunter_mech"
+}

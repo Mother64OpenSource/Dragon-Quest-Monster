@@ -32,11 +32,16 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mortamor_iii.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_genius",
+		"hit_squad",
+		"sudden_red_fog"
+	],
 	"total_skill_points": 500.0
 }

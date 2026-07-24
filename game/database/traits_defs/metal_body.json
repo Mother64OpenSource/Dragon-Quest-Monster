@@ -1,5 +1,5 @@
 {
-  "id": "metal_body",
-  "display_name": "Metal Body",
-  "description": "Sharply reduces damage taken from physical and magical attacks."
+	"description": "Cuts damage sustained from enemy attacks to 1/3. MP cost is doubled.",
+	"display_name": "Metal Body",
+	"id": "metal_body"
 }

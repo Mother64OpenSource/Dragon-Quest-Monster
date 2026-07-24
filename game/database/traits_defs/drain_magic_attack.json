@@ -1,0 +1,5 @@
+{
+	"description": "Attacks may drain the enemy's MP and get absorbed by the monster.",
+	"display_name": "Drain Magic Attack",
+	"id": "drain_magic_attack"
+}

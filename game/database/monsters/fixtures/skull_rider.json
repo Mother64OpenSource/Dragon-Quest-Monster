@@ -28,11 +28,15 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/skull_rider.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"sudden_shuffle",
+		"crafty_frizzer"
+	],
 	"total_skill_points": 100.0
 }

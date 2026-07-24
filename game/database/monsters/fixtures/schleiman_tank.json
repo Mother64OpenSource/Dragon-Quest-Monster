@@ -41,11 +41,16 @@
 		"Wsh": "↑",
 		"Zap": "HP"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/schleiman_tank.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"double_trouble",
+		"light_metal_body",
+		"giant_killer"
+	],
 	"total_skill_points": 400.0
 }

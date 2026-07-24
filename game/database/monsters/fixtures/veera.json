@@ -29,11 +29,15 @@
 		"Slp": "↓",
 		"Wck": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/veera.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"tactical_trooper",
+		"hit_squad"
+	],
 	"total_skill_points": 500.0
 }

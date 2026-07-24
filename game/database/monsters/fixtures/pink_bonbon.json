@@ -29,11 +29,15 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pink_bonbon.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"small_body",
+		"hit_squad",
+		"artful_dodger"
+	],
 	"total_skill_points": 100.0
 }

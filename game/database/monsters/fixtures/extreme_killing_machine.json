@@ -38,11 +38,16 @@
 		"Wsh": "↓",
 		"Zap": "HP"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/extreme_killing_machine.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_mastermind",
+		"bouncer",
+		"paralyzed_attack"
+	],
 	"total_skill_points": 400.0
 }

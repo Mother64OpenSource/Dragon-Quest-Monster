@@ -30,11 +30,16 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
-	"slots": 4,
+	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/asura_zoma.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"ultra_body",
+		"quad_trouble",
+		"disruptive_wave",
+		"sudden_shuffle"
+	],
 	"total_skill_points": 500.0
 }

@@ -1,0 +1,5 @@
+{
+	"description": "Permanently applies the Bounce effect, and it cannot be dispelled through other abilities.",
+	"display_name": "Bouncer",
+	"id": "bouncer"
+}

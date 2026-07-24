@@ -27,11 +27,15 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/woebergine.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"small_body",
+		"drain_magic_attack",
+		"crafty_inactivist"
+	],
 	"total_skill_points": 100.0
 }

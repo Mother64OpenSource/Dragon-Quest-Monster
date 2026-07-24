@@ -4,41 +4,45 @@
 [ext_resource type="PackedScene" path="res://ui/team_builder/skill_point_dialog.tscn" id="2"]
 
 [node name="TeamMemberRow" type="PanelContainer"]
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(120, 150)
 script = ExtResource("1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Layout" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="DragHandle" type="Label" parent="HBoxContainer"]
+[node name="IconRow" type="HBoxContainer" parent="Layout"]
 layout_mode = 2
-mouse_filter = 2
-text = "::"
 
-[node name="SpeciesIcon" type="TextureRect" parent="HBoxContainer"]
+[node name="SpeciesIcon" type="TextureRect" parent="Layout/IconRow"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+size_flags_horizontal = 3
 expand_mode = 1
 stretch_mode = 5
 
-[node name="NicknameEdit" type="LineEdit" parent="HBoxContainer"]
+[node name="RemoveButton" type="Button" parent="Layout/IconRow"]
 layout_mode = 2
-size_flags_horizontal = 3
+text = "x"
+
+[node name="NicknameEdit" type="LineEdit" parent="Layout"]
+layout_mode = 2
 placeholder_text = "Nickname"
 
-[node name="SpeciesLabel" type="Label" parent="HBoxContainer"]
+[node name="SpeciesLabel" type="Label" parent="Layout"]
 layout_mode = 2
+clip_text = true
 
-[node name="SkillsBox" type="HBoxContainer" parent="HBoxContainer"]
+[node name="TraitsLabel" type="Label" parent="Layout"]
+layout_mode = 2
+clip_text = true
+theme_override_font_sizes/font_size = 12
+
+[node name="SkillsBox" type="HBoxContainer" parent="Layout"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SkillsButton" type="Button" parent="HBoxContainer"]
+[node name="SkillsButton" type="Button" parent="Layout"]
 layout_mode = 2
 text = "Skills..."
-
-[node name="RemoveButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-text = "Remove"
 
 [node name="SkillPointDialog" parent="." instance=ExtResource("2")]

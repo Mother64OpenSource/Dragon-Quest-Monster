@@ -1,0 +1,5 @@
+{
+	"description": "Inflicts poison on enemies directly attacked.",
+	"display_name": "Poisonous",
+	"id": "poisonous"
+}

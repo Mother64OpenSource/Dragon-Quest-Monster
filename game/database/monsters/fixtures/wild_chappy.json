@@ -26,11 +26,15 @@
 		"Sag": "½",
 		"Slp": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wild_chappy.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"hopeful_hitter",
+		"berserker"
+	],
 	"total_skill_points": 250.0
 }

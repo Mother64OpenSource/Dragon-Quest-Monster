@@ -35,11 +35,16 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/grandpa_slime.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"disruptive_wave",
+		"suicidal_satisfaction"
+	],
 	"total_skill_points": 400.0
 }

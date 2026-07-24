@@ -36,11 +36,16 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gold_ninja_slime.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"counteractivist",
+		"critical_massacre",
+		"desperado"
+	],
 	"total_skill_points": 400.0
 }

@@ -32,11 +32,16 @@
 		"Wck": "0",
 		"Zam": "↓"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/sneezy.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"artful_dodger",
+		"hit_squad"
+	],
 	"total_skill_points": 400.0
 }

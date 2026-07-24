@@ -6,10 +6,21 @@ extends RefCounted
 ## Trait "before damage" hooks are invoked inside DamageEffect itself
 ## (per-hit), not here — that's the only place a concrete damage number
 ## exists to modify.
+
 static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary) -> void:
 	var actor := ctx.state.get_monster_by_instance_id(action.actor_instance_id)
 	if actor == null or actor.is_fainted():
 		return
+
+	if action.action_type == Action.Type.DEFEND:
+		actor.is_defending = true
+		ctx.event_bus.emit_event(DefendEvent.new(actor.instance_id), ctx.state.turn_number)
+		return
+	# Defend protects until this monster's own next action, whatever that
+	# turns out to be -- so taking any OTHER action (even one later
+	# prevented/fizzled/missed; a turn boundary still passed) clears it
+	# here, before any of the early-return paths below.
+	actor.is_defending = false
 
 	var skill: SkillData = skill_lookup.get(action.skill_id)
 	if skill == null:
@@ -48,7 +59,7 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 
 	actor.current_mp -= skill.mp_cost
 
-	var missed := not ctx.rng.chance(_effective_accuracy(status_data, skill))
+	var missed := not ctx.rng.chance(_effective_accuracy(status_data, skill, actor))
 	var used_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
 	used_event.missed = missed
 	ctx.event_bus.emit_event(used_event, ctx.state.turn_number)
@@ -81,8 +92,15 @@ static func _is_blocked_by_category(status_data: StatusData, skill: SkillData) -
 ## physical attacks") -- spells/status moves roll at their normal chance.
 ## A pure function (no RNG) so its exact multiplier logic is directly
 ## unit-testable rather than only observable through many probabilistic
-## accuracy-roll trials.
-static func _effective_accuracy(status_data: StatusData, skill: SkillData) -> float:
+## accuracy-roll trials. `actor` is optional (default null) so the existing
+## direct-call test sites (battle_test_runner.gd's dazzle checks) that pass
+## only 2 args keep compiling unchanged -- only the real execute() call site
+## has an actor to pass, and only it needs Hopeful Hitter's accuracy trade-off.
+static func _effective_accuracy(status_data: StatusData, skill: SkillData, actor: MonsterInstance = null) -> float:
+	var accuracy := skill.accuracy
 	if status_data != null and status_data.accuracy_multiplier != 1.0 and skill.category == SkillData.Category.PHYSICAL:
-		return skill.accuracy * status_data.accuracy_multiplier
-	return skill.accuracy
+		accuracy *= status_data.accuracy_multiplier
+	if actor != null:
+		for trait_effect in actor.active_traits:
+			accuracy *= trait_effect.get_accuracy_multiplier()
+	return accuracy

@@ -123,9 +123,9 @@ theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
 layout_mode = 2
 text = "Fight"
 
-[node name="OrdersButton" type="Button" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
+[node name="DefendButton" type="Button" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
 layout_mode = 2
-text = "Orders"
+text = "Defend"
 
 [node name="TacticsButton" type="Button" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
 layout_mode = 2
@@ -163,7 +163,29 @@ horizontal_alignment = 1
 theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
 
-[node name="MyPartyGrid" type="HFlowContainer" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
+[node name="ApplyFormationButton" type="Button" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
+layout_mode = 2
+disabled = true
+text = "Apply Formation"
+
+[node name="MainPartyLabel" type="Label" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
+layout_mode = 2
+text = "Main Party"
+theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
+
+[node name="MainPartyRow" type="HFlowContainer" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="SecondPartyLabel" type="Label" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
+layout_mode = 2
+text = "Second Party (bench)"
+theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
+
+[node name="SecondPartyRow" type="HFlowContainer" parent="Root/MainColumn/BottomPanel/MyPartyPanel/MyPartyVBox"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3

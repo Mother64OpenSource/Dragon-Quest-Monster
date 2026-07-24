@@ -1,0 +1,5 @@
+{
+	"description": "Inflicts paralysis on enemies directly attacked.",
+	"display_name": "Paralyzing",
+	"id": "paralyzing"
+}

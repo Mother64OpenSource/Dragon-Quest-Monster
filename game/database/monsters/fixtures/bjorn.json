@@ -38,11 +38,16 @@
 		"Wck": "↑↑",
 		"Zap": "0"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/bjorn.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"double_trouble",
+		"hit_squad",
+		"coercion"
+	],
 	"total_skill_points": 300.0
 }

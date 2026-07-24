@@ -40,11 +40,16 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mecha_dragon.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"critical_massacre",
+		"metal_killer"
+	],
 	"total_skill_points": 400.0
 }

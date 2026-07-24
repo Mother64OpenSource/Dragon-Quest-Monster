@@ -1,0 +1,5 @@
+{
+	"description": "This trait will mix up the effects on standard monsters from their normal traits.",
+	"display_name": "Standard Body",
+	"id": "standard_body"
+}

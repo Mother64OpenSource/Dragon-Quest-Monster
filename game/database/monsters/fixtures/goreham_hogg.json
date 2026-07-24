@@ -29,11 +29,15 @@
 		"Wck": "0",
 		"Wsh": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/goreham_hogg.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"berserker",
+		"critical_massacre"
+	],
 	"total_skill_points": 300.0
 }

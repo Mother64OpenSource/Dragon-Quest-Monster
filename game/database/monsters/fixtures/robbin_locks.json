@@ -28,11 +28,16 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/robbin_locks.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"artful_dodger",
+		"lucky",
+		"tactical_genius"
+	],
 	"total_skill_points": 500.0
 }

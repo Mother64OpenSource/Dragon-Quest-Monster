@@ -29,11 +29,15 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aqua_hawk.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"early_bird",
+		"artful_dodger"
+	],
 	"total_skill_points": 100.0
 }

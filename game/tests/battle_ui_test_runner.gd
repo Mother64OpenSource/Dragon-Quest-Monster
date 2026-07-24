@@ -3,11 +3,12 @@ extends RefCounted
 
 ## Milestone 5 (multi-slot grid battles) checks: the SavedTeam -> MonsterInstance
 ## bridge, BattleController's per-slot submit/resolve gating, explicit targeting,
-## the Orders/swap-in command, a full battle running to completion, and
-## BattleSideView rendering the right action buttons. Real Window/OS popup
-## behavior and actually clicking through the grid/target-pick flow can't be
-## exercised headlessly (see the M5 plan) -- that part is manual-only, verified
-## via F5.
+## the swap-in command (submit_swap -- now triggered by dragging a card between
+## Main Party and Second Party, not a separate "Orders" menu), a full battle
+## running to completion, and BattleSideView rendering the right action
+## buttons. Real Window/OS popup behavior, actually dragging a card, and
+## clicking through the grid/target-pick flow can't be exercised headlessly
+## (see the M5 plan) -- that part is manual-only, verified via F5.
 
 const SideViewScene := preload("res://ui/battle/battle_side_view.tscn")
 
@@ -28,16 +29,21 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_full_battle(monster_db, skill_db, trait_db)
 	_check_multi_slot(monster_db, skill_db, trait_db)
 	_check_orders_swap(monster_db, skill_db, trait_db)
+	_check_size_aware_swap(monster_db, skill_db, trait_db)
 	_check_size_aware_packing(monster_db, skill_db, trait_db)
 	_check_multi_slot_acts_once_per_turn(monster_db, skill_db, trait_db)
 	_check_turn_resolved_ordering(monster_db, skill_db, trait_db)
 	_check_forfeit(monster_db, skill_db, trait_db)
 	await _check_side_view_rendering(monster_db, skill_db, trait_db)
+	await _check_party_grid_and_drag(monster_db, skill_db, trait_db)
 	await _check_forfeit_button(monster_db, skill_db, trait_db)
 	await _check_arena_rendering(monster_db, skill_db, trait_db)
 	await _check_bounce_and_audio(monster_db, skill_db, trait_db)
 	await _check_attacks_animate_sequentially(monster_db, skill_db, trait_db)
 	await _check_status_icon_on_card(monster_db, skill_db, trait_db)
+	await _check_floating_text(monster_db, skill_db, trait_db)
+	await _check_defend_button(monster_db, skill_db, trait_db)
+	await _check_damage_and_status_numbers(monster_db, skill_db, trait_db)
 
 	if _all_passed:
 		print("BattleUiTestRunner: ALL CHECKS PASSED")
@@ -208,7 +214,7 @@ func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, tra
 
 func _check_orders_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	# 5 members: slots 0-3 go active immediately (ACTIVE_SLOT_COUNT=4), the
-	# 5th sits on the bench -- exactly the case Orders/swap needs to exercise.
+	# 5th sits on the bench -- exactly the case submit_swap needs to exercise.
 	var team_a := _make_team("Bench Test", [
 		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
 		["healslime", ["attack"]], ["slime", ["attack"]],
@@ -229,6 +235,61 @@ func _check_orders_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, tr
 	var provider: ScriptedActionProvider = controller._providers["side_a"]
 	var queued: Array = provider._queues.get(bench_id, [])
 	_check("a swap queues no action for the incoming monster this round", queued.is_empty())
+
+## The actual reported bug: swapping in a MULTI-slot bench monster used to
+## only ever write the single raw index it was dropped on, silently
+## overlapping whichever other monster(s) already occupied the rest of its
+## footprint -- letting more slot-points than ACTIVE_SLOT_COUNT effectively
+## sit active at once. submit_swap() now displaces every monster in the
+## incoming monster's way, whole-footprint, rather than just the one at
+## the target index.
+func _check_size_aware_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	# 4 one-slot monsters active (slots 0-3) + a 2-slot bench reserve
+	# (aamon). Swapping aamon in at slot 0 must displace BOTH the 1-slot
+	# monster at slot 0 and the separate 1-slot monster at slot 1 -- not
+	# just slot 0 -- since aamon needs both indices.
+	var team_a := _make_team("Size Aware Swap", [
+		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
+		["healslime", ["attack"]], ["aamon", ["attack"]],
+	])
+	var team_b := _make_team("Size Aware Swap Opponent", [["golem", ["attack"]]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var state := controller.get_state()
+
+	var slot0_before := state.get_monster_at("side_a", 0)
+	var slot1_before := state.get_monster_at("side_a", 1)
+	var bench := controller.get_living_bench("side_a")
+	_check("aamon (2-slot) starts on the bench", bench.size() == 1 and bench[0].species.id == "aamon")
+	var aamon_id: int = bench[0].instance_id
+
+	# A swap that genuinely can't fit within ACTIVE_SLOT_COUNT starting at
+	# the target slot is rejected outright (checked before the real swap
+	# below, while aamon is still a valid bench candidate to attempt with).
+	var before_slot3 := state.get_monster_at("side_a", 3)
+	controller.submit_swap("side_a", 3, aamon_id)  # slot 3 + 2 slots = 5 > ACTIVE_SLOT_COUNT
+	_check(
+		"a swap that would exceed ACTIVE_SLOT_COUNT is rejected, not partially applied",
+		state.get_monster_at("side_a", 3) == before_slot3 and not controller.is_slot_submitted("side_a", 3)
+	)
+
+	controller.submit_swap("side_a", 0, aamon_id)
+
+	_check("aamon now occupies slot 0", state.get_monster_at("side_a", 0).instance_id == aamon_id)
+	_check(
+		"aamon also claims slot 1, not just the slot it was dropped on",
+		state.get_monster_at("side_a", 1).instance_id == aamon_id
+	)
+	_check("no monster is duplicated across slots 0 and 1", state.get_monster_at("side_a", 0) == state.get_monster_at("side_a", 1))
+
+	var new_bench := controller.get_living_bench("side_a")
+	var new_bench_ids: Array[int] = []
+	for m in new_bench:
+		new_bench_ids.append(m.instance_id)
+	_check(
+		"both displaced monsters (originally at slots 0 and 1) end up on the bench",
+		new_bench_ids.has(slot0_before.instance_id) and new_bench_ids.has(slot1_before.instance_id)
+	)
+	_check("a displaced monster's slot resets to -1", slot0_before.slot == -1 and slot1_before.slot == -1)
 
 func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	# aamon=2 slots, aquarion=3 slots, asura_zoma=4 slots (real fixtures).
@@ -384,6 +445,125 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 
 	view.queue_free()
 
+## Main Party (active)/Second Party (bench) rows replaced the old single
+## "Your Party" grid + separate "Orders" menu. Real drag-and-drop can't be
+## exercised headlessly (same M3-era limitation as the team builder's own
+## drag-to-reorder), so _on_party_card_dropped() is called directly here --
+## exactly the handler a real drop would call.
+##
+## Dropping now STAGES a proposed formation change rather than calling
+## submit_swap() immediately -- the user-reported problem this fixes: the
+## old immediate-commit version locked a slot's swap in the instant you
+## dropped (submit_swap() marks that slot "submitted" for the round), so
+## you could only ever pick ONE replacement per slot with no way to
+## compare a couple of combinations first. Nothing should touch the
+## engine until _on_apply_formation_pressed() runs.
+func _check_party_grid_and_drag(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	# Two bench reserves (aamon, a 2nd slime) rather than one -- lets the
+	# "changed my mind" step below pick between two genuinely-benched
+	# options for the same slot, without ever touching an already-active
+	# monster (a separate, deliberately distinct case -- see the last part
+	# of this check).
+	var team_a := _make_team("Party Grid A", [
+		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
+		["healslime", ["attack"]], ["aamon", ["attack"]], ["slime", ["attack"]],
+	])
+	var team_b := _make_team("Party Grid B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	_check("Main Party shows the 4 active monsters", _count_cards(view._main_party_row) == 4)
+	_check("Second Party shows the 2 bench monsters", _count_cards(view._second_party_row) == 2)
+	_check("Apply Formation starts disabled -- nothing staged yet", view._apply_formation_button.disabled)
+
+	var slime_id := instances_a[0].instance_id    # active, slot 0
+	var dracky_id := instances_a[1].instance_id   # active, slot 1
+	var aamon_id := instances_a[4].instance_id    # bench, 2-slot
+	var slime2_id := instances_a[5].instance_id   # bench, 1-slot -- the "second choice"
+
+	# Dropping bench-onto-bench is a no-op -- nothing to swap either
+	# direction, and nothing should be staged.
+	view._on_party_card_dropped(aamon_id, -1, slime2_id)
+	_check("dropping a bench card onto another bench-side target stages nothing", not view._has_staged_changes(controller.get_state()))
+
+	# Staging aamon (2-slot) into slot 0 must be a pure UI edit -- the
+	# engine's real active formation is untouched until Apply.
+	view._on_party_card_dropped(aamon_id, 0, -1)
+	_check("staging a drop doesn't touch the engine yet", controller.get_state().get_monster_at("side_a", 0).instance_id == slime_id)
+	_check("the Apply button enables once something is staged", not view._apply_formation_button.disabled)
+	_check("aamon is staged into slot 0", view._staged_active_ids[0] == aamon_id)
+	_check(
+		"aamon's own 2-slot footprint also displaces the separate monster staged at slot 1",
+		view._staged_active_ids[1] == aamon_id and not view._staged_active_ids.has(dracky_id)
+	)
+
+	# The actual reported problem: changing your mind about slot 0 before
+	# applying must still be possible -- staging a DIFFERENT bench monster
+	# there should simply replace the previous staged choice, not be
+	# blocked the way a second submit_swap() on an already-submitted slot
+	# would be. slime2 is a genuine bench reserve throughout (never really
+	# active), so this is an unambiguous bench-for-bench swap of the
+	# staged choice.
+	view._on_party_card_dropped(slime2_id, 0, -1)
+	_check(
+		"staging a different combination for the same slot before Apply works -- not locked to the first choice",
+		view._staged_active_ids[0] == slime2_id
+	)
+	_check(
+		"aamon's now-unneeded second slot frees up rather than staying claimed",
+		view._staged_active_ids[1] != aamon_id
+	)
+	_check("the engine still hasn't changed at all", controller.get_state().get_monster_at("side_a", 0).instance_id == slime_id)
+
+	# Applying commits the final staged arrangement in one go.
+	view._on_apply_formation_pressed()
+	var state := controller.get_state()
+	_check("Apply commits the final staged choice to the engine", state.get_monster_at("side_a", 0).instance_id == slime2_id)
+	var slime_now_benched := false
+	var aamon_still_benched := false
+	for m in controller.get_living_bench("side_a"):
+		if m.instance_id == slime_id:
+			slime_now_benched = true
+		if m.instance_id == aamon_id:
+			aamon_still_benched = true
+	_check("the displaced original slot-0 monster ends up on the bench after Apply", slime_now_benched)
+	_check("aamon (never actually applied, only briefly staged) is still just on the bench", aamon_still_benched)
+	_check("Apply Formation disables again once nothing is staged", view._apply_formation_button.disabled)
+
+	# Defense in depth: _on_party_card_dropped() itself already refuses to
+	# drag an already-staged-active card onto another active slot (it's a
+	# no-op through the normal UI path, so this exact scenario can't arise
+	# from real dragging) -- but _on_apply_formation_pressed() has its own
+	# independent guard against it too, since submit_swap() has no notion
+	# of "relocate an already-active monster" (it would duplicate that
+	# monster across two slots instead of moving it). Exercise that guard
+	# directly via _stage_drop_at_slot() (bypassing the drop handler's own
+	# guard on purpose) to prove Apply is safe even if something else ever
+	# manages to stage this. Dracky is still genuinely active at slot 1
+	# throughout all of the above -- never benched.
+	var dracky_instance := controller.get_state().get_monster_by_instance_id(dracky_id)
+	view._stage_drop_at_slot(dracky_instance, 2)
+	_check("the staged array can (in principle) propose repositioning an already-active monster", view._staged_active_ids[2] == dracky_id)
+	view._on_apply_formation_pressed()
+	var final_state := controller.get_state()
+	var dracky_slots := 0
+	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
+		var occupant := final_state.get_monster_at("side_a", slot)
+		if occupant != null and occupant.instance_id == dracky_id:
+			dracky_slots += 1
+	_check("applying such a plan never duplicates a monster across two slots", dracky_slots == 1)
+
+	view.queue_free()
+
+func _count_cards(container: Container) -> int:
+	return container.get_child_count()
+
 func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	var team_a := _make_team("Forfeit UI A", [["slime", ["attack"]]])
 	var team_b := _make_team("Forfeit UI B", [["golem", ["attack"]]])
@@ -398,9 +578,9 @@ func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase,
 
 	_check("the forfeit button is visible on the main command screen", view._forfeit_button.visible)
 
-	# Forfeit is a top-level choice alongside Fight/Orders/Tactics, not
-	# something offered inside their sub-menus -- opening Fight's skill list
-	# should hide it, and backing out should bring it back.
+	# Forfeit is a top-level choice alongside Fight/Tactics, not something
+	# offered inside their sub-menus -- opening Fight's skill list should
+	# hide it, and backing out should bring it back.
 	view._on_fight_pressed()
 	_check("the forfeit button is hidden while browsing the Fight menu", not view._forfeit_button.visible)
 	view._on_actions_back_pressed()
@@ -449,9 +629,11 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 		aamon_texture_height > 0 and is_equal_approx(aamon_sprite.pixel_size, BattleArena3D.SLOT_TARGET_HEIGHT[2] / float(aamon_texture_height))
 	)
 
-	var expected_pos: Vector3 = (view._arena._my_anchors[0].global_position + view._arena._my_anchors[1].global_position) / 2.0
+	var expected_xz: Vector3 = (view._arena._my_anchors[0].global_position + view._arena._my_anchors[1].global_position) / 2.0
+	var aamon_rendered_height: float = aamon_sprite.pixel_size * aamon_texture_height
+	var expected_pos := Vector3(expected_xz.x, BattleArena3D.TILE_GROUND_Y + aamon_rendered_height / 2.0, expected_xz.z)
 	_check(
-		"a 2-slot monster's sprite sits at the midpoint of the slots it spans",
+		"a 2-slot monster's sprite sits at the anchors' XZ midpoint, standing on the ground rather than floating at the anchors' own Y",
 		aamon_sprite.global_position.is_equal_approx(expected_pos)
 	)
 
@@ -509,8 +691,12 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	)
 	view_f.queue_free()
 
-	# A fainted monster's sprite stays (so a backfill mid-flight doesn't pop
-	# it away instantly) but visibly darkens.
+	# A fainted monster's sprite stays around (so a backfill mid-flight
+	# doesn't pop it away instantly) but should actually disappear from
+	# view -- alpha 0, not just a dim tint -- since a monster that faints
+	# and has no living reserve left to backfill its slot keeps getting
+	# re-synced every refresh; if FAINTED_MODULATE stayed opaque, that
+	# resync would undo animate_faint()'s fade-out the moment it ran.
 	var team_d := _make_team("Arena D", [["slime", ["attack"]]])
 	var instances_d := TeamToBattleBridge.build_team(team_d, "side_a", monster_db, skill_db, trait_db, 0)
 	var controller_d := BattleController.new(instances_d, instances_b, skill_db.skills_by_id)
@@ -524,9 +710,27 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	view_d._arena.sync_monsters(controller_d.get_state(), "side_a")
 	var slime_sprite := view_d._arena.get_sprite(slime_id)
 	_check(
-		"a fainted monster's sprite persists but darkens",
-		slime_sprite != null and slime_sprite.modulate.is_equal_approx(Color(0.35, 0.35, 0.35, 1))
+		"a fainted monster's sprite persists but is fully invisible",
+		slime_sprite != null and is_equal_approx(slime_sprite.modulate.a, 0.0)
 	)
+
+	# animate_faint() itself: fades a still-visible sprite out over time,
+	# rather than the sync-driven instant snap to FAINTED_MODULATE above.
+	var team_g := _make_team("Arena G", [["slime", ["attack"]]])
+	var instances_g := TeamToBattleBridge.build_team(team_g, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_g := BattleController.new(instances_g, instances_b, skill_db.skills_by_id)
+	var view_g: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_g)
+	await _tree.process_frame
+	view_g.setup(controller_g, "side_a", skill_db)
+	var slime_sprite_g := view_g._arena.get_sprite(instances_g[0].instance_id)
+	_check("before fainting, the sprite is fully visible", is_equal_approx(slime_sprite_g.modulate.a, 1.0))
+	view_g._arena.animate_faint(instances_g[0].instance_id)
+	await _tree.process_frame
+	_check("mid-fade, the sprite is partway between visible and gone", slime_sprite_g.modulate.a < 1.0)
+	await _tree.create_timer(BattleArena3D.FAINT_FADE_TIME + 0.2).timeout
+	_check("once the fade finishes, the sprite is fully invisible", is_equal_approx(slime_sprite_g.modulate.a, 0.0))
+	view_g.queue_free()
 	view_d.queue_free()
 
 	# Once a monster is fully backfilled away (no longer occupying any active
@@ -671,6 +875,134 @@ func _check_status_icon_on_card(monster_db: MonsterDatabase, skill_db: SkillData
 	var icon := _find_texture_rect_with_tooltip(view, "Poison:")
 	_check("an afflicted monster's card shows a status icon with a real tooltip", icon != null and icon.tooltip_text == "%s: %s" % [poison.display_name, poison.description])
 	_check("the status icon actually has a texture assigned", icon != null and icon.texture != null)
+
+	view.queue_free()
+
+## A short callout ("Miss!"/"Critical!") floating above a sprite's own head
+## for a missed/dodged/critical hit. Node creation/cleanup and text/color are
+## all pure data, checkable the same way _check_arena_rendering() already
+## proves other non-pixel properties of the 3D arena without real rendering.
+func _check_floating_text(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Floating Text A", [["slime", ["attack"]]])
+	var team_b := _make_team("Floating Text B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var slime_id := instances_a[0].instance_id
+	var sprite := view._arena.get_sprite(slime_id)
+
+	view._arena.show_floating_text(slime_id, "Miss!", BattleArena3D.MISS_TEXT_COLOR)
+	var new_label: Label3D = null
+	for child in sprite.get_children():
+		if child is Label3D and child.text == "Miss!":
+			new_label = child
+	_check("show_floating_text adds a Label3D with the right text as a child of the target sprite", new_label != null)
+	_check("the floating text starts fully opaque", new_label != null and is_equal_approx(new_label.modulate.a, 1.0))
+
+	await _tree.create_timer(BattleArena3D.FLOATING_TEXT_DURATION + 0.3).timeout
+	_check("the floating text frees itself once its rise-and-fade finishes", not is_instance_valid(new_label))
+
+	# An unknown/already-removed instance id is a harmless no-op, matching
+	# animate_attack()/animate_faint()'s own convention.
+	view._arena.show_floating_text(-999, "Critical!", BattleArena3D.CRITICAL_TEXT_COLOR)
+	_check("floating text for an unknown instance id doesn't error", true)
+
+	view.queue_free()
+
+## A direct hit's floating callout is its damage NUMBER now, not just the
+## bare word "Critical!" for a crit -- and a poison tick gets the same
+## treatment in its own distinct color. Runs a real round through
+## BattleController/_animate_event() (not show_floating_text() directly, see
+## _check_floating_text() above) so this exercises the actual wiring, not
+## just the underlying primitive.
+func _check_damage_and_status_numbers(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Dmg Number A", [["slime", ["attack"]]])
+	var team_b := _make_team("Dmg Number B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var golem_id := instances_b[0].instance_id
+	var golem_sprite := view._arena.get_sprite(golem_id)
+
+	controller.submit_fight("side_a", 0, "attack", golem_id)
+	controller.submit_fight("side_b", 0, "attack", instances_a[0].instance_id)
+	await _tree.create_timer(2 * (BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME) + 0.1).timeout
+
+	# Strips a possible "Critical!\n" prefix first so this passes whether or
+	# not the hit happened to crit -- the point being tested is that a real
+	# number shows up, not which exact callout variant this seed produces.
+	var found_number := false
+	for child in golem_sprite.get_children():
+		if child is Label3D and (child as Label3D).text.replace("Critical!\n", "").is_valid_int():
+			found_number = true
+	_check("a resolved hit shows a numeric damage callout over the target", found_number)
+
+	view.queue_free()
+
+	var team_c := _make_team("Poison Number A", [["slime", ["attack"]]])
+	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_c := BattleController.new(instances_c, instances_b, skill_db.skills_by_id)
+	var view_c: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_c)
+	await _tree.process_frame
+	view_c.setup(controller_c, "side_a", skill_db)
+
+	var poison := skill_db.get_status("poison")
+	instances_c[0].active_status = StatusInstance.new(poison)
+	var tick_event := StatusTickEvent.new(instances_c[0].instance_id, poison.id, 7, instances_c[0].current_hp - 7, false)
+	await view_c._animate_event(tick_event)
+	var slime_sprite_c := view_c._arena.get_sprite(instances_c[0].instance_id)
+	var found_poison_number := false
+	for child in slime_sprite_c.get_children():
+		if child is Label3D and (child as Label3D).text == "7" and (child as Label3D).modulate.is_equal_approx(BattleArena3D.STATUS_DAMAGE_TEXT_COLOR):
+			found_poison_number = true
+	_check("a poison tick shows its damage amount above the afflicted monster's own head", found_poison_number)
+
+	view_c.queue_free()
+
+## The Defend command: visible alongside Fight/Forfeit, halves damage
+## once the round actually resolves (submission alone only queues the
+## action -- see ActionExecutor.execute()), and the acting monster's own
+## card marks it as "(Defending)" until its next action.
+func _check_defend_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Defend UI A", [["slime", ["attack"]]])
+	var team_b := _make_team("Defend UI B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	_check("the defend button is visible on the main command screen", view._defend_button.visible)
+	view._on_fight_pressed()
+	_check("the defend button is hidden while browsing the Fight menu", not view._defend_button.visible)
+	view._on_actions_back_pressed()
+	_check("the defend button reappears after backing out of the Fight menu", view._defend_button.visible)
+
+	view._on_defend_pressed()
+	controller.submit_fight("side_b", 0, "attack", instances_a[0].instance_id)
+	await _tree.create_timer(2 * (BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME) + 0.3).timeout
+	_check("defending sets is_defending on the actor once the round resolves", instances_a[0].is_defending)
+
+	var card := view._build_monster_card(instances_a[0], true)
+	var header: HBoxContainer = card.get_child(0).get_child(0)
+	var name_label: Label = header.get_child(1)
+	_check("a defending monster's card shows a (Defending) marker", name_label.text.ends_with("(Defending)"))
 
 	view.queue_free()
 

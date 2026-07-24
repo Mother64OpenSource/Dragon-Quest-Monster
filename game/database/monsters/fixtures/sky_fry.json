@@ -28,11 +28,15 @@
 		"Wck": "⁎",
 		"Wsh": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sky_fry.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"small_body",
+		"perilous_parrier",
+		"crafty_sleeper"
+	],
 	"total_skill_points": 100.0
 }

@@ -33,11 +33,15 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/quack_up.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"artful_dodger",
+		"magic_regenerator"
+	],
 	"total_skill_points": 200.0
 }

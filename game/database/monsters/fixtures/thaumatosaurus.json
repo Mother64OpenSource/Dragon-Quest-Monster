@@ -35,11 +35,16 @@
 		"Wck": "↑↑",
 		"Zam": "⁎"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/thaumatosaurus.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"tactical_genius",
+		"crafty_woosher",
+		"intimidating"
+	],
 	"total_skill_points": 250.0
 }

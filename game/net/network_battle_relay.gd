@@ -45,3 +45,5 @@ func _on_remote_action_received(side: String, slot: int, kind: String, payload: 
 			_controller.submit_swap(side, slot, int(payload.get("bench_instance_id", -1)))
 		"forfeit":
 			_controller.forfeit(side)
+		"defend":
+			_controller.submit_defend(side, slot)

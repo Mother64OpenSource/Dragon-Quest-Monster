@@ -25,6 +25,7 @@ const COL_WIS := 8
 const COL_SLOTS := 9
 
 var _monster_db: MonsterDatabase
+var _trait_db: TraitDatabase
 var _current_results: Array[MonsterSpecies] = []
 var _sort_column: int = COL_NAME
 var _sort_ascending: bool = true
@@ -35,6 +36,7 @@ var _sort_ascending: bool = true
 @onready var _results_tree: Tree = $VBoxContainer/ResultsRow/ResultsTree
 @onready var _details_icon: TextureRect = $VBoxContainer/ResultsRow/DetailsPanel/DetailsIcon
 @onready var _details_label: Label = $VBoxContainer/ResultsRow/DetailsPanel/DetailsLabel
+@onready var _traits_box: VBoxContainer = $VBoxContainer/ResultsRow/DetailsPanel/TraitsScroll/TraitsBox
 
 func _ready() -> void:
 	title = "Add Monster"
@@ -49,8 +51,9 @@ func _ready() -> void:
 	confirmed.connect(_on_confirmed)
 	_clear_details()
 
-func setup(monster_db: MonsterDatabase) -> void:
+func setup(monster_db: MonsterDatabase, trait_db: TraitDatabase) -> void:
 	_monster_db = monster_db
+	_trait_db = trait_db
 	_populate_rank_filter()
 	_populate_family_filter()
 	_refresh_results()
@@ -226,6 +229,34 @@ func _show_details(species: MonsterSpecies) -> void:
 			_format_resistances(species)
 		]
 	)
+	_show_traits(species)
+
+## Rebuilt from scratch each time, same as SkillPointDialog rebuilds its
+## checkboxes -- one Label per starting trait, name visible, full
+## description on hover (this codebase's uniform tooltip_text convention,
+## no custom tooltip Control anywhere).
+func _show_traits(species: MonsterSpecies) -> void:
+	_clear_traits_box()
+	if _trait_db == null:
+		return
+	var header := Label.new()
+	header.text = "Traits:" if not species.starting_trait_ids.is_empty() else "Traits: (none on record)"
+	_traits_box.add_child(header)
+	for trait_id in species.starting_trait_ids:
+		var trait_data := _trait_db.get_trait_data(trait_id)
+		if trait_data == null:
+			continue
+		var label := Label.new()
+		label.text = trait_data.display_name
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		if not trait_data.description.is_empty():
+			label.tooltip_text = trait_data.description
+		_traits_box.add_child(label)
+
+func _clear_traits_box() -> void:
+	for child in _traits_box.get_children():
+		_traits_box.remove_child(child)
+		child.queue_free()
 
 ## Only non-blank entries are stored on the species, so this always shows
 ## every code that deviates from normal susceptibility. Symbol meanings
@@ -244,3 +275,4 @@ func _format_resistances(species: MonsterSpecies) -> String:
 func _clear_details() -> void:
 	_details_icon.texture = null
 	_details_label.text = "Select a monster to see its stats."
+	_clear_traits_box()

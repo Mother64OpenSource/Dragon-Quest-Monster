@@ -34,11 +34,16 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/bilhaw.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"early_bird",
+		"hopeful_hitter"
+	],
 	"total_skill_points": 400.0
 }

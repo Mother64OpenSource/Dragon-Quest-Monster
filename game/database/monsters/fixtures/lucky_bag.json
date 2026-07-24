@@ -30,11 +30,15 @@
 		"Zam": "0",
 		"Zap": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lucky_bag.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"perilous_parrier",
+		"atk_roulette"
+	],
 	"total_skill_points": 160.0
 }

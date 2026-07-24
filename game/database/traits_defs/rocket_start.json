@@ -1,0 +1,5 @@
+{
+	"description": "In the first three rounds, increases damage dealt, but thereafter decreases damage dealt.",
+	"display_name": "Rocket Start",
+	"id": "rocket_start"
+}

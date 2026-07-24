@@ -13,6 +13,7 @@ var teams_dir_override: String = ""
 var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
 var skillset_db: SkillSetDatabase
+var trait_db: TraitDatabase
 var roster: TeamRosterManager
 
 @onready var _team_list_panel: TeamListPanel = $HSplitContainer/TeamListPanel
@@ -26,10 +27,11 @@ func _ready() -> void:
 	monster_db = MonsterDatabase.new()
 	skill_db = SkillDatabase.new()
 	skillset_db = SkillSetDatabase.new()
+	trait_db = TraitDatabase.new()
 	roster = TeamRosterManager.new(teams_dir_override) if not teams_dir_override.is_empty() else TeamRosterManager.new()
 
 	_team_list_panel.setup(roster)
-	_team_editor_panel.setup(roster, monster_db, skill_db, skillset_db)
+	_team_editor_panel.setup(roster, monster_db, skill_db, skillset_db, trait_db)
 
 	_team_list_panel.team_selected.connect(_on_team_selected)
 	_team_editor_panel.team_updated.connect(_on_team_updated)

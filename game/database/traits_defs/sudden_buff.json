@@ -1,0 +1,5 @@
+{
+	"description": "Raises party's Defense by 50% at the start of the battle.",
+	"display_name": "Sudden Buff",
+	"id": "sudden_buff"
+}

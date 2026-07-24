@@ -30,11 +30,15 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/darck.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"heckling_hector",
+		"gamble_counter"
+	],
 	"total_skill_points": 400.0
 }

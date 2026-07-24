@@ -27,11 +27,15 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lesser_demon.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"crafty_donker",
+		"crafty_jammer"
+	],
 	"total_skill_points": 130.0
 }

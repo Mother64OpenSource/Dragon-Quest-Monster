@@ -33,11 +33,16 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/garudian.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"hit_squad",
+		"artful_dodger"
+	],
 	"total_skill_points": 160.0
 }

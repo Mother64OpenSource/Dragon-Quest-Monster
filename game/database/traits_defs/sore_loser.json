@@ -1,0 +1,5 @@
+{
+	"description": "Small increase in damage when attacking enemy higher-level than itself.",
+	"display_name": "Sore Loser",
+	"id": "sore_loser"
+}

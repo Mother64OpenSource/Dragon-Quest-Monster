@@ -29,11 +29,15 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/brownie.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"random_oomph",
+		"talent_scout"
+	],
 	"total_skill_points": 160.0
 }

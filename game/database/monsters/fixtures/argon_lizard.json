@@ -28,11 +28,15 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/argon_lizard.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"small_body",
+		"paralysing_punch",
+		"counter_striker"
+	],
 	"total_skill_points": 100.0
 }

@@ -34,11 +34,15 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/overkilling_machine.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"double_trouble",
+		"hit_squad"
+	],
 	"total_skill_points": 400.0
 }

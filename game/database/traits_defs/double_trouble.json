@@ -1,0 +1,5 @@
+{
+	"description": "Monster will act twice in a row when not given specific orders.",
+	"display_name": "Double Trouble",
+	"id": "double_trouble"
+}

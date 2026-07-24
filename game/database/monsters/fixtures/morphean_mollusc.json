@@ -30,11 +30,15 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/morphean_mollusc.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"last_word",
+		"hit_squad"
+	],
 	"total_skill_points": 100.0
 }

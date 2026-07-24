@@ -1,0 +1,5 @@
+{
+	"description": "Chance to use Shuffle during a battle.",
+	"display_name": "Random Shuffle",
+	"id": "random_shuffle"
+}

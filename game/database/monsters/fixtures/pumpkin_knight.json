@@ -34,11 +34,15 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pumpkin_knight.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"tactical_trooper",
+		"desperado"
+	],
 	"total_skill_points": 200.0
 }

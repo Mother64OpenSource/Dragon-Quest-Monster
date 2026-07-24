@@ -31,11 +31,16 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
-	"slots": 4,
+	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/he_who_bears_no_name.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"ultra_body",
+		"quad_trouble",
+		"ultra_guard_break",
+		"disruptive_wave"
+	],
 	"total_skill_points": 500.0
 }

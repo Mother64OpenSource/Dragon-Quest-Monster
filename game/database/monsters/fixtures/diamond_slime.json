@@ -46,11 +46,15 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/diamond_slime.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"hard_metal_body",
+		"escape_artist"
+	],
 	"total_skill_points": 500.0
 }

@@ -38,11 +38,16 @@
 		"Wck": "↑↑",
 		"Zam": "⁎"
 	},
-	"slots": 3,
+	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/weighvern.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"grand_slammer",
+		"double_trouble",
+		"last_word",
+		"hit_squad"
+	],
 	"total_skill_points": 200.0
 }

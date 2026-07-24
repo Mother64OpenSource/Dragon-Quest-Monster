@@ -30,11 +30,16 @@
 		"Wsh": "½",
 		"Zam": "⇄"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gisvarg.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_trooper",
+		"zapmeister",
+		"crafty_poisoner"
+	],
 	"total_skill_points": 500.0
 }

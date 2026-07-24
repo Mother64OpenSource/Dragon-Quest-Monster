@@ -29,11 +29,15 @@
 		"Wsh": "⁎",
 		"Zam": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/weedbug.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"take_magic",
+		"random_oomph"
+	],
 	"total_skill_points": 200.0
 }

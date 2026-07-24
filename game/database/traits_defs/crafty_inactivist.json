@@ -1,0 +1,5 @@
+{
+	"description": "Reduces enemies' resistance to missing a turn. Has no effect on enemies who are resistant to missing a turn.",
+	"display_name": "Crafty Inactivist",
+	"id": "crafty_inactivist"
+}

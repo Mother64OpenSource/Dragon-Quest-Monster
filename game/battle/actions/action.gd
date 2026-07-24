@@ -5,7 +5,7 @@ extends RefCounted
 ## reference, and shaped with to_dict()/from_dict() as the replay-log seed —
 ## nothing persists it to disk yet, but the shape matters for later.
 
-enum Type { SKILL }
+enum Type { SKILL, DEFEND }
 
 var actor_instance_id: int
 var action_type: Type = Type.SKILL
@@ -18,10 +18,29 @@ func _init(p_actor_instance_id: int, p_skill_id: String, p_target_instance_id: i
 	skill_id = p_skill_id
 	target_instance_id = p_target_instance_id
 
+static func new_defend(p_actor_instance_id: int) -> Action:
+	var action := Action.new(p_actor_instance_id, "", -1)
+	action.action_type = Type.DEFEND
+	return action
+
+static func _type_to_string(p_action_type: Type) -> String:
+	match p_action_type:
+		Type.DEFEND:
+			return "defend"
+		_:
+			return "skill"
+
+static func _type_from_string(p_action_type: String) -> Type:
+	match p_action_type:
+		"defend":
+			return Type.DEFEND
+		_:
+			return Type.SKILL
+
 func to_dict() -> Dictionary:
 	return {
 		"actor_instance_id": actor_instance_id,
-		"action_type": "skill",
+		"action_type": _type_to_string(action_type),
 		"skill_id": skill_id,
 		"target_instance_id": target_instance_id,
 		"submission_index": submission_index,
@@ -34,4 +53,5 @@ static func from_dict(d: Dictionary) -> Action:
 		int(d.get("target_instance_id", -1))
 	)
 	action.submission_index = int(d.get("submission_index", -1))
+	action.action_type = _type_from_string(d.get("action_type", "skill"))
 	return action

@@ -1,0 +1,5 @@
+{
+	"description": "Ultra size monsters will have an echo effect added to their attacks in addition to striking all enemies at once. Their damage cap is always 9999.",
+	"display_name": "Ultra Body",
+	"id": "ultra_body"
+}

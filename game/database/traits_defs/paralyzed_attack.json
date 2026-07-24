@@ -1,0 +1,5 @@
+{
+	"description": "When paralyzed, an enemy that attacks directly will get paralysis status.",
+	"display_name": "Paralyzed Attack",
+	"id": "paralyzed_attack"
+}

@@ -31,11 +31,15 @@
 		"Slp": "↓",
 		"Wsh": "½"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tigergram.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"hit_squad",
+		"counter_striker"
+	],
 	"total_skill_points": 300.0
 }

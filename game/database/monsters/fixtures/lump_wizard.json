@@ -44,11 +44,15 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lump_wizard.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"health_professional",
+		"crafty_jammer"
+	],
 	"total_skill_points": 130.0
 }

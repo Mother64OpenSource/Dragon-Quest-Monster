@@ -1,0 +1,5 @@
+{
+	"description": "Monster will act 3-4 times in a row when not given specific orders.",
+	"display_name": "Tactical Uber",
+	"id": "tactical_uber"
+}

@@ -1,0 +1,5 @@
+{
+	"description": "During battle, HP is 1.5x Max HP, but Attack and Agility are halved.",
+	"display_name": "HP Gambit",
+	"id": "hp_gambit"
+}

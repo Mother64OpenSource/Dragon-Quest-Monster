@@ -1,0 +1,5 @@
+{
+	"description": "Automatically increases tension for all enemies when battle begins.",
+	"display_name": "Rival Riler",
+	"id": "rival_riler"
+}

@@ -1,0 +1,5 @@
+{
+	"description": "Gold earned in battle increased by 20%. This effect stacks.",
+	"display_name": "Gold Getter",
+	"id": "gold_getter"
+}

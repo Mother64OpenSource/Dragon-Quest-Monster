@@ -34,11 +34,16 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/barbarus.webp",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"double_trouble",
+		"intimidating",
+		"crafty_donker"
+	],
 	"total_skill_points": 500.0
 }

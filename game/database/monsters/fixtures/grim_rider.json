@@ -31,11 +31,15 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/grim_rider.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"counter_striker",
+		"crafty_confuser"
+	],
 	"total_skill_points": 250.0
 }

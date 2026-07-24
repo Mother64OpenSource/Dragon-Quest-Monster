@@ -35,11 +35,16 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
-	"slots": 2,
+	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tri_winder.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"big_hitter",
+		"tactical_genius",
+		"hit_squad",
+		"crafty_cracker"
+	],
 	"total_skill_points": 250.0
 }

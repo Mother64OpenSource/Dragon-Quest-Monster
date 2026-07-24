@@ -1,0 +1,5 @@
+{
+	"description": "Chance of spells hitting a weakpoint is doubled.",
+	"display_name": "Spell Satisfaction",
+	"id": "spell_satisfaction"
+}

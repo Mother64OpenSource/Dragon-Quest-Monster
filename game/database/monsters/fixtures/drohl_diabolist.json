@@ -33,11 +33,15 @@
 		"Sap": "½",
 		"Zam": "0"
 	},
-	"slots": 1,
+	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/drohl_diabolist.png",
 	"starting_skill_ids": [
 		"attack"
 	],
-	"starting_trait_ids": [],
+	"starting_trait_ids": [
+		"standard_body",
+		"take_magic",
+		"rare_mist_me"
+	],
 	"total_skill_points": 130.0
 }
