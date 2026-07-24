@@ -10,7 +10,8 @@ extends SceneTree
 const COLOR_TOLERANCE := 0.06
 
 func _initialize() -> void:
-	var assets_dir := "res://assets/monsters"
+	var user_args := OS.get_cmdline_user_args()
+	var assets_dir := user_args[0] if user_args.size() > 0 else "res://assets/monsters"
 	var target_ids := _find_opaque_ids(assets_dir)
 	print("Processing %d opaque images" % target_ids.size())
 	for id in target_ids:

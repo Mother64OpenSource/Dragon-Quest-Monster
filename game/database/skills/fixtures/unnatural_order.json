@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Causes monsters with the lowest AGI to move first in battle.",
 	"display_name": "Unnatural Order",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 123,
+			"power": 123.0,
 			"type": "damage"
 		}
 	],
 	"id": "unnatural_order",
-	"mp_cost": 36,
-	"priority": 0,
+	"mp_cost": 36.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

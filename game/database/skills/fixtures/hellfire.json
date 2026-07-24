@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Fire breath does super strongest damage to all enemies, and adds Mind effect too.",
 	"display_name": "Hellfire",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 207,
+			"power": 207.0,
 			"type": "damage"
 		}
 	],
 	"id": "hellfire",
-	"mp_cost": 64,
-	"priority": 0,
+	"mp_cost": 64.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

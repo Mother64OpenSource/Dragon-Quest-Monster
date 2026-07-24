@@ -208,12 +208,44 @@ func _check_skill_point_allocation() -> void:
 	dialog.show_for(loadout, slime_species, _screen.skill_db, _screen.skillset_db)
 	_check("frizz starts locked with 0 points allocated", not TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz"))
 
+	# Every monster can invest in every skillset -- not just the handful
+	# curated into species.available_skill_sets. "guard" is deliberately NOT
+	# in slime.json's curated list, so it's a real test of the restriction
+	# actually being gone rather than of data that happened to include it.
+	_check("every skillset is shown, not just the species' curated list", dialog._panels_list.get_child_count() == _screen.skillset_db.get_all_skillsets().size())
+	loadout.skill_point_allocation["guard"] = 56
+	_check(
+		"a skillset outside slime's curated list is still a valid, unlocking allocation",
+		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("selflessness")
+	)
+	_check("that allocation passes validation (no species restriction anymore)", _screen.roster.validate_member(loadout, _screen.monster_db, _screen.skillset_db).is_empty())
+	loadout.skill_point_allocation.erase("guard")
+
+	# The search field narrows the visible panel list without touching data.
+	dialog._search_edit.text = "slimer"
+	dialog._on_search_text_changed("slimer")
+	_check("searching filters down to matching panels only", dialog._panels_list.get_child_count() == 1)
+	dialog._search_edit.text = ""
+	dialog._on_search_text_changed("")
+
 	dialog._on_points_changed(2.0, "slimer")
 	_check(
 		"allocating 2 points in slimer unlocks frizz (2 SP threshold)",
 		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz")
 	)
 	_check("allocation is recorded on the loadout", int(loadout.skill_point_allocation.get("slimer", 0)) == 2)
+
+	# Match on "— Frizz (" (display name flanked by the label's own
+	# separator/MP-paren) rather than a bare "Frizz" substring -- several
+	# other real skills (Frizzle, Frizz Cracker) also contain "Frizz" and
+	# would otherwise be matched first, since every skillset is listed now.
+	var frizz_checkbox := _find_checkbox(dialog._panels_list, "— Frizz (")
+	var frizz_description: String = _screen.skill_db.get_skill("frizz").description
+	_check("frizz's checkbox exists once unlocked", frizz_checkbox != null)
+	_check(
+		"frizz's checkbox tooltip shows its move description",
+		frizz_checkbox != null and not frizz_description.is_empty() and frizz_checkbox.tooltip_text == frizz_description
+	)
 
 	dialog._on_skill_toggled(true, "frizz")
 	_check("toggling an unlocked skill's checkbox equips it", loadout.equipped_skill_ids.has("frizz"))
@@ -276,6 +308,15 @@ func _clear_test_dir() -> void:
 			dir.remove(file_name)
 		file_name = dir.get_next()
 	dir.list_dir_end()
+
+func _find_checkbox(root: Node, text_contains: String) -> CheckBox:
+	for child in root.get_children():
+		if child is CheckBox and (child as CheckBox).text.contains(text_contains):
+			return child
+		var found := _find_checkbox(child, text_contains)
+		if found != null:
+			return found
+	return null
 
 func _check(label: String, condition: bool) -> void:
 	if condition:

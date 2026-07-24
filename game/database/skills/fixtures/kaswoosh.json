@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Woosh-type spell does more damage to all enemies.",
 	"display_name": "Kaswoosh",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 81,
+			"power": 81.0,
 			"type": "damage"
 		}
 	],
 	"id": "kaswoosh",
-	"mp_cost": 22,
-	"priority": 0,
+	"mp_cost": 22.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

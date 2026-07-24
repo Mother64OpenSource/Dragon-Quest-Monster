@@ -1,6 +1,7 @@
 {
   "id": "attack",
   "display_name": "Attack",
+  "description": "A physical attack that deals damage to 1 enemy.",
   "mp_cost": 0,
   "priority": 0,
   "accuracy": 1.0,

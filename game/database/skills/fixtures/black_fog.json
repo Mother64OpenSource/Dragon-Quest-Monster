@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "A terrible fog that makes spells unusable.",
 	"display_name": "Black Fog",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 180,
+			"power": 180.0,
 			"type": "damage"
 		}
 	],
 	"id": "black_fog",
-	"mp_cost": 55,
-	"priority": 0,
+	"mp_cost": 55.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

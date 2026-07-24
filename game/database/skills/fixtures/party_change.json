@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Switch between your Standby and Active party until the end of the battle. Can only use once per battle.",
 	"display_name": "Party Change",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "party_change",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

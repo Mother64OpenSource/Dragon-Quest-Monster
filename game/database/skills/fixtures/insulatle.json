@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Protects all allies from fire and ice breath attacks.",
 	"display_name": "Insulatle",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "insulatle",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

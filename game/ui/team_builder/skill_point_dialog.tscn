@@ -17,6 +17,10 @@ offset_bottom = 440.0
 layout_mode = 2
 text = "Skill Points"
 
+[node name="SearchEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Search skill panels..."
+
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

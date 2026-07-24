@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Restores around 76 HP to a single ally.",
 	"display_name": "Midheal",
 	"effects": [
 		{
-			"power": 191,
+			"power": 191.0,
 			"target_self": true,
 			"type": "heal"
 		}
 	],
 	"id": "midheal",
-	"mp_cost": 22,
-	"priority": 0,
+	"mp_cost": 22.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

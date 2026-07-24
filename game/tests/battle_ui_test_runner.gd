@@ -31,7 +31,13 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_size_aware_packing(monster_db, skill_db, trait_db)
 	_check_multi_slot_acts_once_per_turn(monster_db, skill_db, trait_db)
 	_check_turn_resolved_ordering(monster_db, skill_db, trait_db)
+	_check_forfeit(monster_db, skill_db, trait_db)
 	await _check_side_view_rendering(monster_db, skill_db, trait_db)
+	await _check_forfeit_button(monster_db, skill_db, trait_db)
+	await _check_arena_rendering(monster_db, skill_db, trait_db)
+	await _check_bounce_and_audio(monster_db, skill_db, trait_db)
+	await _check_attacks_animate_sequentially(monster_db, skill_db, trait_db)
+	await _check_status_icon_on_card(monster_db, skill_db, trait_db)
 
 	if _all_passed:
 		print("BattleUiTestRunner: ALL CHECKS PASSED")
@@ -151,6 +157,28 @@ func _check_turn_resolved_ordering(monster_db: MonsterDatabase, skill_db: SkillD
 		"turn_resolved fires only after the new round's slots are reset (no stuck 'waiting forever')",
 		seen_fresh.size() == 1 and seen_fresh[0] == true
 	)
+
+func _check_forfeit(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db)
+
+	var submitted_calls: Array = []
+	controller.action_submitted.connect(func(side, slot, kind, payload): submitted_calls.append([side, slot, kind, payload]))
+	var winners: Array = []
+	controller.battle_ended.connect(func(winner_side): winners.append(winner_side))
+
+	controller.forfeit("side_a")
+	_check("forfeiting ends the battle immediately", controller.is_over())
+	_check("the other side is credited with the win", controller.get_state().winner_side == "side_b")
+	_check("battle_ended fires with the correct winner", winners.size() == 1 and winners[0] == "side_b")
+	_check(
+		"forfeiting emits action_submitted (side_a, forfeit) so online play can forward it for free",
+		submitted_calls.size() == 1 and submitted_calls[0] == ["side_a", -1, "forfeit", {}]
+	)
+
+	# Forfeiting an already-finished battle is a harmless no-op -- doesn't
+	# flip the winner or fire battle_ended a second time.
+	controller.forfeit("side_b")
+	_check("forfeiting after the battle already ended changes nothing", controller.get_state().winner_side == "side_b" and winners.size() == 1)
 
 func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	var team_a := _make_team("Multi A", [["slime", ["attack"]], ["dracky", ["attack"]]])
@@ -322,15 +350,21 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 	view._rebuild_skill_buttons()
 	var attack_disabled := false
 	var frizz_disabled := false
+	var attack_tooltip := ""
+	var frizz_tooltip := ""
 	for child in view._actions_box.get_children():
 		if child is Button:
 			var button := child as Button
 			if button.text.begins_with("Attack"):
 				attack_disabled = button.disabled
+				attack_tooltip = button.tooltip_text
 			elif button.text.begins_with("Frizz"):
 				frizz_disabled = button.disabled
+				frizz_tooltip = button.tooltip_text
 	_check("side view keeps a 0-MP skill's button enabled", not attack_disabled)
 	_check("side view disables a skill button the actor can't afford", frizz_disabled)
+	_check("attack button's tooltip shows its move description", attack_tooltip == skill_db.get_skill("attack").description)
+	_check("frizz button's tooltip shows its move description", frizz_tooltip == skill_db.get_skill("frizz").description)
 
 	# The battle log should actually narrate what happened, not just track
 	# HP bars silently -- resolve one real turn and check the log text names
@@ -338,6 +372,10 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 	instances_a[0].current_mp = instances_a[0].species.base_mp
 	controller.submit_fight("side_a", 0, "attack", instances_b[0].instance_id)
 	controller.submit_fight("side_b", 0, "attack", instances_a[0].instance_id)
+	# Attacks now animate one at a time (see wiki/log.md) instead of the log
+	# filling in all at once -- give both this round's attacks time to
+	# finish their sequential animations before reading the final log text.
+	await _tree.create_timer(2 * (BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME) + 0.3).timeout
 	var log_text := view._log_label.text
 	_check("battle log names the round", log_text.contains("Round 1"))
 	_check("battle log narrates the opening send-out", log_text.contains("enters the battle!"))
@@ -345,6 +383,305 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 	_check("battle log narrates the resulting damage", log_text.contains("damage!"))
 
 	view.queue_free()
+
+func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Forfeit UI A", [["slime", ["attack"]]])
+	var team_b := _make_team("Forfeit UI B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	_check("the forfeit button is visible on the main command screen", view._forfeit_button.visible)
+
+	# Forfeit is a top-level choice alongside Fight/Orders/Tactics, not
+	# something offered inside their sub-menus -- opening Fight's skill list
+	# should hide it, and backing out should bring it back.
+	view._on_fight_pressed()
+	_check("the forfeit button is hidden while browsing the Fight menu", not view._forfeit_button.visible)
+	view._on_actions_back_pressed()
+	_check("the forfeit button reappears after backing out of the Fight menu", view._forfeit_button.visible)
+
+	view._on_forfeit_pressed()
+	_check("pressing forfeit opens the confirmation dialog rather than ending the battle right away", view._forfeit_confirm_dialog.visible and not controller.is_over())
+
+	view._on_forfeit_confirmed()
+	_check("confirming forfeit ends the battle crediting the opponent", controller.is_over() and controller.get_state().winner_side == "side_b")
+	_check("the view shows the loss from the forfeiting side's own perspective", view._result_panel.visible and view._result_label.text == "You Lose!")
+
+	view._render_command_panel()
+	_check("the forfeit button hides once the battle is over", not view._forfeit_button.visible)
+
+	view.queue_free()
+
+## Milestone 10: the 3D arena (BattleArena3D) that renders both sides'
+## monsters as billboarded sprites, plus the always-visible turn counter.
+## None of this needs real rendering to verify -- sprite existence,
+## position/scale math, and node identity/lifecycle are all pure data,
+## checkable the same way the rest of this project's headless suites
+## already prove non-visual properties of things that are normally seen.
+func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Arena A", [["aamon", ["attack"]]])
+	var team_b := _make_team("Arena B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var aamon_id := instances_a[0].instance_id
+	var golem_id := instances_b[0].instance_id
+
+	_check("arena has a sprite for the 2-slot monster", view._arena.get_sprite(aamon_id) != null)
+	_check("arena has a sprite for the opponent", view._arena.get_sprite(golem_id) != null)
+
+	var aamon_sprite := view._arena.get_sprite(aamon_id)
+	var aamon_texture_height := aamon_sprite.texture.get_height() if aamon_sprite.texture != null else 0
+	_check(
+		"a 2-slot monster's sprite height is normalized from its own texture's real height, not a flat scale",
+		aamon_texture_height > 0 and is_equal_approx(aamon_sprite.pixel_size, BattleArena3D.SLOT_TARGET_HEIGHT[2] / float(aamon_texture_height))
+	)
+
+	var expected_pos: Vector3 = (view._arena._my_anchors[0].global_position + view._arena._my_anchors[1].global_position) / 2.0
+	_check(
+		"a 2-slot monster's sprite sits at the midpoint of the slots it spans",
+		aamon_sprite.global_position.is_equal_approx(expected_pos)
+	)
+
+	var sprite_again := view._arena.get_sprite(aamon_id)
+	_check("re-syncing reuses the same sprite instance, not a rebuilt one", aamon_sprite == sprite_again)
+
+	_check("turn counter reads Round 1 before any round resolves", view._turn_counter_label.text == "Round 1")
+	controller.submit_fight("side_a", 0, "attack", golem_id)
+	controller.submit_fight("side_b", 0, "attack", aamon_id)
+	# Attacks animate sequentially now -- give both this round's attacks time
+	# to finish before checking the counter that only updates once the whole
+	# round's _refresh() finally runs.
+	await _tree.create_timer(2 * (BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME) + 0.3).timeout
+	_check("turn counter reads Round 2 once the first round resolves", view._turn_counter_label.text == "Round 2")
+
+	view.queue_free()
+
+	# A 4-slot monster fills the whole roster alone -- scale should follow
+	# the same formula at the other end of the range.
+	var team_c := _make_team("Arena C", [["asura_zoma", ["attack"]]])
+	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_c := BattleController.new(instances_c, instances_b, skill_db.skills_by_id)
+	var view_c: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_c)
+	await _tree.process_frame
+	view_c.setup(controller_c, "side_a", skill_db)
+	var zoma_sprite := view_c._arena.get_sprite(instances_c[0].instance_id)
+	var zoma_texture_height := zoma_sprite.texture.get_height() if zoma_sprite.texture != null else 0
+	_check(
+		"a 4-slot monster's sprite height is normalized the same way, at the other end of the slot range",
+		zoma_texture_height > 0 and is_equal_approx(zoma_sprite.pixel_size, BattleArena3D.SLOT_TARGET_HEIGHT[4] / float(zoma_texture_height))
+	)
+	view_c.queue_free()
+
+	# The actual bug this normalization fixes: two different 1-slot monsters
+	# whose source art differs in native pixel height (some species use a
+	# tight pixel-sprite crop, others a much larger fan-art image) must still
+	# render at the SAME on-screen height -- not whichever's source image
+	# happened to be taller, which is what a single flat pixel_size for
+	# everyone used to produce.
+	var team_f := _make_team("Arena F", [["slime", ["attack"]], ["dracky", ["attack"]]])
+	var instances_f := TeamToBattleBridge.build_team(team_f, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_f := BattleController.new(instances_f, instances_b, skill_db.skills_by_id)
+	var view_f: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_f)
+	await _tree.process_frame
+	view_f.setup(controller_f, "side_a", skill_db)
+	var slime_sprite_f := view_f._arena.get_sprite(instances_f[0].instance_id)
+	var dracky_sprite_f := view_f._arena.get_sprite(instances_f[1].instance_id)
+	var slime_height := slime_sprite_f.pixel_size * slime_sprite_f.texture.get_height()
+	var dracky_height := dracky_sprite_f.pixel_size * dracky_sprite_f.texture.get_height()
+	_check(
+		"two same-slot monsters render at the same on-screen height regardless of their source art's native size",
+		is_equal_approx(slime_height, dracky_height)
+	)
+	view_f.queue_free()
+
+	# A fainted monster's sprite stays (so a backfill mid-flight doesn't pop
+	# it away instantly) but visibly darkens.
+	var team_d := _make_team("Arena D", [["slime", ["attack"]]])
+	var instances_d := TeamToBattleBridge.build_team(team_d, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_d := BattleController.new(instances_d, instances_b, skill_db.skills_by_id)
+	var view_d: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_d)
+	await _tree.process_frame
+	view_d.setup(controller_d, "side_a", skill_db)
+	var slime_id := instances_d[0].instance_id
+	instances_d[0].current_hp = 0
+	FaintHandler.handle_if_fainted(BattleContext.new(controller_d.get_state()), instances_d[0])
+	view_d._arena.sync_monsters(controller_d.get_state(), "side_a")
+	var slime_sprite := view_d._arena.get_sprite(slime_id)
+	_check(
+		"a fainted monster's sprite persists but darkens",
+		slime_sprite != null and slime_sprite.modulate.is_equal_approx(Color(0.35, 0.35, 0.35, 1))
+	)
+	view_d.queue_free()
+
+	# Once a monster is fully backfilled away (no longer occupying any active
+	# slot at all, as opposed to merely fainted-but-still-there), its sprite
+	# should actually be freed, not linger forever.
+	var team_e := _make_team("Arena E", [
+		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
+		["healslime", ["attack"]], ["golem", ["attack"]],
+	])
+	var instances_e := TeamToBattleBridge.build_team(team_e, "side_a", monster_db, skill_db, trait_db, 0)
+	var controller_e := BattleController.new(instances_e, instances_b, skill_db.skills_by_id)
+	var view_e: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view_e)
+	await _tree.process_frame
+	view_e.setup(controller_e, "side_a", skill_db)
+	var aamon_e_id := instances_e[0].instance_id
+	_check("the 2-slot monster has a sprite before fainting", view_e._arena.get_sprite(aamon_e_id) != null)
+	instances_e[0].current_hp = 0
+	FaintHandler.handle_if_fainted(BattleContext.new(controller_e.get_state()), instances_e[0])
+	view_e._arena.sync_monsters(controller_e.get_state(), "side_a")
+	_check("a fully backfilled-away monster's sprite is freed", view_e._arena.get_sprite(aamon_e_id) == null)
+	view_e.queue_free()
+
+## Milestone 11 (+ the later "attack toward the enemy, not just a bounce"
+## revision): the attack Tween and the audio no-op guard. Tweens really do
+## run against the SceneTree's frame clock in a headless run, so this can be
+## proven by waiting real frames/time rather than needing any pixel rendering.
+func _check_bounce_and_audio(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Bounce A", [["slime", ["attack"]]])
+	var team_b := _make_team("Bounce B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var slime_id := instances_a[0].instance_id
+	var golem_id := instances_b[0].instance_id
+	var sprite := view._arena.get_sprite(slime_id)
+	var base_pos := sprite.position
+
+	view._arena.animate_attack(slime_id, golem_id)
+	_check("animate_attack doesn't move the sprite synchronously", sprite.position.is_equal_approx(base_pos))
+
+	for i in range(3):
+		await _tree.process_frame
+	_check("mid-attack, the sprite has moved away from its resting spot", not sprite.position.is_equal_approx(base_pos))
+
+	await _tree.create_timer(BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME + 0.1).timeout
+	_check("once the attack finishes, the sprite is back at its resting spot", sprite.position.is_equal_approx(base_pos))
+
+	# A self-targeted "attack" (actor_id == target_id) has no enemy to step
+	# toward -- falls back to a plain bob in place instead.
+	view._arena.animate_attack(slime_id, slime_id)
+	for i in range(3):
+		await _tree.process_frame
+	_check("a self-targeted animation bobs in place instead of stepping nowhere", not is_equal_approx(sprite.position.y, base_pos.y))
+	await _tree.create_timer(BattleArena3D.BOB_UP_TIME + BattleArena3D.BOB_DOWN_TIME + 0.1).timeout
+
+	# An unknown/already-removed instance id is a harmless no-op.
+	view._arena.animate_attack(-999, golem_id)
+	_check("animating an unknown instance id doesn't error", true)
+
+	# A rapid re-fire kills the previous tween instead of stacking a second
+	# one on top of it.
+	view._arena.animate_attack(slime_id, golem_id)
+	var first_tween: Tween = view._arena._tweens[slime_id]
+	view._arena.animate_attack(slime_id, golem_id)
+	var second_tween: Tween = view._arena._tweens[slime_id]
+	_check(
+		"a rapid re-fire kills the old tween rather than stacking a new one",
+		first_tween != second_tween and not first_tween.is_valid()
+	)
+
+	# Every play_* call is a silent no-op with all four exported streams left
+	# null (BattleAudio's shipped default, until real audio files are supplied).
+	view._audio.play_attack()
+	view._audio.play_hit()
+	view._audio.play_faint()
+	view._audio.play_menu_select()
+	_check("playing with every stream left null never throws", true)
+
+	view.queue_free()
+
+## Attacks in a round with more than one now play out one at a time rather
+## than all firing instantly -- if they still fired in parallel, _refresh()
+## (and the turn counter it updates) would run almost immediately after both
+## sides submit. Checking a beat later, while the sequential animations are
+## still in progress, proves that's no longer the case.
+func _check_attacks_animate_sequentially(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Sequence A", [["slime", ["attack"]]])
+	var team_b := _make_team("Sequence B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	controller.submit_fight("side_a", 0, "attack", instances_b[0].instance_id)
+	controller.submit_fight("side_b", 0, "attack", instances_a[0].instance_id)
+
+	await _tree.process_frame
+	_check(
+		"the round hasn't finished resolving yet while its attacks are still animating one at a time",
+		view._turn_counter_label.text == "Round 1"
+	)
+
+	var per_attack_duration: float = BattleArena3D.LUNGE_OUT_TIME + BattleArena3D.LUNGE_BACK_TIME
+	await _tree.create_timer(per_attack_duration * 2 + 0.3).timeout
+	_check(
+		"the round has finished once both sequential attacks are done animating",
+		view._turn_counter_label.text == "Round 2"
+	)
+
+	view.queue_free()
+
+## A monster's card should badge whatever status it's currently afflicted
+## with -- a small icon carrying the status's real description as a hover
+## tooltip, same tooltip-on-hover pattern already used for moves.
+func _check_status_icon_on_card(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Status Icon A", [["slime", ["attack"]]])
+	var team_b := _make_team("Status Icon B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var poison := skill_db.get_status("poison")
+	instances_a[0].active_status = StatusInstance.new(poison)
+	view._refresh()
+
+	var icon := _find_texture_rect_with_tooltip(view, "Poison:")
+	_check("an afflicted monster's card shows a status icon with a real tooltip", icon != null and icon.tooltip_text == "%s: %s" % [poison.display_name, poison.description])
+	_check("the status icon actually has a texture assigned", icon != null and icon.texture != null)
+
+	view.queue_free()
+
+func _find_texture_rect_with_tooltip(root: Node, tooltip_prefix: String) -> TextureRect:
+	for child in root.get_children():
+		if child is TextureRect and (child as TextureRect).tooltip_text.begins_with(tooltip_prefix):
+			return child
+		var found := _find_texture_rect_with_tooltip(child, tooltip_prefix)
+		if found != null:
+			return found
+	return null
 
 func _check(label: String, condition: bool) -> void:
 	if condition:

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "It may do small slash attack damage, but reveals enemy strength.",
 	"display_name": "Peep Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "peep_slash",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

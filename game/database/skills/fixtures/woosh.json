@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Woosh-type spell does damage to all enemies.",
 	"display_name": "Woosh",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "woosh",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

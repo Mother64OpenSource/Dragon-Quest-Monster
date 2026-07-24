@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "A revitalizing shower that heals all allies on the next turn.",
 	"display_name": "Amor Seco Rain",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 195,
+			"power": 195.0,
 			"type": "damage"
 		}
 	],
 	"id": "amor_seco_rain",
-	"mp_cost": 60,
-	"priority": 0,
+	"mp_cost": 60.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

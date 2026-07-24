@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Inflicts hellacious lightning on all enemies for tremendous damage.",
 	"display_name": "Lightning Storm",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 147,
+			"power": 147.0,
 			"type": "damage"
 		}
 	],
 	"id": "lightning_storm",
-	"mp_cost": 44,
-	"priority": 0,
+	"mp_cost": 44.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

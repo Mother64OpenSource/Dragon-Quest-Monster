@@ -1,8 +1,13 @@
 {
-  "id": "poison",
-  "display_name": "Poison",
-  "tick_damage_percent": 0.125,
-  "skip_turn_chance": 0.0,
-  "duration_turns": 4,
-  "stat_mods_on_apply": []
+	"id": "poison",
+	"display_name": "Poison",
+	"description": "Deals damage at the end of every turn until it wears off.",
+	"icon_path": "res://assets/status/poison.png",
+	"tick_damage_percent": 0.125,
+	"skip_turn_chance": 0.0,
+	"blocked_skill_category": "",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": false,
+	"duration_turns": 4,
+	"stat_mods_on_apply": []
 }

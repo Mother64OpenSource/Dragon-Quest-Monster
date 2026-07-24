@@ -1,12 +1,17 @@
 {
-  "id": "frizz",
-  "display_name": "Frizz",
-  "mp_cost": 2,
-  "priority": 0,
-  "accuracy": 1.0,
-  "category": "magic",
-  "target_type": "single_enemy",
-  "effects": [
-    { "type": "damage", "category": "magic", "power": 18 }
-  ]
+	"accuracy": 1.0,
+	"category": "magic",
+	"description": "Frizz-type spell does damage to 1 enemy.",
+	"display_name": "Frizz",
+	"effects": [
+		{
+			"category": "magic",
+			"power": 18.0,
+			"type": "damage"
+		}
+	],
+	"id": "frizz",
+	"mp_cost": 2.0,
+	"priority": 0.0,
+	"target_type": "single_enemy"
 }

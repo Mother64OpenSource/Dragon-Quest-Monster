@@ -1,8 +1,13 @@
 {
 	"display_name": "Silence",
+	"description": "Prevents casting spells until it wears off -- a basic Attack or non-magic skill still works.",
+	"icon_path": "res://assets/status/silence.png",
 	"duration_turns": 3,
 	"id": "silence",
-	"skip_turn_chance": 0.3,
+	"skip_turn_chance": 0.0,
+	"blocked_skill_category": "magic",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": false,
 	"stat_mods_on_apply": [],
 	"tick_damage_percent": 0.0
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Caster gives up own life to revive and fully heal all allies, including those in standby. User cannot be revived until combat has ended. (MAG)",
 	"display_name": "Kerplunk",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "kerplunk",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

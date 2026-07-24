@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "A frightening fog. Whenever a monster tries to heal it will do damage instead. Effects both allies and enemies.",
 	"display_name": "Underworld Fog",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 180,
+			"power": 180.0,
 			"type": "damage"
 		}
 	],
 	"id": "underworld_fog",
-	"mp_cost": 55,
-	"priority": 0,
+	"mp_cost": 55.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

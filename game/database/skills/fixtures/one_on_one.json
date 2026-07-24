@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Reduces both the target's and the user's HP to 1.",
 	"display_name": "One-on-One",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 60,
+			"power": 60.0,
 			"type": "damage"
 		}
 	],
 	"id": "one_on_one",
-	"mp_cost": 15,
-	"priority": 0,
+	"mp_cost": 15.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

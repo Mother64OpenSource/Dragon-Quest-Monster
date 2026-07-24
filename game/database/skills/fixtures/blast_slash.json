@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Bang-like slash attack does more damage and bypasses weaknesses.",
 	"display_name": "Blast Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 75,
+			"power": 75.0,
 			"type": "damage"
 		}
 	],
 	"id": "blast_slash",
-	"mp_cost": 20,
-	"priority": 0,
+	"mp_cost": 20.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

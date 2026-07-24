@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Sizz-type does more damage to all enemies.",
 	"display_name": "Sizzle",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 48,
+			"power": 48.0,
 			"type": "damage"
 		}
 	],
 	"id": "sizzle",
-	"mp_cost": 11,
-	"priority": 0,
+	"mp_cost": 11.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

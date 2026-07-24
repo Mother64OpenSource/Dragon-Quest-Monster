@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Woosh-type breath attack does damage. Confirm weakness. Can increase ally's tension sometimes.",
 	"display_name": "Whirlwind",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 114,
+			"power": 114.0,
 			"type": "damage"
 		}
 	],
 	"id": "whirlwind",
-	"mp_cost": 33,
-	"priority": 0,
+	"mp_cost": 33.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

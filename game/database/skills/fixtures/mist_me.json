@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Take no damage once by hiding within mist. Has a chance of failure.",
 	"display_name": "Mist Me",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 45,
+			"power": 45.0,
 			"type": "damage"
 		}
 	],
 	"id": "mist_me",
-	"mp_cost": 10,
-	"priority": 0,
+	"mp_cost": 10.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

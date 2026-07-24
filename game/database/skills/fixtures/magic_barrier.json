@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Forms a barrier that reduces the effectiveness of foes' offensive spells.",
 	"display_name": "Magic Barrier",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "magic_barrier",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

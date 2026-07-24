@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Deals critical damage to 1 friend or foe.",
 	"display_name": "Frenzy",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "frenzy",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

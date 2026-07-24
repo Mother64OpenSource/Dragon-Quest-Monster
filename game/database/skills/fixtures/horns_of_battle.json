@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Whistle continuously for some rounds increasing allies' Attack. Effect ends after that.",
 	"display_name": "Horns of Battle",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 105,
+			"power": 105.0,
 			"type": "damage"
 		}
 	],
 	"id": "horns_of_battle",
-	"mp_cost": 30,
-	"priority": 0,
+	"mp_cost": 30.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

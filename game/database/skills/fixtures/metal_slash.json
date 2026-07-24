@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "An attack that's sure to damage enemies with metal bodies.",
 	"display_name": "Metal Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 21,
+			"power": 21.0,
 			"type": "damage"
 		}
 	],
 	"id": "metal_slash",
-	"mp_cost": 2,
-	"priority": 0,
+	"mp_cost": 2.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

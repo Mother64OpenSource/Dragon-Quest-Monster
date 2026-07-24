@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Restores some HP after each action for a short time.",
 	"display_name": "Reheal",
 	"effects": [
 		{
-			"power": 79,
+			"power": 79.0,
 			"target_self": true,
 			"type": "heal"
 		}
 	],
 	"id": "reheal",
-	"mp_cost": 8,
-	"priority": 0,
+	"mp_cost": 8.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

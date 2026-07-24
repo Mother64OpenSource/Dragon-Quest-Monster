@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Restores around 350 HP to the user.",
 	"display_name": "Meditation",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 120,
+			"power": 120.0,
 			"type": "damage"
 		}
 	],
 	"id": "meditation",
-	"mp_cost": 35,
-	"priority": 0,
+	"mp_cost": 35.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

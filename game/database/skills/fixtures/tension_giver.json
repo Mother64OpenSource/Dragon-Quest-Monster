@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Passes Tension to all allies.",
 	"display_name": "Tension Giver",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 63,
+			"power": 63.0,
 			"type": "damage"
 		}
 	],
 	"id": "tension_giver",
-	"mp_cost": 16,
-	"priority": 0,
+	"mp_cost": 16.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Damage all enemies preventing them from using Kamikazee. Strongest agains Kamikazee-types.",
 	"display_name": "Smelly Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 63,
+			"power": 63.0,
 			"type": "damage"
 		}
 	],
 	"id": "smelly_slash",
-	"mp_cost": 16,
-	"priority": 0,
+	"mp_cost": 16.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

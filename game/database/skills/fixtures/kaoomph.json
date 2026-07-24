@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Spell doubles effect of all allies skills. But skills that apply bad effects will not change.",
 	"display_name": "Kaoomph",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 255,
+			"power": 255.0,
 			"type": "damage"
 		}
 	],
 	"id": "kaoomph",
-	"mp_cost": 80,
-	"priority": 0,
+	"mp_cost": 80.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Restores around 285 HP to a single ally.",
 	"display_name": "Megaheal",
 	"effects": [
 		{
-			"power": 735,
+			"power": 735.0,
 			"target_self": true,
 			"type": "heal"
 		}
 	],
 	"id": "megaheal",
-	"mp_cost": 90,
-	"priority": 0,
+	"mp_cost": 90.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

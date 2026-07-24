@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Frizz-type spell does much damage to 1 enemy.",
 	"display_name": "Kafrizz",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 45,
+			"power": 45.0,
 			"type": "damage"
 		}
 	],
 	"id": "kafrizz",
-	"mp_cost": 10,
-	"priority": 0,
+	"mp_cost": 10.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

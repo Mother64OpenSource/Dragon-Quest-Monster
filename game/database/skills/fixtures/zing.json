@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Has a chance to revive a single fallen ally but can fail to work. (MAG)",
 	"display_name": "Zing",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 135,
+			"power": 135.0,
 			"type": "damage"
 		}
 	],
 	"id": "zing",
-	"mp_cost": 40,
-	"priority": 0,
+	"mp_cost": 40.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

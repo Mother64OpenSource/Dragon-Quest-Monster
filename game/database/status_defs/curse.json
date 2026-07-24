@@ -1,8 +1,13 @@
 {
 	"display_name": "Curse",
+	"description": "Lowers Attack, among other ill effects the real games apply (HP/MP drain while walking, random stuns, spell failure) that aren't modeled here yet.",
+	"icon_path": "res://assets/status/curse.png",
 	"duration_turns": 5,
 	"id": "curse",
 	"skip_turn_chance": 0.0,
+	"blocked_skill_category": "",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": false,
 	"stat_mods_on_apply": [
 		{
 			"chance": 1.0,

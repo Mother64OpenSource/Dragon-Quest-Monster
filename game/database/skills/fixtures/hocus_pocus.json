@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "A mysterious spell with unpredictable effects. (MAG)",
 	"display_name": "Hocus Pocus",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 465,
+			"power": 465.0,
 			"type": "damage"
 		}
 	],
 	"id": "hocus_pocus",
-	"mp_cost": 150,
-	"priority": 0,
+	"mp_cost": 150.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

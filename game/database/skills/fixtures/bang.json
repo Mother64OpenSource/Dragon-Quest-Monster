@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Bang-type spell does damage to all enemies.",
 	"display_name": "Bang",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 30,
+			"power": 30.0,
 			"type": "damage"
 		}
 	],
 	"id": "bang",
-	"mp_cost": 5,
-	"priority": 0,
+	"mp_cost": 5.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

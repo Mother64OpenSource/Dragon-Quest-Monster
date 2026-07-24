@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Increase damage of breath attacks that you next use by taking a deep breath.",
 	"display_name": "Deep Breath",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "deep_breath",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

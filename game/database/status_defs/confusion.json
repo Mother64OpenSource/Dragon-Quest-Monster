@@ -1,8 +1,13 @@
 {
 	"display_name": "Confusion",
+	"description": "May attack a random target -- even its own allies -- or do nothing at all, instead of obeying orders.",
+	"icon_path": "res://assets/status/confusion.png",
 	"duration_turns": 3,
 	"id": "confusion",
 	"skip_turn_chance": 0.33,
+	"blocked_skill_category": "",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": false,
 	"stat_mods_on_apply": [],
 	"tick_damage_percent": 0.0
 }

@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "A dance that can entice a single enemy to start dancing.",
 	"display_name": "Sultry Dance",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "sultry_dance",
-	"mp_cost": 2,
-	"priority": 0,
+	"mp_cost": 2.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -111,12 +111,14 @@ func _finish_import(team: SavedTeam, preserve_id: bool) -> SavedTeam:
 
 ## Every skill id currently unlocked for this loadout: the species' always-
 ## known baseline (starting_skill_ids, e.g. "attack") plus whatever each
-## allocated skillset's point investment has unlocked so far.
+## allocated skillset's point investment has unlocked so far. Every monster
+## can invest points in every skillset that exists -- there's no
+## species-specific restriction on *which* skillsets are reachable (per the
+## real games; see wiki/log.md), only on the total pool of points
+## (species.total_skill_points) available to spread across them.
 static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpecies, skillset_db: SkillSetDatabase) -> Array[String]:
 	var result: Array[String] = species.starting_skill_ids.duplicate()
 	for skillset_id in loadout.skill_point_allocation:
-		if not species.available_skill_sets.has(skillset_id):
-			continue
 		var skillset := skillset_db.get_skillset(skillset_id)
 		if skillset == null:
 			continue
@@ -136,10 +138,7 @@ func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skill
 
 	var total_allocated := 0
 	for skillset_id in loadout.skill_point_allocation:
-		var points: int = loadout.skill_point_allocation[skillset_id]
-		if not species.available_skill_sets.has(skillset_id):
-			errors.append("Skillset '%s' is not available to species '%s'" % [skillset_id, loadout.species_id])
-		total_allocated += points
+		total_allocated += int(loadout.skill_point_allocation[skillset_id])
 	if total_allocated > species.total_skill_points:
 		errors.append("Allocated %d skill points but '%s' only has %d" % [total_allocated, loadout.species_id, species.total_skill_points])
 

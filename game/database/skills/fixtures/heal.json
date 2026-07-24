@@ -1,12 +1,17 @@
 {
-  "id": "heal",
-  "display_name": "Heal",
-  "mp_cost": 3,
-  "priority": 0,
-  "accuracy": 1.0,
-  "category": "status",
-  "target_type": "self",
-  "effects": [
-    { "type": "heal", "power": 30, "target_self": true }
-  ]
+	"accuracy": 1.0,
+	"category": "status",
+	"description": "Restores around 28 HP to a single ally.",
+	"display_name": "Heal",
+	"effects": [
+		{
+			"power": 30.0,
+			"target_self": true,
+			"type": "heal"
+		}
+	],
+	"id": "heal",
+	"mp_cost": 3.0,
+	"priority": 0.0,
+	"target_type": "self"
 }

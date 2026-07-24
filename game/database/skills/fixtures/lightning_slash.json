@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Sizz-like slash attack does damage and bypasses weaknesses.",
 	"display_name": "Lightning Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "lightning_slash",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

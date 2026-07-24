@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Counters any BRE attack recieved from enemies this turn. (ART)",
 	"display_name": "Counter Breath",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 111,
+			"power": 111.0,
 			"type": "damage"
 		}
 	],
 	"id": "counter_breath",
-	"mp_cost": 32,
-	"priority": 0,
+	"mp_cost": 32.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Input command for same sized monster.",
 	"display_name": "Change",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 123,
+			"power": 123.0,
 			"type": "damage"
 		}
 	],
 	"id": "change",
-	"mp_cost": 36,
-	"priority": 0,
+	"mp_cost": 36.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

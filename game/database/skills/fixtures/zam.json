@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Zam-type spell does damage to 1 enemy.",
 	"display_name": "Zam",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 24,
+			"power": 24.0,
 			"type": "damage"
 		}
 	],
 	"id": "zam",
-	"mp_cost": 3,
-	"priority": 0,
+	"mp_cost": 3.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

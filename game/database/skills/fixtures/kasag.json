@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Lowers the ATK of all enemies for 2-5 turns.",
 	"display_name": "Kasag",
 	"effects": [
 		{
-			"stages": -1,
+			"stages": -1.0,
 			"stat_name": "attack",
 			"target_self": false,
 			"type": "stat_mod"
 		}
 	],
 	"id": "kasag",
-	"mp_cost": 10,
-	"priority": 0,
+	"mp_cost": 10.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "May activate the \"Star Gift\" during the next turn on a monster with the traits \"Wrath of the Stars\" or \"Protection of the Stars\".",
 	"display_name": "Star Fall",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 159,
+			"power": 159.0,
 			"type": "damage"
 		}
 	],
 	"id": "star_fall",
-	"mp_cost": 48,
-	"priority": 0,
+	"mp_cost": 48.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

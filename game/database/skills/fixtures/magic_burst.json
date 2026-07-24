@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Unleashes all remaining MP at enemies in an extreme magical assault. The more MP the caster has the more damage that is dealt.",
 	"display_name": "Magic Burst",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "magic_burst",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

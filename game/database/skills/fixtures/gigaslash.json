@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Bang-like slash attack does damage to 1 enemy. Better effect with higher level.",
 	"display_name": "Gigaslash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 75,
+			"power": 75.0,
 			"type": "damage"
 		}
 	],
 	"id": "gigaslash",
-	"mp_cost": 20,
-	"priority": 0,
+	"mp_cost": 20.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

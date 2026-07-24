@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Caster gives up own life to revive and fully heal all allies, including those in standby. User cannot be further revived until combat has ended. (DAN)",
 	"display_name": "Kerplunk Dance",
 	"effects": [
 		{
-			"stages": 1,
+			"stages": 1.0,
 			"stat_name": "attack",
 			"target_self": true,
 			"type": "stat_mod"
 		}
 	],
 	"id": "kerplunk_dance",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

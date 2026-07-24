@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Takes damage instead of ally. But significantly increases damage taken.",
 	"display_name": "Selflessness",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 30,
+			"power": 30.0,
 			"type": "damage"
 		}
 	],
 	"id": "selflessness",
-	"mp_cost": 5,
-	"priority": 0,
+	"mp_cost": 5.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Lowers the WIS of all enemies for 4-7 turns.",
 	"display_name": "Kadim",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "kadim",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

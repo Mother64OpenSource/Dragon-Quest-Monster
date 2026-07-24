@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Hits all enemies with a icy hot beam that deals maximum damage.",
 	"display_name": "Aurora Breath",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 315,
+			"power": 315.0,
 			"type": "damage"
 		}
 	],
 	"id": "aurora_breath",
-	"mp_cost": 100,
-	"priority": 0,
+	"mp_cost": 100.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

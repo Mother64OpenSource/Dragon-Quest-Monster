@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "All monsters attack in random order, regardless of AGI or traits.",
 	"display_name": "Shuffle",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 123,
+			"power": 123.0,
 			"type": "damage"
 		}
 	],
 	"id": "shuffle",
-	"mp_cost": 36,
-	"priority": 0,
+	"mp_cost": 36.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

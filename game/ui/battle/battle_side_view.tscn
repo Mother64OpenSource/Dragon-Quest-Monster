@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://ui/battle/battle_side_view.gd" id="1"]
+[ext_resource type="PackedScene" path="res://ui/battle/battle_arena_3d.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://ui/battle/battle_audio.tscn" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="LogBoxBg"]
 bg_color = Color(0.11, 0.12, 0.15, 1)
@@ -20,6 +22,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1")
 
+[node name="Audio" parent="." instance=ExtResource("3")]
+
+[node name="ForfeitConfirmDialog" type="ConfirmationDialog" parent="."]
+title = "Forfeit Battle"
+dialog_text = "Are you sure you want to forfeit? This ends the battle immediately as a loss."
+ok_button_text = "Forfeit"
+
 [node name="Root" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -37,8 +46,9 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
 [node name="Battlefield" type="PanelContainer" parent="Root/MainColumn"]
-custom_minimum_size = Vector2(0, 220)
+custom_minimum_size = Vector2(0, 420)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="Root/MainColumn/Battlefield"]
 layout_mode = 2
@@ -46,12 +56,38 @@ layout_mode = 2
 [node name="VBox" type="VBoxContainer" parent="Root/MainColumn/Battlefield/MarginContainer"]
 layout_mode = 2
 
-[node name="BattlefieldHeader" type="Label" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
+[node name="HeaderRow" type="HBoxContainer" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
 layout_mode = 2
+
+[node name="BattlefieldHeader" type="Label" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Opponent"
 horizontal_alignment = 1
 theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
+
+[node name="TurnCounterLabel" type="Label" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow"]
+layout_mode = 2
+text = "Round 1"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.24, 0.45, 0.86, 1)
+
+[node name="ArenaViewportContainer" type="SubViewportContainer" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+stretch_shrink = 1
+
+[node name="ArenaViewport" type="SubViewport" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(600, 220)
+
+[node name="Arena" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport" instance=ExtResource("2")]
 
 [node name="TargetingLabel" type="Label" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
 layout_mode = 2
@@ -59,7 +95,7 @@ visible = false
 text = "Choose a target"
 horizontal_alignment = 1
 
-[node name="BattlefieldGrid" type="HFlowContainer" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
+[node name="OpponentPanel" type="HFlowContainer" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
@@ -94,6 +130,10 @@ text = "Orders"
 [node name="TacticsButton" type="Button" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
 layout_mode = 2
 text = "Tactics"
+
+[node name="ForfeitButton" type="Button" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
+layout_mode = 2
+text = "Forfeit"
 
 [node name="ActionsScroll" type="ScrollContainer" parent="Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox"]
 layout_mode = 2

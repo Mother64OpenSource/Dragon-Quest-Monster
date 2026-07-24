@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Restores around 475 HP to all allies.",
 	"display_name": "Omniheal",
 	"effects": [
 		{
-			"power": 1455,
+			"power": 1455.0,
 			"target_self": true,
 			"type": "heal"
 		}
 	],
 	"id": "omniheal",
-	"mp_cost": 180,
-	"priority": 0,
+	"mp_cost": 180.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

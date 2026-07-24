@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Deals physical damage to all enemies.",
 	"display_name": "Roundhouse Kick",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 39,
+			"power": 39.0,
 			"type": "damage"
 		}
 	],
 	"id": "roundhouse_kick",
-	"mp_cost": 8,
-	"priority": 0,
+	"mp_cost": 8.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

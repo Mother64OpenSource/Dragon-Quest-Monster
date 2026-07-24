@@ -135,6 +135,22 @@ func submit_swap(side: String, slot: int, bench_instance_id: int) -> void:
 	action_submitted.emit(side, slot, "swap", {"bench_instance_id": bench_instance_id})
 	_maybe_resolve_turn()
 
+## Immediately ends the battle, crediting the other side with the win --
+## a no-op if the battle is already over. Reuses action_submitted (side,
+## slot=-1 since no slot is involved, kind="forfeit") purely so
+## NetworkBattleRelay's existing forwarding guard (only forwards when
+## `side` matches its own local_side) picks this up for free online, the
+## same way it already does for submit_fight/submit_swap -- no separate
+## network plumbing needed.
+func forfeit(side: String) -> void:
+	if is_over():
+		return
+	var state := engine.battle_state
+	state.is_battle_over = true
+	state.winner_side = "side_b" if side == "side_a" else "side_a"
+	action_submitted.emit(side, -1, "forfeit", {})
+	battle_ended.emit(state.winner_side)
+
 func _maybe_resolve_turn() -> void:
 	if is_side_ready("side_a") and is_side_ready("side_b"):
 		_resolve_turn()

@@ -955,3 +955,766 @@ pass (`run_battle_headless.gd`, `run_team_roster_headless.gd`,
 team-pick -> play flow end-to-end, and a real mid-battle disconnect. This
 needs an in-editor/exported-build run on real hardware -- no headless
 `SceneTree` run creates a real ENet socket pair.
+
+## [2026-07-23] build | Milestone 9: WebSocket relay ("no port forwarding")
+
+Direct-connect (M7-8) needs one player to open a port, which only works
+for two friends on the same LAN or willing to run a VPN-mesh tool
+(Radmin/Hamachi). The user's friend doesn't live with them, and asked how
+Pokemon Showdown avoids this. Answer: Showdown isn't peer-to-peer at all
+— both players connect *outward* to a permanent server over WebSockets,
+which sidesteps NAT/firewall problems entirely (outbound connections
+almost always work; only *inbound* ones get blocked by home
+routers/CGNAT). This milestone borrows only that transport trick, not
+Showdown's full server-authoritative simulation (no anti-cheat/ladder/
+spectating need here) — the battle stays exactly as deterministic and
+client-simulated as it already was; what's new is a small always-on
+**relay server** both clients connect outward to, which forwards messages
+between whichever two clients a room code pairs up. A dumb pipe, not a
+simulator.
+
+Two Godot 4.7 facts settled the architecture, checked against real docs
+rather than assumed: `WebSocketMultiplayerPeer` is a genuine drop-in for
+`ENetMultiplayerPeer` (same `MultiplayerPeer` base, same
+`peer_connected`/`server_disconnected`/etc. signals, since those live on
+`MultiplayerAPI` not the peer object) — but Godot validates RPC
+compatibility via a checksum of a script's *entire* set of
+`@rpc`-annotated methods per NodePath, and `project.godot`'s `[autoload]`
+registration can't be swapped based on a command-line flag. Together
+these rule out a genuinely separate relay project (it would have to
+hand-replicate the client's whole RPC method surface forever with no
+compiler to catch drift) — relay-server mode is instead folded into the
+same `network_manager.gd` autoload, branching in `_ready()` on
+`OS.get_cmdline_user_args().has("--relay-server")`.
+
+`NetworkManager` gained a `Mode` enum (`DIRECT`/`RELAY_CLIENT`/
+`RELAY_SERVER`) and `join_via_relay(url, room_code)`, but every existing
+method/signal for direct-connect and local play is untouched, and
+**`is_host` keeps its exact existing meaning** ("am I side_a") regardless
+of transport — that's what let `NetworkBattleRelay` and
+`NetworkSetupScreen._launch_battle()` need zero changes. First joiner of
+a room code becomes `"side_a"`, same fairness property direct-connect's
+"host is side_a" already relied on (a role label, not new asymmetric
+logic).
+
+All the actual room-matching/forwarding/cleanup logic lives in a new,
+pure `RelayServerLogic` (`game/net/relay_server_logic.gd`,
+`class_name ... extends RefCounted`) with zero dependency on
+`multiplayer`/RPC/sockets — constructed with an injectable `send`
+Callable, the same trick `FakeNetworkManager` already used to prove
+`NetworkBattleRelay` without ENet. `network_manager.gd` is just the thin
+RPC-facing glue around it, and `game/net/run_relay_server.gd` is a
+deployment entry point (`extends SceneTree`) that deliberately skips
+loading the normal game.
+
+New headless suite `relay_server_logic_test_runner.gd` proves: first/
+second joiner of a code get `side_a`/`side_b`; a third joiner of a full
+code gets rejected without disturbing the existing two; a forwarded
+message reaches the partner only, never echoes to the sender; an
+unmatched peer disconnecting clears its room silently; a matched peer
+disconnecting notifies the survivor and clears both peers' bookkeeping.
+All seven headless suites pass (the four pre-existing, plus
+`network_lockstep`/`network_relay` from M7-8, plus this one) —
+`NetworkManager`'s actual transport code was never headlessly testable
+before and still isn't (real sockets can't be driven from one
+`godot --headless --script` process); what's genuinely new and risky here
+(room-matching logic) is exactly what got isolated so it *could* be
+proven headlessly.
+
+Manually smoke-tested `run_relay_server.gd` for real: launching it with
+`--relay-server --relay-port=27940` printed "RelayServer: listening on
+port 27940" and bound successfully before being killed by the test
+timeout (the shutdown noise that followed is `timeout`'s SIGTERM
+abruptly cutting off a process designed to run forever, not a real
+problem — a real deployment would stop it intentionally via
+systemd/Docker instead).
+
+**Manual-only** (not yet done): deploying `run_relay_server.gd` somewhere
+actually reachable on the internet (researched options: free tiers on
+Render/Fly/Railway don't really satisfy "always-on" today — idle
+spin-down or trial-only credit — so a small VPS or Oracle Cloud's Always
+Free VM tier are the real choices), and then the full two-real-machines
+Host/Join-via-relay → team-pick → play flow, plus a real mid-battle
+disconnect with the relay still up.
+
+## [2026-07-23] build | Milestone 10 + 11: 3D battlefield, turn counter, attack bounce, audio hooks
+
+User asked to "clean up the battle system," specifically calling out a
+real turn counter and a nicer background, plus a 3D battlefield where an
+attacker visibly bounces on every attack, plus sound effect hook points
+(the user will supply real audio files themselves — no placeholder tones,
+no attempt to source/reproduce copyrighted sound effects). Clarified
+upfront that "3D" means 2D sprite billboards inside a real 3D arena, not
+full 3D models — the project has 2D artwork for 800+ species and no 3D
+assets of any kind.
+
+Split into two milestones since the 3D conversion is the first `Node3D`
+content this project has ever had, and deserved to be verified on its own
+(same reasoning already applied to M7/M8/M9's online-play split) before
+layering animation/audio on top.
+
+**M10 — 3D arena + billboards + turn counter.** New
+`game/ui/battle/battle_arena_3d.tscn`/`.gd` (`class_name BattleArena3D
+extends Node3D`): a small original arena (`WorldEnvironment` procedural
+sky, a flat-colored ground plane, one `DirectionalLight3D`, 8 hand-placed
+`Marker3D` anchors — 4 per side) embedded into `battle_side_view.tscn` via
+a `SubViewportContainer`/`SubViewport` replacing the old 2D
+`BattlefieldGrid`. Both sides' monsters render there as `Sprite3D`
+billboards (`BILLBOARD_FIXED_Y`, not full billboarding, so they stay
+upright instead of tilting with the camera) — the existing 2D artwork,
+unmodified. A new `OpponentPanel` (mirroring the existing `MyPartyPanel`)
+took over `BattlefieldGrid`'s old click-to-target/HP-display job, since
+nothing in the 3D view is ever clickable.
+
+Sprites are **persistent** (`instance_id -> Sprite3D`, diff-updated by a
+new `sync_monsters()` every `_refresh()`), deliberately not
+destroyed-and-rebuilt the way the 2D cards are — a bounce Tween (M11)
+targets these exact node instances, and rebuilding from scratch would
+orphan any tween mid-animation. Caught a real off-by-one before it ever
+shipped: `BattleState.turn_number` increments *inside*
+`TurnManager.run_turn()` before anything else happens and starts at `0`,
+so a counter bound directly to it would read "Round 0" while picking your
+very first move and stay one behind all game. Fixed by displaying
+`turn_number + 1` — verified both before the first round resolves
+("Round 1") and immediately after ("Round 2").
+
+**M11 — attack bounce + audio hooks.** `BattleArena3D.bounce_attacker()`
+tweens a sprite's `position:y` up then back down (`create_tween()`,
+chained `tween_property()` calls run sequentially by default); a
+`_tweens` dict means a rapid re-fire kills the previous tween rather than
+stacking a second one on it. Hooked into `_on_turn_resolved` via a new
+`_animate_event(event)`, called *inside* the existing per-event loop
+(alongside the log-line append) rather than as a separate pass — critical
+ordering detail: `_refresh()` (which calls `sync_monsters()`, reassigning
+sprites for anyone fainted-and-backfilled this round) must stay **last**,
+or a `MonsterFaintedEvent`'s sprite could already be repurposed for its
+replacement before the code tries to animate it. Every `SkillUsedEvent`
+bounces its actor unconditionally (hit/miss/fizzle, any target type) —
+matches "every time a monster attacks," no "is this offensive"
+classification invented. Multiple actions in one round bounce
+independently/in parallel rather than waiting on each other, matching the
+battle log's own existing "instant dump, no pacing" precedent — accepted
+as a scope boundary, worth revisiting only if it looks bad once actually
+seen.
+
+New `game/ui/battle/battle_audio.tscn`/`.gd` (`class_name BattleAudio`):
+four `AudioStreamPlayer` children (Attack/Hit/Faint/MenuSelect) with four
+matching `@export var ...: AudioStream` slots, all null by default —
+opening the node in the Inspector and dragging a `.wav`/`.ogg`/`.mp3` file
+onto a slot is the entire wiring step, zero code changes ever required. A
+null stream is a silent no-op. Wired into the same `_animate_event`
+(`SkillUsedEvent` → attack sound, `DamageAppliedEvent` → hit sound,
+`MonsterFaintedEvent` → faint sound) plus every command-button handler
+(Fight/Orders/Back/skill-pick/target-pick/bench-pick) → menu-select sound.
+
+New headless suite additions to `battle_ui_test_runner.gd`
+(`_check_arena_rendering`, `_check_bounce_and_audio`) prove, without any
+real rendering: a sprite exists per active `instance_id` on both sides;
+multi-slot scale (`aamon`=2, `asura_zoma`=4) and position (arithmetic
+midpoint of spanned anchors) math is correct; `sync_monsters()` reuses the
+same `Sprite3D` instance across calls (not a rebuild); a fainted monster's
+sprite persists but darkens, while a fully-backfilled-away one is actually
+freed; the turn counter reads "Round 1"/"Round 2" at the right moments;
+the bounce Tween genuinely moves a sprite away from its base height and
+back (verified via real frame/timer waits — Tweens do run against the
+`SceneTree`'s clock headlessly, just without pixel output), is a no-op on
+an unknown instance id, and a rapid re-fire kills the old tween instead of
+stacking; every `play_*` call is silent and harmless with all four
+exported streams left null. All seven headless suites pass.
+
+**Manual-only** (not yet done, same documented limitation as the earlier
+white-theme work — `--headless` has no real framebuffer to read back):
+does the arena actually look good (lighting, sky/ground color balance,
+sprite scale, `BILLBOARD_FIXED_Y` orientation from the fixed camera
+angle); does the bounce read as a bounce rather than a snap or jitter;
+do several monsters bouncing "at once" in a multi-slot round look
+acceptable; real two-window local duels and real online battles rendering
+independently with no shared-state bleed; and, once the user supplies
+real audio files into `battle_audio.tscn`'s four Inspector slots, whether
+the sounds actually land at the right moments.
+
+## [2026-07-23] build | Attacks step toward the enemy and play out one at a time
+
+Feedback after the first look at M10/M11: the attack animation should
+move the attacker toward the enemy and back (not just bob in place), and
+a round's attacks should visibly play out one at a time rather than all
+firing instantly/in parallel (the M11 plan had explicitly flagged the
+parallel-firing choice as "worth revisiting only if it looks bad once
+actually seen" — this is that revisit).
+
+`BattleArena3D.bounce_attacker()` (Y-only bob) is replaced by
+`animate_attack(actor_instance_id, target_instance_id)`: steps the
+attacker's sprite most of the way toward its target's position (not all
+the way — fully overlapping the two sprites would read as a collision,
+not an attack) with a small hop, then back. `SkillUsedEvent` already
+carries `target_instance_id` directly (confirmed by reading
+`skill_used_event.gd` — no need to correlate with a separate damage
+event), so the exact target position is available regardless of
+hit/miss/fizzle. Self-targeted skills (`actor_instance_id ==
+target_instance_id`) have no "enemy" to step toward — falls back to the
+old plain up/down bob.
+
+Sequencing: `animate_attack()` now `await`s its own `Tween.finished`
+signal. `BattleSideView._on_turn_resolved` became a coroutine that
+`await`s each event's `_animate_event()` call inside the same per-event
+loop (rather than firing every animation immediately), so a round with
+several attacks genuinely plays them out one at a time. `_refresh()`
+still runs last, exactly as before. Added one new wrinkle this requires:
+the command panel is now explicitly hidden ("Resolving turn...") at the
+very *start* of `_on_turn_resolved`, before the sequential-animation
+`await` chain begins — since `_refresh()` (the only thing that restores
+the correct next-round buttons) doesn't run until the whole sequence
+finishes, leaving the *previous* round's buttons visible/clickable for
+that whole stretch would let a player click something stale mid-animation.
+
+This is a real behavior change with a real test consequence: several
+existing checks read `BattleSideView` state (the log text, the turn
+counter) *synchronously*, immediately after calling `submit_fight()`
+twice in a row — that used to work because the whole round resolved
+instantly. Now that resolution genuinely spans real time, those checks
+had to start waiting out the round's worst-case animation duration first
+(`await _tree.create_timer(...)`) before reading final state. Also added
+a new check, `_check_attacks_animate_sequentially`, that directly proves
+the new behavior: right after both sides submit a mutual-attack round,
+the turn counter must *still* read "Round 1" (proving `_refresh()` hasn't
+run yet, i.e. the round is still mid-animation) and only becomes "Round
+2" after waiting out both attacks' full sequential duration — this
+assertion would have failed under the old parallel-firing code, so it
+specifically discriminates old vs. new behavior rather than just
+re-confirming the mechanism works. All seven headless suites pass.
+
+**Manual-only** (as before): does the step-toward-target-and-back motion
+actually read as "attacking" at the tuned distance/height/timing; does
+watching a multi-attack round play out one-by-one feel like a natural
+pace or too slow; general feel once actually seen and played.
+
+## [2026-07-23] build | Forfeit option
+
+User asked for a way to concede a battle. Added
+`BattleController.forfeit(side: String)`: a no-op if the battle's already
+over; otherwise immediately marks the *other* side as `winner_side`, sets
+`is_battle_over = true`, and emits the existing `battle_ended` signal --
+reusing the exact same result-handling `BattleSideView` already has for a
+normal win/loss, no new UI state needed there.
+
+The one deliberate design choice worth recording: `forfeit()` also emits
+the existing `action_submitted(side, slot=-1, kind="forfeit", {})` signal
+-- the same signal `submit_fight`/`submit_swap` already emit, which
+`NetworkBattleRelay` already listens to and forwards to an online
+opponent whenever `side` matches its own `local_side`. Because forfeit
+reuses that exact mechanism, `NetworkBattleRelay` needed exactly one new
+line (a `"forfeit"` case in `_on_remote_action_received`'s match,
+calling `_controller.forfeit(side)` on the *receiving* peer's own
+controller) to make forfeiting work correctly online too -- the
+receiving peer's controller ends with the same winner, purely through
+plumbing that already existed for a different purpose. `slot = -1` is a
+sentinel since forfeiting isn't tied to any particular active slot.
+
+UI: a "Forfeit" button was added to the command panel, but deliberately
+*not* wired into `_set_command_visibility()` (the fight/orders/tactics/
+actions group that only shows for whichever slot is currently being
+commanded) -- forfeiting isn't a per-monster command, so it's shown any
+time the battle is still in progress regardless of mode or whose slot is
+active, and hidden once the battle actually ends. Confirmed via a
+`ConfirmationDialog` (reusing the same Godot node type
+`MonsterPickerDialog` already uses elsewhere in this project) before
+actually calling `forfeit()`, since it's an irreversible, immediate loss.
+
+Caught a real test-authoring bug while extending
+`network_relay_test_runner.gd`'s existing FakeNetworkManager-pair pattern
+to cover forfeit forwarding: the new check constructed both
+`NetworkBattleRelay` instances without storing them in a variable
+(`NetworkBattleRelay.new(...)` as a bare statement) -- since
+`NetworkBattleRelay extends RefCounted` and nothing else held a
+reference, the relay was freed almost immediately, silently dropping the
+very signal connections the test meant to exercise, and the forward
+count stayed at 0. The working `_check_relay_end_to_end` check already
+avoided this by assigning to `var relay_a := ...`/`var relay_b := ...`;
+matching that existing convention fixed it.
+
+New headless coverage: `BattleController.forfeit()` ends the battle with
+the correct winner and is a no-op if already over, and emits
+`action_submitted` with the right shape; a `NetworkBattleRelay` pair (via
+`FakeNetworkManager`) proves a forfeit on one controller both ends that
+controller immediately *and* propagates to the peer's separate
+controller with the same winner, with no echo back; a real
+`BattleSideView` shows the forfeit button while the battle's in progress,
+hides it once over, opens the confirmation dialog on press without
+ending the battle immediately, and actually ends the battle (crediting
+the opponent, showing "You Lose!" from the forfeiting side's own
+perspective) once confirmed. All seven headless suites pass.
+
+## [2026-07-23] build | Forfeit: hide it inside the Fight/Orders sub-menus
+
+User feedback: forfeit shouldn't be offered while browsing the Fight
+menu. The original placement made forfeit visible any time the battle
+was in progress at all, independent of `_set_command_visibility()`'s
+per-mode Fight/Orders/Tactics group -- so it kept showing even after
+drilling into Fight's skill list, a target picker, or Orders' bench list,
+which reads as "forfeit is one of the choices in here" rather than what
+it's meant to be: a top-level choice sitting alongside Fight/Orders/
+Tactics themselves.
+
+Fixed by tying the forfeit button's visibility to the exact same
+condition that already shows/hides Fight/Orders/Tactics as a group,
+inside `_set_command_visibility()` itself, rather than tracking it
+separately: every existing call site already keeps `fight`/`orders`/
+`tactics` in lockstep (never independently different from each other),
+so reusing the `fight` parameter for forfeit too was a one-line change
+with no new state or call-site updates needed. Forfeit now shows only on
+the main command screen and disappears the moment you open Fight's skill
+list, a target picker, or Orders' bench list -- reappearing once you back
+out, exactly matching "not an option inside those menus."
+
+Extended `_check_forfeit_button` to prove this directly: opening the
+Fight menu hides the forfeit button, and backing out of it brings the
+button back. All seven headless suites pass.
+
+## [2026-07-24] build | Correction: every monster can learn every skill
+
+Follow-up to the Diamond Slime/Selflessness report. Traced the actual
+root cause first: the original source spreadsheet never had a "which
+skill panels can this monster use" column at all -- just name/rank/size/
+family/stats. The whole "family sharing" restriction (`MonsterSpecies
+.available_skill_sets`, a curated 2-3 entry list per monster) was
+invented afterward by a one-off heuristic script (`build_family_panels.ps1`,
+still in the session scratchpad) that grouped monsters by family and gave
+each one only the first N same-family panels it happened to find, by
+monster-number order, up to a slot-based quota. Checked the scale: the
+Slime family alone has 92 monsters sharing 61 distinct panels between
+them, but each monster only ever saw 1-2 -- whichever came first
+numerically, nothing to do with what actually made sense. That's exactly
+why Diamond Slime never saw Guard (containing Selflessness), even though
+sibling Slime monsters Shell Slime and Pearl Gel already had it.
+
+User then supplied the actual correction from their own knowledge of the
+real games: every monster can learn every skill -- there is no
+per-monster restriction on which skill panels ("Slimer," "Ice," "Martyr,"
+etc.) are reachable at all. The panels are just organizational categories
+for spending points; what actually varies per monster is the *pool* of
+points (`total_skill_points`, rank-based) they have to spend across all
+of them, not which panels they're allowed into.
+
+Implemented this as a code-level fix rather than a data rewrite: 220
+distinct skillsets exist in `database/skillsets/fixtures/`, and rather
+than stamping all 220 onto every one of the 803 monster fixtures (pure
+noise, no informational value), `MonsterSpecies.available_skill_sets`
+stays in the data model untouched but is no longer *read* as a
+restriction anywhere:
+
+- `TeamRosterManager.get_unlocked_skill_ids()`/`validate_member()`
+  (`save/team_roster_manager.gd`) no longer check
+  `species.available_skill_sets.has(skillset_id)` -- any skillset is a
+  valid allocation target for any monster now; only the
+  `total_skill_points` cap still applies.
+- `SkillPointDialog` (`ui/team_builder/skill_point_dialog.gd`/`.tscn`)
+  now lists every skillset via the already-existing
+  `SkillSetDatabase.get_all_skillsets()` (sorted alphabetically), not
+  just `species.available_skill_sets`. Since that's a jump from a
+  handful of panels to 220, added a search field above the panel list to
+  filter by name -- a genuine usability need created by this exact
+  change, not speculative scope creep.
+
+Kept the Diamond Slime fixture's `available_skill_sets` field as-is
+(harmless, no longer consulted) rather than bulk-editing all 803
+fixtures to remove/rewrite a field that's now unused for gating -- worth
+a real cleanup pass later if the field's continued presence in the data
+turns out to be more confusing than useful.
+
+Updated `_check_skill_point_allocation` in
+`team_builder_ui_test_runner.gd` to prove the new behavior directly using
+the same concrete example: allocating points into "guard" for a slime
+(guard is deliberately absent from slime.json's old curated list) now
+correctly unlocks Selflessness and passes validation with zero errors,
+and the dialog renders one panel per entry in
+`get_all_skillsets()` rather than per curated entry. Also covered the new
+search field narrowing the visible list without touching the underlying
+allocation data. All seven headless suites pass.
+
+## [2026-07-23] build | Move hover tooltips, sourced from the real action list
+
+User asked for real move descriptions shown on hover, pointing at a
+different tab of the same community Google Sheet used for earlier data
+imports (`gid=113142199`, a 285-row action list distinct from the
+Abilities tab pulled for Milestone "real per-monster movesets" -- that
+one only had Section/No/English/MP/Type/Attribute/Range; this one adds a
+`Description` column with real mechanical blurbs like "Frizz-type spell
+does damage to 1 enemy."). Getting the actual data out took three failed
+approaches before one worked: `WebFetch` directly on the `htmlview` URL
+returned only a Drive title/reference (no grid content); the Browser
+tool's `get_page_text`/`read_page` only ever surfaced the sheet's tab-name
+bar, since Google Sheets renders its grid via canvas rather than
+accessible DOM text; `WebFetch` on the direct CSV export URL
+(`/export?format=csv&gid=...`) hit the same redirect-summarization problem
+as earlier imports. Fix: `curl -sL` via the Bash tool straight onto the
+export URL, downloading the complete raw CSV (587 physical lines for 285
+data rows, since many `Description` values contain a literal embedded
+newline inside their quoted CSV field) directly into the session
+scratchpad, bypassing WebFetch's small-model summarization entirely.
+
+Added `description: String` to `SkillData` (`database/skills/skill_data.gd`)
+and its loader (`database/skills/loader/skill_loader.gd`, `data.get("description", "")`).
+New one-off tool `game/tests/tools/import_skill_descriptions.gd` (matching
+this project's established `tests/tools/import_*.gd` pattern): parses the
+CSV with a hand-written state-machine reader rather than Godot's built-in
+`FileAccess.get_csv_line()`, which reads one physical line at a time and
+doesn't merge a quoted field spanning multiple physical lines -- exactly
+what this sheet's Description column does throughout. Matches by *exact*
+`display_name` text against the CSV's English column (not a slugified-id
+match) since fixture ids/display_names were never derived from this
+particular sheet tab; the human-readable names line up directly instead.
+285 of 287 skill fixtures matched and got a real description automatically;
+the 2 misses (`Attack`, `Double Slash`) aren't in this sheet tab at all
+(it appears to only cover to spells/abilities with dedicated Actions, not
+the two universal basic-physical moves), so those two got a short
+hand-written description in the same mechanical style instead of being
+left blank.
+
+Wired `tooltip_text` onto the two places a move's name is actually shown
+as a clickable control: `SkillPointDialog`'s per-threshold `CheckBox` in
+the team builder (`ui/team_builder/skill_point_dialog.gd`) and the
+Fight-menu skill `Button`s in battle (`ui/battle/battle_side_view.gd`'s
+`_rebuild_skill_buttons()`) -- both a plain `if not description.is_empty(): control.tooltip_text = description`,
+no new UI nodes needed since Godot's default `Control.tooltip_text`
+already renders a hover popup for free. Checked other move-related UI
+(`TeamMemberRow`'s "Skills (N)" summary button, `TeamEditorPanel`) and
+found neither actually names individual moves anywhere a tooltip would
+attach to, so no changes needed there.
+
+Extended both `team_builder_ui_test_runner.gd` (`_check_skill_point_allocation`:
+after allocating into "slimer" unlocks Frizz, find its checkbox and assert
+`tooltip_text` equals `skill_db.get_skill("frizz").description`) and
+`battle_ui_test_runner.gd` (`_check_side_view_rendering`: assert both the
+Attack and Frizz skill buttons' `tooltip_text` match their respective
+skill's `description`). Hit one real test bug while writing the first
+check: searching for a checkbox by a bare `"Frizz"` substring matched the
+wrong control, since two *other* real skills (`Frizzle`, `Frizz Cracker`)
+also contain "Frizz" as a substring and, with every skillset now shown
+(see previous entry), one of them sorted earlier in the panel list than
+Slimer's own Frizz entry -- fixed by matching on `"— Frizz ("` (the
+checkbox label's own separator + MP-paren framing), which only the exact
+move's rendered text can produce. All seven headless suites pass.
+
+## [2026-07-24] build | Tooltip contrast fix; real status-effect mechanics + icons
+
+**Tooltip fix:** user reported hover-tooltip text was unreadable (dark
+text, effectively invisible). Root cause: `ui/theme.tres` never defined a
+style for Godot's `TooltipPanel`/`TooltipLabel` theme types, so tooltips
+fell back through the class hierarchy to the theme's generic
+`Control/styles/panel = Empty` override (added earlier for an unrelated
+reason) -- a fully transparent box -- while the text used the dark
+`Label` font color meant for the app's light panels, rendering with no
+readable background behind it. Added an explicit dark `TooltipPanel` style
+box + light `TooltipLabel` font color, independent of the generic
+`Control` fallback, same "stop chasing fallback resolution, hardcode it"
+approach already used for the battle log's color bug.
+
+**Status effects:** user asked "do all moves work now?" while requesting
+real status effects + icons from a specific reference
+(dragon-quest.org/wiki/Status_effect). Investigating "do moves work"
+surfaced a real, previously-undiscovered gap: `StatusData.skip_turn_chance`
+existed on every one of the 9 status fixtures (confusion/curse/dazzle/
+gobstop/immobilize/paralysis/poison/silence/sleep) and was even set to
+sensible-looking values, but nothing in the engine ever actually read it --
+`ActionExecutor` had no status-check at all, so Sleep/Paralysis/Confusion/
+Gobstop/Silence never once prevented a monster from acting; only Poison's
+`tick_damage_percent` and stat-mod-on-apply were ever live. Also confirmed
+the 9 statuses' *mechanics* were hand-picked placeholders from an earlier
+pass (per that pass's own docstring), not sourced from the real games.
+
+Fetched the reference page via `WebFetch` (worked cleanly this time -- a
+regular MediaWiki page, unlike the earlier Google Sheets canvas-rendering
+problem) and cross-referenced each of the 9 existing statuses against its
+real-game equivalent: Confusion, Curse, Dazzle→Dazzled ("much more likely
+to miss with physical attacks" -- accuracy, not agility, which is what the
+old placeholder used), Gobstop→Skill Sealed ("cannot use skills" but
+Attack still works), Immobilize→Bound/Hobbled ("rooted to the spot...
+cannot make any movement" -- full skip, not an agility debuff), Paralysis→
+Paralysed, Poison→Envenomated (the existing 1/8-max-HP tick already matches
+the page's "1/8 in later games" note exactly), Silence→Fizzled ("cannot
+cast spells" specifically, not a general skip chance), Sleep ("cannot act
+until awoken by an attack, or until a random number of turns have passed").
+
+Extended `StatusData`/`StatusLoader` (`battle/status/status_data.gd`) with
+four new data-driven fields rather than new subclasses (matching the
+class's own "a new condition should mean a new fixture, not a new
+subclass" design intent): `description` (tooltip text, same pattern as
+the move-description work above), `icon_path`, `blocked_skill_category`
+(non-empty means "this status blocks skills of this category, but Attack
+always stays usable" -- `"magic"` for Silence, a real `SkillData.Category`
+match; `"skill"` for Gobstop, which needed a hardcoded `skill.id != "attack"`
+check instead since Attack and every other physical skill share the same
+`PHYSICAL` category and can't be told apart by category alone),
+`accuracy_multiplier` (Dazzle: 0.5, applied only to `PHYSICAL`-category
+skills), and `wakes_on_damage` (Sleep only). Rewrote all 9 fixtures with
+real descriptions and corrected mechanics; kept placeholder numeric
+durations where the source page doesn't give an exact turn count for this
+specific installment (same honesty-about-approximation as the damage
+formula and moveset-import work).
+
+Wired the actual mechanics into `ActionExecutor.execute()` (`battle/core/`):
+a `skip_turn_chance` roll now genuinely prevents the action entirely,
+checked before target/MP validity since the monster never gets as far as
+attempting the move; a `blocked_skill_category` match blocks only that
+specific action (`_is_blocked_by_category()`, a small static helper); and
+accuracy is now computed through `_effective_accuracy()`, a pure
+(status, skill) → float function with no RNG involved, so Dazzle's exact
+halving logic is directly unit-testable rather than only ever observable
+through probabilistic accuracy-roll trials. Sleep's wake-on-damage is
+implemented in `DamageEffect.apply()` (`battle/effects/`): any damage taken
+while asleep clears `active_status` immediately, reusing
+`StatusTickEvent(expired=true)` for narration rather than inventing a new
+event type, since "the status just ended" is exactly what that event
+already communicates regardless of why. New `SkillUsedEvent.prevented_by_status`
+field (empty by default) carries which status blocked the action, if any;
+`SkillDatabase` now exposes `get_status()`/`get_all_statuses()` (it always
+loaded status defs internally to resolve `StatusEffect.status_data`, just
+never exposed the registry, since nothing outside `SkillLoader` needed one
+before now) so `battle_side_view.gd` can look up a status's display name/
+description/`blocked_skill_category` by id for narration and icons.
+`_describe_event()` now narrates a prevented action as either "X can't
+move! (Status)" (full skip) or "X can't use Y while Status!" (category
+block); `_animate_event()` was updated so a prevented action doesn't lunge
+or play the attack sound, since the monster never actually attempted the
+move -- the one carve-out from "every SkillUsedEvent bounces unconditionally,"
+which still holds for genuine misses/fizzles (an attempt that failed, vs.
+one that was never made). `_build_monster_card()` now renders a small
+status-icon badge next to the name whenever `active_status` is set, with
+`tooltip_text` set to the status's real description -- same hover pattern
+as the move tooltips above.
+
+**Icons:** downloaded all 9 real status icons directly from the
+referenced wiki page (`dragon-quest.org/w/images/.../Name.png`) into
+`game/assets/status/`. 5 of the 9 (Confusion, Curse, Paralysis, Poison,
+Sleep) had a uniform off-white background rather than a clean
+transparent cutout; generalized the existing
+`remove_background.gd` tool (previously hardcoded to `res://assets/monsters`)
+to accept a target directory via `OS.get_cmdline_user_args()` (defaulting
+to the old path, so its original invocation is unaffected) and ran it
+against `res://assets/status` -- same flood-fill-from-the-border approach
+already used for monster artwork. Newly-added files needed one editor
+import pass (`godot --headless --editor --quit-after 600`) before
+`load()` could resolve them in a headless test run -- a `.import` sidecar
+doesn't exist until the editor's filesystem scanner has processed a new
+asset at least once, which a plain `--headless --script` run never
+triggers on its own; this surfaced as a real, reproducible test failure
+(`icon.texture == null`) rather than a hang, and is worth remembering for
+any future asset added directly to disk outside the editor.
+
+**New headless coverage:** `battle_test_runner.gd` gained
+`_check_status_mechanics()`, testing all five behaviors above directly
+against `ActionExecutor`/`DamageEffect` via a minimal hand-built
+`BattleContext` (bypassing the full engine/turn-manager loop, same
+isolated-harness approach the UI test suites already use for one-off
+features) -- deterministic throughout since every scenario uses boundary
+values (`skip_turn_chance` of exactly `0.0`/`1.0`, `accuracy` of `1.0`)
+that `DeterministicRng.chance()` short-circuits regardless of seed, so
+none of it depends on probabilistic trials. `battle_ui_test_runner.gd`
+gained `_check_status_icon_on_card`, confirming a card badges an active
+status with the right tooltip text and a real loaded texture. Hit one
+real GDScript gotcha while writing the engine-level test: `var log :=
+harness.ctx.event_bus.get_log()` failed to compile ("cannot infer type")
+because `harness` is a plain `Dictionary` (untyped by design, same as
+other ad-hoc test harnesses in this project) and chained property access
+through a `Variant` defeats `:=`'s static inference -- fixed by declaring
+the type explicitly (`var log: Array[BattleEvent] = ...`) instead of
+inferring it. All seven headless suites pass.
+
+Follow-up per user request right after: moved the status-icon badge from
+the card's icon+name header row to sit directly beside the HP bar instead
+-- `_build_monster_card()` now wraps the HP `ProgressBar` in a new
+`hp_row` `HBoxContainer` alongside the status icon (icon only added when
+`active_status` is set), rather than appending it after the name label.
+`_find_texture_rect_with_tooltip()`'s recursive search in
+`_check_status_icon_on_card` needed no change, since it walks the whole
+card regardless of which row the icon lives in. All seven suites re-run
+and still pass.
+
+## [2026-07-24] build | Desert skybox pass + closer/cinematic arena camera
+
+User started designing `battle_arena_3d.tscn` directly in the editor
+(opened via `godot --editor --path . res://ui/battle/battle_arena_3d.tscn`,
+requested after asking to open the battle scene and finding
+`battle_side_view.tscn` only shows its 2D layer — the 3D arena is a
+separate sub-scene embedded via `SubViewportContainer`, so editing it
+directly requires opening `battle_arena_3d.tscn` itself). Reading the file
+mid-session showed the user had already added `Sand.png`/`house.png`/
+`stone1.png` decoration textures and several `Sprite3D` scenery props —
+live concurrent editing in the same file this session, so all edits here
+were kept surgical (`Edit`'s old/new-string matching) rather than
+whole-file rewrites, to avoid clobbering their in-progress work.
+
+**Sky, from a reference desert-battle-background photo:** tuned
+`ProceduralSkyMaterial` to a deeper saturated blue top fading to a pale
+horizon, warm sandy `ground_bottom_color`/`ground_horizon_color`, and
+`sun_angle_max` so the `DirectionalLight3D` reads as a visible glowing sun
+disc (Godot's procedural sky auto-renders any `DirectionalLight3D` as a
+sun glow — no separate sun object needed). Also removed a leftover flat
+green `surface_material_override` on the `Ground` `MeshInstance3D` that
+was fully hiding the sand texture underneath (Godot surface overrides take
+priority over `material_override` for that surface index), and warmed the
+`DirectionalLight3D`'s color/energy for a brighter sun feel. Real puffy
+clouds aren't reproducible with Godot's procedural sky (no cloud layer
+support) — would need an actual panorama/HDRI sky texture instead, flagged
+to the user rather than faked.
+
+**Camera pass:** user asked to move the camera closer to the monsters
+(more zoomed in) and add a subtle idle "cinematic" camera drift that
+kicks in after a few seconds and eases back to the main resting position.
+Dollied the authored `Camera3D` rest transform from `(0, 2.5, 4.5)` to
+`(0, 1.9, 3.4)` (same tilt angle, just closer) for the "more zoomed in"
+base framing. Added `BattleArena3D._run_idle_camera_loop()`
+(`battle_arena_3d.gd`): captures the authored rest `Transform3D` in
+`_ready()`, then loops forever -- hold `IDLE_CAMERA_HOLD_TIME` (5s) at
+rest, ease into a `Transform3D.translated()` offset (a small dolly-in +
+sideways drift expressed in the *camera's own local basis*, so it always
+reads as "push toward whatever it's currently looking at" regardless of
+the authored angle) over 1.6s, hold implicitly via the tween, ease back
+over 1.6s, repeat. Guarded with `is_instance_valid(self) and
+is_inside_tree()` checks after every `await` -- this is a perpetual
+background coroutine on a real scene node, and every existing headless
+test that instantiates `BattleSideView` (and therefore this Arena) now
+starts one; without the guards, a test's `queue_free()` mid-wait would
+resume the loop against a freed instance. Ran the full seven-suite regression
+specifically to confirm no hang/error from this (a real risk category,
+not hypothetical) -- all pass clean, same pre-existing unrelated
+"29 resources still in use at exit" notice as before this change.
+
+**Per-window camera facing:** user also asked for the opponent's camera
+to face them and vice versa. Traced this through `sync_monsters(state,
+my_side)` and confirmed it's already true by construction, not something
+needing new code: every `BattleArena3D` instance places `my_side`'s
+monsters at the near-row anchors (`MySlot0-3`, right in front of the
+camera) and the opponent's at the far row (`OppSlot0-3`), regardless of
+which literal side `my_side` is -- and the *same* Camera3D geometry (sits
+behind the near row, tilted down, facing toward the far row) is reused
+per-instance. Since local dual-window play instantiates one full Arena
+scene copy per `BattleSideView` (each configured with its own `_my_side`),
+each window's camera already looks from that window's own side toward the
+opponent, symmetrically. Confirmed rather than changed.
+
+No code touches gameplay logic in this entry -- purely the 3D arena's
+presentation scene/script. All seven headless suites pass.
+
+## [2026-07-24] build | HP-bar status badge fix; occasional half-circle camera sweep
+
+User shared a screenshot showing the status icon (added to the HP row
+earlier this session) visually crowding the "HP n/max" overlay text --
+sharing an `HBoxContainer` with the `ProgressBar` meant the icon's fixed
+20px + separation ate directly into the bar's own allotted width, and
+`hp_text` never had `clip_text` set, so once squeezed enough its
+un-clipped overlay text could spill past the bar's now-narrower bounds
+instead of just truncating. Fixed by restructuring so the status icon no
+longer shares layout width with the bar at all: `hp_bar` goes back to
+being a direct, full-width child of the card's `vbox` (matching its
+original pre-status-icon layout), and the icon is now a small (14x14)
+overlay *child of the bar itself*, anchored to its top-right corner
+(`PRESET_TOP_RIGHT` + a small position offset) -- costing the bar zero
+layout width, sitting in the naturally empty space to the right of the
+centered HP text instead of squeezing it. Also added the missing
+`hp_text.clip_text = true` as a defensive fix regardless of spacing.
+`_check_status_icon_on_card`'s recursive `TextureRect` search needed no
+change, since it walks the whole card regardless of which node is the
+icon's direct parent.
+
+**Camera:** user asked for the idle camera to sometimes swing in a half
+circle left or right toward the opponent, in addition to the small
+drift-and-return added last entry. A straight `Transform3D` lerp between
+two poses cuts a straight line through the arena rather than curving
+around it, so the sweep is driven through `Tween.tween_method()` instead:
+`_run_orbit_sweep()` rotates the camera's start offset from a fixed
+`ORBIT_PIVOT` (near the opponent's row, not the arena's dead center --
+that's what makes the sweep read as "toward the opponent" rather than an
+arbitrary spin) around the vertical axis by up to 180° (`0.0` to `PI`),
+direction chosen at random each time ("sometimes left, sometimes right"),
+re-aiming at the pivot every step via `look_at()`, then eases back to the
+*exact* authored resting `Transform3D` afterward (restoring both position
+and rotation precisely). `_run_idle_camera_loop()` now rolls `randf() <
+ORBIT_CHANCE` (0.35) each cycle to pick between this sweep and the
+existing small drift, so it's an occasional variant, not the default.
+Same freed-instance guards as the drift path, extended to the new
+tween-method callback (`_apply_orbit_angle` bails if `_camera` itself is
+no longer valid). Ran the full seven-suite regression again given the
+real risk category (perpetual background coroutines during test teardown)
+already flagged last entry -- all still pass.
+
+## [2026-07-24] build | Third pass on the status badge; tone down the camera
+
+User's screenshot showed the corner-badge-on-the-HP-bar fix from the
+previous entry wasn't enough: the badge was still small/hard to notice,
+and once the HP number reached two digits its text could still reach into
+the same corner the badge occupied. Rather than keep tuning positions
+within the HP bar's tight width a third time, moved the badge off the bar
+entirely: it now perches on the monster's own 32x32 portrait icon (in the
+header row, alongside the name), anchored to its bottom-right corner with
+a small dark circular backdrop panel (`Panel` + rounded `StyleBoxFlat`)
+behind it for contrast against any portrait art/color -- since the
+portrait has no text of its own, there's no element left for it to
+compete with or clip into. `hp_bar`/`hp_text` are back to their original
+undecorated form (no icon-related code at all). `_check_status_icon_on_card`
+needed no change -- its recursive `TextureRect` search finds the icon
+regardless of how deep it's nested (icon -> badge backdrop -> status icon).
+
+**Camera:** user reported the idle drift and orbit sweep both felt like
+too much motion. Toned down across the board rather than picking one
+axis to fix: `IDLE_CAMERA_HOLD_TIME` 5s -> 8s (less frequent), the simple
+drift's offset shrunk from `Vector3(0.4, -0.15, -0.5)` to
+`Vector3(0.12, -0.04, -0.15)` (roughly a third the distance), `ORBIT_CHANCE`
+0.35 -> 0.2 (the bigger move happens less often), and the orbit sweep
+itself now turns through a new `ORBIT_SWEEP_ANGLE` (`PI * 0.28`, ~50°)
+instead of a full half circle (`PI`, 180°) -- the literal "half circle"
+from the original ask read as too dramatic once seen in motion, so the
+arc is now a shorter swing rather than a full swing-around. All seven
+headless suites re-run and pass.
+
+## [2026-07-24] build | Normalize monster sprite height by slot tier, not source-art size
+
+User spotted the actual root cause behind an earlier ask ("scale the
+monster height depending on slot size"): `BattleArena3D` was already
+scaling *up* by slot count (`CARD_BASE_SCALE + SLOT_SCALE_STEP*(span-1)`
+on top of one flat `SPRITE_PIXEL_SIZE` shared by every monster), but a
+flat `pixel_size` applied uniformly to every sprite means the actual
+on-screen height is directly proportional to however many pixels tall
+that particular monster's *source image* happens to be -- and source art
+quality/crop varies hugely across 800+ species (some use a tight
+pixel-sprite, others a much larger fan-art replacement). Concretely:
+Slime's replacement art is a bigger source image than the monster beside
+it, so it rendered visibly bigger despite being the same 1-slot tier --
+the old scale-by-slots formula never had a chance to produce consistent
+results underneath that.
+
+Real fix: derive `Sprite3D.pixel_size` **per sprite** from the actual
+loaded texture's pixel height and a `SLOT_TARGET_HEIGHT` table keyed by
+`species.slots` (`{1: 0.5, 2: 0.7, 3: 0.9, 4: 1.1}`, each tier taller than
+the last, matching the original ask's ordering) --
+`pixel_size = target_height / texture.get_height()`. This makes every
+monster's *actual rendered height* equal to its slot tier's target,
+regardless of whether its source image is 64px or 2000px tall -- width
+follows automatically via the texture's own aspect ratio, since
+`pixel_size` scales both axes together. The old `sprite.scale` multiplier
+(set every `_sync_side()` call) is gone entirely -- it would have
+double-applied the same "bigger per slot" effect on top of the new
+height-normalized `pixel_size`, and normalization alone already produces
+the correct height directly. `CARD_BASE_SCALE`/`SLOT_SCALE_STEP`/
+`SPRITE_PIXEL_SIZE` constants removed; `FALLBACK_PIXEL_SIZE` kept as the
+one still-flat fallback for the (should-never-happen) case of a sprite
+with no texture at all.
+
+Updated `_check_arena_rendering` in `battle_ui_test_runner.gd`: the old
+"scale matches the slots formula" assertions (2-slot and 4-slot) became
+"pixel_size matches target_height / this sprite's own real texture
+height" -- proving the normalization formula against whatever the actual
+aamon/asura_zoma art files really are, not a hardcoded expectation. Added
+a new check that's the direct regression-proof of the reported bug:
+build a team with two different 1-slot monsters (Slime, Dracky, whose
+real source images are NOT the same pixel height) and assert
+`pixel_size * texture.get_height()` -- the actual rendered height -- comes
+out equal for both, confirming same-tier monsters now render at a
+consistent height regardless of their art's native resolution. All seven
+headless suites pass.
+
+Separately: pushed a GitHub backup of the full accumulated session (351
+changed/new files across this and prior sessions -- multi-slot battles,
+online PvP, the 3D arena, move descriptions/tooltips, real status-effect
+mechanics + icons, and this entry's fixes) to the existing
+`Mother64OpenSource/Dragon-Quest-Monster` origin remote.

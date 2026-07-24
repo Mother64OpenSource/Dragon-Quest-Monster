@@ -42,6 +42,7 @@ func run() -> bool:
 	_check("re-run with same seed produces identical event log contents", logs_match)
 
 	_check_rng_determinism()
+	_check_status_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -151,6 +152,101 @@ func _check_rng_determinism() -> void:
 			samples_match = false
 			break
 	_check("two DeterministicRng instances with the same seed produce identical sequences", samples_match)
+
+## Real DQ status mechanics (see wiki/log.md): a full-body condition
+## (skip_turn_chance) can prevent acting regardless of the skill queued, a
+## category seal (blocked_skill_category) only blocks that category (Attack
+## always stays usable), Dazzle degrades physical-only accuracy, and Sleep
+## clears itself the instant its bearer takes damage. skip_turn_chance/
+## accuracy values of exactly 0.0/1.0 make every check below deterministic
+## regardless of RNG seed (DeterministicRng.chance() short-circuits both
+## boundaries -- see deterministic_rng.gd), so no statistical/flaky trials
+## are needed.
+func _check_status_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var attack: SkillData = team_builder.skill_registry.get("attack")
+	var frizz: SkillData = team_builder.skill_registry.get("frizz")
+	_check("fixtures needed for status tests exist (attack, frizz)", attack != null and frizz != null)
+	if attack == null or frizz == null:
+		return
+
+	# 1. Immobilize (skip_turn_chance 1.0): always prevents acting entirely,
+	# whatever skill was queued -- the target never takes damage.
+	var immobilize := team_builder.skill_database.get_status("immobilize")
+	var harness1 := _new_harness(team_builder)
+	harness1.actor.active_status = StatusInstance.new(immobilize)
+	ActionExecutor.execute(harness1.ctx, Action.new(harness1.actor.instance_id, "attack", harness1.target.instance_id), team_builder.skill_registry)
+	var log1: Array[BattleEvent] = harness1.ctx.event_bus.get_log()
+	_check("immobilize: exactly one event (the prevented attempt)", log1.size() == 1)
+	if log1.size() == 1:
+		var e1: SkillUsedEvent = log1[0]
+		_check("immobilize: SkillUsedEvent flags prevented_by_status", e1 is SkillUsedEvent and e1.prevented_by_status == "immobilize")
+	_check("immobilize: target takes no damage", harness1.target.current_hp == harness1.target.species.base_hp)
+
+	# 2. Gobstop (blocked_skill_category "skill"): blocks a non-Attack skill
+	# but leaves basic Attack usable.
+	var gobstop := team_builder.skill_database.get_status("gobstop")
+	var harness2 := _new_harness(team_builder)
+	harness2.actor.active_status = StatusInstance.new(gobstop)
+	ActionExecutor.execute(harness2.ctx, Action.new(harness2.actor.instance_id, "frizz", harness2.target.instance_id), team_builder.skill_registry)
+	var log2: Array[BattleEvent] = harness2.ctx.event_bus.get_log()
+	_check("gobstop: blocks a non-attack skill", log2.size() == 1 and log2[0] is SkillUsedEvent and log2[0].prevented_by_status == "gobstop")
+	ActionExecutor.execute(harness2.ctx, Action.new(harness2.actor.instance_id, "attack", harness2.target.instance_id), team_builder.skill_registry)
+	var log2b: Array[BattleEvent] = harness2.ctx.event_bus.get_log()
+	_check("gobstop: still allows basic Attack (2 more events: used + damage)", log2b.size() == 3)
+	if log2b.size() == 3:
+		_check("gobstop: the Attack actually went through, no prevented flag", log2b[1] is SkillUsedEvent and log2b[1].prevented_by_status.is_empty() and not log2b[1].missed)
+
+	# 3. Silence (blocked_skill_category "magic"): blocks a magic skill
+	# (Frizz) but leaves basic Attack usable.
+	var silence := team_builder.skill_database.get_status("silence")
+	var harness3 := _new_harness(team_builder)
+	harness3.actor.active_status = StatusInstance.new(silence)
+	ActionExecutor.execute(harness3.ctx, Action.new(harness3.actor.instance_id, "frizz", harness3.target.instance_id), team_builder.skill_registry)
+	var log3: Array[BattleEvent] = harness3.ctx.event_bus.get_log()
+	_check("silence: blocks a magic skill", log3.size() == 1 and log3[0] is SkillUsedEvent and log3[0].prevented_by_status == "silence")
+	ActionExecutor.execute(harness3.ctx, Action.new(harness3.actor.instance_id, "attack", harness3.target.instance_id), team_builder.skill_registry)
+	var log3b: Array[BattleEvent] = harness3.ctx.event_bus.get_log()
+	_check("silence: still allows basic Attack", log3b.size() == 3 and log3b[1] is SkillUsedEvent and log3b[1].prevented_by_status.is_empty())
+
+	# 4. Dazzle's accuracy penalty is a pure function of (status, skill) --
+	# tested directly rather than via probabilistic accuracy-roll trials.
+	var dazzle := team_builder.skill_database.get_status("dazzle")
+	_check("dazzle: halves a physical skill's accuracy", is_equal_approx(ActionExecutor._effective_accuracy(dazzle, attack), attack.accuracy * 0.5))
+	_check("dazzle: leaves a magic skill's accuracy untouched", is_equal_approx(ActionExecutor._effective_accuracy(dazzle, frizz), frizz.accuracy))
+	_check("no status: leaves accuracy untouched", is_equal_approx(ActionExecutor._effective_accuracy(null, attack), attack.accuracy))
+
+	# 5. Sleep wakes on any damage taken, mid-effect -- not just at the
+	# normal end-of-turn tick/expiry point.
+	var sleep := team_builder.skill_database.get_status("sleep")
+	var harness5 := _new_harness(team_builder)
+	harness5.target.active_status = StatusInstance.new(sleep)
+	ActionExecutor.execute(harness5.ctx, Action.new(harness5.actor.instance_id, "attack", harness5.target.instance_id), team_builder.skill_registry)
+	_check("sleep: cleared the instant its bearer takes damage", harness5.target.active_status == null)
+	var log5: Array[BattleEvent] = harness5.ctx.event_bus.get_log()
+	var saw_wake_tick := false
+	for event in log5:
+		if event is StatusTickEvent and event.status_id == "sleep" and event.expired:
+			saw_wake_tick = true
+	_check("sleep: wake is narrated via a StatusTickEvent(expired=true)", saw_wake_tick)
+
+## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
+## isolated per status scenario so one test's active_status/event log can't
+## leak into another's.
+func _new_harness(team_builder: TeamBuilder) -> Dictionary:
+	var side_a := team_builder.build_team(["slime"], "side_a")
+	var side_b := team_builder.build_team(["golem"], "side_b")
+	var event_bus := BattleEventBus.new()
+	var state := BattleState.new(DeterministicRng.new(1), event_bus)
+	state.side_a_team = side_a
+	state.side_b_team = side_b
+	state.set_active_at("side_a", 0, 0)
+	state.set_active_at("side_b", 0, 0)
+	return {
+		"ctx": BattleContext.new(state),
+		"actor": side_a[0],
+		"target": side_b[0],
+	}
 
 func _format_event(event: BattleEvent) -> String:
 	return "[T%d] %s" % [event.turn_number, JSON.stringify(event.to_dict())]

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Deals extra-large damage while greatly reducing the user's defense for one turn.",
 	"display_name": "Double Up",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 105,
+			"power": 105.0,
 			"type": "damage"
 		}
 	],
 	"id": "double_up",
-	"mp_cost": 30,
-	"priority": 0,
+	"mp_cost": 30.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

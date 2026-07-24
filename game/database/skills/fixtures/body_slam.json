@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Deals heavy damage to the target and the user.",
 	"display_name": "Body Slam",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 60,
+			"power": 60.0,
 			"type": "damage"
 		}
 	],
 	"id": "body_slam",
-	"mp_cost": 15,
-	"priority": 0,
+	"mp_cost": 15.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -5,6 +5,12 @@ extends Control
 ## OS window), both pointed at the same BattleController -- there is no
 ## networking, they're just two Control trees sharing one process's memory.
 ##
+## The battlefield itself renders in a real 3D arena (BattleArena3D, embedded
+## via a SubViewportContainer) -- both sides' monsters appear there as
+## billboarded 2D sprites. The 2D "OpponentPanel"/"MyPartyPanel" rows below
+## it are unchanged in purpose (HP/MP readouts, click-to-target) -- nothing
+## in the 3D view is ever clickable, it's pure display.
+##
 ## Layout: a "battlefield" facing the opponent's up to 4 active monsters, a
 ## row of your own active monsters, and a command panel that cycles through
 ## each of your not-yet-submitted active slots in turn. Cards render once
@@ -36,11 +42,16 @@ var _current_slot: int = -1
 var _mode: String = MODE_MENU
 var _pending_skill_id: String = ""
 
-@onready var _battlefield_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/BattlefieldGrid
+@onready var _opponent_panel_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/OpponentPanel
+@onready var _arena: BattleArena3D = $Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport/Arena
+@onready var _turn_counter_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/TurnCounterLabel
+@onready var _audio: BattleAudio = $Audio
 @onready var _current_slot_label: Label = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/CurrentSlotLabel
 @onready var _fight_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/FightButton
 @onready var _orders_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/OrdersButton
 @onready var _tactics_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/TacticsButton
+@onready var _forfeit_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ForfeitButton
+@onready var _forfeit_confirm_dialog: ConfirmationDialog = $ForfeitConfirmDialog
 @onready var _actions_scroll: ScrollContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll
 @onready var _actions_box: VBoxContainer = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox
 @onready var _actions_back_button: Button = $Root/MainColumn/BottomPanel/CommandPanel/CommandPanelVBox/ActionsScroll/ActionsBox/BackButton
@@ -61,6 +72,8 @@ func _ready() -> void:
 	_actions_back_button.pressed.connect(_on_actions_back_pressed)
 	_tactics_button.disabled = true
 	_tactics_button.tooltip_text = "Not implemented yet -- no auto-battle to configure."
+	_forfeit_button.pressed.connect(_on_forfeit_pressed)
+	_forfeit_confirm_dialog.confirmed.connect(_on_forfeit_confirmed)
 
 func setup(controller: BattleController, my_side: String, skill_db: SkillDatabase) -> void:
 	_controller = controller
@@ -95,15 +108,27 @@ func _refresh() -> void:
 	_render_battlefield(state)
 	_render_my_party(state)
 	_render_command_panel()
+	_arena.sync_monsters(state, _my_side)
+	_update_turn_counter(state)
 
-## Battlefield shows one card per unique active opponent monster (a
+## turn_number increments *inside* TurnManager.run_turn() before anything
+## else happens, starting at 0 -- binding a label directly to it would show
+## "Round 0" while picking your very first move, then "Round 1" while
+## picking round 2's actions, one behind what a player expects. +1 always
+## reads as "the round currently being decided."
+func _update_turn_counter(state: BattleState) -> void:
+	_turn_counter_label.text = "Round %d" % (state.turn_number + 1)
+
+## Opponent panel shows one card per unique active opponent monster (a
 ## multi-slot monster occupies more than one of the 4 raw slot indices, so
 ## dedupe by instance_id rather than rendering once per index) plus one
 ## placeholder per still-empty slot. Cards become clickable (as a target
-## picker) only while _mode == MODE_TARGETING.
+## picker) only while _mode == MODE_TARGETING. The 3D arena (see
+## battle_arena_3d.gd) shows the same monsters visually; this panel is what
+## stays clickable and keeps showing HP at a glance underneath it.
 func _render_battlefield(state: BattleState) -> void:
-	for child in _battlefield_grid.get_children():
-		_battlefield_grid.remove_child(child)
+	for child in _opponent_panel_grid.get_children():
+		_opponent_panel_grid.remove_child(child)
 		child.queue_free()
 
 	_targeting_label.visible = _mode == MODE_TARGETING
@@ -114,7 +139,7 @@ func _render_battlefield(state: BattleState) -> void:
 			if seen.has(monster.instance_id):
 				continue
 			seen[monster.instance_id] = true
-		_battlefield_grid.add_child(_build_monster_card(monster, false))
+		_opponent_panel_grid.add_child(_build_monster_card(monster, false))
 
 ## mine parties show full HP/MP; the currently-selected monster is
 ## highlighted (by its anchor slot, MonsterInstance.slot).
@@ -187,6 +212,41 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 		icon.texture = load(instance.species.sprite_path)
 	header.add_child(icon)
 
+	# A status badge perches on the portrait's own corner rather than
+	# anywhere near the HP bar -- sharing space with the bar (tried twice
+	# now) either squeezed its "HP n/max" text or overlapped it once the
+	# text got long enough to reach that corner. The portrait has no text
+	# of its own to collide with, and a dark circular backdrop behind the
+	# icon keeps it readable against any portrait art/color underneath.
+	if instance.active_status != null:
+		var status_data := instance.active_status.status_data
+		var badge_bg := Panel.new()
+		badge_bg.custom_minimum_size = Vector2(18, 18)
+		badge_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var badge_style := StyleBoxFlat.new()
+		badge_style.bg_color = Color(0.1, 0.1, 0.12, 0.92)
+		badge_style.corner_radius_top_left = 9
+		badge_style.corner_radius_top_right = 9
+		badge_style.corner_radius_bottom_right = 9
+		badge_style.corner_radius_bottom_left = 9
+		badge_bg.add_theme_stylebox_override("panel", badge_style)
+		icon.add_child(badge_bg)
+		badge_bg.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+		badge_bg.position = Vector2(-14, -14)
+
+		var status_icon := TextureRect.new()
+		status_icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+		status_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		status_icon.tooltip_text = "%s: %s" % [status_data.display_name, status_data.description]
+		if not status_data.icon_path.is_empty():
+			status_icon.texture = load(status_data.icon_path)
+		badge_bg.add_child(status_icon)
+		status_icon.set_anchors_preset(Control.PRESET_FULL_RECT)
+		status_icon.offset_left = 1
+		status_icon.offset_top = 1
+		status_icon.offset_right = -1
+		status_icon.offset_bottom = -1
+
 	var name_label := Label.new()
 	var base_name := "%s [Slot %d]" % [instance.species.display_name, instance.species.slots]
 	name_label.text = base_name if not instance.is_fainted() else "%s (fainted)" % base_name
@@ -195,9 +255,9 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 	name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	header.add_child(name_label)
 
-	# HP/MP bars span the card's full width below the icon+name row (not
-	# squeezed into a column beside the icon) so every card's bars start and
-	# end at the same edges regardless of icon shape or name length.
+	# HP bar spans the card's full width below the icon+name row -- the
+	# status badge lives on the portrait above instead (see icon.add_child
+	# above), so nothing here needs to make room for it.
 	var hp_bar := ProgressBar.new()
 	hp_bar.custom_minimum_size = Vector2(0, 16)
 	hp_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -210,6 +270,7 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 	hp_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hp_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	hp_text.add_theme_font_size_override("font_size", 11)
+	hp_text.clip_text = true
 	_style_bar_overlay_text(hp_text)
 	hp_bar.add_child(hp_text)
 	hp_text.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -307,8 +368,15 @@ func _render_command_panel() -> void:
 			_orders_button.tooltip_text = "" if not _orders_button.disabled else "No living bench monster to swap in."
 			_set_command_visibility(true, true, true, false)
 
+## Forfeit is a top-level choice, not a per-monster command -- it's shown
+## exactly when Fight/Orders/Tactics are (the main command screen), and
+## hidden the moment you drill into any of their sub-flows (Fight's skill
+## list, a target picker, Orders' bench list), same as they are. `fight`
+## doubles as that "are we on the main command screen" flag since every
+## call site already keeps fight/orders/tactics in lockstep with each other.
 func _set_command_visibility(fight: bool, orders: bool, tactics: bool, actions: bool) -> void:
 	_fight_button.visible = fight
+	_forfeit_button.visible = fight
 	_orders_button.visible = orders
 	_tactics_button.visible = tactics
 	_actions_scroll.visible = actions
@@ -328,6 +396,8 @@ func _rebuild_skill_buttons() -> void:
 		button.text = "%s (%d MP)" % [skill.display_name, skill.mp_cost]
 		button.disabled = actor.current_mp < skill.mp_cost
 		button.pressed.connect(_on_skill_pressed.bind(skill.id))
+		if not skill.description.is_empty():
+			button.tooltip_text = skill.description
 		_actions_box.add_child(button)
 
 func _rebuild_bench_buttons() -> void:
@@ -344,22 +414,37 @@ func _rebuild_bench_buttons() -> void:
 		_actions_box.add_child(button)
 
 func _on_fight_pressed() -> void:
+	_audio.play_menu_select()
 	_mode = MODE_SKILLS
 	_render_command_panel()
 
 func _on_orders_pressed() -> void:
+	_audio.play_menu_select()
 	_mode = MODE_ORDERS
 	_rebuild_bench_buttons()
 	_set_command_visibility(false, false, false, true)
 
 func _on_actions_back_pressed() -> void:
+	_audio.play_menu_select()
 	_mode = MODE_MENU
 	_render_command_panel()
+
+func _on_forfeit_pressed() -> void:
+	_audio.play_menu_select()
+	_forfeit_confirm_dialog.popup_centered()
+
+## Ends the battle immediately, crediting the opponent with the win.
+## BattleController.forfeit() reuses the same action_submitted plumbing
+## submit_fight/submit_swap already use, so online play forwards this to
+## the opponent for free -- no separate network wiring needed here.
+func _on_forfeit_confirmed() -> void:
+	_controller.forfeit(_my_side)
 
 func _on_skill_pressed(skill_id: String) -> void:
 	var skill := _skill_db.get_skill(skill_id)
 	if skill == null:
 		return
+	_audio.play_menu_select()
 	if skill.target_type == SkillData.TargetType.SELF:
 		_controller.submit_fight(_my_side, _current_slot, skill_id, -1)
 		_advance_to_next_pending_slot()
@@ -371,22 +456,57 @@ func _on_skill_pressed(skill_id: String) -> void:
 	_refresh()
 
 func _on_target_picked(target_instance_id: int) -> void:
+	_audio.play_menu_select()
 	_controller.submit_fight(_my_side, _current_slot, _pending_skill_id, target_instance_id)
 	_advance_to_next_pending_slot()
 	_refresh()
 
 func _on_bench_picked(bench_instance_id: int) -> void:
+	_audio.play_menu_select()
 	_controller.submit_swap(_my_side, _current_slot, bench_instance_id)
 	_advance_to_next_pending_slot()
 	_refresh()
 
+## A coroutine: awaits each event's animation before moving to the next one,
+## so a round with several attacks plays them out one at a time instead of
+## all at once. The command panel is hidden for the whole sequence -- since
+## _refresh() (which restores it to whatever the *new* round actually needs)
+## only runs at the very end, leaving the old buttons up while animations
+## play would let the player click something stale mid-sequence.
 func _on_turn_resolved(events: Array[BattleEvent]) -> void:
 	_advance_to_next_pending_slot()
+	_set_command_visibility(false, false, false, false)
+	_waiting_label.visible = true
+	_waiting_label.text = "Resolving turn..."
 	for event in events:
 		var line := _describe_event(event)
 		if not line.is_empty():
 			_append_log(line)
+		await _animate_event(event)
+	# _refresh() (which re-syncs the arena's sprites, reassigning them for
+	# anyone fainted-and-backfilled this round, and restores the command
+	# panel to whatever the new round actually needs) must stay LAST --
+	# animating or narrating after it ran could target a sprite that's
+	# already been repurposed for a replacement monster.
 	_refresh()
+
+## Every attack visibly steps its actor toward the target and back
+## unconditionally (hit, miss, fizzle, any target type) -- matches "every
+## time a monster attacks," no "is this offensive" classification invented.
+## The one exception is a status-prevented action (asleep, paralyzed,
+## silenced, ...): the monster never actually attempted the move, so it
+## doesn't lunge or play the attack sound, just sits out the turn.
+## Only the attacker moves; a damaged target doesn't flinch/shake, just
+## plays a sound. Awaits the full attack animation so the caller's per-event
+## loop pauses here before starting the next event's.
+func _animate_event(event: BattleEvent) -> void:
+	if event is SkillUsedEvent and event.prevented_by_status.is_empty():
+		_audio.play_attack()
+		await _arena.animate_attack(event.actor_instance_id, event.target_instance_id)
+	elif event is DamageAppliedEvent:
+		_audio.play_hit()
+	elif event is MonsterFaintedEvent:
+		_audio.play_faint()
 
 func _on_battle_ended(winner_side: String) -> void:
 	_result_panel.visible = true
@@ -409,6 +529,12 @@ func _describe_event(event: BattleEvent) -> String:
 		var actor_name := actor.species.display_name if actor != null else "???"
 		var skill := _skill_db.get_skill(e.skill_id)
 		var skill_name := skill.display_name if skill != null else e.skill_id
+		if not e.prevented_by_status.is_empty():
+			var status := _skill_db.get_status(e.prevented_by_status)
+			var status_name := status.display_name if status != null else e.prevented_by_status.capitalize()
+			if status != null and not status.blocked_skill_category.is_empty():
+				return "%s can't use %s while %s!" % [actor_name, skill_name, status_name]
+			return "%s can't move! (%s)" % [actor_name, status_name]
 		if e.missed:
 			return "%s used %s but missed!" % [actor_name, skill_name]
 		if e.fizzled:

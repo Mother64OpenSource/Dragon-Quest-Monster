@@ -1,8 +1,13 @@
 {
 	"display_name": "Gobstop",
+	"description": "Seals every skill except a basic Attack until it wears off.",
+	"icon_path": "res://assets/status/gobstop.png",
 	"duration_turns": 3,
 	"id": "gobstop",
-	"skip_turn_chance": 0.3,
+	"skip_turn_chance": 0.0,
+	"blocked_skill_category": "skill",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": false,
 	"stat_mods_on_apply": [],
 	"tick_damage_percent": 0.0
 }

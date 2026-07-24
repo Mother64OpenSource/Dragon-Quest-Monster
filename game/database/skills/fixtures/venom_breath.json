@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "A deadly haze that can envenomate all enemies.",
 	"display_name": "Venom Breath",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "venom_breath",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

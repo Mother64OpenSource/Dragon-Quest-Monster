@@ -6,6 +6,7 @@ var skill_id: String
 var target_instance_id: int
 var missed: bool = false
 var fizzled: bool = false
+var prevented_by_status: String = ""
 
 func _init(p_actor_instance_id: int, p_skill_id: String, p_target_instance_id: int) -> void:
 	actor_instance_id = p_actor_instance_id
@@ -22,4 +23,5 @@ func to_dict() -> Dictionary:
 	d["target_instance_id"] = target_instance_id
 	d["missed"] = missed
 	d["fizzled"] = fizzled
+	d["prevented_by_status"] = prevented_by_status
 	return d

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Removes almost all magical effects from all enemies.",
 	"display_name": "Disruptive Wave",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 195,
+			"power": 195.0,
 			"type": "damage"
 		}
 	],
 	"id": "disruptive_wave",
-	"mp_cost": 60,
-	"priority": 0,
+	"mp_cost": 60.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

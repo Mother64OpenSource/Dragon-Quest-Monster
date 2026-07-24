@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Damage 1 enemy with slash attack. Greater effect when opponents are of Dragon-family.",
 	"display_name": "Dragon Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 27,
+			"power": 27.0,
 			"type": "damage"
 		}
 	],
 	"id": "dragon_slash",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

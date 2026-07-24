@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Hurls a rock at a single enemy.",
 	"display_name": "Boulder Dash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 24,
+			"power": 24.0,
 			"type": "damage"
 		}
 	],
 	"id": "boulder_dash",
-	"mp_cost": 3,
-	"priority": 0,
+	"mp_cost": 3.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

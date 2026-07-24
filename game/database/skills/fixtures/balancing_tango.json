@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Dance does damage to 1 same-sized enemy with more HP than you. More damage the bigger the difference.",
 	"display_name": "Balancing Tango",
 	"effects": [
 		{
-			"stages": 1,
+			"stages": 1.0,
 			"stat_name": "attack",
 			"target_self": true,
 			"type": "stat_mod"
 		}
 	],
 	"id": "balancing_tango",
-	"mp_cost": 36,
-	"priority": 0,
+	"mp_cost": 36.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

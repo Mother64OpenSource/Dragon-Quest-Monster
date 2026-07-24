@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "An attack that can stop the target from using breath attacks as it inflicts damage.",
 	"display_name": "Breathtaking Bash",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "breathtaking_bash",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

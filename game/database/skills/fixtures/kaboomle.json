@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Bang-type spell does most damage to all enemies.",
 	"display_name": "Kaboomle",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 195,
+			"power": 195.0,
 			"type": "damage"
 		}
 	],
 	"id": "kaboomle",
-	"mp_cost": 60,
-	"priority": 0,
+	"mp_cost": 60.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

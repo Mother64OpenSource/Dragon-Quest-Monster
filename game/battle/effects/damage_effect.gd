@@ -28,6 +28,22 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 			DamageAppliedEvent.new(user.instance_id, target.instance_id, applied, target.current_hp),
 			ctx.state.turn_number
 		)
+		_wake_if_sleeping(ctx, target)
+
+## Sleep: "cannot act until awoken by an attack" -- taking any damage clears
+## it immediately rather than waiting out its normal per-turn wake chance.
+## Reuses StatusTickEvent(expired=true) for narration instead of a new event
+## type, since "the status just ended" is exactly what that event already
+## communicates, whatever the reason.
+func _wake_if_sleeping(ctx: BattleContext, target: MonsterInstance) -> void:
+	if target.is_fainted() or target.active_status == null or not target.active_status.status_data.wakes_on_damage:
+		return
+	var status_id := target.active_status.status_data.id
+	target.active_status = null
+	ctx.event_bus.emit_event(
+		StatusTickEvent.new(target.instance_id, status_id, 0, target.current_hp, true),
+		ctx.state.turn_number
+	)
 
 ## Each hit goes through the user's on_before_damage_dealt hooks then the
 ## target's on_before_damage_taken hooks — per-hit, not per-action, since

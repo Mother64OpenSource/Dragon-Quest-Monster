@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Slash attack damages all enemies. More damage against confused and sleeping enemies.",
 	"display_name": "Persecutter",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 84,
+			"power": 84.0,
 			"type": "damage"
 		}
 	],
 	"id": "persecutter",
-	"mp_cost": 23,
-	"priority": 0,
+	"mp_cost": 23.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

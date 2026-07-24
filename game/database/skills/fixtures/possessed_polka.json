@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Sacifices the life of the user and massively raises ATK, DEF, AGI, and WIS of all allies.",
 	"display_name": "Possessed Polka",
 	"effects": [
 		{
-			"stages": 1,
+			"stages": 1.0,
 			"stat_name": "attack",
 			"target_self": true,
 			"type": "stat_mod"
 		}
 	],
 	"id": "possessed_polka",
-	"mp_cost": 100,
-	"priority": 0,
+	"mp_cost": 100.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

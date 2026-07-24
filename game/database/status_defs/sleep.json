@@ -1,8 +1,13 @@
 {
 	"display_name": "Sleep",
+	"description": "A chance each turn of being unable to act at all; taking any damage wakes the sleeper immediately.",
+	"icon_path": "res://assets/status/sleep.png",
 	"duration_turns": 3,
 	"id": "sleep",
 	"skip_turn_chance": 0.8,
+	"blocked_skill_category": "",
+	"accuracy_multiplier": 1.0,
+	"wakes_on_damage": true,
 	"stat_mods_on_apply": [],
 	"tick_damage_percent": 0.0
 }

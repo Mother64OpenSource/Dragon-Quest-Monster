@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Lowers the DEF of all enemies for 4-7 turns.",
 	"display_name": "Kasap",
 	"effects": [
 		{
-			"stages": -1,
+			"stages": -1.0,
 			"stat_name": "defense",
 			"target_self": false,
 			"type": "stat_mod"
 		}
 	],
 	"id": "kasap",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

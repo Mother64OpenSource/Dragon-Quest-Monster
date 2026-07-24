@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Slash attack against enemy, and heals HP about 1／2 of damage. But can only heal up to 100.",
 	"display_name": "Miracle Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 45,
+			"power": 45.0,
 			"type": "damage"
 		}
 	],
 	"id": "miracle_slash",
-	"mp_cost": 10,
-	"priority": 0,
+	"mp_cost": 10.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

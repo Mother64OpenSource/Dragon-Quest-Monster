@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "A dance that restores HP 2-6 times to random allies. Better effect at higher levels.",
 	"display_name": "Hustle Dance",
 	"effects": [
 		{
-			"stages": 1,
+			"stages": 1.0,
 			"stat_name": "attack",
 			"target_self": true,
 			"type": "stat_mod"
 		}
 	],
 	"id": "hustle_dance",
-	"mp_cost": 80,
-	"priority": 0,
+	"mp_cost": 80.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

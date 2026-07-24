@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "A violent disturbance in the world's natural equilibrium deals ferocious damage to a single enemy.",
 	"display_name": "Frizz Cracker",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 315,
+			"power": 315.0,
 			"type": "damage"
 		}
 	],
 	"id": "frizz_cracker",
-	"mp_cost": 100,
-	"priority": 0,
+	"mp_cost": 100.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

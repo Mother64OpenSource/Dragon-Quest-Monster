@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "A hideous battle cry that paralyzes all enemies with fear.",
 	"display_name": "War Cry",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "war_cry",
-	"mp_cost": 3,
-	"priority": 0,
+	"mp_cost": 3.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

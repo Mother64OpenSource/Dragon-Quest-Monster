@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Raises the AGI of one ally for 4-7 turns.",
 	"display_name": "Accelerate",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 24,
+			"power": 24.0,
 			"type": "damage"
 		}
 	],
 	"id": "accelerate",
-	"mp_cost": 3,
-	"priority": 0,
+	"mp_cost": 3.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

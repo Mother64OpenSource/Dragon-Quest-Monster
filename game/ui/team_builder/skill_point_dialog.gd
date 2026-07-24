@@ -2,11 +2,15 @@ class_name SkillPointDialog
 extends AcceptDialog
 
 ## Skill-point allocation editor for one MonsterLoadout: a SpinBox per
-## available skillset (species.available_skill_sets) and a checkbox per
-## unlocked move within it. Mutates the loadout live (no separate save step,
-## consistent with the rest of this screen's auto-save-on-edit approach) and
-## emits allocation_changed() after every change so the owning row can update
-## its summary + persist.
+## skillset and a checkbox per unlocked move within it. Every monster can
+## invest points in every skillset that exists (per the real games -- there's
+## no species-specific restriction on which panels are reachable, only on the
+## total point pool -- species.total_skill_points -- available to spread
+## across them; see wiki/log.md). With 200+ panels to page through, a search
+## field filters the list down by panel name. Mutates the loadout live (no
+## separate save step, consistent with the rest of this screen's
+## auto-save-on-edit approach) and emits allocation_changed() after every
+## change so the owning row can update its summary + persist.
 
 signal allocation_changed()
 
@@ -14,12 +18,15 @@ var _loadout: MonsterLoadout
 var _species: MonsterSpecies
 var _skill_db: SkillDatabase
 var _skillset_db: SkillSetDatabase
+var _search_text: String = ""
 
 @onready var _header_label: Label = $VBoxContainer/HeaderLabel
+@onready var _search_edit: LineEdit = $VBoxContainer/SearchEdit
 @onready var _panels_list: VBoxContainer = $VBoxContainer/ScrollContainer/PanelsList
 
 func _ready() -> void:
 	get_ok_button().text = "Close"
+	_search_edit.text_changed.connect(_on_search_text_changed)
 
 func show_for(loadout: MonsterLoadout, species: MonsterSpecies, skill_db: SkillDatabase, skillset_db: SkillSetDatabase) -> void:
 	_loadout = loadout
@@ -27,8 +34,14 @@ func show_for(loadout: MonsterLoadout, species: MonsterSpecies, skill_db: SkillD
 	_skill_db = skill_db
 	_skillset_db = skillset_db
 	title = "Skill Points — %s" % species.display_name
+	_search_text = ""
+	_search_edit.text = ""
 	_rebuild()
 	popup_centered(Vector2i(520, 480))
+
+func _on_search_text_changed(new_text: String) -> void:
+	_search_text = new_text
+	_rebuild()
 
 func _rebuild() -> void:
 	for child in _panels_list.get_children():
@@ -47,9 +60,12 @@ func _rebuild() -> void:
 		total_used += int(_loadout.skill_point_allocation[skillset_id])
 	_header_label.text = "%s — Skill Points: %d / %d" % [_species.display_name, total_used, _species.total_skill_points]
 
-	for skillset_id in _species.available_skill_sets:
-		var skillset := _skillset_db.get_skillset(skillset_id)
-		if skillset == null:
+	var all_skillsets := _skillset_db.get_all_skillsets()
+	all_skillsets.sort_custom(func(a, b): return a.display_name < b.display_name)
+
+	var search_lower := _search_text.strip_edges().to_lower()
+	for skillset in all_skillsets:
+		if not search_lower.is_empty() and not skillset.display_name.to_lower().contains(search_lower):
 			continue
 		_panels_list.add_child(_build_panel_section(skillset, total_used))
 
@@ -87,6 +103,8 @@ func _build_panel_section(skillset: SkillSetData, total_used: int) -> Control:
 		checkbox.disabled = not unlocked
 		checkbox.button_pressed = unlocked and _loadout.equipped_skill_ids.has(skill_id)
 		checkbox.toggled.connect(_on_skill_toggled.bind(skill_id))
+		if skill != null and not skill.description.is_empty():
+			checkbox.tooltip_text = skill.description
 		section.add_child(checkbox)
 
 	return section

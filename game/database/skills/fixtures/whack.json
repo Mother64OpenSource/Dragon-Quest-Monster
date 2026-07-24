@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "A cursed incantation that can send a single enemy to the hereafter.",
 	"display_name": "Whack",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 42,
+			"power": 42.0,
 			"type": "damage"
 		}
 	],
 	"id": "whack",
-	"mp_cost": 9,
-	"priority": 0,
+	"mp_cost": 9.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

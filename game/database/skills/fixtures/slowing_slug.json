@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "An attack that can decrease the target's AGI as it inflicts damage.",
 	"display_name": "Slowing Slug",
 	"effects": [
 		{
-			"stages": -1,
+			"stages": -1.0,
 			"stat_name": "agility",
 			"target_self": false,
 			"type": "stat_mod"
 		}
 	],
 	"id": "slowing_slug",
-	"mp_cost": 4,
-	"priority": 0,
+	"mp_cost": 4.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -21,6 +21,7 @@ func run(tree: SceneTree) -> bool:
 	var trait_db := TraitDatabase.new()
 
 	_check_relay_end_to_end(monster_db, skill_db, trait_db)
+	_check_forfeit_forwards_to_peer(monster_db, skill_db, trait_db)
 	await _check_disconnect_message(tree, monster_db, skill_db, trait_db)
 
 	if _all_passed:
@@ -112,6 +113,36 @@ func _check_relay_end_to_end(monster_db: MonsterDatabase, skill_db: SkillDatabas
 	_check("both controllers reach battle_ended purely via the relay path", controller_a.is_over() and controller_b.is_over())
 	_check("winner_side matches across both controllers", controller_a.get_state().winner_side == controller_b.get_state().winner_side)
 	_check("event logs are identical end-to-end through the real relay code path", log_a == log_b and not log_a.is_empty())
+
+## Forfeiting reuses BattleController's existing action_submitted plumbing
+## (the same mechanism submit_fight/submit_swap already forward through) --
+## this proves that reuse actually works end-to-end through a real relay,
+## not just that the signal fires.
+func _check_forfeit_forwards_to_peer(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Forfeit A", [["slime", ["attack"]]])
+	var team_b := _make_team("Forfeit B", [["golem", ["attack"]]])
+
+	var controller_a := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var controller_b := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+
+	var fake_a := FakeNetworkManager.new()
+	var fake_b := FakeNetworkManager.new()
+	fake_a.peer = fake_b
+	fake_b.peer = fake_a
+
+	# Kept in named vars, not discarded -- these are RefCounted, and with no
+	# reference held anywhere they'd be freed almost immediately, silently
+	# dropping the signal connections that make forwarding work at all.
+	var relay_a := NetworkBattleRelay.new(controller_a, fake_a, "side_a")
+	var relay_b := NetworkBattleRelay.new(controller_b, fake_b, "side_b")
+
+	# The side_a player forfeits on their own machine/controller.
+	controller_a.forfeit("side_a")
+
+	_check("forfeiting ends the forfeiting player's own controller immediately", controller_a.is_over())
+	_check("the forfeit is forwarded to the peer", fake_a.send_count == 1)
+	_check("the peer's controller also ends, crediting the same winner", controller_b.is_over() and controller_b.get_state().winner_side == "side_b")
+	_check("the peer's relay does not echo the forfeit back", fake_b.send_count == 0)
 
 func _check_disconnect_message(tree: SceneTree, monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
 	var team_a := _make_team("Disconnect A", [["slime", ["attack"]]])

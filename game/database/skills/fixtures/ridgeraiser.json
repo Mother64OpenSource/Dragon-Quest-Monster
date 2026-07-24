@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Rock-type does most damage to all enemies. Lasts for 1 Round.",
 	"display_name": "Ridgeraiser",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 195,
+			"power": 195.0,
 			"type": "damage"
 		}
 	],
 	"id": "ridgeraiser",
-	"mp_cost": 60,
-	"priority": 0,
+	"mp_cost": 60.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

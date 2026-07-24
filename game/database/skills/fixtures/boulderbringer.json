@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Rock-type does more damage to all enemies. Lasts for 1 Round",
 	"display_name": "Boulderbringer",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 51,
+			"power": 51.0,
 			"type": "damage"
 		}
 	],
 	"id": "boulderbringer",
-	"mp_cost": 12,
-	"priority": 0,
+	"mp_cost": 12.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

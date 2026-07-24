@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Zam-type does more damage to all enemies. Confirm weakness.",
 	"display_name": "Grand Nebula",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 435,
+			"power": 435.0,
 			"type": "damage"
 		}
 	],
 	"id": "grand_nebula",
-	"mp_cost": 140,
-	"priority": 0,
+	"mp_cost": 140.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

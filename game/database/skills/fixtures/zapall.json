@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Hits 1 enemy with strongest Zap-type attack using MP from all party members.",
 	"display_name": "Zapall",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 150,
+			"power": 150.0,
 			"type": "damage"
 		}
 	],
 	"id": "zapall",
-	"mp_cost": 45,
-	"priority": 0,
+	"mp_cost": 45.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

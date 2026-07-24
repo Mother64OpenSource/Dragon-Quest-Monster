@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Prevents all enemies from using certain abilities.",
 	"display_name": "Stop Attack",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 51,
+			"power": 51.0,
 			"type": "damage"
 		}
 	],
 	"id": "stop_attack",
-	"mp_cost": 12,
-	"priority": 0,
+	"mp_cost": 12.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

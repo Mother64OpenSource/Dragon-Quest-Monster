@@ -8,6 +8,7 @@ static func load_from_dict(data: Dictionary, status_registry: Dictionary) -> Ski
 	var skill := SkillData.new()
 	skill.id = data.get("id", "")
 	skill.display_name = data.get("display_name", skill.id)
+	skill.description = data.get("description", "")
 	skill.mp_cost = int(data.get("mp_cost", 0))
 	skill.priority = int(data.get("priority", 0))
 	skill.accuracy = float(data.get("accuracy", 1.0))

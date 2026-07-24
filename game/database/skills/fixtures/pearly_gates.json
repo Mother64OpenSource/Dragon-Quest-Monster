@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Smites all enemies with divinely powerful holy light.",
 	"display_name": "Pearly Gates",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 147,
+			"power": 147.0,
 			"type": "damage"
 		}
 	],
 	"id": "pearly_gates",
-	"mp_cost": 44,
-	"priority": 0,
+	"mp_cost": 44.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

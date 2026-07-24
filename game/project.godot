@@ -8,10 +8,6 @@
 
 config_version=5
 
-[autoload]
-
-Network="*res://net/network_manager.gd"
-
 [animation]
 
 compatibility/default_parent_skeleton_in_mesh_instance_3d=true
@@ -22,19 +18,23 @@ config/name="Dragon Quest Monster Showdown"
 run/main_scene="res://ui/team_builder/team_builder_screen.tscn"
 config/features=PackedStringArray("4.7")
 
+[autoload]
+
+Network="*res://net/network_manager.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
 gdscript/warnings/unsafe_method_access=1
 
-[gui]
-
-theme/custom="res://ui/theme.tres"
-
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/subwindows/embed_subwindows=false
+
+[gui]
+
+theme/custom="res://ui/theme.tres"

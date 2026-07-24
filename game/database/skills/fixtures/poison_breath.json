@@ -1,12 +1,18 @@
 {
-  "id": "poison_breath",
-  "display_name": "Poison Breath",
-  "mp_cost": 4,
-  "priority": 0,
-  "accuracy": 1.0,
-  "category": "status",
-  "target_type": "single_enemy",
-  "effects": [
-    { "type": "status", "status_id": "poison", "chance": 1.0, "target_self": false }
-  ]
+	"accuracy": 1.0,
+	"category": "status",
+	"description": "A toxic cloud that can poison all enemies.",
+	"display_name": "Poison Breath",
+	"effects": [
+		{
+			"chance": 1.0,
+			"status_id": "poison",
+			"target_self": false,
+			"type": "status"
+		}
+	],
+	"id": "poison_breath",
+	"mp_cost": 4.0,
+	"priority": 0.0,
+	"target_type": "single_enemy"
 }

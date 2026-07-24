@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Splits the earth, piercing all enemies with deadly rocks.",
 	"display_name": "Boulder Bash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 45,
+			"power": 45.0,
 			"type": "damage"
 		}
 	],
 	"id": "boulder_bash",
-	"mp_cost": 10,
-	"priority": 0,
+	"mp_cost": 10.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

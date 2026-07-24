@@ -1,9 +1,14 @@
 class_name NetworkSetupScreen
 extends Control
 
-## Host/Join UI for online 1v1 PvP over a direct ENet connection (see
-## game/net/network_manager.gd, the "Network" autoload). Each machine picks
-## its own locally-saved team; once both sides have exchanged team data and
+## Host/Join UI for online 1v1 PvP (see game/net/network_manager.gd, the
+## "Network" autoload) -- either a direct ENet connection (works on the same
+## LAN, needs the host to open a port for internet play) or a WebSocket
+## relay + room code (works over the real internet with no port-forwarding
+## on either side, at the cost of needing a small always-on relay server
+## somewhere -- see network_manager.gd's Mode enum and
+## game/net/relay_server_logic.gd). Each machine picks its own locally-saved
+## team; once both sides have exchanged team data and
 ## a shared seed (the host always generates and sends the seed), each peer
 ## independently builds both teams' MonsterInstance arrays via
 ## TeamToBattleBridge and launches its own BattleController -- kept in sync
@@ -50,6 +55,10 @@ var _relay: NetworkBattleRelay = null
 @onready var _ip_edit: LineEdit = $VBoxContainer/JoinSection/JoinIpRow/IpEdit
 @onready var _join_port_edit: LineEdit = $VBoxContainer/JoinSection/JoinPortRow/JoinPortEdit
 @onready var _join_button: Button = $VBoxContainer/JoinSection/JoinButton
+@onready var _relay_section: VBoxContainer = $VBoxContainer/RelaySection
+@onready var _relay_url_edit: LineEdit = $VBoxContainer/RelaySection/RelayUrlRow/RelayUrlEdit
+@onready var _relay_code_edit: LineEdit = $VBoxContainer/RelaySection/RelayCodeRow/RelayCodeEdit
+@onready var _relay_connect_button: Button = $VBoxContainer/RelaySection/RelayConnectButton
 @onready var _status_label: Label = $VBoxContainer/StatusLabel
 @onready var _team_pick_row: HBoxContainer = $VBoxContainer/TeamPickRow
 @onready var _team_option: OptionButton = $VBoxContainer/TeamPickRow/TeamOption
@@ -74,6 +83,7 @@ func _ready() -> void:
 
 	_host_button.pressed.connect(_on_host_pressed)
 	_join_button.pressed.connect(_on_join_pressed)
+	_relay_connect_button.pressed.connect(_on_relay_connect_pressed)
 	_ready_button.pressed.connect(_on_ready_pressed)
 	_back_button.pressed.connect(_on_back_pressed)
 
@@ -82,6 +92,7 @@ func _ready() -> void:
 	_network.opponent_disconnected.connect(_on_opponent_disconnected)
 	_network.team_received.connect(_on_team_received)
 	_network.seed_received.connect(_on_seed_received)
+	_network.relay_room_error.connect(_on_relay_room_error)
 
 	_team_pick_row.visible = false
 	_ready_button.visible = false
@@ -128,14 +139,35 @@ func _on_join_pressed() -> void:
 	_status_label.text = "Connecting to %s:%d..." % [ip, port]
 	_set_connect_controls_enabled(false)
 
+func _on_relay_connect_pressed() -> void:
+	var url := _relay_url_edit.text.strip_edges()
+	var code := _relay_code_edit.text.strip_edges()
+	if url.is_empty() or code.is_empty():
+		_status_label.text = "Enter both the relay address and a room code first."
+		return
+	var err := _network.join_via_relay(url, code)
+	if err != OK:
+		_status_label.text = "Couldn't reach the relay (error %d)." % err
+		return
+	_status_label.text = "Connecting to the relay..."
+	_set_connect_controls_enabled(false)
+
+func _on_relay_room_error(message: String) -> void:
+	_status_label.text = message
+	_set_connect_controls_enabled(true)
+
 func _set_connect_controls_enabled(enabled: bool) -> void:
 	_host_section.modulate.a = 1.0 if enabled else 0.5
 	_join_section.modulate.a = 1.0 if enabled else 0.5
+	_relay_section.modulate.a = 1.0 if enabled else 0.5
 	_host_button.disabled = not enabled
 	_join_button.disabled = not enabled
+	_relay_connect_button.disabled = not enabled
 	_port_edit.editable = enabled
 	_ip_edit.editable = enabled
 	_join_port_edit.editable = enabled
+	_relay_url_edit.editable = enabled
+	_relay_code_edit.editable = enabled
 
 func _on_connection_established() -> void:
 	if _teams.is_empty():

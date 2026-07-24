@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Whistle continuously for some rounds healing allies' HP.",
 	"display_name": "Requiem of Restoration",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 105,
+			"power": 105.0,
 			"type": "damage"
 		}
 	],
 	"id": "requiem_of_restoration",
-	"mp_cost": 30,
-	"priority": 0,
+	"mp_cost": 30.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

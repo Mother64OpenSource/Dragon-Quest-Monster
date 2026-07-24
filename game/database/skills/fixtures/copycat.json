@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "At the end of the turn, the user will copy any and all attacks they are hit by and direct them towards the enemies. Certain attacks cannot be copied. (ART)",
 	"display_name": "Copycat",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 207,
+			"power": 207.0,
 			"type": "damage"
 		}
 	],
 	"id": "copycat",
-	"mp_cost": 64,
-	"priority": 0,
+	"mp_cost": 64.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

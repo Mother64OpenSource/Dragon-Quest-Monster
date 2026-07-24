@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/battle/battle_audio.gd" id="1"]
+
+[node name="BattleAudio" type="Node"]
+script = ExtResource("1")
+
+[node name="AttackPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="HitPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="FaintPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MenuSelectPlayer" type="AudioStreamPlayer" parent="."]

@@ -2,7 +2,7 @@
 	"available_skill_sets": [
 		"diamond_slime",
 		"slimer",
-		"aquapothecary"
+		"guard"
 	],
 	"base_agility": 1050.0,
 	"base_attack": 650.0,

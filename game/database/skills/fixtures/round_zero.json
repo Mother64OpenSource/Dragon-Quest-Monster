@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Cancels all commands, and ends the round. Can only use once per battle.",
 	"display_name": "Round Zero",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 159,
+			"power": 159.0,
 			"type": "damage"
 		}
 	],
 	"id": "round_zero",
-	"mp_cost": 48,
-	"priority": 0,
+	"mp_cost": 48.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

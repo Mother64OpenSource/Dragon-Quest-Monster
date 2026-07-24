@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Seals fire, ice and other breath attacks of a single enemy.",
 	"display_name": "Gobstopper",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "gobstopper",
-	"mp_cost": 6,
-	"priority": 0,
+	"mp_cost": 6.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

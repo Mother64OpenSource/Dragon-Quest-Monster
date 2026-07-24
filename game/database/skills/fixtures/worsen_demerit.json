@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Spell doubles effect of all enemies' status effects.",
 	"display_name": "Worsen Demerit",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 255,
+			"power": 255.0,
 			"type": "damage"
 		}
 	],
 	"id": "worsen_demerit",
-	"mp_cost": 80,
-	"priority": 0,
+	"mp_cost": 80.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Damages a single enemy. Uses a fraction of the user's MP. Causes large damage to an enemy at random.",
 	"display_name": "Cursed Hammer",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 15,
+			"power": 15.0,
 			"type": "damage"
 		}
 	],
 	"id": "cursed_hammer",
-	"mp_cost": 0,
-	"priority": 0,
+	"mp_cost": 0.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

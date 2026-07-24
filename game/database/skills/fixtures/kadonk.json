@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Reduces all enemies' HP by 1／8.",
 	"display_name": "Kadonk",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 111,
+			"power": 111.0,
 			"type": "damage"
 		}
 	],
 	"id": "kadonk",
-	"mp_cost": 32,
-	"priority": 0,
+	"mp_cost": 32.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

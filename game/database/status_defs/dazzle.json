@@ -1,15 +1,13 @@
 {
 	"display_name": "Dazzle",
+	"description": "Sharply reduces the afflicted monster's accuracy with physical attacks.",
+	"icon_path": "res://assets/status/dazzle.png",
 	"duration_turns": 3,
 	"id": "dazzle",
 	"skip_turn_chance": 0.0,
-	"stat_mods_on_apply": [
-		{
-			"chance": 1.0,
-			"stages": -1,
-			"stat_name": "agility",
-			"target_self": true
-		}
-	],
+	"blocked_skill_category": "",
+	"accuracy_multiplier": 0.5,
+	"wakes_on_damage": false,
+	"stat_mods_on_apply": [],
 	"tick_damage_percent": 0.0
 }

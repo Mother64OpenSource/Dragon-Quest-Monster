@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "Restores around 95 HP to all allies.",
 	"display_name": "Multiheal",
 	"effects": [
 		{
-			"power": 495,
+			"power": 495.0,
 			"target_self": true,
 			"type": "heal"
 		}
 	],
 	"id": "multiheal",
-	"mp_cost": 60,
-	"priority": 0,
+	"mp_cost": 60.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

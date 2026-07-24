@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Can counter all slash attacks when an enemy does one.",
 	"display_name": "Counter Slash",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 111,
+			"power": 111.0,
 			"type": "damage"
 		}
 	],
 	"id": "counter_slash",
-	"mp_cost": 32,
-	"priority": 0,
+	"mp_cost": 32.0,
+	"priority": 0.0,
 	"target_type": "self"
 }

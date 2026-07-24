@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Steals Tension from one enemy to increase user's own Tension.",
 	"display_name": "Tame Tiger",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 39,
+			"power": 39.0,
 			"type": "damage"
 		}
 	],
 	"id": "tame_tiger",
-	"mp_cost": 8,
-	"priority": 0,
+	"mp_cost": 8.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

@@ -1,6 +1,7 @@
 {
 	"accuracy": 1.0,
 	"category": "status",
+	"description": "An attack that can poison its target as it inflicts damage.",
 	"display_name": "Poisonous Poke",
 	"effects": [
 		{
@@ -11,7 +12,7 @@
 		}
 	],
 	"id": "poisonous_poke",
-	"mp_cost": 2,
-	"priority": 0,
+	"mp_cost": 2.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

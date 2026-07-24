@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "magic",
+	"description": "Reveals information about an enemy's attributes.",
 	"display_name": "Aha",
 	"effects": [
 		{
 			"category": "magic",
-			"power": 21,
+			"power": 21.0,
 			"type": "damage"
 		}
 	],
 	"id": "aha",
-	"mp_cost": 2,
-	"priority": 0,
+	"mp_cost": 2.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }

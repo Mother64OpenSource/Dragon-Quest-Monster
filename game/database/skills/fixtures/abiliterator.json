@@ -1,16 +1,17 @@
 {
 	"accuracy": 1.0,
 	"category": "physical",
+	"description": "Prevents a single enemy from using certain abilities.",
 	"display_name": "Abiliterator",
 	"effects": [
 		{
 			"category": "physical",
-			"power": 33,
+			"power": 33.0,
 			"type": "damage"
 		}
 	],
 	"id": "abiliterator",
-	"mp_cost": 6,
-	"priority": 0,
+	"mp_cost": 6.0,
+	"priority": 0.0,
 	"target_type": "single_enemy"
 }
