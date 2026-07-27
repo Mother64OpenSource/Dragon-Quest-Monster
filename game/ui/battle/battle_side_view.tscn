@@ -59,11 +59,6 @@ layout_mode = 2
 [node name="HeaderRow" type="HBoxContainer" parent="Root/MainColumn/Battlefield/MarginContainer/VBox"]
 layout_mode = 2
 
-[node name="HomeButton" type="Button" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow"]
-layout_mode = 2
-tooltip_text = "Return to Home (the battle keeps going in the background)"
-text = "Home"
-
 [node name="BattlefieldHeader" type="Label" parent="Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow"]
 layout_mode = 2
 size_flags_horizontal = 3

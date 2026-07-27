@@ -50,14 +50,11 @@ extends Control
 ## Emitted by the result panel's own Back button, once the battle is
 ## actually over (win/lose/forfeit/disconnect all funnel through the same
 ## panel) -- whoever hosts this view (a MainShell tab today) should
-## close/free it entirely, not this screen itself.
+## close/free it entirely, not this screen itself. Switching back to Home
+## mid-battle needs no button/signal of its own here -- the host's own tab
+## strip already does that non-destructively (click the Home tab), the
+## same way Showdown's own battle rooms work.
 signal close_requested()
-## Emitted by the always-visible header "Home" button -- available the
-## whole time a battle is in progress, not just after it ends. Distinct
-## from close_requested: this means "switch away, but the battle keeps
-## running in the background," the same non-destructive thing clicking the
-## Home TAB itself would do, not "end/remove this battle."
-signal home_requested()
 
 const CARD_BASE_WIDTH := 140
 
@@ -82,7 +79,6 @@ var _pending_skill_id: String = ""
 var _staged_active_ids: Array[int] = []
 
 @onready var _opponent_panel_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/OpponentPanel
-@onready var _home_button: Button = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/HomeButton
 @onready var _battlefield_header: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/BattlefieldHeader
 @onready var _arena: BattleArena3D = $Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport/Arena
 @onready var _turn_counter_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/TurnCounterLabel
@@ -109,7 +105,6 @@ var _staged_active_ids: Array[int] = []
 
 func _ready() -> void:
 	_result_panel.visible = false
-	_home_button.pressed.connect(_on_home_pressed)
 	_back_button.pressed.connect(_on_back_pressed)
 	_fight_button.pressed.connect(_on_fight_pressed)
 	_defend_button.pressed.connect(_on_defend_pressed)
@@ -747,9 +742,6 @@ func show_disconnect_message(text: String) -> void:
 
 func _on_back_pressed() -> void:
 	close_requested.emit()
-
-func _on_home_pressed() -> void:
-	home_requested.emit()
 
 func _describe_event(event: BattleEvent) -> String:
 	if event is SkillUsedEvent:

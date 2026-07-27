@@ -74,18 +74,17 @@ func _close_tab_at(index: int) -> void:
 
 ## BattleSideView is handed over already fully set up (see
 ## BattleSetupScreen._on_start_pressed) -- this just gives it a tab and
-## switches to it, same as any other page. Two distinct signals from the
-## view itself: home_requested (its always-visible header button) just
-## switches back to Home, same as clicking the Home tab -- the battle tab
-## stays open, still running, exactly like a Showdown battle room does
-## while you're looking at Home. close_requested (the result panel's own
-## Back button, once the battle is actually over) really does close the tab.
+## switches to it, same as any other page. Switching back to Home mid-
+## battle needs no signal from the view itself -- clicking the Home tab in
+## the strip already does that non-destructively (just toggles which page
+## is visible, doesn't touch this one), exactly like a Showdown battle
+## room keeps running while you're looking at Home. close_requested (the
+## result panel's own Back button, once the battle is actually over) is
+## the one signal that really does close the tab.
 func _on_home_battle_launched(view: Control, tab_title: String) -> void:
 	_add_page(tab_title, view)
 	if view.has_signal("close_requested"):
 		view.close_requested.connect(_on_battle_tab_close_requested.bind(view))
-	if view.has_signal("home_requested"):
-		view.home_requested.connect(_select_tab.bind(0))
 
 func _on_battle_tab_close_requested(view: Control) -> void:
 	var index := _pages.find(view)
