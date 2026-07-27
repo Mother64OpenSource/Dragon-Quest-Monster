@@ -5,6 +5,8 @@ extends Control
 ## the two cross-panel signals. Owns no team-mutation logic itself — that
 ## all lives in the panel that owns the concern (see the M3 plan).
 
+const BattleSetupScreenScene := preload("res://ui/battle/battle_setup_screen.tscn")
+
 ## Test seam: set before add_child() (i.e. before _ready() fires) to point
 ## the roster at an isolated directory instead of the real user://teams/.
 ## Empty string (the default) uses TeamRosterManager's own default.
@@ -81,8 +83,17 @@ func _on_team_selected(team_id: String) -> void:
 func _on_team_updated(_team: SavedTeam) -> void:
 	_team_list_panel.refresh_list()
 
+## Added as an overlay on top of this screen (not a scene change) so this
+## screen stays alive and visible, dimmed, underneath -- Back just frees the
+## overlay and we're right back here; Start Battle frees this screen too
+## (see _on_overlay_battle_started), since there's no coming back from that.
 func _on_battle_pressed() -> void:
-	get_tree().change_scene_to_file("res://ui/battle/battle_setup_screen.tscn")
+	var overlay: BattleSetupScreen = BattleSetupScreenScene.instantiate()
+	add_child(overlay)
+	overlay.battle_started.connect(_on_overlay_battle_started)
+
+func _on_overlay_battle_started() -> void:
+	queue_free()
 
 func _on_online_battle_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/online/network_setup_screen.tscn")

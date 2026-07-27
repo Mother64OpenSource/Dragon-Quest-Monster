@@ -5,6 +5,18 @@ extends Control
 ## window becomes side_a's view, and a second real OS Window is spawned for
 ## side_b -- one process, one BattleController shared by both, no
 ## networking involved.
+##
+## Instantiated as an overlay ON TOP of whatever screen requested it (see
+## TeamBuilderScreen._on_battle_pressed) rather than via change_scene_to_file
+## -- DimBackground is the only "background" this scene draws, so the
+## screen underneath stays alive and visible, just dimmed, and Back can
+## return to it instantly without a scene reload.
+
+signal back_requested()
+## Emitted right before this screen commits to actually launching a battle
+## -- the caller's own screen (e.g. TeamBuilderScreen) should free itself
+## at that point, since there's no "back" from a battle already starting.
+signal battle_started()
 
 const BattleSideViewScene := preload("res://ui/battle/battle_side_view.tscn")
 
@@ -15,10 +27,11 @@ var trait_db: TraitDatabase
 
 var _teams: Array[SavedTeam] = []
 
-@onready var _team_a_option: OptionButton = $VBoxContainer/TeamARow/TeamAOption
-@onready var _team_b_option: OptionButton = $VBoxContainer/TeamBRow/TeamBOption
-@onready var _start_button: Button = $VBoxContainer/StartButton
-@onready var _error_label: Label = $VBoxContainer/ErrorLabel
+@onready var _team_a_option: OptionButton = $CenterContainer/Panel/VBoxContainer/TeamARow/TeamAOption
+@onready var _team_b_option: OptionButton = $CenterContainer/Panel/VBoxContainer/TeamBRow/TeamBOption
+@onready var _back_button: Button = $CenterContainer/Panel/VBoxContainer/ButtonsRow/BackButton
+@onready var _start_button: Button = $CenterContainer/Panel/VBoxContainer/ButtonsRow/StartButton
+@onready var _error_label: Label = $CenterContainer/Panel/VBoxContainer/ErrorLabel
 
 func _ready() -> void:
 	roster = TeamRosterManager.new()
@@ -32,8 +45,13 @@ func _ready() -> void:
 
 	_team_a_option.item_selected.connect(_on_selection_changed)
 	_team_b_option.item_selected.connect(_on_selection_changed)
+	_back_button.pressed.connect(_on_back_pressed)
 	_start_button.pressed.connect(_on_start_pressed)
 	_update_start_enabled()
+
+func _on_back_pressed() -> void:
+	back_requested.emit()
+	queue_free()
 
 func _populate_option(option: OptionButton) -> void:
 	option.clear()
@@ -70,6 +88,8 @@ func _on_start_pressed() -> void:
 	if instances_a.is_empty() or instances_b.is_empty():
 		_error_label.text = "Couldn't build one of the teams (unknown species?)."
 		return
+
+	battle_started.emit()
 
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
