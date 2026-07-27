@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Agility +10.",
+	"display_name": "AGI +10",
+	"flat_bonus": 10,
+	"id": "agi_10",
+	"materials_text": "5x Slimedrop, 5x Butterfly Wing, 5x Slipleaf",
+	"stat_name": "agility"
+}

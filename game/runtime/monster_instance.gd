@@ -24,6 +24,11 @@ var has_been_processed_as_fainted: bool = false
 ## time (TeamRosterManager.validate_member), not here.
 var equipped_weapon: WeaponData = null
 
+## Resolved STAT_BOOST BlacksmithItemData this monster has crafted (see
+## TeamToBattleBridge.build_team) -- permanent, unlike equipped_weapon,
+## and there can be more than one (e.g. both an ATK and a DEF boost).
+var crafted_stat_boosts: Array[BlacksmithItemData] = []
+
 ## Tension: a one-directional escalating counter (0-4), not a StatStages-style
 ## symmetric stage -- each level boosts this monster's own next damage-
 ## dealing action, then resets to 0 (see DamageEffect.apply()).
@@ -71,13 +76,13 @@ func _get_base_stat(stat_name: String) -> int:
 	match stat_name:
 		"attack":
 			var weapon_bonus := equipped_weapon.base_attack if equipped_weapon != null else 0
-			return species.base_attack + weapon_bonus
+			return species.base_attack + weapon_bonus + _crafted_flat_bonus("attack")
 		"defense":
-			return _with_weapon_stat_bonus(species.base_defense, "defense")
+			return _with_weapon_stat_bonus(species.base_defense, "defense") + _crafted_flat_bonus("defense")
 		"agility":
-			return _with_weapon_stat_bonus(species.base_agility, "agility")
+			return _with_weapon_stat_bonus(species.base_agility, "agility") + _crafted_flat_bonus("agility")
 		"wisdom":
-			return _with_weapon_stat_bonus(species.base_wisdom, "wisdom")
+			return _with_weapon_stat_bonus(species.base_wisdom, "wisdom") + _crafted_flat_bonus("wisdom")
 		_:
 			push_error("Unknown stat name: %s" % stat_name)
 			return 0
@@ -90,3 +95,12 @@ func _with_weapon_stat_bonus(base_value: int, stat_name: String) -> int:
 		return base_value
 	var percent: float = equipped_weapon.bonus_stats[stat_name]
 	return base_value + MathUtils.round_half_up(float(base_value) * percent)
+
+## Blacksmith stat-boost items are a real flat number from the source text
+## (unlike weapons' invented percentages) -- summed if more than one applies.
+func _crafted_flat_bonus(stat_name: String) -> int:
+	var total := 0
+	for item in crafted_stat_boosts:
+		if item.stat_name == stat_name:
+			total += item.flat_bonus
+	return total

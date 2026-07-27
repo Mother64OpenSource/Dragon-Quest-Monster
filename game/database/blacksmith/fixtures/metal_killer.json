@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Increase damage to Metal-types. But has no effect on those who have skills that do that.",
+	"display_name": "Metal Killer",
+	"granted_trait_id": "metal_killer",
+	"id": "metal_killer",
+	"materials_text": "3x Orichalcum, 5x Heavy Metal, 5x Gold Stone"
+}

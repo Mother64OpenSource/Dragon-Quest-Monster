@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Nullifies effect of \"Dodgy Dance\" used by enemies. But has no effect on those who already half anti-dodge skills.",
+	"display_name": "Fly Swatter",
+	"granted_trait_id": "fly_swatter",
+	"id": "fly_swatter",
+	"materials_text": "5x Sharp Fang, 5x Bat Wing, 5x Big Cactus"
+}

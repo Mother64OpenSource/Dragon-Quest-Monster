@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Defense +40.",
+	"display_name": "DEF +40",
+	"flat_bonus": 40,
+	"id": "def_40",
+	"materials_text": "5x Large Carapace, 5x Werebeast Leather, 5x Thick Fur",
+	"stat_name": "defense"
+}

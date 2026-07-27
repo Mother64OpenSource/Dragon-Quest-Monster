@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Attack +5.",
+	"display_name": "ATK +5",
+	"flat_bonus": 5,
+	"id": "atk_5",
+	"materials_text": "1x Punchshroom",
+	"stat_name": "attack"
+}

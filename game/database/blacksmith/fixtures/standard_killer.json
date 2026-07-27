@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Increase damage to Small Body from Standby Party. But has no effect on those who have skills that do that.",
+	"display_name": "Standard Killer",
+	"granted_trait_id": "standard_killer",
+	"id": "standard_killer",
+	"materials_text": "3x Black Pearl, 5x Finessence, 5x Sturdy Walnut"
+}

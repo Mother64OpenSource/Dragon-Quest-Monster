@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Defense +10.",
+	"display_name": "DEF +10",
+	"flat_bonus": 10,
+	"id": "def_10",
+	"materials_text": "1x Tiny Carapace",
+	"stat_name": "defense"
+}

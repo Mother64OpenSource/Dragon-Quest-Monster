@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Attack +30.",
+	"display_name": "ATK +30",
+	"flat_bonus": 30,
+	"id": "atk_30",
+	"materials_text": "3x Red Gem, 5x Dragon's Horn, 5x Punchshroom",
+	"stat_name": "attack"
+}

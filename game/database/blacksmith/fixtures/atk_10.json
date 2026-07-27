@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Attack +10.",
+	"display_name": "ATK +10",
+	"flat_bonus": 10,
+	"id": "atk_10",
+	"materials_text": "5x Big Cactus, 5x Iron Ore, 5x Punchshroom",
+	"stat_name": "attack"
+}

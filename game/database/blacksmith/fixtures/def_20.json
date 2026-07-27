@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Defense +20.",
+	"display_name": "DEF +20",
+	"flat_bonus": 20,
+	"id": "def_20",
+	"materials_text": "5x Tiny Carapace, 5x Sharp Claws, 5x Thick Fur",
+	"stat_name": "defense"
+}

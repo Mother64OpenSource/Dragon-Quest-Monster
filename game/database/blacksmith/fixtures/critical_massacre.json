@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Doubles critical attack rate. But has no effect on those who have skills that do that.",
+	"display_name": "Critical Massacre",
+	"granted_trait_id": "critical_massacre",
+	"id": "critical_massacre",
+	"materials_text": "3x Lightning Orb, 5x Finessence, 5x Punchshroom"
+}

@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Wisdom +40.",
+	"display_name": "WIS +40",
+	"flat_bonus": 40,
+	"id": "wis_40",
+	"materials_text": "5x Large Shell, 5x Enchanted Soil, 5x Wiseleaf",
+	"stat_name": "wisdom"
+}

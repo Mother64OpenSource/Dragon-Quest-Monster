@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Wisdom +20.",
+	"display_name": "WIS +20",
+	"flat_bonus": 20,
+	"id": "wis_20",
+	"materials_text": "5x Small Shell, 5x Mirror Stone, 5x Wiseleaf",
+	"stat_name": "wisdom"
+}

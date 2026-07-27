@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Wisdom +10.",
+	"display_name": "WIS +10",
+	"flat_bonus": 10,
+	"id": "wis_10",
+	"materials_text": "1x Wiseleaf",
+	"stat_name": "wisdom"
+}

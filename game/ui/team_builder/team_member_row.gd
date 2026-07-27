@@ -30,6 +30,7 @@ var _skill_db: SkillDatabase
 var _skillset_db: SkillSetDatabase
 var _trait_db: TraitDatabase
 var _weapon_db: WeaponDatabase
+var _blacksmith_db: BlacksmithDatabase
 ## Parallel to _weapon_button's item list ("" for the leading "No Weapon"
 ## entry) -- OptionButton has no built-in way to stash an arbitrary id per
 ## item, so item index -> weapon id is tracked here instead.
@@ -42,8 +43,10 @@ var _weapon_button_ids: Array[String] = []
 @onready var _skills_box: HBoxContainer = $Layout/SkillsBox
 @onready var _skills_button: Button = $Layout/SkillsButton
 @onready var _weapon_button: OptionButton = $Layout/WeaponButton
+@onready var _blacksmith_button: Button = $Layout/BlacksmithButton
 @onready var _remove_button: Button = $Layout/IconRow/RemoveButton
 @onready var _skill_point_dialog: SkillPointDialog = $SkillPointDialog
+@onready var _blacksmith_dialog: BlacksmithDialog = $BlacksmithDialog
 
 func _ready() -> void:
 	_nickname_edit.text_submitted.connect(_on_nickname_submitted)
@@ -52,14 +55,17 @@ func _ready() -> void:
 	_skills_button.pressed.connect(_on_skills_pressed)
 	_skill_point_dialog.allocation_changed.connect(_on_allocation_changed)
 	_weapon_button.item_selected.connect(_on_weapon_selected)
+	_blacksmith_button.pressed.connect(_on_blacksmith_pressed)
+	_blacksmith_dialog.items_changed.connect(_on_blacksmith_items_changed)
 
-func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase, trait_db: TraitDatabase, weapon_db: WeaponDatabase = null) -> void:
+func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase, trait_db: TraitDatabase, weapon_db: WeaponDatabase = null, blacksmith_db: BlacksmithDatabase = null) -> void:
 	loadout = p_loadout
 	member_index = p_index
 	_skill_db = skill_db
 	_skillset_db = skillset_db
 	_trait_db = trait_db
 	_weapon_db = weapon_db
+	_blacksmith_db = blacksmith_db
 	_species = monster_db.get_species(loadout.species_id)
 
 	_nickname_edit.text = loadout.nickname
@@ -76,6 +82,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		_skills_button.visible = false
 		_skills_box.visible = true
 		_weapon_button.visible = false
+		_blacksmith_button.visible = false
 		_build_unknown_species_label()
 		return
 
@@ -87,6 +94,8 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 	_skills_button.visible = true
 	_update_skills_button_text()
 	_update_weapon_button()
+	_blacksmith_button.visible = _blacksmith_db != null
+	_update_blacksmith_button_text()
 
 ## Comma-joined names (clipped to one line, matching _species_label's own
 ## convention) with a composed "Name: description" tooltip per trait joined
@@ -158,6 +167,16 @@ func _on_weapon_selected(index: int) -> void:
 	if loadout.equipped_weapon_id == weapon_id:
 		return
 	loadout.equipped_weapon_id = weapon_id
+	loadout_edited.emit()
+
+func _update_blacksmith_button_text() -> void:
+	_blacksmith_button.text = "Blacksmith (%d)" % loadout.crafted_blacksmith_ids.size()
+
+func _on_blacksmith_pressed() -> void:
+	_blacksmith_dialog.show_for(loadout, _species, _blacksmith_db)
+
+func _on_blacksmith_items_changed() -> void:
+	_update_blacksmith_button_text()
 	loadout_edited.emit()
 
 func _on_skills_pressed() -> void:

@@ -73,6 +73,7 @@ func run() -> bool:
 	_check_tension_family_reexamined_mechanics()
 	_check_weapon_equip_mechanics()
 	_check_weapon_effects_mechanics()
+	_check_blacksmith_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -2397,6 +2398,105 @@ func _check_weapon_effects_mechanics() -> void:
 	_check(
 		"without a lifesteal weapon equipped, the same attack doesn't heal the attacker",
 		no_lifesteal_actor.current_hp == 1
+	)
+
+## Covers BlacksmithDatabase loading, the flat stat-boost summing on
+## MonsterInstance, and the TeamToBattleBridge resolution of both
+## STAT_BOOST and TRAIT_GRANT items -- including the dedup rule ("has no
+## effect on those who already have that bonus") using real fixture data:
+## Slime already carries critical_massacre innately, Golem does not carry
+## artful_dodger.
+func _check_blacksmith_mechanics() -> void:
+	var blacksmith_db := BlacksmithDatabase.new()
+	_check("BlacksmithDatabase loads all 25 wired items", blacksmith_db.get_all_items().size() == 25)
+
+	var atk_20 := blacksmith_db.get_item("atk_20")
+	var def_40 := blacksmith_db.get_item("def_40")
+	_check("atk_20 is a stat_boost of +20 attack", atk_20.category == BlacksmithItemData.Category.STAT_BOOST and atk_20.stat_name == "attack" and atk_20.flat_bonus == 20)
+
+	# --- pure stat-boost summing on MonsterInstance ---
+	var team_builder := TeamBuilder.new()
+	var boosted_slime := team_builder.build_team(["slime"], "side_a")[0]
+	var baseline_attack := boosted_slime.get_effective_stat("attack")
+	boosted_slime.crafted_stat_boosts = [atk_20]
+	_check("a single crafted ATK+20 raises effective attack by exactly 20", boosted_slime.get_effective_stat("attack") == baseline_attack + 20)
+
+	var double_boosted_slime := team_builder.build_team(["slime"], "side_a")[0]
+	var baseline_defense := double_boosted_slime.get_effective_stat("defense")
+	double_boosted_slime.crafted_stat_boosts = [atk_20, def_40]
+	_check(
+		"multiple crafted stat boosts each apply to their own stat independently",
+		double_boosted_slime.get_effective_stat("attack") == baseline_attack + 20
+		and double_boosted_slime.get_effective_stat("defense") == baseline_defense + 40
+	)
+
+	# --- TeamToBattleBridge integration ---
+	var monster_db := MonsterDatabase.new()
+	var skill_db := SkillDatabase.new()
+	var trait_db := TraitDatabase.new()
+
+	var stat_loadout := MonsterLoadout.new()
+	stat_loadout.species_id = "slime"
+	stat_loadout.equipped_skill_ids = ["attack"]
+	stat_loadout.crafted_blacksmith_ids = ["atk_20", "def_40"]
+	var stat_saved_team := SavedTeam.new()
+	stat_saved_team.members = [stat_loadout]
+	var stat_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	_check(
+		"TeamToBattleBridge resolves crafted stat-boost ids into real BlacksmithItemData on the instance",
+		stat_bridged.crafted_stat_boosts.size() == 2 and stat_bridged.get_effective_stat("attack") == stat_bridged.species.base_attack + 20
+	)
+
+	# Golem does not innately carry artful_dodger -- granting it should add a
+	# real, functioning trait effect.
+	var new_trait_loadout := MonsterLoadout.new()
+	new_trait_loadout.species_id = "golem"
+	new_trait_loadout.equipped_skill_ids = ["attack"]
+	new_trait_loadout.crafted_blacksmith_ids = ["artful_dodger"]
+	var new_trait_saved_team := SavedTeam.new()
+	new_trait_saved_team.members = [new_trait_loadout]
+	var new_trait_bridged := TeamToBattleBridge.build_team(new_trait_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	var golem_species := monster_db.get_species("golem")
+	_check("Golem's own species fixture doesn't innately carry artful_dodger (sanity check)", not golem_species.starting_trait_ids.has("artful_dodger"))
+	_check(
+		"granting artful_dodger to a Golem (which lacks it innately) adds a real ChanceBasedDamageNegationTraitEffect",
+		new_trait_bridged.active_traits.size() == golem_species.starting_trait_ids.size() + 1
+		and new_trait_bridged.active_traits.any(func(t): return t.trait_data != null and t.trait_data.id == "artful_dodger")
+	)
+
+	# Slime already innately carries critical_massacre -- granting it again
+	# must be a no-op per the source text's own "has no effect on those who
+	# already have that bonus" caveat, not a stacked duplicate.
+	var dup_trait_loadout := MonsterLoadout.new()
+	dup_trait_loadout.species_id = "slime"
+	dup_trait_loadout.equipped_skill_ids = ["attack"]
+	dup_trait_loadout.crafted_blacksmith_ids = ["critical_massacre"]
+	var dup_trait_saved_team := SavedTeam.new()
+	dup_trait_saved_team.members = [dup_trait_loadout]
+	var dup_trait_bridged := TeamToBattleBridge.build_team(dup_trait_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	var slime_species := monster_db.get_species("slime")
+	_check("Slime's own species fixture already innately carries critical_massacre (sanity check)", slime_species.starting_trait_ids.has("critical_massacre"))
+	_check(
+		"crafting critical_massacre onto a Slime that already has it innately is a no-op, not a stacked duplicate",
+		dup_trait_bridged.active_traits.size() == slime_species.starting_trait_ids.size()
+	)
+
+	# Backward compatibility: omitting blacksmith_db entirely.
+	var no_blacksmith_db_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	_check("omitting blacksmith_db from build_team leaves crafted_stat_boosts empty (backward compatible)", no_blacksmith_db_bridged.crafted_stat_boosts.is_empty())
+
+	# --- TeamRosterManager validation ---
+	var roster := TeamRosterManager.new("user://test_teams_blacksmith_battle_runner/")
+	var unknown_item_loadout := MonsterLoadout.new()
+	unknown_item_loadout.species_id = "slime"
+	unknown_item_loadout.crafted_blacksmith_ids = ["nonexistent_item"]
+	_check(
+		"unknown crafted_blacksmith_ids entry is flagged when a blacksmith_db is supplied",
+		roster.validate_member(unknown_item_loadout, monster_db, SkillSetDatabase.new(), null, blacksmith_db).size() == 1
+	)
+	_check(
+		"the same unknown item is unflagged when blacksmith_db is omitted (backward compatible)",
+		roster.validate_member(unknown_item_loadout, monster_db, SkillSetDatabase.new()).is_empty()
 	)
 
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,

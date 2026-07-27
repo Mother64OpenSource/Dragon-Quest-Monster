@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Defense +60.",
+	"display_name": "DEF +60",
+	"flat_bonus": 60,
+	"id": "def_60",
+	"materials_text": "3x Yellow Gem, 5x Dragon Leather, 5x Thick Fur",
+	"stat_name": "defense"
+}

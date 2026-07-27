@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Reduce MP consumption to 3/4. But has no effect on those who have skills that do that.",
+	"display_name": "Magic Miser",
+	"granted_trait_id": "magic_miser",
+	"id": "magic_miser",
+	"materials_text": "3x Saint's Stone, 5x Enchanted Soil, 5x Flower Nectar"
+}

@@ -8,6 +8,7 @@ static func load_from_dict(data: Dictionary) -> MonsterLoadout:
 	loadout.equipped_skill_ids = _to_string_array(data.get("equipped_skill_ids", []))
 	loadout.skill_point_allocation = _to_int_dict(data.get("skill_point_allocation", {}))
 	loadout.equipped_weapon_id = data.get("equipped_weapon_id", "")
+	loadout.crafted_blacksmith_ids = _to_string_array(data.get("crafted_blacksmith_ids", []))
 	return loadout
 
 static func to_dict(loadout: MonsterLoadout) -> Dictionary:
@@ -17,6 +18,7 @@ static func to_dict(loadout: MonsterLoadout) -> Dictionary:
 		"equipped_skill_ids": loadout.equipped_skill_ids.duplicate(),
 		"skill_point_allocation": loadout.skill_point_allocation.duplicate(),
 		"equipped_weapon_id": loadout.equipped_weapon_id,
+		"crafted_blacksmith_ids": loadout.crafted_blacksmith_ids.duplicate(),
 	}
 
 ## Constructs a fresh, independent MonsterLoadout with the same field values —
@@ -29,6 +31,7 @@ static func duplicate_loadout(loadout: MonsterLoadout) -> MonsterLoadout:
 	copy.equipped_skill_ids = loadout.equipped_skill_ids.duplicate()
 	copy.skill_point_allocation = loadout.skill_point_allocation.duplicate()
 	copy.equipped_weapon_id = loadout.equipped_weapon_id
+	copy.crafted_blacksmith_ids = loadout.crafted_blacksmith_ids.duplicate()
 	return copy
 
 static func _to_string_array(raw: Array) -> Array[String]:

@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Agility +30.",
+	"display_name": "AGI +30",
+	"flat_bonus": 30,
+	"id": "agi_30",
+	"materials_text": "3x Green Gem, 5x Windcutting Wing, 5x Slipleaf",
+	"stat_name": "agility"
+}

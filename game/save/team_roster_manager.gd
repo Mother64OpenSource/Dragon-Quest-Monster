@@ -128,10 +128,11 @@ static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpec
 				result.append(skill_id)
 	return result
 
-## Empty result means the loadout is valid. weapon_db is optional (default
-## null, backward compatible with every existing call site) -- when omitted,
-## equipped_weapon_id goes unchecked, same as before this field existed.
-func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase, weapon_db: WeaponDatabase = null) -> Array[String]:
+## Empty result means the loadout is valid. weapon_db/blacksmith_db are both
+## optional (default null, backward compatible with every existing call
+## site) -- when omitted, the corresponding field goes unchecked, same as
+## before each field existed.
+func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase, weapon_db: WeaponDatabase = null, blacksmith_db: BlacksmithDatabase = null) -> Array[String]:
 	var errors: Array[String] = []
 	var species := monster_db.get_species(loadout.species_id)
 	if species == null:
@@ -155,6 +156,11 @@ func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skill
 			errors.append("Unknown weapon id: %s" % loadout.equipped_weapon_id)
 		elif not MonsterEquipmentRules.can_equip(species, weapon):
 			errors.append("'%s' cannot equip %s (%s)" % [loadout.species_id, weapon.display_name, WeaponLoader.type_to_string(weapon.weapon_type)])
+
+	if blacksmith_db != null:
+		for item_id in loadout.crafted_blacksmith_ids:
+			if blacksmith_db.get_item(item_id) == null:
+				errors.append("Unknown blacksmith item id: %s" % item_id)
 	return errors
 
 func _generate_unique_id(name: String) -> String:

@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Attack +20.",
+	"display_name": "ATK +20",
+	"flat_bonus": 20,
+	"id": "atk_20",
+	"materials_text": "5x Sharp Fang, 5x Platinum Ore, 5x Punchshroom",
+	"stat_name": "attack"
+}

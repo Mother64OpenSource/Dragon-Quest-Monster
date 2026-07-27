@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Increase damage to Huge, Powerful and Gigantic monsters. But has no effect on those who have skills that do that.",
+	"display_name": "Giant Killer",
+	"granted_trait_id": "giant_killer",
+	"id": "giant_killer",
+	"materials_text": "5x Radiant Sap, 5x Dragon Leather, 5x Big Cactus"
+}

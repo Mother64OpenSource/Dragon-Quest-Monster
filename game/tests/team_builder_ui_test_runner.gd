@@ -41,6 +41,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_load_team_and_add_species()
 	_check_row_edits()
 	_check_weapon_button()
+	_check_blacksmith_button()
 	_check_reorder()
 	await _check_degradation()
 	_check_validation_banner()
@@ -179,6 +180,44 @@ func _check_weapon_button() -> void:
 
 	row._on_weapon_selected(0)
 	_check("selecting (No Weapon) clears the loadout's equipped_weapon_id", editor.current_team.members[0].equipped_weapon_id == "")
+
+	_screen.roster.delete_team(team_id)
+
+## Any species can receive any Blacksmith item -- unlike weapons, there's no
+## compatibility grid to filter by, so this just proves the dialog opens
+## with the right item list, toggling round-trips through the loadout, and
+## the row's own button label reflects the current count.
+func _check_blacksmith_button() -> void:
+	var editor := _screen._team_editor_panel
+	var team_id := _screen.roster.create_team("Blacksmith Button Test").id
+	editor.load_team(team_id)
+	editor._on_species_chosen("slime")
+
+	var row: TeamMemberRow = editor._main_party_row.get_child(0)
+	_check("blacksmith button starts at 0 crafted bonuses", row._blacksmith_button.text == "Blacksmith (0)")
+
+	row._on_blacksmith_pressed()
+	var checkbox_count := 0
+	var atk_20_checkbox: CheckBox = null
+	for child in row._blacksmith_dialog._items_list.get_children():
+		if child is CheckBox:
+			checkbox_count += 1
+			if child.text == "ATK +20":
+				atk_20_checkbox = child
+	_check("blacksmith dialog lists all 25 wired items as checkboxes", checkbox_count == 25)
+	_check("blacksmith dialog includes ATK +20 unchecked by default", atk_20_checkbox != null and not atk_20_checkbox.button_pressed)
+
+	atk_20_checkbox.button_pressed = true
+	atk_20_checkbox.toggled.emit(true)
+	_check("checking a box updates the loadout's crafted_blacksmith_ids", editor.current_team.members[0].crafted_blacksmith_ids.has("atk_20"))
+	_check("the row's button label reflects the new count", row._blacksmith_button.text == "Blacksmith (1)")
+
+	var reloaded := _screen.roster.get_team(team_id)
+	_check("crafted blacksmith id persists to disk", reloaded.members[0].crafted_blacksmith_ids.has("atk_20"))
+
+	atk_20_checkbox.button_pressed = false
+	atk_20_checkbox.toggled.emit(false)
+	_check("unchecking a box removes it from crafted_blacksmith_ids", not editor.current_team.members[0].crafted_blacksmith_ids.has("atk_20"))
 
 	_screen.roster.delete_team(team_id)
 
@@ -328,6 +367,13 @@ func _check_validation_banner() -> void:
 	editor.current_team.members[0].equipped_weapon_id = "stone_claws"
 	editor._update_validation_banner()
 	_check("a slime equipped with an incompatible claw shows the validation banner", editor._validation_banner.visible)
+
+	var blacksmith_mismatch_team_id := _screen.roster.create_team("Blacksmith Mismatch Team").id
+	editor.load_team(blacksmith_mismatch_team_id)
+	editor._on_species_chosen("slime")
+	editor.current_team.members[0].crafted_blacksmith_ids = ["nonexistent_item"]
+	editor._update_validation_banner()
+	_check("an unknown crafted blacksmith item id shows the validation banner", editor._validation_banner.visible)
 
 	_screen.roster.delete_team(valid_team_id)
 	_screen.roster.delete_team(invalid_team_id)

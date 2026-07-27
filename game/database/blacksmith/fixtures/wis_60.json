@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Wisdom +60.",
+	"display_name": "WIS +60",
+	"flat_bonus": 60,
+	"id": "wis_60",
+	"materials_text": "3x Blue Gem, 5x Saint's Ashes, 5x Wiseleaf",
+	"stat_name": "wisdom"
+}

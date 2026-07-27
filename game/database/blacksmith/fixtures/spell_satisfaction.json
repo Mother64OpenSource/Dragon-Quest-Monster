@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Doubles critical spell rate. But has no effect on those who have skills that do that.",
+	"display_name": "Spell Satisfaction",
+	"granted_trait_id": "spell_satisfaction",
+	"id": "spell_satisfaction",
+	"materials_text": "3x Ethereal Stone, 5x Saint's Ashes, 5x Antidote Herb"
+}

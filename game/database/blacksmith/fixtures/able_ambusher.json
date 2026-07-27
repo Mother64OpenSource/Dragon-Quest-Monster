@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Automatically succeed on initial attack when surprised.",
+	"display_name": "Able Ambusher",
+	"granted_trait_id": "able_ambusher",
+	"id": "able_ambusher",
+	"materials_text": "1x Big Cactus"
+}

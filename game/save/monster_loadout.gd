@@ -19,3 +19,8 @@ extends Resource
 ## TeamRosterManager.validate_member, not here -- same pattern as
 ## equipped_skill_ids above).
 @export var equipped_weapon_id: String = ""
+
+## BlacksmithItemData ids permanently applied to this monster. Any species
+## can receive any item (no compatibility grid exists for these, unlike
+## weapons) -- resolved at battle-bridge time (see TeamToBattleBridge).
+@export var crafted_blacksmith_ids: Array[String] = []

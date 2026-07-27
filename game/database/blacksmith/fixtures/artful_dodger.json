@@ -1,0 +1,8 @@
+{
+	"category": "trait_grant",
+	"description": "Easier to dodge enemy attack. But has no effect on those who already have those skills.",
+	"display_name": "Artful Dodger",
+	"granted_trait_id": "artful_dodger",
+	"id": "artful_dodger",
+	"materials_text": "5x Windcutting Wing, 5x Slipleaf, 5x Snakeskin"
+}

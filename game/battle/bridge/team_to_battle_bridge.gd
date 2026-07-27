@@ -9,9 +9,9 @@ extends RefCounted
 
 ## instance_id_offset lets the caller keep ids unique across both teams in
 ## one battle -- pass 0 for the first team, first_team.size() for the second.
-## weapon_db is optional (default null, backward compatible with every
-## existing call site) -- when omitted, no equipped_weapon is resolved onto
-## the built instances, same as if the loadout had no weapon equipped.
+## weapon_db/blacksmith_db are both optional (default null, backward
+## compatible with every existing call site) -- when omitted, no
+## equipped_weapon/crafted bonus is resolved onto the built instances.
 static func build_team(
 	saved_team: SavedTeam,
 	side: String,
@@ -19,7 +19,8 @@ static func build_team(
 	skill_db: SkillDatabase,
 	trait_db: TraitDatabase,
 	instance_id_offset: int,
-	weapon_db: WeaponDatabase = null
+	weapon_db: WeaponDatabase = null,
+	blacksmith_db: BlacksmithDatabase = null
 ) -> Array[MonsterInstance]:
 	var team: Array[MonsterInstance] = []
 	for i in range(saved_team.members.size()):
@@ -47,10 +48,34 @@ static func build_team(
 				var effect := TraitEffect.create(trait_id, data, skill_db)
 				if effect != null:
 					traits.append(effect)
-		instance.active_traits = traits
 
 		if weapon_db != null and not loadout.equipped_weapon_id.is_empty():
 			instance.equipped_weapon = weapon_db.get_weapon(loadout.equipped_weapon_id)
+
+		if blacksmith_db != null:
+			for item_id in loadout.crafted_blacksmith_ids:
+				var item := blacksmith_db.get_item(item_id)
+				if item == null:
+					push_error("Unknown blacksmith item id crafted by %s: %s" % [loadout.species_id, item_id])
+					continue
+				match item.category:
+					BlacksmithItemData.Category.STAT_BOOST:
+						instance.crafted_stat_boosts.append(item)
+					BlacksmithItemData.Category.TRAIT_GRANT:
+						# "But has no effect on those who already have that
+						# bonus" -- skip if the species already carries this
+						# trait innately, so a granted crit-chance multiplier
+						# (etc.) can never stack with the same monster's own
+						# native copy of it.
+						if species.starting_trait_ids.has(item.granted_trait_id):
+							continue
+						var data := trait_db.get_trait_data(item.granted_trait_id)
+						if data != null:
+							var effect := TraitEffect.create(item.granted_trait_id, data, skill_db)
+							if effect != null:
+								traits.append(effect)
+
+		instance.active_traits = traits
 
 		team.append(instance)
 	return team

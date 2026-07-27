@@ -1,0 +1,9 @@
+{
+	"category": "stat_boost",
+	"description": "Agility +20.",
+	"display_name": "AGI +20",
+	"flat_bonus": 20,
+	"id": "agi_20",
+	"materials_text": "5x Droplet Yarn, 5x Bat Wing, 5x Slipleaf",
+	"stat_name": "agility"
+}
