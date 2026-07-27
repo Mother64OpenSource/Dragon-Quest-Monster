@@ -1,11 +1,16 @@
 class_name BattleSetupScreen
 extends Control
 
-## Pick two saved teams and start a local two-window-plus-a-tab duel:
-## side_a's view becomes a new tab in whatever MainShell hosts the caller
-## (see battle_ready below), and a second real OS Window is spawned for
-## side_b -- one process, one BattleController shared by both, no
-## networking involved.
+## Pick two saved teams and start a local hotseat duel: BOTH side_a's and
+## side_b's views become their own tabs in whatever MainShell hosts the
+## caller (see battle_ready below) -- one process, one BattleController
+## shared by both, no networking, no second OS window. Switch between "my
+## turn"/"their turn" the same way you'd switch to Home: click the tab.
+## (An earlier version spawned a genuinely separate OS Window for side_b --
+## dropped because it was never part of any tab bar at all, so whichever
+## window you happened to be looking at when it wasn't the main one had no
+## way back to Home no matter how many times the main window's own tab
+## behavior got fixed. See wiki/log.md.)
 ##
 ## Instantiated as an overlay ON TOP of whatever screen requested it (see
 ## TeamBuilderScreen._on_battle_pressed) rather than via change_scene_to_file
@@ -14,9 +19,10 @@ extends Control
 ## return to it instantly without a scene reload.
 
 signal back_requested()
-## Carries the fully set-up side_a BattleSideView (see _on_start_pressed) up
-## to whoever should host it -- this screen has no opinion on HOW it's
-## shown (a new tab today, something else tomorrow), just that it's ready.
+## Carries one fully set-up BattleSideView (see _on_start_pressed, fired
+## once per side) up to whoever should host it -- this screen has no
+## opinion on HOW it's shown (a new tab today, something else tomorrow),
+## just that it's ready.
 signal battle_ready(view: Control, tab_title: String)
 
 const BattleSideViewScene := preload("res://ui/battle/battle_side_view.tscn")
@@ -92,39 +98,19 @@ func _on_start_pressed() -> void:
 
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
+	# Both sides become tabs in the same MainShell -- parented to self first
+	# purely so _ready() runs (setup() relies on its own @onready node
+	# references), then handed off via remove_child() (detach, don't free).
 	var view_a: BattleSideView = BattleSideViewScene.instantiate()
-	# Parented to self first purely so _ready() runs (setup() relies on its
-	# own @onready node references) -- handed off to whatever hosts the new
-	# tab immediately after, via remove_child() (detach, don't free).
 	add_child(view_a)
 	view_a.setup(controller, "side_a", skill_db)
 	remove_child(view_a)
-	battle_ready.emit(view_a, "vs %s" % team_b.team_name)
-	queue_free()
-
-	var window := Window.new()
-	window.title = "Battle — %s" % team_b.team_name
-	window.size = Vector2i(760, 640)
-	# Explicit (not just relying on defaults) so it's a genuinely independent,
-	# freely draggable/resizable OS window rather than pinned to the main one.
-	window.unresizable = false
-	window.borderless = false
-	window.exclusive = false
-	window.transient = false
-	window.always_on_top = false
-	# Offset from the main window so it doesn't spawn stacked exactly on top
-	# of it (which can look like "the window won't move" when really it's
-	# just hidden directly underneath the other one).
-	var main_pos := DisplayServer.window_get_position(DisplayServer.MAIN_WINDOW_ID)
-	var main_size := DisplayServer.window_get_size(DisplayServer.MAIN_WINDOW_ID)
-	window.position = main_pos + Vector2i(main_size.x + 24, 0)
 
 	var view_b: BattleSideView = BattleSideViewScene.instantiate()
-	window.add_child(view_b)
-	get_tree().root.add_child(window)
-	window.show()
+	add_child(view_b)
 	view_b.setup(controller, "side_b", skill_db)
-	# side_b's own window is self-contained -- its result panel's Back button
-	# should just close this window, not touch the main window's own tabs
-	# (previously it accidentally reloaded the main window's whole scene).
-	view_b.close_requested.connect(window.queue_free)
+	remove_child(view_b)
+
+	battle_ready.emit(view_a, "P1: vs %s" % team_b.team_name)
+	battle_ready.emit(view_b, "P2: vs %s" % team_a.team_name)
+	queue_free()
