@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 317.0,
 	"display_name": "Mertiger",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "mertiger",
 	"rank": "C",

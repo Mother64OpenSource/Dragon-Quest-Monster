@@ -11,6 +11,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 880.0,
 	"display_name": "Skull Rider",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "skull_rider",
 	"rank": "F",

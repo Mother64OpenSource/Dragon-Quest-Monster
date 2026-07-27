@@ -11,6 +11,13 @@
 	"base_mp": 674.0,
 	"base_wisdom": 1035.0,
 	"display_name": "Bishop Ladja",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "bishop_ladja",
 	"rank": "A",

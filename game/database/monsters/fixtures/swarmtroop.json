@@ -11,6 +11,13 @@
 	"base_mp": 423.0,
 	"base_wisdom": 332.0,
 	"display_name": "Swarmtroop",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "swarmtroop",
 	"rank": "F",

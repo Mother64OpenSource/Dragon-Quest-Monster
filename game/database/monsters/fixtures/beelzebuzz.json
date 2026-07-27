@@ -11,6 +11,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 360.0,
 	"display_name": "Beelzebuzz",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "beelzebuzz",
 	"rank": "C",

@@ -11,6 +11,13 @@
 	"base_mp": 494.0,
 	"base_wisdom": 494.0,
 	"display_name": "Sea Dog",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "sea_dog",
 	"rank": "E",

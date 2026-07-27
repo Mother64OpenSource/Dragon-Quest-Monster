@@ -11,6 +11,13 @@
 	"base_mp": 900.0,
 	"base_wisdom": 960.0,
 	"display_name": "Wight King",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "wight_king",
 	"rank": "S",

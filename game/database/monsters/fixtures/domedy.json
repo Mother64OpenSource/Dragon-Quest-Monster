@@ -9,6 +9,13 @@
 	"base_mp": 574.0,
 	"base_wisdom": 930.0,
 	"display_name": "Domedy",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "domedy",
 	"rank": "S",

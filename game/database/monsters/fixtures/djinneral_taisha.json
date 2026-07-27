@@ -9,6 +9,13 @@
 	"base_mp": 592.0,
 	"base_wisdom": 560.0,
 	"display_name": "Djinneral Taisha",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "djinneral_taisha",
 	"rank": "D",

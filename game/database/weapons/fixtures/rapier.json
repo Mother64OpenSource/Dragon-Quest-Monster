@@ -1,0 +1,7 @@
+{
+	"base_attack": 18,
+	"description": "Increase damage against Dragon-types by a bit.",
+	"display_name": "Rapier",
+	"id": "rapier",
+	"weapon_type": "sword"
+}

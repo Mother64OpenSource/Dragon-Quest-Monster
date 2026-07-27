@@ -11,6 +11,13 @@
 	"base_mp": 941.0,
 	"base_wisdom": 932.0,
 	"display_name": "Pink Ninja Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "pink_ninja_slime",
 	"rank": "D",

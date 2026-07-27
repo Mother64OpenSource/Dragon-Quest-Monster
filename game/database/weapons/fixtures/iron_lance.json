@@ -1,0 +1,7 @@
+{
+	"base_attack": 9,
+	"description": "Increase damage against Slime-types some.",
+	"display_name": "Iron Lance",
+	"id": "iron_lance",
+	"weapon_type": "spear"
+}

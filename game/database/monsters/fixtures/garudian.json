@@ -12,6 +12,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 630.0,
 	"display_name": "Garudian",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "garudian",
 	"rank": "D",

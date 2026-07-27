@@ -13,6 +13,13 @@
 	"base_mp": 592.0,
 	"base_wisdom": 528.0,
 	"display_name": "Wormonger",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "wormonger",
 	"rank": "B",

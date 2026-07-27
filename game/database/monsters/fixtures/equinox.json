@@ -11,6 +11,13 @@
 	"base_mp": 437.0,
 	"base_wisdom": 461.0,
 	"display_name": "Equinox",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "equinox",
 	"rank": "A",

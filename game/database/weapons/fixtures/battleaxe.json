@@ -1,0 +1,7 @@
+{
+	"base_attack": 52,
+	"description": "No other effect.",
+	"display_name": "Battleaxe",
+	"id": "battleaxe",
+	"weapon_type": "axe"
+}

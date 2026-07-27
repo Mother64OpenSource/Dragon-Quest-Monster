@@ -12,6 +12,13 @@
 	"base_mp": 605.0,
 	"base_wisdom": 877.0,
 	"display_name": "Darkonium Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "darkonium_slime",
 	"rank": "S",

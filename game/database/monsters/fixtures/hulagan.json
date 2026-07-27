@@ -12,6 +12,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 756.0,
 	"display_name": "Hulagan",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "hulagan",
 	"rank": "C",

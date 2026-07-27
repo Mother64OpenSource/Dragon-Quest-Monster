@@ -9,6 +9,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 601.0,
 	"display_name": "Leida Metes Temple",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "leida_metes_temple",
 	"rank": "SS",

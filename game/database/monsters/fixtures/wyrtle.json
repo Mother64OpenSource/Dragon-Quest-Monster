@@ -12,6 +12,13 @@
 	"base_mp": 657.0,
 	"base_wisdom": 968.0,
 	"display_name": "Wyrtle",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "wyrtle",
 	"rank": "D",

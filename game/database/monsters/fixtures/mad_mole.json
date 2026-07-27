@@ -11,6 +11,13 @@
 	"base_mp": 355.0,
 	"base_wisdom": 654.0,
 	"display_name": "Mad Mole",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "mad_mole",
 	"rank": "C",

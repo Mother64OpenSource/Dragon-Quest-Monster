@@ -11,6 +11,13 @@
 	"base_mp": 448.0,
 	"base_wisdom": 671.0,
 	"display_name": "Thwarthog",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "thwarthog",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 380.0,
 	"base_wisdom": 480.0,
 	"display_name": "Peahooter",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "peahooter",
 	"rank": "C",

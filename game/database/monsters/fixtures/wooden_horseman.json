@@ -11,6 +11,13 @@
 	"base_mp": 462.0,
 	"base_wisdom": 390.0,
 	"display_name": "Wooden Horseman",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "wooden_horseman",
 	"rank": "A",

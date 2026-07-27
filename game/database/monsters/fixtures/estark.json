@@ -9,6 +9,13 @@
 	"base_mp": 592.0,
 	"base_wisdom": 704.0,
 	"display_name": "Estark",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "estark",
 	"rank": "SS",

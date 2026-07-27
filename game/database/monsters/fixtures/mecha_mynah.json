@@ -11,6 +11,13 @@
 	"base_mp": 489.0,
 	"base_wisdom": 412.0,
 	"display_name": "Mecha-mynah",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "mecha_mynah",
 	"rank": "D",

@@ -9,6 +9,13 @@
 	"base_mp": 324.0,
 	"base_wisdom": 819.0,
 	"display_name": "Orgodemir",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "orgodemir",
 	"rank": "A",

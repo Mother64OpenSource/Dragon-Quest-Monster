@@ -11,6 +11,13 @@
 	"base_mp": 366.0,
 	"base_wisdom": 613.0,
 	"display_name": "Paws",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "paws",
 	"rank": "D",

@@ -14,6 +14,13 @@
 	"base_mp": 698.0,
 	"base_wisdom": 357.0,
 	"display_name": "Woolly Elefort",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "woolly_elefort",
 	"rank": "SS",

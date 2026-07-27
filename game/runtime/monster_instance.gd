@@ -18,6 +18,12 @@ var active_traits: Array[TraitEffect] = []
 var learned_skills: Array[SkillData] = []
 var has_been_processed_as_fainted: bool = false
 
+## null means no weapon equipped. Set at battle-bridge time from the
+## loadout's equipped_weapon_id (see TeamToBattleBridge.build_team) --
+## compatibility with the species is enforced earlier, at team-builder
+## time (TeamRosterManager.validate_member), not here.
+var equipped_weapon: WeaponData = null
+
 ## Tension: a one-directional escalating counter (0-4), not a StatStages-style
 ## symmetric stage -- each level boosts this monster's own next damage-
 ## dealing action, then resets to 0 (see DamageEffect.apply()).
@@ -64,7 +70,8 @@ func apply_stat_stage(stat_name: String, delta: int) -> int:
 func _get_base_stat(stat_name: String) -> int:
 	match stat_name:
 		"attack":
-			return species.base_attack
+			var weapon_bonus := equipped_weapon.base_attack if equipped_weapon != null else 0
+			return species.base_attack + weapon_bonus
 		"defense":
 			return species.base_defense
 		"agility":

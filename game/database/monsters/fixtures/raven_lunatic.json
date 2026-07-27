@@ -11,6 +11,13 @@
 	"base_mp": 412.0,
 	"base_wisdom": 540.0,
 	"display_name": "Raven Lunatic",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "raven_lunatic",
 	"rank": "C",

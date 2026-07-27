@@ -9,6 +9,13 @@
 	"base_mp": 528.0,
 	"base_wisdom": 704.0,
 	"display_name": "Cluboon Ace",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "cluboon_ace",
 	"rank": "SS",

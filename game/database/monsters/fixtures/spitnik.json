@@ -11,6 +11,13 @@
 	"base_mp": 593.0,
 	"base_wisdom": 494.0,
 	"display_name": "Spitnik",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "spitnik",
 	"rank": "F",

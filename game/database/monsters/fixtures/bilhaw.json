@@ -12,6 +12,13 @@
 	"base_mp": 559.0,
 	"base_wisdom": 969.0,
 	"display_name": "Bilhaw",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "bilhaw",
 	"rank": "S",

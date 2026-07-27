@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 540.0,
 	"display_name": "Aquarella",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "aquarella",
 	"rank": "E",

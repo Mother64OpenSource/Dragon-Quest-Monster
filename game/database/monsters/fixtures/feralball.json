@@ -11,6 +11,13 @@
 	"base_mp": 688.0,
 	"base_wisdom": 712.0,
 	"display_name": "Feralball",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "feralball",
 	"rank": "F",

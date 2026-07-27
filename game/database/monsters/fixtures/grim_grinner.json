@@ -11,6 +11,13 @@
 	"base_mp": 410.0,
 	"base_wisdom": 600.0,
 	"display_name": "Grim Grinner",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "grim_grinner",
 	"rank": "B",

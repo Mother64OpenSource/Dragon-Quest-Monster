@@ -11,6 +11,13 @@
 	"base_mp": 295.0,
 	"base_wisdom": 320.0,
 	"display_name": "Fire-Eater & Ice-Eater",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Devil",
 	"id": "fire_eater_ice_eater",
 	"rank": "A",

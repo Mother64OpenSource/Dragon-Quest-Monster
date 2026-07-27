@@ -11,6 +11,13 @@
 	"base_mp": 568.0,
 	"base_wisdom": 938.0,
 	"display_name": "Silvapithecus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Devil",
 	"id": "silvapithecus",
 	"rank": "D",

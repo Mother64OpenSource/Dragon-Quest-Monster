@@ -11,6 +11,13 @@
 	"base_mp": 387.0,
 	"base_wisdom": 642.0,
 	"display_name": "Automaton",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "automaton",
 	"rank": "B",

@@ -11,6 +11,13 @@
 	"base_mp": 375.0,
 	"base_wisdom": 498.0,
 	"display_name": "Skeleton Swordsman",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "skeleton_swordsman",
 	"rank": "A",

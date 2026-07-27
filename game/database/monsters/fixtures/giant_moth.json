@@ -11,6 +11,13 @@
 	"base_mp": 620.0,
 	"base_wisdom": 798.0,
 	"display_name": "Giant Moth",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "giant_moth",
 	"rank": "C",

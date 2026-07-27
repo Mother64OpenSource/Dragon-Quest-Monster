@@ -12,6 +12,13 @@
 	"base_mp": 486.0,
 	"base_wisdom": 577.0,
 	"display_name": "Tuskateer",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "tuskateer",
 	"rank": "D",

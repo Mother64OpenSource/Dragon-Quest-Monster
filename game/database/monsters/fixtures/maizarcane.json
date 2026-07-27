@@ -9,6 +9,13 @@
 	"base_mp": 579.0,
 	"base_wisdom": 382.0,
 	"display_name": "Maizarcane",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "maizarcane",
 	"rank": "SS",

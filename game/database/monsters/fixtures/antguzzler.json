@@ -11,6 +11,13 @@
 	"base_mp": 570.0,
 	"base_wisdom": 695.0,
 	"display_name": "Antguzzler",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "antguzzler",
 	"rank": "F",

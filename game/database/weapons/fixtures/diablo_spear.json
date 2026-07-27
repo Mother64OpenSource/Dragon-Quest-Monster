@@ -1,0 +1,7 @@
+{
+	"base_attack": 76,
+	"description": "Increase damage against Devil-types. Increase chance of critical.",
+	"display_name": "Diablo Spear",
+	"id": "diablo_spear",
+	"weapon_type": "spear"
+}

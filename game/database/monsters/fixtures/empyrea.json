@@ -13,6 +13,13 @@
 	"base_mp": 608.0,
 	"base_wisdom": 880.0,
 	"display_name": "Empyrea",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "empyrea",
 	"rank": "S",

@@ -9,6 +9,13 @@
 	"base_mp": 567.0,
 	"base_wisdom": 565.0,
 	"display_name": "Robbin' Hood",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "robbin_hood",
 	"rank": "A",

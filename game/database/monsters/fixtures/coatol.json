@@ -12,6 +12,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 391.0,
 	"display_name": "Coatol",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "coatol",
 	"rank": "B",

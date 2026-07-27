@@ -21,6 +21,7 @@ var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
 var skillset_db: SkillSetDatabase
 var trait_db: TraitDatabase
+var weapon_db: WeaponDatabase
 var roster: TeamRosterManager
 var profile_manager: PlayerProfileManager
 var background_pref_manager: BackgroundPreferenceManager
@@ -52,6 +53,7 @@ func _ready() -> void:
 	skill_db = SkillDatabase.new()
 	skillset_db = SkillSetDatabase.new()
 	trait_db = TraitDatabase.new()
+	weapon_db = WeaponDatabase.new()
 	roster = TeamRosterManager.new(teams_dir_override) if not teams_dir_override.is_empty() else TeamRosterManager.new()
 	profile_manager = PlayerProfileManager.new(profile_path_override) if not profile_path_override.is_empty() else PlayerProfileManager.new()
 	var background_pref_path := background_pref_path_override if not background_pref_path_override.is_empty() else BackgroundPreferenceManager.DEFAULT_PREF_PATH
@@ -59,7 +61,7 @@ func _ready() -> void:
 	background_pref_manager = BackgroundPreferenceManager.new(background_pref_path, backgrounds_dir)
 
 	_team_list_panel.setup(roster)
-	_team_editor_panel.setup(roster, monster_db, skill_db, skillset_db, trait_db)
+	_team_editor_panel.setup(roster, monster_db, skill_db, skillset_db, trait_db, weapon_db)
 
 	_team_list_panel.team_selected.connect(_on_team_selected)
 	_team_editor_panel.team_updated.connect(_on_team_updated)

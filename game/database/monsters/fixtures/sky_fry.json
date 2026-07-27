@@ -11,6 +11,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 480.0,
 	"display_name": "Sky Fry",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "sky_fry",
 	"rank": "F",

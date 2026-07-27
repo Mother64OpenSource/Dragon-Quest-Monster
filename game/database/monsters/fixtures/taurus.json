@@ -12,6 +12,13 @@
 	"base_mp": 486.0,
 	"base_wisdom": 615.0,
 	"display_name": "Taurus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "taurus",
 	"rank": "A",

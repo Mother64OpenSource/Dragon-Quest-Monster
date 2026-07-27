@@ -12,6 +12,13 @@
 	"base_mp": 432.0,
 	"base_wisdom": 454.0,
 	"display_name": "Mazin",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "mazin",
 	"rank": "A",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 5,
+	"description": "Increases Defense.",
+	"display_name": "Oaken Club",
+	"id": "oaken_club",
+	"weapon_type": "club"
+}

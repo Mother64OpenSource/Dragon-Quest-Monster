@@ -12,6 +12,13 @@
 	"base_mp": 441.0,
 	"base_wisdom": 319.0,
 	"display_name": "Atlas",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "atlas",
 	"rank": "S",

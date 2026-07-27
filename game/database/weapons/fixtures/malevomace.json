@@ -1,0 +1,7 @@
+{
+	"base_attack": 42,
+	"description": "Increases Wisdom.",
+	"display_name": "Malevomace",
+	"id": "malevomace",
+	"weapon_type": "staff"
+}

@@ -11,6 +11,13 @@
 	"base_mp": 680.0,
 	"base_wisdom": 960.0,
 	"display_name": "The Time Being",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "the_time_being",
 	"rank": "A",

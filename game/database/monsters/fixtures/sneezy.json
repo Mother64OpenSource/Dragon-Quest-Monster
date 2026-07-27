@@ -9,6 +9,13 @@
 	"base_mp": 432.0,
 	"base_wisdom": 824.0,
 	"display_name": "Sneezy",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "sneezy",
 	"rank": "S",

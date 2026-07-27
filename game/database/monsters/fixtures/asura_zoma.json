@@ -9,6 +9,13 @@
 	"base_mp": 825.0,
 	"base_wisdom": 518.0,
 	"display_name": "Asura Zoma",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "asura_zoma",
 	"rank": "SS",

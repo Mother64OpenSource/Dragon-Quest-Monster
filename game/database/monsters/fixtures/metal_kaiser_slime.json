@@ -12,6 +12,13 @@
 	"base_mp": 710.0,
 	"base_wisdom": 822.0,
 	"display_name": "Metal Kaiser Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "metal_kaiser_slime",
 	"rank": "A",

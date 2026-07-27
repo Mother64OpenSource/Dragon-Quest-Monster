@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 564.0,
 	"display_name": "Tyrant Basagrande",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "tyrant_basagrande",
 	"rank": "SS",

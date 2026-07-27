@@ -1,0 +1,7 @@
+{
+	"base_attack": 65,
+	"description": "Sometimes seals enemy Break.",
+	"display_name": "Kill Breaker",
+	"id": "kill_breaker",
+	"weapon_type": "axe"
+}

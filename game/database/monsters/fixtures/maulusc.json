@@ -13,6 +13,13 @@
 	"base_mp": 567.0,
 	"base_wisdom": 518.0,
 	"display_name": "Maulusc",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "maulusc",
 	"rank": "D",

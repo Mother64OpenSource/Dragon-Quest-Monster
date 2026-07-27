@@ -1,0 +1,7 @@
+{
+	"base_attack": 32,
+	"description": "Increase damage against Beast/Nature-types more.",
+	"display_name": "Woodman's Axe",
+	"id": "woodman_s_axe",
+	"weapon_type": "axe"
+}

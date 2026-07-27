@@ -1,0 +1,7 @@
+{
+	"base_attack": 12,
+	"description": "Increases Wisdom.",
+	"display_name": "Rune Staff",
+	"id": "rune_staff",
+	"weapon_type": "staff"
+}

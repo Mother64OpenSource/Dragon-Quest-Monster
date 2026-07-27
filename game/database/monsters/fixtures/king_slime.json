@@ -11,6 +11,13 @@
 	"base_mp": 428.0,
 	"base_wisdom": 945.0,
 	"display_name": "King Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "king_slime",
 	"rank": "C",

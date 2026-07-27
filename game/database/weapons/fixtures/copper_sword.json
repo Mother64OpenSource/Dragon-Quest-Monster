@@ -1,0 +1,7 @@
+{
+	"base_attack": 10,
+	"description": "No other effect.",
+	"display_name": "Copper Sword",
+	"id": "copper_sword",
+	"weapon_type": "sword"
+}

@@ -11,6 +11,13 @@
 	"base_mp": 374.0,
 	"base_wisdom": 618.0,
 	"display_name": "Fright Knight",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "fright_knight",
 	"rank": "B",

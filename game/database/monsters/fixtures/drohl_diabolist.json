@@ -11,6 +11,13 @@
 	"base_mp": 457.0,
 	"base_wisdom": 963.0,
 	"display_name": "Drohl Diabolist",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "drohl_diabolist",
 	"rank": "E",

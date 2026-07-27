@@ -11,6 +11,13 @@
 	"base_mp": 280.0,
 	"base_wisdom": 472.0,
 	"display_name": "Killer Wave",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "killer_wave",
 	"rank": "E",

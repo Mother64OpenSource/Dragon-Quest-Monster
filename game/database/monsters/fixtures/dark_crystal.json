@@ -12,6 +12,13 @@
 	"base_mp": 482.0,
 	"base_wisdom": 550.0,
 	"display_name": "Dark Crystal",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "dark_crystal",
 	"rank": "S",

@@ -12,6 +12,13 @@
 	"base_mp": 516.0,
 	"base_wisdom": 617.0,
 	"display_name": "Growlbear",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "growlbear",
 	"rank": "D",

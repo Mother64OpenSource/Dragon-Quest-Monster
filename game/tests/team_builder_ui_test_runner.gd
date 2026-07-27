@@ -40,6 +40,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_crud_and_selection()
 	_check_load_team_and_add_species()
 	_check_row_edits()
+	_check_weapon_button()
 	_check_reorder()
 	await _check_degradation()
 	_check_validation_banner()
@@ -151,6 +152,33 @@ func _check_row_edits() -> void:
 		"toggling a skill off via the row's dialog removes it from equipped_skill_ids",
 		not editor.current_team.members[0].equipped_skill_ids.has("zam")
 	)
+
+	_screen.roster.delete_team(team_id)
+
+## slime can equip sword/spear/axe/club/whip but NOT claw/staff (real
+## Weapons-grid data, see wiki/log.md) -- exercises that the row's dropdown
+## is actually filtered per-species, not just "every weapon."
+func _check_weapon_button() -> void:
+	var editor := _screen._team_editor_panel
+	var team_id := _screen.roster.create_team("Weapon Button Test").id
+	editor.load_team(team_id)
+	editor._on_species_chosen("slime")
+
+	var row: TeamMemberRow = editor._main_party_row.get_child(0)
+	_check("weapon button defaults to (No Weapon) selected", row._weapon_button.selected == 0)
+	_check("weapon button offers compatible copper_sword", row._weapon_button_ids.has("copper_sword"))
+	_check("weapon button excludes incompatible stone_claws (slime can't equip claws)", not row._weapon_button_ids.has("stone_claws"))
+	_check("weapon button excludes incompatible cypress_stick (slime can't equip staves)", not row._weapon_button_ids.has("cypress_stick"))
+
+	var sword_index := row._weapon_button_ids.find("copper_sword")
+	row._on_weapon_selected(sword_index)
+	_check("selecting a weapon updates the loadout", editor.current_team.members[0].equipped_weapon_id == "copper_sword")
+
+	var reloaded := _screen.roster.get_team(team_id)
+	_check("equipped weapon persists to disk", reloaded.members[0].equipped_weapon_id == "copper_sword")
+
+	row._on_weapon_selected(0)
+	_check("selecting (No Weapon) clears the loadout's equipped_weapon_id", editor.current_team.members[0].equipped_weapon_id == "")
 
 	_screen.roster.delete_team(team_id)
 
@@ -293,6 +321,13 @@ func _check_validation_banner() -> void:
 	editor._rebuild_rows()
 	editor._update_validation_banner()
 	_check("invalid team shows the validation banner", editor._validation_banner.visible)
+
+	var weapon_mismatch_team_id := _screen.roster.create_team("Weapon Mismatch Team").id
+	editor.load_team(weapon_mismatch_team_id)
+	editor._on_species_chosen("slime")
+	editor.current_team.members[0].equipped_weapon_id = "stone_claws"
+	editor._update_validation_banner()
+	_check("a slime equipped with an incompatible claw shows the validation banner", editor._validation_banner.visible)
 
 	_screen.roster.delete_team(valid_team_id)
 	_screen.roster.delete_team(invalid_team_id)

@@ -12,6 +12,13 @@
 	"base_mp": 458.0,
 	"base_wisdom": 310.0,
 	"display_name": "King Squid",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "king_squid",
 	"rank": "A",

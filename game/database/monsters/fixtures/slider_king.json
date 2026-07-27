@@ -13,6 +13,13 @@
 	"base_mp": 608.0,
 	"base_wisdom": 493.0,
 	"display_name": "Slider King",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slider_king",
 	"rank": "SS",

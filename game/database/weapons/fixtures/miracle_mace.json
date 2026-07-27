@@ -1,0 +1,7 @@
+{
+	"base_attack": 87,
+	"description": "Restores HP.",
+	"display_name": "Miracle Mace",
+	"id": "miracle_mace",
+	"weapon_type": "club"
+}

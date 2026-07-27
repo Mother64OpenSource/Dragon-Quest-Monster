@@ -11,6 +11,13 @@
 	"base_mp": 631.0,
 	"base_wisdom": 897.0,
 	"display_name": "Blooming Sorcerer",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "blooming_sorcerer",
 	"rank": "E",

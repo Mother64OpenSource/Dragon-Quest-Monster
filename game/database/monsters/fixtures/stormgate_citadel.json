@@ -13,6 +13,13 @@
 	"base_mp": 578.0,
 	"base_wisdom": 638.0,
 	"display_name": "Stormgate Citadel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "stormgate_citadel",
 	"rank": "A",

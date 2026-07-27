@@ -11,6 +11,13 @@
 	"base_mp": 542.0,
 	"base_wisdom": 725.0,
 	"display_name": "Kotobukino",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "kotobukino",
 	"rank": "C",

@@ -12,6 +12,13 @@
 	"base_mp": 486.0,
 	"base_wisdom": 567.0,
 	"display_name": "Dragovian Lord",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dragovian_lord",
 	"rank": "SS",

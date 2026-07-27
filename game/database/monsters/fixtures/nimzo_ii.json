@@ -9,6 +9,13 @@
 	"base_mp": 533.0,
 	"base_wisdom": 792.0,
 	"display_name": "Nimzo II",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "nimzo_ii",
 	"rank": "SS",

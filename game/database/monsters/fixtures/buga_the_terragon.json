@@ -12,6 +12,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 521.0,
 	"display_name": "Buga the Terragon",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "buga_the_terragon",
 	"rank": "S",

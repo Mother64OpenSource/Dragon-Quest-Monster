@@ -12,6 +12,13 @@
 	"base_mp": 965.0,
 	"base_wisdom": 1181.0,
 	"display_name": "Silver Ninja Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "silver_ninja_slime",
 	"rank": "S",

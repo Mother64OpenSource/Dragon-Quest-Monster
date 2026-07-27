@@ -1,0 +1,7 @@
+{
+	"base_attack": 13,
+	"description": "Increase damage against Zombie-types by a bit.",
+	"display_name": "Divine Dagger",
+	"id": "divine_dagger",
+	"weapon_type": "sword"
+}

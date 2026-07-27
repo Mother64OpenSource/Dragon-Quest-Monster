@@ -12,6 +12,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 630.0,
 	"display_name": "Azurite",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "azurite",
 	"rank": "S",

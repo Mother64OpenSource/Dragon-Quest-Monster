@@ -9,6 +9,13 @@
 	"base_mp": 544.0,
 	"base_wisdom": 560.0,
 	"display_name": "Djinneral Tokiwa",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "djinneral_tokiwa",
 	"rank": "D",

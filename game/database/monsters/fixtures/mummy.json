@@ -11,6 +11,13 @@
 	"base_mp": 610.0,
 	"base_wisdom": 459.0,
 	"display_name": "Mummy",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "mummy",
 	"rank": "B",

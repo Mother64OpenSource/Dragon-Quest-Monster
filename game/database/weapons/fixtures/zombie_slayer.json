@@ -1,0 +1,7 @@
+{
+	"base_attack": 81,
+	"description": "Increase damage against Zombie-types significantly.",
+	"display_name": "Zombie Slayer",
+	"id": "zombie_slayer",
+	"weapon_type": "sword"
+}

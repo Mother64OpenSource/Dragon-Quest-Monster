@@ -11,6 +11,13 @@
 	"base_mp": 561.0,
 	"base_wisdom": 716.0,
 	"display_name": "Juggular",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "juggular",
 	"rank": "B",

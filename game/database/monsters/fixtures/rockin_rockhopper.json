@@ -11,6 +11,13 @@
 	"base_mp": 524.0,
 	"base_wisdom": 712.0,
 	"display_name": "Rockin' Rockhopper",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "rockin_rockhopper",
 	"rank": "D",

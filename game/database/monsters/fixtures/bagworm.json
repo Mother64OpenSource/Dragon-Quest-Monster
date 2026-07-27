@@ -11,6 +11,13 @@
 	"base_mp": 626.0,
 	"base_wisdom": 847.0,
 	"display_name": "Bagworm",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "bagworm",
 	"rank": "F",

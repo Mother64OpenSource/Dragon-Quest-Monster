@@ -11,6 +11,13 @@
 	"base_mp": 398.0,
 	"base_wisdom": 619.0,
 	"display_name": "Snapdragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "snapdragon",
 	"rank": "E",

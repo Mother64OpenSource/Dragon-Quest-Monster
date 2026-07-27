@@ -9,6 +9,13 @@
 	"base_mp": 270.0,
 	"base_wisdom": 381.0,
 	"display_name": "Leokid",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "leokid",
 	"rank": "B",

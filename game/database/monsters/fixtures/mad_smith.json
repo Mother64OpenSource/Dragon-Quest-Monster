@@ -11,6 +11,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 660.0,
 	"display_name": "Mad Smith",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "mad_smith",
 	"rank": "C",

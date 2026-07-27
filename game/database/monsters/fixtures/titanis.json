@@ -12,6 +12,13 @@
 	"base_mp": 900.0,
 	"base_wisdom": 1008.0,
 	"display_name": "Titanis",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "titanis",
 	"rank": "S",

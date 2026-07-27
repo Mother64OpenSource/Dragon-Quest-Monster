@@ -11,6 +11,11 @@
 	"base_mp": 394.0,
 	"base_wisdom": 880.0,
 	"display_name": "Demon-at-Arms",
+	"equippable_weapon_types": [
+		"spear",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "demon_at_arms",
 	"rank": "A",

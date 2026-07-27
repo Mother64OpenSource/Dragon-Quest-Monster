@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 528.0,
 	"display_name": "Missing Lynx",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "missing_lynx",
 	"rank": "B",

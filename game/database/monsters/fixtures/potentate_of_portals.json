@@ -9,6 +9,13 @@
 	"base_mp": 750.0,
 	"base_wisdom": 552.0,
 	"display_name": "Potentate of Portals",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "potentate_of_portals",
 	"rank": "SS",

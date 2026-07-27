@@ -11,6 +11,13 @@
 	"base_mp": 526.0,
 	"base_wisdom": 614.0,
 	"display_name": "Gargoyle",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "gargoyle",
 	"rank": "C",

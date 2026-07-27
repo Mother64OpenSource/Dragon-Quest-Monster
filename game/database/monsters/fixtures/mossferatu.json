@@ -11,6 +11,13 @@
 	"base_mp": 634.0,
 	"base_wisdom": 791.0,
 	"display_name": "Mossferatu",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "mossferatu",
 	"rank": "S",

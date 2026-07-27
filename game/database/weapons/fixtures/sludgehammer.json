@@ -1,0 +1,7 @@
+{
+	"base_attack": 12,
+	"description": "Increase damage against Material/Slime-types more.",
+	"display_name": "Sludgehammer",
+	"id": "sludgehammer",
+	"weapon_type": "club"
+}

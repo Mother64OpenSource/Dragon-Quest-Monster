@@ -1,0 +1,7 @@
+{
+	"base_attack": 35,
+	"description": "Increase skill points earned on level up by 1.5x.",
+	"display_name": "Jellyfish Sword",
+	"id": "jellyfish_sword",
+	"weapon_type": "sword"
+}

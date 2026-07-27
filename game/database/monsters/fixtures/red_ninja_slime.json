@@ -11,6 +11,13 @@
 	"base_mp": 433.0,
 	"base_wisdom": 522.0,
 	"display_name": "Red Ninja Slime",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "red_ninja_slime",
 	"rank": "D",

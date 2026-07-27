@@ -11,6 +11,13 @@
 	"base_mp": 550.0,
 	"base_wisdom": 962.0,
 	"display_name": "Samigina",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "samigina",
 	"rank": "B",

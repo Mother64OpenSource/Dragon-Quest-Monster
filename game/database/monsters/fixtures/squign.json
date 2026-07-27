@@ -11,6 +11,13 @@
 	"base_mp": 540.0,
 	"base_wisdom": 863.0,
 	"display_name": "Squign",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "squign",
 	"rank": "B",

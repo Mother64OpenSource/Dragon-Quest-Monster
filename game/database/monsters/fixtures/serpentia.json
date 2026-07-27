@@ -12,6 +12,13 @@
 	"base_mp": 486.0,
 	"base_wisdom": 426.0,
 	"display_name": "Serpentia",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "serpentia",
 	"rank": "B",

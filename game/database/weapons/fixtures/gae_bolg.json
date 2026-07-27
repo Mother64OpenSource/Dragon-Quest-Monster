@@ -1,0 +1,7 @@
+{
+	"base_attack": 94,
+	"description": "Increase the chance of doing critical attacks.",
+	"display_name": "Gae Bolg",
+	"id": "gae_bolg",
+	"weapon_type": "spear"
+}

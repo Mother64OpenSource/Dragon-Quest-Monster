@@ -11,6 +11,13 @@
 	"base_mp": 633.0,
 	"base_wisdom": 926.0,
 	"display_name": "Argo",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "argo",
 	"rank": "SS",

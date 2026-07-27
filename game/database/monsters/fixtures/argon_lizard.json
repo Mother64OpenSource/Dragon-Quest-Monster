@@ -11,6 +11,13 @@
 	"base_mp": 288.0,
 	"base_wisdom": 280.0,
 	"display_name": "Argon Lizard",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "argon_lizard",
 	"rank": "F",

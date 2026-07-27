@@ -11,6 +11,13 @@
 	"base_mp": 740.0,
 	"base_wisdom": 850.0,
 	"display_name": "Gastank",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "gastank",
 	"rank": "C",

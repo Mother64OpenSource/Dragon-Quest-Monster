@@ -11,6 +11,13 @@
 	"base_mp": 452.0,
 	"base_wisdom": 560.0,
 	"display_name": "Tigergram",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "tigergram",
 	"rank": "A",

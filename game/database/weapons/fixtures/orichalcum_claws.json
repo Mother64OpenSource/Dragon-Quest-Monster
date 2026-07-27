@@ -1,0 +1,7 @@
+{
+	"base_attack": 95,
+	"description": "Increases Agility.",
+	"display_name": "Orichalcum Claws",
+	"id": "orichalcum_claws",
+	"weapon_type": "claw"
+}

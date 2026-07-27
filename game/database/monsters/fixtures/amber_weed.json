@@ -12,6 +12,13 @@
 	"base_mp": 697.0,
 	"base_wisdom": 881.0,
 	"display_name": "Amber Weed",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "amber_weed",
 	"rank": "C",

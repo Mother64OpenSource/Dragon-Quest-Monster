@@ -1,0 +1,7 @@
+{
+	"base_attack": 93,
+	"description": "Increase the chance of doing critical attacks by a lot.",
+	"display_name": "Executioner's Axe",
+	"id": "executioner_s_axe",
+	"weapon_type": "axe"
+}

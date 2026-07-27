@@ -1,0 +1,7 @@
+{
+	"base_attack": 68,
+	"description": "Can attack all enemies.",
+	"display_name": "Gringham Whip",
+	"id": "gringham_whip",
+	"weapon_type": "whip"
+}

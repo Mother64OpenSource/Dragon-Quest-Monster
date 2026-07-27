@@ -1,0 +1,7 @@
+{
+	"base_attack": 47,
+	"description": "Increases Wisdom.",
+	"display_name": "Staff of Darkness",
+	"id": "staff_of_darkness",
+	"weapon_type": "staff"
+}

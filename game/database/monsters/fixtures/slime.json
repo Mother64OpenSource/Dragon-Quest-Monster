@@ -11,6 +11,13 @@
 	"base_mp": 10.0,
 	"base_wisdom": 6.0,
 	"display_name": "Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "slime",
 	"id": "slime",
 	"rank": "F",

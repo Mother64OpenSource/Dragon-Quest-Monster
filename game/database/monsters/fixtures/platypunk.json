@@ -11,6 +11,13 @@
 	"base_mp": 472.0,
 	"base_wisdom": 497.0,
 	"display_name": "Platypunk",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "platypunk",
 	"rank": "F",

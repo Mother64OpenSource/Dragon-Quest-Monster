@@ -9,6 +9,13 @@
 	"base_mp": 591.0,
 	"base_wisdom": 946.0,
 	"display_name": "Numen",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "numen",
 	"rank": "SS",

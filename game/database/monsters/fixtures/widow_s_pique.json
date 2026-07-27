@@ -12,6 +12,13 @@
 	"base_mp": 476.0,
 	"base_wisdom": 575.0,
 	"display_name": "Widow's Pique",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "widow_s_pique",
 	"rank": "B",

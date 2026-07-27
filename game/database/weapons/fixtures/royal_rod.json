@@ -1,0 +1,7 @@
+{
+	"base_attack": 83,
+	"description": "Increases Wisdom.",
+	"display_name": "Royal Rod",
+	"id": "royal_rod",
+	"weapon_type": "staff"
+}

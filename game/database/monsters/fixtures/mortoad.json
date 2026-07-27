@@ -12,6 +12,13 @@
 	"base_mp": 769.0,
 	"base_wisdom": 647.0,
 	"display_name": "Mortoad",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "mortoad",
 	"rank": "D",

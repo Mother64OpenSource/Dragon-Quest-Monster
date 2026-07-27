@@ -1,0 +1,7 @@
+{
+	"base_attack": 40,
+	"description": "Increase damage against Beast-types some. Does more criticals.",
+	"display_name": "Hunting Spear",
+	"id": "hunting_spear",
+	"weapon_type": "spear"
+}

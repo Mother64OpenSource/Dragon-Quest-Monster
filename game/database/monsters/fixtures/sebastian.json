@@ -11,6 +11,13 @@
 	"base_mp": 495.0,
 	"base_wisdom": 712.0,
 	"display_name": "Sebastian",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "sebastian",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 840.0,
 	"display_name": "Rockbomb",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "rockbomb",
 	"rank": "E",

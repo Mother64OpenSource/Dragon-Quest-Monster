@@ -12,6 +12,13 @@
 	"base_mp": 488.0,
 	"base_wisdom": 917.0,
 	"display_name": "Misty Wing",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "misty_wing",
 	"rank": "C",

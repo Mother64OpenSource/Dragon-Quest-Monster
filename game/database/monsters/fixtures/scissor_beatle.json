@@ -11,6 +11,13 @@
 	"base_mp": 358.0,
 	"base_wisdom": 406.0,
 	"display_name": "Scissor Beatle",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "scissor_beatle",
 	"rank": "D",

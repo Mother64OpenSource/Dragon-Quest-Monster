@@ -11,6 +11,13 @@
 	"base_mp": 18.0,
 	"base_wisdom": 12.0,
 	"display_name": "Heal Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "slime",
 	"id": "healslime",
 	"rank": "D",

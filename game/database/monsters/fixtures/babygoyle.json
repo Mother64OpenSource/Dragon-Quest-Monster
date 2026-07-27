@@ -11,6 +11,13 @@
 	"base_mp": 448.0,
 	"base_wisdom": 704.0,
 	"display_name": "Babygoyle",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "babygoyle",
 	"rank": "B",

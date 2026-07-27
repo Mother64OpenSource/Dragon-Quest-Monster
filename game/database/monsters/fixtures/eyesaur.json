@@ -11,6 +11,13 @@
 	"base_mp": 680.0,
 	"base_wisdom": 520.0,
 	"display_name": "Eyesaur",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "eyesaur",
 	"rank": "C",

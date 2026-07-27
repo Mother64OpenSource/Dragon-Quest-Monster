@@ -11,6 +11,13 @@
 	"base_mp": 368.0,
 	"base_wisdom": 500.0,
 	"display_name": "Beetleboy",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "beetleboy",
 	"rank": "B",

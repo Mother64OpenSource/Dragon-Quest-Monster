@@ -12,6 +12,13 @@
 	"base_mp": 493.0,
 	"base_wisdom": 945.0,
 	"display_name": "Boreal Serpent",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "boreal_serpent",
 	"rank": "D",

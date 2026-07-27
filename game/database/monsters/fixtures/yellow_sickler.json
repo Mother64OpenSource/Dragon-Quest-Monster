@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 750.0,
 	"display_name": "Yellow Sickler",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "yellow_sickler",
 	"rank": "D",

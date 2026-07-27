@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 436.0,
 	"display_name": "Jumping Jackal",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "jumping_jackal",
 	"rank": "C",

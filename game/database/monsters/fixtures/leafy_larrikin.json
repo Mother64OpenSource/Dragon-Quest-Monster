@@ -11,6 +11,13 @@
 	"base_mp": 760.0,
 	"base_wisdom": 406.0,
 	"display_name": "Leafy Larrikin",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "leafy_larrikin",
 	"rank": "E",

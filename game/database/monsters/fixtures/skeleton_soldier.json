@@ -11,6 +11,13 @@
 	"base_mp": 496.0,
 	"base_wisdom": 540.0,
 	"display_name": "Skeleton Soldier",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "skeleton_soldier",
 	"rank": "B",

@@ -11,6 +11,13 @@
 	"base_mp": 627.0,
 	"base_wisdom": 752.0,
 	"display_name": "Angel Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "angel_slime",
 	"rank": "D",

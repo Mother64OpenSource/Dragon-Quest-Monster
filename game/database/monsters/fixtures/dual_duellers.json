@@ -12,6 +12,13 @@
 	"base_mp": 430.0,
 	"base_wisdom": 710.0,
 	"display_name": "Dual Duellers",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dual_duellers",
 	"rank": "A",

@@ -13,6 +13,13 @@
 	"base_mp": 588.0,
 	"base_wisdom": 863.0,
 	"display_name": "Devilish Destroyer",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "devilish_destroyer",
 	"rank": "B",

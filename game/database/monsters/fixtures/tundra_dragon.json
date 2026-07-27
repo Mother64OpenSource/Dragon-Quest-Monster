@@ -11,6 +11,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 360.0,
 	"display_name": "Tundra Dragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "tundra_dragon",
 	"rank": "C",

@@ -9,6 +9,13 @@
 	"base_mp": 500.0,
 	"base_wisdom": 750.0,
 	"display_name": "Montner",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "montner",
 	"rank": "F",

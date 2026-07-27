@@ -11,6 +11,13 @@
 	"base_mp": 460.0,
 	"base_wisdom": 700.0,
 	"display_name": "Prancing Pillar",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "prancing_pillar",
 	"rank": "B",

@@ -11,6 +11,13 @@
 	"base_mp": 469.0,
 	"base_wisdom": 855.0,
 	"display_name": "Delusionist",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "delusionist",
 	"rank": "A",

@@ -13,6 +13,13 @@
 	"base_mp": 495.0,
 	"base_wisdom": 319.0,
 	"display_name": "Slival's Ship",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slival_s_ship",
 	"rank": "SS",

@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 784.0,
 	"display_name": "Queenie Sanguini",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "queenie_sanguini",
 	"rank": "A",

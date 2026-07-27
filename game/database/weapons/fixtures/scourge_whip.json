@@ -1,0 +1,7 @@
+{
+	"base_attack": 58,
+	"description": "Can attack all enemies.",
+	"display_name": "Scourge Whip",
+	"id": "scourge_whip",
+	"weapon_type": "whip"
+}

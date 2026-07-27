@@ -11,6 +11,13 @@
 	"base_mp": 650.0,
 	"base_wisdom": 892.0,
 	"display_name": "Fire Spirit",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "fire_spirit",
 	"rank": "F",

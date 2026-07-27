@@ -11,6 +11,13 @@
 	"base_mp": 352.0,
 	"base_wisdom": 540.0,
 	"display_name": "Crabid",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "crabid",
 	"rank": "D",

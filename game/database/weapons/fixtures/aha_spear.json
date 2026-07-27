@@ -1,0 +1,7 @@
+{
+	"base_attack": 12,
+	"description": "Sometimes will reveal enemy's power.",
+	"display_name": "Aha Spear",
+	"id": "aha_spear",
+	"weapon_type": "spear"
+}

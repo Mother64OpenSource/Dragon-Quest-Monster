@@ -1,0 +1,7 @@
+{
+	"base_attack": 72,
+	"description": "Increase damage against Dragon-types by a lot.",
+	"display_name": "Dragonsblight",
+	"id": "dragonsblight",
+	"weapon_type": "sword"
+}

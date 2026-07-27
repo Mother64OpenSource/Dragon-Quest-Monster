@@ -11,6 +11,13 @@
 	"base_mp": 583.0,
 	"base_wisdom": 482.0,
 	"display_name": "Don Mole",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "don_mole",
 	"rank": "A",

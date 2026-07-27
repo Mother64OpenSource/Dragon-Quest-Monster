@@ -12,6 +12,13 @@
 	"base_mp": 512.0,
 	"base_wisdom": 567.0,
 	"display_name": "Ethereal Serpent",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "ethereal_serpent",
 	"rank": "B",

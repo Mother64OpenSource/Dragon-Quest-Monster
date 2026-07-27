@@ -9,6 +9,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 672.0,
 	"display_name": "Nelgel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "nelgel",
 	"rank": "SS",

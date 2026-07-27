@@ -12,6 +12,13 @@
 	"base_mp": 543.0,
 	"base_wisdom": 944.0,
 	"display_name": "Marquis de L?on",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "marquis_de_l_on",
 	"rank": "S",

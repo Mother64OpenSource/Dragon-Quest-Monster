@@ -11,6 +11,13 @@
 	"base_mp": 450.0,
 	"base_wisdom": 584.0,
 	"display_name": "Wild Carrot",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "wild_carrot",
 	"rank": "C",

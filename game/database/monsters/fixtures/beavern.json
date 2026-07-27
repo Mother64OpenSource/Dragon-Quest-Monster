@@ -11,6 +11,13 @@
 	"base_mp": 494.0,
 	"base_wisdom": 543.0,
 	"display_name": "Beavern",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "beavern",
 	"rank": "E",

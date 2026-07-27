@@ -1,0 +1,7 @@
+{
+	"base_attack": 31,
+	"description": "Increase item effect in battle.",
+	"display_name": "Bandit's Axe",
+	"id": "bandit_s_axe",
+	"weapon_type": "axe"
+}

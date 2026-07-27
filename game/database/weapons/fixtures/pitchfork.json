@@ -1,0 +1,7 @@
+{
+	"base_attack": 16,
+	"description": "Increase damage against Nature-types some. Does more criticals.",
+	"display_name": "Pitchfork",
+	"id": "pitchfork",
+	"weapon_type": "spear"
+}

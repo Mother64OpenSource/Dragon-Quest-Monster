@@ -11,6 +11,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 840.0,
 	"display_name": "Slimecicle",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slimecicle",
 	"rank": "C",

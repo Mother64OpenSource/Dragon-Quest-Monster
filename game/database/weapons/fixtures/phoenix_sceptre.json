@@ -1,0 +1,7 @@
+{
+	"base_attack": 8,
+	"description": "The same monster will be born when equipped during breeding.",
+	"display_name": "Phoenix Sceptre",
+	"id": "phoenix_sceptre",
+	"weapon_type": "staff"
+}

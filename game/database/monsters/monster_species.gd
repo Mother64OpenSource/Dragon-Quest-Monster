@@ -41,6 +41,17 @@ enum Rank { F, E, D, C, B, A, S, SS }
 ## wiki/log.md.
 @export var total_skill_points: int = 0
 
+## Weapon-type ids ("sword"/"spear"/"axe"/"club"/"whip"/"claw"/"staff", see
+## WeaponData.ALL_TYPE_IDS) this species can equip, sourced from the source
+## spreadsheet's Monsters tab Weapons compatibility grid (a blank cell means
+## compatible, "⨯" means not -- not every species can equip every type, e.g.
+## most Slime-family monsters can't use Claw or Staff weapons). Prefer
+## MonsterEquipmentRules.get_equippable_weapon_types() over reading this
+## directly, since it also accounts for the master_of_weapons trait -- kept
+## as raw sourced data here rather than a method, matching this class's own
+## "no behavior lives here" convention.
+@export var equippable_weapon_types: Array[String] = []
+
 ## Sparse map of resistance-code -> raw symbol from the source spreadsheet
 ## (e.g. "Psn": "½", "Zap": "0"). Only non-blank entries are stored; a code
 ## absent from this dict means normal (unmodified) susceptibility. Symbol

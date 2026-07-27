@@ -1,0 +1,7 @@
+{
+	"base_attack": 66,
+	"description": "Increase damage against Dragon-types by a lot.",
+	"display_name": "Dragon Claws",
+	"id": "dragon_claws",
+	"weapon_type": "claw"
+}

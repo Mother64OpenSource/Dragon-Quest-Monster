@@ -11,6 +11,13 @@
 	"base_mp": 532.0,
 	"base_wisdom": 875.0,
 	"display_name": "Cumaulus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "cumaulus",
 	"rank": "D",

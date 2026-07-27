@@ -11,6 +11,13 @@
 	"base_mp": 440.0,
 	"base_wisdom": 657.0,
 	"display_name": "Phantom Fencer",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "phantom_fencer",
 	"rank": "D",

@@ -11,6 +11,13 @@
 	"base_mp": 396.0,
 	"base_wisdom": 591.0,
 	"display_name": "Eveel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "eveel",
 	"rank": "D",

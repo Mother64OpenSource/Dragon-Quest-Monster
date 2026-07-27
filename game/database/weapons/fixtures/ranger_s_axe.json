@@ -1,0 +1,7 @@
+{
+	"base_attack": 90,
+	"description": "Increase damage against Beast/Nature-types significantly.",
+	"display_name": "Ranger's Axe",
+	"id": "ranger_s_axe",
+	"weapon_type": "axe"
+}

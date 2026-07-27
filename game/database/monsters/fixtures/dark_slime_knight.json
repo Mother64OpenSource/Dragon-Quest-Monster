@@ -11,6 +11,13 @@
 	"base_mp": 538.0,
 	"base_wisdom": 671.0,
 	"display_name": "Dark Slime Knight",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "dark_slime_knight",
 	"rank": "B",

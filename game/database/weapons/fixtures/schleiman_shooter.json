@@ -1,0 +1,7 @@
+{
+	"base_attack": 46,
+	"description": "Increase damage against Material-types by a lot.",
+	"display_name": "Schleiman Shooter",
+	"id": "schleiman_shooter",
+	"weapon_type": "club"
+}

@@ -9,6 +9,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 740.0,
 	"display_name": "Baboon Beast",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "baboon_beast",
 	"rank": "SS",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 10,
+	"description": "Can attack all enemies.",
+	"display_name": "Battle Whip",
+	"id": "battle_whip",
+	"weapon_type": "whip"
+}

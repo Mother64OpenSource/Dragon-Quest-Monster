@@ -13,6 +13,13 @@
 	"base_mp": 768.0,
 	"base_wisdom": 1056.0,
 	"display_name": "Slime Blaster",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slime_blaster",
 	"rank": "SS",

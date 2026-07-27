@@ -1,0 +1,7 @@
+{
+	"base_attack": 70,
+	"description": "Sometimes reduces enemy's Tension.",
+	"display_name": "Tension Crusher",
+	"id": "tension_crusher",
+	"weapon_type": "club"
+}

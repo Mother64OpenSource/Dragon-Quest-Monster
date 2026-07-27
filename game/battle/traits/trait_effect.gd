@@ -881,10 +881,19 @@ static func create(id: String, data: TraitData, skill_db: SkillDatabase = null) 
 		#   actually does.
 		# - talent-scout cluster (genius_talent_scout, pro_talent_scout,
 		#   talent_scout), lootist, gold_getter, fast_learner, lucky,
-		#   unlucky, protection_of_the_stars, master_of_weapons: all need a
-		#   scouting/EXP/gold/item-drop/Luck-stat/weapon-slot system that
+		#   unlucky, protection_of_the_stars: all need a
+		#   scouting/EXP/gold/item-drop/Luck-stat system that
 		#   doesn't exist in this project, unchanged since the original
 		#   trait audit's scope decision.
+		# - master_of_weapons ("Allows monster to equip every type of
+		#   weapon") is no longer in this excluded list -- now that a real
+		#   weapon-equip system exists (see wiki/log.md), it's implemented,
+		#   but not through this factory: equip-eligibility is a
+		#   team-builder-time rule, not a battle-runtime hook, so
+		#   MonsterEquipmentRules.get_equippable_weapon_types() special-cases
+		#   the trait id directly (same "read a trait id without a
+		#   TraitEffect instance" pattern BonusDamageVsMetalBodyTraitEffect
+		#   already uses) instead of getting a TraitEffect.create() entry.
 		# - sore_loser ("bonus vs a higher-level enemy"): needs a monster
 		#   "level" concept this engine has never had (confirmed: no `level`
 		#   field exists anywhere on MonsterInstance or MonsterSpecies) --

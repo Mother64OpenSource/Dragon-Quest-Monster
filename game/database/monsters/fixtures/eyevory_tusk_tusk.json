@@ -12,6 +12,13 @@
 	"base_mp": 484.0,
 	"base_wisdom": 548.0,
 	"display_name": "Eyevory Tusk-tusk",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "eyevory_tusk_tusk",
 	"rank": "B",

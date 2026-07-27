@@ -9,6 +9,13 @@
 	"base_mp": 449.0,
 	"base_wisdom": 424.0,
 	"display_name": "Eggla & Chickira",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "eggla_chickira",
 	"rank": "S",

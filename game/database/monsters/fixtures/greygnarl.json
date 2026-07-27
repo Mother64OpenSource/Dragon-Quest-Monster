@@ -12,6 +12,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 689.0,
 	"display_name": "Greygnarl",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "greygnarl",
 	"rank": "SS",

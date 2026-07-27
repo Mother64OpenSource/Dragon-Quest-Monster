@@ -11,6 +11,13 @@
 	"base_mp": 384.0,
 	"base_wisdom": 720.0,
 	"display_name": "Magma Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "magma_slime",
 	"rank": "E",

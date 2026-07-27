@@ -9,6 +9,13 @@
 	"base_mp": 432.0,
 	"base_wisdom": 370.0,
 	"display_name": "Barbaru",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "barbaru",
 	"rank": "S",

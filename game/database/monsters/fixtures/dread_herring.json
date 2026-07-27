@@ -11,6 +11,13 @@
 	"base_mp": 451.0,
 	"base_wisdom": 714.0,
 	"display_name": "Dread Herring",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "dread_herring",
 	"rank": "F",

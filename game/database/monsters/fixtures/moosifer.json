@@ -11,6 +11,13 @@
 	"base_mp": 431.0,
 	"base_wisdom": 901.0,
 	"display_name": "Moosifer",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "moosifer",
 	"rank": "A",

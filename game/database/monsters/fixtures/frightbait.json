@@ -11,6 +11,13 @@
 	"base_mp": 496.0,
 	"base_wisdom": 515.0,
 	"display_name": "Frightbait",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "frightbait",
 	"rank": "F",

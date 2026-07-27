@@ -11,6 +11,13 @@
 	"base_mp": 468.0,
 	"base_wisdom": 391.0,
 	"display_name": "Weedie",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "weedie",
 	"rank": "F",

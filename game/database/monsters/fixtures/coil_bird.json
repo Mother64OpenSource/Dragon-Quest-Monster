@@ -11,6 +11,13 @@
 	"base_mp": 408.0,
 	"base_wisdom": 416.0,
 	"display_name": "Coil Bird",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "coil_bird",
 	"rank": "F",

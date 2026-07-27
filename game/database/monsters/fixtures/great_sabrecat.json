@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 440.0,
 	"display_name": "Great Sabrecat",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "great_sabrecat",
 	"rank": "D",

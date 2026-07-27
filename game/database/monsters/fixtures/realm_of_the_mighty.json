@@ -13,6 +13,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 537.0,
 	"display_name": "Realm of the Mighty",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "realm_of_the_mighty",
 	"rank": "SS",

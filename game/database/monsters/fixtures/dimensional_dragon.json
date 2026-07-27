@@ -12,6 +12,13 @@
 	"base_mp": 483.0,
 	"base_wisdom": 726.0,
 	"display_name": "Dimensional Dragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dimensional_dragon",
 	"rank": "SS",

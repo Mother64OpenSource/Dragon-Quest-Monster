@@ -11,6 +11,13 @@
 	"base_mp": 496.0,
 	"base_wisdom": 644.0,
 	"display_name": "Stark Raven",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "stark_raven",
 	"rank": "F",

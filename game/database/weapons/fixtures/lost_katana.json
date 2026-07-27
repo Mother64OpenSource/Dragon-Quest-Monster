@@ -1,0 +1,7 @@
+{
+	"base_attack": 110,
+	"description": "No other effect.",
+	"display_name": "Lost Katana",
+	"id": "lost_katana",
+	"weapon_type": "sword"
+}

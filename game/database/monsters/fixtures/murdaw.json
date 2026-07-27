@@ -9,6 +9,13 @@
 	"base_mp": 517.0,
 	"base_wisdom": 955.0,
 	"display_name": "Murdaw",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "murdaw",
 	"rank": "S",

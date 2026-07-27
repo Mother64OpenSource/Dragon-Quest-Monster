@@ -11,6 +11,13 @@
 	"base_mp": 700.0,
 	"base_wisdom": 1000.0,
 	"display_name": "Prestidigitator",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "prestidigitator",
 	"rank": "C",

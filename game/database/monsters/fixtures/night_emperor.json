@@ -11,6 +11,13 @@
 	"base_mp": 550.0,
 	"base_wisdom": 750.0,
 	"display_name": "Night Emperor",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "night_emperor",
 	"rank": "E",

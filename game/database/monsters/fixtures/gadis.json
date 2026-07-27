@@ -9,6 +9,13 @@
 	"base_mp": 588.0,
 	"base_wisdom": 924.0,
 	"display_name": "Gadis",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "gadis",
 	"rank": "SS",

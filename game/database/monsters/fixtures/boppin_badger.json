@@ -11,6 +11,13 @@
 	"base_mp": 380.0,
 	"base_wisdom": 550.0,
 	"display_name": "Boppin' Badger",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "boppin_badger",
 	"rank": "F",

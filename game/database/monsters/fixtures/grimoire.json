@@ -12,6 +12,13 @@
 	"base_mp": 905.0,
 	"base_wisdom": 962.0,
 	"display_name": "Grimoire",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "grimoire",
 	"rank": "C",

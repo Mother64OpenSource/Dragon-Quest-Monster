@@ -1,0 +1,7 @@
+{
+	"base_attack": 110,
+	"description": "Sometimes causes Disruption.",
+	"display_name": "Staff of Light",
+	"id": "staff_of_light",
+	"weapon_type": "staff"
+}

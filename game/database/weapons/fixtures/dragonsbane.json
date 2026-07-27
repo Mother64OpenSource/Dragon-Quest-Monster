@@ -1,0 +1,7 @@
+{
+	"base_attack": 41,
+	"description": "Increase damage against Dragon-types.",
+	"display_name": "Dragonsbane",
+	"id": "dragonsbane",
+	"weapon_type": "sword"
+}

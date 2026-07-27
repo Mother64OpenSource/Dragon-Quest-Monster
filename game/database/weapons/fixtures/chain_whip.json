@@ -1,0 +1,7 @@
+{
+	"base_attack": 36,
+	"description": "Can attack all enemies.",
+	"display_name": "Chain Whip",
+	"id": "chain_whip",
+	"weapon_type": "whip"
+}

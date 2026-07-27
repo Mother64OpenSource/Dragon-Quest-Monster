@@ -11,6 +11,13 @@
 	"base_mp": 571.0,
 	"base_wisdom": 988.0,
 	"display_name": "King Korol",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "king_korol",
 	"rank": "A",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 25,
+	"description": "Can attack all enemies. Increase chance of spell critical.",
+	"display_name": "Magical Whip",
+	"id": "magical_whip",
+	"weapon_type": "whip"
+}

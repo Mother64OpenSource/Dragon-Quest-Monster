@@ -1,0 +1,7 @@
+{
+	"base_attack": 7,
+	"description": "Restores HP.",
+	"display_name": "Staff of Ghent",
+	"id": "staff_of_ghent",
+	"weapon_type": "staff"
+}

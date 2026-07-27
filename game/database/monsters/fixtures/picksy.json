@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 550.0,
 	"display_name": "Picksy",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "picksy",
 	"rank": "F",

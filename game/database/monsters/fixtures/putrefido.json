@@ -11,6 +11,13 @@
 	"base_mp": 642.0,
 	"base_wisdom": 691.0,
 	"display_name": "Putrefido",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "putrefido",
 	"rank": "F",

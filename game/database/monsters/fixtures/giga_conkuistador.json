@@ -13,6 +13,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 652.0,
 	"display_name": "Giga Conkuistador",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "giga_conkuistador",
 	"rank": "C",

@@ -9,6 +9,13 @@
 	"base_mp": 567.0,
 	"base_wisdom": 828.0,
 	"display_name": "Maizarugius",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "maizarugius",
 	"rank": "SS",

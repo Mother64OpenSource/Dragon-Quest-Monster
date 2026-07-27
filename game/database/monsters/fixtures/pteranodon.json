@@ -12,6 +12,13 @@
 	"base_mp": 513.0,
 	"base_wisdom": 520.0,
 	"display_name": "Pteranodon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "pteranodon",
 	"rank": "D",

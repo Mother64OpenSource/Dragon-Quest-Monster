@@ -9,6 +9,13 @@
 	"base_mp": 500.0,
 	"base_wisdom": 940.0,
 	"display_name": "Sorcerer Bedora",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "sorcerer_bedora",
 	"rank": "S",

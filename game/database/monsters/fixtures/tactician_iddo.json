@@ -12,6 +12,13 @@
 	"base_mp": 735.0,
 	"base_wisdom": 882.0,
 	"display_name": "Tactician Iddo",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "tactician_iddo",
 	"rank": "SS",

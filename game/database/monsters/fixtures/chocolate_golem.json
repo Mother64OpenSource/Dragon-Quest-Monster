@@ -11,6 +11,13 @@
 	"base_mp": 400.0,
 	"base_wisdom": 500.0,
 	"display_name": "Chocolate Golem",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "chocolate_golem",
 	"rank": "S",

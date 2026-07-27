@@ -11,6 +11,13 @@
 	"base_mp": 736.0,
 	"base_wisdom": 856.0,
 	"display_name": "Psaro's Pawn",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "psaro_s_pawn",
 	"rank": "D",

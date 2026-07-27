@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 617.0,
 	"display_name": "King Mottle Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "king_mottle_slime",
 	"rank": "C",

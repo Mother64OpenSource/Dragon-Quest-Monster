@@ -1,0 +1,7 @@
+{
+	"base_attack": 14,
+	"description": "Increase damage against Beast/Nature-types some.",
+	"display_name": "Woodcutter's Axe",
+	"id": "woodcutter_s_axe",
+	"weapon_type": "axe"
+}

@@ -9,6 +9,13 @@
 	"base_mp": 432.0,
 	"base_wisdom": 640.0,
 	"display_name": "Djinneral Geppaku",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "djinneral_geppaku",
 	"rank": "D",

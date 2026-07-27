@@ -11,6 +11,13 @@
 	"base_mp": 485.0,
 	"base_wisdom": 621.0,
 	"display_name": "Frostburn",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "frostburn",
 	"rank": "D",

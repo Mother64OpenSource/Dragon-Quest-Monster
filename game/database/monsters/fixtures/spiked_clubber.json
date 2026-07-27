@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 610.0,
 	"display_name": "Spiked Clubber",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "spiked_clubber",
 	"rank": "D",

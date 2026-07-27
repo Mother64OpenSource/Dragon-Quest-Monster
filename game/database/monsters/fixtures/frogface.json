@@ -11,6 +11,13 @@
 	"base_mp": 529.0,
 	"base_wisdom": 802.0,
 	"display_name": "Frogface",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "frogface",
 	"rank": "F",

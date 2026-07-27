@@ -11,6 +11,13 @@
 	"base_mp": 512.0,
 	"base_wisdom": 878.0,
 	"display_name": "Dangler Fish",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "dangler_fish",
 	"rank": "D",

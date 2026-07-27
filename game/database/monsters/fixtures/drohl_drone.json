@@ -11,6 +11,13 @@
 	"base_mp": 489.0,
 	"base_wisdom": 635.0,
 	"display_name": "Drohl Drone",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "drohl_drone",
 	"rank": "F",

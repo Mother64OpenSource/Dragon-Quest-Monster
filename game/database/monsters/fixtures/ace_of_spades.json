@@ -9,6 +9,13 @@
 	"base_mp": 544.0,
 	"base_wisdom": 772.0,
 	"display_name": "Ace of Spades",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "unknown",
 	"id": "ace_of_spades",
 	"rank": "SS",

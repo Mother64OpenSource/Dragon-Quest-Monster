@@ -13,3 +13,9 @@ extends Resource
 ## available_skill_sets; sum should not exceed species.total_skill_points
 ## (enforced by TeamRosterManager.validate_member, not here).
 @export var skill_point_allocation: Dictionary = {}
+
+## "" means no weapon equipped. Should be a WeaponData whose type is in
+## MonsterEquipmentRules.get_equippable_weapon_types(species) (enforced by
+## TeamRosterManager.validate_member, not here -- same pattern as
+## equipped_skill_ids above).
+@export var equipped_weapon_id: String = ""

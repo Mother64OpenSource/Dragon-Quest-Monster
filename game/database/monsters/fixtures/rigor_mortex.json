@@ -9,6 +9,13 @@
 	"base_mp": 652.0,
 	"base_wisdom": 569.0,
 	"display_name": "Rigor Mortex",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "rigor_mortex",
 	"rank": "SS",

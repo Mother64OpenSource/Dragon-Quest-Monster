@@ -11,6 +11,13 @@
 	"base_mp": 572.0,
 	"base_wisdom": 455.0,
 	"display_name": "Digster",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "digster",
 	"rank": "B",

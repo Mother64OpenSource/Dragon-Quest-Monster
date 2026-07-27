@@ -11,6 +11,13 @@
 	"base_mp": 535.0,
 	"base_wisdom": 855.0,
 	"display_name": "Malevolantern",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "malevolantern",
 	"rank": "E",

@@ -13,6 +13,12 @@
 	"base_mp": 532.0,
 	"base_wisdom": 609.0,
 	"display_name": "Xiphos",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "xiphos",
 	"rank": "SS",

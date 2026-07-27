@@ -11,6 +11,13 @@
 	"base_mp": 515.0,
 	"base_wisdom": 736.0,
 	"display_name": "Slime Knight",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slime_knight",
 	"rank": "D",

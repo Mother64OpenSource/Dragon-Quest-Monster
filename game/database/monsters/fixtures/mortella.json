@@ -12,6 +12,13 @@
 	"base_mp": 488.0,
 	"base_wisdom": 833.0,
 	"display_name": "Mortella",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "mortella",
 	"rank": "A",

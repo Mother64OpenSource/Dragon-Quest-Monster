@@ -12,6 +12,13 @@
 	"base_mp": 647.0,
 	"base_wisdom": 964.0,
 	"display_name": "Dead Masker",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "dead_masker",
 	"rank": "A",

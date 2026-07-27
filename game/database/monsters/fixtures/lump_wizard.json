@@ -11,6 +11,13 @@
 	"base_mp": 563.0,
 	"base_wisdom": 976.0,
 	"display_name": "Lump Wizard",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "lump_wizard",
 	"rank": "E",

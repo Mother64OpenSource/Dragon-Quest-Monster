@@ -9,6 +9,13 @@
 	"base_mp": 324.0,
 	"base_wisdom": 783.0,
 	"display_name": "Mortamor",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "mortamor",
 	"rank": "A",

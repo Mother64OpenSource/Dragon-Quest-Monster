@@ -29,6 +29,11 @@ var _species: MonsterSpecies
 var _skill_db: SkillDatabase
 var _skillset_db: SkillSetDatabase
 var _trait_db: TraitDatabase
+var _weapon_db: WeaponDatabase
+## Parallel to _weapon_button's item list ("" for the leading "No Weapon"
+## entry) -- OptionButton has no built-in way to stash an arbitrary id per
+## item, so item index -> weapon id is tracked here instead.
+var _weapon_button_ids: Array[String] = []
 
 @onready var _species_icon: TextureRect = $Layout/IconRow/SpeciesIcon
 @onready var _nickname_edit: LineEdit = $Layout/NicknameEdit
@@ -36,6 +41,7 @@ var _trait_db: TraitDatabase
 @onready var _traits_label: Label = $Layout/TraitsLabel
 @onready var _skills_box: HBoxContainer = $Layout/SkillsBox
 @onready var _skills_button: Button = $Layout/SkillsButton
+@onready var _weapon_button: OptionButton = $Layout/WeaponButton
 @onready var _remove_button: Button = $Layout/IconRow/RemoveButton
 @onready var _skill_point_dialog: SkillPointDialog = $SkillPointDialog
 
@@ -45,13 +51,15 @@ func _ready() -> void:
 	_remove_button.pressed.connect(func() -> void: remove_requested.emit())
 	_skills_button.pressed.connect(_on_skills_pressed)
 	_skill_point_dialog.allocation_changed.connect(_on_allocation_changed)
+	_weapon_button.item_selected.connect(_on_weapon_selected)
 
-func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase, trait_db: TraitDatabase) -> void:
+func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase, trait_db: TraitDatabase, weapon_db: WeaponDatabase = null) -> void:
 	loadout = p_loadout
 	member_index = p_index
 	_skill_db = skill_db
 	_skillset_db = skillset_db
 	_trait_db = trait_db
+	_weapon_db = weapon_db
 	_species = monster_db.get_species(loadout.species_id)
 
 	_nickname_edit.text = loadout.nickname
@@ -67,6 +75,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		_traits_label.visible = false
 		_skills_button.visible = false
 		_skills_box.visible = true
+		_weapon_button.visible = false
 		_build_unknown_species_label()
 		return
 
@@ -77,6 +86,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 	_skills_box.visible = false
 	_skills_button.visible = true
 	_update_skills_button_text()
+	_update_weapon_button()
 
 ## Comma-joined names (clipped to one line, matching _species_label's own
 ## convention) with a composed "Name: description" tooltip per trait joined
@@ -111,6 +121,44 @@ func _build_unknown_species_label() -> void:
 
 func _update_skills_button_text() -> void:
 	_skills_button.text = "Skills (%d)" % loadout.equipped_skill_ids.size()
+
+## Options are filtered to only the weapons this species can actually equip
+## (MonsterEquipmentRules.get_equippable_weapon_types(), which also honors
+## master_of_weapons) -- rebuilt every setup() call since a species swap
+## changes which weapons are even valid options.
+func _update_weapon_button() -> void:
+	_weapon_button.visible = _weapon_db != null
+	if _weapon_db == null:
+		return
+
+	_weapon_button.clear()
+	_weapon_button_ids.clear()
+	_weapon_button.add_item("(No Weapon)")
+	_weapon_button_ids.append("")
+
+	var allowed_types := MonsterEquipmentRules.get_equippable_weapon_types(_species)
+	var selected_index := 0
+	for weapon in _weapon_db.get_all_weapons():
+		if not allowed_types.has(WeaponLoader.type_to_string(weapon.weapon_type)):
+			continue
+		# "(+N ATK)" surfaces the one mechanically-real number (base_attack)
+		# right in the option label -- the rest of each weapon's flavor text
+		# (elemental bonus, status chance, etc.) is display-only, so it only
+		# needs a tooltip, not label space.
+		_weapon_button.add_item("%s (+%d ATK)" % [weapon.display_name, weapon.base_attack])
+		var item_index := _weapon_button_ids.size()
+		_weapon_button_ids.append(weapon.id)
+		_weapon_button.set_item_tooltip(item_index, "Base Attack +%d\n%s" % [weapon.base_attack, weapon.description])
+		if weapon.id == loadout.equipped_weapon_id:
+			selected_index = item_index
+	_weapon_button.select(selected_index)
+
+func _on_weapon_selected(index: int) -> void:
+	var weapon_id := _weapon_button_ids[index]
+	if loadout.equipped_weapon_id == weapon_id:
+		return
+	loadout.equipped_weapon_id = weapon_id
+	loadout_edited.emit()
 
 func _on_skills_pressed() -> void:
 	_skill_point_dialog.show_for(loadout, _species, _skill_db, _skillset_db)

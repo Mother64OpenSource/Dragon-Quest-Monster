@@ -11,6 +11,13 @@
 	"base_mp": 592.0,
 	"base_wisdom": 920.0,
 	"display_name": "Hyperanemon",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "hyperanemon",
 	"rank": "A",

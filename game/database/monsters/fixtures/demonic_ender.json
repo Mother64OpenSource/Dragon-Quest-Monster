@@ -11,6 +11,13 @@
 	"base_mp": 616.0,
 	"base_wisdom": 792.0,
 	"display_name": "Demonic Ender",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "demonic_ender",
 	"rank": "D",

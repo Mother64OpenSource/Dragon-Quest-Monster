@@ -12,6 +12,13 @@
 	"base_mp": 368.0,
 	"base_wisdom": 706.0,
 	"display_name": "Haunted Tree",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "haunted_tree",
 	"rank": "C",

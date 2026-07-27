@@ -12,6 +12,13 @@
 	"base_mp": 540.0,
 	"base_wisdom": 756.0,
 	"display_name": "Holy Bahlib",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "holy_bahlib",
 	"rank": "S",

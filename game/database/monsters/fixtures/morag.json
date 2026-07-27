@@ -12,6 +12,13 @@
 	"base_mp": 634.0,
 	"base_wisdom": 788.0,
 	"display_name": "Morag",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "morag",
 	"rank": "A",

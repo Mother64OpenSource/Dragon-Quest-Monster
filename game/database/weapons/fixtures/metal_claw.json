@@ -1,0 +1,7 @@
+{
+	"base_attack": 55,
+	"description": "Does more damage to Metal-types.",
+	"display_name": "Metal Claw",
+	"id": "metal_claw",
+	"weapon_type": "claw"
+}

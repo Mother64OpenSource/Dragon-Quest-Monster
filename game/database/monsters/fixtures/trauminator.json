@@ -12,6 +12,13 @@
 	"base_mp": 453.0,
 	"base_wisdom": 636.0,
 	"display_name": "Trauminator",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "trauminator",
 	"rank": "SS",

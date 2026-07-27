@@ -11,6 +11,13 @@
 	"base_mp": 452.0,
 	"base_wisdom": 797.0,
 	"display_name": "Dessert Demon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "dessert_demon",
 	"rank": "D",

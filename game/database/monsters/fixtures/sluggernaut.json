@@ -13,6 +13,13 @@
 	"base_mp": 632.0,
 	"base_wisdom": 498.0,
 	"display_name": "Sluggernaut",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "sluggernaut",
 	"rank": "D",

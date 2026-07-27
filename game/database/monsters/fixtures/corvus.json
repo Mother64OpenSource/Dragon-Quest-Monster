@@ -9,6 +9,13 @@
 	"base_mp": 370.0,
 	"base_wisdom": 739.0,
 	"display_name": "Corvus",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "corvus",
 	"rank": "SS",

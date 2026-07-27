@@ -11,6 +11,13 @@
 	"base_mp": 380.0,
 	"base_wisdom": 450.0,
 	"display_name": "Notso-Macho",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "notso_macho",
 	"rank": "C",

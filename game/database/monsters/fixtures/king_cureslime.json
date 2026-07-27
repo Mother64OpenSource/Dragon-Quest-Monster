@@ -11,6 +11,13 @@
 	"base_mp": 618.0,
 	"base_wisdom": 983.0,
 	"display_name": "King Cureslime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "king_cureslime",
 	"rank": "B",

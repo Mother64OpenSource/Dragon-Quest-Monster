@@ -9,6 +9,12 @@
 	"base_mp": 518.0,
 	"base_wisdom": 732.0,
 	"display_name": "Robbin' Ladies",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "robbin_ladies",
 	"rank": "SS",

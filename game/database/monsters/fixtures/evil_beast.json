@@ -9,6 +9,13 @@
 	"base_mp": 518.0,
 	"base_wisdom": 924.0,
 	"display_name": "Evil Beast",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "unknown",
 	"id": "evil_beast",
 	"rank": "SS",

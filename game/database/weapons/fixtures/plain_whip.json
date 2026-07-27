@@ -1,0 +1,7 @@
+{
+	"base_attack": 19,
+	"description": "Increase Tension Burn accumulation rate.",
+	"display_name": "Plain Whip",
+	"id": "plain_whip",
+	"weapon_type": "whip"
+}

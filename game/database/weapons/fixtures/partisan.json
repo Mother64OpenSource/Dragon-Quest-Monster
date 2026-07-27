@@ -1,0 +1,7 @@
+{
+	"base_attack": 28,
+	"description": "Increase damage against Material-types some.",
+	"display_name": "Partisan",
+	"id": "partisan",
+	"weapon_type": "spear"
+}

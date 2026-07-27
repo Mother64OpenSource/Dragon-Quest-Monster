@@ -11,6 +11,13 @@
 	"base_mp": 308.0,
 	"base_wisdom": 308.0,
 	"display_name": "Octophant",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "octophant",
 	"rank": "B",

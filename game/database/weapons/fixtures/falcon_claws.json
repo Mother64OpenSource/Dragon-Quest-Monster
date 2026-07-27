@@ -1,0 +1,7 @@
+{
+	"base_attack": 15,
+	"description": "Increases Agility significantly.",
+	"display_name": "Falcon Claws",
+	"id": "falcon_claws",
+	"weapon_type": "claw"
+}

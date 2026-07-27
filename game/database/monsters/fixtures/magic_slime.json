@@ -11,6 +11,13 @@
 	"base_mp": 632.0,
 	"base_wisdom": 760.0,
 	"display_name": "Magic Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "magic_slime",
 	"rank": "B",

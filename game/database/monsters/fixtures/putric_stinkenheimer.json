@@ -11,6 +11,13 @@
 	"base_mp": 395.0,
 	"base_wisdom": 888.0,
 	"display_name": "Putric Stinkenheimer",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "putric_stinkenheimer",
 	"rank": "F",

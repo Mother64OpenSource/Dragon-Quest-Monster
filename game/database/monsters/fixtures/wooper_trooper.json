@@ -11,6 +11,13 @@
 	"base_mp": 478.0,
 	"base_wisdom": 778.0,
 	"display_name": "Wooper Trooper",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "wooper_trooper",
 	"rank": "D",

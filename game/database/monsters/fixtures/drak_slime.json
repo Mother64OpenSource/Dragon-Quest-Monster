@@ -11,6 +11,13 @@
 	"base_mp": 459.0,
 	"base_wisdom": 408.0,
 	"display_name": "Drak Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "drak_slime",
 	"rank": "F",

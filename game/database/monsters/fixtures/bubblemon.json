@@ -13,6 +13,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 414.0,
 	"display_name": "Bubblemon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "bubblemon",
 	"rank": "D",

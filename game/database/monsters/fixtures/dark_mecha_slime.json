@@ -13,6 +13,13 @@
 	"base_mp": 499.0,
 	"base_wisdom": 770.0,
 	"display_name": "Dark Mecha-Slime",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "dark_mecha_slime",
 	"rank": "S",

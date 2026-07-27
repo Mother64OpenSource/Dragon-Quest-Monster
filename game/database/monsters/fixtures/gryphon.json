@@ -11,6 +11,13 @@
 	"base_mp": 601.0,
 	"base_wisdom": 620.0,
 	"display_name": "Gryphon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Devil",
 	"id": "gryphon",
 	"rank": "C",

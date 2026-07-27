@@ -11,6 +11,7 @@
 	"base_mp": 400.0,
 	"base_wisdom": 640.0,
 	"display_name": "Berry Slime",
+	"equippable_weapon_types": [],
 	"family": "Slime",
 	"id": "berry_slime",
 	"rank": "C",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 39,
+	"description": "Increase the chance of doing critical attacks.",
+	"display_name": "Headsman's Axe",
+	"id": "headsman_s_axe",
+	"weapon_type": "axe"
+}

@@ -9,6 +9,13 @@
 	"base_mp": 459.0,
 	"base_wisdom": 577.0,
 	"display_name": "Kakalon",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "kakalon",
 	"rank": "S",

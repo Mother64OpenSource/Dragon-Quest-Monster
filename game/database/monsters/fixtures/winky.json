@@ -11,6 +11,13 @@
 	"base_mp": 520.0,
 	"base_wisdom": 691.0,
 	"display_name": "Winky",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "winky",
 	"rank": "F",

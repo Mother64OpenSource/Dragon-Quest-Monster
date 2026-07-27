@@ -11,6 +11,12 @@
 	"base_mp": 448.0,
 	"base_wisdom": 508.0,
 	"display_name": "Conkettes",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "conkettes",
 	"rank": "A",

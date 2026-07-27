@@ -12,6 +12,13 @@
 	"base_mp": 515.0,
 	"base_wisdom": 258.0,
 	"display_name": "Gorago",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "gorago",
 	"rank": "S",

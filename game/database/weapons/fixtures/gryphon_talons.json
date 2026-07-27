@@ -1,0 +1,7 @@
+{
+	"base_attack": 77,
+	"description": "Increases Agility.",
+	"display_name": "Gryphon Talons",
+	"id": "gryphon_talons",
+	"weapon_type": "claw"
+}

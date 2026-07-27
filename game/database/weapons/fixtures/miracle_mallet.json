@@ -1,0 +1,7 @@
+{
+	"base_attack": 37,
+	"description": "Restores HP.",
+	"display_name": "Miracle Mallet",
+	"id": "miracle_mallet",
+	"weapon_type": "club"
+}

@@ -11,6 +11,13 @@
 	"base_mp": 900.0,
 	"base_wisdom": 1053.0,
 	"display_name": "Syphon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "syphon",
 	"rank": "SS",

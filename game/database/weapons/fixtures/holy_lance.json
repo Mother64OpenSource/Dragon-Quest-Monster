@@ -1,0 +1,7 @@
+{
+	"base_attack": 34,
+	"description": "Increase damage against Zombie-types some.",
+	"display_name": "Holy Lance",
+	"id": "holy_lance",
+	"weapon_type": "spear"
+}

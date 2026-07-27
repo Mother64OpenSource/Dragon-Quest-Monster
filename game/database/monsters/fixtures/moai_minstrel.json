@@ -12,6 +12,13 @@
 	"base_mp": 651.0,
 	"base_wisdom": 1049.0,
 	"display_name": "Moai Minstrel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "moai_minstrel",
 	"rank": "D",

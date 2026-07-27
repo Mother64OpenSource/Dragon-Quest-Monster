@@ -13,6 +13,13 @@
 	"base_mp": 530.0,
 	"base_wisdom": 717.0,
 	"display_name": "Slime Gang",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slime_gang",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 320.0,
 	"base_wisdom": 364.0,
 	"display_name": "Smile Lizard",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "smile_lizard",
 	"rank": "B",

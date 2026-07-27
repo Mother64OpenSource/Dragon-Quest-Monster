@@ -11,6 +11,13 @@
 	"base_mp": 550.0,
 	"base_wisdom": 700.0,
 	"display_name": "Capsichum",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "capsichum",
 	"rank": "F",

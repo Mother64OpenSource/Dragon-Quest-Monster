@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 860.0,
 	"display_name": "Burr Baby",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "burr_baby",
 	"rank": "F",

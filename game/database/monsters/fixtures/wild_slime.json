@@ -11,6 +11,13 @@
 	"base_mp": 351.0,
 	"base_wisdom": 663.0,
 	"display_name": "Wild Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "wild_slime",
 	"rank": "F",

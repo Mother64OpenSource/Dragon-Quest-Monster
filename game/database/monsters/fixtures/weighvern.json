@@ -13,6 +13,13 @@
 	"base_mp": 580.0,
 	"base_wisdom": 418.0,
 	"display_name": "Weighvern",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "weighvern",
 	"rank": "C",

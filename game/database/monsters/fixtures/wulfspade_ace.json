@@ -9,6 +9,13 @@
 	"base_mp": 482.0,
 	"base_wisdom": 887.0,
 	"display_name": "Wulfspade Ace",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "unknown",
 	"id": "wulfspade_ace",
 	"rank": "SS",

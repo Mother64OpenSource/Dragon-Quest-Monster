@@ -11,6 +11,13 @@
 	"base_mp": 441.0,
 	"base_wisdom": 498.0,
 	"display_name": "Excalipurr",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "excalipurr",
 	"rank": "S",

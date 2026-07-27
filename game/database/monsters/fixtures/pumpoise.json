@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 710.0,
 	"display_name": "Pumpoise",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "pumpoise",
 	"rank": "E",

@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 476.0,
 	"display_name": "Wiggly",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "wiggly",
 	"rank": "D",

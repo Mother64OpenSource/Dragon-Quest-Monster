@@ -12,6 +12,13 @@
 	"base_mp": 752.0,
 	"base_wisdom": 452.0,
 	"display_name": "War Mantis",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "war_mantis",
 	"rank": "D",

@@ -12,6 +12,13 @@
 	"base_mp": 756.0,
 	"base_wisdom": 1008.0,
 	"display_name": "King Godfrey",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "king_godfrey",
 	"rank": "S",

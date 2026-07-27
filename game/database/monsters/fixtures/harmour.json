@@ -11,6 +11,12 @@
 	"base_mp": 370.0,
 	"base_wisdom": 650.0,
 	"display_name": "Harmour",
+	"equippable_weapon_types": [
+		"sword",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "harmour",
 	"rank": "D",

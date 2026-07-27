@@ -13,6 +13,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 502.0,
 	"display_name": "Town Frog",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "town_frog",
 	"rank": "C",

@@ -9,6 +9,13 @@
 	"base_mp": 609.0,
 	"base_wisdom": 609.0,
 	"display_name": "Mortamor Left Hand",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "mortamor_left_hand",
 	"rank": "D",

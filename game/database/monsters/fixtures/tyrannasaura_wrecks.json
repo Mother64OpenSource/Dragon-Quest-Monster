@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 555.0,
 	"display_name": "Tyrannasaura Wrecks",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "tyrannasaura_wrecks",
 	"rank": "S",

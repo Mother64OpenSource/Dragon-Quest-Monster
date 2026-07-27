@@ -13,6 +13,13 @@
 	"base_mp": 920.0,
 	"base_wisdom": 695.0,
 	"display_name": "Gryphynx",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "gryphynx",
 	"rank": "S",

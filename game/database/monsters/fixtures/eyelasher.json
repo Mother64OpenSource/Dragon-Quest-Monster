@@ -11,6 +11,13 @@
 	"base_mp": 690.0,
 	"base_wisdom": 830.0,
 	"display_name": "Eyelasher",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "eyelasher",
 	"rank": "D",

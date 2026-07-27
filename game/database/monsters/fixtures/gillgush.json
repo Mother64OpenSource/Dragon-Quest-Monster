@@ -12,6 +12,13 @@
 	"base_mp": 468.0,
 	"base_wisdom": 689.0,
 	"display_name": "Gillgush",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "gillgush",
 	"rank": "S",

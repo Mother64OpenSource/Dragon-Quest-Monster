@@ -11,6 +11,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 892.0,
 	"display_name": "Funky Bird",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "funky_bird",
 	"rank": "C",

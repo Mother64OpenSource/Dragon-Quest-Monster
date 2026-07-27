@@ -13,6 +13,13 @@
 	"base_mp": 720.0,
 	"base_wisdom": 704.0,
 	"display_name": "V-Drag",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "v_drag",
 	"rank": "S",

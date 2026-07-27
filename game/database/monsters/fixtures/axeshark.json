@@ -11,6 +11,13 @@
 	"base_mp": 440.0,
 	"base_wisdom": 430.0,
 	"display_name": "Axeshark",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "axeshark",
 	"rank": "B",

@@ -18,6 +18,7 @@ func run() -> bool:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var skillset_db := SkillSetDatabase.new()
+	var weapon_db := WeaponDatabase.new()
 	var roster := TeamRosterManager.new(TEST_TEAMS_DIR)
 
 	_check_database(monster_db, skill_db)
@@ -25,6 +26,7 @@ func run() -> bool:
 	_check_reorder_and_members(roster)
 	_check_import_export(roster)
 	_check_validation(roster, monster_db, skillset_db)
+	_check_weapon_validation(roster, monster_db, skillset_db, weapon_db)
 	_check_malformed_import(roster)
 
 	_clear_test_dir()
@@ -198,6 +200,60 @@ func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase, s
 	var bad_species_loadout := MonsterLoadout.new()
 	bad_species_loadout.species_id = "nonexistent_species"
 	_check("loadout with unknown species flagged", roster.validate_member(bad_species_loadout, monster_db, skillset_db).size() == 1)
+
+func _check_weapon_validation(roster: TeamRosterManager, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase, weapon_db: WeaponDatabase) -> void:
+	# Real Weapons-grid data: slime can equip sword/spear/axe/club/whip but
+	# NOT claw/staff (see wiki/log.md).
+	_check("WeaponDatabase loads all 110 weapons", weapon_db.get_all_weapons().size() == 110)
+	var copper_sword := weapon_db.get_weapon("copper_sword")
+	_check("copper_sword resolves as a sword with base_attack 10", copper_sword != null and copper_sword.weapon_type == WeaponData.Type.SWORD and copper_sword.base_attack == 10)
+
+	var compatible_loadout := MonsterLoadout.new()
+	compatible_loadout.species_id = "slime"
+	compatible_loadout.equipped_weapon_id = "copper_sword"
+	_check(
+		"slime equipping a compatible sword has no errors",
+		roster.validate_member(compatible_loadout, monster_db, skillset_db, weapon_db).is_empty()
+	)
+
+	var incompatible_loadout := MonsterLoadout.new()
+	incompatible_loadout.species_id = "slime"
+	incompatible_loadout.equipped_weapon_id = "stone_claws"
+	_check(
+		"slime equipping an incompatible claw is flagged",
+		roster.validate_member(incompatible_loadout, monster_db, skillset_db, weapon_db).size() == 1
+	)
+
+	var unknown_weapon_loadout := MonsterLoadout.new()
+	unknown_weapon_loadout.species_id = "slime"
+	unknown_weapon_loadout.equipped_weapon_id = "nonexistent_weapon"
+	_check(
+		"unknown equipped_weapon_id is flagged",
+		roster.validate_member(unknown_weapon_loadout, monster_db, skillset_db, weapon_db).size() == 1
+	)
+
+	_check(
+		"omitting weapon_db skips weapon validation entirely (backward compatible)",
+		roster.validate_member(incompatible_loadout, monster_db, skillset_db).is_empty()
+	)
+
+	# master_of_weapons bypasses equippable_weapon_types entirely, even when
+	# that list is empty -- a synthetic species since no real fixture has
+	# this trait yet.
+	var master_species := MonsterSpecies.new()
+	master_species.id = "test_master_of_weapons"
+	master_species.starting_trait_ids = ["master_of_weapons"]
+	master_species.equippable_weapon_types = []
+	var staff := weapon_db.get_weapon("cypress_stick")
+	_check("cypress_stick resolves as a staff", staff != null and staff.weapon_type == WeaponData.Type.STAFF)
+	_check(
+		"master_of_weapons allows equipping a staff despite an empty equippable_weapon_types",
+		MonsterEquipmentRules.can_equip(master_species, staff)
+	)
+	_check(
+		"get_equippable_weapon_types returns all 7 types for master_of_weapons",
+		MonsterEquipmentRules.get_equippable_weapon_types(master_species).size() == 7
+	)
 
 func _check_malformed_import(roster: TeamRosterManager) -> void:
 	var result := roster.import_team_from_string("{ this is not valid json ][")

@@ -1,0 +1,7 @@
+{
+	"base_attack": 95,
+	"description": "Increases Wisdom and Agility.",
+	"display_name": "Leonine Greatsword",
+	"id": "leonine_greatsword",
+	"weapon_type": "sword"
+}

@@ -11,6 +11,13 @@
 	"base_mp": 437.0,
 	"base_wisdom": 476.0,
 	"display_name": "Rugius",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "rugius",
 	"rank": "SS",

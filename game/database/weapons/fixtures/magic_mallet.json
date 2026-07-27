@@ -1,0 +1,7 @@
+{
+	"base_attack": 23,
+	"description": "Increase Gold earned by 20%.",
+	"display_name": "Magic Mallet",
+	"id": "magic_mallet",
+	"weapon_type": "club"
+}

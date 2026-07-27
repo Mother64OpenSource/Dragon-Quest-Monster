@@ -12,6 +12,13 @@
 	"base_mp": 526.0,
 	"base_wisdom": 933.0,
 	"display_name": "Dierantula",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "dierantula",
 	"rank": "A",

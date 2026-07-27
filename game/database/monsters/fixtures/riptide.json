@@ -11,6 +11,13 @@
 	"base_mp": 358.0,
 	"base_wisdom": 730.0,
 	"display_name": "Riptide",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "riptide",
 	"rank": "A",

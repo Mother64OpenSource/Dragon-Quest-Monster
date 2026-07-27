@@ -11,6 +11,13 @@
 	"base_mp": 394.0,
 	"base_wisdom": 590.0,
 	"display_name": "Scorpion",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "scorpion",
 	"rank": "E",

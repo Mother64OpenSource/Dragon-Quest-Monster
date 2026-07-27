@@ -13,6 +13,13 @@
 	"base_mp": 983.0,
 	"base_wisdom": 566.0,
 	"display_name": "Sand Wave",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "sand_wave",
 	"rank": "D",

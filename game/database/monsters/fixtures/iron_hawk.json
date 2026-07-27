@@ -12,6 +12,13 @@
 	"base_mp": 444.0,
 	"base_wisdom": 471.0,
 	"display_name": "Iron Hawk",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "iron_hawk",
 	"rank": "C",

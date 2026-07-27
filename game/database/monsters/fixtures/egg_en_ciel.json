@@ -11,6 +11,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 720.0,
 	"display_name": "Egg-en-ciel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "egg_en_ciel",
 	"rank": "S",

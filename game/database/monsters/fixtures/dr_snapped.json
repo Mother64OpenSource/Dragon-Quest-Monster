@@ -12,6 +12,13 @@
 	"base_mp": 600.0,
 	"base_wisdom": 1008.0,
 	"display_name": "Dr. Snapped",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "dr_snapped",
 	"rank": "SS",

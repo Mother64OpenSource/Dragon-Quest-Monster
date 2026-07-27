@@ -11,6 +11,13 @@
 	"base_mp": 587.0,
 	"base_wisdom": 807.0,
 	"display_name": "Wing Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "wing_slime",
 	"rank": "F",

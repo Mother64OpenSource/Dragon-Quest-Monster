@@ -12,6 +12,13 @@
 	"base_mp": 573.0,
 	"base_wisdom": 722.0,
 	"display_name": "Carnivine",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "carnivine",
 	"rank": "B",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 68,
+	"description": "Increase damage against Nature-types. Increases Defense.",
+	"display_name": "Graco's Trident",
+	"id": "graco_s_trident",
+	"weapon_type": "spear"
+}

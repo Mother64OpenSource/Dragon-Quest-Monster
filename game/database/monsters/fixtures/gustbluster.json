@@ -11,6 +11,13 @@
 	"base_mp": 501.0,
 	"base_wisdom": 762.0,
 	"display_name": "Gustbluster",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "gustbluster",
 	"rank": "C",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 24,
+	"description": "Increases Defense.",
+	"display_name": "Iron Hammer",
+	"id": "iron_hammer",
+	"weapon_type": "club"
+}

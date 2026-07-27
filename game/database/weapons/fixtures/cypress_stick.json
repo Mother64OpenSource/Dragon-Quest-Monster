@@ -1,0 +1,7 @@
+{
+	"base_attack": 4,
+	"description": "Increases Wisdom.",
+	"display_name": "Cypress Stick",
+	"id": "cypress_stick",
+	"weapon_type": "staff"
+}

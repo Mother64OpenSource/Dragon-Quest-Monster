@@ -1,0 +1,7 @@
+{
+	"base_attack": 25,
+	"description": "Increase damage against Devil-types. Increases Agility.",
+	"display_name": "Sacred Claws",
+	"id": "sacred_claws",
+	"weapon_type": "claw"
+}

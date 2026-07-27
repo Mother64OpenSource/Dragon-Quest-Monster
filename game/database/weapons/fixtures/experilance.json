@@ -1,0 +1,7 @@
+{
+	"base_attack": 21,
+	"description": "Increase EXP earned by 10%.",
+	"display_name": "Experilance",
+	"id": "experilance",
+	"weapon_type": "spear"
+}

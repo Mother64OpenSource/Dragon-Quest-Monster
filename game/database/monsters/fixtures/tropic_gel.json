@@ -12,6 +12,13 @@
 	"base_mp": 660.0,
 	"base_wisdom": 924.0,
 	"display_name": "Tropic Gel",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "tropic_gel",
 	"rank": "E",

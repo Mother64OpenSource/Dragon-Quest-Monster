@@ -9,6 +9,13 @@
 	"base_mp": 497.0,
 	"base_wisdom": 864.0,
 	"display_name": "Zoma's Devil",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "zoma_s_devil",
 	"rank": "A",

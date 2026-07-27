@@ -11,6 +11,13 @@
 	"base_mp": 625.0,
 	"base_wisdom": 751.0,
 	"display_name": "See Urchin",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "see_urchin",
 	"rank": "F",

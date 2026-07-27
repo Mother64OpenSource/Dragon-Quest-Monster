@@ -1,0 +1,7 @@
+{
+	"base_attack": 45,
+	"description": "Increase damage against Dragon-types some.",
+	"display_name": "Dragon Lance",
+	"id": "dragon_lance",
+	"weapon_type": "spear"
+}

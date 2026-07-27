@@ -11,6 +11,13 @@
 	"base_mp": 436.0,
 	"base_wisdom": 501.0,
 	"display_name": "Lethal Armour",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "lethal_armour",
 	"rank": "B",

@@ -12,6 +12,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 681.0,
 	"display_name": "AU-1000",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "au_1000",
 	"rank": "SS",

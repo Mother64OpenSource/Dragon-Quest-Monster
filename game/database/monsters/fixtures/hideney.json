@@ -9,6 +9,13 @@
 	"base_mp": 384.0,
 	"base_wisdom": 640.0,
 	"display_name": "Hideney",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "hideney",
 	"rank": "S",

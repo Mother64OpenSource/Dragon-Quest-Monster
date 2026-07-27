@@ -1,0 +1,7 @@
+{
+	"base_attack": 48,
+	"description": "+1 damage when attacking Metal-types.",
+	"display_name": "Obsidian Sword",
+	"id": "obsidian_sword",
+	"weapon_type": "sword"
+}

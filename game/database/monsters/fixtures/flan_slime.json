@@ -11,6 +11,7 @@
 	"base_mp": 480.0,
 	"base_wisdom": 560.0,
 	"display_name": "Flan Slime",
+	"equippable_weapon_types": [],
 	"family": "Slime",
 	"id": "flan_slime",
 	"rank": "C",

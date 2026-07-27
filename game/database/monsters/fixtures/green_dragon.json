@@ -12,6 +12,13 @@
 	"base_mp": 473.0,
 	"base_wisdom": 615.0,
 	"display_name": "Green Dragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "green_dragon",
 	"rank": "E",

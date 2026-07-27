@@ -12,6 +12,13 @@
 	"base_mp": 657.0,
 	"base_wisdom": 764.0,
 	"display_name": "Baron von Bellycose",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "baron_von_bellycose",
 	"rank": "A",

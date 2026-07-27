@@ -11,6 +11,13 @@
 	"base_mp": 410.0,
 	"base_wisdom": 615.0,
 	"display_name": "Gasbagon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "gasbagon",
 	"rank": "E",

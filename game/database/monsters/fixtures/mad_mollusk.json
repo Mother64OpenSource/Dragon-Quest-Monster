@@ -11,6 +11,13 @@
 	"base_mp": 697.0,
 	"base_wisdom": 617.0,
 	"display_name": "Mad Mollusk",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "mad_mollusk",
 	"rank": "E",

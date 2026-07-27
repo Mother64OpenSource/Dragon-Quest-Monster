@@ -9,6 +9,13 @@
 	"base_mp": 750.0,
 	"base_wisdom": 442.0,
 	"display_name": "Psycho Psaro",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "psycho_psaro",
 	"rank": "SS",

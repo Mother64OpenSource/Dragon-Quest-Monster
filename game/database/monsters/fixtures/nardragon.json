@@ -11,6 +11,13 @@
 	"base_mp": 353.0,
 	"base_wisdom": 410.0,
 	"display_name": "Nardragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "nardragon",
 	"rank": "E",

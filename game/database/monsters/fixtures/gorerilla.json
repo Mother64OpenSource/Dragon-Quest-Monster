@@ -11,6 +11,13 @@
 	"base_mp": 370.0,
 	"base_wisdom": 520.0,
 	"display_name": "Gorerilla",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "gorerilla",
 	"rank": "B",

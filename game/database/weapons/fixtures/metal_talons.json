@@ -1,0 +1,7 @@
+{
+	"base_attack": 51,
+	"description": "Increases Agility. Does +2 damage against Metal-types.",
+	"display_name": "Metal Talons",
+	"id": "metal_talons",
+	"weapon_type": "claw"
+}

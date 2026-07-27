@@ -13,6 +13,13 @@
 	"base_mp": 608.0,
 	"base_wisdom": 722.0,
 	"display_name": "Khalamari",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "khalamari",
 	"rank": "S",

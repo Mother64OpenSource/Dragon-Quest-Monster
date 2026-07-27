@@ -9,6 +9,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 720.0,
 	"display_name": "Djinneral Seiran",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "djinneral_seiran",
 	"rank": "D",

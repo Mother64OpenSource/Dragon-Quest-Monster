@@ -12,6 +12,13 @@
 	"base_mp": 732.0,
 	"base_wisdom": 880.0,
 	"display_name": "Treeface",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "treeface",
 	"rank": "C",

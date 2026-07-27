@@ -11,6 +11,13 @@
 	"base_mp": 368.0,
 	"base_wisdom": 514.0,
 	"display_name": "Skelegon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "skelegon",
 	"rank": "E",

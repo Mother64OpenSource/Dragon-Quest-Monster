@@ -9,6 +9,13 @@
 	"base_mp": 717.0,
 	"base_wisdom": 982.0,
 	"display_name": "Malroth",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "unknown",
 	"id": "malroth",
 	"rank": "S",

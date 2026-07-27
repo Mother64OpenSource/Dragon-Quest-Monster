@@ -11,6 +11,13 @@
 	"base_mp": 353.0,
 	"base_wisdom": 641.0,
 	"display_name": "Powie Yowie",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "powie_yowie",
 	"rank": "F",

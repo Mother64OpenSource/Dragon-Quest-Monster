@@ -11,6 +11,13 @@
 	"base_mp": 578.0,
 	"base_wisdom": 932.0,
 	"display_name": "Wailin Weed",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "wailin_weed",
 	"rank": "B",

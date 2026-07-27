@@ -11,6 +11,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 592.0,
 	"display_name": "Peeper",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "peeper",
 	"rank": "D",

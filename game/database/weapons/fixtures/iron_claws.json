@@ -1,0 +1,7 @@
+{
+	"base_attack": 11,
+	"description": "Increases Agility.",
+	"display_name": "Iron Claws",
+	"id": "iron_claws",
+	"weapon_type": "claw"
+}

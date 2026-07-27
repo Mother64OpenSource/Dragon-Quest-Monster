@@ -9,6 +9,13 @@
 	"base_mp": 563.0,
 	"base_wisdom": 970.0,
 	"display_name": "Dhoulmagus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "dhoulmagus",
 	"rank": "S",

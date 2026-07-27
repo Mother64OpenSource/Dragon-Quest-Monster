@@ -1,0 +1,7 @@
+{
+	"base_attack": 36,
+	"description": "Increase damage against Zombie-types.",
+	"display_name": "Zombiesbane",
+	"id": "zombiesbane",
+	"weapon_type": "sword"
+}

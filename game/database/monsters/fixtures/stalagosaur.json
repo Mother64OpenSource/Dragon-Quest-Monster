@@ -14,6 +14,13 @@
 	"base_mp": 713.0,
 	"base_wisdom": 528.0,
 	"display_name": "Stalagosaur",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "stalagosaur",
 	"rank": "SS",

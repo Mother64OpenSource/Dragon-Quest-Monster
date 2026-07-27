@@ -11,6 +11,13 @@
 	"base_mp": 724.0,
 	"base_wisdom": 1019.0,
 	"display_name": "Ewwnicorn",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "ewwnicorn",
 	"rank": "C",

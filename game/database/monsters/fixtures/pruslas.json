@@ -13,6 +13,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 493.0,
 	"display_name": "Pruslas",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "pruslas",
 	"rank": "SS",

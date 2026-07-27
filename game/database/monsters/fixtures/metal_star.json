@@ -13,6 +13,13 @@
 	"base_mp": 731.0,
 	"base_wisdom": 785.0,
 	"display_name": "Metal Star",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "metal_star",
 	"rank": "SS",

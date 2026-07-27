@@ -11,6 +11,13 @@
 	"base_mp": 426.0,
 	"base_wisdom": 698.0,
 	"display_name": "Dark Crab",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "dark_crab",
 	"rank": "D",

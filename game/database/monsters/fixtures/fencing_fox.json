@@ -11,6 +11,13 @@
 	"base_mp": 430.0,
 	"base_wisdom": 617.0,
 	"display_name": "Fencing Fox",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "fencing_fox",
 	"rank": "E",

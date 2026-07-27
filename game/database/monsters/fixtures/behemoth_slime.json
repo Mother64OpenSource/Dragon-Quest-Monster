@@ -11,6 +11,13 @@
 	"base_mp": 555.0,
 	"base_wisdom": 505.0,
 	"display_name": "Behemoth Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "behemoth_slime",
 	"rank": "D",

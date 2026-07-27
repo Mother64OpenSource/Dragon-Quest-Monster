@@ -13,6 +13,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 308.0,
 	"display_name": "Extreme Killing Machine",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "extreme_killing_machine",
 	"rank": "S",

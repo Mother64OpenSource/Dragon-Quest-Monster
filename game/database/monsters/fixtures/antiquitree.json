@@ -12,6 +12,13 @@
 	"base_mp": 564.0,
 	"base_wisdom": 798.0,
 	"display_name": "Antiquitree",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "antiquitree",
 	"rank": "C",

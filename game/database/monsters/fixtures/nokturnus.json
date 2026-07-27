@@ -11,6 +11,12 @@
 	"base_mp": 331.0,
 	"base_wisdom": 602.0,
 	"display_name": "Nokturnus",
+	"equippable_weapon_types": [
+		"sword",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "nokturnus",
 	"rank": "SS",

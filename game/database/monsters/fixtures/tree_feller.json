@@ -11,6 +11,13 @@
 	"base_mp": 586.0,
 	"base_wisdom": 610.0,
 	"display_name": "Tree Feller",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "tree_feller",
 	"rank": "F",

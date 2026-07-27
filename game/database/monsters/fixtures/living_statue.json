@@ -11,6 +11,13 @@
 	"base_mp": 382.0,
 	"base_wisdom": 674.0,
 	"display_name": "Living Statue",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "living_statue",
 	"rank": "B",

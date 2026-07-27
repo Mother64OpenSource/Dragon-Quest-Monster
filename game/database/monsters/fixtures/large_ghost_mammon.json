@@ -11,6 +11,13 @@
 	"base_mp": 600.0,
 	"base_wisdom": 780.0,
 	"display_name": "Large Ghost Mammon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "large_ghost_mammon",
 	"rank": "S",

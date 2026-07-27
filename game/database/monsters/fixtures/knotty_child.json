@@ -11,6 +11,13 @@
 	"base_mp": 500.0,
 	"base_wisdom": 820.0,
 	"display_name": "Knotty Child",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "knotty_child",
 	"rank": "B",

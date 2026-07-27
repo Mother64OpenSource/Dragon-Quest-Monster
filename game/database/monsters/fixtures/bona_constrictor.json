@@ -11,6 +11,13 @@
 	"base_mp": 448.0,
 	"base_wisdom": 594.0,
 	"display_name": "Bona Constrictor",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "bona_constrictor",
 	"rank": "D",

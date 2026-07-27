@@ -11,6 +11,13 @@
 	"base_mp": 464.0,
 	"base_wisdom": 496.0,
 	"display_name": "Spin Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "spin_slime",
 	"rank": "D",

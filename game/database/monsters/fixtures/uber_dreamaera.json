@@ -12,6 +12,13 @@
 	"base_mp": 636.0,
 	"base_wisdom": 815.0,
 	"display_name": "Uber Dreamaera",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "uber_dreamaera",
 	"rank": "A",

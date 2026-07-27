@@ -11,6 +11,13 @@
 	"base_mp": 571.0,
 	"base_wisdom": 876.0,
 	"display_name": "Lunatick",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "lunatick",
 	"rank": "F",

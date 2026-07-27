@@ -11,6 +11,13 @@
 	"base_mp": 464.0,
 	"base_wisdom": 288.0,
 	"display_name": "Bodkin Archer",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "bodkin_archer",
 	"rank": "D",

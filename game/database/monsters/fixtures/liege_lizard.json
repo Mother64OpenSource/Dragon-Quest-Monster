@@ -12,6 +12,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 378.0,
 	"display_name": "Liege Lizard",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "liege_lizard",
 	"rank": "A",

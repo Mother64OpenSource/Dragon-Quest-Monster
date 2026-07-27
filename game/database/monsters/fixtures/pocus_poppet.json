@@ -11,6 +11,13 @@
 	"base_mp": 626.0,
 	"base_wisdom": 905.0,
 	"display_name": "Pocus Poppet",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "pocus_poppet",
 	"rank": "F",

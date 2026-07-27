@@ -11,6 +11,13 @@
 	"base_mp": 443.0,
 	"base_wisdom": 564.0,
 	"display_name": "Weaken Beakon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "weaken_beakon",
 	"rank": "E",

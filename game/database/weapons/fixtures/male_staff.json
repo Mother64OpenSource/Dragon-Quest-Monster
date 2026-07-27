@@ -1,0 +1,7 @@
+{
+	"base_attack": 3,
+	"description": "Monster born with ♂ when equipped during breeding.",
+	"display_name": "♂ Staff",
+	"id": "male_staff",
+	"weapon_type": "staff"
+}

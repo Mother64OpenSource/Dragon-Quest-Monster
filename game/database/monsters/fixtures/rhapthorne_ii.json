@@ -9,6 +9,13 @@
 	"base_mp": 816.0,
 	"base_wisdom": 1056.0,
 	"display_name": "Rhapthorne II",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "rhapthorne_ii",
 	"rank": "SS",

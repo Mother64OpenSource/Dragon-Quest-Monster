@@ -12,6 +12,13 @@
 	"base_mp": 512.0,
 	"base_wisdom": 544.0,
 	"display_name": "Armoured Scorpion",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "armoured_scorpion",
 	"rank": "S",

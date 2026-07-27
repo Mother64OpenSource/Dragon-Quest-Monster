@@ -11,6 +11,13 @@
 	"base_mp": 491.0,
 	"base_wisdom": 580.0,
 	"display_name": "Whip Bird",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "whip_bird",
 	"rank": "B",

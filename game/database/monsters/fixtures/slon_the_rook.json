@@ -11,6 +11,13 @@
 	"base_mp": 442.0,
 	"base_wisdom": 461.0,
 	"display_name": "Slon the Rook",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "slon_the_rook",
 	"rank": "A",

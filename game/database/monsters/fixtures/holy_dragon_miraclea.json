@@ -9,6 +9,13 @@
 	"base_mp": 1050.0,
 	"base_wisdom": 552.0,
 	"display_name": "Holy Dragon Miraclea",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "holy_dragon_miraclea",
 	"rank": "SS",

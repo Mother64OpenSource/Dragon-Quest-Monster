@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 704.0,
 	"display_name": "Saggitar",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "saggitar",
 	"rank": "SS",

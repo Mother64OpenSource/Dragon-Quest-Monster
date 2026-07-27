@@ -11,6 +11,13 @@
 	"base_mp": 720.0,
 	"base_wisdom": 1040.0,
 	"display_name": "Crone",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "crone",
 	"rank": "D",

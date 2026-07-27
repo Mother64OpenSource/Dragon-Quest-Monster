@@ -11,6 +11,13 @@
 	"base_mp": 429.0,
 	"base_wisdom": 640.0,
 	"display_name": "Erazor Blade",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "erazor_blade",
 	"rank": "D",

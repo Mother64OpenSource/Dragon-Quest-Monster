@@ -11,6 +11,13 @@
 	"base_mp": 632.0,
 	"base_wisdom": 630.0,
 	"display_name": "Ghost",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "ghost",
 	"rank": "F",

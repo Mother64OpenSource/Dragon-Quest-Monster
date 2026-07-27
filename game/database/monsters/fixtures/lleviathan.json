@@ -13,6 +13,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 770.0,
 	"display_name": "Lleviathan",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "lleviathan",
 	"rank": "S",

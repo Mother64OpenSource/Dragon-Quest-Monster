@@ -12,6 +12,13 @@
 	"base_mp": 639.0,
 	"base_wisdom": 940.0,
 	"display_name": "Kapurigon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "kapurigon",
 	"rank": "A",

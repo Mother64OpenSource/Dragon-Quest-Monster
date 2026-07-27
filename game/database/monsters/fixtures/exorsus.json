@@ -12,6 +12,13 @@
 	"base_mp": 806.0,
 	"base_wisdom": 1052.0,
 	"display_name": "Exorsus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "exorsus",
 	"rank": "A",

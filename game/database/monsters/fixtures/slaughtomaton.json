@@ -12,6 +12,13 @@
 	"base_mp": 534.0,
 	"base_wisdom": 448.0,
 	"display_name": "Slaughtomaton",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "slaughtomaton",
 	"rank": "S",

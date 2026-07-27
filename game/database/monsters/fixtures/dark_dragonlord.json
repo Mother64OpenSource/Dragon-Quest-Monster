@@ -14,6 +14,13 @@
 	"base_mp": 750.0,
 	"base_wisdom": 483.0,
 	"display_name": "Dark Dragonlord",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dark_dragonlord",
 	"rank": "SS",

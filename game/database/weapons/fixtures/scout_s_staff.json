@@ -1,0 +1,7 @@
+{
+	"base_attack": 11,
+	"description": "Doubles success of scout attack.",
+	"display_name": "Scout's Staff",
+	"id": "scout_s_staff",
+	"weapon_type": "staff"
+}

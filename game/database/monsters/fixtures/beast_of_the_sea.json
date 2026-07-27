@@ -14,6 +14,13 @@
 	"base_mp": 713.0,
 	"base_wisdom": 607.0,
 	"display_name": "Beast of the Sea",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "beast_of_the_sea",
 	"rank": "SS",

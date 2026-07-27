@@ -12,6 +12,13 @@
 	"base_mp": 478.0,
 	"base_wisdom": 493.0,
 	"display_name": "Horn Beet",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "horn_beet",
 	"rank": "S",

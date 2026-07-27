@@ -11,6 +11,7 @@
 	"base_mp": 320.0,
 	"base_wisdom": 560.0,
 	"display_name": "Whipped Slime",
+	"equippable_weapon_types": [],
 	"family": "Slime",
 	"id": "whipped_slime",
 	"rank": "C",

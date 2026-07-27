@@ -11,6 +11,13 @@
 	"base_mp": 402.0,
 	"base_wisdom": 847.0,
 	"display_name": "Pan Piper",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "pan_piper",
 	"rank": "F",

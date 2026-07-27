@@ -12,6 +12,13 @@
 	"base_mp": 774.0,
 	"base_wisdom": 1095.0,
 	"display_name": "Grandpa Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "grandpa_slime",
 	"rank": "S",

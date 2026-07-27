@@ -11,6 +11,13 @@
 	"base_mp": 447.0,
 	"base_wisdom": 712.0,
 	"display_name": "Sintaur",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "sintaur",
 	"rank": "A",

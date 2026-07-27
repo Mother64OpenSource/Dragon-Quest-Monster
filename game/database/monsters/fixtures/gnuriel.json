@@ -12,6 +12,13 @@
 	"base_mp": 486.0,
 	"base_wisdom": 523.0,
 	"display_name": "Gnuriel",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "gnuriel",
 	"rank": "B",

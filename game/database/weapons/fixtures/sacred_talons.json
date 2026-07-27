@@ -1,0 +1,7 @@
+{
+	"base_attack": 84,
+	"description": "Increase damage against Devil-types by a lot. Increases Agility.",
+	"display_name": "Sacred Talons",
+	"id": "sacred_talons",
+	"weapon_type": "claw"
+}

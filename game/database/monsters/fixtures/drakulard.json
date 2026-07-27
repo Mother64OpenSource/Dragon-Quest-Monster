@@ -11,6 +11,13 @@
 	"base_mp": 350.0,
 	"base_wisdom": 530.0,
 	"display_name": "Drakulard",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "drakulard",
 	"rank": "S",

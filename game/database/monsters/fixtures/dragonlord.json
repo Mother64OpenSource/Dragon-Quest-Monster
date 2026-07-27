@@ -12,6 +12,13 @@
 	"base_mp": 519.0,
 	"base_wisdom": 769.0,
 	"display_name": "Dragonlord",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "dragonlord",
 	"rank": "SS",

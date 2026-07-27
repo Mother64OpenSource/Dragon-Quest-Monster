@@ -11,6 +11,13 @@
 	"base_mp": 373.0,
 	"base_wisdom": 473.0,
 	"display_name": "Dragonthorn",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dragonthorn",
 	"rank": "F",

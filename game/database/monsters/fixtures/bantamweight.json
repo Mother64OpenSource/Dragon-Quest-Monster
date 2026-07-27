@@ -12,6 +12,13 @@
 	"base_mp": 478.0,
 	"base_wisdom": 821.0,
 	"display_name": "Bantamweight",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "bantamweight",
 	"rank": "F",

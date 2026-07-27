@@ -12,6 +12,13 @@
 	"base_mp": 444.0,
 	"base_wisdom": 664.0,
 	"display_name": "Terracotta Warrior",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "terracotta_warrior",
 	"rank": "A",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 8,
+	"description": "Passes parent's trait and the same monster will be born when equipped during breeding.",
+	"display_name": "Staff of Rebirth",
+	"id": "staff_of_rebirth",
+	"weapon_type": "staff"
+}

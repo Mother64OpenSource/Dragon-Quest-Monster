@@ -11,6 +11,13 @@
 	"base_mp": 632.0,
 	"base_wisdom": 808.0,
 	"display_name": "Genie Sanguini",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "genie_sanguini",
 	"rank": "A",

@@ -1,0 +1,7 @@
+{
+	"base_attack": 62,
+	"description": "No other effect.",
+	"display_name": "Silver Broadsword",
+	"id": "silver_broadsword",
+	"weapon_type": "sword"
+}

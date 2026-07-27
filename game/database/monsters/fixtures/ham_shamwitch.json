@@ -11,6 +11,13 @@
 	"base_mp": 700.0,
 	"base_wisdom": 840.0,
 	"display_name": "Ham Shamwitch",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "ham_shamwitch",
 	"rank": "C",

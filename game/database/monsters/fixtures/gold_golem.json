@@ -11,6 +11,13 @@
 	"base_mp": 403.0,
 	"base_wisdom": 503.0,
 	"display_name": "Gold Golem",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "gold_golem",
 	"rank": "E",

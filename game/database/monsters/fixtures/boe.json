@@ -11,6 +11,13 @@
 	"base_mp": 602.0,
 	"base_wisdom": 432.0,
 	"display_name": "Boe",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "boe",
 	"rank": "A",

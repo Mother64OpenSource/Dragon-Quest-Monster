@@ -11,6 +11,13 @@
 	"base_mp": 573.0,
 	"base_wisdom": 420.0,
 	"display_name": "Weedbug",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "weedbug",
 	"rank": "C",

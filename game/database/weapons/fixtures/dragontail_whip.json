@@ -1,0 +1,7 @@
+{
+	"base_attack": 42,
+	"description": "Can attack all enemies.",
+	"display_name": "Dragontail Whip",
+	"id": "dragontail_whip",
+	"weapon_type": "whip"
+}

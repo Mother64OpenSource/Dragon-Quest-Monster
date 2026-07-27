@@ -11,6 +11,13 @@
 	"base_mp": 770.0,
 	"base_wisdom": 810.0,
 	"display_name": "Metal King Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "metal_king_slime",
 	"rank": "A",

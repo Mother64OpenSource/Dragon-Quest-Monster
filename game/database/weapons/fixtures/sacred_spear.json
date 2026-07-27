@@ -1,0 +1,7 @@
+{
+	"base_attack": 22,
+	"description": "Increase damage against Devil-types some.",
+	"display_name": "Sacred Spear",
+	"id": "sacred_spear",
+	"weapon_type": "spear"
+}

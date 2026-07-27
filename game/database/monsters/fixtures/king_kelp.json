@@ -11,6 +11,13 @@
 	"base_mp": 665.0,
 	"base_wisdom": 947.0,
 	"display_name": "King Kelp",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "king_kelp",
 	"rank": "D",

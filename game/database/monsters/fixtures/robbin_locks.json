@@ -9,6 +9,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 423.0,
 	"display_name": "Robbin' Locks",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "robbin_locks",
 	"rank": "SS",

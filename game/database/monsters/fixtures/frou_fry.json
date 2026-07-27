@@ -11,6 +11,13 @@
 	"base_mp": 402.0,
 	"base_wisdom": 320.0,
 	"display_name": "Frou-Fry",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "frou_fry",
 	"rank": "F",

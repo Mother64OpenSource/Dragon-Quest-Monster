@@ -12,6 +12,13 @@
 	"base_mp": 588.0,
 	"base_wisdom": 647.0,
 	"display_name": "Cursed Mask",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "cursed_mask",
 	"rank": "D",

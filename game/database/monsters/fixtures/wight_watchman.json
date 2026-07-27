@@ -11,6 +11,13 @@
 	"base_mp": 587.0,
 	"base_wisdom": 713.0,
 	"display_name": "Wight Watchman",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "wight_watchman",
 	"rank": "C",

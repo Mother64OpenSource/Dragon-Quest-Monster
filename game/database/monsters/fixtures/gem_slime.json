@@ -12,6 +12,13 @@
 	"base_mp": 787.0,
 	"base_wisdom": 894.0,
 	"display_name": "Gem Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "gem_slime",
 	"rank": "S",

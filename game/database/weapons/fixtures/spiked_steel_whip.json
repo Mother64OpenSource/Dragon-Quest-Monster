@@ -1,0 +1,7 @@
+{
+	"base_attack": 48,
+	"description": "Can attack all enemies.",
+	"display_name": "Spiked Steel Whip",
+	"id": "spiked_steel_whip",
+	"weapon_type": "whip"
+}

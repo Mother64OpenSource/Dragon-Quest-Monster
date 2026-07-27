@@ -11,6 +11,13 @@
 	"base_mp": 500.0,
 	"base_wisdom": 475.0,
 	"display_name": "Hades Condor",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "hades_condor",
 	"rank": "C",

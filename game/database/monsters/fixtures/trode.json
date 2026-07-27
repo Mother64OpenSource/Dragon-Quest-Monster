@@ -9,6 +9,13 @@
 	"base_mp": 648.0,
 	"base_wisdom": 367.0,
 	"display_name": "Trode",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "trode",
 	"rank": "SS",

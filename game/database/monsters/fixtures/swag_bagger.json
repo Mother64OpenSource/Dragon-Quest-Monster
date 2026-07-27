@@ -11,6 +11,13 @@
 	"base_mp": 410.0,
 	"base_wisdom": 720.0,
 	"display_name": "Swag Bagger",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "swag_bagger",
 	"rank": "D",

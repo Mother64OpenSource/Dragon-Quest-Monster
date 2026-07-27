@@ -11,6 +11,13 @@
 	"base_mp": 435.0,
 	"base_wisdom": 605.0,
 	"display_name": "Mimic",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "mimic",
 	"rank": "B",

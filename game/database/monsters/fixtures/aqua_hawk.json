@@ -11,6 +11,13 @@
 	"base_mp": 840.0,
 	"base_wisdom": 680.0,
 	"display_name": "Aqua Hawk",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "aqua_hawk",
 	"rank": "F",

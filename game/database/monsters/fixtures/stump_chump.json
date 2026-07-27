@@ -11,6 +11,13 @@
 	"base_mp": 580.0,
 	"base_wisdom": 476.0,
 	"display_name": "Stump Chump",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "stump_chump",
 	"rank": "F",

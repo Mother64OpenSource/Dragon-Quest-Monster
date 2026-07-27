@@ -11,6 +11,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 700.0,
 	"display_name": "Golden Cacti",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "golden_cacti",
 	"rank": "F",

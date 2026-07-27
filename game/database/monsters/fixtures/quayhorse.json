@@ -11,6 +11,13 @@
 	"base_mp": 358.0,
 	"base_wisdom": 827.0,
 	"display_name": "Quayhorse",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "quayhorse",
 	"rank": "D",

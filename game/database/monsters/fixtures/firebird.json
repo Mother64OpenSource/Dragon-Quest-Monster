@@ -11,6 +11,13 @@
 	"base_mp": 387.0,
 	"base_wisdom": 687.0,
 	"display_name": "Firebird",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "firebird",
 	"rank": "B",

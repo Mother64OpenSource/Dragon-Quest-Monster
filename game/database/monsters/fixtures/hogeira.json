@@ -11,6 +11,13 @@
 	"base_mp": 476.0,
 	"base_wisdom": 434.0,
 	"display_name": "Hogeira",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "hogeira",
 	"rank": "SS",

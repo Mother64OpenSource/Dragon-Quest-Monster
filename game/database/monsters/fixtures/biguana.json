@@ -12,6 +12,13 @@
 	"base_mp": 651.0,
 	"base_wisdom": 766.0,
 	"display_name": "Biguana",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "biguana",
 	"rank": "E",

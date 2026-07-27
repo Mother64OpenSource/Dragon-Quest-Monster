@@ -11,6 +11,13 @@
 	"base_mp": 507.0,
 	"base_wisdom": 757.0,
 	"display_name": "Cross Eye",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "cross_eye",
 	"rank": "E",

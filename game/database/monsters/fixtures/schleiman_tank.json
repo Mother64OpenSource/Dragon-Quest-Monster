@@ -13,6 +13,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 590.0,
 	"display_name": "Schleiman Tank",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "schleiman_tank",
 	"rank": "S",

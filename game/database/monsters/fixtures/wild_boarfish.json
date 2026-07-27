@@ -11,6 +11,13 @@
 	"base_mp": 530.0,
 	"base_wisdom": 771.0,
 	"display_name": "Wild Boarfish",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "wild_boarfish",
 	"rank": "E",

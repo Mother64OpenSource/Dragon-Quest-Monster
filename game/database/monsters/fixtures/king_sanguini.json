@@ -12,6 +12,13 @@
 	"base_mp": 760.0,
 	"base_wisdom": 987.0,
 	"display_name": "King Sanguini",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "king_sanguini",
 	"rank": "S",

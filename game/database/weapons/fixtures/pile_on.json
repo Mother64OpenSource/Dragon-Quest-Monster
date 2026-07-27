@@ -1,0 +1,7 @@
+{
+	"base_attack": 20,
+	"description": "Increases Defense.",
+	"display_name": "Pile-On",
+	"id": "pile_on",
+	"weapon_type": "club"
+}

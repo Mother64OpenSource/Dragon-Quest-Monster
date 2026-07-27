@@ -13,6 +13,13 @@
 	"base_mp": 572.0,
 	"base_wisdom": 665.0,
 	"display_name": "Great Godbird",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "great_godbird",
 	"rank": "SS",

@@ -11,6 +11,13 @@
 	"base_mp": 483.0,
 	"base_wisdom": 701.0,
 	"display_name": "Mandrake Marshal",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "mandrake_marshal",
 	"rank": "C",

@@ -9,6 +9,13 @@
 	"base_mp": 600.0,
 	"base_wisdom": 672.0,
 	"display_name": "Monster Parade",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "monster_parade",
 	"rank": "S",

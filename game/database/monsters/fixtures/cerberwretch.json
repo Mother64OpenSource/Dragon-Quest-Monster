@@ -11,6 +11,13 @@
 	"base_mp": 284.0,
 	"base_wisdom": 498.0,
 	"display_name": "Cerberwretch",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "cerberwretch",
 	"rank": "C",

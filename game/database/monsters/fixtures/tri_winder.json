@@ -12,6 +12,13 @@
 	"base_mp": 468.0,
 	"base_wisdom": 733.0,
 	"display_name": "Tri Winder",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "tri_winder",
 	"rank": "B",

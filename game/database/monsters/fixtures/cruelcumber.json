@@ -11,6 +11,13 @@
 	"base_mp": 585.0,
 	"base_wisdom": 708.0,
 	"display_name": "Cruelcumber",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "cruelcumber",
 	"rank": "F",

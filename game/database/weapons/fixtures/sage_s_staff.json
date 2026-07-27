@@ -1,0 +1,7 @@
+{
+	"base_attack": 61,
+	"description": "Increases Wisdom.",
+	"display_name": "Sage's Staff",
+	"id": "sage_s_staff",
+	"weapon_type": "staff"
+}

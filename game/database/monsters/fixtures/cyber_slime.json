@@ -11,6 +11,13 @@
 	"base_mp": 448.0,
 	"base_wisdom": 845.0,
 	"display_name": "Cyber Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "cyber_slime",
 	"rank": "C",

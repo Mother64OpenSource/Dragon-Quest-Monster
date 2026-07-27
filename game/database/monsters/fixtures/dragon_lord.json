@@ -11,6 +11,13 @@
 	"base_mp": 612.0,
 	"base_wisdom": 909.0,
 	"display_name": "Dragon Lord",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dragon_lord",
 	"rank": "S",

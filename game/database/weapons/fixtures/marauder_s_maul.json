@@ -1,0 +1,7 @@
+{
+	"base_attack": 80,
+	"description": "Increases Defense.",
+	"display_name": "Marauder's Maul",
+	"id": "marauder_s_maul",
+	"weapon_type": "club"
+}

@@ -11,6 +11,13 @@
 	"base_mp": 642.0,
 	"base_wisdom": 644.0,
 	"display_name": "Woebergine",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "woebergine",
 	"rank": "F",

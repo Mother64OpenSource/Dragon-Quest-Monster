@@ -11,6 +11,13 @@
 	"base_mp": 533.0,
 	"base_wisdom": 865.0,
 	"display_name": "Beastmaster",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "beastmaster",
 	"rank": "C",

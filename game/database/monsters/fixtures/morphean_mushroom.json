@@ -11,6 +11,13 @@
 	"base_mp": 680.0,
 	"base_wisdom": 680.0,
 	"display_name": "Morphean Mushroom",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "morphean_mushroom",
 	"rank": "C",

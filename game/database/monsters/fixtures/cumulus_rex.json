@@ -11,6 +11,13 @@
 	"base_mp": 639.0,
 	"base_wisdom": 958.0,
 	"display_name": "Cumulus Rex",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "cumulus_rex",
 	"rank": "C",

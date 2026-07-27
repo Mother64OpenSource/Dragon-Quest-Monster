@@ -9,6 +9,13 @@
 	"base_mp": 525.0,
 	"base_wisdom": 690.0,
 	"display_name": "He Who Bears No Name",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "he_who_bears_no_name",
 	"rank": "SS",

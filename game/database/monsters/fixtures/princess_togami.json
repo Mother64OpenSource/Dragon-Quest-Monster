@@ -9,6 +9,13 @@
 	"base_mp": 1260.0,
 	"base_wisdom": 770.0,
 	"display_name": "Princess Togami",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "princess_togami",
 	"rank": "S",

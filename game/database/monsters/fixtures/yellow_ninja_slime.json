@@ -11,6 +11,13 @@
 	"base_mp": 454.0,
 	"base_wisdom": 489.0,
 	"display_name": "Yellow Ninja Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "yellow_ninja_slime",
 	"rank": "D",

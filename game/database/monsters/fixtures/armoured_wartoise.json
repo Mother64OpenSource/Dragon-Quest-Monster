@@ -11,6 +11,13 @@
 	"base_mp": 702.0,
 	"base_wisdom": 952.0,
 	"display_name": "Armoured Wartoise",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "armoured_wartoise",
 	"rank": "D",

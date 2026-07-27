@@ -11,6 +11,13 @@
 	"base_mp": 671.0,
 	"base_wisdom": 914.0,
 	"display_name": "Urnexpected",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Material",
 	"id": "urnexpected",
 	"rank": "E",

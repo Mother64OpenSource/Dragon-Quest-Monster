@@ -9,6 +9,13 @@
 	"base_mp": 372.0,
 	"base_wisdom": 442.0,
 	"display_name": "Prince O' Thieves",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "prince_o_thieves",
 	"rank": "S",

@@ -11,6 +11,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 690.0,
 	"display_name": "Pickayune",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "pickayune",
 	"rank": "F",

@@ -11,6 +11,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 350.0,
 	"display_name": "Headhunter",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "headhunter",
 	"rank": "E",

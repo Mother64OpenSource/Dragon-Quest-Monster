@@ -11,6 +11,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 296.0,
 	"display_name": "Walking Stick",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "walking_stick",
 	"rank": "F",

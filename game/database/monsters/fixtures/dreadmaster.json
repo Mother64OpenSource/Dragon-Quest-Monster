@@ -12,6 +12,13 @@
 	"base_mp": 525.0,
 	"base_wisdom": 546.0,
 	"display_name": "Dreadmaster",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "dreadmaster",
 	"rank": "C",

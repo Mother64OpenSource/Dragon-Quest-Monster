@@ -11,6 +11,13 @@
 	"base_mp": 430.0,
 	"base_wisdom": 610.0,
 	"display_name": "Crayzee",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "crayzee",
 	"rank": "B",

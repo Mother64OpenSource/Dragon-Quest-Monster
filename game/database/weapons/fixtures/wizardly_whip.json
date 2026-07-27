@@ -1,0 +1,7 @@
+{
+	"base_attack": 76,
+	"description": "Can attack all enemies.",
+	"display_name": "Wizardly Whip",
+	"id": "wizardly_whip",
+	"weapon_type": "whip"
+}

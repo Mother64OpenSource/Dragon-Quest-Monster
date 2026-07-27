@@ -11,6 +11,13 @@
 	"base_mp": 517.0,
 	"base_wisdom": 761.0,
 	"display_name": "Lucky Bag",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "lucky_bag",
 	"rank": "D",

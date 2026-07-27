@@ -1,0 +1,7 @@
+{
+	"base_attack": 150,
+	"description": "Sometimes reduces enemy Defense.",
+	"display_name": "Hypernova Sword",
+	"id": "hypernova_sword",
+	"weapon_type": "sword"
+}

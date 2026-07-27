@@ -11,6 +11,13 @@
 	"base_mp": 354.0,
 	"base_wisdom": 680.0,
 	"display_name": "Prickly Prankster",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "prickly_prankster",
 	"rank": "D",

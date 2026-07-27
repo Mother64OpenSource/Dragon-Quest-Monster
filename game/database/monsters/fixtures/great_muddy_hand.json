@@ -13,6 +13,13 @@
 	"base_mp": 776.0,
 	"base_wisdom": 596.0,
 	"display_name": "Great Muddy Hand",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "great_muddy_hand",
 	"rank": "C",

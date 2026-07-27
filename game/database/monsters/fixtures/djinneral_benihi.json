@@ -9,6 +9,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 720.0,
 	"display_name": "Djinneral Benihi",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "djinneral_benihi",
 	"rank": "D",

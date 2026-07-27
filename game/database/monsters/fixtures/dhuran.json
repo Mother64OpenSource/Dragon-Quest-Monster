@@ -11,6 +11,12 @@
 	"base_mp": 440.0,
 	"base_wisdom": 660.0,
 	"display_name": "Dhuran",
+	"equippable_weapon_types": [
+		"sword",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "dhuran",
 	"rank": "A",

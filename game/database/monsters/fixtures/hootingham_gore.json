@@ -11,6 +11,13 @@
 	"base_mp": 586.0,
 	"base_wisdom": 977.0,
 	"display_name": "Hootingham-Gore",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "hootingham_gore",
 	"rank": "A",

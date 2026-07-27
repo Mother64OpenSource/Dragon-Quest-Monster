@@ -11,6 +11,13 @@
 	"base_mp": 440.0,
 	"base_wisdom": 704.0,
 	"display_name": "Confetti",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "confetti",
 	"rank": "C",

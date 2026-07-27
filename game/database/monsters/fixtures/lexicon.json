@@ -13,6 +13,13 @@
 	"base_mp": 671.0,
 	"base_wisdom": 978.0,
 	"display_name": "Lexicon",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "lexicon",
 	"rank": "B",

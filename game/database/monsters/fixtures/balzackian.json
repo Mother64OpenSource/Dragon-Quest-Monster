@@ -11,6 +11,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 880.0,
 	"display_name": "Balzackian",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "balzackian",
 	"rank": "A",

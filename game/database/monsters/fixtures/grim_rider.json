@@ -11,6 +11,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 573.0,
 	"display_name": "Grim Rider",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "grim_rider",
 	"rank": "B",

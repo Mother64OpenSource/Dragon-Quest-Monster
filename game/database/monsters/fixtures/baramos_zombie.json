@@ -13,6 +13,13 @@
 	"base_mp": 642.0,
 	"base_wisdom": 434.0,
 	"display_name": "Baramos Zombie",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "baramos_zombie",
 	"rank": "S",

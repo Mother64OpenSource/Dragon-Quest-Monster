@@ -9,6 +9,13 @@
 	"base_mp": 663.0,
 	"base_wisdom": 713.0,
 	"display_name": "Estarkers",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "estarkers",
 	"rank": "A",

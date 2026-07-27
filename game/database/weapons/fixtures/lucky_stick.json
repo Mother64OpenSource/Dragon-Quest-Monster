@@ -1,0 +1,7 @@
+{
+	"base_attack": 35,
+	"description": "Increases Luck when HP is low.",
+	"display_name": "Lucky Stick",
+	"id": "lucky_stick",
+	"weapon_type": "staff"
+}

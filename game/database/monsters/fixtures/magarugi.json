@@ -9,6 +9,13 @@
 	"base_mp": 818.0,
 	"base_wisdom": 1000.0,
 	"display_name": "Magarugi",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "magarugi",
 	"rank": "SS",

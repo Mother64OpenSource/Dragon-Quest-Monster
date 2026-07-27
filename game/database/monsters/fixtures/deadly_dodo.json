@@ -11,6 +11,13 @@
 	"base_mp": 505.0,
 	"base_wisdom": 639.0,
 	"display_name": "Deadly Dodo",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "deadly_dodo",
 	"rank": "B",

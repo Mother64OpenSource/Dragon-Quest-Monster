@@ -11,6 +11,13 @@
 	"base_mp": 511.0,
 	"base_wisdom": 633.0,
 	"display_name": "Bad Apple",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Zombie",
 	"id": "bad_apple",
 	"rank": "F",

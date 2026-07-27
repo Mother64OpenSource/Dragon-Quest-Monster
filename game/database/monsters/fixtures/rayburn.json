@@ -12,6 +12,13 @@
 	"base_mp": 561.0,
 	"base_wisdom": 516.0,
 	"display_name": "Rayburn",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "rayburn",
 	"rank": "C",

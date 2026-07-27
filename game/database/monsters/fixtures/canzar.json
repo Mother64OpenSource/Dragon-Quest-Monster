@@ -13,6 +13,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 520.0,
 	"display_name": "Canzar",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "canzar",
 	"rank": "S",

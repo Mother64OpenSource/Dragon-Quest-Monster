@@ -11,6 +11,13 @@
 	"base_mp": 552.0,
 	"base_wisdom": 294.0,
 	"display_name": "Pink Sanguini",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "pink_sanguini",
 	"rank": "B",

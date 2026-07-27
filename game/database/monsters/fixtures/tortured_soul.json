@@ -11,6 +11,13 @@
 	"base_mp": 580.0,
 	"base_wisdom": 1005.0,
 	"display_name": "Tortured Soul",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "tortured_soul",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 584.0,
 	"base_wisdom": 730.0,
 	"display_name": "Quack Up",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "quack_up",
 	"rank": "C",

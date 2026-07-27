@@ -11,6 +11,12 @@
 	"base_mp": 361.0,
 	"base_wisdom": 803.0,
 	"display_name": "Slider Kids",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "slider_kids",
 	"rank": "A",

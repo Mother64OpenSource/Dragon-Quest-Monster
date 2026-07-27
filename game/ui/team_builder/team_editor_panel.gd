@@ -37,6 +37,7 @@ var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
 var skillset_db: SkillSetDatabase
 var trait_db: TraitDatabase
+var weapon_db: WeaponDatabase
 var current_team: SavedTeam = null
 
 @onready var _content: Control = $Content
@@ -57,12 +58,13 @@ func _ready() -> void:
 	_monster_picker.species_chosen.connect(_on_species_chosen)
 	load_team("")
 
-func setup(p_roster: TeamRosterManager, p_monster_db: MonsterDatabase, p_skill_db: SkillDatabase, p_skillset_db: SkillSetDatabase, p_trait_db: TraitDatabase) -> void:
+func setup(p_roster: TeamRosterManager, p_monster_db: MonsterDatabase, p_skill_db: SkillDatabase, p_skillset_db: SkillSetDatabase, p_trait_db: TraitDatabase, p_weapon_db: WeaponDatabase) -> void:
 	roster = p_roster
 	monster_db = p_monster_db
 	skill_db = p_skill_db
 	skillset_db = p_skillset_db
 	trait_db = p_trait_db
+	weapon_db = p_weapon_db
 	_monster_picker.setup(monster_db, trait_db)
 
 ## "" means "no team selected" — shows the empty state.
@@ -114,7 +116,7 @@ func _add_row(parent: HBoxContainer, loadout: MonsterLoadout) -> void:
 	# TeamFormationLayout hands back the same loadout object references, so
 	# a reference-identity find() recovers the real index cheaply.
 	var real_index := current_team.members.find(loadout)
-	row.setup(loadout, real_index, monster_db, skill_db, skillset_db, trait_db)
+	row.setup(loadout, real_index, monster_db, skill_db, skillset_db, trait_db, weapon_db)
 	row.loadout_edited.connect(_on_row_loadout_edited)
 	row.remove_requested.connect(_on_row_remove_requested.bind(row))
 	row.reorder_requested.connect(_on_row_reorder_requested)
@@ -136,7 +138,7 @@ func _clear_container(container: Container) -> void:
 func _update_validation_banner() -> void:
 	var issue_count := 0
 	for member in current_team.members:
-		if not roster.validate_member(member, monster_db, skillset_db).is_empty():
+		if not roster.validate_member(member, monster_db, skillset_db, weapon_db).is_empty():
 			issue_count += 1
 	_validation_banner.visible = issue_count > 0
 	if issue_count > 0:

@@ -11,6 +11,13 @@
 	"base_mp": 637.0,
 	"base_wisdom": 930.0,
 	"display_name": "Devil Glass",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "devil_glass",
 	"rank": "C",

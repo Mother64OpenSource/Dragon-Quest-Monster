@@ -11,6 +11,13 @@
 	"base_mp": 593.0,
 	"base_wisdom": 938.0,
 	"display_name": "Lesser Demon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Devil",
 	"id": "lesser_demon",
 	"rank": "E",

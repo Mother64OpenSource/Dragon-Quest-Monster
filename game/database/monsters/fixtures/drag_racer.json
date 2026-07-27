@@ -11,6 +11,13 @@
 	"base_mp": 380.0,
 	"base_wisdom": 400.0,
 	"display_name": "Drag Racer",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "drag_racer",
 	"rank": "E",

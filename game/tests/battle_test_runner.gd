@@ -71,6 +71,7 @@ func run() -> bool:
 	_check_cure_status_and_restore_mp_mechanics()
 	_check_turn_order_override_mechanics()
 	_check_tension_family_reexamined_mechanics()
+	_check_weapon_equip_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -2240,6 +2241,52 @@ func _check_tension_family_reexamined_mechanics() -> void:
 		baseline_dmg > 0 and boosted_dmg > baseline_dmg
 	)
 	_check("dust of the clan integration: tension still resets to 0 after being spent, same as always", boosted_harness.actor.tension_level == 0)
+
+## Covers both the pure MonsterInstance stat wiring (DamageEffect.apply()'s
+## own offense := user.get_effective_stat("attack") reads exactly this seam,
+## so testing it directly IS testing the real integration point) and the
+## TeamToBattleBridge resolution path from a saved loadout's
+## equipped_weapon_id down to instance.equipped_weapon.
+func _check_weapon_equip_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var weapon_db := WeaponDatabase.new()
+	var copper_sword := weapon_db.get_weapon("copper_sword")
+
+	var unarmed_slime := team_builder.build_team(["slime"], "side_a")[0]
+	var baseline_attack := unarmed_slime.get_effective_stat("attack")
+	_check("unarmed slime's effective attack is unaffected by the weapon system", baseline_attack == unarmed_slime.species.base_attack)
+
+	var armed_slime := team_builder.build_team(["slime"], "side_a")[0]
+	armed_slime.equipped_weapon = copper_sword
+	_check(
+		"equipping copper_sword (+10 base_attack) raises effective attack by exactly its bonus",
+		armed_slime.get_effective_stat("attack") == baseline_attack + copper_sword.base_attack
+	)
+
+	# TeamToBattleBridge integration: a saved loadout's equipped_weapon_id
+	# should resolve all the way down to MonsterInstance.equipped_weapon.
+	var monster_db := MonsterDatabase.new()
+	var skill_db := SkillDatabase.new()
+	var trait_db := TraitDatabase.new()
+	var loadout := MonsterLoadout.new()
+	loadout.species_id = "slime"
+	loadout.equipped_skill_ids = ["attack"]
+	loadout.equipped_weapon_id = "copper_sword"
+	var saved_team := SavedTeam.new()
+	saved_team.members = [loadout]
+	var bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, 0, weapon_db)
+	_check("TeamToBattleBridge resolves equipped_weapon_id into a real WeaponData", bridged_team[0].equipped_weapon != null and bridged_team[0].equipped_weapon.id == "copper_sword")
+
+	var unweaponed_loadout := MonsterLoadout.new()
+	unweaponed_loadout.species_id = "slime"
+	unweaponed_loadout.equipped_skill_ids = ["attack"]
+	var unweaponed_saved_team := SavedTeam.new()
+	unweaponed_saved_team.members = [unweaponed_loadout]
+	var unweaponed_bridged_team := TeamToBattleBridge.build_team(unweaponed_saved_team, "side_a", monster_db, skill_db, trait_db, 0, weapon_db)
+	_check("an empty equipped_weapon_id leaves equipped_weapon null even with a weapon_db present", unweaponed_bridged_team[0].equipped_weapon == null)
+
+	var no_weapon_db_bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, 0)
+	_check("omitting weapon_db from build_team leaves equipped_weapon null (backward compatible)", no_weapon_db_bridged_team[0].equipped_weapon == null)
 
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
 ## isolated per status scenario so one test's active_status/event log can't

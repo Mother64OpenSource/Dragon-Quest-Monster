@@ -11,6 +11,13 @@
 	"base_mp": 656.0,
 	"base_wisdom": 736.0,
 	"display_name": "Metal Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "metal_slime",
 	"rank": "D",

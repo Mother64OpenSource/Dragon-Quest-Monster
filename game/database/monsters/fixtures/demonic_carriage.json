@@ -13,6 +13,13 @@
 	"base_mp": 586.0,
 	"base_wisdom": 643.0,
 	"display_name": "Demonic Carriage",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "demonic_carriage",
 	"rank": "SS",

@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 550.0,
 	"display_name": "Dingbat",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Devil",
 	"id": "dingbat",
 	"rank": "C",

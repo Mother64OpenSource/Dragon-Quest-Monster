@@ -11,6 +11,13 @@
 	"base_mp": 563.0,
 	"base_wisdom": 683.0,
 	"display_name": "Octavian Sentry",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "octavian_sentry",
 	"rank": "C",

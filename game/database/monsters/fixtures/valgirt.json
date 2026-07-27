@@ -13,6 +13,13 @@
 	"base_mp": 577.0,
 	"base_wisdom": 524.0,
 	"display_name": "Valgirt",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "valgirt",
 	"rank": "SS",

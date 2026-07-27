@@ -1,0 +1,7 @@
+{
+	"base_attack": 85,
+	"description": "Reduces Tension Burn.",
+	"display_name": "Burning Blade",
+	"id": "burning_blade",
+	"weapon_type": "sword"
+}

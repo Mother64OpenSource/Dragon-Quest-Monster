@@ -11,6 +11,13 @@
 	"base_mp": 419.0,
 	"base_wisdom": 638.0,
 	"display_name": "Roseguardin",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "roseguardin",
 	"rank": "A",

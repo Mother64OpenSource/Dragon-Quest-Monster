@@ -11,6 +11,13 @@
 	"base_mp": 364.0,
 	"base_wisdom": 518.0,
 	"display_name": "Mudslinger",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "mudslinger",
 	"rank": "E",

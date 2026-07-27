@@ -11,6 +11,13 @@
 	"base_mp": 345.0,
 	"base_wisdom": 394.0,
 	"display_name": "Overkilling Machine",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "overkilling_machine",
 	"rank": "S",

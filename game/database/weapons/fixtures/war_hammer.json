@@ -1,0 +1,7 @@
+{
+	"base_attack": 31,
+	"description": "Chance of instant death.",
+	"display_name": "War Hammer",
+	"id": "war_hammer",
+	"weapon_type": "club"
+}

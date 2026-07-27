@@ -9,6 +9,13 @@
 	"base_mp": 788.0,
 	"base_wisdom": 935.0,
 	"display_name": "Kukri",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "kukri",
 	"rank": "C",

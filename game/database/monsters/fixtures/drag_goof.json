@@ -11,6 +11,13 @@
 	"base_mp": 342.0,
 	"base_wisdom": 315.0,
 	"display_name": "Drag-goof",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "drag_goof",
 	"rank": "D",

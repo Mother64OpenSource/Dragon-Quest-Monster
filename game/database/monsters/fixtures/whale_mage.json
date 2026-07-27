@@ -12,6 +12,13 @@
 	"base_mp": 636.0,
 	"base_wisdom": 580.0,
 	"display_name": "Whale Mage",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "whale_mage",
 	"rank": "A",

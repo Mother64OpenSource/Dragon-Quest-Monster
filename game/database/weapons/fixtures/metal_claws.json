@@ -1,0 +1,7 @@
+{
+	"base_attack": 15,
+	"description": "Increases Agility. Does +1 damage against Metal-types.",
+	"display_name": "Metal Claws",
+	"id": "metal_claws",
+	"weapon_type": "claw"
+}

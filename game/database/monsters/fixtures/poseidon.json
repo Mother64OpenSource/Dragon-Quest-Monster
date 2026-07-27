@@ -9,6 +9,13 @@
 	"base_mp": 840.0,
 	"base_wisdom": 493.0,
 	"display_name": "Poseidon",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "poseidon",
 	"rank": "S",

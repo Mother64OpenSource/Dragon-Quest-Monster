@@ -11,6 +11,13 @@
 	"base_mp": 390.0,
 	"base_wisdom": 460.0,
 	"display_name": "Walking Corpse",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "walking_corpse",
 	"rank": "C",

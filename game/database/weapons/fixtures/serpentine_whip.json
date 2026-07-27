@@ -1,0 +1,7 @@
+{
+	"base_attack": 20,
+	"description": "Can attack all enemies.",
+	"display_name": "Serpentine Whip",
+	"id": "serpentine_whip",
+	"weapon_type": "whip"
+}

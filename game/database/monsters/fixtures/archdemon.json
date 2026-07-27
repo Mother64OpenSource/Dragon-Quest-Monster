@@ -11,6 +11,13 @@
 	"base_mp": 450.0,
 	"base_wisdom": 808.0,
 	"display_name": "Archdemon",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "archdemon",
 	"rank": "B",

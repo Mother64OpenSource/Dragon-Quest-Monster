@@ -9,6 +9,13 @@
 	"base_mp": 675.0,
 	"base_wisdom": 408.0,
 	"display_name": "Grand Estark",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "grand_estark",
 	"rank": "SS",

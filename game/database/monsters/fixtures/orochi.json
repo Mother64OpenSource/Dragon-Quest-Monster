@@ -13,6 +13,13 @@
 	"base_mp": 640.0,
 	"base_wisdom": 502.0,
 	"display_name": "Orochi",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "orochi",
 	"rank": "S",

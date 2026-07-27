@@ -13,6 +13,13 @@
 	"base_mp": 780.0,
 	"base_wisdom": 954.0,
 	"display_name": "Ghost Ship",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "ghost_ship",
 	"rank": "S",

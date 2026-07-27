@@ -12,6 +12,13 @@
 	"base_mp": 531.0,
 	"base_wisdom": 706.0,
 	"display_name": "Metal Scorpion",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "metal_scorpion",
 	"rank": "SS",

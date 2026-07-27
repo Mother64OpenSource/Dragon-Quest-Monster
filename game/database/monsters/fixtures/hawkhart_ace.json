@@ -9,6 +9,13 @@
 	"base_mp": 572.0,
 	"base_wisdom": 834.0,
 	"display_name": "Hawkhart Ace",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "unknown",
 	"id": "hawkhart_ace",
 	"rank": "SS",

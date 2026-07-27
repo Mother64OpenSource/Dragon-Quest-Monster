@@ -11,6 +11,13 @@
 	"base_mp": 720.0,
 	"base_wisdom": 620.0,
 	"display_name": "Cyclown",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "cyclown",
 	"rank": "E",

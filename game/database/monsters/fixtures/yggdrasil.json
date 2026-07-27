@@ -13,6 +13,13 @@
 	"base_mp": 1148.0,
 	"base_wisdom": 710.0,
 	"display_name": "Yggdrasil",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "yggdrasil",
 	"rank": "SS",

@@ -12,6 +12,13 @@
 	"base_mp": 849.0,
 	"base_wisdom": 687.0,
 	"display_name": "Metal Heavy",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "metal_heavy",
 	"rank": "D",

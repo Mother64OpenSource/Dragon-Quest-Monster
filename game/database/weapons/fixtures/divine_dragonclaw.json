@@ -1,0 +1,7 @@
+{
+	"base_attack": 130,
+	"description": "Increase damage against Dragon-types significantly.",
+	"display_name": "Divine DragonClaw",
+	"id": "divine_dragonclaw",
+	"weapon_type": "claw"
+}

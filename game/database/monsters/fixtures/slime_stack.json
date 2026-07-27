@@ -11,6 +11,13 @@
 	"base_mp": 496.0,
 	"base_wisdom": 724.0,
 	"display_name": "Slime Stack",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slime_stack",
 	"rank": "C",

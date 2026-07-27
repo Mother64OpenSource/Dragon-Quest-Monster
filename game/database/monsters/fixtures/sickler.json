@@ -11,6 +11,13 @@
 	"base_mp": 723.0,
 	"base_wisdom": 775.0,
 	"display_name": "Sickler",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "sickler",
 	"rank": "C",

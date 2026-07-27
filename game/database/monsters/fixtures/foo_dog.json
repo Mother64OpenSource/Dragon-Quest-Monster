@@ -11,6 +11,13 @@
 	"base_mp": 501.0,
 	"base_wisdom": 798.0,
 	"display_name": "Foo Dog",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Material",
 	"id": "foo_dog",
 	"rank": "D",

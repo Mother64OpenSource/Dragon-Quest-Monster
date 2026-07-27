@@ -11,6 +11,13 @@
 	"base_mp": 540.0,
 	"base_wisdom": 687.0,
 	"display_name": "Phantom Swordsman",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "phantom_swordsman",
 	"rank": "C",

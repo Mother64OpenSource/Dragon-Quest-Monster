@@ -12,6 +12,13 @@
 	"base_mp": 582.0,
 	"base_wisdom": 980.0,
 	"display_name": "King Godwyn",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "king_godwyn",
 	"rank": "A",

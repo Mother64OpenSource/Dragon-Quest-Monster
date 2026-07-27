@@ -13,6 +13,13 @@
 	"base_mp": 808.0,
 	"base_wisdom": 1005.0,
 	"display_name": "Togrus Maximus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "togrus_maximus",
 	"rank": "B",

@@ -11,6 +11,13 @@
 	"base_mp": 370.0,
 	"base_wisdom": 544.0,
 	"display_name": "Mischievous Mole",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "mischievous_mole",
 	"rank": "F",

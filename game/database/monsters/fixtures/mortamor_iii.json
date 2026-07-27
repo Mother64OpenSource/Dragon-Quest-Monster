@@ -9,6 +9,13 @@
 	"base_mp": 748.0,
 	"base_wisdom": 896.0,
 	"display_name": "Mortamor III",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "mortamor_iii",
 	"rank": "SS",

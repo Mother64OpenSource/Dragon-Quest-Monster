@@ -11,6 +11,13 @@
 	"base_mp": 408.0,
 	"base_wisdom": 288.0,
 	"display_name": "Dragonfry",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "dragonfry",
 	"rank": "F",

@@ -13,6 +13,13 @@
 	"base_mp": 688.0,
 	"base_wisdom": 476.0,
 	"display_name": "Thaumatosaurus",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "thaumatosaurus",
 	"rank": "B",

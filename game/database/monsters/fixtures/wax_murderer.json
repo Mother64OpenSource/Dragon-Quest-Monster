@@ -11,6 +11,13 @@
 	"base_mp": 488.0,
 	"base_wisdom": 725.0,
 	"display_name": "Wax Murderer",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "wax_murderer",
 	"rank": "F",

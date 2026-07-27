@@ -11,6 +11,13 @@
 	"base_mp": 429.0,
 	"base_wisdom": 857.0,
 	"display_name": "Swingin' Hipster",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "swingin_hipster",
 	"rank": "E",

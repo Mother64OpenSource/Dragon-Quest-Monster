@@ -11,6 +11,13 @@
 	"base_mp": 546.0,
 	"base_wisdom": 742.0,
 	"display_name": "Compos Mantis",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "compos_mantis",
 	"rank": "B",

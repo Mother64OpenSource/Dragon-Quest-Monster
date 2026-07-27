@@ -1,0 +1,7 @@
+{
+	"base_attack": 130,
+	"description": "Reduces enemy's Tension.",
+	"display_name": "God Axe",
+	"id": "god_axe",
+	"weapon_type": "axe"
+}

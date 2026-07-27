@@ -11,6 +11,13 @@
 	"base_mp": 432.0,
 	"base_wisdom": 352.0,
 	"display_name": "Acorn Baby",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "acorn_baby",
 	"rank": "E",

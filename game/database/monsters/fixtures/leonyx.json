@@ -9,6 +9,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 696.0,
 	"display_name": "Leonyx",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "leonyx",
 	"rank": "SS",

@@ -12,6 +12,13 @@
 	"base_mp": 430.0,
 	"base_wisdom": 713.0,
 	"display_name": "Xenlon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "xenlon",
 	"rank": "SS",

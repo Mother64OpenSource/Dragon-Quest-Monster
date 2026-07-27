@@ -12,6 +12,13 @@
 	"base_mp": 528.0,
 	"base_wisdom": 429.0,
 	"display_name": "Incineraytor",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "incineraytor",
 	"rank": "D",

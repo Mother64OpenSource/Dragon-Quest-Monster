@@ -12,6 +12,13 @@
 	"base_mp": 768.0,
 	"base_wisdom": 1008.0,
 	"display_name": "Lazamanus",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "lazamanus",
 	"rank": "S",

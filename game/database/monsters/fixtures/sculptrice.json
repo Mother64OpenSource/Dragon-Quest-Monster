@@ -11,6 +11,13 @@
 	"base_mp": 469.0,
 	"base_wisdom": 667.0,
 	"display_name": "Sculptrice",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "sculptrice",
 	"rank": "C",

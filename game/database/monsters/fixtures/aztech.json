@@ -13,6 +13,13 @@
 	"base_mp": 560.0,
 	"base_wisdom": 528.0,
 	"display_name": "Aztech",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "aztech",
 	"rank": "S",

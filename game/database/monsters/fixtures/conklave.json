@@ -11,6 +11,12 @@
 	"base_mp": 431.0,
 	"base_wisdom": 303.0,
 	"display_name": "Conklave",
+	"equippable_weapon_types": [
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "conklave",
 	"rank": "F",

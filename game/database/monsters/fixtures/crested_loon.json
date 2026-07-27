@@ -11,6 +11,13 @@
 	"base_mp": 420.0,
 	"base_wisdom": 436.0,
 	"display_name": "Crested Loon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Nature",
 	"id": "crested_loon",
 	"rank": "C",

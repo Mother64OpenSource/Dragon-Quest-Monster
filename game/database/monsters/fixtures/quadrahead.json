@@ -12,6 +12,13 @@
 	"base_mp": 569.0,
 	"base_wisdom": 613.0,
 	"display_name": "Quadrahead",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "quadrahead",
 	"rank": "C",

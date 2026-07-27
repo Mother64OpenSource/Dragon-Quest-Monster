@@ -11,6 +11,12 @@
 	"base_mp": 315.0,
 	"base_wisdom": 315.0,
 	"display_name": "Uberkilling Machine",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "uberkilling_machine",
 	"rank": "S",

@@ -9,6 +9,13 @@
 	"base_mp": 800.0,
 	"base_wisdom": 920.0,
 	"display_name": "Elder Pippit",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "elder_pippit",
 	"rank": "A",

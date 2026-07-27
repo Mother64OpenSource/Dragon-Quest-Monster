@@ -9,6 +9,13 @@
 	"base_mp": 900.0,
 	"base_wisdom": 1008.0,
 	"display_name": "Maizar",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "maizar",
 	"rank": "SS",

@@ -11,6 +11,13 @@
 	"base_mp": 431.0,
 	"base_wisdom": 656.0,
 	"display_name": "Satyr",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "satyr",
 	"rank": "F",

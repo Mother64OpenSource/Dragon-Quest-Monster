@@ -9,6 +9,13 @@
 	"base_mp": 593.0,
 	"base_wisdom": 972.0,
 	"display_name": "Zoma",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "zoma",
 	"rank": "SS",

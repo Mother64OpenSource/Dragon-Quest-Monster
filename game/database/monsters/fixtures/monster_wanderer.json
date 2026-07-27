@@ -12,6 +12,13 @@
 	"base_mp": 504.0,
 	"base_wisdom": 504.0,
 	"display_name": "Monster Wanderer",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "monster_wanderer",
 	"rank": "S",

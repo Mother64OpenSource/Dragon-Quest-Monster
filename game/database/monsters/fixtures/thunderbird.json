@@ -12,6 +12,13 @@
 	"base_mp": 473.0,
 	"base_wisdom": 884.0,
 	"display_name": "Thunderbird",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "thunderbird",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 582.0,
 	"base_wisdom": 756.0,
 	"display_name": "Dark Slime",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Slime",
 	"id": "dark_slime",
 	"rank": "B",

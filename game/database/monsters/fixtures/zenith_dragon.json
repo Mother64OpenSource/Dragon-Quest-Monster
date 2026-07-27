@@ -13,6 +13,13 @@
 	"base_mp": 608.0,
 	"base_wisdom": 731.0,
 	"display_name": "Zenith Dragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "zenith_dragon",
 	"rank": "SS",

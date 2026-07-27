@@ -12,6 +12,13 @@
 	"base_mp": 480.0,
 	"base_wisdom": 614.0,
 	"display_name": "Shantak",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Dragon",
 	"id": "shantak",
 	"rank": "S",

@@ -11,6 +11,13 @@
 	"base_mp": 360.0,
 	"base_wisdom": 830.0,
 	"display_name": "Pyuro",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "pyuro",
 	"rank": "C",

@@ -13,6 +13,13 @@
 	"base_mp": 648.0,
 	"base_wisdom": 545.0,
 	"display_name": "King Hydra",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "king_hydra",
 	"rank": "SS",

@@ -12,6 +12,13 @@
 	"base_mp": 484.0,
 	"base_wisdom": 482.0,
 	"display_name": "Slabbit",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Slime",
 	"id": "slabbit",
 	"rank": "C",

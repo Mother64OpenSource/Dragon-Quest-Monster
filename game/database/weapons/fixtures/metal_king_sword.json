@@ -1,0 +1,7 @@
+{
+	"base_attack": 102,
+	"description": "+3 damage when attacking Metal-types.",
+	"display_name": "Metal King Sword",
+	"id": "metal_king_sword",
+	"weapon_type": "sword"
+}

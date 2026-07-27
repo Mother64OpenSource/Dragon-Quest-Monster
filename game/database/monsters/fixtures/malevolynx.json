@@ -9,6 +9,13 @@
 	"base_mp": 576.0,
 	"base_wisdom": 537.0,
 	"display_name": "Malevolynx",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "malevolynx",
 	"rank": "SS",

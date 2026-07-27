@@ -11,6 +11,13 @@
 	"base_mp": 582.0,
 	"base_wisdom": 904.0,
 	"display_name": "Soulspawn",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "soulspawn",
 	"rank": "B",

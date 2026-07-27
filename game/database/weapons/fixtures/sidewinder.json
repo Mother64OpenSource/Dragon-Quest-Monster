@@ -1,0 +1,7 @@
+{
+	"base_attack": 30,
+	"description": "Can attack all enemies.",
+	"display_name": "Sidewinder",
+	"id": "sidewinder",
+	"weapon_type": "whip"
+}

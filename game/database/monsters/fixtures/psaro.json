@@ -9,6 +9,13 @@
 	"base_mp": 503.0,
 	"base_wisdom": 571.0,
 	"display_name": "Psaro",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "psaro",
 	"rank": "SS",

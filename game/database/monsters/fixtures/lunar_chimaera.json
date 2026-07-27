@@ -11,6 +11,13 @@
 	"base_mp": 450.0,
 	"base_wisdom": 860.0,
 	"display_name": "Lunar Chimaera",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "lunar_chimaera",
 	"rank": "D",

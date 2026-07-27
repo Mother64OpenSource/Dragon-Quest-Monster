@@ -11,6 +11,13 @@
 	"base_mp": 437.0,
 	"base_wisdom": 832.0,
 	"display_name": "Night Knight",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "night_knight",
 	"rank": "A",

@@ -11,6 +11,13 @@
 	"base_mp": 408.0,
 	"base_wisdom": 440.0,
 	"display_name": "Jum",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Material",
 	"id": "jum",
 	"rank": "A",

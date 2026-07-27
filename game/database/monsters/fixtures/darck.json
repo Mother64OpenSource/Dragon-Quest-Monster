@@ -9,6 +9,13 @@
 	"base_mp": 473.0,
 	"base_wisdom": 825.0,
 	"display_name": "Darck",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "darck",
 	"rank": "S",

@@ -11,6 +11,13 @@
 	"base_mp": 487.0,
 	"base_wisdom": 666.0,
 	"display_name": "Sea Dragon",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Dragon",
 	"id": "sea_dragon",
 	"rank": "C",

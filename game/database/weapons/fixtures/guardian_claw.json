@@ -1,0 +1,7 @@
+{
+	"base_attack": 14,
+	"description": "Use of \"Flee\" always successful.",
+	"display_name": "Guardian Claw",
+	"id": "guardian_claw",
+	"weapon_type": "claw"
+}

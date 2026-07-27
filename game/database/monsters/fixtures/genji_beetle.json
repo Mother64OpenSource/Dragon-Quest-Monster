@@ -11,6 +11,13 @@
 	"base_mp": 380.0,
 	"base_wisdom": 860.0,
 	"display_name": "Genji Beetle",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Nature",
 	"id": "genji_beetle",
 	"rank": "B",

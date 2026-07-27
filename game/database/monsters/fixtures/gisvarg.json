@@ -9,6 +9,13 @@
 	"base_mp": 690.0,
 	"base_wisdom": 923.0,
 	"display_name": "Gisvarg",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "unknown",
 	"id": "gisvarg",
 	"rank": "SS",

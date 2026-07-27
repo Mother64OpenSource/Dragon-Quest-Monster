@@ -12,6 +12,13 @@
 	"base_mp": 473.0,
 	"base_wisdom": 511.0,
 	"display_name": "Knight Abhorrent",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Devil",
 	"id": "knight_abhorrent",
 	"rank": "S",

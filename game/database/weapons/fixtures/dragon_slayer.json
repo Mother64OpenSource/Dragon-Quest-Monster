@@ -1,0 +1,7 @@
+{
+	"base_attack": 86,
+	"description": "Increase damage against Dragon-types significantly.",
+	"display_name": "Dragon Slayer",
+	"id": "dragon_slayer",
+	"weapon_type": "sword"
+}

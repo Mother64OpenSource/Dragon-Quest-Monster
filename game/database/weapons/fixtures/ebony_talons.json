@@ -1,0 +1,7 @@
+{
+	"base_attack": 88,
+	"description": "Increases Agility.",
+	"display_name": "Ebony Talons",
+	"id": "ebony_talons",
+	"weapon_type": "claw"
+}

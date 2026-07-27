@@ -11,6 +11,13 @@
 	"base_mp": 553.0,
 	"base_wisdom": 708.0,
 	"display_name": "Cross Bones",
+	"equippable_weapon_types": [
+		"spear",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "cross_bones",
 	"rank": "B",

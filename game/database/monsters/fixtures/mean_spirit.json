@@ -11,6 +11,13 @@
 	"base_mp": 394.0,
 	"base_wisdom": 462.0,
 	"display_name": "Mean Spirit",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Zombie",
 	"id": "mean_spirit",
 	"rank": "C",

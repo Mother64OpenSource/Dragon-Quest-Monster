@@ -12,6 +12,13 @@
 	"base_mp": 574.0,
 	"base_wisdom": 826.0,
 	"display_name": "Dorsal Fiend",
+	"equippable_weapon_types": [
+		"sword",
+		"axe",
+		"club",
+		"whip",
+		"claw"
+	],
 	"family": "Beast",
 	"id": "dorsal_fiend",
 	"rank": "A",

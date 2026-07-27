@@ -11,6 +11,13 @@
 	"base_mp": 286.0,
 	"base_wisdom": 306.0,
 	"display_name": "Great Sabrecub",
+	"equippable_weapon_types": [
+		"sword",
+		"spear",
+		"axe",
+		"club",
+		"whip"
+	],
 	"family": "Beast",
 	"id": "great_sabrecub",
 	"rank": "F",
