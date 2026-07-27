@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Confusion",
 	"id": "fuddle",
 	"mp_cost": 5.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

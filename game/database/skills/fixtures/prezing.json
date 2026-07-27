@@ -13,5 +13,6 @@
 	"id": "prezing",
 	"mp_cost": 60.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

@@ -13,5 +13,6 @@
 	"id": "peep_slash",
 	"mp_cost": 0.0,
 	"priority": 0.0,
+	"skill_type": "Slash",
 	"target_type": "single_enemy"
 }

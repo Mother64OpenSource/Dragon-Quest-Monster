@@ -13,5 +13,6 @@
 	"id": "round_zero",
 	"mp_cost": 48.0,
 	"priority": 0.0,
+	"skill_type": "Other",
 	"target_type": "self"
 }

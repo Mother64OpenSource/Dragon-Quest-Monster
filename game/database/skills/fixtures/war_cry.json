@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Immobilize",
 	"id": "war_cry",
 	"mp_cost": 3.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "single_enemy"
 }

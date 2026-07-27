@@ -28,6 +28,7 @@ func run() -> bool:
 
 	_check_submission_order_independence(monster_db, skill_db, trait_db)
 	_check_team_dict_round_trip(monster_db, skill_db, trait_db)
+	_check_profile_dict_round_trip()
 
 	if _all_passed:
 		print("NetworkLockstepTestRunner: ALL CHECKS PASSED")
@@ -121,6 +122,19 @@ func _check_team_dict_round_trip(monster_db: MonsterDatabase, skill_db: SkillDat
 		if o_skill_ids != r_skill_ids:
 			all_match = false
 	_check("team dict round-trip produces identical MonsterInstance data (species, id, skills)", all_match)
+
+## Same idea as _check_team_dict_round_trip(), for the profile handshake
+## added alongside team/seed (see NetworkManager.send_local_profile()) --
+## the only piece of that exchange meaningfully checkable without a real
+## ENet socket pair (see wiki/log.md's "real sockets can't be driven
+## headlessly" note).
+func _check_profile_dict_round_trip() -> void:
+	var original := PlayerProfile.new()
+	original.player_name = "Eli"
+	original.avatar_species_id = "golem"
+	var reconstructed := PlayerProfileLoader.load_from_dict(PlayerProfileLoader.to_dict(original))
+	_check("profile dict round-trip preserves player_name", reconstructed.player_name == original.player_name)
+	_check("profile dict round-trip preserves avatar_species_id", reconstructed.avatar_species_id == original.avatar_species_id)
 
 func _check(label: String, condition: bool) -> void:
 	if condition:

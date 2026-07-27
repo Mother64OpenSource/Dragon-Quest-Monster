@@ -13,5 +13,6 @@
 	"id": "genma_s_gaol",
 	"mp_cost": 50.0,
 	"priority": 0.0,
+	"skill_type": "Slash",
 	"target_type": "single_enemy"
 }

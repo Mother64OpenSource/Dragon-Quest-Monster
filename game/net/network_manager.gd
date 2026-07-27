@@ -45,6 +45,7 @@ signal connection_failed()
 ## going down (server_disconnected). Callers don't need to know which.
 signal opponent_disconnected()
 signal team_received(team_dict: Dictionary)
+signal profile_received(profile_dict: Dictionary)
 signal seed_received(seed_value: int)
 signal action_received(side: String, slot: int, kind: String, payload: Dictionary)
 ## RELAY_CLIENT only -- e.g. the room code you tried is already in use.
@@ -142,6 +143,16 @@ func send_local_team(team_dict: Dictionary) -> void:
 	else:
 		rpc("_rpc_receive_team", team_dict)
 
+## Like send_local_team, not send_local_seed: each side sends its OWN
+## already-known profile and doesn't need it echoed back, unlike the seed's
+## single-generator-broadcasting-to-itself case -- so this is "any_peer,
+## call_remote" below, not "authority, call_local".
+func send_local_profile(profile_dict: Dictionary) -> void:
+	if _mode == Mode.RELAY_CLIENT:
+		rpc_id(1, "_rpc_relay_send", {"type": "profile", "profile": profile_dict})
+	else:
+		rpc("_rpc_receive_profile", profile_dict)
+
 func send_action(side: String, slot: int, kind: String, payload: Dictionary) -> void:
 	if _mode == Mode.RELAY_CLIENT:
 		rpc_id(1, "_rpc_relay_send", {"type": "action", "side": side, "slot": slot, "kind": kind, "payload": payload})
@@ -191,6 +202,10 @@ func _on_server_disconnected() -> void:
 @rpc("any_peer", "call_remote", "reliable")
 func _rpc_receive_team(team_dict: Dictionary) -> void:
 	team_received.emit(team_dict)
+
+@rpc("any_peer", "call_remote", "reliable")
+func _rpc_receive_profile(profile_dict: Dictionary) -> void:
+	profile_received.emit(profile_dict)
 
 ## "authority" (not "any_peer"): a Node's multiplayer authority defaults to
 ## peer id 1 -- the host -- with no extra code, so this is real enforcement
@@ -250,6 +265,8 @@ func _rpc_relay_deliver(envelope: Dictionary) -> void:
 	match envelope.get("type", ""):
 		"team":
 			team_received.emit(envelope.get("team", {}))
+		"profile":
+			profile_received.emit(envelope.get("profile", {}))
 		"seed":
 			seed_received.emit(int(envelope.get("seed", 0)))
 		"action":

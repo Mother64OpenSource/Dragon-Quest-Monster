@@ -13,5 +13,6 @@
 	"id": "underworld_fog",
 	"mp_cost": 55.0,
 	"priority": 0.0,
+	"skill_type": "Other",
 	"target_type": "self"
 }

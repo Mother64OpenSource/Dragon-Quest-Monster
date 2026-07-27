@@ -14,5 +14,6 @@
 	"id": "partner_waltz",
 	"mp_cost": 0.0,
 	"priority": 0.0,
+	"skill_type": "Dance",
 	"target_type": "single_enemy"
 }

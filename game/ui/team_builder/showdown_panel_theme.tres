@@ -1,0 +1,46 @@
+[gd_resource type="Theme" format=3]
+
+[sub_resource type="StyleBoxFlat" id="TranslucentPanelBg"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.06, 0.07, 0.13, 0.76)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.14)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="TranslucentInputBg"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.03, 0.04, 0.08, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.16)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Panel/styles/panel = SubResource("TranslucentPanelBg")
+PanelContainer/styles/panel = SubResource("TranslucentPanelBg")
+Label/colors/font_color = Color(0.93, 0.94, 0.98, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.55)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+LineEdit/colors/font_color = Color(0.93, 0.94, 0.98, 1)
+LineEdit/colors/font_placeholder_color = Color(0.75, 0.76, 0.8, 0.7)
+LineEdit/styles/normal = SubResource("TranslucentInputBg")
+ItemList/colors/font_color = Color(0.93, 0.94, 0.98, 1)
+ItemList/colors/font_selected_color = Color(1, 1, 1, 1)

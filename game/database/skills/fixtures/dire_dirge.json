@@ -13,5 +13,6 @@
 	"id": "dire_dirge",
 	"mp_cost": 50.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

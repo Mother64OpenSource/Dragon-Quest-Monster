@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Crack",
 	"id": "crackle",
 	"mp_cost": 12.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

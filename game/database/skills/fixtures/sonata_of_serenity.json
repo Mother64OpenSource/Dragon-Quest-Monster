@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Whistle continuously for some rounds healing allies' MP.",
 	"display_name": "Sonata of Serenity",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 105.0,
-			"type": "damage"
+			"percent_max_mp": 0.15,
+			"target_self": true,
+			"type": "restore_mp"
 		}
 	],
 	"id": "sonata_of_serenity",
 	"mp_cost": 30.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

@@ -18,7 +18,13 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 		return
 	if recipient.active_status != null:
 		return
-	if not ctx.rng.chance(chance):
+
+	var effective_chance := chance
+	for trait_effect in user.active_traits:
+		effective_chance *= trait_effect.get_status_infliction_multiplier(status_data.id)
+	for trait_effect in recipient.active_traits:
+		effective_chance *= trait_effect.get_status_resistance_multiplier(status_data.id)
+	if not ctx.rng.chance(effective_chance):
 		return
 
 	recipient.active_status = StatusInstance.new(status_data)
@@ -29,3 +35,6 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 
 	for stat_mod in status_data.stat_mods_on_apply:
 		stat_mod.apply(ctx, recipient, recipient)
+
+	for trait_effect in recipient.active_traits:
+		trait_effect.on_status_afflicted(ctx, recipient, user, status_data)

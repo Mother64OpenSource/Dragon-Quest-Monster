@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Paralysis",
 	"id": "paralysing_punch",
 	"mp_cost": 4.0,
 	"priority": 0.0,
+	"skill_type": "Slash",
 	"target_type": "single_enemy"
 }

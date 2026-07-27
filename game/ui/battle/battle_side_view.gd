@@ -70,6 +70,7 @@ var _pending_skill_id: String = ""
 var _staged_active_ids: Array[int] = []
 
 @onready var _opponent_panel_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/OpponentPanel
+@onready var _battlefield_header: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/BattlefieldHeader
 @onready var _arena: BattleArena3D = $Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport/Arena
 @onready var _turn_counter_label: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/TurnCounterLabel
 @onready var _audio: BattleAudio = $Audio
@@ -106,10 +107,16 @@ func _ready() -> void:
 	_forfeit_confirm_dialog.confirmed.connect(_on_forfeit_confirmed)
 	_apply_formation_button.pressed.connect(_on_apply_formation_pressed)
 
-func setup(controller: BattleController, my_side: String, skill_db: SkillDatabase) -> void:
+## opponent_name is online-play only (see game/net/) -- the local 2-window
+## flow (battle_setup_screen.gd) has no separate "opponent" identity to show,
+## both windows are the same local player, so it leaves this at its default
+## and the header stays the plain literal "Opponent".
+func setup(controller: BattleController, my_side: String, skill_db: SkillDatabase, opponent_name: String = "") -> void:
 	_controller = controller
 	_my_side = my_side
 	_skill_db = skill_db
+	if not opponent_name.is_empty():
+		_battlefield_header.text = opponent_name
 	_controller.turn_resolved.connect(_on_turn_resolved)
 	_controller.battle_ended.connect(_on_battle_ended)
 	_sync_staged_formation()
@@ -692,7 +699,7 @@ func _on_turn_resolved(events: Array[BattleEvent]) -> void:
 ## plays a sound. Awaits the full attack animation so the caller's per-event
 ## loop pauses here before starting the next event's.
 func _animate_event(event: BattleEvent) -> void:
-	if event is SkillUsedEvent and event.prevented_by_status.is_empty():
+	if event is SkillUsedEvent and event.prevented_by_status.is_empty() and event.prevented_by_trait.is_empty():
 		_audio.play_attack()
 		await _arena.animate_attack(event.actor_instance_id, event.target_instance_id)
 		if event.missed:
@@ -740,6 +747,8 @@ func _describe_event(event: BattleEvent) -> String:
 			if status != null and not status.blocked_skill_category.is_empty():
 				return "%s can't use %s while %s!" % [actor_name, skill_name, status_name]
 			return "%s can't move! (%s)" % [actor_name, status_name]
+		if not e.prevented_by_trait.is_empty():
+			return "%s is too %s to move!" % [actor_name, e.prevented_by_trait.capitalize()]
 		if e.missed:
 			return "%s used %s but missed!" % [actor_name, skill_name]
 		if e.fizzled:
@@ -802,6 +811,18 @@ func _describe_event(event: BattleEvent) -> String:
 		var defender := _find_instance(e11.actor_instance_id)
 		var defender_name := defender.species.display_name if defender != null else "???"
 		return "%s is defending!" % defender_name
+	if event is MpDrainEvent:
+		var e12: MpDrainEvent = event
+		var drainer := _find_instance(e12.source_instance_id)
+		var drainer_name := drainer.species.display_name if drainer != null else "???"
+		var drained_from := _find_instance(e12.target_instance_id)
+		var drained_from_name := drained_from.species.display_name if drained_from != null else "???"
+		return "%s drains %d MP from %s!" % [drainer_name, e12.amount, drained_from_name]
+	if event is ReviveEvent:
+		var e13: ReviveEvent = event
+		var revived := _find_instance(e13.instance_id)
+		var revived_name := revived.species.display_name if revived != null else "???"
+		return "%s came back from the brink! (%d HP)" % [revived_name, e13.resulting_hp]
 	if event is BattleEndedEvent:
 		var e9: BattleEndedEvent = event
 		return "You win the battle!" if e9.winner_side == _my_side else "You lose the battle!"

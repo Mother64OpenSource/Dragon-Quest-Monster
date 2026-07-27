@@ -13,5 +13,6 @@
 	"id": "party_change",
 	"mp_cost": 0.0,
 	"priority": 0.0,
+	"skill_type": "Other",
 	"target_type": "single_enemy"
 }

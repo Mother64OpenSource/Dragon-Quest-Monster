@@ -14,5 +14,6 @@
 	"id": "oomph",
 	"mp_cost": 2.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

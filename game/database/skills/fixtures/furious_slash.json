@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Woosh-Donk",
 	"id": "furious_slash",
 	"mp_cost": 110.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "single_enemy"
 }

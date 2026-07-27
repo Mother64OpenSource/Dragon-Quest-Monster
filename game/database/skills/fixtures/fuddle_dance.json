@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Confusion",
 	"id": "fuddle_dance",
 	"mp_cost": 4.0,
 	"priority": 0.0,
+	"skill_type": "Dance",
 	"target_type": "single_enemy"
 }

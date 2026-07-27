@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Woosh",
 	"id": "swoosh",
 	"mp_cost": 11.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

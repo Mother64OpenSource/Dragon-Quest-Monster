@@ -13,5 +13,6 @@
 	"id": "selflessness",
 	"mp_cost": 5.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "self"
 }

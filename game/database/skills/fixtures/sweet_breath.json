@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Sleep",
 	"id": "sweet_breath",
 	"mp_cost": 3.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "single_enemy"
 }

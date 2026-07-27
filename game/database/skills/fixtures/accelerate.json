@@ -1,17 +1,19 @@
 {
 	"accuracy": 1.0,
-	"category": "magic",
+	"category": "status",
 	"description": "Raises the AGI of one ally for 4-7 turns.",
 	"display_name": "Accelerate",
 	"effects": [
 		{
-			"category": "magic",
-			"power": 24.0,
-			"type": "damage"
+			"stages": 1.0,
+			"stat_name": "agility",
+			"target_self": true,
+			"type": "stat_mod"
 		}
 	],
 	"id": "accelerate",
 	"mp_cost": 3.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

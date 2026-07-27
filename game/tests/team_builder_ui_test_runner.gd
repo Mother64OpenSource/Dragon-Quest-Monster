@@ -8,6 +8,9 @@ extends RefCounted
 ## and after run(), and never touches real player save data.
 
 const TEST_TEAMS_DIR := "user://test_teams_ui/"
+const TEST_PROFILE_PATH := "user://test_profile_ui.json"
+const TEST_BACKGROUND_PREF_PATH := "user://test_background_pref_ui.json"
+const TEST_BACKGROUND_DIR := "user://test_backgrounds_ui"
 const ScreenScene := preload("res://ui/team_builder/team_builder_screen.tscn")
 const RowScene := preload("res://ui/team_builder/team_member_row.tscn")
 
@@ -19,9 +22,14 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_all_passed = true
 	_tree = tree
 	_clear_test_dir()
+	_clear_test_profile()
+	_clear_test_backgrounds()
 
 	_screen = ScreenScene.instantiate()
 	_screen.teams_dir_override = TEST_TEAMS_DIR
+	_screen.profile_path_override = TEST_PROFILE_PATH
+	_screen.background_pref_path_override = TEST_BACKGROUND_PREF_PATH
+	_screen.background_dir_override = TEST_BACKGROUND_DIR
 	_tree.root.add_child(_screen)
 	# _ready()/@onready resolution for freshly add_child()-ed nodes isn't
 	# dispatched until the engine processes a frame — not synchronous within
@@ -38,9 +46,13 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_resistances_shown()
 	await _check_skill_point_allocation()
 	_check_formation_grid()
+	_check_profile_indicator()
+	_check_background_wiring()
 
 	_screen.queue_free()
 	_clear_test_dir()
+	_clear_test_profile()
+	_clear_test_backgrounds()
 
 	if _all_passed:
 		print("TeamBuilderUiTestRunner: ALL CHECKS PASSED")
@@ -396,6 +408,70 @@ func _check_formation_grid() -> void:
 
 	_screen.roster.delete_team(team_d)
 
+## Never calls _on_profile_button_pressed() (which would popup_centered()
+## the dialog as a real Window) -- no existing test in this suite has
+## exercised a real popup headlessly, so this sticks to the established
+## "call handler methods directly" convention: setup() the dialog and
+## trigger its _on_confirmed() handler directly, same as every other
+## dialog check in this file skips simulated mouse/keyboard input.
+func _check_profile_indicator() -> void:
+	_check("profile button auto-populates with a default name", not _screen._profile_button.text.is_empty())
+	_check("profile button auto-populates with a default avatar icon", _screen._profile_button.icon != null)
+
+	var on_disk := PlayerProfileManager.new(TEST_PROFILE_PATH).load_profile()
+	_check(
+		"the auto-created profile is persisted to the isolated test path",
+		on_disk != null and on_disk.player_name == _screen._profile_button.text
+	)
+
+	var dialog := _screen._profile_dialog
+	dialog.setup(_screen._profile, _screen.monster_db, _screen.trait_db)
+	dialog._name_edit.text = "Eli"
+	dialog._on_avatar_chosen("golem")
+	dialog._on_confirmed()
+
+	_check("editing the profile updates the button's displayed name", _screen._profile_button.text == "Eli")
+	var golem_icon_path: String = _screen.monster_db.get_species("golem").sprite_path
+	_check(
+		"editing the profile updates the button's displayed icon",
+		_screen._profile_button.icon != null and _screen._profile_button.icon.resource_path == golem_icon_path
+	)
+
+	var reloaded := PlayerProfileManager.new(TEST_PROFILE_PATH).load_profile()
+	_check("editing the profile persists the new name to disk", reloaded != null and reloaded.player_name == "Eli")
+	_check("editing the profile persists the new avatar to disk", reloaded != null and reloaded.avatar_species_id == "golem")
+
+## Never calls _on_change_background_pressed() (which would popup_centered()
+## the FileDialog as a real Window) -- same "call handler methods directly"
+## convention _check_profile_indicator() already follows for its own dialog.
+func _check_background_wiring() -> void:
+	_check("background display resolved", _screen._background_display != null)
+	_check(
+		"no preference set yet shows the fallback gradient",
+		_screen._background_display._texture_rect.texture is GradientTexture2D
+	)
+
+	var source_path := "user://test_background_source_ui.png"
+	var image := Image.create(2, 2, false, Image.FORMAT_RGBA8)
+	image.fill(Color(0, 1, 0, 1))
+	image.save_png(source_path)
+
+	_screen._on_background_file_selected(source_path)
+	_check(
+		"choosing a background swaps the display to the loaded image",
+		_screen._background_display._texture_rect.texture is ImageTexture
+	)
+
+	var pref := _screen.background_pref_manager.get_preference()
+	_check("choosing a background persists a non-empty preference path", not pref.background_path.is_empty())
+	_check(
+		"the persisted path lives under the isolated test backgrounds dir, not the real one",
+		pref.background_path.begins_with(TEST_BACKGROUND_DIR)
+	)
+
+	if FileAccess.file_exists(source_path):
+		DirAccess.remove_absolute(source_path)
+
 func _count_member_rows(container: Container) -> int:
 	var count := 0
 	for child in container.get_children():
@@ -418,6 +494,24 @@ func _clear_test_dir() -> void:
 	var file_name := dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir() and file_name.ends_with(".json"):
+			dir.remove(file_name)
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+func _clear_test_profile() -> void:
+	if FileAccess.file_exists(TEST_PROFILE_PATH):
+		DirAccess.remove_absolute(TEST_PROFILE_PATH)
+
+func _clear_test_backgrounds() -> void:
+	if FileAccess.file_exists(TEST_BACKGROUND_PREF_PATH):
+		DirAccess.remove_absolute(TEST_BACKGROUND_PREF_PATH)
+	var dir := DirAccess.open(TEST_BACKGROUND_DIR)
+	if dir == null:
+		return
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir():
 			dir.remove(file_name)
 		file_name = dir.get_next()
 	dir.list_dir_end()

@@ -11,8 +11,10 @@
 			"type": "stat_mod"
 		}
 	],
+	"element": "Whack",
 	"id": "death_dance",
 	"mp_cost": 6.0,
 	"priority": 0.0,
+	"skill_type": "Dance",
 	"target_type": "single_enemy"
 }

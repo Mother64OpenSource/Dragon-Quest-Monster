@@ -13,5 +13,6 @@
 	"id": "give_magic",
 	"mp_cost": 0.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

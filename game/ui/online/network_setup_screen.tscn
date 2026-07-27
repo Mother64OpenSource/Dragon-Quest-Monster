@@ -144,6 +144,43 @@ text = "Your Team:"
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="MatchupRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="YouBox" type="HBoxContainer" parent="VBoxContainer/MatchupRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="YouIcon" type="TextureRect" parent="VBoxContainer/MatchupRow/YouBox"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="YouLabel" type="Label" parent="VBoxContainer/MatchupRow/YouBox"]
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="VsLabel" type="Label" parent="VBoxContainer/MatchupRow"]
+layout_mode = 2
+text = "vs"
+
+[node name="OpponentBox" type="HBoxContainer" parent="VBoxContainer/MatchupRow"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OpponentIcon" type="TextureRect" parent="VBoxContainer/MatchupRow/OpponentBox"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpponentLabel" type="Label" parent="VBoxContainer/MatchupRow/OpponentBox"]
+layout_mode = 2
+vertical_alignment = 1
+
 [node name="ReadyButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Ready"

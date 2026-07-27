@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Immobilize",
 	"id": "sultry_dance",
 	"mp_cost": 2.0,
 	"priority": 0.0,
+	"skill_type": "Dance",
 	"target_type": "single_enemy"
 }

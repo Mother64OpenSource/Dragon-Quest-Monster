@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Zap-Sizz",
 	"id": "lightning_storm",
 	"mp_cost": 44.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "single_enemy"
 }

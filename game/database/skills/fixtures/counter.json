@@ -13,5 +13,6 @@
 	"id": "counter",
 	"mp_cost": 32.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

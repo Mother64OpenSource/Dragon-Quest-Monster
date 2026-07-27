@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "magic",
+	"category": "status",
 	"description": "Spell nullifies all allies' bad status effects.",
 	"display_name": "Lift Demerit",
 	"effects": [
 		{
-			"category": "magic",
-			"power": 255.0,
-			"type": "damage"
+			"status_ids": [],
+			"target_self": true,
+			"type": "cure_status"
 		}
 	],
 	"id": "lift_demerit",
 	"mp_cost": 80.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

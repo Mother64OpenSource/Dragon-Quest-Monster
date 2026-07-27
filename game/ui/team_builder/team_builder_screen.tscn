@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://ui/team_builder/team_builder_screen.gd" id="1"]
 [ext_resource type="PackedScene" path="res://ui/team_builder/team_list_panel.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://ui/team_builder/team_editor_panel.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://ui/profile/player_profile_dialog.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://ui/background/background_display.tscn" id="5"]
+[ext_resource type="Theme" path="res://ui/team_builder/showdown_panel_theme.tres" id="6"]
 
 [node name="TeamBuilderScreen" type="Control"]
 layout_mode = 3
@@ -13,37 +16,64 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
 
-[node name="TopBar" type="HBoxContainer" parent="."]
+[node name="BackgroundDisplay" parent="." instance=ExtResource("5")]
+
+[node name="TopBarPanel" type="PanelContainer" parent="."]
+theme = ExtResource("6")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = -4.0
-offset_bottom = 28.0
+offset_bottom = 52.0
+grow_horizontal = 2
+
+[node name="TopBar" type="HBoxContainer" parent="TopBarPanel"]
+layout_mode = 2
 alignment = 2
 
-[node name="OnlineBattleButton" type="Button" parent="TopBar"]
+[node name="ProfileButton" type="Button" parent="TopBarPanel/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 0
+
+[node name="ChangeBackgroundButton" type="Button" parent="TopBarPanel/TopBar"]
+layout_mode = 2
+text = "Change Background..."
+
+[node name="OnlineBattleButton" type="Button" parent="TopBarPanel/TopBar"]
 layout_mode = 2
 text = "Online Battle..."
 
-[node name="BattleButton" type="Button" parent="TopBar"]
+[node name="BattleButton" type="Button" parent="TopBarPanel/TopBar"]
 layout_mode = 2
 text = "Battle!"
+
+[node name="PlayerProfileDialog" parent="." instance=ExtResource("4")]
+
+[node name="BackgroundFileDialog" type="FileDialog" parent="."]
+title = "Choose Background Image or GIF"
+size = Vector2i(700, 450)
+access = 2
+file_mode = 0
+filters = PackedStringArray("*.png, *.jpg, *.jpeg, *.webp, *.bmp, *.gif ; Image/GIF Files")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 32.0
+offset_top = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 split_offset = 300
 
 [node name="TeamListPanel" parent="HSplitContainer" instance=ExtResource("2")]
 layout_mode = 2
+theme = ExtResource("6")
 
 [node name="TeamEditorPanel" parent="HSplitContainer" instance=ExtResource("3")]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("6")

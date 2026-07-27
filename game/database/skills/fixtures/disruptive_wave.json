@@ -13,5 +13,6 @@
 	"id": "disruptive_wave",
 	"mp_cost": 60.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "single_enemy"
 }

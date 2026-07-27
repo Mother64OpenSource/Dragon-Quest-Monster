@@ -51,7 +51,7 @@ func _build_monster_instance(species_id: String, side: String) -> MonsterInstanc
 	for trait_id in species.starting_trait_ids:
 		var data := trait_database.get_trait_data(trait_id)
 		if data != null:
-			var effect := TraitEffect.create(trait_id, data)
+			var effect := TraitEffect.create(trait_id, data, skill_database)
 			if effect != null:
 				traits.append(effect)
 		else:

@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "magic",
+	"category": "status",
 	"description": "Cures all allies of the effects of confusion.",
 	"display_name": "Defuddle",
 	"effects": [
 		{
-			"category": "magic",
-			"power": 21.0,
-			"type": "damage"
+			"status_ids": ["confusion"],
+			"target_self": true,
+			"type": "cure_status"
 		}
 	],
 	"id": "defuddle",
 	"mp_cost": 2.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

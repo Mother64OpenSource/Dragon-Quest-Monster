@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Curse",
 	"id": "requiem_for_the_lost",
 	"mp_cost": 50.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "single_enemy"
 }

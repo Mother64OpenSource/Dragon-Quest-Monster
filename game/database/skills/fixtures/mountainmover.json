@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Rubble",
 	"id": "mountainmover",
 	"mp_cost": 24.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

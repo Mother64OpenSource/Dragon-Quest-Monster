@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Removes most ailments from all allies.",
 	"display_name": "Wave of Relief",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 195.0,
-			"type": "damage"
+			"status_ids": [],
+			"target_self": true,
+			"type": "cure_status"
 		}
 	],
 	"id": "wave_of_relief",
 	"mp_cost": 60.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "self"
 }

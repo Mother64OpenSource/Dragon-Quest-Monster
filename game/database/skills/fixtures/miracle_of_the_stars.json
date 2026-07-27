@@ -1,17 +1,37 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Increase 1 ally's Attack, Defense, Agility, and Wisdom for 2-7 rounds.",
 	"display_name": "Miracle of the Stars",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 315.0,
-			"type": "damage"
+			"stages": 1.0,
+			"stat_name": "attack",
+			"target_self": true,
+			"type": "stat_mod"
+		},
+		{
+			"stages": 1.0,
+			"stat_name": "defense",
+			"target_self": true,
+			"type": "stat_mod"
+		},
+		{
+			"stages": 1.0,
+			"stat_name": "agility",
+			"target_self": true,
+			"type": "stat_mod"
+		},
+		{
+			"stages": 1.0,
+			"stat_name": "wisdom",
+			"target_self": true,
+			"type": "stat_mod"
 		}
 	],
 	"id": "miracle_of_the_stars",
 	"mp_cost": 100.0,
 	"priority": 0.0,
+	"skill_type": "Body",
 	"target_type": "self"
 }

@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Fire-Ice",
 	"id": "aurora_breath",
 	"mp_cost": 100.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "single_enemy"
 }

@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Ice",
 	"id": "cold_blizzard",
 	"mp_cost": 10.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "single_enemy"
 }

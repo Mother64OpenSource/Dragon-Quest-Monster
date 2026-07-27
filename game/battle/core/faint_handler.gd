@@ -19,6 +19,19 @@ static func handle_if_fainted(ctx: BattleContext, monster: MonsterInstance) -> v
 
 	ctx.event_bus.emit_event(MonsterFaintedEvent.new(monster.instance_id), ctx.state.turn_number)
 
+	# Copy the array first -- a revival (Comeback Kid) doesn't remove this
+	# monster's own traits, but iterating active_traits while a hook inside
+	# this same loop could theoretically still be resizing it would be
+	# fragile; duplicate() makes that a non-concern regardless.
+	for trait_effect in monster.active_traits.duplicate():
+		trait_effect.on_fainted(ctx, monster)
+
+	if not monster.is_fainted():
+		# A trait (Comeback Kid) revived the monster mid-loop -- it's still
+		# standing in its own slot(s), so there's nothing to backfill.
+		monster.has_been_processed_as_fainted = false
+		return
+
 	var side := monster.side
 	var team := ctx.state.side_a_team if side == "side_a" else ctx.state.side_b_team
 	var team_index := team.find(monster)

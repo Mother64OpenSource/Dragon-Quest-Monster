@@ -1,17 +1,19 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Whistle continuously for some rounds increasing allies' Wisdom. Effect ends after that.",
 	"display_name": "Whistle of Wisdom",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 105.0,
-			"type": "damage"
+			"stages": 1.0,
+			"stat_name": "wisdom",
+			"target_self": true,
+			"type": "stat_mod"
 		}
 	],
 	"id": "whistle_of_wisdom",
 	"mp_cost": 30.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

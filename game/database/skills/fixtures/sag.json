@@ -11,8 +11,10 @@
 			"type": "stat_mod"
 		}
 	],
+	"element": "Sag",
 	"id": "sag",
 	"mp_cost": 6.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

@@ -11,8 +11,10 @@
 			"type": "status"
 		}
 	],
+	"element": "Silence",
 	"id": "sphere_of_silence",
 	"mp_cost": 3.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "single_enemy"
 }

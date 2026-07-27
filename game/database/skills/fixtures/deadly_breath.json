@@ -10,8 +10,10 @@
 			"type": "damage"
 		}
 	],
+	"element": "Whack",
 	"id": "deadly_breath",
 	"mp_cost": 12.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "single_enemy"
 }

@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Cures the abnormal status effects of all allies. (BRE)",
 	"display_name": "Soothing Vortex",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 195.0,
-			"type": "damage"
+			"status_ids": [],
+			"target_self": true,
+			"type": "cure_status"
 		}
 	],
 	"id": "soothing_vortex",
 	"mp_cost": 60.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

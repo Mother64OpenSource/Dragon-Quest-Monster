@@ -40,7 +40,7 @@ static func build_team(
 		for trait_id in species.starting_trait_ids:
 			var data := trait_db.get_trait_data(trait_id)
 			if data != null:
-				var effect := TraitEffect.create(trait_id, data)
+				var effect := TraitEffect.create(trait_id, data, skill_db)
 				if effect != null:
 					traits.append(effect)
 		instance.active_traits = traits

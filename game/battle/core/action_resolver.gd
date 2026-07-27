@@ -35,6 +35,20 @@ static func resolve_order(actions: Array[Action], state: BattleState, skill_look
 		result.append(entry["action"])
 	return result
 
+## Shuffle: "all monsters attack in random order, regardless of AGI or
+## traits." A plain Fisher-Yates shuffle using the deterministic RNG,
+## bypassing resolve_order's own priority/agility/tiebreak sort entirely
+## (not just randomizing among ties) since the trait's own wording says
+## AGI/traits don't factor in at all when it's active.
+static func shuffle_actions(actions: Array[Action], state: BattleState) -> Array[Action]:
+	var result: Array[Action] = actions.duplicate()
+	for i in range(result.size() - 1, 0, -1):
+		var j := state.rng.randi_range(0, i)
+		var tmp: Action = result[i]
+		result[i] = result[j]
+		result[j] = tmp
+	return result
+
 static func _is_higher_priority(a: Dictionary, b: Dictionary) -> bool:
 	if a["priority"] != b["priority"]:
 		return a["priority"] > b["priority"]

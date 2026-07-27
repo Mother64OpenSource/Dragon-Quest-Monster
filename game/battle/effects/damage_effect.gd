@@ -18,6 +18,12 @@ const DEFEND_DAMAGE_MULTIPLIER := 0.5
 @export var power: int = 0
 @export var min_hits: int = 1
 @export var max_hits: int = 1
+## Mirrors the parent SkillData.element (see its own doc comment) -- set by
+## SkillLoader at load time. Empty for non-elemental damage (plain Attack).
+@export var element: String = ""
+## Mirrors the parent SkillData.skill_type (see its own doc comment) -- set
+## by SkillLoader at load time.
+@export var skill_type: String = ""
 
 func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -> void:
 	var hit_count := min_hits
@@ -31,6 +37,12 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 	# spent once per attack (even a multi-hit one), not re-consumed hit by
 	# hit, and every hit of a multi-hit skill should get the same boost.
 	var tension_snapshot := user.tension_level
+	# Same once-per-action timing as tension_snapshot itself (Dust of the
+	# Clan's own chance roll only fires once per action, not once per hit).
+	var tension_percent := TENSION_DAMAGE_PERCENT_PER_LEVEL
+	if tension_snapshot > 0:
+		for trait_effect in user.active_traits:
+			tension_percent *= trait_effect.get_tension_burn_multiplier(ctx)
 
 	for _hit in range(hit_count):
 		if target.is_fainted():
@@ -45,9 +57,14 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 		# shape (which has no "power" term at all).
 		var raw_damage := DamageFormula.calculate(power, offense, 0 if is_critical else defense)
 		if tension_snapshot > 0:
-			raw_damage = MathUtils.round_half_up(float(raw_damage) * (1.0 + TENSION_DAMAGE_PERCENT_PER_LEVEL * tension_snapshot))
+			raw_damage = MathUtils.round_half_up(float(raw_damage) * (1.0 + tension_percent * tension_snapshot))
 		var final_damage := _run_damage_hooks(ctx, user, target, raw_damage)
 		var was_negated := raw_damage > 0 and final_damage == 0
+		if final_damage >= target.current_hp:
+			for trait_effect in target.active_traits:
+				if trait_effect.survives_lethal_hit(ctx, target):
+					final_damage = target.current_hp - 1
+					break
 		var applied := target.take_damage(final_damage)
 		var event := DamageAppliedEvent.new(user.instance_id, target.instance_id, applied, target.current_hp)
 		event.is_critical = is_critical
@@ -99,9 +116,10 @@ func _wake_if_sleeping(ctx: BattleContext, target: MonsterInstance) -> void:
 func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance, raw_damage: int) -> int:
 	var damage := raw_damage
 	for trait_effect in user.active_traits:
-		damage = trait_effect.on_before_damage_dealt(ctx, user, target, damage)
+		damage = trait_effect.on_before_damage_dealt(ctx, user, target, damage, element)
+		damage = MathUtils.round_half_up(float(damage) * trait_effect.get_skill_type_damage_multiplier(skill_type))
 	for trait_effect in target.active_traits:
-		damage = trait_effect.on_before_damage_taken(ctx, target, user, damage)
+		damage = trait_effect.on_before_damage_taken(ctx, target, user, damage, element)
 	if target.is_defending:
 		damage = MathUtils.round_half_up(float(damage) * DEFEND_DAMAGE_MULTIPLIER)
 	return maxi(0, damage)

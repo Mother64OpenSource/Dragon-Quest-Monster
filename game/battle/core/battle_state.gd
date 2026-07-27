@@ -17,6 +17,22 @@ var event_bus: BattleEventBus
 var is_battle_over: bool = false
 var winner_side: String = ""
 
+## instance_id -> true for every monster that has already had its own
+## action executed THIS round -- reset at the top of every TurnManager.run_turn()
+## call. Exists purely for ProactiveHunterTraitEffect ("bonus vs an enemy
+## that's already gone this round"); nothing else reads it.
+var acted_this_turn_instance_ids: Dictionary = {}
+
+## Set by TurnOrderOverrideEffect (Shuffle/Unnatural Order) when cast;
+## consumed (and reset to false) by TurnManager.run_turn() the NEXT time it
+## builds an action order. Deliberately affects the FOLLOWING round, not
+## retroactively mid-round -- this engine resolves a whole round's action
+## order once, upfront, before executing any of that round's actions, so
+## there is no "remaining actions this round" to reorder once the casting
+## action itself is already mid-resolution.
+var shuffle_next_round: bool = false
+var reverse_next_round: bool = false
+
 func _init(p_rng: DeterministicRng, p_event_bus: BattleEventBus) -> void:
 	rng = p_rng
 	event_bus = p_event_bus

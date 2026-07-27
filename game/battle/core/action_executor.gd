@@ -27,6 +27,24 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 		push_error("Unknown skill_id in action: %s" % action.skill_id)
 		return
 
+	# Personality traits (Timid, Yellow Belly, Foot Dragger) that can make a
+	# monster fail to act, independent of any status condition. Computing
+	# the chance first and only rolling if it's actually nonzero keeps this
+	# a no-op (no new RNG draw at all) for every monster that doesn't carry
+	# one of these traits.
+	var self_skip_chance := 0.0
+	var self_skip_trait_id := ""
+	for trait_effect in actor.active_traits:
+		var this_chance := trait_effect.get_self_skip_turn_chance()
+		if this_chance > self_skip_chance:
+			self_skip_chance = this_chance
+			self_skip_trait_id = trait_effect.trait_data.id if trait_effect.trait_data != null else ""
+	if self_skip_chance > 0.0 and ctx.rng.chance(self_skip_chance):
+		var self_prevented_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
+		self_prevented_event.prevented_by_trait = self_skip_trait_id
+		ctx.event_bus.emit_event(self_prevented_event, ctx.state.turn_number)
+		return
+
 	var status_data := actor.active_status.status_data if actor.active_status != null else null
 	if status_data != null:
 		# A full-body condition (Sleep/Paralysis/Immobilize/Confusion) rolls a
@@ -51,13 +69,14 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 	var target_invalid := skill.target_type == SkillData.TargetType.SINGLE_ENEMY \
 		and (target == null or target.is_fainted())
 
-	if target_invalid or actor.current_mp < skill.mp_cost:
+	var effective_mp_cost := _effective_mp_cost(skill, actor)
+	if target_invalid or actor.current_mp < effective_mp_cost:
 		var fizzled_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
 		fizzled_event.fizzled = true
 		ctx.event_bus.emit_event(fizzled_event, ctx.state.turn_number)
 		return
 
-	actor.current_mp -= skill.mp_cost
+	actor.current_mp -= effective_mp_cost
 
 	var missed := not ctx.rng.chance(_effective_accuracy(status_data, skill, actor))
 	var used_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
@@ -73,6 +92,15 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 			FaintHandler.handle_if_fainted(ctx, target)
 			if target.is_fainted():
 				break
+
+## Stacks multiplicatively across every trait the actor carries, same
+## convention as _effective_accuracy() below -- never negative, so a very
+## cheap discount can't invert into the game paying the monster MP.
+static func _effective_mp_cost(skill: SkillData, actor: MonsterInstance) -> int:
+	var multiplier := 1.0
+	for trait_effect in actor.active_traits:
+		multiplier *= trait_effect.get_mp_cost_multiplier(skill)
+	return maxi(0, MathUtils.round_half_up(float(skill.mp_cost) * multiplier))
 
 ## "skill" (Gobstop/Skill Sealed) blocks everything except the universal
 ## "attack" id -- a category match alone can't express this, since Attack

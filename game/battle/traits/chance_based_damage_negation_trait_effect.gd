@@ -15,7 +15,7 @@ extends TraitEffect
 ## increases incoming damage" otherwise). 1.0 = no change.
 @export var damage_multiplier_otherwise: float = 1.0
 
-func on_before_damage_taken(ctx: BattleContext, _owner: MonsterInstance, attacker: MonsterInstance, incoming_damage: int) -> int:
+func on_before_damage_taken(ctx: BattleContext, _owner: MonsterInstance, attacker: MonsterInstance, incoming_damage: int, _element: String = "") -> int:
 	if not blocked_by_trait_id.is_empty():
 		for trait_effect in attacker.active_traits:
 			if trait_effect.trait_data != null and trait_effect.trait_data.id == blocked_by_trait_id:

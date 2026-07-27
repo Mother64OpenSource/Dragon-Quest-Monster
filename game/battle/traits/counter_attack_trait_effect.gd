@@ -8,7 +8,7 @@ extends TraitEffect
 @export var counter_chance: float = 0.25
 @export var also_negates_damage: bool = false
 
-func on_before_damage_taken(ctx: BattleContext, owner: MonsterInstance, attacker: MonsterInstance, incoming_damage: int) -> int:
+func on_before_damage_taken(ctx: BattleContext, owner: MonsterInstance, attacker: MonsterInstance, incoming_damage: int, _element: String = "") -> int:
 	if ctx.rng.chance(counter_chance):
 		var counter_damage := DamageFormula.calculate(0, owner.get_effective_stat("attack"), attacker.get_effective_stat("defense"))
 		var applied := attacker.take_damage(counter_damage)

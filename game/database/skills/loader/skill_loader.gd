@@ -14,11 +14,17 @@ static func load_from_dict(data: Dictionary, status_registry: Dictionary) -> Ski
 	skill.accuracy = float(data.get("accuracy", 1.0))
 	skill.category = _parse_category(data.get("category", "physical"))
 	skill.target_type = _parse_target_type(data.get("target_type", "single_enemy"))
+	skill.element = data.get("element", "")
+	skill.skill_type = data.get("skill_type", "")
 
 	var effects: Array[SkillEffect] = []
 	for effect_data in data.get("effects", []):
 		var effect := _build_effect(effect_data, status_registry)
 		if effect != null:
+			if effect is DamageEffect or effect is StatModEffect:
+				effect.element = skill.element
+			if effect is DamageEffect:
+				effect.skill_type = skill.skill_type
 			effects.append(effect)
 	skill.effects = effects
 	return skill
@@ -52,6 +58,16 @@ static func _parse_target_type(value: String) -> SkillData.TargetType:
 		_:
 			push_error("Unknown skill target type: %s" % value)
 			return SkillData.TargetType.SINGLE_ENEMY
+
+static func _parse_turn_order_mode(value: String) -> TurnOrderOverrideEffect.Mode:
+	match value:
+		"shuffle":
+			return TurnOrderOverrideEffect.Mode.SHUFFLE
+		"reverse":
+			return TurnOrderOverrideEffect.Mode.REVERSE
+		_:
+			push_error("Unknown turn_order_override mode: %s" % value)
+			return TurnOrderOverrideEffect.Mode.SHUFFLE
 
 static func _parse_damage_category(value: String) -> DamageEffect.Category:
 	match value:
@@ -94,6 +110,24 @@ static func _build_effect(effect_data: Dictionary, status_registry: Dictionary) 
 			effect.stages = int(effect_data.get("stages", 1))
 			effect.chance = float(effect_data.get("chance", 1.0))
 			effect.target_self = bool(effect_data.get("target_self", true))
+			return effect
+		"cure_status":
+			var effect := CureStatusEffect.new()
+			var status_ids: Array[String] = []
+			for status_id in effect_data.get("status_ids", []):
+				status_ids.append(str(status_id))
+			effect.status_ids = status_ids
+			effect.target_self = bool(effect_data.get("target_self", true))
+			return effect
+		"restore_mp":
+			var effect := RestoreMpEffect.new()
+			effect.power = int(effect_data.get("power", 0))
+			effect.percent_max_mp = float(effect_data.get("percent_max_mp", 0.0))
+			effect.target_self = bool(effect_data.get("target_self", true))
+			return effect
+		"turn_order_override":
+			var effect := TurnOrderOverrideEffect.new()
+			effect.mode = _parse_turn_order_mode(effect_data.get("mode", "shuffle"))
 			return effect
 		_:
 			push_error("Unknown skill effect type: %s" % effect_type)

@@ -13,5 +13,6 @@
 	"id": "deep_breath",
 	"mp_cost": 0.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

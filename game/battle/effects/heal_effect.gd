@@ -12,6 +12,8 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 	var amount := power
 	if percent_max_hp > 0.0:
 		amount += MathUtils.percent_of(recipient.species.base_hp, percent_max_hp)
+	for trait_effect in user.active_traits:
+		amount = MathUtils.round_half_up(float(amount) * trait_effect.get_heal_multiplier())
 	var applied := recipient.heal(amount)
 	ctx.event_bus.emit_event(
 		HealingAppliedEvent.new(user.instance_id, recipient.instance_id, applied, recipient.current_hp),

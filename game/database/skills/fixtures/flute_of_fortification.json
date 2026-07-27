@@ -1,17 +1,19 @@
 {
 	"accuracy": 1.0,
-	"category": "physical",
+	"category": "status",
 	"description": "Whistle continuously for some rounds increasing allies' Defense. Effect ends after that.",
 	"display_name": "Flute of Fortification",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 105.0,
-			"type": "damage"
+			"stages": 1.0,
+			"stat_name": "defense",
+			"target_self": true,
+			"type": "stat_mod"
 		}
 	],
 	"id": "flute_of_fortification",
 	"mp_cost": 30.0,
 	"priority": 0.0,
+	"skill_type": "Breath",
 	"target_type": "self"
 }

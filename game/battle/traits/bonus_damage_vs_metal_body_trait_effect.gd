@@ -12,7 +12,7 @@ const METAL_BODY_TRAIT_IDS := ["metal_body", "light_metal_body", "hard_metal_bod
 
 @export var flat_bonus: int = 1
 
-func on_before_damage_dealt(_ctx: BattleContext, _owner: MonsterInstance, target: MonsterInstance, incoming_damage: int) -> int:
+func on_before_damage_dealt(_ctx: BattleContext, _owner: MonsterInstance, target: MonsterInstance, incoming_damage: int, _element: String = "") -> int:
 	for trait_effect in target.active_traits:
 		if trait_effect.trait_data != null and METAL_BODY_TRAIT_IDS.has(trait_effect.trait_data.id):
 			return incoming_damage + flat_bonus

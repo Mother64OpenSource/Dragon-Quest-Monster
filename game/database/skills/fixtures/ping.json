@@ -1,17 +1,19 @@
 {
 	"accuracy": 1.0,
-	"category": "magic",
+	"category": "status",
 	"description": "Raises the WIS of one ally for 4-7 turns.",
 	"display_name": "Ping",
 	"effects": [
 		{
-			"category": "magic",
-			"power": 24.0,
-			"type": "damage"
+			"stages": 1.0,
+			"stat_name": "wisdom",
+			"target_self": true,
+			"type": "stat_mod"
 		}
 	],
 	"id": "ping",
 	"mp_cost": 3.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

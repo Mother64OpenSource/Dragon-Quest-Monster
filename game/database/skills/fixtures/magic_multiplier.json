@@ -1,17 +1,18 @@
 {
 	"accuracy": 1.0,
-	"category": "magic",
+	"category": "status",
 	"description": "Restores a small amount of the caster's MP.",
 	"display_name": "Magic Multiplier",
 	"effects": [
 		{
-			"category": "magic",
-			"power": 18.0,
-			"type": "damage"
+			"power": 15.0,
+			"target_self": true,
+			"type": "restore_mp"
 		}
 	],
 	"id": "magic_multiplier",
 	"mp_cost": 1.0,
 	"priority": 0.0,
+	"skill_type": "Spell",
 	"target_type": "self"
 }

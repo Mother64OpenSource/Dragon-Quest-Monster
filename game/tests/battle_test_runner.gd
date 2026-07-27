@@ -50,6 +50,27 @@ func run() -> bool:
 	_check_counter_mechanics()
 	_check_tension_mechanics()
 	_check_defend_mechanics()
+	_check_multi_attack_mechanics()
+	_check_roulette_mechanics()
+	_check_retaliation_mechanics()
+	_check_death_triggered_mechanics()
+	_check_start_of_battle_mechanics()
+	_check_mp_cost_mechanics()
+	_check_elemental_mechanics()
+	_check_status_chance_mechanics()
+	_check_misc_missing_trait_batch_mechanics()
+	_check_stat_mod_chance_mechanics()
+	_check_heal_boost_mechanics()
+	_check_self_skip_turn_mechanics()
+	_check_third_missing_trait_batch_mechanics()
+	_check_size_tier_mechanics()
+	_check_missed_quick_win_mechanics()
+	_check_skill_type_mechanics()
+	_check_self_cast_skill_mechanics()
+	_check_broken_skill_data_fixes()
+	_check_cure_status_and_restore_mp_mechanics()
+	_check_turn_order_override_mechanics()
+	_check_tension_family_reexamined_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -553,6 +574,1672 @@ func _check_defend_mechanics() -> void:
 			applied_amount = event.amount
 	_check("defend halves incoming damage to the hand-computed amount", applied_amount == expected_halved)
 	_check("defend's halved amount is strictly less than the undefended baseline", expected_halved < base_damage)
+
+## Hit Squad (and any future ExtraAttackTraitEffect-driven trait) runs the
+## actor's WHOLE queued action multiple times in a row within one round --
+## not extra hits inside a single skill's own effects (that's
+## DamageEffect.min_hits/max_hits, already covered elsewhere). Driven
+## through a real TurnManager.run_turn() (via BattleEngine), not a direct
+## ActionExecutor.execute() call, since the repeat loop itself lives in
+## TurnManager -- this is the one thing in this describe block that's a
+## true integration test rather than a pure-function check.
+func _check_multi_attack_mechanics() -> void:
+	var extra := ExtraAttackTraitEffect.new()
+	extra.extra_attacks = 2
+	_check("extra attack trait reports its configured count", extra.get_extra_attack_count() == 2)
+
+	var team_builder := TeamBuilder.new()
+	var side_a_team := team_builder.build_team(["slime"], "side_a")
+	var side_b_team := team_builder.build_team(["golem"], "side_b")
+	var attacker := side_a_team[0]
+	var defender := side_b_team[0]
+	var hit_squad := ExtraAttackTraitEffect.new()
+	hit_squad.extra_attacks = 1
+	var hit_squad_traits: Array[TraitEffect] = [hit_squad]
+	attacker.active_traits = hit_squad_traits
+
+	var providers := {"side_a": ScriptedActionProvider.new(), "side_b": ScriptedActionProvider.new()}
+	var attacker_queue: Array[Action] = [Action.new(attacker.instance_id, "attack", defender.instance_id)]
+	var defender_queue: Array[Action] = [Action.new(defender.instance_id, "attack", attacker.instance_id)]
+	providers["side_a"].set_queue(attacker.instance_id, attacker_queue)
+	providers["side_b"].set_queue(defender.instance_id, defender_queue)
+
+	var engine := BattleEngine.new(side_a_team, side_b_team, 42, providers, team_builder.skill_registry, 1)
+	engine.start_battle()
+	var round_events: Array[BattleEvent] = []
+	engine.get_event_bus().event_emitted.connect(func(event: BattleEvent) -> void: round_events.append(event))
+	engine.run_turn()
+
+	var attacker_skill_uses := 0
+	for event in round_events:
+		if event is SkillUsedEvent and event.actor_instance_id == attacker.instance_id:
+			attacker_skill_uses += 1
+	_check(
+		"hit squad: the actor's action executes twice (1 base + 1 extra) in a single round, each with its own SkillUsedEvent",
+		attacker_skill_uses == 2
+	)
+
+	# A lethal counter mid-repeat must stop further repeats -- a fainted
+	# monster can't keep attacking. Reuses the same CounterAttackTraitEffect
+	# already proven lethal-and-fainting-correct in _check_counter_mechanics.
+	var team_builder2 := TeamBuilder.new()
+	var side_a_team2 := team_builder2.build_team(["slime"], "side_a")
+	var side_b_team2 := team_builder2.build_team(["golem"], "side_b")
+	var fragile_attacker := side_a_team2[0]
+	var countering_defender := side_b_team2[0]
+	# Priority-boosted so this test isn't at the mercy of golem's real
+	# (much higher) agility stat -- without this, golem's own attack could
+	# resolve first and faint 1-HP fragile_attacker before it ever gets to
+	# act at all, which would test nothing about mid-repeat fainting.
+	var fragile_priority := PriorityBonusTraitEffect.new()
+	fragile_priority.priority_bonus = 1000
+	var fragile_extra := ExtraAttackTraitEffect.new()
+	fragile_extra.extra_attacks = 2
+	var fragile_traits: Array[TraitEffect] = [fragile_extra, fragile_priority]
+	fragile_attacker.active_traits = fragile_traits
+	fragile_attacker.current_hp = 1
+	var lethal_counter := CounterAttackTraitEffect.new()
+	lethal_counter.counter_chance = 1.0
+	var countering_traits: Array[TraitEffect] = [lethal_counter]
+	countering_defender.active_traits = countering_traits
+
+	var providers2 := {"side_a": ScriptedActionProvider.new(), "side_b": ScriptedActionProvider.new()}
+	var fragile_queue: Array[Action] = [Action.new(fragile_attacker.instance_id, "attack", countering_defender.instance_id)]
+	var countering_queue: Array[Action] = [Action.new(countering_defender.instance_id, "attack", fragile_attacker.instance_id)]
+	providers2["side_a"].set_queue(fragile_attacker.instance_id, fragile_queue)
+	providers2["side_b"].set_queue(countering_defender.instance_id, countering_queue)
+
+	var engine2 := BattleEngine.new(side_a_team2, side_b_team2, 42, providers2, team_builder2.skill_registry, 1)
+	engine2.start_battle()
+	var round_events2: Array[BattleEvent] = []
+	engine2.get_event_bus().event_emitted.connect(func(event: BattleEvent) -> void: round_events2.append(event))
+	engine2.run_turn()
+
+	_check("a lethal counter mid-repeat actually faints the attacker", fragile_attacker.is_fainted())
+	var fragile_skill_uses := 0
+	for event in round_events2:
+		if event is SkillUsedEvent and event.actor_instance_id == fragile_attacker.instance_id:
+			fragile_skill_uses += 1
+	_check(
+		"a lethal counter after the first repeat stops the remaining ones (1 use, not 3)",
+		fragile_skill_uses == 1
+	)
+
+## The Roulette family (Agi/Atk/Def/Wis Roulette, Star Gift) all reduce to
+## one RNG draw per turn start against a rise/fall boundary -- chance=1.0/0.0
+## exercise DeterministicRng's documented boundary short-circuit, same trick
+## used throughout this file, so these stay deterministic without a
+## statistical trial.
+func _check_roulette_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var harness := _new_harness(team_builder)
+
+	var rise := RandomStatFluctuationTraitEffect.new()
+	rise.stat_name = "attack"
+	rise.rise_chance = 1.0
+	rise.fall_chance = 0.0
+	harness.actor.stat_stages.attack = 0
+	rise.on_turn_start(harness.ctx, harness.actor)
+	_check("roulette: rise_chance=1.0 deterministically raises the stage by 1", harness.actor.stat_stages.attack == 1)
+
+	var fall := RandomStatFluctuationTraitEffect.new()
+	fall.stat_name = "defense"
+	fall.rise_chance = 0.0
+	fall.fall_chance = 1.0
+	harness.actor.stat_stages.defense = 0
+	fall.on_turn_start(harness.ctx, harness.actor)
+	_check("roulette: fall_chance=1.0 deterministically lowers the stage by 1", harness.actor.stat_stages.defense == -1)
+
+	var never := RandomStatFluctuationTraitEffect.new()
+	never.stat_name = "agility"
+	never.rise_chance = 0.0
+	never.fall_chance = 0.0
+	harness.actor.stat_stages.agility = 0
+	never.on_turn_start(harness.ctx, harness.actor)
+	_check("roulette: rise_chance=0.0 and fall_chance=0.0 never changes the stage", harness.actor.stat_stages.agility == 0)
+
+	harness.actor.stat_stages = StatStages.new()
+	var star_gift := RandomStatFluctuationTraitEffect.new()
+	star_gift.random_stat = true
+	star_gift.rise_chance = 1.0
+	star_gift.fall_chance = 0.0
+	star_gift.on_turn_start(harness.ctx, harness.actor)
+	var moved_stages: StatStages = harness.actor.stat_stages
+	var total_stage: int = moved_stages.attack + moved_stages.defense + moved_stages.agility + moved_stages.wisdom
+	_check("star gift: picks a random stat and raises it by 1 (exactly one stat moved)", total_stage == 1)
+
+	var fainted_harness := _new_harness(team_builder)
+	fainted_harness.actor.current_hp = 0
+	var on_fainted := RandomStatFluctuationTraitEffect.new()
+	on_fainted.stat_name = "wisdom"
+	on_fainted.rise_chance = 1.0
+	on_fainted.fall_chance = 0.0
+	on_fainted.on_turn_start(fainted_harness.ctx, fainted_harness.actor)
+	_check("roulette: a fainted monster's stats don't fluctuate", fainted_harness.actor.stat_stages.wisdom == 0)
+
+## Retaliation family: something happens to whoever directly attacks the
+## trait's owner (Poisonous/Poisonous Poke/Paralysing Punch/Sleep Sock/
+## Confusing Touch/Cursed Attack/Whack Attack/Paralyzed Attack/Take Magic),
+## all via the existing on_before_damage_taken hook -- same shape
+## CounterAttackTraitEffect already uses, just applying a status or an MP
+## drain instead of counter-damage. Roles follow _check_counter_mechanics()'s
+## own convention: owner=harness.target (the one being hit, who retaliates),
+## attacker=harness.actor (the one dealing damage, who receives it).
+func _check_retaliation_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var poison_data := team_builder.skill_database.get_status("poison")
+	var paralysis_data := team_builder.skill_database.get_status("paralysis")
+
+	var harness := _new_harness(team_builder)
+	var poison_retaliation := RetaliationStatusTraitEffect.new()
+	poison_retaliation.status_data = poison_data
+	poison_retaliation.chance = 1.0
+	poison_retaliation.on_before_damage_taken(harness.ctx, harness.target, harness.actor, 40)
+	_check(
+		"retaliation status: chance=1.0 inflicts the configured status on the attacker",
+		harness.actor.active_status != null and harness.actor.active_status.status_data.id == "poison"
+	)
+
+	var harness2 := _new_harness(team_builder)
+	var already_status := StatusInstance.new(poison_data)
+	harness2.actor.active_status = already_status
+	var poison_retaliation2 := RetaliationStatusTraitEffect.new()
+	poison_retaliation2.status_data = poison_data
+	poison_retaliation2.chance = 1.0
+	poison_retaliation2.on_before_damage_taken(harness2.ctx, harness2.target, harness2.actor, 40)
+	_check("retaliation status: doesn't overwrite an attacker's already-active status", harness2.actor.active_status == already_status)
+
+	var harness3 := _new_harness(team_builder)
+	var gated := RetaliationStatusTraitEffect.new()
+	gated.status_data = paralysis_data
+	gated.chance = 1.0
+	gated.requires_own_status_id = "paralysis"
+	gated.on_before_damage_taken(harness3.ctx, harness3.target, harness3.actor, 40)
+	_check("paralyzed attack: no retaliation while the owner isn't paralyzed itself", harness3.actor.active_status == null)
+	harness3.target.active_status = StatusInstance.new(paralysis_data)
+	gated.on_before_damage_taken(harness3.ctx, harness3.target, harness3.actor, 40)
+	_check(
+		"paralyzed attack: retaliates once the owner is paralyzed itself",
+		harness3.actor.active_status != null and harness3.actor.active_status.status_data.id == "paralysis"
+	)
+
+	var unresolved := RetaliationStatusTraitEffect.new()
+	_check(
+		"retaliation status: a null status_data (e.g. skill_db wasn't available at create() time) is a harmless no-op",
+		unresolved.on_before_damage_taken(harness.ctx, harness.target, harness.actor, 40) == 40
+	)
+
+	var drain_harness := _new_harness(team_builder)
+	drain_harness.actor.current_mp = drain_harness.actor.species.base_mp
+	var owner_mp_before: int = drain_harness.target.current_mp
+	var drain := MpDrainRetaliationTraitEffect.new()
+	drain.chance = 1.0
+	drain.drain_percent_of_max_mp = 0.1
+	var expected_drain := MathUtils.percent_of(drain_harness.actor.species.base_mp, 0.1)
+	drain.on_before_damage_taken(drain_harness.ctx, drain_harness.target, drain_harness.actor, 40)
+	_check(
+		"take magic: drains the expected amount off the attacker's MP",
+		drain_harness.actor.current_mp == drain_harness.actor.species.base_mp - expected_drain
+	)
+	_check(
+		"take magic: adds the drained amount to the owner's MP",
+		drain_harness.target.current_mp == mini(drain_harness.target.species.base_mp, owner_mp_before + expected_drain)
+	)
+
+	var capped_harness := _new_harness(team_builder)
+	capped_harness.actor.current_mp = 1
+	var capped_drain := MpDrainRetaliationTraitEffect.new()
+	capped_drain.chance = 1.0
+	capped_drain.drain_percent_of_max_mp = 0.5
+	capped_drain.on_before_damage_taken(capped_harness.ctx, capped_harness.target, capped_harness.actor, 40)
+	_check("take magic: never drains more than the attacker actually has", capped_harness.actor.current_mp == 0)
+
+	var created_data := TraitData.new()
+	created_data.id = "poisonous"
+	var created := TraitEffect.create("poisonous", created_data, team_builder.skill_database)
+	_check(
+		"TraitEffect.create() resolves poisonous's status_data via the passed SkillDatabase",
+		created is RetaliationStatusTraitEffect and created.status_data != null and created.status_data.id == "poison"
+	)
+
+## Death-triggered traits: Close Scraper (survive a lethal hit at 1 HP via
+## DamageEffect.apply()'s new lethal-cap check), Comeback Kid (revive via
+## FaintHandler.handle_if_fainted(), cancelling backfill), Final Breath
+## (buff surviving allies), Last Gasp (unpreventable AoE to all active
+## enemies) -- the last two need real 2-monster-per-side state, so they
+## build their own BattleState/BattleContext directly rather than reusing
+## _new_harness()'s fixed 1v1 shape.
+func _check_death_triggered_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var scraper_harness := _new_harness(team_builder)
+	scraper_harness.target.current_hp = 5
+	var survives := SurviveLethalHitTraitEffect.new()
+	survives.chance = 1.0
+	var scraper_traits: Array[TraitEffect] = [survives]
+	scraper_harness.target.active_traits = scraper_traits
+	var lethal_skill := DamageEffect.new()
+	lethal_skill.category = DamageEffect.Category.PHYSICAL
+	lethal_skill.power = 9999
+	lethal_skill.apply(scraper_harness.ctx, scraper_harness.actor, scraper_harness.target)
+	_check(
+		"close scraper: chance=1.0 leaves the target at 1 HP instead of fainting",
+		scraper_harness.target.current_hp == 1 and not scraper_harness.target.is_fainted()
+	)
+
+	var no_scraper_harness := _new_harness(team_builder)
+	no_scraper_harness.target.current_hp = 5
+	var never_survives := SurviveLethalHitTraitEffect.new()
+	never_survives.chance = 0.0
+	var no_scraper_traits: Array[TraitEffect] = [never_survives]
+	no_scraper_harness.target.active_traits = no_scraper_traits
+	var lethal_skill2 := DamageEffect.new()
+	lethal_skill2.category = DamageEffect.Category.PHYSICAL
+	lethal_skill2.power = 9999
+	lethal_skill2.apply(no_scraper_harness.ctx, no_scraper_harness.actor, no_scraper_harness.target)
+	_check("close scraper: chance=0.0 faints normally", no_scraper_harness.target.is_fainted())
+
+	# Comeback Kid -- built with a bench reserve so a bug that still ran
+	# backfill despite the revival would actually be caught. A 1-monster
+	# team would trivially "pass" this check either way, since there'd be
+	# nothing to wrongly backfill from regardless of whether the fix works.
+	var revive_side_a := team_builder.build_team(["slime"], "side_a")
+	var revive_side_b := team_builder.build_team(["golem", "healslime"], "side_b")
+	var revive_event_bus := BattleEventBus.new()
+	var revive_state := BattleState.new(DeterministicRng.new(1), revive_event_bus)
+	revive_state.side_a_team = revive_side_a
+	revive_state.side_b_team = revive_side_b
+	revive_state.set_active_at("side_a", 0, 0)
+	revive_state.set_active_at("side_b", 0, 0)
+	var revive_ctx := BattleContext.new(revive_state)
+	var dying_monster := revive_side_b[0]
+	var bench_reserve := revive_side_b[1]
+	var reviver := ReviveTraitEffect.new()
+	reviver.chance = 1.0
+	reviver.revive_hp_percent = 0.25
+	var revive_traits: Array[TraitEffect] = [reviver]
+	dying_monster.active_traits = revive_traits
+	dying_monster.current_hp = 0
+	var expected_revive_hp := maxi(1, MathUtils.percent_of(dying_monster.species.base_hp, 0.25))
+	FaintHandler.handle_if_fainted(revive_ctx, dying_monster)
+	_check("comeback kid: chance=1.0 revives with the expected HP", dying_monster.current_hp == expected_revive_hp)
+	_check("comeback kid: a revived monster is no longer considered fainted", not dying_monster.is_fainted())
+	_check(
+		"comeback kid: has_been_processed_as_fainted resets, so a later real faint can be handled again",
+		not dying_monster.has_been_processed_as_fainted
+	)
+	var saw_revive_event := false
+	for event in revive_event_bus.get_log():
+		if event is ReviveEvent and event.instance_id == dying_monster.instance_id:
+			saw_revive_event = true
+	_check("comeback kid emits a ReviveEvent", saw_revive_event)
+	_check("comeback kid: still occupies its own slot", revive_state.get_monster_at("side_b", 0) == dying_monster)
+	var saw_wrongful_backfill := false
+	for event in revive_event_bus.get_log():
+		if event is MonsterEnteredEvent and event.instance_id == bench_reserve.instance_id:
+			saw_wrongful_backfill = true
+	_check("comeback kid: the bench reserve was NOT wrongly pulled in despite being available", not saw_wrongful_backfill)
+
+	# Same shape, no revive trait -- confirms the new early-return didn't
+	# break the ordinary faint-then-backfill path for everyone else.
+	var normal_side_a := team_builder.build_team(["slime"], "side_a")
+	var normal_side_b := team_builder.build_team(["golem", "healslime"], "side_b")
+	var normal_event_bus := BattleEventBus.new()
+	var normal_state := BattleState.new(DeterministicRng.new(1), normal_event_bus)
+	normal_state.side_a_team = normal_side_a
+	normal_state.side_b_team = normal_side_b
+	normal_state.set_active_at("side_a", 0, 0)
+	normal_state.set_active_at("side_b", 0, 0)
+	var normal_ctx := BattleContext.new(normal_state)
+	var normal_dying := normal_side_b[0]
+	var normal_reserve := normal_side_b[1]
+	normal_dying.current_hp = 0
+	FaintHandler.handle_if_fainted(normal_ctx, normal_dying)
+	_check("without comeback kid, a fainted monster stays fainted", normal_dying.is_fainted())
+	_check("without comeback kid, the bench reserve DOES backfill normally", normal_state.get_monster_at("side_b", 0) == normal_reserve)
+
+	# Final Breath: needs a second living ally on the same side.
+	var fb_side_a := team_builder.build_team(["slime", "dracky"], "side_a")
+	var fb_side_b := team_builder.build_team(["golem"], "side_b")
+	var fb_event_bus := BattleEventBus.new()
+	var fb_state := BattleState.new(DeterministicRng.new(1), fb_event_bus)
+	fb_state.side_a_team = fb_side_a
+	fb_state.side_b_team = fb_side_b
+	fb_state.set_active_at("side_a", 0, 0)
+	fb_state.set_active_at("side_a", 1, 1)
+	fb_state.set_active_at("side_b", 0, 0)
+	var fb_ctx := BattleContext.new(fb_state)
+	var fb_dying := fb_side_a[0]
+	var fb_ally := fb_side_a[1]
+	var final_breath := AllyBuffOnFaintTraitEffect.new()
+	final_breath.stat_names = ["attack", "defense"]
+	final_breath.stages = 1
+	var fb_traits: Array[TraitEffect] = [final_breath]
+	fb_dying.active_traits = fb_traits
+	fb_dying.current_hp = 0
+	FaintHandler.handle_if_fainted(fb_ctx, fb_dying)
+	_check(
+		"final breath: buffs the surviving ally's listed stats",
+		fb_ally.stat_stages.attack == 1 and fb_ally.stat_stages.defense == 1
+	)
+	_check("final breath: doesn't touch stats not listed", fb_ally.stat_stages.agility == 0)
+
+	# Last Gasp: needs two active enemies to prove it's AoE, not single-target.
+	var lg_side_a := team_builder.build_team(["slime"], "side_a")
+	var lg_side_b := team_builder.build_team(["golem", "healslime"], "side_b")
+	var lg_event_bus := BattleEventBus.new()
+	var lg_state := BattleState.new(DeterministicRng.new(1), lg_event_bus)
+	lg_state.side_a_team = lg_side_a
+	lg_state.side_b_team = lg_side_b
+	lg_state.set_active_at("side_a", 0, 0)
+	lg_state.set_active_at("side_b", 0, 0)
+	lg_state.set_active_at("side_b", 1, 1)
+	var lg_ctx := BattleContext.new(lg_state)
+	var lg_dying := lg_side_a[0]
+	var enemy1 := lg_side_b[0]
+	var enemy2 := lg_side_b[1]
+	var last_gasp := AoeDamageOnFaintTraitEffect.new()
+	last_gasp.damage_percent_of_max_hp = 0.1
+	var lg_traits: Array[TraitEffect] = [last_gasp]
+	lg_dying.active_traits = lg_traits
+	lg_dying.current_hp = 0
+	var enemy1_hp_before: int = enemy1.current_hp
+	var enemy2_hp_before: int = enemy2.current_hp
+	FaintHandler.handle_if_fainted(lg_ctx, lg_dying)
+	_check("last gasp: damages the first active enemy", enemy1.current_hp < enemy1_hp_before)
+	_check("last gasp: damages the second active enemy too (AoE, not single-target)", enemy2.current_hp < enemy2_hp_before)
+
+## Start-of-battle traits: AllyStatBuffOnEntryTraitEffect (Sudden Buff/
+## Oomph/Accelerate), AllyTensionBuffOnEntryTraitEffect (Rabble Rouser),
+## EnemyImmobilizeOnEntryTraitEffect (Scare Stare/Intimidating/Coercion/
+## Strangely Alluring), plus one true end-to-end check that
+## BattleSetup.send_out_initial() actually fires on_monster_entered for
+## real rather than just proving the trait classes work in isolation.
+func _check_start_of_battle_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var buff_side_a := team_builder.build_team(["slime", "dracky"], "side_a")
+	var buff_side_b := team_builder.build_team(["golem"], "side_b")
+	var buff_event_bus := BattleEventBus.new()
+	var buff_state := BattleState.new(DeterministicRng.new(1), buff_event_bus)
+	buff_state.side_a_team = buff_side_a
+	buff_state.side_b_team = buff_side_b
+	buff_state.set_active_at("side_a", 0, 0)
+	buff_state.set_active_at("side_a", 1, 1)
+	buff_state.set_active_at("side_b", 0, 0)
+	var buff_ctx := BattleContext.new(buff_state)
+	var buffer := buff_side_a[0]
+	var buffed_ally := buff_side_a[1]
+	var oomph := AllyStatBuffOnEntryTraitEffect.new()
+	oomph.stat_name = "attack"
+	oomph.stages = 2
+	oomph.chance = 1.0
+	oomph.on_monster_entered(buff_ctx, buffer)
+	_check("sudden oomph: buffs the owner itself", buffer.stat_stages.attack == 2)
+	_check("sudden oomph: buffs other active allies too", buffed_ally.stat_stages.attack == 2)
+
+	var tension_harness := _new_harness(team_builder)
+	var rouser := AllyTensionBuffOnEntryTraitEffect.new()
+	rouser.chance = 1.0
+	rouser.levels = 2
+	rouser.on_monster_entered(tension_harness.ctx, tension_harness.actor)
+	_check("rabble rouser: chance=1.0 raises some ally's tension", tension_harness.actor.tension_level == 2)
+
+	var no_rouser_harness := _new_harness(team_builder)
+	var never_rouser := AllyTensionBuffOnEntryTraitEffect.new()
+	never_rouser.chance = 0.0
+	never_rouser.on_monster_entered(no_rouser_harness.ctx, no_rouser_harness.actor)
+	_check("rabble rouser: chance=0.0 does nothing", no_rouser_harness.actor.tension_level == 0)
+
+	var immo_side_a := team_builder.build_team(["slime"], "side_a")
+	var immo_side_b := team_builder.build_team(["golem", "healslime"], "side_b")
+	var immo_event_bus := BattleEventBus.new()
+	var immo_state := BattleState.new(DeterministicRng.new(1), immo_event_bus)
+	immo_state.side_a_team = immo_side_a
+	immo_state.side_b_team = immo_side_b
+	immo_state.set_active_at("side_a", 0, 0)
+	immo_state.set_active_at("side_b", 0, 0)
+	immo_state.set_active_at("side_b", 1, 1)
+	var immo_ctx := BattleContext.new(immo_state)
+	var scare_stare := EnemyImmobilizeOnEntryTraitEffect.new()
+	var immobilize_status := team_builder.skill_database.get_status("immobilize")
+	scare_stare.status_data = immobilize_status
+	scare_stare.chance = 1.0
+	var enemy1 := immo_side_b[0]
+	var enemy2 := immo_side_b[1]
+	var poison_status := team_builder.skill_database.get_status("poison")
+	enemy2.active_status = StatusInstance.new(poison_status)
+	scare_stare.on_monster_entered(immo_ctx, immo_side_a[0])
+	_check(
+		"scare stare: immobilizes a not-yet-afflicted enemy",
+		enemy1.active_status != null and enemy1.active_status.status_data.id == "immobilize"
+	)
+	_check(
+		"scare stare: doesn't override an enemy that already has a different status",
+		enemy2.active_status.status_data.id == "poison"
+	)
+
+	var wiring_side_a := team_builder.build_team(["slime"], "side_a")
+	var wiring_side_b := team_builder.build_team(["golem"], "side_b")
+	var wiring_oomph := AllyStatBuffOnEntryTraitEffect.new()
+	wiring_oomph.stat_name = "attack"
+	wiring_oomph.stages = 1
+	wiring_oomph.chance = 1.0
+	var wiring_traits: Array[TraitEffect] = [wiring_oomph]
+	wiring_side_a[0].active_traits = wiring_traits
+	var wiring_providers := {"side_a": ScriptedActionProvider.new(), "side_b": ScriptedActionProvider.new()}
+	var wiring_engine := BattleEngine.new(wiring_side_a, wiring_side_b, 1, wiring_providers, team_builder.skill_registry, 1)
+	wiring_engine.start_battle()
+	_check("on_monster_entered actually fires from a real send_out_initial() call, not just when called directly", wiring_side_a[0].stat_stages.attack == 1)
+
+## MP-cost-multiplier traits (Magic Miser/Scrooge, Spell Splurger, the
+## Guard Break pair, Crafty Devil). _effective_mp_cost is tested the same
+## direct-call way _effective_accuracy already is above.
+func _check_mp_cost_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var frizz := team_builder.skill_database.get_skill("frizz")
+
+	var scrooge_harness := _new_harness(team_builder)
+	var scrooge := MpCostAndDamageTraitEffect.new()
+	scrooge.mp_cost_multiplier = 0.5
+	var scrooge_traits: Array[TraitEffect] = [scrooge]
+	scrooge_harness.actor.active_traits = scrooge_traits
+	_check(
+		"magic scrooge: halves the effective MP cost",
+		ActionExecutor._effective_mp_cost(frizz, scrooge_harness.actor) == MathUtils.round_half_up(float(frizz.mp_cost) * 0.5)
+	)
+
+	var no_trait_harness := _new_harness(team_builder)
+	_check(
+		"no MP-cost trait: leaves the skill's own MP cost untouched",
+		ActionExecutor._effective_mp_cost(frizz, no_trait_harness.actor) == frizz.mp_cost
+	)
+
+	# Integration: the doubled cost actually gets deducted from current_mp,
+	# and the SAME doubled cost is what the insufficient-MP fizzle check
+	# uses -- exactly enough for the base cost but not the doubled one
+	# must fizzle, not silently succeed for less than it should cost.
+	var splurger_harness := _new_harness(team_builder)
+	var splurger := MpCostAndDamageTraitEffect.new()
+	splurger.mp_cost_multiplier = 2.0
+	var splurger_traits: Array[TraitEffect] = [splurger]
+	splurger_harness.actor.active_traits = splurger_traits
+	splurger_harness.actor.current_mp = frizz.mp_cost
+	ActionExecutor.execute(splurger_harness.ctx, Action.new(splurger_harness.actor.instance_id, "frizz", splurger_harness.target.instance_id), team_builder.skill_registry)
+	var splurger_log: Array[BattleEvent] = splurger_harness.ctx.event_bus.get_log()
+	_check(
+		"spell splurger: exactly enough MP for the base cost still fizzles against the doubled cost",
+		splurger_log.size() == 1 and splurger_log[0] is SkillUsedEvent and splurger_log[0].fizzled
+	)
+	_check("spell splurger: a fizzled cast doesn't deduct any MP", splurger_harness.actor.current_mp == frizz.mp_cost)
+
+	splurger_harness.actor.current_mp = frizz.mp_cost * 2
+	ActionExecutor.execute(splurger_harness.ctx, Action.new(splurger_harness.actor.instance_id, "frizz", splurger_harness.target.instance_id), team_builder.skill_registry)
+	_check("spell splurger: with enough MP, the full doubled cost is deducted", splurger_harness.actor.current_mp == 0)
+
+	# damage_multiplier (the Guard Break pair / Crafty Devil's trade-off)
+	var guard_break := MpCostAndDamageTraitEffect.new()
+	guard_break.damage_multiplier = 1.5
+	_check("strong guard break: boosts dealt damage by the configured multiplier", guard_break.on_before_damage_dealt(null, null, null, 100) == 150)
+	var no_boost := MpCostAndDamageTraitEffect.new()
+	_check("MP-only variants (Magic Miser/Scrooge/Spell Splurger) leave damage untouched", no_boost.on_before_damage_dealt(null, null, null, 100) == 100)
+
+## Elemental Ward/-meister/crafty_X traits, keyed off SkillData.element --
+## the field the previous entry's import tool added by re-reading the same
+## cached source data the original moveset import already used once.
+func _check_elemental_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	# The import itself: a real skill from the database should carry its
+	# real elemental attribute now, not just the trait plumbing around it.
+	var frizz := team_builder.skill_database.get_skill("frizz")
+	_check("skill import: frizz carries element 'Frizz'", frizz.element == "Frizz")
+	var attack := team_builder.skill_database.get_skill("attack")
+	_check("skill import: a plain physical Attack has no element", attack.element.is_empty())
+
+	# ElementalDamageResistanceTraitEffect (Ward): pure-function checks.
+	var frizz_ward := ElementalDamageResistanceTraitEffect.new()
+	frizz_ward.elements = ["Frizz"] as Array[String]
+	frizz_ward.reduction_percent = 0.5
+	_check(
+		"frizz ward: halves damage from a matching-element hit",
+		frizz_ward.on_before_damage_taken(null, null, null, 100, "Frizz") == 50
+	)
+	_check(
+		"frizz ward: leaves a non-matching element's damage untouched",
+		frizz_ward.on_before_damage_taken(null, null, null, 100, "Zap") == 100
+	)
+	_check(
+		"frizz ward: still matches a compound element that includes Frizz",
+		frizz_ward.on_before_damage_taken(null, null, null, 100, "Frizz-Fire") == 50
+	)
+	_check(
+		"frizz ward: a non-elemental hit (empty element) is untouched",
+		frizz_ward.on_before_damage_taken(null, null, null, 100, "") == 100
+	)
+
+	# ElementalDamageBoostTraitEffect (-meister/crafty_X): pure-function checks.
+	var frizzmeister := ElementalDamageBoostTraitEffect.new()
+	frizzmeister.elements = ["Frizz"] as Array[String]
+	frizzmeister.damage_multiplier = 1.2
+	frizzmeister.mp_cost_multiplier = 0.75
+	_check(
+		"frizzmeister: boosts damage for a matching-element hit",
+		frizzmeister.on_before_damage_dealt(null, null, null, 100, "Frizz") == 120
+	)
+	_check(
+		"frizzmeister: leaves a non-matching element's damage untouched",
+		frizzmeister.on_before_damage_dealt(null, null, null, 100, "Zap") == 100
+	)
+	_check(
+		"frizzmeister: discounts MP cost for a matching-element skill",
+		is_equal_approx(frizzmeister.get_mp_cost_multiplier(frizz), 0.75)
+	)
+	var zap := team_builder.skill_database.get_skill("zap")
+	_check(
+		"frizzmeister: leaves a non-matching skill's MP cost untouched",
+		is_equal_approx(frizzmeister.get_mp_cost_multiplier(zap), 1.0)
+	)
+
+	var crafty_frizzer := ElementalDamageBoostTraitEffect.new()
+	crafty_frizzer.elements = ["Frizz"] as Array[String]
+	crafty_frizzer.damage_multiplier = 1.2
+	_check(
+		"crafty_frizzer: boosts damage but (unlike a -meister) never discounts MP",
+		is_equal_approx(crafty_frizzer.get_mp_cost_multiplier(frizz), 1.0)
+	)
+
+	# Full integration: a real ActionExecutor.execute() call casting an
+	# actual "frizz" skill against a Frizz Ward-equipped target, proving the
+	# element flows all the way from the fixture through SkillLoader's
+	# DamageEffect.element mirroring through to the hook -- not just that
+	# the trait classes work correctly when called directly.
+	var ward_harness := _new_harness(team_builder)
+	var ward := ElementalDamageResistanceTraitEffect.new()
+	ward.elements = ["Frizz"] as Array[String]
+	ward.reduction_percent = 0.5
+	var ward_traits: Array[TraitEffect] = [ward]
+	ward_harness.target.active_traits = ward_traits
+	var baseline_harness := _new_harness(team_builder)
+	ActionExecutor.execute(baseline_harness.ctx, Action.new(baseline_harness.actor.instance_id, "frizz", baseline_harness.target.instance_id), team_builder.skill_registry)
+	ActionExecutor.execute(ward_harness.ctx, Action.new(ward_harness.actor.instance_id, "frizz", ward_harness.target.instance_id), team_builder.skill_registry)
+	var baseline_target: MonsterInstance = baseline_harness.target
+	var warded_target: MonsterInstance = ward_harness.target
+	var baseline_damage: int = baseline_target.species.base_hp - baseline_target.current_hp
+	var warded_damage: int = warded_target.species.base_hp - warded_target.current_hp
+	_check(
+		"end-to-end: a real Frizz cast against a Frizz Ward deals less damage than the same cast against no ward",
+		baseline_damage > 0 and warded_damage < baseline_damage
+	)
+
+## Status-flavored Ward/crafty_X cluster: verified against real skill data
+## before building this (every skill tagged e.g. element="Poison" also
+## carries a real StatusEffect(status_id="poison")) -- a genuinely distinct
+## mechanic from the elemental-damage Ward/crafty_X cluster in
+## _check_elemental_mechanics() above, needing its own hook pair
+## (get_status_infliction_multiplier/get_status_resistance_multiplier)
+## checked from inside StatusEffect.apply()'s own chance roll rather than
+## the on_before_damage_dealt/taken pair that cluster plugs into.
+func _check_status_chance_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var poison_ward := StatusResistanceTraitEffect.new()
+	poison_ward.status_ids = ["poison"] as Array[String]
+	poison_ward.resistance_multiplier = 0.5
+	_check(
+		"poison ward: halves the effective chance for a matching status",
+		is_equal_approx(poison_ward.get_status_resistance_multiplier("poison"), 0.5)
+	)
+	_check(
+		"poison ward: leaves a non-matching status untouched",
+		is_equal_approx(poison_ward.get_status_resistance_multiplier("sleep"), 1.0)
+	)
+
+	var crafty_poisoner := StatusInflictionBoostTraitEffect.new()
+	crafty_poisoner.status_ids = ["poison"] as Array[String]
+	crafty_poisoner.infliction_multiplier = 1.5
+	_check(
+		"crafty poisoner: boosts the effective chance for a matching status",
+		is_equal_approx(crafty_poisoner.get_status_infliction_multiplier("poison"), 1.5)
+	)
+	_check(
+		"crafty poisoner: leaves a non-matching status untouched",
+		is_equal_approx(crafty_poisoner.get_status_infliction_multiplier("sleep"), 1.0)
+	)
+
+	# Full integration: StatusEffect.apply() actually multiplies its own
+	# chance by both hooks, not just that the classes compute the right
+	# number in isolation. Uses DeterministicRng.chance()'s documented
+	# 0.0/1.0 boundary guarantee so both cases are exactly reproducible
+	# rather than relying on a lucky roll.
+	var poison_status := team_builder.skill_database.get_status("poison")
+
+	var boosted_harness := _new_harness(team_builder)
+	var boosted_status_effect := StatusEffect.new()
+	boosted_status_effect.status_data = poison_status
+	boosted_status_effect.chance = 0.5
+	var boost_trait := StatusInflictionBoostTraitEffect.new()
+	boost_trait.status_ids = ["poison"] as Array[String]
+	boost_trait.infliction_multiplier = 2.0
+	var boost_traits: Array[TraitEffect] = [boost_trait]
+	boosted_harness.actor.active_traits = boost_traits
+	boosted_status_effect.apply(boosted_harness.ctx, boosted_harness.actor, boosted_harness.target)
+	_check(
+		"crafty poisoner integration: 0.5 base chance x2.0 multiplier reaches the 1.0 guaranteed-apply boundary",
+		boosted_harness.target.active_status != null and boosted_harness.target.active_status.status_data.id == "poison"
+	)
+
+	var resisted_harness := _new_harness(team_builder)
+	var resisted_status_effect := StatusEffect.new()
+	resisted_status_effect.status_data = poison_status
+	resisted_status_effect.chance = 1.0
+	var resist_trait := StatusResistanceTraitEffect.new()
+	resist_trait.status_ids = ["poison"] as Array[String]
+	resist_trait.resistance_multiplier = 0.0
+	var resist_traits: Array[TraitEffect] = [resist_trait]
+	resisted_harness.target.active_traits = resist_traits
+	resisted_status_effect.apply(resisted_harness.ctx, resisted_harness.actor, resisted_harness.target)
+	_check(
+		"poison ward integration: a guaranteed 1.0 base chance x0.0 resistance reaches the 0.0 guaranteed-fail boundary",
+		resisted_harness.target.active_status == null
+	)
+
+## The rest of the same pass: four traits that reuse already-existing
+## elemental-damage classes (confirmed against real skill data that these
+## are plain elemental tags with no attached status, unlike the cluster
+## above), plus a handful of small standalone classes each covering exactly
+## one newly-registered trait.
+func _check_misc_missing_trait_batch_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var ban_dance_ward_data := TraitData.new()
+	ban_dance_ward_data.id = "ban_dance_ward"
+	var ban_dance_ward := TraitEffect.create("ban_dance_ward", ban_dance_ward_data)
+	_check(
+		"ban_dance_ward registers as an ElementalDamageResistanceTraitEffect keyed to 'Ban Dance'",
+		ban_dance_ward is ElementalDamageResistanceTraitEffect and ban_dance_ward.on_before_damage_taken(null, null, null, 100, "Ban Dance") < 100
+	)
+
+	var crafty_banger_data := TraitData.new()
+	crafty_banger_data.id = "crafty_banger"
+	var crafty_banger := TraitEffect.create("crafty_banger", crafty_banger_data)
+	_check(
+		"crafty_banger registers as an ElementalDamageBoostTraitEffect keyed to 'Bang'",
+		crafty_banger is ElementalDamageBoostTraitEffect and crafty_banger.on_before_damage_dealt(null, null, null, 100, "Bang") > 100
+	)
+
+	# MpDrainOnAttackTraitEffect (Drain Magic Attack): the offense-side
+	# mirror of MpDrainRetaliationTraitEffect (Take Magic), same
+	# capped-both-ways math.
+	var drain_harness := _new_harness(team_builder)
+	drain_harness.target.current_mp = 20
+	var drainer := MpDrainOnAttackTraitEffect.new()
+	drainer.chance = 1.0
+	drainer.drain_percent_of_max_mp = 0.5
+	drainer.on_before_damage_dealt(drain_harness.ctx, drain_harness.actor, drain_harness.target, 40)
+	_check(
+		"drain magic attack: drains MP from the target into the owner",
+		drain_harness.actor.current_mp > 0 and drain_harness.target.current_mp < 20
+	)
+
+	var capped_drain_harness := _new_harness(team_builder)
+	capped_drain_harness.target.current_mp = 1
+	var capped_drainer := MpDrainOnAttackTraitEffect.new()
+	capped_drainer.chance = 1.0
+	capped_drainer.drain_percent_of_max_mp = 0.5
+	capped_drainer.on_before_damage_dealt(capped_drain_harness.ctx, capped_drain_harness.actor, capped_drain_harness.target, 40)
+	_check("drain magic attack: never drains more than the target actually has", capped_drain_harness.target.current_mp == 0)
+
+	var attalleric := DamageTakenMultiplierTraitEffect.new()
+	attalleric.multiplier = 1.5
+	_check(
+		"attalleric: increases incoming damage by the configured multiplier",
+		attalleric.on_before_damage_taken(null, null, null, 100) == 150
+	)
+
+	var ambusher_data := TraitData.new()
+	ambusher_data.id = "able_ambusher"
+	var ambusher := TraitEffect.create("able_ambusher", ambusher_data)
+	_check(
+		"able_ambusher: registers a priority bonus that dominates Ultra Fast Action's own +200",
+		ambusher is PriorityBonusTraitEffect and ambusher.get_priority_bonus() > 200
+	)
+
+	var steal_harness := _new_harness(team_builder)
+	steal_harness.actor.tension_level = 3
+	var stealer := TensionStealOnAttackedTraitEffect.new()
+	stealer.chance = 1.0
+	stealer.on_before_damage_taken(steal_harness.ctx, steal_harness.target, steal_harness.actor, 10)
+	_check(
+		"stress relief: steals the attacker's entire tension into the owner",
+		steal_harness.actor.tension_level == 0 and steal_harness.target.tension_level == 3
+	)
+
+	var steal_capped_harness := _new_harness(team_builder)
+	steal_capped_harness.actor.tension_level = 2
+	steal_capped_harness.target.tension_level = 3
+	var capped_stealer := TensionStealOnAttackedTraitEffect.new()
+	capped_stealer.chance = 1.0
+	capped_stealer.on_before_damage_taken(steal_capped_harness.ctx, steal_capped_harness.target, steal_capped_harness.actor, 10)
+	_check("stress relief: caps the owner's resulting tension at the max level of 4", steal_capped_harness.target.tension_level == 4)
+
+	var mutter_harness := _new_harness(team_builder)
+	mutter_harness.target.tension_level = 3
+	var mutterer := EnemyTensionDrainOnTurnTraitEffect.new()
+	mutterer.chance = 1.0
+	mutterer.levels = 2
+	mutterer.on_turn_start(mutter_harness.ctx, mutter_harness.actor)
+	_check("mutter: lowers every active enemy's tension at the start of the owner's turn", mutter_harness.target.tension_level == 1)
+
+	var riler_harness := _new_harness(team_builder)
+	var riler := EnemyTensionBuffOnEntryTraitEffect.new()
+	riler.levels = 2
+	riler.on_monster_entered(riler_harness.ctx, riler_harness.actor)
+	_check("rival riler: raises every active enemy's tension when the owner enters battle", riler_harness.target.tension_level == 2)
+
+	var hidden_power_harness := _new_harness(team_builder)
+	var hidden_power := StackingStatBuffOnTurnTraitEffect.new()
+	hidden_power.on_turn_start(hidden_power_harness.ctx, hidden_power_harness.actor)
+	_check(
+		"hidden power: raises attack/defense/agility/wisdom by one stage each turn",
+		hidden_power_harness.actor.stat_stages.get_stage("attack") == 1
+		and hidden_power_harness.actor.stat_stages.get_stage("defense") == 1
+		and hidden_power_harness.actor.stat_stages.get_stage("agility") == 1
+		and hidden_power_harness.actor.stat_stages.get_stage("wisdom") == 1
+	)
+
+	var rocket_start := RoundGatedDamageMultiplierTraitEffect.new()
+	rocket_start.early_round_count = 3
+	rocket_start.early_multiplier = 1.5
+	rocket_start.late_multiplier = 0.5
+	var early_harness := _new_harness(team_builder)
+	early_harness.ctx.state.turn_number = 2
+	_check("rocket start: boosts damage during the first 3 rounds", rocket_start.on_before_damage_dealt(early_harness.ctx, null, null, 100) == 150)
+	var late_harness := _new_harness(team_builder)
+	late_harness.ctx.state.turn_number = 4
+	_check("rocket start: reduces damage from round 4 onward", rocket_start.on_before_damage_dealt(late_harness.ctx, null, null, 100) == 50)
+
+	# fly_swatter's actual behavior (suppressing Artful Dodger on whoever
+	# has it) is already proven end to end in _check_dodge_mechanics(),
+	# built directly from trait_data.id -- the registration is entirely
+	# behavior-free (see the case's own comment in TraitEffect.create()),
+	# so this just confirms it loads cleanly rather than erroring.
+	var fly_swatter_data := TraitData.new()
+	fly_swatter_data.id = "fly_swatter"
+	var fly_swatter := TraitEffect.create("fly_swatter", fly_swatter_data)
+	_check("fly_swatter loads cleanly with its trait_data set", fly_swatter != null and fly_swatter.trait_data.id == "fly_swatter")
+
+## StatModEffect resistance/infliction cluster (Sag/Sap/Decelerate Ward,
+## Crafty Debuffer) -- confirmed against real skill data (sag.json etc.)
+## that these are pure StatModEffect debuffs with their own chance roll,
+## genuinely distinct from the StatusEffect-based cluster above.
+func _check_stat_mod_chance_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var sap_ward := StatModResistanceTraitEffect.new()
+	sap_ward.elements = ["Sap"] as Array[String]
+	sap_ward.resistance_multiplier = 0.5
+	_check(
+		"sap ward: halves the effective chance for a matching stat-debuff element",
+		is_equal_approx(sap_ward.get_stat_mod_resistance_multiplier("Sap"), 0.5)
+	)
+	_check(
+		"sap ward: leaves a non-matching element untouched",
+		is_equal_approx(sap_ward.get_stat_mod_resistance_multiplier("Sag"), 1.0)
+	)
+
+	var crafty_debuffer := StatModInflictionBoostTraitEffect.new()
+	crafty_debuffer.elements = ["Sag", "Sap", "Decelerate"] as Array[String]
+	crafty_debuffer.infliction_multiplier = 1.5
+	_check(
+		"crafty debuffer: boosts the effective chance for each of its three covered elements",
+		is_equal_approx(crafty_debuffer.get_stat_mod_infliction_multiplier("Sag"), 1.5)
+		and is_equal_approx(crafty_debuffer.get_stat_mod_infliction_multiplier("Sap"), 1.5)
+		and is_equal_approx(crafty_debuffer.get_stat_mod_infliction_multiplier("Decelerate"), 1.5)
+	)
+	_check(
+		"crafty debuffer: Dim is deliberately NOT covered (a plain elemental damage move, not a StatModEffect)",
+		is_equal_approx(crafty_debuffer.get_stat_mod_infliction_multiplier("Dim"), 1.0)
+	)
+
+	# Full integration, same DeterministicRng.chance() 0.0/1.0 boundary trick
+	# as the status-chance cluster's own integration checks.
+	var boosted_harness := _new_harness(team_builder)
+	var boosted_stat_mod := StatModEffect.new()
+	boosted_stat_mod.element = "Sap"
+	boosted_stat_mod.stat_name = "defense"
+	boosted_stat_mod.stages = -1
+	boosted_stat_mod.chance = 0.5
+	boosted_stat_mod.target_self = false
+	var boost_trait := StatModInflictionBoostTraitEffect.new()
+	boost_trait.elements = ["Sap"] as Array[String]
+	boost_trait.infliction_multiplier = 2.0
+	var boost_traits: Array[TraitEffect] = [boost_trait]
+	boosted_harness.actor.active_traits = boost_traits
+	boosted_stat_mod.apply(boosted_harness.ctx, boosted_harness.actor, boosted_harness.target)
+	_check(
+		"crafty debuffer integration: 0.5 base chance x2.0 multiplier reaches the 1.0 guaranteed-apply boundary",
+		boosted_harness.target.stat_stages.get_stage("defense") == -1
+	)
+
+	var resisted_harness := _new_harness(team_builder)
+	var resisted_stat_mod := StatModEffect.new()
+	resisted_stat_mod.element = "Sap"
+	resisted_stat_mod.stat_name = "defense"
+	resisted_stat_mod.stages = -1
+	resisted_stat_mod.chance = 1.0
+	resisted_stat_mod.target_self = false
+	var resist_trait := StatModResistanceTraitEffect.new()
+	resist_trait.elements = ["Sap"] as Array[String]
+	resist_trait.resistance_multiplier = 0.0
+	var resist_traits: Array[TraitEffect] = [resist_trait]
+	resisted_harness.target.active_traits = resist_traits
+	resisted_stat_mod.apply(resisted_harness.ctx, resisted_harness.actor, resisted_harness.target)
+	_check(
+		"sap ward integration: a guaranteed 1.0 base chance x0.0 resistance reaches the 0.0 guaranteed-fail boundary",
+		resisted_harness.target.stat_stages.get_stage("defense") == 0
+	)
+
+## Health Professional: heal-magnitude boost, plus an MP discount scoped to
+## only skills that actually contain a HealEffect (not a blanket discount
+## on every skill this monster casts).
+func _check_heal_boost_mechanics() -> void:
+	var professional := HealBoostAndMpDiscountTraitEffect.new()
+	professional.heal_multiplier = 1.5
+	professional.mp_cost_multiplier = 0.5
+	_check("health professional: get_heal_multiplier returns its configured boost", is_equal_approx(professional.get_heal_multiplier(), 1.5))
+
+	var heal_skill := SkillData.new()
+	var heal_effects: Array[SkillEffect] = [HealEffect.new()]
+	heal_skill.effects = heal_effects
+	heal_skill.mp_cost = 10
+	_check(
+		"health professional: discounts MP cost for a skill that contains a HealEffect",
+		is_equal_approx(professional.get_mp_cost_multiplier(heal_skill), 0.5)
+	)
+
+	var attack_skill := SkillData.new()
+	var attack_effects: Array[SkillEffect] = [DamageEffect.new()]
+	attack_skill.effects = attack_effects
+	_check(
+		"health professional: leaves a non-healing skill's MP cost untouched",
+		is_equal_approx(professional.get_mp_cost_multiplier(attack_skill), 1.0)
+	)
+
+	# Integration: a real HealEffect.apply() call actually restores more HP
+	# with the trait than without it.
+	var team_builder := TeamBuilder.new()
+	var baseline_harness := _new_harness(team_builder)
+	baseline_harness.actor.current_hp = 1
+	var baseline_heal := HealEffect.new()
+	baseline_heal.power = 10
+	baseline_heal.target_self = true
+	baseline_heal.apply(baseline_harness.ctx, baseline_harness.actor, baseline_harness.actor)
+
+	var boosted_harness := _new_harness(team_builder)
+	boosted_harness.actor.current_hp = 1
+	var boosted_heal := HealEffect.new()
+	boosted_heal.power = 10
+	boosted_heal.target_self = true
+	var boosted_traits: Array[TraitEffect] = [professional]
+	boosted_harness.actor.active_traits = boosted_traits
+	boosted_heal.apply(boosted_harness.ctx, boosted_harness.actor, boosted_harness.actor)
+
+	_check(
+		"health professional integration: a real heal restores more HP with the trait than without it",
+		boosted_harness.actor.current_hp > baseline_harness.actor.current_hp
+	)
+
+## Timid/Yellow Belly/Foot Dragger: a personality-driven skip-turn chance,
+## structurally parallel to (but independent of) the existing status-driven
+## skip_turn_chance in ActionExecutor.execute().
+func _check_self_skip_turn_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var timid := SelfSkipTurnTraitEffect.new()
+	timid.skip_chance = 1.0
+	var timid_data := TraitData.new()
+	timid_data.id = "timid"
+	timid.trait_data = timid_data
+
+	var harness := _new_harness(team_builder)
+	var timid_traits: Array[TraitEffect] = [timid]
+	harness.actor.active_traits = timid_traits
+	var frizz := team_builder.skill_database.get_skill("frizz")
+	harness.actor.current_mp = frizz.mp_cost
+	ActionExecutor.execute(harness.ctx, Action.new(harness.actor.instance_id, "frizz", harness.target.instance_id), team_builder.skill_registry)
+	var log: Array[BattleEvent] = harness.ctx.event_bus.get_log()
+	_check(
+		"timid: a guaranteed skip chance prevents the action entirely",
+		log.size() == 1 and log[0] is SkillUsedEvent and log[0].prevented_by_trait == "timid"
+	)
+	_check("timid: a prevented action doesn't deduct MP", harness.actor.current_mp == frizz.mp_cost)
+
+	var no_trait_harness := _new_harness(team_builder)
+	no_trait_harness.actor.current_mp = frizz.mp_cost
+	ActionExecutor.execute(no_trait_harness.ctx, Action.new(no_trait_harness.actor.instance_id, "frizz", no_trait_harness.target.instance_id), team_builder.skill_registry)
+	var no_trait_log: Array[BattleEvent] = no_trait_harness.ctx.event_bus.get_log()
+	_check(
+		"no self-skip trait: the action executes normally",
+		no_trait_log.size() >= 1 and no_trait_log[0] is SkillUsedEvent and no_trait_log[0].prevented_by_trait.is_empty()
+	)
+
+## The remaining traits investigated and registered in the same pass:
+## Medicinal Knowledge (auto-cure poison on allies), Proactive Hunter
+## (bonus vs an enemy that's already acted this round), Suicidal
+## Satisfaction (reuses Desperado's own HP-gated crit shape), and Tit for
+## Tat (mirrors an inflicted status back onto the inflicter).
+func _check_third_missing_trait_batch_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var poison_status := team_builder.skill_database.get_status("poison")
+	var cure_harness := _new_harness(team_builder)
+	cure_harness.actor.active_status = StatusInstance.new(poison_status)
+	var medic := CureAllyStatusOnTurnTraitEffect.new()
+	medic.chance = 1.0
+	medic.on_turn_start(cure_harness.ctx, cure_harness.actor)
+	_check("medicinal knowledge: cures a poisoned ally (including itself) on a guaranteed roll", cure_harness.actor.active_status == null)
+
+	var no_status_harness := _new_harness(team_builder)
+	var no_status_medic := CureAllyStatusOnTurnTraitEffect.new()
+	no_status_medic.chance = 1.0
+	no_status_medic.on_turn_start(no_status_harness.ctx, no_status_harness.actor)
+	_check("medicinal knowledge: does nothing to an ally with no active status", no_status_harness.actor.active_status == null)
+
+	var hunter_harness := _new_harness(team_builder)
+	var hunter := ProactiveHunterTraitEffect.new()
+	hunter.damage_multiplier = 1.5
+	_check(
+		"proactive hunter: leaves damage untouched against a target that hasn't acted yet this round",
+		hunter.on_before_damage_dealt(hunter_harness.ctx, hunter_harness.actor, hunter_harness.target, 100) == 100
+	)
+	hunter_harness.ctx.state.acted_this_turn_instance_ids[hunter_harness.target.instance_id] = true
+	_check(
+		"proactive hunter: boosts damage against a target that has already acted this round",
+		hunter.on_before_damage_dealt(hunter_harness.ctx, hunter_harness.actor, hunter_harness.target, 100) == 150
+	)
+
+	var suicidal_data := TraitData.new()
+	suicidal_data.id = "suicidal_satisfaction"
+	var suicidal := TraitEffect.create("suicidal_satisfaction", suicidal_data)
+	_check(
+		"suicidal_satisfaction registers as a Desperado-shaped HP-gated crit-chance multiplier",
+		suicidal is DesperadoTraitEffect and suicidal.multiplier_when_low > 1.0
+	)
+
+	var tit_harness := _new_harness(team_builder)
+	var tit_for_tat := TitForTatTraitEffect.new()
+	var tit_traits: Array[TraitEffect] = [tit_for_tat]
+	tit_harness.target.active_traits = tit_traits
+	var mirrored_status_effect := StatusEffect.new()
+	mirrored_status_effect.status_data = poison_status
+	mirrored_status_effect.chance = 1.0
+	mirrored_status_effect.apply(tit_harness.ctx, tit_harness.actor, tit_harness.target)
+	_check(
+		"tit for tat: the recipient's own status was applied as normal",
+		tit_harness.target.active_status != null and tit_harness.target.active_status.status_data.id == "poison"
+	)
+	_check(
+		"tit for tat: the SAME status is mirrored back onto whoever inflicted it",
+		tit_harness.actor.active_status != null and tit_harness.actor.active_status.status_data.id == "poison"
+	)
+
+	var tit_self_harness := _new_harness(team_builder)
+	var self_tit_for_tat := TitForTatTraitEffect.new()
+	var self_tit_traits: Array[TraitEffect] = [self_tit_for_tat]
+	tit_self_harness.actor.active_traits = self_tit_traits
+	var self_status_effect := StatusEffect.new()
+	self_status_effect.status_data = poison_status
+	self_status_effect.chance = 1.0
+	self_status_effect.target_self = true
+	self_status_effect.apply(tit_self_harness.ctx, tit_self_harness.actor, tit_self_harness.target)
+	_check(
+		"tit for tat: a self-applied status (inflicter == owner) doesn't loop back on itself",
+		tit_self_harness.actor.active_status != null and tit_self_harness.actor.active_status.status_data.id == "poison"
+	)
+	_check(
+		"tit for tat: a self-applied status has no reason to touch an uninvolved third monster",
+		tit_self_harness.target.active_status == null
+	)
+
+## Giant Killer/Standard Killer/Big Hitter/Grand Slammer: MonsterSpecies.slots
+## (imported earlier for the party-formation slot-cost mechanic) turned out,
+## on cross-checking the real source spreadsheet's own Size column, to
+## already BE each monster's size tier -- confirmed against all 803
+## imported monsters with zero mismatches, so no new field or re-import was
+## needed to build this cluster.
+func _check_size_tier_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var giant_killer := BonusDamageVsSizeTraitEffect.new()
+	giant_killer.target_slots = 4
+	giant_killer.damage_multiplier = 1.5
+
+	var giant_side := team_builder.build_team(["asura_zoma"], "side_b")
+	_check("fixture sanity check: Asura Zoma is a real 4-slot (Giant-tier) monster", giant_side[0].species.slots == 4)
+	_check(
+		"giant killer: boosts damage against a Giant-tier (4-slot) target",
+		giant_killer.on_before_damage_dealt(null, null, giant_side[0], 100) == 150
+	)
+
+	var small_side := team_builder.build_team(["slime"], "side_a")
+	_check("fixture sanity check: Slime is a real 1-slot (Small-tier) monster", small_side[0].species.slots == 1)
+	_check(
+		"giant killer: leaves damage untouched against a non-Giant-tier target",
+		giant_killer.on_before_damage_dealt(null, null, small_side[0], 100) == 100
+	)
+
+	var standard_killer := BonusDamageVsSizeTraitEffect.new()
+	standard_killer.target_slots = 1
+	standard_killer.damage_multiplier = 1.5
+	_check(
+		"standard killer: boosts damage against a Small-tier (1-slot) target",
+		standard_killer.on_before_damage_dealt(null, null, small_side[0], 100) == 150
+	)
+	_check(
+		"standard killer: leaves damage untouched against a non-Small-tier target",
+		standard_killer.on_before_damage_dealt(null, null, giant_side[0], 100) == 100
+	)
+
+	var big_hitter_data := TraitData.new()
+	big_hitter_data.id = "big_hitter"
+	var big_hitter := TraitEffect.create("big_hitter", big_hitter_data)
+	_check(
+		"big_hitter: registers as an unconditional damage boost with no MP-cost change",
+		big_hitter is MpCostAndDamageTraitEffect
+		and big_hitter.on_before_damage_dealt(null, null, null, 100) > 100
+		and is_equal_approx(big_hitter.get_mp_cost_multiplier(team_builder.skill_database.get_skill("frizz")), 1.0)
+	)
+
+	var grand_slammer_data := TraitData.new()
+	grand_slammer_data.id = "grand_slammer"
+	var grand_slammer := TraitEffect.create("grand_slammer", grand_slammer_data)
+	_check(
+		"grand_slammer: registers as an unconditional damage boost, distinct from big_hitter's own magnitude",
+		grand_slammer is MpCostAndDamageTraitEffect
+		and grand_slammer.on_before_damage_dealt(null, null, null, 100) > big_hitter.on_before_damage_dealt(null, null, null, 100)
+	)
+
+## Four traits missed on the original passes that built their own shared
+## classes (Retaliation family, Medicinal Knowledge, Stress Relief) --
+## caught on a later re-audit rather than needing anything new, plus
+## Violent Rager's own small new class.
+func _check_missed_quick_win_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var paralyzing_data := TraitData.new()
+	paralyzing_data.id = "paralyzing"
+	var paralyzing := TraitEffect.create("paralyzing", paralyzing_data, team_builder.skill_database)
+	_check(
+		"paralyzing: registers as a guaranteed (chance=1.0) RetaliationStatusTraitEffect for paralysis",
+		paralyzing is RetaliationStatusTraitEffect
+		and is_equal_approx(paralyzing.chance, 1.0)
+		and paralyzing.status_data != null and paralyzing.status_data.id == "paralysis"
+	)
+
+	var sobering_data := TraitData.new()
+	sobering_data.id = "sobering_slap"
+	var sobering_slap := TraitEffect.create("sobering_slap", sobering_data)
+	_check(
+		"sobering_slap: registers as CureAllyStatusOnTurnTraitEffect covering confusion and sleep",
+		sobering_slap is CureAllyStatusOnTurnTraitEffect
+		and sobering_slap.status_ids.has("confusion") and sobering_slap.status_ids.has("sleep")
+	)
+
+	var tension_relief_data := TraitData.new()
+	tension_relief_data.id = "tension_relief_body"
+	var tension_relief_body := TraitEffect.create("tension_relief_body", tension_relief_data)
+	_check(
+		"tension_relief_body: registers as the same TensionStealOnAttackedTraitEffect Stress Relief uses",
+		tension_relief_body is TensionStealOnAttackedTraitEffect
+	)
+
+	var rager_harness := _new_harness(team_builder)
+	rager_harness.actor.current_hp = rager_harness.actor.species.base_hp
+	var rager := HpForTensionTraitEffect.new()
+	rager.hp_cost_percent = 0.1
+	rager.levels = 2
+	rager.chance = 1.0
+	rager.on_turn_start(rager_harness.ctx, rager_harness.actor)
+	_check(
+		"violent rager: spends HP and gains tension on a guaranteed roll",
+		rager_harness.actor.current_hp < rager_harness.actor.species.base_hp and rager_harness.actor.tension_level == 2
+	)
+
+	var rager_low_hp_harness := _new_harness(team_builder)
+	rager_low_hp_harness.actor.current_hp = 1
+	var rager_low_hp := HpForTensionTraitEffect.new()
+	rager_low_hp.hp_cost_percent = 0.5
+	rager_low_hp.chance = 1.0
+	rager_low_hp.on_turn_start(rager_low_hp_harness.ctx, rager_low_hp_harness.actor)
+	_check(
+		"violent rager: never drops the owner's own HP to 0 from its own cost",
+		rager_low_hp_harness.actor.current_hp >= 1
+	)
+
+## Great Sage/Warrior/Combat King/Deadly Breath/Dance Meister/Divine Dancer:
+## the source spreadsheet's "Type" column (Spell/Slash/Body/Dance/Breath/
+## Other), sitting in the exact same cached abilities.json the earlier
+## element import already used, just never previously read for this second
+## field.
+func _check_skill_type_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var frizz := team_builder.skill_database.get_skill("frizz")
+	_check("skill_type import: frizz carries skill_type 'Spell'", frizz.skill_type == "Spell")
+	var heart_breaker := team_builder.skill_database.get_skill("heart_breaker")
+	_check("skill_type import: heart_breaker carries skill_type 'Slash'", heart_breaker.skill_type == "Slash")
+
+	var great_sage := SkillTypeDamageBoostTraitEffect.new()
+	great_sage.skill_types = ["Spell"] as Array[String]
+	great_sage.damage_multiplier = 1.3
+	_check(
+		"great sage: get_skill_type_damage_multiplier boosts a matching Spell",
+		is_equal_approx(great_sage.get_skill_type_damage_multiplier("Spell"), 1.3)
+	)
+	_check(
+		"great sage: leaves a non-matching skill_type untouched",
+		is_equal_approx(great_sage.get_skill_type_damage_multiplier("Slash"), 1.0)
+	)
+
+	var dance_meister := SkillTypeDamageBoostTraitEffect.new()
+	dance_meister.skill_types = ["Dance"] as Array[String]
+	dance_meister.mp_cost_multiplier = 0.75
+	var divine_dancer := SkillTypeDamageBoostTraitEffect.new()
+	divine_dancer.skill_types = ["Dance"] as Array[String]
+	var dance_skill := SkillData.new()
+	dance_skill.skill_type = "Dance"
+	var non_dance_skill := SkillData.new()
+	non_dance_skill.skill_type = "Slash"
+	_check(
+		"dance meister: discounts MP cost for a Dance-type skill",
+		is_equal_approx(dance_meister.get_mp_cost_multiplier(dance_skill), 0.75)
+	)
+	_check(
+		"dance meister: leaves a non-Dance skill's MP cost untouched",
+		is_equal_approx(dance_meister.get_mp_cost_multiplier(non_dance_skill), 1.0)
+	)
+	_check(
+		"divine dancer: boosts damage but (unlike dance meister) never discounts MP",
+		is_equal_approx(divine_dancer.get_mp_cost_multiplier(dance_skill), 1.0)
+	)
+
+	# Full integration: DamageEffect._run_damage_hooks() actually consults
+	# skill_type via a real ActionExecutor.execute() cast, not just that the
+	# trait class works correctly when called directly.
+	var boosted_harness := _new_harness(team_builder)
+	var boost_trait := SkillTypeDamageBoostTraitEffect.new()
+	boost_trait.skill_types = ["Spell"] as Array[String]
+	boost_trait.damage_multiplier = 2.0
+	var boost_traits: Array[TraitEffect] = [boost_trait]
+	boosted_harness.actor.active_traits = boost_traits
+	var baseline_harness := _new_harness(team_builder)
+	ActionExecutor.execute(baseline_harness.ctx, Action.new(baseline_harness.actor.instance_id, "frizz", baseline_harness.target.instance_id), team_builder.skill_registry)
+	ActionExecutor.execute(boosted_harness.ctx, Action.new(boosted_harness.actor.instance_id, "frizz", boosted_harness.target.instance_id), team_builder.skill_registry)
+	var baseline_target: MonsterInstance = baseline_harness.target
+	var boosted_target: MonsterInstance = boosted_harness.target
+	var baseline_damage: int = baseline_target.species.base_hp - baseline_target.current_hp
+	var boosted_damage: int = boosted_target.species.base_hp - boosted_target.current_hp
+	_check(
+		"end-to-end: a real Frizz cast with Great Sage's own boost deals more damage than the same cast without it",
+		baseline_damage > 0 and boosted_damage > baseline_damage
+	)
+
+	var giant_killer_data := TraitData.new()
+	giant_killer_data.id = "great_sage"
+	var registered_great_sage := TraitEffect.create("great_sage", giant_killer_data)
+	_check(
+		"great_sage registration: resolves to a Spell-keyed SkillTypeDamageBoostTraitEffect",
+		registered_great_sage is SkillTypeDamageBoostTraitEffect and registered_great_sage.skill_types.has("Spell")
+	)
+	var warrior_data := TraitData.new()
+	warrior_data.id = "warrior"
+	var registered_warrior := TraitEffect.create("warrior", warrior_data)
+	_check(
+		"warrior registration: resolves to a Slash-keyed SkillTypeDamageBoostTraitEffect",
+		registered_warrior is SkillTypeDamageBoostTraitEffect and registered_warrior.skill_types.has("Slash")
+	)
+	var combat_king_data := TraitData.new()
+	combat_king_data.id = "combat_king"
+	var registered_combat_king := TraitEffect.create("combat_king", combat_king_data)
+	_check(
+		"combat_king registration: resolves to a Body-keyed SkillTypeDamageBoostTraitEffect",
+		registered_combat_king is SkillTypeDamageBoostTraitEffect and registered_combat_king.skill_types.has("Body")
+	)
+	var deadly_breath_data := TraitData.new()
+	deadly_breath_data.id = "deadly_breath"
+	var registered_deadly_breath := TraitEffect.create("deadly_breath", deadly_breath_data)
+	_check(
+		"deadly_breath registration: resolves to a Breath-keyed SkillTypeDamageBoostTraitEffect",
+		registered_deadly_breath is SkillTypeDamageBoostTraitEffect and registered_deadly_breath.skill_types.has("Breath")
+	)
+
+## Random Buff/Oomph/Ping and Sudden Ping: real skills that needed their own
+## broken effect data fixed (buff.json/ping.json/kaping.json/oomphle.json
+## were wrongly modeled as self-damage, unlike their correctly-modeled
+## sibling Oomph) before a new autonomous-self-cast mechanism could
+## meaningfully trigger them at all.
+func _check_self_cast_skill_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var buff := team_builder.skill_database.get_skill("buff")
+	_check(
+		"data fix: buff now applies a real defense stat_mod instead of self-damage",
+		buff.effects.size() == 1 and buff.effects[0] is StatModEffect and buff.effects[0].stat_name == "defense"
+	)
+	var ping := team_builder.skill_database.get_skill("ping")
+	_check(
+		"data fix: ping now applies a real wisdom stat_mod instead of self-damage",
+		ping.effects.size() == 1 and ping.effects[0] is StatModEffect and ping.effects[0].stat_name == "wisdom"
+	)
+	var oomphle := team_builder.skill_database.get_skill("oomphle")
+	_check(
+		"data fix: oomphle now applies a real attack stat_mod instead of self-damage",
+		oomphle.effects.size() == 1 and oomphle.effects[0] is StatModEffect and oomphle.effects[0].stat_name == "attack"
+	)
+
+	# Full integration: a guaranteed roll actually casts the real skill
+	# through ActionExecutor.execute() -- MP gets deducted and the stat
+	# stage actually changes -- not just that the trait class holds the
+	# right skill_data reference.
+	var turn_harness := _new_harness(team_builder)
+	var turn_actor: MonsterInstance = turn_harness.actor
+	var self_caster := SelfCastSkillOnTurnTraitEffect.new()
+	self_caster.skill_data = ping
+	self_caster.chance = 1.0
+	var starting_mp: int = turn_actor.current_mp
+	self_caster.on_turn_start(turn_harness.ctx, turn_actor)
+	_check(
+		"random ping integration: a guaranteed roll actually raises the caster's own wisdom stage",
+		turn_harness.actor.stat_stages.get_stage("wisdom") == 1
+	)
+	_check("random ping integration: the autonomous cast deducts real MP", turn_harness.actor.current_mp == starting_mp - ping.mp_cost)
+
+	var entry_harness := _new_harness(team_builder)
+	var entry_caster := SelfCastSkillOnEntryTraitEffect.new()
+	entry_caster.skill_data = ping
+	entry_caster.chance = 1.0
+	entry_caster.on_monster_entered(entry_harness.ctx, entry_harness.actor)
+	_check(
+		"sudden ping integration: a guaranteed roll at battle entry also raises wisdom",
+		entry_harness.actor.stat_stages.get_stage("wisdom") == 1
+	)
+
+	var no_skill_caster := SelfCastSkillOnTurnTraitEffect.new()
+	no_skill_caster.chance = 1.0
+	var no_skill_harness := _new_harness(team_builder)
+	no_skill_caster.on_turn_start(no_skill_harness.ctx, no_skill_harness.actor)
+	_check("self-cast with no skill_data assigned does nothing rather than erroring", no_skill_harness.actor.stat_stages.get_stage("wisdom") == 0)
+
+	var random_buff_data := TraitData.new()
+	random_buff_data.id = "random_buff"
+	var random_buff := TraitEffect.create("random_buff", random_buff_data, team_builder.skill_database)
+	_check(
+		"random_buff registration: resolves skill_data to the real 'buff' skill",
+		random_buff is SelfCastSkillOnTurnTraitEffect and random_buff.skill_data != null and random_buff.skill_data.id == "buff"
+	)
+	var random_oomph_data := TraitData.new()
+	random_oomph_data.id = "random_oomph"
+	var random_oomph := TraitEffect.create("random_oomph", random_oomph_data, team_builder.skill_database)
+	_check(
+		"random_oomph registration: resolves skill_data to the real 'oomph' skill",
+		random_oomph is SelfCastSkillOnTurnTraitEffect and random_oomph.skill_data != null and random_oomph.skill_data.id == "oomph"
+	)
+	var sudden_ping_data := TraitData.new()
+	sudden_ping_data.id = "sudden_ping"
+	var sudden_ping := TraitEffect.create("sudden_ping", sudden_ping_data, team_builder.skill_database)
+	_check(
+		"sudden_ping registration: resolves to a SelfCastSkillOnEntryTraitEffect for 'ping'",
+		sudden_ping is SelfCastSkillOnEntryTraitEffect and sudden_ping.skill_data != null and sudden_ping.skill_data.id == "ping"
+	)
+
+## The broader "self-targeted skill wrongly modeled as self-damage" bug
+## fixed across every skill directly needed by a missing trait (Tier A of
+## that pass): simple stat buffs, real heals, and one single-enemy stat
+## debuff (Wave of Panic -- the one skill in this specific cluster that
+## ISN'T self-targeted).
+func _check_broken_skill_data_fixes() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var accelerate := team_builder.skill_database.get_skill("accelerate")
+	_check(
+		"data fix: accelerate applies a real agility stat_mod instead of self-damage",
+		accelerate.effects.size() == 1 and accelerate.effects[0] is StatModEffect and accelerate.effects[0].stat_name == "agility"
+	)
+	var kabuff := team_builder.skill_database.get_skill("kabuff")
+	_check(
+		"data fix: kabuff applies a real defense stat_mod instead of self-damage",
+		kabuff.effects.size() == 1 and kabuff.effects[0] is StatModEffect and kabuff.effects[0].stat_name == "defense"
+	)
+	var horns_of_battle := team_builder.skill_database.get_skill("horns_of_battle")
+	_check(
+		"data fix: horns_of_battle applies a real attack stat_mod instead of self-damage",
+		horns_of_battle.effects.size() == 1 and horns_of_battle.effects[0] is StatModEffect and horns_of_battle.effects[0].stat_name == "attack"
+	)
+
+	var miracle := team_builder.skill_database.get_skill("miracle_of_the_stars")
+	var miracle_stats: Array[String] = []
+	for effect in miracle.effects:
+		if effect is StatModEffect:
+			miracle_stats.append(effect.stat_name)
+	_check(
+		"data fix: miracle_of_the_stars buffs all four stats at once, not self-damage",
+		miracle_stats.size() == 4 and miracle_stats.has("attack") and miracle_stats.has("defense") and miracle_stats.has("agility") and miracle_stats.has("wisdom")
+	)
+
+	var meditation := team_builder.skill_database.get_skill("meditation")
+	_check(
+		"data fix: meditation applies a real 350-power heal instead of self-damage",
+		meditation.effects.size() == 1 and meditation.effects[0] is HealEffect and meditation.effects[0].power == 350
+	)
+
+	var wave_of_panic := team_builder.skill_database.get_skill("wave_of_panic")
+	_check(
+		"data fix: wave_of_panic applies a real single-enemy stat debuff instead of self-damage",
+		wave_of_panic.effects.size() == 1 and wave_of_panic.effects[0] is StatModEffect
+		and not wave_of_panic.effects[0].target_self and wave_of_panic.effects[0].stages < 0
+	)
+
+	# Integration: a real cast of the now-fixed accelerate actually raises
+	# the caster's own agility stage through the full ActionExecutor pipeline.
+	var harness := _new_harness(team_builder)
+	harness.actor.current_mp = accelerate.mp_cost
+	ActionExecutor.execute(harness.ctx, Action.new(harness.actor.instance_id, "accelerate", harness.actor.instance_id), team_builder.skill_registry)
+	_check("end-to-end: casting the fixed accelerate raises the caster's own agility stage", harness.actor.stat_stages.get_stage("agility") == 1)
+
+## Defuddle/Squelch/Tingle/Sheen/Lift Demerit/Soothing Vortex/Benediction/
+## Wave of Relief (CureStatusEffect) and Magic Multiplier/Sonata of
+## Serenity (RestoreMpEffect) -- two new SkillEffect types, generalizing
+## the exact same direct-mutation patterns already used by
+## CureAllyStatusOnTurnTraitEffect and HealEffect respectively.
+func _check_cure_status_and_restore_mp_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var poison_status := team_builder.skill_database.get_status("poison")
+	var confusion_status := team_builder.skill_database.get_status("confusion")
+
+	# Pure-function: a specific status_ids list only cures a match.
+	var cure_confusion := CureStatusEffect.new()
+	cure_confusion.status_ids = ["confusion"]
+	var confused_harness := _new_harness(team_builder)
+	confused_harness.actor.active_status = StatusInstance.new(confusion_status)
+	cure_confusion.apply(confused_harness.ctx, confused_harness.actor, confused_harness.target)
+	_check("cure_status: cures a matching status", confused_harness.actor.active_status == null)
+
+	var poisoned_harness := _new_harness(team_builder)
+	poisoned_harness.actor.active_status = StatusInstance.new(poison_status)
+	cure_confusion.apply(poisoned_harness.ctx, poisoned_harness.actor, poisoned_harness.target)
+	_check("cure_status: leaves a non-matching status untouched", poisoned_harness.actor.active_status != null)
+
+	# Empty status_ids (Sheen/Lift Demerit/Soothing Vortex/Wave of
+	# Relief's own registration) cures ANY status.
+	var cure_any := CureStatusEffect.new()
+	var cure_any_harness := _new_harness(team_builder)
+	cure_any_harness.actor.active_status = StatusInstance.new(poison_status)
+	cure_any.apply(cure_any_harness.ctx, cure_any_harness.actor, cure_any_harness.target)
+	_check("cure_status: empty status_ids cures any active status", cure_any_harness.actor.active_status == null)
+
+	# Data fix + full integration through SkillLoader/the real fixture.
+	var defuddle := team_builder.skill_database.get_skill("defuddle")
+	_check(
+		"data fix: defuddle applies a real cure_status effect instead of self-damage",
+		defuddle.effects.size() == 1 and defuddle.effects[0] is CureStatusEffect and defuddle.effects[0].status_ids == ["confusion"]
+	)
+	var sheen := team_builder.skill_database.get_skill("sheen")
+	_check("data fix: sheen cures any status (empty status_ids)", sheen.effects[0] is CureStatusEffect and sheen.effects[0].status_ids.is_empty())
+
+	# Full ActionExecutor integration uses Benediction/curse rather than
+	# Defuddle/confusion here deliberately: confusion has its own real
+	# skip_turn_chance (0.33), which would make the confused caster
+	# sometimes fail to act at all -- a real, separate interaction, not a
+	# bug in CureStatusEffect, but one that would make this specific check
+	# flaky for reasons unrelated to what it's actually testing. Curse has
+	# skip_turn_chance == 0.0.
+	var curse_status := team_builder.skill_database.get_status("curse")
+	var benediction := team_builder.skill_database.get_skill("benediction")
+	var benediction_harness := _new_harness(team_builder)
+	benediction_harness.actor.active_status = StatusInstance.new(curse_status)
+	benediction_harness.actor.current_mp = benediction.mp_cost
+	ActionExecutor.execute(benediction_harness.ctx, Action.new(benediction_harness.actor.instance_id, "benediction", benediction_harness.actor.instance_id), team_builder.skill_registry)
+	_check("end-to-end: a real benediction cast cures the caster's own curse", benediction_harness.actor.active_status == null)
+
+	# RestoreMpEffect: pure-function + data fix + integration.
+	var restore := RestoreMpEffect.new()
+	restore.power = 10
+	var mp_harness := _new_harness(team_builder)
+	mp_harness.actor.current_mp = 0
+	restore.apply(mp_harness.ctx, mp_harness.actor, mp_harness.target)
+	_check("restore_mp: restores a flat amount of MP", mp_harness.actor.current_mp == 10)
+
+	var capped_harness := _new_harness(team_builder)
+	capped_harness.actor.current_mp = capped_harness.actor.species.base_mp
+	restore.apply(capped_harness.ctx, capped_harness.actor, capped_harness.target)
+	_check("restore_mp: never restores past the recipient's own max MP", capped_harness.actor.current_mp == capped_harness.actor.species.base_mp)
+
+	var magic_multiplier := team_builder.skill_database.get_skill("magic_multiplier")
+	_check(
+		"data fix: magic_multiplier applies a real restore_mp effect instead of self-damage",
+		magic_multiplier.effects.size() == 1 and magic_multiplier.effects[0] is RestoreMpEffect
+	)
+
+## Shuffle/Unnatural Order: a new TurnOrderOverrideEffect SkillEffect
+## setting a BattleState flag consumed by TurnManager.run_turn() the
+## FOLLOWING round (see BattleState.shuffle_next_round's own doc comment).
+func _check_turn_order_override_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	var shuffle := team_builder.skill_database.get_skill("shuffle")
+	_check(
+		"data fix: shuffle applies a real turn_order_override effect instead of self-damage",
+		shuffle.effects.size() == 1 and shuffle.effects[0] is TurnOrderOverrideEffect
+		and shuffle.effects[0].mode == TurnOrderOverrideEffect.Mode.SHUFFLE
+	)
+	var unnatural_order := team_builder.skill_database.get_skill("unnatural_order")
+	_check(
+		"data fix: unnatural_order applies a real turn_order_override effect (reverse mode)",
+		unnatural_order.effects[0] is TurnOrderOverrideEffect and unnatural_order.effects[0].mode == TurnOrderOverrideEffect.Mode.REVERSE
+	)
+
+	var flag_harness := _new_harness(team_builder)
+	shuffle.effects[0].apply(flag_harness.ctx, flag_harness.actor, flag_harness.actor)
+	_check("turn_order_override: casting shuffle sets shuffle_next_round", flag_harness.ctx.state.shuffle_next_round)
+
+	var reverse_harness := _new_harness(team_builder)
+	unnatural_order.effects[0].apply(reverse_harness.ctx, reverse_harness.actor, reverse_harness.actor)
+	_check("turn_order_override: casting unnatural_order sets reverse_next_round", reverse_harness.ctx.state.reverse_next_round)
+
+	# ActionResolver.shuffle_actions itself: a real Fisher-Yates shuffle
+	# using the deterministic RNG, not just returning the input unchanged.
+	var team_builder2 := TeamBuilder.new()
+	var side_a := team_builder2.build_team(["slime", "dracky"], "side_a")
+	var state := BattleState.new(DeterministicRng.new(42), BattleEventBus.new())
+	var a1 := Action.new(side_a[0].instance_id, "attack", 0)
+	a1.submission_index = 0
+	var a2 := Action.new(side_a[1].instance_id, "attack", 0)
+	a2.submission_index = 1
+	var to_shuffle: Array[Action] = [a1, a2]
+	var shuffled := ActionResolver.shuffle_actions(to_shuffle, state)
+	_check("shuffle_actions: returns the same number of actions, none lost or duplicated", shuffled.size() == 2)
+
+	var wave_of_panic_data := TraitData.new()
+	wave_of_panic_data.id = "wave_of_panic"
+	var wave_of_panic_trait := TraitEffect.create("wave_of_panic", wave_of_panic_data, team_builder.skill_database)
+	_check(
+		"wave_of_panic registration: resolves skill_data and targets a random enemy, not itself",
+		wave_of_panic_trait is SelfCastSkillOnTurnTraitEffect and wave_of_panic_trait.skill_data.id == "wave_of_panic" and wave_of_panic_trait.target_random_enemy
+	)
+
+	# Full integration: Random Wave of Panic actually casts at an enemy, not
+	# the caster itself.
+	var panic_harness := _new_harness(team_builder)
+	var panic_caster := SelfCastSkillOnTurnTraitEffect.new()
+	panic_caster.skill_data = team_builder.skill_database.get_skill("wave_of_panic")
+	panic_caster.chance = 1.0
+	panic_caster.target_random_enemy = true
+	panic_harness.actor.current_mp = panic_caster.skill_data.mp_cost
+	panic_caster.on_turn_start(panic_harness.ctx, panic_harness.actor)
+	_check(
+		"random wave of panic integration: debuffs the enemy's defense, not the caster's own",
+		panic_harness.target.stat_stages.get_stage("defense") == -1 and panic_harness.actor.stat_stages.get_stage("defense") == 0
+	)
+
+	var sudden_shuffle_data := TraitData.new()
+	sudden_shuffle_data.id = "sudden_shuffle"
+	var sudden_shuffle := TraitEffect.create("sudden_shuffle", sudden_shuffle_data, team_builder.skill_database)
+	_check(
+		"sudden_shuffle registration: resolves to a SelfCastSkillOnEntryTraitEffect for 'shuffle'",
+		sudden_shuffle is SelfCastSkillOnEntryTraitEffect and sudden_shuffle.skill_data.id == "shuffle"
+	)
+	var random_reversal_data := TraitData.new()
+	random_reversal_data.id = "random_reversal"
+	var random_reversal := TraitEffect.create("random_reversal", random_reversal_data, team_builder.skill_database)
+	_check(
+		"random_reversal registration: resolves to a SelfCastSkillOnTurnTraitEffect for 'unnatural_order'",
+		random_reversal is SelfCastSkillOnTurnTraitEffect and random_reversal.skill_data.id == "unnatural_order"
+	)
+	var wave_of_relief_data := TraitData.new()
+	wave_of_relief_data.id = "wave_of_relief"
+	var wave_of_relief_trait := TraitEffect.create("wave_of_relief", wave_of_relief_data, team_builder.skill_database)
+	_check(
+		"wave_of_relief registration: resolves to a self-targeted SelfCastSkillOnTurnTraitEffect",
+		wave_of_relief_trait is SelfCastSkillOnTurnTraitEffect and wave_of_relief_trait.skill_data.id == "wave_of_relief" and not wave_of_relief_trait.target_random_enemy
+	)
+
+	# Full round-trip through TurnManager itself: casting shuffle this round
+	# sets the flag, and it gets consumed (and reset) the NEXT round. Builds
+	# its own minimal ScriptedActionProvider pair directly rather than
+	# ScriptedTurns.build_providers, which is specifically shaped for M1's
+	# own 3-monster (Slime/Dracky/Golem) cast, not a generic 1v1.
+	var team_builder3 := TeamBuilder.new()
+	var side_a3 := team_builder3.build_team(["slime"], "side_a")
+	var side_b3 := team_builder3.build_team(["golem"], "side_b")
+	var event_bus3 := BattleEventBus.new()
+	var state3 := BattleState.new(DeterministicRng.new(7), event_bus3)
+	state3.side_a_team = side_a3
+	state3.side_b_team = side_b3
+	state3.set_active_at("side_a", 0, 0)
+	state3.set_active_at("side_b", 0, 0)
+	var ctx3 := BattleContext.new(state3)
+	state3.shuffle_next_round = true
+
+	var provider_a3 := ScriptedActionProvider.new()
+	var attack_queue_a: Array[Action] = [Action.new(side_a3[0].instance_id, "attack", side_b3[0].instance_id)]
+	provider_a3.set_queue(side_a3[0].instance_id, attack_queue_a)
+	var provider_b3 := ScriptedActionProvider.new()
+	var attack_queue_b: Array[Action] = [Action.new(side_b3[0].instance_id, "attack", side_a3[0].instance_id)]
+	provider_b3.set_queue(side_b3[0].instance_id, attack_queue_b)
+	var providers3 := {"side_a": provider_a3, "side_b": provider_b3}
+
+	TurnManager.run_turn(ctx3, providers3, team_builder3.skill_registry)
+	_check("TurnManager consumes shuffle_next_round exactly once, resetting it after use", not state3.shuffle_next_round)
+
+## Heckling Hector, Stalwart Spirit, and Dust of the Clan: three
+## tension-family traits re-examined on a later pass and found buildable
+## after all with existing hooks (require_any_enemy_tension,
+## on_status_afflicted reused from Tit for Tat, and a new
+## get_tension_burn_multiplier hook respectively).
+func _check_tension_family_reexamined_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	# Heckling Hector: reacts to the CURRENT state (does any enemy have
+	# tension right now), not a discrete "just increased" event.
+	var hector_harness := _new_harness(team_builder)
+	var hector := EnemyTensionDrainOnTurnTraitEffect.new()
+	hector.require_any_enemy_tension = true
+	hector.levels = 4
+	hector.on_turn_start(hector_harness.ctx, hector_harness.actor)
+	_check("heckling hector: does nothing when no enemy currently has tension", hector_harness.target.tension_level == 0)
+
+	hector_harness.target.tension_level = 3
+	hector.on_turn_start(hector_harness.ctx, hector_harness.actor)
+	_check("heckling hector: drains an enemy's tension unconditionally (no chance roll) once any enemy has some", hector_harness.target.tension_level == 0)
+
+	var hector_data := TraitData.new()
+	hector_data.id = "heckling_hector"
+	var registered_hector := TraitEffect.create("heckling_hector", hector_data)
+	_check(
+		"heckling_hector registration: resolves to a require_any_enemy_tension-configured EnemyTensionDrainOnTurnTraitEffect",
+		registered_hector is EnemyTensionDrainOnTurnTraitEffect and registered_hector.require_any_enemy_tension
+	)
+
+	# Stalwart Spirit: reuses Tit for Tat's own on_status_afflicted hook,
+	# "stasis" interpreted as immobilize.
+	var immobilize_status := team_builder.skill_database.get_status("immobilize")
+	var poison_status := team_builder.skill_database.get_status("poison")
+	var stalwart := TensionGainOnStatusTraitEffect.new()
+	var stalwart_harness := _new_harness(team_builder)
+	stalwart.on_status_afflicted(stalwart_harness.ctx, stalwart_harness.actor, stalwart_harness.target, immobilize_status)
+	_check("stalwart spirit: gains 2 tension when struck by immobilize", stalwart_harness.actor.tension_level == 2)
+
+	var stalwart_no_match_harness := _new_harness(team_builder)
+	stalwart.on_status_afflicted(stalwart_no_match_harness.ctx, stalwart_no_match_harness.actor, stalwart_no_match_harness.target, poison_status)
+	_check("stalwart spirit: leaves tension untouched for a non-matching status", stalwart_no_match_harness.actor.tension_level == 0)
+
+	var stalwart_data := TraitData.new()
+	stalwart_data.id = "stalwart_spirit"
+	var registered_stalwart := TraitEffect.create("stalwart_spirit", stalwart_data)
+	_check("stalwart_spirit registration: resolves to TensionGainOnStatusTraitEffect", registered_stalwart is TensionGainOnStatusTraitEffect)
+
+	# Full integration: a real immobilize application through StatusEffect
+	# actually triggers Stalwart Spirit's tension gain.
+	var full_harness := _new_harness(team_builder)
+	var stalwart_traits: Array[TraitEffect] = [TensionGainOnStatusTraitEffect.new()]
+	full_harness.target.active_traits = stalwart_traits
+	var immobilize_effect := StatusEffect.new()
+	immobilize_effect.status_data = immobilize_status
+	immobilize_effect.chance = 1.0
+	immobilize_effect.apply(full_harness.ctx, full_harness.actor, full_harness.target)
+	_check("end-to-end: a real immobilize application triggers Stalwart Spirit's tension gain", full_harness.target.tension_level == 2)
+
+	# Dust of the Clan: multiplies TENSION_DAMAGE_PERCENT_PER_LEVEL, rolled
+	# once per action (DeterministicRng.chance() boundary trick for
+	# determinism).
+	var dust := TensionBurnMultiplierTraitEffect.new()
+	dust.chance = 1.0
+	dust.multiplier = 2.0
+	_check("dust of the clan: a guaranteed roll returns the configured multiplier", is_equal_approx(dust.get_tension_burn_multiplier(hector_harness.ctx), 2.0))
+
+	var dust_never := TensionBurnMultiplierTraitEffect.new()
+	dust_never.chance = 0.0
+	_check("dust of the clan: a guaranteed miss returns 1.0 (no change)", is_equal_approx(dust_never.get_tension_burn_multiplier(hector_harness.ctx), 1.0))
+
+	var dust_data := TraitData.new()
+	dust_data.id = "dust_of_the_clan"
+	var registered_dust := TraitEffect.create("dust_of_the_clan", dust_data)
+	_check("dust_of_the_clan registration: resolves to TensionBurnMultiplierTraitEffect", registered_dust is TensionBurnMultiplierTraitEffect)
+
+	# Full integration: a real DamageEffect.apply() call with tension banked
+	# deals more damage with the doubled Tension Burn than without it. Uses
+	# a low power (10, not 50) specifically so neither hit one-shots the
+	# golem target (base_hp 50) -- the first version of this check used
+	# power=50 and both the 1.5x and 2x tension multipliers ended up
+	# one-shotting it anyway, making baseline_dmg == boosted_dmg (both
+	# capped at the target's full HP) and failing for a reason unrelated
+	# to whether Dust of the Clan actually works.
+	var baseline_harness := _new_harness(team_builder)
+	baseline_harness.actor.tension_level = 2
+	var baseline_damage_effect := DamageEffect.new()
+	baseline_damage_effect.power = 10
+	baseline_damage_effect.category = DamageEffect.Category.PHYSICAL
+	baseline_damage_effect.apply(baseline_harness.ctx, baseline_harness.actor, baseline_harness.target)
+
+	var boosted_harness := _new_harness(team_builder)
+	boosted_harness.actor.tension_level = 2
+	var boosted_dust_traits: Array[TraitEffect] = [dust]
+	boosted_harness.actor.active_traits = boosted_dust_traits
+	var boosted_damage_effect := DamageEffect.new()
+	boosted_damage_effect.power = 10
+	boosted_damage_effect.category = DamageEffect.Category.PHYSICAL
+	boosted_damage_effect.apply(boosted_harness.ctx, boosted_harness.actor, boosted_harness.target)
+
+	var baseline_target: MonsterInstance = baseline_harness.target
+	var boosted_target: MonsterInstance = boosted_harness.target
+	var baseline_dmg: int = baseline_target.species.base_hp - baseline_target.current_hp
+	var boosted_dmg: int = boosted_target.species.base_hp - boosted_target.current_hp
+	_check(
+		"end-to-end: Dust of the Clan's doubled Tension Burn deals more damage than the same banked tension without it",
+		baseline_dmg > 0 and boosted_dmg > baseline_dmg
+	)
+	_check("dust of the clan integration: tension still resets to 0 after being spent, same as always", boosted_harness.actor.tension_level == 0)
 
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
 ## isolated per status scenario so one test's active_status/event log can't

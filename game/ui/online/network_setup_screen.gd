@@ -27,14 +27,18 @@ var roster: TeamRosterManager
 var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
 var trait_db: TraitDatabase
+var profile_manager: PlayerProfileManager
 
 var _teams: Array[SavedTeam] = []
 var _my_team: SavedTeam = null
 var _my_team_dict: Dictionary = {}
 var _opponent_team_dict: Dictionary = {}
+var _my_profile: PlayerProfile
+var _opponent_profile_dict: Dictionary = {}
 var _shared_seed: int = -1
 var _local_ready: bool = false
 var _team_received: bool = false
+var _profile_received: bool = false
 var _seed_received: bool = false
 var _battle_launched: bool = false
 var _relay: NetworkBattleRelay = null
@@ -62,6 +66,11 @@ var _relay: NetworkBattleRelay = null
 @onready var _status_label: Label = $VBoxContainer/StatusLabel
 @onready var _team_pick_row: HBoxContainer = $VBoxContainer/TeamPickRow
 @onready var _team_option: OptionButton = $VBoxContainer/TeamPickRow/TeamOption
+@onready var _matchup_row: HBoxContainer = $VBoxContainer/MatchupRow
+@onready var _you_icon: TextureRect = $VBoxContainer/MatchupRow/YouBox/YouIcon
+@onready var _you_label: Label = $VBoxContainer/MatchupRow/YouBox/YouLabel
+@onready var _opponent_icon: TextureRect = $VBoxContainer/MatchupRow/OpponentBox/OpponentIcon
+@onready var _opponent_label: Label = $VBoxContainer/MatchupRow/OpponentBox/OpponentLabel
 @onready var _ready_button: Button = $VBoxContainer/ReadyButton
 @onready var _back_button: Button = $VBoxContainer/BackButton
 
@@ -70,9 +79,15 @@ func _ready() -> void:
 	monster_db = MonsterDatabase.new()
 	skill_db = SkillDatabase.new()
 	trait_db = TraitDatabase.new()
+	profile_manager = PlayerProfileManager.new()
 
 	_teams = roster.list_teams()
 	_populate_team_option()
+
+	_my_profile = profile_manager.get_or_create_profile()
+	_you_label.text = _my_profile.player_name
+	_you_icon.texture = _load_avatar_icon(_my_profile.avatar_species_id)
+	_opponent_label.text = "(waiting...)"
 
 	_port_edit.text = str(DEFAULT_PORT)
 	_join_port_edit.text = str(DEFAULT_PORT)
@@ -91,10 +106,12 @@ func _ready() -> void:
 	_network.connection_failed.connect(_on_connection_failed)
 	_network.opponent_disconnected.connect(_on_opponent_disconnected)
 	_network.team_received.connect(_on_team_received)
+	_network.profile_received.connect(_on_profile_received)
 	_network.seed_received.connect(_on_seed_received)
 	_network.relay_room_error.connect(_on_relay_room_error)
 
 	_team_pick_row.visible = false
+	_matchup_row.visible = false
 	_ready_button.visible = false
 	_status_label.text = "Host a match, or join one."
 
@@ -175,6 +192,7 @@ func _on_connection_established() -> void:
 		return
 	_status_label.text = "Connected! Pick your team and press Ready."
 	_team_pick_row.visible = true
+	_matchup_row.visible = true
 	_ready_button.visible = true
 
 func _on_connection_failed() -> void:
@@ -186,6 +204,7 @@ func _on_opponent_disconnected() -> void:
 		return  # the battle scene's own handler (wired in _launch_battle) takes over
 	_status_label.text = "Your opponent disconnected."
 	_team_pick_row.visible = false
+	_matchup_row.visible = false
 	_ready_button.visible = false
 	_set_connect_controls_enabled(true)
 
@@ -196,12 +215,21 @@ func _on_ready_pressed() -> void:
 	_ready_button.disabled = true
 	_team_option.disabled = true
 	_network.send_local_team(_my_team_dict)
+	_network.send_local_profile(PlayerProfileLoader.to_dict(_my_profile))
 	_status_label.text = "Waiting for your opponent..."
 	_check_ready_to_start()
 
 func _on_team_received(team_dict: Dictionary) -> void:
 	_opponent_team_dict = team_dict
 	_team_received = true
+	_check_ready_to_start()
+
+func _on_profile_received(profile_dict: Dictionary) -> void:
+	_opponent_profile_dict = profile_dict
+	_profile_received = true
+	var opponent_profile := PlayerProfileLoader.load_from_dict(profile_dict)
+	_opponent_label.text = opponent_profile.player_name
+	_opponent_icon.texture = _load_avatar_icon(opponent_profile.avatar_species_id)
 	_check_ready_to_start()
 
 func _on_seed_received(seed_value: int) -> void:
@@ -212,9 +240,15 @@ func _on_seed_received(seed_value: int) -> void:
 ## Readiness falls out of data already being exchanged for other reasons --
 ## no separate "both ready" handshake message is needed.
 func _check_ready_to_start() -> void:
-	if _battle_launched or not _local_ready or not _team_received or not _seed_received:
+	if _battle_launched or not _local_ready or not _team_received or not _profile_received or not _seed_received:
 		return
 	_launch_battle()
+
+func _load_avatar_icon(species_id: String) -> Texture2D:
+	var species := monster_db.get_species(species_id)
+	if species == null or species.sprite_path.is_empty():
+		return null
+	return load(species.sprite_path)
 
 func _launch_battle() -> void:
 	_battle_launched = true
@@ -235,10 +269,12 @@ func _launch_battle() -> void:
 	var my_side := "side_a" if _network.is_host else "side_b"
 	_relay = NetworkBattleRelay.new(controller, _network, my_side)
 
+	var opponent_name := PlayerProfileLoader.load_from_dict(_opponent_profile_dict).player_name
+
 	var view: BattleSideView = BattleSideViewScene.instantiate()
 	get_tree().root.add_child(view)
 	get_tree().current_scene = view
-	view.setup(controller, my_side, skill_db)
+	view.setup(controller, my_side, skill_db, opponent_name)
 
 	var handle_battle_disconnect := func() -> void:
 		if is_instance_valid(view):
