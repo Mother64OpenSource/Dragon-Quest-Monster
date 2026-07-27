@@ -1,8 +1,9 @@
 class_name BattleSetupScreen
 extends Control
 
-## Pick two saved teams and start a local two-window duel: the current
-## window becomes side_a's view, and a second real OS Window is spawned for
+## Pick two saved teams and start a local two-window-plus-a-tab duel:
+## side_a's view becomes a new tab in whatever MainShell hosts the caller
+## (see battle_ready below), and a second real OS Window is spawned for
 ## side_b -- one process, one BattleController shared by both, no
 ## networking involved.
 ##
@@ -13,10 +14,10 @@ extends Control
 ## return to it instantly without a scene reload.
 
 signal back_requested()
-## Emitted right before this screen commits to actually launching a battle
-## -- the caller's own screen (e.g. TeamBuilderScreen) should free itself
-## at that point, since there's no "back" from a battle already starting.
-signal battle_started()
+## Carries the fully set-up side_a BattleSideView (see _on_start_pressed) up
+## to whoever should host it -- this screen has no opinion on HOW it's
+## shown (a new tab today, something else tomorrow), just that it's ready.
+signal battle_ready(view: Control, tab_title: String)
 
 const BattleSideViewScene := preload("res://ui/battle/battle_side_view.tscn")
 
@@ -89,14 +90,16 @@ func _on_start_pressed() -> void:
 		_error_label.text = "Couldn't build one of the teams (unknown species?)."
 		return
 
-	battle_started.emit()
-
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view_a: BattleSideView = BattleSideViewScene.instantiate()
-	get_tree().root.add_child(view_a)
-	get_tree().current_scene = view_a
+	# Parented to self first purely so _ready() runs (setup() relies on its
+	# own @onready node references) -- handed off to whatever hosts the new
+	# tab immediately after, via remove_child() (detach, don't free).
+	add_child(view_a)
 	view_a.setup(controller, "side_a", skill_db)
+	remove_child(view_a)
+	battle_ready.emit(view_a, "vs %s" % team_b.team_name)
 	queue_free()
 
 	var window := Window.new()
@@ -121,3 +124,7 @@ func _on_start_pressed() -> void:
 	get_tree().root.add_child(window)
 	window.show()
 	view_b.setup(controller, "side_b", skill_db)
+	# side_b's own window is self-contained -- its result panel's Back button
+	# should just close this window, not touch the main window's own tabs
+	# (previously it accidentally reloaded the main window's whole scene).
+	view_b.close_requested.connect(window.queue_free)

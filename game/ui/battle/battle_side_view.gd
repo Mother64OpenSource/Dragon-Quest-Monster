@@ -47,6 +47,12 @@ extends Control
 ## from this project's own default-theme controls and monster icons, not a
 ## copy of any specific game's actual art/assets.
 
+## Emitted by the result panel's own Back button (win/lose/forfeit/
+## disconnect all funnel through the same panel) -- whoever hosts this view
+## (a MainShell tab today) should close/free it, not this screen itself;
+## it has no opinion on what "closing" looks like for its own host.
+signal close_requested()
+
 const CARD_BASE_WIDTH := 140
 
 const MODE_MENU := "menu"
@@ -732,7 +738,7 @@ func show_disconnect_message(text: String) -> void:
 	_result_label.text = text
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://ui/team_builder/team_builder_screen.tscn")
+	close_requested.emit()
 
 func _describe_event(event: BattleEvent) -> String:
 	if event is SkillUsedEvent:

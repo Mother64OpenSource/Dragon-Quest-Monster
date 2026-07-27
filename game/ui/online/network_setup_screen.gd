@@ -275,6 +275,22 @@ func _launch_battle() -> void:
 	get_tree().root.add_child(view)
 	get_tree().current_scene = view
 	view.setup(controller, my_side, skill_db, opponent_name)
+	# This screen's own current_scene-swap flow (unlike the local-battle path,
+	# still out of scope for the tab-shell rework -- see wiki/log.md) means
+	# view's result panel's Back button has nowhere to bubble up to on its
+	# own; close_requested now needs an explicit listener here instead of
+	# the old change_scene_to_file() battle_side_view.gd used to call itself.
+	# A lambda capturing only the persistent /root/Network autoload, NOT a
+	# bound method on self -- this screen queue_free()s itself a few lines
+	# down, long before the player might actually press Back mid-battle, so
+	# a Callable(self, ...) connection would already be silently severed by
+	# the time it's needed (Godot auto-disconnects signals once either end
+	# is freed).
+	var network := _network
+	view.close_requested.connect(func() -> void:
+		network.close_connection()
+		view.get_tree().change_scene_to_file("res://ui/shell/main_shell.tscn")
+	)
 
 	var handle_battle_disconnect := func() -> void:
 		if is_instance_valid(view):
@@ -285,4 +301,9 @@ func _launch_battle() -> void:
 
 func _on_back_pressed() -> void:
 	_network.close_connection()
-	get_tree().change_scene_to_file("res://ui/team_builder/team_builder_screen.tscn")
+	# Targets the tab shell (see wiki/log.md), not the bare TeamBuilderScreen
+	# directly -- online battles still fully replace the scene tree rather
+	# than getting their own tab (deliberately out of scope for that pass),
+	# but "back" should still land you somewhere with the tab bar intact
+	# rather than a stray screen with no way back to it at all.
+	get_tree().change_scene_to_file("res://ui/shell/main_shell.tscn")

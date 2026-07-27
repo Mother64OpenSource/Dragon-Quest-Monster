@@ -4,6 +4,14 @@ extends Control
 ## Root screen: constructs the three shared collaborators once and relays
 ## the two cross-panel signals. Owns no team-mutation logic itself — that
 ## all lives in the panel that owns the concern (see the M3 plan).
+##
+## Lives as the permanent "Home" tab inside MainShell (see wiki/log.md) --
+## starting a local battle no longer frees this screen; battle_launched()
+## hands the built BattleSideView up to MainShell to open as its own tab,
+## so Home stays alive and switchable-back-to the whole time, matching
+## Pokemon Showdown's own Home-tab-plus-battle-tab layout.
+
+signal battle_launched(view: Control, tab_title: String)
 
 const BattleSetupScreenScene := preload("res://ui/battle/battle_setup_screen.tscn")
 
@@ -85,15 +93,16 @@ func _on_team_updated(_team: SavedTeam) -> void:
 
 ## Added as an overlay on top of this screen (not a scene change) so this
 ## screen stays alive and visible, dimmed, underneath -- Back just frees the
-## overlay and we're right back here; Start Battle frees this screen too
-## (see _on_overlay_battle_started), since there's no coming back from that.
+## overlay and we're right back here; Start Battle also just frees the
+## overlay (see _on_overlay_battle_ready) -- this screen itself stays alive
+## as the permanent Home tab.
 func _on_battle_pressed() -> void:
 	var overlay: BattleSetupScreen = BattleSetupScreenScene.instantiate()
 	add_child(overlay)
-	overlay.battle_started.connect(_on_overlay_battle_started)
+	overlay.battle_ready.connect(_on_overlay_battle_ready)
 
-func _on_overlay_battle_started() -> void:
-	queue_free()
+func _on_overlay_battle_ready(view: Control, tab_title: String) -> void:
+	battle_launched.emit(view, tab_title)
 
 func _on_online_battle_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/online/network_setup_screen.tscn")
