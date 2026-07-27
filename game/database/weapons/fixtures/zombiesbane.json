@@ -1,5 +1,7 @@
 {
 	"base_attack": 36,
+	"bonus_damage_multiplier": 1.75,
+	"bonus_vs_families": ["Zombie"],
 	"description": "Increase damage against Zombie-types.",
 	"display_name": "Zombiesbane",
 	"id": "zombiesbane",

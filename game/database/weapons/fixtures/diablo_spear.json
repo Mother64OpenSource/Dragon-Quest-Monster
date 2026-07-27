@@ -1,5 +1,8 @@
 {
 	"base_attack": 76,
+	"bonus_damage_multiplier": 1.75,
+	"bonus_vs_families": ["Devil"],
+	"crit_chance_multiplier": 1.5,
 	"description": "Increase damage against Devil-types. Increase chance of critical.",
 	"display_name": "Diablo Spear",
 	"id": "diablo_spear",

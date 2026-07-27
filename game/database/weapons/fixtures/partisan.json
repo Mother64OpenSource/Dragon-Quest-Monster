@@ -1,5 +1,7 @@
 {
 	"base_attack": 28,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Material"],
 	"description": "Increase damage against Material-types some.",
 	"display_name": "Partisan",
 	"id": "partisan",

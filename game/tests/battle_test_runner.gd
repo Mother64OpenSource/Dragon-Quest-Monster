@@ -72,6 +72,7 @@ func run() -> bool:
 	_check_turn_order_override_mechanics()
 	_check_tension_family_reexamined_mechanics()
 	_check_weapon_equip_mechanics()
+	_check_weapon_effects_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -2287,6 +2288,116 @@ func _check_weapon_equip_mechanics() -> void:
 
 	var no_weapon_db_bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, 0)
 	_check("omitting weapon_db from build_team leaves equipped_weapon null (backward compatible)", no_weapon_db_bridged_team[0].equipped_weapon == null)
+
+## Covers the mechanically-real subset of weapon flavor text: family-based
+## damage bonus, the metal-body flat bonus (checked via traits, not
+## species.family -- Metal Slime is family "Slime" but carries a metal_body
+## trait), the secondary stat percentage bonus, and lifesteal. Crit-chance
+## multiplier is checked as pure data only (multiplier + category filter),
+## matching this suite's existing precedent of testing
+## get_crit_chance_multiplier() as a pure function rather than dice-rolling
+## the actual _roll_critical() chain (see _check_crit_mechanics()).
+func _check_weapon_effects_mechanics() -> void:
+	var weapon_db := WeaponDatabase.new()
+	var damage_effect := DamageEffect.new()
+	var team_builder := TeamBuilder.new()
+
+	# --- family-based damage bonus (case-insensitive against species.family) ---
+	var iron_lance := weapon_db.get_weapon("iron_lance")
+	_check("iron_lance targets Slime family at 1.5x", iron_lance.bonus_vs_families == ["Slime"] and is_equal_approx(iron_lance.bonus_damage_multiplier, 1.5))
+
+	var slime_target := team_builder.build_team(["slime"], "side_b")[0]
+	_check(
+		"iron_lance boosts damage against a Slime-family target (case-insensitive: weapon says 'Slime', fixture says 'slime')",
+		damage_effect._apply_weapon_damage_bonus(iron_lance, slime_target, 100) == MathUtils.round_half_up(100.0 * 1.5)
+	)
+
+	var golem_target := team_builder.build_team(["golem"], "side_b")[0]
+	_check(
+		"iron_lance leaves damage untouched against a non-Slime-family target",
+		damage_effect._apply_weapon_damage_bonus(iron_lance, golem_target, 100) == 100
+	)
+	_check(
+		"no equipped weapon (null) leaves damage untouched",
+		damage_effect._apply_weapon_damage_bonus(null, golem_target, 100) == 100
+	)
+
+	var partisan := weapon_db.get_weapon("partisan")
+	_check(
+		"partisan boosts damage against a Material-family target (real fixture data: Golem's family is 'Material', corrected this same milestone -- see wiki/log.md)",
+		damage_effect._apply_weapon_damage_bonus(partisan, golem_target, 100) == MathUtils.round_half_up(100.0 * 1.5)
+	)
+
+	# --- metal-body flat bonus (trait-based, not family-based) ---
+	var obsidian_sword := weapon_db.get_weapon("obsidian_sword")
+	_check("obsidian_sword carries a +1 flat metal-body bonus", obsidian_sword.bonus_vs_metal_body_flat == 1)
+
+	var metal_target := team_builder.build_team(["golem"], "side_b")[0]
+	var metal_body_trait := MetalBodyTraitEffect.new()
+	metal_body_trait.trait_data = TraitData.new()
+	metal_body_trait.trait_data.id = "metal_body"
+	metal_target.active_traits = [metal_body_trait]
+	_check(
+		"obsidian_sword adds its flat bonus against a target with an active metal-body trait",
+		damage_effect._apply_weapon_damage_bonus(obsidian_sword, metal_target, 100) == 101
+	)
+	_check(
+		"obsidian_sword's flat bonus doesn't apply without an active metal-body trait",
+		damage_effect._apply_weapon_damage_bonus(obsidian_sword, golem_target, 100) == 100
+	)
+
+	# --- crit chance (pure data only, see function doc comment) ---
+	var magical_whip := weapon_db.get_weapon("magical_whip")
+	_check(
+		"magical_whip's crit bonus is scoped to Magic only, not Physical",
+		is_equal_approx(magical_whip.crit_chance_multiplier, 1.5) and magical_whip.crit_chance_category_filter == DamageEffect.Category.MAGIC
+	)
+	var gae_bolg := weapon_db.get_weapon("gae_bolg")
+	_check(
+		"gae_bolg's crit bonus applies to both categories (category_filter -1)",
+		is_equal_approx(gae_bolg.crit_chance_multiplier, 1.5) and gae_bolg.crit_chance_category_filter == -1
+	)
+
+	# --- secondary stat percentage bonus ---
+	var unarmed_slime := team_builder.build_team(["slime"], "side_a")[0]
+	var baseline_agility := unarmed_slime.get_effective_stat("agility")
+	var armed_slime := team_builder.build_team(["slime"], "side_a")[0]
+	armed_slime.equipped_weapon = weapon_db.get_weapon("ebony_talons")
+	_check(
+		"a 10% agility-bonus weapon raises effective agility by exactly that percentage of base",
+		armed_slime.get_effective_stat("agility") == baseline_agility + MathUtils.round_half_up(float(unarmed_slime.species.base_agility) * 0.1)
+	)
+	var defense_armed_slime := team_builder.build_team(["slime"], "side_a")[0]
+	defense_armed_slime.equipped_weapon = weapon_db.get_weapon("ebony_talons")
+	_check(
+		"the same weapon's bonus_stats has no entry for defense, so defense is untouched",
+		defense_armed_slime.get_effective_stat("defense") == unarmed_slime.get_effective_stat("defense")
+	)
+
+	# --- lifesteal, full end-to-end DamageEffect.apply() ---
+	var lifesteal_harness := _new_harness(team_builder)
+	var lifesteal_actor: MonsterInstance = lifesteal_harness.actor
+	var lifesteal_target: MonsterInstance = lifesteal_harness.target
+	lifesteal_actor.equipped_weapon = weapon_db.get_weapon("miracle_sword")
+	lifesteal_actor.current_hp = 1
+	var lifesteal_damage_effect := DamageEffect.new()
+	lifesteal_damage_effect.power = 10
+	lifesteal_damage_effect.apply(lifesteal_harness.ctx, lifesteal_actor, lifesteal_target)
+	_check(
+		"miracle_sword's lifesteal heals the wielder after a connecting hit",
+		lifesteal_actor.current_hp > 1
+	)
+
+	var no_lifesteal_harness := _new_harness(team_builder)
+	var no_lifesteal_actor: MonsterInstance = no_lifesteal_harness.actor
+	no_lifesteal_actor.current_hp = 1
+	var no_lifesteal_damage_effect := DamageEffect.new()
+	no_lifesteal_damage_effect.power = 10
+	no_lifesteal_damage_effect.apply(no_lifesteal_harness.ctx, no_lifesteal_actor, no_lifesteal_harness.target)
+	_check(
+		"without a lifesteal weapon equipped, the same attack doesn't heal the attacker",
+		no_lifesteal_actor.current_hp == 1
+	)
 
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
 ## isolated per status scenario so one test's active_status/event log can't

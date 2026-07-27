@@ -1,5 +1,7 @@
 {
 	"base_attack": 45,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Dragon"],
 	"description": "Increase damage against Dragon-types some.",
 	"display_name": "Dragon Lance",
 	"id": "dragon_lance",

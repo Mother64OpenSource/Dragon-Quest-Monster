@@ -1,5 +1,8 @@
 {
 	"base_attack": 88,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility.",
 	"display_name": "Ebony Talons",
 	"id": "ebony_talons",

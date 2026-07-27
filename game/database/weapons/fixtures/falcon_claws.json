@@ -1,5 +1,8 @@
 {
 	"base_attack": 15,
+	"bonus_stats": {
+		"agility": 0.2
+	},
 	"description": "Increases Agility significantly.",
 	"display_name": "Falcon Claws",
 	"id": "falcon_claws",

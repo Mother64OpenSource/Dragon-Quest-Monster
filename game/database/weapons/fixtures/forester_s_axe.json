@@ -1,5 +1,7 @@
 {
 	"base_attack": 60,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Beast", "Nature"],
 	"description": "Increase damage against Beast/Nature-types by a lot.",
 	"display_name": "Forester's Axe",
 	"id": "forester_s_axe",

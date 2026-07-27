@@ -1,5 +1,8 @@
 {
 	"base_attack": 49,
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increases Defense.",
 	"display_name": "Giant Wrench",
 	"id": "giant_wrench",

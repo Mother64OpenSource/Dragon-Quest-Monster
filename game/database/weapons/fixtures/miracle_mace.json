@@ -1,5 +1,6 @@
 {
 	"base_attack": 87,
+	"lifesteal_percent": 0.1,
 	"description": "Restores HP.",
 	"display_name": "Miracle Mace",
 	"id": "miracle_mace",

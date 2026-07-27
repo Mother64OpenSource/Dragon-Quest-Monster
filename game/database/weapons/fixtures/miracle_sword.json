@@ -1,5 +1,6 @@
 {
 	"base_attack": 77,
+	"lifesteal_percent": 0.1,
 	"description": "Restores HP.",
 	"display_name": "Miracle Sword",
 	"id": "miracle_sword",

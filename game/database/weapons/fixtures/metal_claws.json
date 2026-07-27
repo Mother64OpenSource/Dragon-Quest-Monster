@@ -1,5 +1,9 @@
 {
 	"base_attack": 15,
+	"bonus_vs_metal_body_flat": 1,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility. Does +1 damage against Metal-types.",
 	"display_name": "Metal Claws",
 	"id": "metal_claws",

@@ -8,6 +8,13 @@ static func load_from_dict(data: Dictionary) -> WeaponData:
 	weapon.weapon_type = type_from_string(data.get("weapon_type", "sword"))
 	weapon.base_attack = int(data.get("base_attack", 0))
 	weapon.description = data.get("description", "")
+	weapon.bonus_vs_families = _to_string_array(data.get("bonus_vs_families", []))
+	weapon.bonus_damage_multiplier = float(data.get("bonus_damage_multiplier", 1.0))
+	weapon.bonus_vs_metal_body_flat = int(data.get("bonus_vs_metal_body_flat", 0))
+	weapon.crit_chance_multiplier = float(data.get("crit_chance_multiplier", 1.0))
+	weapon.crit_chance_category_filter = int(data.get("crit_chance_category_filter", -1))
+	weapon.bonus_stats = _to_float_dict(data.get("bonus_stats", {}))
+	weapon.lifesteal_percent = float(data.get("lifesteal_percent", 0.0))
 	return weapon
 
 static func load_from_file(path: String) -> WeaponData:
@@ -27,3 +34,15 @@ static func type_from_string(value: String) -> WeaponData.Type:
 
 static func type_to_string(type: WeaponData.Type) -> String:
 	return WeaponData.ALL_TYPE_IDS[type]
+
+static func _to_string_array(raw: Array) -> Array[String]:
+	var result: Array[String] = []
+	for item in raw:
+		result.append(String(item))
+	return result
+
+static func _to_float_dict(raw: Dictionary) -> Dictionary:
+	var result := {}
+	for key in raw:
+		result[key] = float(raw[key])
+	return result

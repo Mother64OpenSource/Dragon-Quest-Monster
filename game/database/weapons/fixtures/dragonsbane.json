@@ -1,5 +1,7 @@
 {
 	"base_attack": 41,
+	"bonus_damage_multiplier": 1.75,
+	"bonus_vs_families": ["Dragon"],
 	"description": "Increase damage against Dragon-types.",
 	"display_name": "Dragonsbane",
 	"id": "dragonsbane",

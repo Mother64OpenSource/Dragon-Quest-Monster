@@ -1,5 +1,7 @@
 {
 	"base_attack": 14,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Beast", "Nature"],
 	"description": "Increase damage against Beast/Nature-types some.",
 	"display_name": "Woodcutter's Axe",
 	"id": "woodcutter_s_axe",

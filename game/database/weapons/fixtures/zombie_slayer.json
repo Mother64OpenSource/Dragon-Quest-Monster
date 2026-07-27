@@ -1,5 +1,7 @@
 {
 	"base_attack": 81,
+	"bonus_damage_multiplier": 2.5,
+	"bonus_vs_families": ["Zombie"],
 	"description": "Increase damage against Zombie-types significantly.",
 	"display_name": "Zombie Slayer",
 	"id": "zombie_slayer",

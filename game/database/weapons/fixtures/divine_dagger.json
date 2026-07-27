@@ -1,5 +1,7 @@
 {
 	"base_attack": 13,
+	"bonus_damage_multiplier": 1.25,
+	"bonus_vs_families": ["Zombie"],
 	"description": "Increase damage against Zombie-types by a bit.",
 	"display_name": "Divine Dagger",
 	"id": "divine_dagger",

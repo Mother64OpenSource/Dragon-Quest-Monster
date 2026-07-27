@@ -1,5 +1,8 @@
 {
 	"base_attack": 4,
+	"bonus_stats": {
+		"wisdom": 0.1
+	},
 	"description": "Increases Wisdom.",
 	"display_name": "Cypress Stick",
 	"id": "cypress_stick",

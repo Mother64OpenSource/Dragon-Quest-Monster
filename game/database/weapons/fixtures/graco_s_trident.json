@@ -1,5 +1,10 @@
 {
 	"base_attack": 68,
+	"bonus_damage_multiplier": 1.75,
+	"bonus_vs_families": ["Nature"],
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increase damage against Nature-types. Increases Defense.",
 	"display_name": "Graco's Trident",
 	"id": "graco_s_trident",

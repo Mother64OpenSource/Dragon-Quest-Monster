@@ -1,5 +1,7 @@
 {
 	"base_attack": 18,
+	"bonus_damage_multiplier": 1.25,
+	"bonus_vs_families": ["Dragon"],
 	"description": "Increase damage against Dragon-types by a bit.",
 	"display_name": "Rapier",
 	"id": "rapier",

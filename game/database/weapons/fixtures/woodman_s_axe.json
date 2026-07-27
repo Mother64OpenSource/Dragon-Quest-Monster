@@ -1,5 +1,7 @@
 {
 	"base_attack": 32,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Beast", "Nature"],
 	"description": "Increase damage against Beast/Nature-types more.",
 	"display_name": "Woodman's Axe",
 	"id": "woodman_s_axe",

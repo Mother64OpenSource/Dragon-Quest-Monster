@@ -1,5 +1,8 @@
 {
 	"base_attack": 33,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility.",
 	"display_name": "Razor Claws",
 	"id": "razor_claws",

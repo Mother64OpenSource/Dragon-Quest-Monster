@@ -1,5 +1,7 @@
 {
 	"base_attack": 130,
+	"bonus_damage_multiplier": 2.5,
+	"bonus_vs_families": ["Dragon"],
 	"description": "Increase damage against Dragon-types significantly.",
 	"display_name": "Divine DragonClaw",
 	"id": "divine_dragonclaw",

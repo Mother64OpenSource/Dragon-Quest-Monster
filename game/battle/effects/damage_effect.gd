@@ -70,6 +70,8 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 		event.is_critical = is_critical
 		event.was_negated = was_negated
 		ctx.event_bus.emit_event(event, ctx.state.turn_number)
+		if applied > 0:
+			_apply_weapon_lifesteal(ctx, user, applied)
 		# A dodged/fully-blocked crit was never actually "taken" -- Heat Up
 		# shouldn't build tension off a hit that didn't land.
 		if is_critical and final_damage > 0:
@@ -88,12 +90,29 @@ func _roll_critical(ctx: BattleContext, user: MonsterInstance, target: MonsterIn
 	var chance := BASE_CRIT_CHANCE
 	for trait_effect in user.active_traits:
 		chance *= trait_effect.get_crit_chance_multiplier(user, category)
+	var weapon := user.equipped_weapon
+	if weapon != null and (weapon.crit_chance_category_filter == -1 or weapon.crit_chance_category_filter == category):
+		chance *= weapon.crit_chance_multiplier
 	if not ctx.rng.chance(chance):
 		return false
 	for trait_effect in target.active_traits:
 		if trait_effect.blocks_critical_hits():
 			return false
 	return true
+
+## Miracle Sword et al.'s "Restores HP." -- heals the wielder a percentage of
+## the damage that actually landed, per hit (a multi-hit skill heals once
+## per connecting hit, matching how the damage itself is rolled per hit).
+func _apply_weapon_lifesteal(ctx: BattleContext, user: MonsterInstance, damage_dealt: int) -> void:
+	var weapon := user.equipped_weapon
+	if weapon == null or weapon.lifesteal_percent <= 0.0 or user.is_fainted():
+		return
+	var amount := MathUtils.round_half_up(float(damage_dealt) * weapon.lifesteal_percent)
+	var applied := user.heal(amount)
+	ctx.event_bus.emit_event(
+		HealingAppliedEvent.new(user.instance_id, user.instance_id, applied, user.current_hp),
+		ctx.state.turn_number
+	)
 
 ## Sleep: "cannot act until awoken by an attack" -- taking any damage clears
 ## it immediately rather than waiting out its normal per-turn wake chance.
@@ -110,11 +129,12 @@ func _wake_if_sleeping(ctx: BattleContext, target: MonsterInstance) -> void:
 		ctx.state.turn_number
 	)
 
-## Each hit goes through the user's on_before_damage_dealt hooks then the
-## target's on_before_damage_taken hooks — per-hit, not per-action, since
-## multi-hit skills roll damage independently for each hit.
+## Each hit goes through the weapon's own damage bonus, then the user's
+## on_before_damage_dealt hooks, then the target's on_before_damage_taken
+## hooks — per-hit, not per-action, since multi-hit skills roll damage
+## independently for each hit.
 func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance, raw_damage: int) -> int:
-	var damage := raw_damage
+	var damage := _apply_weapon_damage_bonus(user.equipped_weapon, target, raw_damage)
 	for trait_effect in user.active_traits:
 		damage = trait_effect.on_before_damage_dealt(ctx, user, target, damage, element)
 		damage = MathUtils.round_half_up(float(damage) * trait_effect.get_skill_type_damage_multiplier(skill_type))
@@ -123,3 +143,26 @@ func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: Monste
 	if target.is_defending:
 		damage = MathUtils.round_half_up(float(damage) * DEFEND_DAMAGE_MULTIPLIER)
 	return maxi(0, damage)
+
+## WeaponData.bonus_vs_families is matched case-insensitively against the
+## target's species.family (fixture casing isn't fully consistent -- see
+## wiki/log.md), applied as a multiplier; bonus_vs_metal_body_flat checks
+## the same metal-body trait cluster BonusDamageVsMetalBodyTraitEffect
+## already checks (Metal Slime is species family "Slime" but carries a
+## metal_body trait, so this can't be a species.family check).
+func _apply_weapon_damage_bonus(weapon: WeaponData, target: MonsterInstance, raw_damage: int) -> int:
+	if weapon == null:
+		return raw_damage
+	var damage := raw_damage
+	if not weapon.bonus_vs_families.is_empty():
+		var target_family := target.species.family.to_lower()
+		for family in weapon.bonus_vs_families:
+			if family.to_lower() == target_family:
+				damage = MathUtils.round_half_up(float(damage) * weapon.bonus_damage_multiplier)
+				break
+	if weapon.bonus_vs_metal_body_flat != 0:
+		for trait_effect in target.active_traits:
+			if trait_effect.trait_data != null and BonusDamageVsMetalBodyTraitEffect.METAL_BODY_TRAIT_IDS.has(trait_effect.trait_data.id):
+				damage += weapon.bonus_vs_metal_body_flat
+				break
+	return damage

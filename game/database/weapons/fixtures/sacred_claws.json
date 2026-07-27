@@ -1,5 +1,10 @@
 {
 	"base_attack": 25,
+	"bonus_damage_multiplier": 1.75,
+	"bonus_vs_families": ["Devil"],
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increase damage against Devil-types. Increases Agility.",
 	"display_name": "Sacred Claws",
 	"id": "sacred_claws",

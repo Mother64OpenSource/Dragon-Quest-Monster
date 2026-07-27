@@ -1,5 +1,7 @@
 {
 	"base_attack": 67,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Zombie"],
 	"description": "Increase damage against Zombie-types by a lot.",
 	"display_name": "Zombiesblight",
 	"id": "zombiesblight",

@@ -1,5 +1,7 @@
 {
 	"base_attack": 22,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Devil"],
 	"description": "Increase damage against Devil-types some.",
 	"display_name": "Sacred Spear",
 	"id": "sacred_spear",

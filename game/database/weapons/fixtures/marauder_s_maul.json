@@ -1,5 +1,8 @@
 {
 	"base_attack": 80,
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increases Defense.",
 	"display_name": "Marauder's Maul",
 	"id": "marauder_s_maul",

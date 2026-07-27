@@ -1,5 +1,6 @@
 {
 	"base_attack": 48,
+	"bonus_vs_metal_body_flat": 1,
 	"description": "+1 damage when attacking Metal-types.",
 	"display_name": "Obsidian Sword",
 	"id": "obsidian_sword",

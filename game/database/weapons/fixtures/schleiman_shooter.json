@@ -1,5 +1,7 @@
 {
 	"base_attack": 46,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Material"],
 	"description": "Increase damage against Material-types by a lot.",
 	"display_name": "Schleiman Shooter",
 	"id": "schleiman_shooter",

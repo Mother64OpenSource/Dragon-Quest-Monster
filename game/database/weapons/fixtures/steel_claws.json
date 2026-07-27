@@ -1,5 +1,8 @@
 {
 	"base_attack": 43,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility.",
 	"display_name": "Steel Claws",
 	"id": "steel_claws",

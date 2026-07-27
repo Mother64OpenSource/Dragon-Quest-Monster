@@ -1,5 +1,6 @@
 {
 	"base_attack": 93,
+	"crit_chance_multiplier": 2,
 	"description": "Increase the chance of doing critical attacks by a lot.",
 	"display_name": "Executioner's Axe",
 	"id": "executioner_s_axe",

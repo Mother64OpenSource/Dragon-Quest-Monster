@@ -1,5 +1,6 @@
 {
 	"base_attack": 55,
+	"bonus_vs_metal_body_flat": 2,
 	"description": "Does more damage to Metal-types.",
 	"display_name": "Metal Claw",
 	"id": "metal_claw",

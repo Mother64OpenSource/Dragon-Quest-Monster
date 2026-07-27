@@ -1,5 +1,9 @@
 {
 	"base_attack": 95,
+	"bonus_stats": {
+		"wisdom": 0.1,
+		"agility": 0.1
+	},
 	"description": "Increases Wisdom and Agility.",
 	"display_name": "Leonine Greatsword",
 	"id": "leonine_greatsword",

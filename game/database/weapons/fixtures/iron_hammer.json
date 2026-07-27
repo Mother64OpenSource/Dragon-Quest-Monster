@@ -1,5 +1,8 @@
 {
 	"base_attack": 24,
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increases Defense.",
 	"display_name": "Iron Hammer",
 	"id": "iron_hammer",

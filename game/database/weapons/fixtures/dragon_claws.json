@@ -1,5 +1,7 @@
 {
 	"base_attack": 66,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Dragon"],
 	"description": "Increase damage against Dragon-types by a lot.",
 	"display_name": "Dragon Claws",
 	"id": "dragon_claws",

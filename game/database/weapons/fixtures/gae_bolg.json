@@ -1,5 +1,6 @@
 {
 	"base_attack": 94,
+	"crit_chance_multiplier": 1.5,
 	"description": "Increase the chance of doing critical attacks.",
 	"display_name": "Gae Bolg",
 	"id": "gae_bolg",

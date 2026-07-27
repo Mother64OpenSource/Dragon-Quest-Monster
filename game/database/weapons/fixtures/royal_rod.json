@@ -1,5 +1,8 @@
 {
 	"base_attack": 83,
+	"bonus_stats": {
+		"wisdom": 0.1
+	},
 	"description": "Increases Wisdom.",
 	"display_name": "Royal Rod",
 	"id": "royal_rod",

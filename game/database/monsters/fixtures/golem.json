@@ -18,7 +18,7 @@
 		"whip",
 		"claw"
 	],
-	"family": "golem",
+	"family": "Material",
 	"id": "golem",
 	"rank": "C",
 	"resistances": {

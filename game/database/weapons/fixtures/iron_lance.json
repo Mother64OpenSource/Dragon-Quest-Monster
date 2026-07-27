@@ -1,5 +1,7 @@
 {
 	"base_attack": 9,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Slime"],
 	"description": "Increase damage against Slime-types some.",
 	"display_name": "Iron Lance",
 	"id": "iron_lance",

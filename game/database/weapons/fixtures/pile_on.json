@@ -1,5 +1,8 @@
 {
 	"base_attack": 20,
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increases Defense.",
 	"display_name": "Pile-On",
 	"id": "pile_on",

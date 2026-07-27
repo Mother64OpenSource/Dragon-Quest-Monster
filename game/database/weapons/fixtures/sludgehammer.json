@@ -1,5 +1,7 @@
 {
 	"base_attack": 12,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Material", "Slime"],
 	"description": "Increase damage against Material/Slime-types more.",
 	"display_name": "Sludgehammer",
 	"id": "sludgehammer",

@@ -1,5 +1,7 @@
 {
 	"base_attack": 34,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Zombie"],
 	"description": "Increase damage against Zombie-types some.",
 	"display_name": "Holy Lance",
 	"id": "holy_lance",

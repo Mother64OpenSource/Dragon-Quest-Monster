@@ -1,5 +1,8 @@
 {
 	"base_attack": 95,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility.",
 	"display_name": "Orichalcum Claws",
 	"id": "orichalcum_claws",

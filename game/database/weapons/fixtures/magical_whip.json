@@ -1,5 +1,7 @@
 {
 	"base_attack": 25,
+	"crit_chance_multiplier": 1.5,
+	"crit_chance_category_filter": 1,
 	"description": "Can attack all enemies. Increase chance of spell critical.",
 	"display_name": "Magical Whip",
 	"id": "magical_whip",

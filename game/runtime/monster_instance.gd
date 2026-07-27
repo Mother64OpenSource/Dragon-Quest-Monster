@@ -73,11 +73,20 @@ func _get_base_stat(stat_name: String) -> int:
 			var weapon_bonus := equipped_weapon.base_attack if equipped_weapon != null else 0
 			return species.base_attack + weapon_bonus
 		"defense":
-			return species.base_defense
+			return _with_weapon_stat_bonus(species.base_defense, "defense")
 		"agility":
-			return species.base_agility
+			return _with_weapon_stat_bonus(species.base_agility, "agility")
 		"wisdom":
-			return species.base_wisdom
+			return _with_weapon_stat_bonus(species.base_wisdom, "wisdom")
 		_:
 			push_error("Unknown stat name: %s" % stat_name)
 			return 0
+
+## Weapon secondary stat bonuses (WeaponData.bonus_stats) are a percentage of
+## the species' own base stat -- see WeaponData's own doc comment for why a
+## percentage rather than a flat number.
+func _with_weapon_stat_bonus(base_value: int, stat_name: String) -> int:
+	if equipped_weapon == null or not equipped_weapon.bonus_stats.has(stat_name):
+		return base_value
+	var percent: float = equipped_weapon.bonus_stats[stat_name]
+	return base_value + MathUtils.round_half_up(float(base_value) * percent)

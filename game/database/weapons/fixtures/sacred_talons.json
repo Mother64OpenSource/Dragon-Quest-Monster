@@ -1,5 +1,10 @@
 {
 	"base_attack": 84,
+	"bonus_damage_multiplier": 2,
+	"bonus_vs_families": ["Devil"],
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increase damage against Devil-types by a lot. Increases Agility.",
 	"display_name": "Sacred Talons",
 	"id": "sacred_talons",

@@ -1,5 +1,8 @@
 {
 	"base_attack": 34,
+	"bonus_stats": {
+		"wisdom": 0.1
+	},
 	"description": "Increases Wisdom.",
 	"display_name": "Crystal Staff",
 	"id": "crystal_staff",

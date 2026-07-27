@@ -1,5 +1,9 @@
 {
 	"base_attack": 51,
+	"bonus_vs_metal_body_flat": 2,
+	"bonus_stats": {
+		"agility": 0.1
+	},
 	"description": "Increases Agility. Does +2 damage against Metal-types.",
 	"display_name": "Metal Talons",
 	"id": "metal_talons",

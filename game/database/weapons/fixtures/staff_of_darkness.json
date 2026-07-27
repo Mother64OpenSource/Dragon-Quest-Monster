@@ -1,5 +1,8 @@
 {
 	"base_attack": 47,
+	"bonus_stats": {
+		"wisdom": 0.1
+	},
 	"description": "Increases Wisdom.",
 	"display_name": "Staff of Darkness",
 	"id": "staff_of_darkness",

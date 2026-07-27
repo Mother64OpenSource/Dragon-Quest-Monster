@@ -1,5 +1,8 @@
 {
 	"base_attack": 5,
+	"bonus_stats": {
+		"defense": 0.1
+	},
 	"description": "Increases Defense.",
 	"display_name": "Oaken Club",
 	"id": "oaken_club",

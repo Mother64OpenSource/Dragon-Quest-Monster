@@ -1,5 +1,8 @@
 {
 	"base_attack": 16,
+	"bonus_damage_multiplier": 1.5,
+	"bonus_vs_families": ["Nature"],
+	"crit_chance_multiplier": 1.5,
 	"description": "Increase damage against Nature-types some. Does more criticals.",
 	"display_name": "Pitchfork",
 	"id": "pitchfork",
