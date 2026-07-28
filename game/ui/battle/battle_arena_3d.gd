@@ -87,21 +87,50 @@ const DAMAGE_TEXT_COLOR := Color(0.95, 0.35, 0.3, 1)
 ## red so the source of the damage reads at a glance without parsing text.
 const STATUS_DAMAGE_TEXT_COLOR := Color(0.64, 0.4, 0.8, 1)
 
+## A persistent name + HP bar hovering above each monster's own head --
+## unlike show_floating_text() (a one-shot callout that frees itself),
+## these live for as long as the monster's own sprite does and get updated
+## in place every _sync_side() refresh. Built from flat, unshaded,
+## billboarded quads (the same "flat colored mesh" idiom the ground tile
+## outlines above already use in this file) rather than another Sprite3D,
+## since a QuadMesh's own `size` can be resized directly in world units for
+## the HP fill's shrinking width -- no pixel_size/texture-aspect math the
+## way a Sprite3D-based bar would need. Deliberately translucent (see
+## HP_BAR_ALPHA/NAME_LABEL_ALPHA) rather than solid, so it reads as a HUD
+## overlay rather than a piece of the arena itself.
+const HP_BAR_WIDTH := 0.5
+const HP_BAR_HEIGHT := 0.06
+const HP_BAR_GAP_ABOVE_HEAD := 0.14
+const HP_BAR_ALPHA := 0.78
+const HP_BAR_BG_COLOR := Color(0.05, 0.05, 0.07, 0.6)
+const HP_BAR_GREEN := Color(0.36, 0.72, 0.4, HP_BAR_ALPHA)
+const HP_BAR_AMBER := Color(0.85, 0.7, 0.25, HP_BAR_ALPHA)
+const HP_BAR_RED := Color(0.8, 0.28, 0.28, HP_BAR_ALPHA)
+const NAME_LABEL_GAP_ABOVE_BAR := 0.05
+const NAME_LABEL_FONT_SIZE := 32
+const NAME_LABEL_PIXEL_SIZE := 0.0032
+const NAME_LABEL_ALPHA := 0.85
+
 ## Self-targeted skills have no "enemy" to step toward -- just a small
 ## bob in place instead.
 const BOB_HEIGHT := 0.3
 const BOB_UP_TIME := 0.15
 const BOB_DOWN_TIME := 0.15
 
-## Idle cinematic camera drift: rest at the authored Camera3D transform for
-## a few seconds, ease into a slightly closer/offset "cinematic" pose, hold,
-## then ease back -- purely atmospheric, runs continuously in the
-## background and never affects gameplay (nothing 3D is ever clicked here
-## anyway). The offset is expressed in the camera's own local basis
-## (Transform3D.translated()), not world axes, so it always reads as
-## "push in and drift sideways from wherever the camera is currently
-## looking" regardless of the authored rest angle.
-const IDLE_CAMERA_HOLD_TIME := 8.0
+## Idle cinematic camera drift: ease from the authored Camera3D rest pose
+## into a slightly closer/offset "cinematic" pose, then ease back -- purely
+## atmospheric, runs continuously in the background and never affects
+## gameplay (nothing 3D is ever clicked here anyway). IDLE_CAMERA_HOLD_TIME
+## is deliberately 0 -- the camera should never actually sit still between
+## moves, only ever be transitioning smoothly from one cinematic move into
+## the next (in various directions) for the whole time it isn't animating
+## an attack; each move's own final leg already eases back through the
+## rest pose as a momentary waypoint (not a pause) before immediately
+## departing on the next randomly-picked move. The offset is expressed in
+## the camera's own local basis (Transform3D.translated()), not world
+## axes, so it always reads as "push in and drift sideways from wherever
+## the camera is currently looking" regardless of the authored rest angle.
+const IDLE_CAMERA_HOLD_TIME := 0.0
 const IDLE_CAMERA_DRIFT_TIME := 1.8
 const IDLE_CAMERA_RETURN_TIME := 1.8
 const IDLE_CAMERA_DRIFT_OFFSET := Vector3(0.12, -0.04, -0.15)
@@ -142,6 +171,9 @@ const ATTACK_CAMERA_RESET_TIME := 0.25
 var _sprites: Dictionary = {}   # instance_id (int) -> Sprite3D
 var _tweens: Dictionary = {}    # instance_id (int) -> Tween, so a rapid
                                  # re-fire kills the old one instead of stacking
+var _hp_bar_backgrounds: Dictionary = {}  # instance_id (int) -> MeshInstance3D
+var _hp_bar_fills: Dictionary = {}        # instance_id (int) -> MeshInstance3D
+var _name_labels: Dictionary = {}         # instance_id (int) -> Label3D
 
 ## The single authored "main" angle every idle cinematic move eases back to,
 ## and what an attack forces the camera back to -- captured once at _ready()
@@ -313,6 +345,9 @@ func sync_monsters(state: BattleState, my_side: String) -> void:
 		if not seen.has(instance_id):
 			_sprites[instance_id].queue_free()
 			_sprites.erase(instance_id)
+			_hp_bar_backgrounds.erase(instance_id)
+			_hp_bar_fills.erase(instance_id)
+			_name_labels.erase(instance_id)
 
 func _sync_side(state: BattleState, side: String, anchors: Array[Marker3D], seen: Dictionary) -> void:
 	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
@@ -335,6 +370,7 @@ func _sync_side(state: BattleState, side: String, anchors: Array[Marker3D], seen
 		var rendered_height: float = sprite.pixel_size * sprite.texture.get_height() if sprite.texture != null else DEFAULT_TARGET_HEIGHT
 		sprite.global_position = Vector3(ground_pos.x, TILE_GROUND_Y + rendered_height / 2.0, ground_pos.z)
 		sprite.modulate = FAINTED_MODULATE if monster.is_fainted() else ACTIVE_MODULATE
+		_update_hp_bar(monster.instance_id, monster)
 
 ## The arithmetic midpoint of the anchors a multi-slot monster spans --
 ## mirrors the 2D cards' "wider card centered across its slots" look.
@@ -359,7 +395,93 @@ func _get_or_create(instance_id: int, species: MonsterSpecies) -> Sprite3D:
 	sprite.pixel_size = _pixel_size_for(sprite.texture, species.slots)
 	add_child(sprite)
 	_sprites[instance_id] = sprite
+	_build_hp_bar_and_name(sprite, instance_id, species)
 	return sprite
+
+## Builds the name label and the (background + fill) HP bar quads once per
+## sprite, parented to it so they inherit its position automatically --
+## _update_hp_bar() below then only ever needs to touch the fill's width/
+## color/visibility on each refresh, never recreate anything.
+func _build_hp_bar_and_name(sprite: Sprite3D, instance_id: int, species: MonsterSpecies) -> void:
+	var rendered_height: float = sprite.pixel_size * sprite.texture.get_height() if sprite.texture != null else DEFAULT_TARGET_HEIGHT
+	var bar_y := rendered_height / 2.0 + HP_BAR_GAP_ABOVE_HEAD
+
+	var bg := _make_billboard_quad(Vector2(HP_BAR_WIDTH, HP_BAR_HEIGHT), HP_BAR_BG_COLOR)
+	bg.position = Vector3(0, bar_y, 0)
+	sprite.add_child(bg)
+	_hp_bar_backgrounds[instance_id] = bg
+
+	# A small +Z nudge (plus no_depth_test on both, see _make_billboard_quad)
+	# keeps the fill drawing in front of the background instead of the two
+	# coplanar quads z-fighting.
+	var fill := _make_billboard_quad(Vector2(HP_BAR_WIDTH, HP_BAR_HEIGHT), HP_BAR_GREEN)
+	fill.position = Vector3(0, bar_y, 0.01)
+	sprite.add_child(fill)
+	_hp_bar_fills[instance_id] = fill
+
+	var name_label := Label3D.new()
+	name_label.text = species.display_name
+	name_label.font_size = NAME_LABEL_FONT_SIZE
+	name_label.pixel_size = NAME_LABEL_PIXEL_SIZE
+	name_label.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
+	name_label.no_depth_test = true
+	name_label.modulate = Color(1, 1, 1, NAME_LABEL_ALPHA)
+	name_label.outline_size = 8
+	name_label.position = Vector3(0, bar_y + HP_BAR_HEIGHT / 2.0 + NAME_LABEL_GAP_ABOVE_BAR, 0)
+	sprite.add_child(name_label)
+	_name_labels[instance_id] = name_label
+
+## A flat, unshaded, billboarded quad -- the 3D equivalent of a plain
+## colored ColorRect, used for both the HP bar's backdrop and its fill.
+func _make_billboard_quad(size: Vector2, color: Color) -> MeshInstance3D:
+	var mesh_instance := MeshInstance3D.new()
+	var mesh := QuadMesh.new()
+	mesh.size = size
+	mesh_instance.mesh = mesh
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = color
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.billboard_mode = BaseMaterial3D.BILLBOARD_FIXED_Y
+	mat.no_depth_test = true
+	mesh_instance.material_override = mat
+	return mesh_instance
+
+## Keeps each monster's floating name/HP bar in sync with its real HP --
+## called once per _sync_side() refresh, the same cadence the 2D cards'
+## own HP readouts already update at. Hidden outright (not faded) once
+## fainted -- a defeated monster's HP bar isn't meaningful to keep
+## tracking, and animate_faint() already handles the sprite's own gradual
+## fade separately; these floating elements have no modulate to inherit
+## from the sprite even if we wanted a matching fade, since
+## Sprite3D/MeshInstance3D/Label3D are independent VisualInstance3Ds, not
+## CanvasItems -- a parent's modulate never cascades to 3D children the
+## way it would in 2D.
+func _update_hp_bar(instance_id: int, monster: MonsterInstance) -> void:
+	var bg: MeshInstance3D = _hp_bar_backgrounds.get(instance_id)
+	var fill: MeshInstance3D = _hp_bar_fills.get(instance_id)
+	var name_label: Label3D = _name_labels.get(instance_id)
+	if bg == null or fill == null or name_label == null:
+		return
+
+	var fainted := monster.is_fainted()
+	bg.visible = not fainted
+	fill.visible = not fainted
+	name_label.visible = not fainted
+	if fainted:
+		return
+
+	var ratio := clampf(float(monster.current_hp) / float(maxi(1, monster.species.base_hp)), 0.0, 1.0)
+	var fill_mesh := fill.mesh as QuadMesh
+	fill_mesh.size = Vector2(HP_BAR_WIDTH * ratio, HP_BAR_HEIGHT)
+	# QuadMesh is centered on its own node origin -- shrinking it would drain
+	# from BOTH sides equally, not read as "draining from the right, pinned
+	# to the left" the way a real HP bar should. Re-offsetting the node's
+	# local X by half the missing width keeps its LEFT edge fixed instead,
+	# matching the background's own left edge.
+	fill.position.x = -(HP_BAR_WIDTH - HP_BAR_WIDTH * ratio) / 2.0
+	var fill_mat := fill.material_override as StandardMaterial3D
+	fill_mat.albedo_color = HP_BAR_GREEN if ratio > 0.5 else (HP_BAR_AMBER if ratio > 0.2 else HP_BAR_RED)
 
 ## Derives pixel_size from the ACTUAL loaded texture's pixel height so every
 ## monster renders at the target height for its own slot tier, regardless
@@ -435,6 +557,17 @@ func animate_faint(instance_id: int) -> void:
 		return
 	if _tweens.has(instance_id):
 		_tweens[instance_id].kill()
+
+	# Hidden immediately, not faded alongside the sprite -- a defeated
+	# monster's HP bar/name isn't meaningful to keep showing, and unlike the
+	# sprite itself these have no modulate for a matching tween to even
+	# target (see _update_hp_bar's own doc comment on why).
+	if _hp_bar_backgrounds.has(instance_id):
+		_hp_bar_backgrounds[instance_id].visible = false
+	if _hp_bar_fills.has(instance_id):
+		_hp_bar_fills[instance_id].visible = false
+	if _name_labels.has(instance_id):
+		_name_labels[instance_id].visible = false
 
 	var current := sprite.modulate
 	var faded := Color(current.r, current.g, current.b, 0.0)
