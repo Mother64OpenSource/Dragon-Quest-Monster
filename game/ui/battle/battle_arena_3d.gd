@@ -131,8 +131,8 @@ const BOB_DOWN_TIME := 0.15
 ## axes, so it always reads as "push in and drift sideways from wherever
 ## the camera is currently looking" regardless of the authored rest angle.
 const IDLE_CAMERA_HOLD_TIME := 0.0
-const IDLE_CAMERA_DRIFT_TIME := 1.8
-const IDLE_CAMERA_RETURN_TIME := 1.8
+const IDLE_CAMERA_DRIFT_TIME := 3.6
+const IDLE_CAMERA_RETURN_TIME := 3.6
 const IDLE_CAMERA_DRIFT_OFFSET := Vector3(0.12, -0.04, -0.15)
 
 ## Occasionally (not every cycle -- see ORBIT_CHANCE), instead of the small
@@ -144,7 +144,7 @@ const IDLE_CAMERA_DRIFT_OFFSET := Vector3(0.12, -0.04, -0.15)
 ## is well short of a full half circle (PI) -- a full 180 degree swing
 ## proved too dramatic in practice.
 const ORBIT_CHANCE := 0.2
-const ORBIT_SWEEP_TIME := 2.2
+const ORBIT_SWEEP_TIME := 4.5
 const ORBIT_SWEEP_ANGLE := PI * 0.28
 const ORBIT_PIVOT := Vector3(0, 0.6, -0.6)
 
@@ -160,7 +160,7 @@ const ORBIT_PIVOT := Vector3(0, 0.6, -0.6)
 ## subject.
 const RISE_CHANCE := 0.2
 const RISE_HEIGHT := 0.7
-const RISE_TIME := 2.5
+const RISE_TIME := 5.0
 const RISE_LOOK_TARGET := Vector3(0, 0.6, 0)
 
 ## How long an attack's forced return to the main camera angle takes -- fast
