@@ -8,16 +8,18 @@ extends Node
 ## player out from under it.
 ##
 ## Every real .wav was dropped straight into the project folder outside
-## Godot's editor-driven import pipeline (no .import file gets generated for
-## it), the same class of problem this project already hit for the scribble
-## monster art and the battle theme music -- see
-## ArtStylePreferenceManager/BattleMusicManager's own doc comments. Unlike
-## those two, no manual byte-reading is needed here:
-## AudioStreamWAV.load_from_file() (Godot 4.3+) reads a real .wav straight
-## off disk on its own, so _load_sfx() just calls that directly. A missing
-## file (or a slot with no mapped .wav at all, like menu_select below)
-## leaves its stream null, and _play() already no-ops on a null stream, so
-## this ships safely even if a file is ever removed.
+## Godot's editor-driven import pipeline, but a later editor filesystem
+## rescan generated real .import files for all of them (see wiki/log.md),
+## so _load_sfx() just uses a plain load() -- the standard resource loader,
+## which resolves correctly in both the editor and an exported build. A
+## missing file (or a slot with no mapped .wav at all, like menu_select
+## below) leaves its stream null, and _play() already no-ops on a null
+## stream, so this ships safely even if a file is ever removed. If a
+## FRESHLY added .wav shows up missing once exported despite loading fine
+## in the editor, the fix is re-running that rescan so it gets a proper
+## .import too -- not reaching for a raw FileAccess/globalize_path bypass
+## (see ArtStylePreferenceManager/BattleMusicManager's own doc comments for
+## why that bypass silently breaks on export instead).
 
 const SFX_DIR := "res://assets/audio/sfx/"
 
@@ -161,11 +163,11 @@ func play_menu_select() -> void:
 	_play(_menu_select_player, _menu_select_stream)
 
 func _load_sfx(file_name: String) -> AudioStream:
-	var abs_path := ProjectSettings.globalize_path(SFX_DIR + file_name)
-	if not FileAccess.file_exists(abs_path):
-		push_warning("BattleAudio: sfx file not found at %s" % abs_path)
-		return null
-	return AudioStreamWAV.load_from_file(abs_path)
+	var res_path := SFX_DIR + file_name
+	var stream: AudioStream = load(res_path)
+	if stream == null:
+		push_warning("BattleAudio: sfx file not found at %s" % res_path)
+	return stream
 
 func _play(player: AudioStreamPlayer, stream: AudioStream) -> void:
 	if stream == null:

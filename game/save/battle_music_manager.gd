@@ -12,13 +12,17 @@ extends Node
 ## against itself. play_battle_theme() is also idempotent on its own
 ## (checks _player.playing first) as a second line of defense.
 ##
-## The MP3 is loaded from its real filesystem path via AudioStreamMP3's
-## own `data` property rather than a plain res:// load() -- it was added
-## directly to the project folder outside Godot's editor-driven import
-## pipeline, the same class of problem this project already hit for the
-## scribble monster art and user-uploaded backgrounds (see
-## ArtStylePreferenceManager/BackgroundDisplay's own doc comments), so
-## the same "load the raw file directly" fix applies here too.
+## Loaded via a plain load() -- battle_theme.mp3 now has a real .import
+## file (an editor filesystem rescan picked it up along with every other
+## asset added directly to disk outside the import pipeline, see
+## wiki/log.md), so the standard resource loader resolves it correctly in
+## both the editor and an exported build. An earlier version of this class
+## bypassed load() with a raw FileAccess byte-read specifically because
+## THAT rescan hadn't happened yet -- keep that workaround in mind (see
+## ArtStylePreferenceManager/BattleAudio) if a newly-added asset ever shows
+## the same "loads fine in editor, missing once exported" symptom again;
+## the real fix is re-running the rescan so it gets a proper .import, not
+## reintroducing the bypass.
 
 const THEME_PATH := "res://assets/audio/battle_theme.mp3"
 const PREF_PATH := "user://music_volume_preference.json"
@@ -41,14 +45,12 @@ func _ready() -> void:
 	add_child(_player)
 	_apply_volume()
 
-	var abs_path := ProjectSettings.globalize_path(THEME_PATH)
-	if FileAccess.file_exists(abs_path):
-		var stream := AudioStreamMP3.new()
-		stream.data = FileAccess.get_file_as_bytes(abs_path)
+	var stream: AudioStreamMP3 = load(THEME_PATH)
+	if stream != null:
 		stream.loop = true
 		_player.stream = stream
 	else:
-		push_warning("BattleMusicManager: battle theme file not found at %s" % abs_path)
+		push_warning("BattleMusicManager: battle theme file not found at %s" % THEME_PATH)
 
 ## Called once from every battle tab's own setup() -- safe to call more
 ## than once for the same battle (two hotseat tabs) or across several

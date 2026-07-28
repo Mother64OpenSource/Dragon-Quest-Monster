@@ -25,26 +25,29 @@ func _ready() -> void:
 ## species added after the last batch-generation run), or if scribble
 ## mode isn't on at all.
 ##
-## Real artwork goes through the normal load() -- it's imported by the
-## editor like any other project asset. The scribble PNGs are NOT --
-## they're written straight to disk at build-tool time
-## (tools/generate_scribble_art.gd), completely outside the editor's
-## import pipeline, so they have no .import file and load()/
-## ResourceLoader.exists() can't reliably find them via a res:// path.
-## Loaded the same way BackgroundDisplay already handles user-uploaded
-## background images for the exact same reason (see its own doc
-## comment): Image.load() on the real filesystem path, wrapped in an
-## ImageTexture.
+## Both the real artwork and the scribble PNGs go through a plain load()
+## now -- the scribble PNGs were written straight to disk at build-tool
+## time (tools/generate_scribble_art.gd), completely outside the editor's
+## import pipeline, but a later editor filesystem rescan generated real
+## .import files for all 808 of them (see wiki/log.md), so the standard
+## resource loader resolves them correctly in both the editor and an
+## exported build. An earlier version of this method bypassed load()
+## with Image.load_png_from_buffer() on raw FileAccess bytes specifically
+## because that rescan hadn't happened yet for these files -- if a
+## FRESHLY generated scribble PNG ever shows up missing once exported
+## despite loading fine in the editor, the fix is re-running that rescan
+## so it gets a proper .import too, not reintroducing the bypass (Godot's
+## own engine explicitly warns that loading an IMAGE FILE, as opposed to
+## an imported Texture2D resource, straight off a res:// path "will not
+## work on export").
 func load_texture(species: MonsterSpecies) -> Texture2D:
 	if species == null or species.sprite_path.is_empty():
 		return null
 	if use_scribble_art:
 		var scribble_res_path := "%s/%s.png" % [SCRIBBLE_DIR, species.id]
-		var scribble_abs_path := ProjectSettings.globalize_path(scribble_res_path)
-		if FileAccess.file_exists(scribble_abs_path):
-			var image := Image.new()
-			if image.load(scribble_abs_path) == OK:
-				return ImageTexture.create_from_image(image)
+		var scribble_texture: Texture2D = load(scribble_res_path)
+		if scribble_texture != null:
+			return scribble_texture
 	return load(species.sprite_path)
 
 func set_use_scribble_art(value: bool) -> void:
