@@ -36,6 +36,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_forfeit(monster_db, skill_db, trait_db)
 	await _check_side_view_rendering(monster_db, skill_db, trait_db)
 	await _check_party_grid_and_drag(monster_db, skill_db, trait_db)
+	await _check_party_grid_click_to_select(monster_db, skill_db, trait_db)
 	await _check_forfeit_button(monster_db, skill_db, trait_db)
 	await _check_arena_rendering(monster_db, skill_db, trait_db)
 	await _check_bounce_and_audio(monster_db, skill_db, trait_db)
@@ -558,6 +559,104 @@ func _check_party_grid_and_drag(monster_db: MonsterDatabase, skill_db: SkillData
 		if occupant != null and occupant.instance_id == dracky_id:
 			dracky_slots += 1
 	_check("applying such a plan never duplicates a monster across two slots", dracky_slots == 1)
+
+	view.queue_free()
+
+## Real-world reported bug: two active monsters at 0 HP that auto-backfill
+## never replaced (no reserve fit -- see faint_handler.gd), a THIRD active
+## monster still alive and pending, and a healthy bench reserve -- the
+## player dragged the bench card onto a fainted active slot and nothing
+## happened. Confirmed (see wiki/log.md) the actual root cause was the
+## drag gesture itself never reaching the engine's drop handler, not a
+## _can_edit_formation() gating bug -- _recompute_pending_slots() already
+## correctly excludes a fainted occupant's slot from "needs a command,"
+## which is why a still-living slot (golem here) keeps _current_slot valid
+## and _can_edit_formation() true throughout. This exercises the click-to-
+## select fallback (_on_party_card_clicked()) that fixes it, calling it
+## directly rather than simulating a real click -- consistent with how
+## _check_party_grid_and_drag above calls _on_party_card_dropped()
+## directly rather than simulating a real drag.
+func _check_party_grid_click_to_select(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	var team_a := _make_team("Click Select A", [
+		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
+		["healslime", ["attack"]], ["aamon", ["attack"]],
+	])
+	var team_b := _make_team("Click Select B", [["golem", ["attack"]]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
+
+	var view: BattleSideView = SideViewScene.instantiate()
+	_tree.root.add_child(view)
+	await _tree.process_frame
+	view.setup(controller, "side_a", skill_db)
+
+	var slime_id := instances_a[0].instance_id    # active slot 0 -- about to "faint"
+	var dracky_id := instances_a[1].instance_id   # active slot 1 -- about to "faint"
+	var golem_id := instances_a[2].instance_id    # active slot 2 -- stays alive and pending
+	var aamon_id := instances_a[4].instance_id    # bench, alive
+
+	# Directly zero HP rather than running real damage -- is_fainted() is
+	# purely current_hp <= 0 (see monster_instance.gd), and no reserve
+	# backfill is expected to have run here (this is testing the UI's
+	# reaction to a fainted-but-still-occupied slot, not FaintHandler's own
+	# backfill-or-not decision, which is covered elsewhere).
+	instances_a[0].current_hp = 0
+	instances_a[1].current_hp = 0
+	controller._recompute_pending_slots()
+	view._advance_to_next_pending_slot()
+	view._refresh()
+
+	_check("a fainted active occupant is correctly excluded from pending, not '???'", view._current_slot != -1)
+	_check("with a living slot still pending, formation editing stays enabled", view._can_edit_formation())
+
+	# The exact reported gesture, done via two clicks instead of a drag:
+	# click the healthy bench card first...
+	view._on_party_card_clicked(aamon_id, -1, aamon_id)
+	_check("the first click picks the bench monster up", view._selected_party_instance_id == aamon_id)
+	_check("nothing is staged yet from a pick-up alone", not view._has_staged_changes(controller.get_state()))
+
+	# ...then click the fainted main-party slot to drop it there.
+	view._on_party_card_clicked(slime_id, 0, -1)
+	_check("the pick-up is cleared once a drop completes", view._selected_party_instance_id == -1)
+	_check("aamon is now staged into the fainted slot", view._staged_active_ids[0] == aamon_id)
+	_check("Apply Formation enables from a click-driven stage, same as a drag would", not view._apply_formation_button.disabled)
+	_check("the engine's real formation is still untouched before Apply", controller.get_state().get_monster_at("side_a", 0).instance_id == slime_id)
+
+	# Clicking a card a second time (with nothing else selected) picks it
+	# up, then clicking it again cancels rather than dropping it onto
+	# itself. golem (alive, untouched by anything above) stands in here --
+	# dracky is fainted in this exact scenario and correctly can't be
+	# picked up at all (see the rejection branch of
+	# _on_party_card_clicked()).
+	view._on_party_card_clicked(golem_id, 2, -1)
+	_check("clicking a fresh, alive card with nothing else selected picks it up", view._selected_party_instance_id == golem_id)
+	view._on_party_card_clicked(golem_id, 2, -1)
+	_check("clicking the very same card again cancels the pick-up", view._selected_party_instance_id == -1)
+
+	# Applying commits the click-staged plan just like a dragged one would.
+	view._on_apply_formation_pressed()
+	var state := controller.get_state()
+	_check("Apply commits the click-staged swap to the real engine formation", state.get_monster_at("side_a", 0).instance_id == aamon_id)
+	var slime_now_benched := false
+	for m in controller.get_living_bench("side_a"):
+		if m.instance_id == slime_id:
+			slime_now_benched = true
+	# slime fainted with 0 HP but was never actually removed from the team
+	# roster -- get_living_bench() filters out fainted monsters by design
+	# (see battle_controller.gd), so it correctly does NOT show up there;
+	# what matters is that it no longer occupies an active slot.
+	var slime_still_active := false
+	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
+		var occupant := state.get_monster_at("side_a", slot)
+		if occupant != null and occupant.instance_id == slime_id:
+			slime_still_active = true
+	_check("the fainted monster that got swapped out no longer occupies any active slot", not slime_still_active)
+	_check("(sanity) get_living_bench correctly excludes a fainted monster regardless of slot", not slime_now_benched)
+	_check(
+		"golem (never touched by any of the clicks above) is still the one commanding",
+		state.get_monster_at("side_a", view._current_slot).instance_id == golem_id
+	)
 
 	view.queue_free()
 

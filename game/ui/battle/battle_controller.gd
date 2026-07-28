@@ -130,10 +130,24 @@ func submit_fight(side: String, slot: int, skill_id: String, target_instance_id:
 ## in its way rather than only ever considering the one slot it landed on.
 ## The only real rejection case left is the incoming monster simply not
 ## fitting within ACTIVE_SLOT_COUNT starting at `slot` at all.
+##
+## A slot also counts as swap-eligible (even when NOT in _pending_slots)
+## if its current occupant is fainted: _recompute_pending_slots() deliberately
+## excludes a fainted occupant from "needs a command" every round (it can't
+## act), but that meant a fainted slot _try_backfill() couldn't fill from
+## reserves (no size-compatible fit, see faint_handler.gd) was permanently
+## stuck -- never pending again in any future round, so this exact,
+## legitimate "please let me manually replace my fainted monster" swap
+## could never succeed no matter how it was submitted (drag, click, or
+## otherwise). See wiki/log.md for the real report this fixes.
 func submit_swap(side: String, slot: int, bench_instance_id: int) -> void:
-	if is_over() or not _pending_slots[side].has(slot) or _submitted_slots[side].has(slot):
+	if is_over() or _submitted_slots[side].has(slot):
 		return
 	var state := engine.battle_state
+	if not _pending_slots[side].has(slot):
+		var occupant := state.get_monster_at(side, slot)
+		if occupant == null or not occupant.is_fainted():
+			return
 	var team: Array[MonsterInstance] = state.side_a_team if side == "side_a" else state.side_b_team
 	var team_index := -1
 	for i in range(team.size()):

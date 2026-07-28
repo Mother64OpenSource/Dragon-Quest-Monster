@@ -78,6 +78,18 @@ var _pending_skill_id: String = ""
 ## across, e.g., Fight-commanding an unrelated slot mid-round.
 var _staged_active_ids: Array[int] = []
 
+## Click-to-select-then-click-to-place: an alternative to the drag-and-drop
+## below for the exact same staged formation edit, since a real drag
+## gesture (press, hold, move past a threshold, release over a target) is
+## a much heavier ask of native Control input dispatch than a plain click
+## -- and this project has already had a confirmed case of native click/
+## drag routing failing in a real player's environment for reasons that
+## were never fully root-caused (see MainShell's tab-bar investigation,
+## wiki/log.md). Holds the instance_id of whichever "mine" card was
+## clicked first (-1 = nothing picked up yet); see
+## _on_party_card_clicked().
+var _selected_party_instance_id: int = -1
+
 @onready var _opponent_panel_grid: HFlowContainer = $Root/MainColumn/Battlefield/MarginContainer/VBox/OpponentPanel
 @onready var _battlefield_header: Label = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/BattlefieldHeader
 @onready var _arena: BattleArena3D = $Root/MainColumn/Battlefield/MarginContainer/VBox/ArenaViewportContainer/ArenaViewport/Arena
@@ -224,6 +236,12 @@ func _render_battlefield(state: BattleState) -> void:
 ## rather than submitting it immediately -- wired only while
 ## _can_edit_formation() (a drag can't happen mid skill-pick/target-pick,
 ## nor once this whole side's turn is already locked in for the round).
+## Clicking one card then another (see _on_party_card_clicked()) stages the
+## exact same change through a plain Button.pressed click, since a real
+## drag gesture asks a lot more of native Control input dispatch than a
+## click does -- and this project has already hit a case where native
+## click/drag routing failed for a real player for reasons never fully
+## root-caused (MainShell's tab-bar investigation, wiki/log.md).
 func _render_my_party(state: BattleState) -> void:
 	_clear_flow(_main_party_row)
 	_clear_flow(_second_party_row)
@@ -238,16 +256,20 @@ func _render_my_party(state: BattleState) -> void:
 			seen[monster.instance_id] = true
 		var card := _build_monster_card(monster, true)
 		_highlight_if_commanding(card, monster)
+		_highlight_if_selected(card, monster)
 		if _can_edit_formation():
 			_wire_active_slot_drag(card, slot, monster)
+			_wire_active_slot_click(card, slot, monster)
 		_main_party_row.add_child(card)
 
 	for monster in _team_for_side(state, _my_side):
 		if _staged_active_ids.has(monster.instance_id):
 			continue
 		var card := _build_monster_card(monster, true)
+		_highlight_if_selected(card, monster)
 		if _can_edit_formation() and not monster.is_fainted():
 			_wire_bench_card_drag(card, monster)
+			_wire_bench_card_click(card, monster)
 		_second_party_row.add_child(card)
 
 	_apply_formation_button.disabled = not _can_edit_formation() or not _has_staged_changes(state)
@@ -277,23 +299,39 @@ func _clear_flow(container: HFlowContainer) -> void:
 		container.remove_child(child)
 		child.queue_free()
 
-## "mine" cards are always disabled (display-only, never clickable via
-## pressed -- drag/drop is wired separately), so Button actually renders
-## its "disabled" style -- overriding "panel" (not a real Button style
-## key) silently did nothing.
+## "mine" cards are disabled (display-only, no pressed click) except while
+## _can_edit_formation() enables them for the click-to-select flow below --
+## the highlight style is applied to every Button state key (not just
+## "disabled"), since which one Godot actually renders now depends on
+## whether the card happens to be editable at the moment, and the
+## highlight needs to show up either way. Overriding "panel" (not a real
+## Button style key) silently did nothing.
 func _highlight_if_commanding(card: Button, monster: MonsterInstance) -> void:
 	if monster == null:
 		return
 	var actually_commanding := _controller.get_state().get_monster_at(_my_side, _current_slot)
 	if actually_commanding == null or actually_commanding.instance_id != monster.instance_id:
 		return
+	_apply_card_highlight(card, Color(0.85, 0.92, 1, 1), Color(0.24, 0.45, 0.86, 1))
+
+## Distinct from _highlight_if_commanding() above -- this marks whichever
+## card the click-to-select flow currently has "picked up" (see
+## _on_party_card_clicked()), which may or may not also be the commanding
+## monster. A warm amber rather than the commanding highlight's blue so the
+## two are never confused if a card happens to be both at once.
+func _highlight_if_selected(card: Button, monster: MonsterInstance) -> void:
+	if monster == null or monster.instance_id != _selected_party_instance_id:
+		return
+	_apply_card_highlight(card, Color(1, 0.93, 0.78, 1), Color(0.85, 0.55, 0.1, 1))
+
+func _apply_card_highlight(card: Button, bg_color: Color, border_color: Color) -> void:
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.85, 0.92, 1, 1)
+	style.bg_color = bg_color
 	style.border_width_left = 2
 	style.border_width_top = 2
 	style.border_width_right = 2
 	style.border_width_bottom = 2
-	style.border_color = Color(0.24, 0.45, 0.86, 1)
+	style.border_color = border_color
 	style.corner_radius_top_left = 5
 	style.corner_radius_top_right = 5
 	style.corner_radius_bottom_right = 5
@@ -302,7 +340,8 @@ func _highlight_if_commanding(card: Button, monster: MonsterInstance) -> void:
 	style.content_margin_top = 6.0
 	style.content_margin_right = 10.0
 	style.content_margin_bottom = 6.0
-	card.add_theme_stylebox_override("disabled", style)
+	for state_key in ["disabled", "normal", "hover", "pressed", "focus"]:
+		card.add_theme_stylebox_override(state_key, style)
 
 ## A Main Party card (`slot` is always its real anchor slot, even for an
 ## empty one -- so dropping a bench monster onto an empty active slot
@@ -322,6 +361,51 @@ func _wire_bench_card_drag(card: Button, monster: MonsterInstance) -> void:
 		func(_pos: Vector2, data: Variant) -> bool: return _is_party_drag_data(data),
 		func(_pos: Vector2, data: Variant) -> void: _on_party_card_dropped(data["instance_id"], -1, monster.instance_id)
 	)
+
+## Click-to-select-then-click-to-place counterpart to _wire_active_slot_drag()
+## above, wired alongside it (both can coexist on the same card -- a plain
+## click that never crosses Godot's drag-start threshold is still just a
+## normal Button.pressed regardless of set_drag_forwarding() also being
+## installed). Flips the card's disabled flag off so it can actually
+## receive the click at all -- see _on_party_card_clicked() for why the
+## occupant's own instance_id (or -1 for an empty slot) is passed
+## separately from the slot index.
+func _wire_active_slot_click(card: Button, slot: int, occupant: MonsterInstance) -> void:
+	card.disabled = false
+	card.pressed.connect(_on_party_card_clicked.bind(occupant.instance_id if occupant != null else -1, slot, -1))
+
+## Counterpart to _wire_bench_card_drag() above -- see _wire_active_slot_click().
+func _wire_bench_card_click(card: Button, monster: MonsterInstance) -> void:
+	card.disabled = false
+	card.pressed.connect(_on_party_card_clicked.bind(monster.instance_id, -1, monster.instance_id))
+
+## First click on any eligible card picks it up (rejected if there's no
+## live monster there to pick up); a second click on a DIFFERENT card
+## drops it there, reusing _on_party_card_dropped()'s existing validation
+## and staging exactly like a real drag-and-drop would have. Clicking the
+## same card again cancels the pick-up instead of dropping a monster onto
+## itself. occupant_instance_id is -1 for an empty active slot -- a valid
+## drop target, but never a valid pick-up source.
+func _on_party_card_clicked(occupant_instance_id: int, target_slot: int, target_bench_instance_id: int) -> void:
+	if _selected_party_instance_id == -1:
+		if occupant_instance_id == -1:
+			return
+		var monster := _controller.get_state().get_monster_by_instance_id(occupant_instance_id)
+		if monster == null or monster.is_fainted():
+			return
+		_selected_party_instance_id = occupant_instance_id
+		_audio.play_menu_select()
+		_render_my_party(_controller.get_state())
+		return
+
+	if occupant_instance_id == _selected_party_instance_id:
+		_selected_party_instance_id = -1
+		_render_my_party(_controller.get_state())
+		return
+
+	var dragged_id := _selected_party_instance_id
+	_selected_party_instance_id = -1
+	_on_party_card_dropped(dragged_id, target_slot, target_bench_instance_id)
 
 func _make_party_drag_data(card: Control, monster: MonsterInstance) -> Variant:
 	if monster == null or monster.is_fainted():
@@ -404,6 +488,7 @@ func _sync_staged_formation() -> void:
 	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
 		var monster := state.get_monster_at(_my_side, slot)
 		_staged_active_ids.append(monster.instance_id if monster != null else -1)
+	_selected_party_instance_id = -1
 
 func _has_staged_changes(state: BattleState) -> bool:
 	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
