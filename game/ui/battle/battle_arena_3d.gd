@@ -134,9 +134,30 @@ const RISE_HEIGHT := 0.7
 const RISE_TIME := 2.5
 const RISE_LOOK_TARGET := Vector3(0, 0.6, 0)
 
+## How long an attack's forced return to the main camera angle takes -- fast
+## enough that it reads as "the camera snaps to attention" rather than
+## delaying the attack itself, but not so instant it looks like a hard cut.
+const ATTACK_CAMERA_RESET_TIME := 0.25
+
 var _sprites: Dictionary = {}   # instance_id (int) -> Sprite3D
 var _tweens: Dictionary = {}    # instance_id (int) -> Tween, so a rapid
                                  # re-fire kills the old one instead of stacking
+
+## The single authored "main" angle every idle cinematic move eases back to,
+## and what an attack forces the camera back to -- captured once at _ready()
+## rather than re-read from the live Camera3D each time, since by the time
+## an attack needs it the camera itself is usually mid-cinematic-move, not
+## sitting at rest.
+var _camera_rest_transform: Transform3D
+## True for the duration of a single attack's own animation (see
+## animate_attack()) -- checked by the idle loop so a new cinematic move
+## never starts while an attack is actually playing out.
+var _is_attack_animating := false
+## Whichever idle-cinematic tween is currently in flight (drift/orbit/rise,
+## either leg) -- tracked separately from _tweens (which is keyed per
+## monster sprite) so an attack starting mid-cinematic-move can kill it
+## immediately instead of waiting for it to finish on its own.
+var _idle_tween: Tween = null
 
 @onready var _opp_anchors: Array[Marker3D] = [$OppSlot0, $OppSlot1, $OppSlot2, $OppSlot3]
 @onready var _my_anchors: Array[Marker3D] = [$MySlot0, $MySlot1, $MySlot2, $MySlot3]
@@ -144,6 +165,7 @@ var _tweens: Dictionary = {}    # instance_id (int) -> Tween, so a rapid
 
 func _ready() -> void:
 	_build_slot_tiles()
+	_camera_rest_transform = _camera.transform
 	_run_idle_camera_loop()
 
 ## One outline per anchor, both rows -- a multi-slot monster doesn't merge
@@ -182,31 +204,37 @@ func _add_bar(bar_position: Vector3, size: Vector3, mat: Material) -> void:
 ## Loops for the lifetime of the node -- guarded after every await since
 ## queue_free() (e.g. a headless test tearing down its BattleSideView, or a
 ## real battle ending) can free this node mid-wait; resuming into a freed
-## instance would error without these checks.
+## instance would error without these checks. Also re-checks
+## _is_attack_animating right after the hold, so a hold timer that happens
+## to expire while an attack is playing doesn't yank the camera into a
+## cinematic move mid-attack -- it just waits out another hold instead.
 func _run_idle_camera_loop() -> void:
-	var rest_transform := _camera.transform
 	while is_instance_valid(self) and is_inside_tree():
 		await get_tree().create_timer(IDLE_CAMERA_HOLD_TIME).timeout
 		if not is_instance_valid(self) or not is_inside_tree():
 			return
+		if _is_attack_animating:
+			continue
 
 		var roll := randf()
 		if roll < ORBIT_CHANCE:
-			await _run_orbit_sweep(rest_transform)
+			await _run_orbit_sweep(_camera_rest_transform)
 		elif roll < ORBIT_CHANCE + RISE_CHANCE:
-			await _run_rise_and_look_down(rest_transform)
+			await _run_rise_and_look_down(_camera_rest_transform)
 		else:
-			await _run_simple_drift(rest_transform)
+			await _run_simple_drift(_camera_rest_transform)
 
 func _run_simple_drift(rest_transform: Transform3D) -> void:
 	var drifted := rest_transform.translated(IDLE_CAMERA_DRIFT_OFFSET)
 	var tween_in := create_tween()
+	_idle_tween = tween_in
 	tween_in.tween_property(_camera, "transform", drifted, IDLE_CAMERA_DRIFT_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween_in.finished
-	if not is_instance_valid(self) or not is_inside_tree():
+	if not is_instance_valid(self) or not is_inside_tree() or _is_attack_animating:
 		return
 
 	var tween_out := create_tween()
+	_idle_tween = tween_out
 	tween_out.tween_property(_camera, "transform", rest_transform, IDLE_CAMERA_RETURN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween_out.finished
 
@@ -220,15 +248,17 @@ func _run_rise_and_look_down(rest_transform: Transform3D) -> void:
 	var start_pos := rest_transform.origin
 	var end_pos := start_pos + Vector3(0, RISE_HEIGHT, 0)
 	var tween := create_tween()
+	_idle_tween = tween
 	tween.tween_method(
 		_apply_rise.bind(start_pos, end_pos),
 		0.0, 1.0, RISE_TIME
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
-	if not is_instance_valid(self) or not is_inside_tree():
+	if not is_instance_valid(self) or not is_inside_tree() or _is_attack_animating:
 		return
 
 	var tween_back := create_tween()
+	_idle_tween = tween_back
 	tween_back.tween_property(_camera, "transform", rest_transform, IDLE_CAMERA_RETURN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween_back.finished
 
@@ -248,15 +278,17 @@ func _run_orbit_sweep(rest_transform: Transform3D) -> void:
 	var start_offset := rest_transform.origin - ORBIT_PIVOT
 	var direction := 1.0 if randf() < 0.5 else -1.0
 	var tween := create_tween()
+	_idle_tween = tween
 	tween.tween_method(
 		_apply_orbit_angle.bind(start_offset, direction),
 		0.0, ORBIT_SWEEP_ANGLE, ORBIT_SWEEP_TIME
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
-	if not is_instance_valid(self) or not is_inside_tree():
+	if not is_instance_valid(self) or not is_inside_tree() or _is_attack_animating:
 		return
 
 	var tween_back := create_tween()
+	_idle_tween = tween_back
 	tween_back.tween_property(_camera, "transform", rest_transform, IDLE_CAMERA_RETURN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween_back.finished
 
@@ -348,10 +380,17 @@ func get_sprite(instance_id: int) -> Sprite3D:
 ## sprite (already fainted and backfilled away, or a stale event). Awaits
 ## the full animation so callers (BattleSideView's per-event loop) can play
 ## a round's attacks out one at a time instead of all at once.
+##
+## Also forces the camera back to its authored main angle first (see
+## _force_camera_to_main_angle) -- the idle cinematic drift/orbit/rise runs
+## continuously and independently the rest of the time, but an attack
+## itself should always be shown from the standard viewing angle, never
+## mid-cinematic-sweep.
 func animate_attack(actor_instance_id: int, target_instance_id: int) -> void:
 	var sprite := get_sprite(actor_instance_id)
 	if sprite == null:
 		return
+	_force_camera_to_main_angle()
 	if _tweens.has(actor_instance_id):
 		_tweens[actor_instance_id].kill()
 
@@ -369,6 +408,20 @@ func animate_attack(actor_instance_id: int, target_instance_id: int) -> void:
 		tween.tween_property(sprite, "position:y", base_pos.y, BOB_DOWN_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 	await tween.finished
+	_is_attack_animating = false
+
+## Interrupts whatever idle cinematic move is currently in flight (if any --
+## a no-op kill on an already-finished Tween is harmless) and eases the
+## camera back to the authored rest transform. _is_attack_animating stays
+## true until the calling animate_attack()'s own tween finishes, so the
+## idle loop won't start a NEW cinematic move mid-attack even if its hold
+## timer happens to expire at exactly the wrong moment.
+func _force_camera_to_main_angle() -> void:
+	_is_attack_animating = true
+	if _idle_tween != null and _idle_tween.is_valid():
+		_idle_tween.kill()
+	var reset_tween := create_tween()
+	reset_tween.tween_property(_camera, "transform", _camera_rest_transform, ATTACK_CAMERA_RESET_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 ## A monster's sprite fades out of view entirely rather than merely
 ## darkening -- called once, right when its MonsterFaintedEvent is
