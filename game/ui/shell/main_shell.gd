@@ -38,10 +38,53 @@ func _ready() -> void:
 	_tab_bar.tab_close_display_policy = TabBar.CLOSE_BUTTON_SHOW_ALWAYS
 	_tab_bar.tab_changed.connect(_on_tab_changed)
 	_tab_bar.tab_close_pressed.connect(_on_tab_close_pressed)
+	# TEMPORARY diagnostic -- logs every raw mouse click MainShell itself
+	# sees (via _input, unconditionally, before any Control gets first
+	# refusal) alongside every click the TabBar's OWN gui_input actually
+	# receives, so a report of "clicking the tab bar does nothing" can be
+	# pinned to an exact cause (the click never arrives at all vs. arrives
+	# but TabBar doesn't react vs. TabBar reacts but visibility doesn't
+	# follow) instead of guessed at again. Remove once root-caused.
+	_tab_bar.gui_input.connect(_on_tab_bar_gui_input)
 
 	var home: TeamBuilderScreen = TeamBuilderScreenScene.instantiate()
 	_add_page("Home", home)
 	home.battle_launched.connect(_on_home_battle_launched)
+
+## TEMPORARY diagnostic -- see _ready(). Fires for EVERY raw input event
+## reaching the SceneTree, regardless of which Control (if any) ends up
+## handling it, so a click that never shows up here at all means it never
+## reached Godot's input system in the first place (a real OS/window-level
+## issue), while a click that shows up here but not in
+## _on_tab_bar_gui_input below means Godot saw it but something else
+## claimed it before the TabBar did.
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		print("[DIAG] MainShell._input saw a mouse press at ", event.global_position, " button_index=", event.button_index, " current_tab=", _tab_bar.current_tab)
+
+## TEMPORARY diagnostic -- see _ready(). Fires only if the TabBar Control
+## itself actually received the click as its own GUI input.
+func _on_tab_bar_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		print("[DIAG] TabBar.gui_input received a mouse press at ", event.global_position, " current_tab (before)=", _tab_bar.current_tab)
+
+## Guaranteed keyboard fallback for switching tabs, independent of whatever
+## might be preventing a real click from reaching the TabBar Control (still
+## being tracked down -- see the diagnostic prints above). Ctrl+Tab / Ctrl+
+## Shift+Tab cycle forward/backward through whatever tabs currently exist,
+## same convention as browsers and most tabbed editors, and go through
+## _select_tab() directly -- the exact same code path a real tab click
+## would have used, just triggered a different way, so it's a complete
+## workaround rather than a partial one.
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not (event is InputEventKey and event.pressed and event.ctrl_pressed and event.keycode == KEY_TAB):
+		return
+	if _pages.is_empty():
+		return
+	var direction := -1 if event.shift_pressed else 1
+	var next_index := (_tab_bar.current_tab + direction + _pages.size()) % _pages.size()
+	_select_tab(next_index)
+	get_viewport().set_input_as_handled()
 
 func _add_page(title: String, page: Control) -> void:
 	_pages_container.add_child(page)
