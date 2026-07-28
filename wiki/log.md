@@ -2762,3 +2762,11 @@ Same message also asked for HP bars with the monster's name above them, floating
 ## [2026-07-28] build | Slow down the idle cinematic camera moves
 
 User asked for the camera to move slower. Roughly doubled every idle-cinematic-move duration in `battle_arena_3d.gd`: `IDLE_CAMERA_DRIFT_TIME`/`IDLE_CAMERA_RETURN_TIME` 1.8s -> 3.6s, `ORBIT_SWEEP_TIME` 2.2s -> 4.5s, `RISE_TIME` 2.5s -> 5.0s. `ATTACK_CAMERA_RESET_TIME` (the quick snap back to the main angle once an attack starts) was deliberately left untouched -- that's a separate, intentionally-fast "snap to attention" beat, not part of the ambient drift/orbit/rise the user was referring to. No test hardcodes any of these four timing constants (confirmed via grep), so this was a pure numeric tweak -- all 11 headless suites re-run clean.
+
+## [2026-07-28] build | Zoom the rest camera closer to the monsters
+
+User asked to zoom closer to the monsters. This is the authored Camera3D node's own resting transform in `battle_arena_3d.tscn` (`_camera_rest_transform` is just whatever this node's transform is at `_ready()` -- every idle cinematic move, and the attack-interrupt reset, all reference that same captured pose, so moving the node itself in the scene file is the one change that automatically updates all of them, no code change needed).
+
+**What changed**: kept the camera's rotation (its 25-degree downward pitch) exactly as authored -- "zoom closer" should feel like a dolly-in on the same shot, not a different angle -- and moved only its position, 30% of the way from its old spot `(0, 1.9, 3.4)` toward a point roughly at monster height, centered between the two rows `(0, 0.9, 0)`, landing at `(0, 1.6, 2.38)`. Distance to that reference point drops from ~3.54 to ~2.48 units (about 30% closer, previous distance from origin), which should read as a clearly noticeable zoom without moving the eye past the monsters or clipping into arena geometry.
+
+**Verification**: confirmed via grep that no test hardcodes the old `1.9`/`3.4` position values, so this was a pure scene-data edit with nothing to update in code or tests. All 11 headless suites re-run clean.

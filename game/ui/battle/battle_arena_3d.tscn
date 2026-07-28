@@ -45,7 +45,7 @@ material_override = SubResource("StandardMaterial3D_t48f4")
 mesh = SubResource("GroundMesh")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=306159137]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.9, 3.4)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.6, 2.38)
 current = true
 
 [node name="OppSlot0" type="Marker3D" parent="." unique_id=1993270842]
