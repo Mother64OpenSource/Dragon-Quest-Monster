@@ -808,13 +808,42 @@ func _check_bounce_and_audio(monster_db: MonsterDatabase, skill_db: SkillDatabas
 		first_tween != second_tween and not first_tween.is_valid()
 	)
 
-	# Every play_* call is a silent no-op with all four exported streams left
-	# null (BattleAudio's shipped default, until real audio files are supplied).
-	view._audio.play_attack()
-	view._audio.play_hit()
+	# Every real sfx file loads a genuine stream (see battle_audio.gd), except
+	# menu_select, which has no matching supplied sound and stays null on
+	# purpose -- both a real stream and a deliberately-null one must play
+	# without throwing.
+	view._audio.play_attack("Spell")
+	view._audio.play_attack("Slash")
+	view._audio.play_attack("Body")
+	view._audio.play_hit(true)
+	view._audio.play_hit(false)
+	view._audio.play_dodge()
+	view._audio.play_miss()
 	view._audio.play_faint()
+	view._audio.play_stat_changed(1)
+	view._audio.play_stat_changed(-1)
+	view._audio.play_stat_changed(0)
+	view._audio.play_status_applied("poison")
+	view._audio.play_status_applied("sleep")
+	view._audio.play_status_applied("confusion")
+	view._audio.play_guard()
+	view._audio.play_heal()
+	view._audio.play_enter_battle()
+	view._audio.play_forfeit()
 	view._audio.play_menu_select()
-	_check("playing with every stream left null never throws", true)
+	_check("every battle sfx call (real stream or null) plays without throwing", true)
+	_check(
+		"every real sfx file actually loaded a stream instead of silently missing",
+		view._audio._weapon_attack_stream != null and view._audio._natural_attack_stream != null
+		and view._audio._cast_stream != null and view._audio._hit_stream != null
+		and view._audio._critical_hit_stream != null and view._audio._dodge_stream != null
+		and view._audio._miss_stream != null and view._audio._faint_stream != null
+		and view._audio._buff_stream != null and view._audio._debuff_stream != null
+		and view._audio._poison_hit_stream != null and view._audio._sleep_hit_stream != null
+		and view._audio._guard_stream != null and view._audio._heal_stream != null
+		and view._audio._enter_battle_stream != null and view._audio._forfeit_stream != null
+	)
+	_check("menu_select has no matching supplied sound and stays null on purpose", view._audio._menu_select_stream == null)
 
 	view.queue_free()
 

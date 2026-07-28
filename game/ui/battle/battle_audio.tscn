@@ -5,10 +5,36 @@
 [node name="BattleAudio" type="Node"]
 script = ExtResource("1")
 
-[node name="AttackPlayer" type="AudioStreamPlayer" parent="."]
+[node name="WeaponAttackPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="NaturalAttackPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="CastPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="HitPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="CriticalHitPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="DodgePlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MissPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="FaintPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BuffPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="DebuffPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="PoisonHitPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="SleepHitPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="GuardPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="HealPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="EnterBattlePlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ForfeitPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="MenuSelectPlayer" type="AudioStreamPlayer" parent="."]

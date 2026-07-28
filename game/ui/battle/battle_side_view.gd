@@ -696,6 +696,7 @@ func _on_forfeit_pressed() -> void:
 ## submit_fight/submit_swap already use, so online play forwards this to
 ## the opponent for free -- no separate network wiring needed here.
 func _on_forfeit_confirmed() -> void:
+	_audio.play_forfeit()
 	_controller.forfeit(_my_side)
 
 func _on_skill_pressed(skill_id: String) -> void:
@@ -754,15 +755,18 @@ func _on_turn_resolved(events: Array[BattleEvent]) -> void:
 ## loop pauses here before starting the next event's.
 func _animate_event(event: BattleEvent) -> void:
 	if event is SkillUsedEvent and event.prevented_by_status.is_empty() and event.prevented_by_trait.is_empty():
-		_audio.play_attack()
+		var skill := _skill_db.get_skill(event.skill_id)
+		_audio.play_attack(skill.skill_type if skill != null else "")
 		await _arena.animate_attack(event.actor_instance_id, event.target_instance_id)
 		if event.missed:
+			_audio.play_miss()
 			_arena.show_floating_text(event.target_instance_id, "Miss!", BattleArena3D.MISS_TEXT_COLOR)
 	elif event is DamageAppliedEvent:
 		if event.was_negated:
+			_audio.play_dodge()
 			_arena.show_floating_text(event.target_instance_id, "Miss!", BattleArena3D.MISS_TEXT_COLOR)
 		else:
-			_audio.play_hit()
+			_audio.play_hit(event.is_critical)
 			if event.is_critical:
 				_arena.show_floating_text(event.target_instance_id, "Critical!\n%d" % event.amount, BattleArena3D.CRITICAL_TEXT_COLOR)
 			else:
@@ -770,6 +774,16 @@ func _animate_event(event: BattleEvent) -> void:
 	elif event is StatusTickEvent:
 		if event.damage > 0:
 			_arena.show_floating_text(event.target_instance_id, str(event.damage), BattleArena3D.STATUS_DAMAGE_TEXT_COLOR)
+	elif event is HealingAppliedEvent:
+		_audio.play_heal()
+	elif event is StatusAppliedEvent:
+		_audio.play_status_applied(event.status_id)
+	elif event is StatChangedEvent:
+		_audio.play_stat_changed(event.delta_applied)
+	elif event is DefendEvent:
+		_audio.play_guard()
+	elif event is MonsterEnteredEvent:
+		_audio.play_enter_battle()
 	elif event is MonsterFaintedEvent:
 		_audio.play_faint()
 		await _arena.animate_faint(event.instance_id)
