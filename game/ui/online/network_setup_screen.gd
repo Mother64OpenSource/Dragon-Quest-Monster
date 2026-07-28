@@ -286,8 +286,10 @@ func _launch_battle() -> void:
 	# the time it's needed (Godot auto-disconnects signals once either end
 	# is freed).
 	var network := _network
+	var battle_music := get_node("/root/BattleMusic")
 	view.close_requested.connect(func() -> void:
 		network.close_connection()
+		battle_music.battle_tab_closed()
 		view.get_tree().change_scene_to_file("res://ui/shell/main_shell.tscn")
 	)
 

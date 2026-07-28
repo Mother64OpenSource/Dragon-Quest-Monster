@@ -149,6 +149,10 @@ func _close_tab_at(index: int) -> void:
 	_tab_bar.remove_tab(index)
 	page.queue_free()
 	_select_tab(0)
+	# Every non-Home tab is a battle tab (see _on_home_battle_launched) --
+	# tells BattleMusicManager one fewer battle is open, stopping the loop
+	# once the last one closes.
+	get_node("/root/BattleMusic").battle_tab_closed()
 
 ## BattleSideView is handed over already fully set up (see
 ## BattleSetupScreen._on_start_pressed) -- this just gives it a tab and

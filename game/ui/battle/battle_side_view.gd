@@ -106,6 +106,10 @@ var _staged_active_ids: Array[int] = []
 ## matches this project's own NetworkManager convention (see
 ## network_setup_screen.gd's _network var).
 @onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
+## Looked up via get_node(), not the bare "BattleMusic" identifier -- same
+## reason as _art_style above.
+@onready var _battle_music: BattleMusicManager = get_node("/root/BattleMusic")
+@onready var _music_volume_slider: HSlider = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/MusicVolumeRow/MusicVolumeSlider
 @onready var _background_display: BackgroundDisplay = $BackgroundDisplay
 
 func _ready() -> void:
@@ -126,6 +130,8 @@ func _ready() -> void:
 	_forfeit_button.pressed.connect(_on_forfeit_pressed)
 	_forfeit_confirm_dialog.confirmed.connect(_on_forfeit_confirmed)
 	_apply_formation_button.pressed.connect(_on_apply_formation_pressed)
+	_music_volume_slider.value = _battle_music.volume
+	_music_volume_slider.value_changed.connect(_battle_music.set_volume)
 
 ## opponent_name is online-play only (see game/net/) -- the local 2-window
 ## flow (battle_setup_screen.gd) has no separate "opponent" identity to show,
@@ -139,6 +145,7 @@ func setup(controller: BattleController, my_side: String, skill_db: SkillDatabas
 		_battlefield_header.text = opponent_name
 	_controller.turn_resolved.connect(_on_turn_resolved)
 	_controller.battle_ended.connect(_on_battle_ended)
+	_battle_music.play_battle_theme()
 	_sync_staged_formation()
 	_append_log("The battle begins!")
 	for event in _controller.get_opening_events():
