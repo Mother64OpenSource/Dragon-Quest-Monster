@@ -32,6 +32,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxEmpty" id="NoScrollBg"]
+
 [resource]
 Panel/styles/panel = SubResource("TranslucentPanelBg")
 PanelContainer/styles/panel = SubResource("TranslucentPanelBg")
@@ -44,3 +46,4 @@ LineEdit/colors/font_placeholder_color = Color(0.75, 0.76, 0.8, 0.7)
 LineEdit/styles/normal = SubResource("TranslucentInputBg")
 ItemList/colors/font_color = Color(0.93, 0.94, 0.98, 1)
 ItemList/colors/font_selected_color = Color(1, 1, 1, 1)
+ScrollContainer/styles/panel = SubResource("NoScrollBg")
