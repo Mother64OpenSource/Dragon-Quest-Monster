@@ -58,6 +58,15 @@ func _ready() -> void:
 ## issue), while a click that shows up here but not in
 ## _on_tab_bar_gui_input below means Godot saw it but something else
 ## claimed it before the TabBar did.
+##
+## CONFIRMED via a real reproduction: every click reaches here, none ever
+## reach _on_tab_bar_gui_input -- Godot's own native routing from a real
+## click to the TabBar Control's GUI input is failing for reasons that
+## remain unconfirmed (not an overlap, not a hang, not a stuck popup, all
+## checked earlier). Rather than keep chasing the native path, see
+## _unhandled_input() below for a manual fallback that computes the
+## clicked tab directly from this same raw event instead of depending on
+## it.
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		print("[DIAG] MainShell._input saw a mouse press at ", event.global_position, " button_index=", event.button_index, " current_tab=", _tab_bar.current_tab)
@@ -67,6 +76,32 @@ func _input(event: InputEvent) -> void:
 func _on_tab_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		print("[DIAG] TabBar.gui_input received a mouse press at ", event.global_position, " current_tab (before)=", _tab_bar.current_tab)
+
+## Manual fallback for switching tabs by clicking, bypassing TabBar's own
+## (confirmed-broken, cause still unknown) native click routing entirely.
+## _unhandled_input() only ever fires for an event nothing else already
+## consumed -- Godot's own Control GUI system marks an event handled the
+## moment any Control's _gui_input() processes it, so this whole function
+## simply never runs in an environment where the TabBar works normally,
+## and only activates as a safety net exactly when it doesn't (which is
+## the entire point: no risk of double-switching or interfering with a
+## working native click). Deliberately narrower than the native
+## mechanism -- it only recognizes clicks on a tab's own body, not its
+## close button, so closing a tab by clicking its X still goes through
+## the native path alone; if that turns out to be broken too, it needs
+## its own follow-up, not a guess bolted on here.
+func _unhandled_input(event: InputEvent) -> void:
+	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
+		return
+	var local_pos: Vector2 = _tab_bar.get_global_transform().affine_inverse() * event.global_position
+	if not Rect2(Vector2.ZERO, _tab_bar.size).has_point(local_pos):
+		return
+	for i in range(_tab_bar.tab_count):
+		if _tab_bar.get_tab_rect(i).has_point(local_pos):
+			print("[DIAG] manual fallback caught an unhandled click on tab ", i, " (native TabBar routing missed it)")
+			_select_tab(i)
+			get_viewport().set_input_as_handled()
+			return
 
 ## Guaranteed keyboard fallback for switching tabs, independent of whatever
 ## might be preventing a real click from reaching the TabBar Control (still
