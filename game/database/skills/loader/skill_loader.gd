@@ -129,6 +129,8 @@ static func _build_effect(effect_data: Dictionary, status_registry: Dictionary) 
 			var effect := TurnOrderOverrideEffect.new()
 			effect.mode = _parse_turn_order_mode(effect_data.get("mode", "shuffle"))
 			return effect
+		"taunt":
+			return TauntEffect.new()
 		_:
 			push_error("Unknown skill effect type: %s" % effect_type)
 			return null

@@ -216,6 +216,12 @@ func _render_battlefield(state: BattleState) -> void:
 		child.queue_free()
 
 	_targeting_label.visible = _mode == MODE_TARGETING
+	# If anyone on the opponent's side is taunting (Selflessness et al.),
+	# ActionExecutor redirects any SINGLE_ENEMY skill to them regardless of
+	# what's clicked here -- so only that card is offered as a target at
+	# all, rather than letting the player pick someone else and have the
+	# hit silently land on a different monster than the one they chose.
+	var taunting_monster := state.get_taunting_monster(_opponent_side())
 	var seen := {}
 	for slot in range(BattleController.ACTIVE_SLOT_COUNT):
 		var monster := state.get_monster_at(_opponent_side(), slot)
@@ -223,7 +229,7 @@ func _render_battlefield(state: BattleState) -> void:
 			if seen.has(monster.instance_id):
 				continue
 			seen[monster.instance_id] = true
-		_opponent_panel_grid.add_child(_build_monster_card(monster, false))
+		_opponent_panel_grid.add_child(_build_monster_card(monster, false, taunting_monster))
 
 ## Main Party (your active lineup) and Second Party (bench) render as two
 ## separate rows -- from the STAGED proposed formation (_staged_active_ids),
@@ -534,7 +540,11 @@ func _on_apply_formation_pressed() -> void:
 	_advance_to_next_pending_slot()
 	_refresh()
 
-func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
+## forced_target is only meaningful for opponent cards (mine == false):
+## when non-null, only that instance is offered as a clickable target (see
+## _render_battlefield()'s own doc comment on why -- a taunting monster
+## redirects any SINGLE_ENEMY skill to itself regardless of what's picked).
+func _build_monster_card(instance: MonsterInstance, mine: bool, forced_target: MonsterInstance = null) -> Button:
 	var cell := Button.new()
 	var width_scale := instance.species.slots if instance != null else 1
 	cell.custom_minimum_size = Vector2(CARD_BASE_WIDTH * width_scale, 100)
@@ -608,6 +618,8 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 		name_label.text = "%s (fainted)" % base_name
 	elif instance.is_defending:
 		name_label.text = "%s (Defending)" % base_name
+	elif instance.is_taunting:
+		name_label.text = "%s (Taunting)" % base_name
 	else:
 		name_label.text = base_name
 	name_label.clip_text = true
@@ -660,7 +672,8 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 		mp_text.set_anchors_preset(Control.PRESET_FULL_RECT)
 		vbox.add_child(mp_bar)
 
-	if not mine and _mode == MODE_TARGETING and not instance.is_fainted():
+	var forced_elsewhere := forced_target != null and instance != null and instance.instance_id != forced_target.instance_id
+	if not mine and _mode == MODE_TARGETING and not instance.is_fainted() and not forced_elsewhere:
 		cell.disabled = false
 		cell.pressed.connect(_on_target_picked.bind(instance.instance_id))
 	else:

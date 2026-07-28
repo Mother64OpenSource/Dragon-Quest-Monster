@@ -16,11 +16,13 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 		actor.is_defending = true
 		ctx.event_bus.emit_event(DefendEvent.new(actor.instance_id), ctx.state.turn_number)
 		return
-	# Defend protects until this monster's own next action, whatever that
-	# turns out to be -- so taking any OTHER action (even one later
-	# prevented/fizzled/missed; a turn boundary still passed) clears it
-	# here, before any of the early-return paths below.
+	# Defend/Taunt (Selflessness et al.) both protect/redirect only until
+	# this monster's own next action, whatever that turns out to be -- so
+	# taking any OTHER action (even one later prevented/fizzled/missed; a
+	# turn boundary still passed) clears them here, before any of the
+	# early-return paths below.
 	actor.is_defending = false
+	actor.is_taunting = false
 
 	var skill: SkillData = skill_lookup.get(action.skill_id)
 	if skill == null:
@@ -66,12 +68,25 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 			return
 
 	var target := ctx.state.get_monster_by_instance_id(action.target_instance_id)
+	# Taunt (Selflessness et al.) redirects every SINGLE_ENEMY skill to
+	# whoever on the opposing side is currently taunting, regardless of
+	# what target was actually submitted -- enforced here, not just left to
+	# the UI's own target picker, since a network peer's submitted action
+	# must resolve identically on both sides of a lockstep battle no matter
+	# which client's target-picker restrictions it went through. Only
+	# redirects if the submitted target isn't already the taunter, so the
+	# common case (correctly targeting the taunter directly) is a no-op.
+	if skill.target_type == SkillData.TargetType.SINGLE_ENEMY:
+		var taunting_monster := ctx.state.get_taunting_monster(_opposite_side(actor.side))
+		if taunting_monster != null and (target == null or target.instance_id != taunting_monster.instance_id):
+			target = taunting_monster
+	var resolved_target_id := target.instance_id if target != null else action.target_instance_id
 	var target_invalid := skill.target_type == SkillData.TargetType.SINGLE_ENEMY \
 		and (target == null or target.is_fainted())
 
 	var effective_mp_cost := _effective_mp_cost(skill, actor)
 	if target_invalid or actor.current_mp < effective_mp_cost:
-		var fizzled_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
+		var fizzled_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, resolved_target_id)
 		fizzled_event.fizzled = true
 		ctx.event_bus.emit_event(fizzled_event, ctx.state.turn_number)
 		return
@@ -79,7 +94,7 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 	actor.current_mp -= effective_mp_cost
 
 	var missed := not ctx.rng.chance(_effective_accuracy(status_data, skill, actor))
-	var used_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, action.target_instance_id)
+	var used_event := SkillUsedEvent.new(actor.instance_id, action.skill_id, resolved_target_id)
 	used_event.missed = missed
 	ctx.event_bus.emit_event(used_event, ctx.state.turn_number)
 	if missed:
@@ -101,6 +116,9 @@ static func _effective_mp_cost(skill: SkillData, actor: MonsterInstance) -> int:
 	for trait_effect in actor.active_traits:
 		multiplier *= trait_effect.get_mp_cost_multiplier(skill)
 	return maxi(0, MathUtils.round_half_up(float(skill.mp_cost) * multiplier))
+
+static func _opposite_side(side: String) -> String:
+	return "side_b" if side == "side_a" else "side_a"
 
 ## "skill" (Gobstop/Skill Sealed) blocks everything except the universal
 ## "attack" id -- a category match alone can't express this, since Attack

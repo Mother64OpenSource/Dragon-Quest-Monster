@@ -5,9 +5,7 @@
 	"display_name": "Selflessness",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 30.0,
-			"type": "damage"
+			"type": "taunt"
 		}
 	],
 	"id": "selflessness",

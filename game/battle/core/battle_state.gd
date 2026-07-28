@@ -55,6 +55,20 @@ func get_active_monsters(side: String) -> Array[MonsterInstance]:
 		result.append(team[team_index])
 	return result
 
+## Whichever monster on `side` is currently taunting (see
+## MonsterInstance.is_taunting) -- shared by ActionExecutor (the actual
+## redirect + damage-multiplier enforcement) and the battle UI (restricting
+## which enemy cards are even clickable as a target), so both agree on
+## exactly the same answer. get_active_monsters() already returns monsters
+## in ascending slot order, so "first match" is deterministic (lowest slot
+## wins) in the rare case more than one monster on the same side is somehow
+## taunting at once. Null if nobody on this side is taunting right now.
+func get_taunting_monster(side: String) -> MonsterInstance:
+	for monster in get_active_monsters(side):
+		if not monster.is_fainted() and monster.is_taunting:
+			return monster
+	return null
+
 func get_monster_at(side: String, slot: int) -> MonsterInstance:
 	var slots := _active_slots_for_side(side)
 	if slot < 0 or slot >= slots.size():

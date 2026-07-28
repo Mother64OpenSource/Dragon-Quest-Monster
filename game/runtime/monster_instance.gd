@@ -40,6 +40,17 @@ var tension_level: int = 0
 ## the real DQ "Defend" command's "lasts until your next turn" duration.
 var is_defending: bool = false
 
+## Set by TauntEffect (Selflessness et al.), cleared the moment this
+## monster's own next action executes -- same "until your next turn"
+## lifetime as is_defending, see ActionExecutor.execute(). While true,
+## every SINGLE_ENEMY skill the opposing side uses gets redirected to this
+## monster regardless of what target was actually picked (see
+## ActionExecutor.execute() and BattleState.get_taunting_monster()), and
+## incoming damage is increased rather than reduced
+## (DamageEffect._run_damage_hooks()) -- "takes damage instead of an ally,
+## but takes significantly more of it."
+var is_taunting: bool = false
+
 func _init(p_instance_id: int, p_species: MonsterSpecies, p_side: String, p_slot: int) -> void:
 	instance_id = p_instance_id
 	species = p_species

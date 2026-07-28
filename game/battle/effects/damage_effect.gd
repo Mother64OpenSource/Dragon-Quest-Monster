@@ -13,6 +13,10 @@ const TENSION_DAMAGE_PERCENT_PER_LEVEL := 0.25
 ## placeholder constants) -- the classic "Defend" command roughly halves
 ## incoming damage until the defender's own next turn.
 const DEFEND_DAMAGE_MULTIPLIER := 0.5
+## Selflessness's own description says only "significantly increases
+## damage taken," with no real sourced number -- a documented placeholder,
+## same honesty convention as this file's other invented constants.
+const TAUNT_DAMAGE_MULTIPLIER := 1.5
 
 @export var category: Category = Category.PHYSICAL
 @export var power: int = 0
@@ -142,6 +146,8 @@ func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: Monste
 		damage = trait_effect.on_before_damage_taken(ctx, target, user, damage, element)
 	if target.is_defending:
 		damage = MathUtils.round_half_up(float(damage) * DEFEND_DAMAGE_MULTIPLIER)
+	if target.is_taunting:
+		damage = MathUtils.round_half_up(float(damage) * TAUNT_DAMAGE_MULTIPLIER)
 	return maxi(0, damage)
 
 ## WeaponData.bonus_vs_families is matched case-insensitively against the

@@ -74,6 +74,7 @@ func run() -> bool:
 	_check_weapon_equip_mechanics()
 	_check_weapon_effects_mechanics()
 	_check_blacksmith_mechanics()
+	_check_taunt_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -2498,6 +2499,86 @@ func _check_blacksmith_mechanics() -> void:
 		"the same unknown item is unflagged when blacksmith_db is omitted (backward compatible)",
 		roster.validate_member(unknown_item_loadout, monster_db, SkillSetDatabase.new()).is_empty()
 	)
+
+## Real report: "the enemy shouldn't attack my other monster, just the
+## taunting one." Selflessness's own fixture used to be a plain self-
+## damage DamageEffect (an import mistake -- see wiki/log.md), which did
+## nothing resembling "takes damage instead of an ally" at all. Builds a
+## 2-monster side_b (so there's a genuine "other monster" to prove the
+## redirect actually diverts away from, not just a 1v1 where any target
+## trivially "works") and drives everything through the real
+## ActionExecutor.execute() + SkillDatabase-loaded skill, not a hand-built
+## fake, so this exercises the same code path a real battle does.
+func _check_taunt_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+	var side_a := team_builder.build_team(["slime"], "side_a")
+	var side_b := team_builder.build_team(["golem", "dracky"], "side_b")
+	var event_bus := BattleEventBus.new()
+	var state := BattleState.new(DeterministicRng.new(1), event_bus)
+	state.side_a_team = side_a
+	state.side_b_team = side_b
+	state.set_active_at("side_a", 0, 0)
+	state.set_active_at("side_b", 0, 0)
+	state.set_active_at("side_b", 1, 1)
+	var ctx := BattleContext.new(state)
+	var attacker := side_a[0]
+	var golem := side_b[0]
+	var dracky := side_b[1]
+
+	# --- skill data itself: selflessness now applies TauntEffect, not damage ---
+	var selflessness := team_builder.skill_database.get_skill("selflessness")
+	_check(
+		"selflessness's own fixture is a self-targeted TauntEffect, not a damage effect",
+		selflessness.target_type == SkillData.TargetType.SELF
+		and selflessness.effects.size() == 1 and selflessness.effects[0] is TauntEffect
+	)
+	selflessness.effects[0].apply(ctx, dracky, dracky)
+	_check("applying selflessness's effect sets is_taunting on the caster", dracky.is_taunting)
+	dracky.is_taunting = false  # reset -- the rest of this check drives it directly for determinism
+
+	# --- the actual reported bug: attacking golem while dracky taunts must redirect to dracky ---
+	dracky.is_taunting = true
+	var offense: int = attacker.get_effective_stat("attack")
+	var dracky_defense: int = dracky.get_effective_stat("defense")
+	var base_damage := DamageFormula.calculate(team_builder.skill_registry["attack"].effects[0].power, offense, dracky_defense)
+	var expected_taunt_damage := MathUtils.round_half_up(float(base_damage) * DamageEffect.TAUNT_DAMAGE_MULTIPLIER)
+	ActionExecutor.execute(ctx, Action.new(attacker.instance_id, "attack", golem.instance_id), team_builder.skill_registry)
+	_check("golem (the monster actually clicked) takes no damage at all while dracky is taunting", golem.current_hp == golem.species.base_hp)
+	var redirected_hit: DamageAppliedEvent = null
+	for event in ctx.event_bus.get_log():
+		if event is DamageAppliedEvent:
+			redirected_hit = event
+	_check("the hit lands on dracky (the taunter) instead of the clicked golem", redirected_hit != null and redirected_hit.target_instance_id == dracky.instance_id)
+	_check("taunting increases damage taken to the hand-computed multiplied amount", redirected_hit != null and redirected_hit.amount == expected_taunt_damage)
+	_check("the taunt-multiplied damage is strictly more than the un-taunted baseline", expected_taunt_damage > base_damage)
+
+	var narrated_skill_used: SkillUsedEvent = null
+	for event in ctx.event_bus.get_log():
+		if event is SkillUsedEvent:
+			narrated_skill_used = event
+	_check("SkillUsedEvent itself also reports the redirected target, not the originally-clicked one (correct narration)", narrated_skill_used != null and narrated_skill_used.target_instance_id == dracky.instance_id)
+
+	# --- lifetime: clears the moment the taunter takes its own next action ---
+	ActionExecutor.execute(ctx, Action.new(dracky.instance_id, "attack", attacker.instance_id), team_builder.skill_registry)
+	_check("is_taunting clears the moment this monster's own next action executes", not dracky.is_taunting)
+
+	# --- already targeting the taunter directly is a harmless no-op ---
+	var direct_harness_state := BattleState.new(DeterministicRng.new(1), BattleEventBus.new())
+	var direct_side_a := team_builder.build_team(["slime"], "side_a")
+	var direct_side_b := team_builder.build_team(["golem", "dracky"], "side_b")
+	direct_harness_state.side_a_team = direct_side_a
+	direct_harness_state.side_b_team = direct_side_b
+	direct_harness_state.set_active_at("side_a", 0, 0)
+	direct_harness_state.set_active_at("side_b", 0, 0)
+	direct_harness_state.set_active_at("side_b", 1, 1)
+	var direct_ctx := BattleContext.new(direct_harness_state)
+	direct_side_b[1].is_taunting = true
+	ActionExecutor.execute(direct_ctx, Action.new(direct_side_a[0].instance_id, "attack", direct_side_b[1].instance_id), team_builder.skill_registry)
+	var direct_hit: DamageAppliedEvent = null
+	for event in direct_ctx.event_bus.get_log():
+		if event is DamageAppliedEvent:
+			direct_hit = event
+	_check("directly targeting the taunter already (no redirect needed) still lands on them correctly", direct_hit != null and direct_hit.target_instance_id == direct_side_b[1].instance_id)
 
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
 ## isolated per status scenario so one test's active_status/event log can't
