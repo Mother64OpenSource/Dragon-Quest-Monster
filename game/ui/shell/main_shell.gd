@@ -26,7 +26,7 @@ const TeamBuilderScreenScene := preload("res://ui/team_builder/team_builder_scre
 ## are tracked here instead.
 var _pages: Array[Control] = []
 
-@onready var _tab_bar: TabBar = $VBoxContainer/TabBar
+@onready var _tab_bar: TabBar = $VBoxContainer/TabBarPanel/TabBar
 @onready var _pages_container: Control = $VBoxContainer/PagesContainer
 
 func _ready() -> void:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://ui/shell/main_shell.gd" id="1"]
+[ext_resource type="Theme" path="res://ui/team_builder/showdown_panel_theme.tres" id="2"]
 
 [node name="MainShell" type="Control"]
 layout_mode = 3
@@ -15,8 +16,14 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TabBar" type="TabBar" parent="VBoxContainer"]
+[node name="TabBarPanel" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+theme = ExtResource("2")
+
+[node name="TabBar" type="TabBar" parent="VBoxContainer/TabBarPanel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
 
 [node name="PagesContainer" type="Control" parent="VBoxContainer"]
 layout_mode = 2

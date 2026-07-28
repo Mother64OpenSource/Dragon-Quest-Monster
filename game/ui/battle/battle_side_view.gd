@@ -102,8 +102,15 @@ var _staged_active_ids: Array[int] = []
 @onready var _result_panel: PanelContainer = $Root/MainColumn/ResultPanel
 @onready var _result_label: Label = $Root/MainColumn/ResultPanel/VBoxContainer/ResultLabel
 @onready var _back_button: Button = $Root/MainColumn/ResultPanel/VBoxContainer/BackButton
+@onready var _background_display: BackgroundDisplay = $BackgroundDisplay
 
 func _ready() -> void:
+	# Reads the same shared preference TeamBuilderScreen's "Change
+	# Background..." button writes -- whatever the player already chose for
+	# Home shows through here too, rather than the battle screen having its
+	# own separate (and by default empty) background choice.
+	var background_pref_manager := BackgroundPreferenceManager.new()
+	_background_display.set_background_path(background_pref_manager.get_preference().background_path)
 	_result_panel.visible = false
 	_back_button.pressed.connect(_on_back_pressed)
 	_fight_button.pressed.connect(_on_fight_pressed)
