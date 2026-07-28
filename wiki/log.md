@@ -2946,4 +2946,16 @@ First fix attempt swapped the OS-path reads for direct `res://`-path reads inste
 
 **Real fix**: reverted all three to a plain `load(res://...)` call -- confirmed working via a one-off script (`load()` on all three file types now returns a proper resource) before touching the source, then applied to `BattleMusicManager._ready()`, `BattleAudio._load_sfx()`, and `ArtStylePreferenceManager.load_texture()`, each simplified back down (no more manual byte-reading at all). Re-exported and re-ran the actual .exe a third time: **no warnings**, clean startup. Each class's doc comment now explicitly flags this as the lesson: if a freshly-added, still-unimported asset shows the "works in editor, missing once exported" symptom again, the fix is re-running an editor rescan so it gets a proper `.import`, not reaching for the old bypass -- which is now actively wrong, not just unnecessary, given the project's assets are all genuinely imported at this point.
 
-All 11 headless suites re-run clean after each round of changes. The exported `Dragon Quest Monster Showdown.exe` (226MB, single file) is confirmed to launch standalone and reach the Home screen with none of the three previously-broken asset types warning. Still pending: an authenticated `gh` (installed via winget this session, not yet logged in -- needs the user's own browser-based login) to actually publish a GitHub Release, and the user's decision on making the (currently private) repo public, which a public release requires.
+All 11 headless suites re-run clean after each round of changes. The exported `Dragon Quest Monster Showdown.exe` (226MB, single file) is confirmed to launch standalone and reach the Home screen with none of the three previously-broken asset types warning.
+
+## [2026-07-29] release | v1.0 -- first public GitHub release
+
+User confirmed the plan from the previous entry: make the repo public and publish a real release. Completed the one step that needed the user directly (browser-based `gh auth login` device-code approval, since credential entry can't be done on their behalf) once they approved it, then:
+
+- `gh repo edit ... --visibility public` -- flipped `Mother64OpenSource/Dragon-Quest-Monster` from private to public (confirmed via an unauthenticated fetch of the repo page, which now loads instead of 404ing).
+- Tagged `v1.0` and pushed it.
+- Zipped the exported build (`Dragon-Quest-Monster-Showdown-Windows-v1.0.zip`, 153MB compressed from the 226MB single-file .exe) and published it as a GitHub Release via `gh release create`, with player-facing notes (how to run it, Windows-only for this release, a fan-project/non-affiliation notice given this uses Square Enix's Dragon Quest Monsters IP) rather than the internal wiki-style detail.
+
+Release: https://github.com/Mother64OpenSource/Dragon-Quest-Monster/releases/tag/v1.0
+
+This is the project's first artifact meant for someone other than the two of us to actually download and run -- everything up to this point was source code and an internal wiki. Future releases should bump the tag/zip version and re-run the export + the real-build verification from the previous entry (don't assume a change that passes the 11 headless suites also survives being packed into a real .exe -- that's exactly what this pair of entries caught).
