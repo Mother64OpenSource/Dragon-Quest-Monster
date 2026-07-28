@@ -21,6 +21,12 @@ extends Node
 
 const SFX_DIR := "res://assets/audio/sfx/"
 
+## Looked up via get_node(), not the bare "SfxVolume" identifier -- matches
+## this project's own NetworkManager/ArtStylePreference/BattleMusic
+## convention (bare autoload identifiers fail to compile under a --script
+## headless invocation, see those classes' own doc comments).
+@onready var _sfx_volume: SfxVolumeManager = get_node("/root/SfxVolume")
+
 @onready var _attack_player_weapon: AudioStreamPlayer = $WeaponAttackPlayer
 @onready var _attack_player_natural: AudioStreamPlayer = $NaturalAttackPlayer
 @onready var _attack_player_cast: AudioStreamPlayer = $CastPlayer
@@ -165,4 +171,5 @@ func _play(player: AudioStreamPlayer, stream: AudioStream) -> void:
 	if stream == null:
 		return
 	player.stream = stream
+	player.volume_db = _sfx_volume.get_volume_db()
 	player.play()

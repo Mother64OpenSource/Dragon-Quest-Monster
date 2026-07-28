@@ -110,6 +110,10 @@ var _staged_active_ids: Array[int] = []
 ## reason as _art_style above.
 @onready var _battle_music: BattleMusicManager = get_node("/root/BattleMusic")
 @onready var _music_volume_slider: HSlider = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/MusicVolumeRow/MusicVolumeSlider
+## Looked up via get_node(), not the bare "SfxVolume" identifier -- same
+## reason as _battle_music above.
+@onready var _sfx_volume: SfxVolumeManager = get_node("/root/SfxVolume")
+@onready var _sfx_volume_slider: HSlider = $Root/MainColumn/Battlefield/MarginContainer/VBox/HeaderRow/SfxVolumeRow/SfxVolumeSlider
 @onready var _background_display: BackgroundDisplay = $BackgroundDisplay
 
 func _ready() -> void:
@@ -132,6 +136,8 @@ func _ready() -> void:
 	_apply_formation_button.pressed.connect(_on_apply_formation_pressed)
 	_music_volume_slider.value = _battle_music.volume
 	_music_volume_slider.value_changed.connect(_battle_music.set_volume)
+	_sfx_volume_slider.value = _sfx_volume.volume
+	_sfx_volume_slider.value_changed.connect(_sfx_volume.set_volume)
 
 ## opponent_name is online-play only (see game/net/) -- the local 2-window
 ## flow (battle_setup_screen.gd) has no separate "opponent" identity to show,

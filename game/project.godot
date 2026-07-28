@@ -23,6 +23,7 @@ config/features=PackedStringArray("4.7")
 Network="*res://net/network_manager.gd"
 ArtStylePreference="*res://save/art_style_preference.gd"
 BattleMusic="*res://save/battle_music_manager.gd"
+SfxVolume="*res://save/sfx_volume_manager.gd"
 
 [debug]
 
