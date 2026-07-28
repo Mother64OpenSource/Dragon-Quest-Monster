@@ -205,7 +205,8 @@ func _render_battlefield(state: BattleState) -> void:
 ## card shown there isn't necessarily that monster). Dragging a card
 ## between the rows stages a proposed change (see _on_party_card_dropped())
 ## rather than submitting it immediately -- wired only while
-## _mode == MODE_MENU, so a drag can't happen mid skill-pick/target-pick.
+## _can_edit_formation() (a drag can't happen mid skill-pick/target-pick,
+## nor once this whole side's turn is already locked in for the round).
 func _render_my_party(state: BattleState) -> void:
 	_clear_flow(_main_party_row)
 	_clear_flow(_second_party_row)
@@ -220,7 +221,7 @@ func _render_my_party(state: BattleState) -> void:
 			seen[monster.instance_id] = true
 		var card := _build_monster_card(monster, true)
 		_highlight_if_commanding(card, monster)
-		if _mode == MODE_MENU:
+		if _can_edit_formation():
 			_wire_active_slot_drag(card, slot, monster)
 		_main_party_row.add_child(card)
 
@@ -228,11 +229,31 @@ func _render_my_party(state: BattleState) -> void:
 		if _staged_active_ids.has(monster.instance_id):
 			continue
 		var card := _build_monster_card(monster, true)
-		if _mode == MODE_MENU and not monster.is_fainted():
+		if _can_edit_formation() and not monster.is_fainted():
 			_wire_bench_card_drag(card, monster)
 		_second_party_row.add_child(card)
 
-	_apply_formation_button.disabled = not _has_staged_changes(state)
+	_apply_formation_button.disabled = not _can_edit_formation() or not _has_staged_changes(state)
+
+## Formation edits (drag-and-drop between Main/Second Party, and the Apply
+## Formation button) are only meaningful while this side still has at
+## least one active slot that hasn't submitted its action yet this round.
+## Staging a change is legitimate and expected mid-round -- e.g. you just
+## Fight-commanded slot 0 and want to rearrange before commanding slot 1 --
+## but once every slot has submitted (_current_slot == -1, the exact same
+## moment _render_command_panel() switches to "Waiting for the other
+## side...") there is nothing left to apply: submit_swap() would silently
+## reject every one of them anyway (BattleController gates per-slot
+## submission itself), so leaving the grid draggable was purely
+## misleading -- a player could drag a bench monster into an
+## already-locked active slot, see the grid visibly "accept" it, and
+## reasonably believe they'd switched their monster even though the
+## engine's own state never actually changed (this is the real bug behind
+## "I can switch my monster even though my turn is over": the UI let you
+## keep staging, the engine correctly refused, but nothing told the player
+## that refusal happened).
+func _can_edit_formation() -> bool:
+	return _mode == MODE_MENU and _current_slot != -1
 
 func _clear_flow(container: HFlowContainer) -> void:
 	for child in container.get_children():
@@ -305,7 +326,14 @@ func _is_party_drag_data(data: Variant) -> bool:
 ## before, just staged rather than immediate. Dropping a monster onto a
 ## card of its own kind (active-onto-active, bench-onto-bench) is a no-op.
 ## Never touches the engine -- see _on_apply_formation_pressed() for that.
+##
+## Guarded by _can_edit_formation() here too, not just at the drag-wiring
+## call sites in _render_my_party() -- closes the narrow race where a drag
+## already in flight (started while a slot was still pending) gets
+## dropped just after that slot's own action submits mid-drag.
 func _on_party_card_dropped(dragged_instance_id: int, target_slot: int, target_bench_instance_id: int) -> void:
+	if not _can_edit_formation():
+		return
 	var state := _controller.get_state()
 	var dragged := state.get_monster_by_instance_id(dragged_instance_id)
 	if dragged == null or dragged.side != _my_side or dragged.is_fainted():
