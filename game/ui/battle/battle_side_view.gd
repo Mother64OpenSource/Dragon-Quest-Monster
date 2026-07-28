@@ -102,6 +102,10 @@ var _staged_active_ids: Array[int] = []
 @onready var _result_panel: PanelContainer = $Root/MainColumn/ResultPanel
 @onready var _result_label: Label = $Root/MainColumn/ResultPanel/VBoxContainer/ResultLabel
 @onready var _back_button: Button = $Root/MainColumn/ResultPanel/VBoxContainer/BackButton
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own NetworkManager convention (see
+## network_setup_screen.gd's _network var).
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 @onready var _background_display: BackgroundDisplay = $BackgroundDisplay
 
 func _ready() -> void:
@@ -462,8 +466,7 @@ func _build_monster_card(instance: MonsterInstance, mine: bool) -> Button:
 	icon.custom_minimum_size = Vector2(32, 32)
 	icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	if not instance.species.sprite_path.is_empty():
-		icon.texture = load(instance.species.sprite_path)
+	icon.texture = _art_style.load_texture(instance.species)
 	header.add_child(icon)
 
 	# A status badge perches on the portrait's own corner rather than

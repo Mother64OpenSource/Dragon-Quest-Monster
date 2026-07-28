@@ -41,6 +41,9 @@ var _weapon_button_ids: Array[String] = []
 @onready var _species_label: Label = $Layout/SpeciesLabel
 @onready var _traits_label: Label = $Layout/TraitsLabel
 @onready var _skills_box: HBoxContainer = $Layout/SkillsBox
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own NetworkManager convention.
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 @onready var _skills_button: Button = $Layout/SkillsButton
 @onready var _weapon_button: OptionButton = $Layout/WeaponButton
 @onready var _blacksmith_button: Button = $Layout/BlacksmithButton
@@ -87,7 +90,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		return
 
 	custom_minimum_size = Vector2(SPACE_UNIT_WIDTH * _species.slots, CELL_HEIGHT)
-	_species_icon.texture = load(_species.sprite_path) if not _species.sprite_path.is_empty() else null
+	_species_icon.texture = _art_style.load_texture(_species)
 	_species_label.text = "%s [Slot %d]" % [_species.display_name, _species.slots]
 	_update_traits_label()
 	_skills_box.visible = false

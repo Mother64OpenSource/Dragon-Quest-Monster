@@ -194,6 +194,13 @@ var _idle_tween: Tween = null
 @onready var _opp_anchors: Array[Marker3D] = [$OppSlot0, $OppSlot1, $OppSlot2, $OppSlot3]
 @onready var _my_anchors: Array[Marker3D] = [$MySlot0, $MySlot1, $MySlot2, $MySlot3]
 @onready var _camera: Camera3D = $Camera3D
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own established NetworkManager convention (see
+## network_setup_screen.gd), since a bare autoload identifier fails to
+## resolve as a compile-time symbol in some invocation contexts (e.g. a
+## --script headless run) even though the autoload itself is registered
+## and working fine at runtime.
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 
 func _ready() -> void:
 	_build_slot_tiles()
@@ -390,8 +397,7 @@ func _get_or_create(instance_id: int, species: MonsterSpecies) -> Sprite3D:
 	# ground -- full billboarding also tilts with the camera's pitch, which
 	# looks wrong for something standing on a floor.
 	sprite.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
-	if not species.sprite_path.is_empty():
-		sprite.texture = load(species.sprite_path)
+	sprite.texture = _art_style.load_texture(species)
 	sprite.pixel_size = _pixel_size_for(sprite.texture, species.slots)
 	add_child(sprite)
 	_sprites[instance_id] = sprite

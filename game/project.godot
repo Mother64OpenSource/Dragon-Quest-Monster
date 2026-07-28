@@ -21,6 +21,7 @@ config/features=PackedStringArray("4.7")
 [autoload]
 
 Network="*res://net/network_manager.gd"
+ArtStylePreference="*res://save/art_style_preference.gd"
 
 [debug]
 

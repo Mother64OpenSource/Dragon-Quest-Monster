@@ -35,6 +35,9 @@ var _sort_ascending: bool = true
 @onready var _family_filter: OptionButton = $VBoxContainer/FiltersRow/FamilyFilter
 @onready var _results_tree: Tree = $VBoxContainer/ResultsRow/ResultsTree
 @onready var _details_icon: TextureRect = $VBoxContainer/ResultsRow/DetailsPanel/DetailsIcon
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own NetworkManager convention.
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 @onready var _details_label: Label = $VBoxContainer/ResultsRow/DetailsPanel/DetailsLabel
 @onready var _traits_box: VBoxContainer = $VBoxContainer/ResultsRow/DetailsPanel/TraitsScroll/TraitsBox
 
@@ -209,10 +212,7 @@ func _on_confirmed() -> void:
 	species_chosen.emit(species_id)
 
 func _load_icon(species: MonsterSpecies) -> Texture2D:
-	if species.sprite_path.is_empty():
-		return null
-	var texture: Texture2D = load(species.sprite_path)
-	return texture
+	return _art_style.load_texture(species)
 
 func _show_details(species: MonsterSpecies) -> void:
 	if species == null:

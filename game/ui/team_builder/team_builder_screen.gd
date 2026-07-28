@@ -43,9 +43,13 @@ var _profile: PlayerProfile
 @onready var _battle_button: Button = $TopBarPanel/TopBar/BattleButton
 @onready var _online_battle_button: Button = $TopBarPanel/TopBar/OnlineBattleButton
 @onready var _profile_button: Button = $TopBarPanel/TopBar/ProfileButton
+@onready var _scribble_art_check_box: CheckBox = $TopBarPanel/TopBar/ScribbleArtCheckBox
 @onready var _change_background_button: Button = $TopBarPanel/TopBar/ChangeBackgroundButton
 @onready var _profile_dialog: PlayerProfileDialog = $PlayerProfileDialog
 @onready var _background_display: BackgroundDisplay = $BackgroundDisplay
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own NetworkManager convention.
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 @onready var _background_file_dialog: FileDialog = $BackgroundFileDialog
 
 func _ready() -> void:
@@ -54,6 +58,8 @@ func _ready() -> void:
 	_profile_button.pressed.connect(_on_profile_button_pressed)
 	_change_background_button.pressed.connect(_on_change_background_pressed)
 	_background_file_dialog.file_selected.connect(_on_background_file_selected)
+	_scribble_art_check_box.button_pressed = _art_style.use_scribble_art
+	_scribble_art_check_box.toggled.connect(_on_scribble_art_toggled)
 	# Button doesn't auto-constrain icon size to something sane the way
 	# ItemList does -- same class of issue already hit with Tree's monster
 	# icons in MonsterPickerDialog (see wiki/log.md), just a different
@@ -124,7 +130,18 @@ func _on_background_file_selected(path: String) -> void:
 	if not dest_path.is_empty():
 		_background_display.set_background_path(dest_path)
 
+## Repaints everything on this screen that shows a monster icon and is
+## still alive right now -- the profile button and whichever team is
+## currently loaded in the editor panel. The monster picker dialog and
+## every other screen (battle, network setup) don't need an explicit
+## nudge here: they all resolve ArtStylePreference.resolve_sprite_path()
+## fresh each time they're shown/rebuilt anyway.
+func _on_scribble_art_toggled(pressed: bool) -> void:
+	_art_style.set_use_scribble_art(pressed)
+	_refresh_profile_button()
+	_team_editor_panel.refresh()
+
 func _refresh_profile_button() -> void:
 	var species := monster_db.get_species(_profile.avatar_species_id)
-	_profile_button.icon = load(species.sprite_path) if species != null and not species.sprite_path.is_empty() else null
+	_profile_button.icon = _art_style.load_texture(species)
 	_profile_button.text = _profile.player_name

@@ -19,6 +19,9 @@ var _selected_avatar_species_id: String = ""
 @onready var _avatar_label: Label = $VBoxContainer/AvatarRow/AvatarPreviewLabel
 @onready var _choose_avatar_button: Button = $VBoxContainer/AvatarRow/ChooseAvatarButton
 @onready var _monster_picker: MonsterPickerDialog = $MonsterPickerDialog
+## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
+## matches this project's own NetworkManager convention.
+@onready var _art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
 
 func _ready() -> void:
 	title = "Edit Profile"
@@ -48,7 +51,7 @@ func _refresh_avatar_preview() -> void:
 		_avatar_icon.texture = null
 		_avatar_label.text = "(no avatar)"
 		return
-	_avatar_icon.texture = load(species.sprite_path) if not species.sprite_path.is_empty() else null
+	_avatar_icon.texture = _art_style.load_texture(species)
 	_avatar_label.text = species.display_name
 
 ## A blank name silently reverts to whatever it was before, rather than

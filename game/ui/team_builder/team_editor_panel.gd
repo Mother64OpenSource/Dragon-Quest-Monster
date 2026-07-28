@@ -69,6 +69,14 @@ func setup(p_roster: TeamRosterManager, p_monster_db: MonsterDatabase, p_skill_d
 	blacksmith_db = p_blacksmith_db
 	_monster_picker.setup(monster_db, trait_db)
 
+## Re-renders the currently-loaded team's rows in place, without changing
+## which team is loaded -- used when something that affects how a row
+## LOOKS changes out from under it (e.g. toggling ArtStylePreference)
+## rather than the team data itself.
+func refresh() -> void:
+	if current_team != null:
+		_rebuild_rows()
+
 ## "" means "no team selected" — shows the empty state.
 func load_team(team_id: String) -> void:
 	current_team = null if team_id.is_empty() else roster.get_team(team_id)

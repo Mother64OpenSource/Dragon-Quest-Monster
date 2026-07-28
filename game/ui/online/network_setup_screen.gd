@@ -246,9 +246,8 @@ func _check_ready_to_start() -> void:
 
 func _load_avatar_icon(species_id: String) -> Texture2D:
 	var species := monster_db.get_species(species_id)
-	if species == null or species.sprite_path.is_empty():
-		return null
-	return load(species.sprite_path)
+	var art_style: ArtStylePreferenceManager = get_node("/root/ArtStylePreference")
+	return art_style.load_texture(species)
 
 func _launch_battle() -> void:
 	_battle_launched = true
