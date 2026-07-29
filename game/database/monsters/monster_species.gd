@@ -32,14 +32,8 @@ enum Rank { F, E, D, C, B, A, S, SS }
 
 ## Synthesis slot count (1-4), sourced from the sheet's "Size" column (e.g.
 ## "S [1]", "G [4]"). Determines total available skill panels: slots + 2
-## (see MonsterSpecies.available_skill_sets / total_skill_points).
+## (see MonsterSpecies.available_skill_sets).
 @export var slots: int = 1
-
-## Total skill points this species has to allocate across available_skill_sets
-## (see MonsterLoadout.skill_point_allocation). A rank-based placeholder,
-## since there's no leveling/EXP system yet to derive this from -- see
-## wiki/log.md.
-@export var total_skill_points: int = 0
 
 ## Weapon-type ids ("sword"/"spear"/"axe"/"club"/"whip"/"claw"/"staff", see
 ## WeaponData.ALL_TYPE_IDS) this species can equip, sourced from the source

@@ -112,10 +112,11 @@ func _finish_import(team: SavedTeam, preserve_id: bool) -> SavedTeam:
 ## Every skill id currently unlocked for this loadout: the species' always-
 ## known baseline (starting_skill_ids, e.g. "attack") plus whatever each
 ## allocated skillset's point investment has unlocked so far. Every monster
-## can invest points in every skillset that exists -- there's no
-## species-specific restriction on *which* skillsets are reachable (per the
-## real games; see wiki/log.md), only on the total pool of points
-## (species.total_skill_points) available to spread across them.
+## can invest points in every skillset that exists, up to that panel's own
+## real max rung -- there's no species-specific restriction on *which*
+## skillsets are reachable, and no shared cross-panel point pool either,
+## since skill points are effectively unlimited in the real games (skill
+## seeds are farmable; see wiki/log.md).
 static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpecies, skillset_db: SkillSetDatabase) -> Array[String]:
 	var result: Array[String] = species.starting_skill_ids.duplicate()
 	for skillset_id in loadout.skill_point_allocation:
@@ -139,11 +140,15 @@ func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skill
 		errors.append("Unknown species id: %s" % loadout.species_id)
 		return errors
 
-	var total_allocated := 0
+	# No shared cross-panel point pool -- skill points are effectively
+	# unlimited (skill seeds are farmable; see wiki/log.md). The only real
+	# cap is each panel's own ladder: investing past its top rung is
+	# meaningless, so that's what gets flagged, not some species-wide total.
 	for skillset_id in loadout.skill_point_allocation:
-		total_allocated += int(loadout.skill_point_allocation[skillset_id])
-	if total_allocated > species.total_skill_points:
-		errors.append("Allocated %d skill points but '%s' only has %d" % [total_allocated, loadout.species_id, species.total_skill_points])
+		var allocated: int = int(loadout.skill_point_allocation[skillset_id])
+		var skillset := skillset_db.get_skillset(skillset_id)
+		if skillset != null and allocated > skillset.max_sp():
+			errors.append("Allocated %d points to '%s' but its ladder only goes up to %d" % [allocated, skillset_id, skillset.max_sp()])
 
 	var unlocked := get_unlocked_skill_ids(loadout, species, skillset_db)
 	for skill_id in loadout.equipped_skill_ids:

@@ -32,3 +32,13 @@ func unlocked_skill_ids(points: int) -> Array[String]:
 		if t.get("kind") == "skill" and int(t.get("sp", 0)) <= points:
 			result.append(t["skill_id"])
 	return result
+
+## The top rung of this panel's own ladder -- the real, sourced cap on how
+## many points can usefully go into this one skillset, independent of any
+## other panel (there's no shared cross-panel point pool; skill points are
+## effectively unlimited via farmable skill seeds, see wiki/log.md).
+func max_sp() -> int:
+	var result := 0
+	for t in thresholds:
+		result = maxi(result, int(t.get("sp", 0)))
+	return result

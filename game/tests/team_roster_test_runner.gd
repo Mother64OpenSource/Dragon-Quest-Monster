@@ -189,11 +189,14 @@ func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase, s
 	bad_skill_loadout.equipped_skill_ids = ["double_slash"]
 	_check("loadout with unknown-to-species skill flagged", roster.validate_member(bad_skill_loadout, monster_db, skillset_db).size() == 1)
 
+	# "slimer"'s own ladder tops out at 75 SP (share_magic) -- there's no
+	# separate species-wide pool, so 999 is only invalid because it overshoots
+	# that panel's own top rung.
 	var over_allocated_loadout := MonsterLoadout.new()
 	over_allocated_loadout.species_id = "slime"
 	over_allocated_loadout.skill_point_allocation = {"slimer": 999}
 	_check(
-		"loadout allocating more points than the species has is flagged",
+		"loadout allocating past a skillset's own max rung is flagged",
 		roster.validate_member(over_allocated_loadout, monster_db, skillset_db).size() == 1
 	)
 

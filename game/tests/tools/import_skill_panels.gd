@@ -14,11 +14,6 @@ const MONSTER_FIXTURES_DIR := "res://database/monsters/fixtures"
 const STAT_BOOST_REGEX := "^([A-Z]{2,4})\\s*\\+\\s*(\\d+)$"
 const STAT_CODE_MAP := {"ATK": "attack", "DEF": "defense", "AGI": "agility", "WIS": "wisdom", "HP": "hp", "MP": "mp"}
 
-# Rank-based skill point pool -- a placeholder pending a real leveling/EXP
-# system to derive this from (see wiki/log.md).
-const RANK_TOTAL_SP := {
-	"F": 100, "E": 130, "D": 160, "C": 200, "B": 250, "A": 300, "S": 400, "SS": 500
-}
 
 var _stat_boost_re: RegEx
 
@@ -90,7 +85,6 @@ func _initialize() -> void:
 		var data: Dictionary = json.data
 		data["starting_skill_ids"] = ["attack"]
 		data["available_skill_sets"] = available_ids
-		data["total_skill_points"] = RANK_TOTAL_SP.get(data.get("rank", "F"), 100)
 		_write_json(path, data)
 		monsters_updated += 1
 

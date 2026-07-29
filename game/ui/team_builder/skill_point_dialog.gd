@@ -3,14 +3,15 @@ extends AcceptDialog
 
 ## Skill-point allocation editor for one MonsterLoadout: a SpinBox per
 ## skillset and a checkbox per unlocked move within it. Every monster can
-## invest points in every skillset that exists (per the real games -- there's
-## no species-specific restriction on which panels are reachable, only on the
-## total point pool -- species.total_skill_points -- available to spread
-## across them; see wiki/log.md). With 200+ panels to page through, a search
-## field filters the list down by panel name. Mutates the loadout live (no
-## separate save step, consistent with the rest of this screen's
-## auto-save-on-edit approach) and emits allocation_changed() after every
-## change so the owning row can update its summary + persist.
+## invest points in every skillset that exists, up to that panel's own real
+## max rung -- there's no species-specific restriction on which panels are
+## reachable, and no shared cross-panel point pool either, since skill points
+## are effectively unlimited in the real games (skill seeds are farmable; see
+## wiki/log.md). With 200+ panels to page through, a search field filters the
+## list down by panel name. Mutates the loadout live (no separate save step,
+## consistent with the rest of this screen's auto-save-on-edit approach) and
+## emits allocation_changed() after every change so the owning row can update
+## its summary + persist.
 
 signal allocation_changed()
 
@@ -55,10 +56,7 @@ func _rebuild() -> void:
 		if not unlocked.has(skill_id):
 			_loadout.equipped_skill_ids.erase(skill_id)
 
-	var total_used := 0
-	for skillset_id in _loadout.skill_point_allocation:
-		total_used += int(_loadout.skill_point_allocation[skillset_id])
-	_header_label.text = "%s — Skill Points: %d / %d" % [_species.display_name, total_used, _species.total_skill_points]
+	_header_label.text = _species.display_name
 
 	var all_skillsets := _skillset_db.get_all_skillsets()
 	all_skillsets.sort_custom(func(a, b): return a.display_name < b.display_name)
@@ -67,9 +65,9 @@ func _rebuild() -> void:
 	for skillset in all_skillsets:
 		if not search_lower.is_empty() and not skillset.display_name.to_lower().contains(search_lower):
 			continue
-		_panels_list.add_child(_build_panel_section(skillset, total_used))
+		_panels_list.add_child(_build_panel_section(skillset))
 
-func _build_panel_section(skillset: SkillSetData, total_used: int) -> Control:
+func _build_panel_section(skillset: SkillSetData) -> Control:
 	var section := VBoxContainer.new()
 
 	var header := HBoxContainer.new()
@@ -79,12 +77,10 @@ func _build_panel_section(skillset: SkillSetData, total_used: int) -> Control:
 	header.add_child(name_label)
 
 	var current_points: int = int(_loadout.skill_point_allocation.get(skillset.id, 0))
-	var other_used := total_used - current_points
-	var remaining_for_this := maxi(0, _species.total_skill_points - other_used)
 
 	var spinbox := SpinBox.new()
 	spinbox.min_value = 0
-	spinbox.max_value = remaining_for_this
+	spinbox.max_value = skillset.max_sp()
 	spinbox.value = current_points
 	spinbox.value_changed.connect(_on_points_changed.bind(skillset.id))
 	header.add_child(spinbox)

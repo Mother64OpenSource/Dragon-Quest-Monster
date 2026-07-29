@@ -10,8 +10,10 @@ extends Resource
 @export var equipped_skill_ids: Array[String] = []
 
 ## skillset_id -> points invested. Keys should be a subset of the species'
-## available_skill_sets; sum should not exceed species.total_skill_points
-## (enforced by TeamRosterManager.validate_member, not here).
+## available_skill_sets; each value should not exceed that skillset's own
+## max defined threshold (enforced by TeamRosterManager.validate_member, not
+## here) -- there's no shared cross-panel point pool, since skill points are
+## effectively unlimited via farmable skill seeds.
 @export var skill_point_allocation: Dictionary = {}
 
 ## "" means no weapon equipped. Should be a WeaponData whose type is in
