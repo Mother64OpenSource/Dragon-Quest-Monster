@@ -23,6 +23,11 @@
 			"sp": 40
 		},
 		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "sleep_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "wave_of_panic",
 			"sp": 90

@@ -1,0 +1,56 @@
+{
+	"display_name": "Miracle Guard SP",
+	"id": "miracle_guard_sp",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 25,
+			"trait_id": "blunt_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "decelerate_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "dim_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "curse_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "paralysis_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 175,
+			"trait_id": "zam_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 225,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "cold_breath_ward"
+		}
+	]
+}

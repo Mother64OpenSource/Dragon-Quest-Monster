@@ -1,0 +1,61 @@
+{
+	"display_name": "Udon Spirits",
+	"id": "udon_spirits",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cremate",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 200
+		}
+	]
+}

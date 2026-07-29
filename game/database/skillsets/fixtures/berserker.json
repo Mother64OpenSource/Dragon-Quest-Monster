@@ -33,6 +33,11 @@
 			"sp": 50
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "sag_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kerplunk_dance",
 			"sp": 100

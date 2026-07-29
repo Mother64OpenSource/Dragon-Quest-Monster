@@ -23,6 +23,11 @@
 			"sp": 40
 		},
 		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "curse_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "boulder_bash",
 			"sp": 80

@@ -1,0 +1,59 @@
+{
+	"display_name": "Marbled Mayhem",
+	"id": "marbled_mayhem",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "fizzle_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_multiplier",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "give_magic",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapall",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "fizzle_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "thordain",
+			"sp": 200
+		}
+	]
+}

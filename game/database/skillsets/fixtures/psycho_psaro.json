@@ -18,6 +18,21 @@
 			"sp": 25
 		},
 		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "dazzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 65,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 85,
+			"trait_id": "curse_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "disruptive_wave",
 			"sp": 110

@@ -13,6 +13,16 @@
 			"sp": 20
 		},
 		{
+			"kind": "trait",
+			"sp": 35,
+			"trait_id": "hunter_mech"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "fizzle_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "unnatural_order",
 			"sp": 70
@@ -21,6 +31,11 @@
 			"kind": "skill",
 			"skill_id": "big_banga",
 			"sp": 95
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "comeback_kid"
 		},
 		{
 			"kind": "skill",

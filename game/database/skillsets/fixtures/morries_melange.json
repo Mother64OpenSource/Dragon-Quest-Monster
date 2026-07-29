@@ -1,0 +1,49 @@
+{
+	"display_name": "Morries Melange",
+	"id": "morries_melange",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sap",
+			"sp": 5
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomph",
+			"sp": 30
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 50,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 70
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 95,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "genius_talent_scout"
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"display_name": "Way of the White Rabbit",
+	"id": "way_of_the_white_rabbit",
+	"thresholds": [
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wave_of_relief",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shining_bow",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "star_fall",
+			"sp": 160
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_of_the_stars",
+			"sp": 200
+		}
+	]
+}

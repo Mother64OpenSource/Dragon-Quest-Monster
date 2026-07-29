@@ -1,0 +1,59 @@
+{
+	"display_name": "Pufferfish Counterattack",
+	"id": "pufferfish_counterattack",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 200
+		}
+	]
+}

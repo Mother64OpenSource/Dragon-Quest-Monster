@@ -1,0 +1,46 @@
+{
+	"display_name": "Ruler of the Battlefield SP",
+	"id": "ruler_of_the_battlefield_sp",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "shuffle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "party_change",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 250
+		}
+	]
+}

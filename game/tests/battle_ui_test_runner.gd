@@ -22,29 +22,30 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 
-	_check_bridge(monster_db, skill_db, trait_db)
-	_check_controller_gating(monster_db, skill_db, trait_db)
-	_check_explicit_targeting(monster_db, skill_db, trait_db)
-	_check_full_battle(monster_db, skill_db, trait_db)
-	_check_multi_slot(monster_db, skill_db, trait_db)
-	_check_orders_swap(monster_db, skill_db, trait_db)
-	_check_size_aware_swap(monster_db, skill_db, trait_db)
-	_check_size_aware_packing(monster_db, skill_db, trait_db)
-	_check_multi_slot_acts_once_per_turn(monster_db, skill_db, trait_db)
-	_check_turn_resolved_ordering(monster_db, skill_db, trait_db)
-	_check_forfeit(monster_db, skill_db, trait_db)
-	await _check_side_view_rendering(monster_db, skill_db, trait_db)
-	await _check_party_grid_and_drag(monster_db, skill_db, trait_db)
-	await _check_party_grid_click_to_select(monster_db, skill_db, trait_db)
-	await _check_forfeit_button(monster_db, skill_db, trait_db)
-	await _check_arena_rendering(monster_db, skill_db, trait_db)
-	await _check_bounce_and_audio(monster_db, skill_db, trait_db)
-	await _check_attacks_animate_sequentially(monster_db, skill_db, trait_db)
-	await _check_status_icon_on_card(monster_db, skill_db, trait_db)
-	await _check_floating_text(monster_db, skill_db, trait_db)
-	await _check_defend_button(monster_db, skill_db, trait_db)
-	await _check_damage_and_status_numbers(monster_db, skill_db, trait_db)
+	_check_bridge(monster_db, skill_db, trait_db, skillset_db)
+	_check_controller_gating(monster_db, skill_db, trait_db, skillset_db)
+	_check_explicit_targeting(monster_db, skill_db, trait_db, skillset_db)
+	_check_full_battle(monster_db, skill_db, trait_db, skillset_db)
+	_check_multi_slot(monster_db, skill_db, trait_db, skillset_db)
+	_check_orders_swap(monster_db, skill_db, trait_db, skillset_db)
+	_check_size_aware_swap(monster_db, skill_db, trait_db, skillset_db)
+	_check_size_aware_packing(monster_db, skill_db, trait_db, skillset_db)
+	_check_multi_slot_acts_once_per_turn(monster_db, skill_db, trait_db, skillset_db)
+	_check_turn_resolved_ordering(monster_db, skill_db, trait_db, skillset_db)
+	_check_forfeit(monster_db, skill_db, trait_db, skillset_db)
+	await _check_side_view_rendering(monster_db, skill_db, trait_db, skillset_db)
+	await _check_party_grid_and_drag(monster_db, skill_db, trait_db, skillset_db)
+	await _check_party_grid_click_to_select(monster_db, skill_db, trait_db, skillset_db)
+	await _check_forfeit_button(monster_db, skill_db, trait_db, skillset_db)
+	await _check_arena_rendering(monster_db, skill_db, trait_db, skillset_db)
+	await _check_bounce_and_audio(monster_db, skill_db, trait_db, skillset_db)
+	await _check_attacks_animate_sequentially(monster_db, skill_db, trait_db, skillset_db)
+	await _check_status_icon_on_card(monster_db, skill_db, trait_db, skillset_db)
+	await _check_floating_text(monster_db, skill_db, trait_db, skillset_db)
+	await _check_defend_button(monster_db, skill_db, trait_db, skillset_db)
+	await _check_damage_and_status_numbers(monster_db, skill_db, trait_db, skillset_db)
 
 	if _all_passed:
 		print("BattleUiTestRunner: ALL CHECKS PASSED")
@@ -52,6 +53,12 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 		print("BattleUiTestRunner: SOME CHECKS FAILED")
 	return _all_passed
 
+## Each entry is [species_id, skill_point_allocation]. There's no separate
+## "equip a skill" step anymore -- a monster simply knows every skill its
+## species starts with (e.g. "attack") plus whatever each allocated
+## skillset's point investment has unlocked (see
+## TeamRosterManager.get_unlocked_skill_ids()), so the allocation dict is
+## all a test needs to specify beyond the species itself.
 func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	var team := SavedTeam.new()
 	team.id = team_name
@@ -60,36 +67,33 @@ func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	for entry in entries:
 		var loadout := MonsterLoadout.new()
 		loadout.species_id = entry[0]
-		var skill_ids: Array[String] = []
-		for id in entry[1]:
-			skill_ids.append(id)
-		loadout.equipped_skill_ids = skill_ids
+		loadout.skill_point_allocation = (entry[1] as Dictionary).duplicate()
 		members.append(loadout)
 	team.members = members
 	return team
 
-func _check_bridge(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team := _make_team("Bridge Test", [["slime", ["attack", "frizz"]]])
-	var instances := TeamToBattleBridge.build_team(team, "side_a", monster_db, skill_db, trait_db, 0)
+func _check_bridge(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team := _make_team("Bridge Test", [["slime", {"slimer": 2}]])
+	var instances := TeamToBattleBridge.build_team(team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	_check("bridge builds one instance per loadout", instances.size() == 1)
 	_check("bridge assigns the right species", instances[0].species.id == "slime")
 	_check("bridge assigns the right side", instances[0].side == "side_a")
 	var learned_ids: Array[String] = []
 	for skill in instances[0].learned_skills:
 		learned_ids.append(skill.id)
-	_check("bridge's learned_skills matches equipped_skill_ids", learned_ids == ["attack", "frizz"])
+	_check("bridge's learned_skills matches what the allocation actually unlocks", learned_ids == ["attack", "frizz"])
 
-func _new_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, team_a: SavedTeam = null, team_b: SavedTeam = null) -> BattleController:
+func _new_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase, team_a: SavedTeam = null, team_b: SavedTeam = null) -> BattleController:
 	if team_a == null:
-		team_a = _make_team("Side A Test", [["slime", ["attack"]]])
+		team_a = _make_team("Side A Test", [["slime", {}]])
 	if team_b == null:
-		team_b = _make_team("Side B Test", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+		team_b = _make_team("Side B Test", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	return BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
-func _check_controller_gating(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var controller := _new_controller(monster_db, skill_db, trait_db)
+func _check_controller_gating(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db)
 	# A lambda captures local variables by value -- mutating a captured Array
 	# (appending) is visible outside; reassigning a captured int/String isn't.
 	var resolved_events: Array = []
@@ -107,8 +111,8 @@ func _check_controller_gating(monster_db: MonsterDatabase, skill_db: SkillDataba
 	controller.submit_fight("side_b", 0, "attack", side_a_actor.instance_id)
 	_check("both sides submitting resolves exactly one turn", resolved_events.size() == 1)
 
-func _check_explicit_targeting(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var controller := _new_controller(monster_db, skill_db, trait_db)
+func _check_explicit_targeting(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db)
 	var side_b_actor := controller.get_state().get_monster_at("side_b", 0)
 
 	controller.submit_fight("side_a", 0, "attack", side_b_actor.instance_id)
@@ -120,8 +124,8 @@ func _check_explicit_targeting(monster_db: MonsterDatabase, skill_db: SkillDatab
 		not queued.is_empty() and queued[0].target_instance_id == side_b_actor.instance_id
 	)
 
-func _check_full_battle(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var controller := _new_controller(monster_db, skill_db, trait_db)
+func _check_full_battle(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db)
 	var winners: Array = []
 	var probe := func(winner: String) -> void: winners.append(winner)
 	controller.battle_ended.connect(probe)
@@ -148,8 +152,8 @@ func _check_full_battle(monster_db: MonsterDatabase, skill_db: SkillDatabase, tr
 ## could never find an unsubmitted slot again -- both windows would get
 ## stuck forever on "Waiting for the other side...". Checked from inside
 ## the signal handler itself, matching exactly what the view's handler sees.
-func _check_turn_resolved_ordering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var controller := _new_controller(monster_db, skill_db, trait_db)
+func _check_turn_resolved_ordering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db)
 	var seen_fresh: Array = []
 	var probe := func(_events: Array) -> void:
 		seen_fresh.append(not controller.is_slot_submitted("side_a", 0))
@@ -165,8 +169,8 @@ func _check_turn_resolved_ordering(monster_db: MonsterDatabase, skill_db: SkillD
 		seen_fresh.size() == 1 and seen_fresh[0] == true
 	)
 
-func _check_forfeit(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var controller := _new_controller(monster_db, skill_db, trait_db)
+func _check_forfeit(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db)
 
 	var submitted_calls: Array = []
 	controller.action_submitted.connect(func(side, slot, kind, payload): submitted_calls.append([side, slot, kind, payload]))
@@ -187,10 +191,10 @@ func _check_forfeit(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_
 	controller.forfeit("side_b")
 	_check("forfeiting after the battle already ended changes nothing", controller.get_state().winner_side == "side_b" and winners.size() == 1)
 
-func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Multi A", [["slime", ["attack"]], ["dracky", ["attack"]]])
-	var team_b := _make_team("Multi B", [["golem", ["attack"]]])
-	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Multi A", [["slime", {}], ["dracky", {}]])
+	var team_b := _make_team("Multi B", [["golem", {}]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	_check("side_a has 2 pending slots (2-member team)", controller.get_pending_slots("side_a") == [0, 1])
 	_check("side_b has 1 pending slot (1-member team)", controller.get_pending_slots("side_b") == [0])
@@ -213,15 +217,15 @@ func _check_multi_slot(monster_db: MonsterDatabase, skill_db: SkillDatabase, tra
 	controller.submit_fight("side_b", 0, "attack", a_slot0.instance_id)
 	_check("turn resolves once every pending slot on both sides has submitted", resolved_count.size() == 1)
 
-func _check_orders_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_orders_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	# 5 members: slots 0-3 go active immediately (ACTIVE_SLOT_COUNT=4), the
 	# 5th sits on the bench -- exactly the case submit_swap needs to exercise.
 	var team_a := _make_team("Bench Test", [
-		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
-		["healslime", ["attack"]], ["slime", ["attack"]],
+		["slime", {}], ["dracky", {}], ["golem", {}],
+		["healslime", {}], ["slime", {}],
 	])
-	var team_b := _make_team("Bench Opponent", [["golem", ["attack"]]])
-	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var team_b := _make_team("Bench Opponent", [["golem", {}]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	var bench := controller.get_living_bench("side_a")
 	_check("5th team member starts on the bench", bench.size() == 1)
@@ -244,17 +248,17 @@ func _check_orders_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, tr
 ## sit active at once. submit_swap() now displaces every monster in the
 ## incoming monster's way, whole-footprint, rather than just the one at
 ## the target index.
-func _check_size_aware_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_size_aware_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	# 4 one-slot monsters active (slots 0-3) + a 2-slot bench reserve
 	# (aamon). Swapping aamon in at slot 0 must displace BOTH the 1-slot
 	# monster at slot 0 and the separate 1-slot monster at slot 1 -- not
 	# just slot 0 -- since aamon needs both indices.
 	var team_a := _make_team("Size Aware Swap", [
-		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
-		["healslime", ["attack"]], ["aamon", ["attack"]],
+		["slime", {}], ["dracky", {}], ["golem", {}],
+		["healslime", {}], ["aamon", {}],
 	])
-	var team_b := _make_team("Size Aware Swap Opponent", [["golem", ["attack"]]])
-	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var team_b := _make_team("Size Aware Swap Opponent", [["golem", {}]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 	var state := controller.get_state()
 
 	var slot0_before := state.get_monster_at("side_a", 0)
@@ -292,15 +296,15 @@ func _check_size_aware_swap(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	)
 	_check("a displaced monster's slot resets to -1", slot0_before.slot == -1 and slot1_before.slot == -1)
 
-func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	# aamon=2 slots, aquarion=3 slots, asura_zoma=4 slots (real fixtures).
 	# Team: [2-slot, 1-slot, 1-slot] should pack as slots [0,1]=aamon,
 	# [2]=slime, [3]=dracky -- exactly filling the 4-slot budget.
 	var team_a := _make_team("Packing A", [
-		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
+		["aamon", {}], ["slime", {}], ["dracky", {}],
 	])
-	var team_b := _make_team("Packing B", [["golem", ["attack"]]])
-	var controller_a := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var team_b := _make_team("Packing B", [["golem", {}]])
+	var controller_a := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 	var state_a := controller_a.get_state()
 
 	var aamon := state_a.side_a_team[0]
@@ -316,8 +320,8 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 	_check("side_a's pending slots are deduped per monster, not per raw slot (aamon once, at its first slot)", controller_a.get_pending_slots("side_a") == [0, 2, 3])
 
 	# A 4-slot monster occupies the whole roster alone; nothing else fits.
-	var team_c := _make_team("Packing C", [["asura_zoma", ["attack"]], ["slime", ["attack"]]])
-	var controller_c := _new_controller(monster_db, skill_db, trait_db, team_c, team_b)
+	var team_c := _make_team("Packing C", [["asura_zoma", {}], ["slime", {}]])
+	var controller_c := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_c, team_b)
 	var state_c := controller_c.get_state()
 	_check("4-slot monster occupies all 4 active slots alone", state_c.get_slots_for_team_index("side_a", 0) == [0, 1, 2, 3])
 	_check("nothing else can be active alongside a 4-slot monster", controller_c.get_living_bench("side_a").size() == 1)
@@ -326,9 +330,9 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 	# doesn't fit at all] -- a monster that doesn't fit is skipped, and a
 	# smaller *later* team member still gets a chance at the remaining room.
 	var team_d := _make_team("Packing D", [
-		["aquarion", ["attack"]], ["asura_zoma", ["attack"]], ["slime", ["attack"]],
+		["aquarion", {}], ["asura_zoma", {}], ["slime", {}],
 	])
-	var controller_d := _new_controller(monster_db, skill_db, trait_db, team_d, team_b)
+	var controller_d := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_d, team_b)
 	var state_d := controller_d.get_state()
 	_check("3-slot monster fills slots 0-2", state_d.get_slots_for_team_index("side_a", 0) == [0, 1, 2])
 	_check("4-slot monster doesn't fit the remaining 1 slot and is skipped", state_d.get_monster_at("side_a", 3) != state_d.side_a_team[1])
@@ -339,10 +343,10 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 	# already filled all 4 active slots with aamon(2)+slime(1)+dracky(1),
 	# leaving both extra members on the bench from the start.
 	var team_e := _make_team("Packing E", [
-		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
-		["healslime", ["attack"]], ["golem", ["attack"]],
+		["aamon", {}], ["slime", {}], ["dracky", {}],
+		["healslime", {}], ["golem", {}],
 	])
-	var controller_e := _new_controller(monster_db, skill_db, trait_db, team_e, team_b)
+	var controller_e := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_e, team_b)
 	var state_e := controller_e.get_state()
 	_check("2 bench reserves available before any faint", controller_e.get_living_bench("side_a").size() == 2)
 	var aamon_e := state_e.side_a_team[0]
@@ -363,12 +367,12 @@ func _check_size_aware_packing(monster_db: MonsterDatabase, skill_db: SkillDatab
 ## queue) whichever action was submitted last silently replaced the first.
 ## Confirms end-to-end, via the actual turn resolution, that a 2-slot
 ## monster produces exactly one SkillUsedEvent per turn.
-func _check_multi_slot_acts_once_per_turn(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_multi_slot_acts_once_per_turn(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	var team_a := _make_team("SingleAction A", [
-		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
+		["aamon", {}], ["slime", {}], ["dracky", {}],
 	])
-	var team_b := _make_team("SingleAction B", [["golem", ["attack"]]])
-	var controller := _new_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var team_b := _make_team("SingleAction B", [["golem", {}]])
+	var controller := _new_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 	var state := controller.get_state()
 
 	var aamon := state.side_a_team[0]
@@ -388,11 +392,11 @@ func _check_multi_slot_acts_once_per_turn(monster_db: MonsterDatabase, skill_db:
 			aamon_actions += 1
 	_check("a 2-slot monster's action fires exactly once per turn, not once per slot it occupies", aamon_actions == 1)
 
-func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("View Test A", [["slime", ["attack", "frizz"]]])
-	var team_b := _make_team("View Test B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("View Test A", [["slime", {"slimer": 2}]])
+	var team_b := _make_team("View Test B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -459,19 +463,19 @@ func _check_side_view_rendering(monster_db: MonsterDatabase, skill_db: SkillData
 ## you could only ever pick ONE replacement per slot with no way to
 ## compare a couple of combinations first. Nothing should touch the
 ## engine until _on_apply_formation_pressed() runs.
-func _check_party_grid_and_drag(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_party_grid_and_drag(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	# Two bench reserves (aamon, a 2nd slime) rather than one -- lets the
 	# "changed my mind" step below pick between two genuinely-benched
 	# options for the same slot, without ever touching an already-active
 	# monster (a separate, deliberately distinct case -- see the last part
 	# of this check).
 	var team_a := _make_team("Party Grid A", [
-		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
-		["healslime", ["attack"]], ["aamon", ["attack"]], ["slime", ["attack"]],
+		["slime", {}], ["dracky", {}], ["golem", {}],
+		["healslime", {}], ["aamon", {}], ["slime", {}],
 	])
-	var team_b := _make_team("Party Grid B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var team_b := _make_team("Party Grid B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -576,14 +580,14 @@ func _check_party_grid_and_drag(monster_db: MonsterDatabase, skill_db: SkillData
 ## directly rather than simulating a real click -- consistent with how
 ## _check_party_grid_and_drag above calls _on_party_card_dropped()
 ## directly rather than simulating a real drag.
-func _check_party_grid_click_to_select(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+func _check_party_grid_click_to_select(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
 	var team_a := _make_team("Click Select A", [
-		["slime", ["attack"]], ["dracky", ["attack"]], ["golem", ["attack"]],
-		["healslime", ["attack"]], ["aamon", ["attack"]],
+		["slime", {}], ["dracky", {}], ["golem", {}],
+		["healslime", {}], ["aamon", {}],
 	])
-	var team_b := _make_team("Click Select B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+	var team_b := _make_team("Click Select B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -663,11 +667,11 @@ func _check_party_grid_click_to_select(monster_db: MonsterDatabase, skill_db: Sk
 func _count_cards(container: Container) -> int:
 	return container.get_child_count()
 
-func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Forfeit UI A", [["slime", ["attack"]]])
-	var team_b := _make_team("Forfeit UI B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Forfeit UI A", [["slime", {}]])
+	var team_b := _make_team("Forfeit UI B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -703,11 +707,11 @@ func _check_forfeit_button(monster_db: MonsterDatabase, skill_db: SkillDatabase,
 ## position/scale math, and node identity/lifecycle are all pure data,
 ## checkable the same way the rest of this project's headless suites
 ## already prove non-visual properties of things that are normally seen.
-func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Arena A", [["aamon", ["attack"]]])
-	var team_b := _make_team("Arena B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Arena A", [["aamon", {}]])
+	var team_b := _make_team("Arena B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -752,8 +756,8 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 
 	# A 4-slot monster fills the whole roster alone -- scale should follow
 	# the same formula at the other end of the range.
-	var team_c := _make_team("Arena C", [["asura_zoma", ["attack"]]])
-	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, 0)
+	var team_c := _make_team("Arena C", [["asura_zoma", {}]])
+	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_c := BattleController.new(instances_c, instances_b, skill_db.skills_by_id)
 	var view_c: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_c)
@@ -773,8 +777,8 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	# render at the SAME on-screen height -- not whichever's source image
 	# happened to be taller, which is what a single flat pixel_size for
 	# everyone used to produce.
-	var team_f := _make_team("Arena F", [["slime", ["attack"]], ["dracky", ["attack"]]])
-	var instances_f := TeamToBattleBridge.build_team(team_f, "side_a", monster_db, skill_db, trait_db, 0)
+	var team_f := _make_team("Arena F", [["slime", {}], ["dracky", {}]])
+	var instances_f := TeamToBattleBridge.build_team(team_f, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_f := BattleController.new(instances_f, instances_b, skill_db.skills_by_id)
 	var view_f: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_f)
@@ -796,8 +800,8 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	# and has no living reserve left to backfill its slot keeps getting
 	# re-synced every refresh; if FAINTED_MODULATE stayed opaque, that
 	# resync would undo animate_faint()'s fade-out the moment it ran.
-	var team_d := _make_team("Arena D", [["slime", ["attack"]]])
-	var instances_d := TeamToBattleBridge.build_team(team_d, "side_a", monster_db, skill_db, trait_db, 0)
+	var team_d := _make_team("Arena D", [["slime", {}]])
+	var instances_d := TeamToBattleBridge.build_team(team_d, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_d := BattleController.new(instances_d, instances_b, skill_db.skills_by_id)
 	var view_d: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_d)
@@ -815,8 +819,8 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 
 	# animate_faint() itself: fades a still-visible sprite out over time,
 	# rather than the sync-driven instant snap to FAINTED_MODULATE above.
-	var team_g := _make_team("Arena G", [["slime", ["attack"]]])
-	var instances_g := TeamToBattleBridge.build_team(team_g, "side_a", monster_db, skill_db, trait_db, 0)
+	var team_g := _make_team("Arena G", [["slime", {}]])
+	var instances_g := TeamToBattleBridge.build_team(team_g, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_g := BattleController.new(instances_g, instances_b, skill_db.skills_by_id)
 	var view_g: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_g)
@@ -836,10 +840,10 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 	# slot at all, as opposed to merely fainted-but-still-there), its sprite
 	# should actually be freed, not linger forever.
 	var team_e := _make_team("Arena E", [
-		["aamon", ["attack"]], ["slime", ["attack"]], ["dracky", ["attack"]],
-		["healslime", ["attack"]], ["golem", ["attack"]],
+		["aamon", {}], ["slime", {}], ["dracky", {}],
+		["healslime", {}], ["golem", {}],
 	])
-	var instances_e := TeamToBattleBridge.build_team(team_e, "side_a", monster_db, skill_db, trait_db, 0)
+	var instances_e := TeamToBattleBridge.build_team(team_e, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_e := BattleController.new(instances_e, instances_b, skill_db.skills_by_id)
 	var view_e: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_e)
@@ -857,11 +861,11 @@ func _check_arena_rendering(monster_db: MonsterDatabase, skill_db: SkillDatabase
 ## revision): the attack Tween and the audio no-op guard. Tweens really do
 ## run against the SceneTree's frame clock in a headless run, so this can be
 ## proven by waiting real frames/time rather than needing any pixel rendering.
-func _check_bounce_and_audio(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Bounce A", [["slime", ["attack"]]])
-	var team_b := _make_team("Bounce B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_bounce_and_audio(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Bounce A", [["slime", {}]])
+	var team_b := _make_team("Bounce B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -951,11 +955,11 @@ func _check_bounce_and_audio(monster_db: MonsterDatabase, skill_db: SkillDatabas
 ## (and the turn counter it updates) would run almost immediately after both
 ## sides submit. Checking a beat later, while the sequential animations are
 ## still in progress, proves that's no longer the case.
-func _check_attacks_animate_sequentially(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Sequence A", [["slime", ["attack"]]])
-	var team_b := _make_team("Sequence B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_attacks_animate_sequentially(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Sequence A", [["slime", {}]])
+	var team_b := _make_team("Sequence B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -984,11 +988,11 @@ func _check_attacks_animate_sequentially(monster_db: MonsterDatabase, skill_db: 
 ## A monster's card should badge whatever status it's currently afflicted
 ## with -- a small icon carrying the status's real description as a hover
 ## tooltip, same tooltip-on-hover pattern already used for moves.
-func _check_status_icon_on_card(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Status Icon A", [["slime", ["attack"]]])
-	var team_b := _make_team("Status Icon B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_status_icon_on_card(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Status Icon A", [["slime", {}]])
+	var team_b := _make_team("Status Icon B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -1010,11 +1014,11 @@ func _check_status_icon_on_card(monster_db: MonsterDatabase, skill_db: SkillData
 ## for a missed/dodged/critical hit. Node creation/cleanup and text/color are
 ## all pure data, checkable the same way _check_arena_rendering() already
 ## proves other non-pixel properties of the 3D arena without real rendering.
-func _check_floating_text(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Floating Text A", [["slime", ["attack"]]])
-	var team_b := _make_team("Floating Text B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_floating_text(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Floating Text A", [["slime", {}]])
+	var team_b := _make_team("Floating Text B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -1049,11 +1053,11 @@ func _check_floating_text(monster_db: MonsterDatabase, skill_db: SkillDatabase, 
 ## BattleController/_animate_event() (not show_floating_text() directly, see
 ## _check_floating_text() above) so this exercises the actual wiring, not
 ## just the underlying primitive.
-func _check_damage_and_status_numbers(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Dmg Number A", [["slime", ["attack"]]])
-	var team_b := _make_team("Dmg Number B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_damage_and_status_numbers(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Dmg Number A", [["slime", {}]])
+	var team_b := _make_team("Dmg Number B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()
@@ -1079,8 +1083,8 @@ func _check_damage_and_status_numbers(monster_db: MonsterDatabase, skill_db: Ski
 
 	view.queue_free()
 
-	var team_c := _make_team("Poison Number A", [["slime", ["attack"]]])
-	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, 0)
+	var team_c := _make_team("Poison Number A", [["slime", {}]])
+	var instances_c := TeamToBattleBridge.build_team(team_c, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	var controller_c := BattleController.new(instances_c, instances_b, skill_db.skills_by_id)
 	var view_c: BattleSideView = SideViewScene.instantiate()
 	_tree.root.add_child(view_c)
@@ -1104,11 +1108,11 @@ func _check_damage_and_status_numbers(monster_db: MonsterDatabase, skill_db: Ski
 ## once the round actually resolves (submission alone only queues the
 ## action -- see ActionExecutor.execute()), and the acting monster's own
 ## card marks it as "(Defending)" until its next action.
-func _check_defend_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Defend UI A", [["slime", ["attack"]]])
-	var team_b := _make_team("Defend UI B", [["golem", ["attack"]]])
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, 100)
+func _check_defend_button(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Defend UI A", [["slime", {}]])
+	var team_b := _make_team("Defend UI B", [["golem", {}]])
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, 100)
 	var controller := BattleController.new(instances_a, instances_b, skill_db.skills_by_id)
 
 	var view: BattleSideView = SideViewScene.instantiate()

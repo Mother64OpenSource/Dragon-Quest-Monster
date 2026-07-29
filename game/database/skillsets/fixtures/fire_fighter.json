@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "inferno_slash",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "atk_roulette"
 		}
 	]
 }

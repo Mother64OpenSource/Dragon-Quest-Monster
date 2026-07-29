@@ -33,6 +33,16 @@
 			"sp": 70
 		},
 		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "zap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "sizz_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "shining_bow",
 			"sp": 150

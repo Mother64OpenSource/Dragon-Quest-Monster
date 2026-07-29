@@ -1,0 +1,59 @@
+{
+	"display_name": "Hokkaido Soul",
+	"id": "hokkaido_soul",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ocean_slash",
+			"sp": 200
+		}
+	]
+}

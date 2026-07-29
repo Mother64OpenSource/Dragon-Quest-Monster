@@ -1,0 +1,61 @@
+{
+	"display_name": "Honorable",
+	"id": "honorable",
+	"thresholds": [
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "copycat",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cursed_hammer",
+			"sp": 160
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "showstopper",
+			"sp": 200
+		}
+	]
+}

@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "showstopper",
 			"sp": 150
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "standard_killer"
 		}
 	]
 }

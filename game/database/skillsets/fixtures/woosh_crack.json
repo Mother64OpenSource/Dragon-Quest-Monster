@@ -31,6 +31,16 @@
 			"kind": "skill",
 			"skill_id": "crackle",
 			"sp": 70
+		},
+		{
+			"kind": "trait",
+			"sp": 85,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "crack_ward"
 		}
 	]
 }

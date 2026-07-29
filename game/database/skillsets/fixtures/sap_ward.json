@@ -1,0 +1,57 @@
+{
+	"display_name": "Sap Ward",
+	"id": "sap_ward",
+	"thresholds": [
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 5,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "agility"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "sap_ward"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 85,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "magic_miser"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 160,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "magic_scrooge"
+		}
+	]
+}

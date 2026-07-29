@@ -28,6 +28,11 @@
 			"sp": 50
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "zap_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kazap",
 			"sp": 90

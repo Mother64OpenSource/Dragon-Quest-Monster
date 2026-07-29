@@ -1,0 +1,51 @@
+{
+	"display_name": "Uber Dark Dynamiter",
+	"id": "uber_dark_dynamiter",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazam",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 150
+		}
+	]
+}

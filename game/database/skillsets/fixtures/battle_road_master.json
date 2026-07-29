@@ -1,0 +1,53 @@
+{
+	"display_name": "Battle Road Master",
+	"id": "battle_road_master",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 25
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 50
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 80,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter",
+			"sp": 100
+		},
+		{
+			"kind": "trait",
+			"sp": 130,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 160,
+			"trait_id": "master_of_weapons"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 200
+		}
+	]
+}

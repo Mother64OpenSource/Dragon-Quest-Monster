@@ -46,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "victimiser",
 			"sp": 90
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

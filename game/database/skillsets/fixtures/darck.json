@@ -28,6 +28,16 @@
 			"sp": 80
 		},
 		{
+			"kind": "trait",
+			"sp": 95,
+			"trait_id": "gobstopper_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "ban_dance_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "sublime_mist",
 			"sp": 140

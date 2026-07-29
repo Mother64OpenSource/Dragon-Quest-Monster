@@ -33,6 +33,11 @@
 			"sp": 95
 		},
 		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "frizz_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "disruptive_wave",
 			"sp": 150

@@ -1,0 +1,56 @@
+{
+	"display_name": "Uber Charmer",
+	"id": "uber_charmer",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "fizzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "snooze",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "great_swing",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sphere_of_silence",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafuddle",
+			"sp": 150
+		}
+	]
+}

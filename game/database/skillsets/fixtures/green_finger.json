@@ -41,6 +41,11 @@
 			"kind": "skill",
 			"skill_id": "miracle_slash",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "magic_regenerator"
 		}
 	]
 }

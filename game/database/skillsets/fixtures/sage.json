@@ -1,0 +1,60 @@
+{
+	"display_name": "Sage",
+	"id": "sage",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 5
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzleflash",
+			"sp": 25
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 40,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 55
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zing",
+			"sp": 90
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 110,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 130
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "magic_regenerator"
+		}
+	]
+}

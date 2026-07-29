@@ -1,0 +1,60 @@
+{
+	"display_name": "Dirt Man",
+	"id": "dirt_man",
+	"thresholds": [
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scapegoat_seal",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "smelly_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "nightmarish_shriek",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "metal_killer"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 200
+		}
+	]
+}

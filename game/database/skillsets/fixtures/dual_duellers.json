@@ -36,6 +36,16 @@
 			"kind": "skill",
 			"skill_id": "black_fog",
 			"sp": 73
+		},
+		{
+			"kind": "trait",
+			"sp": 88,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "magic_regenerator"
 		}
 	]
 }

@@ -1,0 +1,66 @@
+{
+	"display_name": "Parameter SP",
+	"id": "parameter_sp",
+	"thresholds": [
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 25,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 50,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 75,
+			"stat_name": "agility"
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 36,
+			"kind": "stat_boost",
+			"sp": 125,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 72,
+			"kind": "stat_boost",
+			"sp": 150,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 175,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 200,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 225,
+			"stat_name": "agility"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 250,
+			"stat_name": "wisdom"
+		}
+	]
+}

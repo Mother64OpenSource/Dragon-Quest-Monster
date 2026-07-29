@@ -1,0 +1,51 @@
+{
+	"display_name": "Cluboon II",
+	"id": "cluboon_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 8
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 16
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_bash",
+			"sp": 24
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 33
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 43
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 55
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "inaction_ward"
+		}
+	]
+}

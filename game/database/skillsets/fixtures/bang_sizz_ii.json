@@ -1,0 +1,56 @@
+{
+	"display_name": "Bang & Sizz II",
+	"id": "bang_sizz_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizz",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "sizz_ward"
+		}
+	]
+}

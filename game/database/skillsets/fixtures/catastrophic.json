@@ -1,0 +1,59 @@
+{
+	"display_name": "Catastrophic",
+	"id": "catastrophic",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "curse_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "cursed_attack"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomphle",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_for_the_lost",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "curse_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "worsen_demerit",
+			"sp": 200
+		}
+	]
+}

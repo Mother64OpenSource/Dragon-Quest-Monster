@@ -33,6 +33,11 @@
 			"sp": 95
 		},
 		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "drain_magic_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "fissure_strike",
 			"sp": 150

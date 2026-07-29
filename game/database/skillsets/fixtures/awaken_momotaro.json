@@ -1,0 +1,59 @@
+{
+	"display_name": "Awaken Momotaro",
+	"id": "awaken_momotaro",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "donk_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "donk",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "donk_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 200
+		}
+	]
+}

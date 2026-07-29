@@ -25,9 +25,10 @@ func run() -> bool:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 
-	_check_submission_order_independence(monster_db, skill_db, trait_db)
-	_check_team_dict_round_trip(monster_db, skill_db, trait_db)
+	_check_submission_order_independence(monster_db, skill_db, trait_db, skillset_db)
+	_check_team_dict_round_trip(monster_db, skill_db, trait_db, skillset_db)
 	_check_profile_dict_round_trip()
 
 	if _all_passed:
@@ -36,6 +37,9 @@ func run() -> bool:
 		print("NetworkLockstepTestRunner: SOME CHECKS FAILED")
 	return _all_passed
 
+## Each entry is [species_id, skill_point_allocation] -- see the identical
+## helper in battle_ui_test_runner.gd for why there's no separate "equip a
+## skill" step anymore.
 func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	var team := SavedTeam.new()
 	team.id = team_name
@@ -44,17 +48,14 @@ func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	for entry in entries:
 		var loadout := MonsterLoadout.new()
 		loadout.species_id = entry[0]
-		var skill_ids: Array[String] = []
-		for id in entry[1]:
-			skill_ids.append(id)
-		loadout.equipped_skill_ids = skill_ids
+		loadout.skill_point_allocation = (entry[1] as Dictionary).duplicate()
 		members.append(loadout)
 	team.members = members
 	return team
 
-func _build_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, team_a: SavedTeam, team_b: SavedTeam) -> BattleController:
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, team_a.members.size())
+func _build_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase, team_a: SavedTeam, team_b: SavedTeam) -> BattleController:
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, team_a.members.size())
 	return BattleController.new(instances_a, instances_b, skill_db.skills_by_id, SEED)
 
 ## Two controllers, same seed + same two teams, but controller_a always
@@ -62,12 +63,12 @@ func _build_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, tra
 ## side_b-then-side_a -- the opposite call order, simulating two peers
 ## whose local UI/network arrival timing differs. If online play's core
 ## assumption holds, both must still reach identical results.
-func _check_submission_order_independence(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Lockstep A", [["slime", ["attack"]]])
-	var team_b := _make_team("Lockstep B", [["golem", ["attack"]]])
+func _check_submission_order_independence(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Lockstep A", [["slime", {}]])
+	var team_b := _make_team("Lockstep B", [["golem", {}]])
 
-	var controller_a := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
-	var controller_b := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var controller_a := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
+	var controller_b := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	var log_a: Array = []
 	var log_b: Array = []
@@ -97,13 +98,13 @@ func _check_submission_order_independence(monster_db: MonsterDatabase, skill_db:
 ## being directly RPC-transmittable) round-trips to identical
 ## MonsterInstance data through the same bridge function both peers use --
 ## with no real RPC involved.
-func _check_team_dict_round_trip(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var original := _make_team("RoundTrip", [["slime", ["attack", "frizz"]], ["golem", ["attack"]]])
+func _check_team_dict_round_trip(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var original := _make_team("RoundTrip", [["slime", {"slimer": 2}], ["golem", {}]])
 	var dict := SavedTeamLoader.to_dict(original)
 	var reconstructed := SavedTeamLoader.load_from_dict(dict)
 
-	var original_instances := TeamToBattleBridge.build_team(original, "side_a", monster_db, skill_db, trait_db, 0)
-	var reconstructed_instances := TeamToBattleBridge.build_team(reconstructed, "side_a", monster_db, skill_db, trait_db, 0)
+	var original_instances := TeamToBattleBridge.build_team(original, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var reconstructed_instances := TeamToBattleBridge.build_team(reconstructed, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 
 	_check("team dict round-trip produces the same number of instances", original_instances.size() == reconstructed_instances.size())
 

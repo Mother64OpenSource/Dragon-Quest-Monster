@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "shadow_slash",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "mp_roulette"
 		}
 	]
 }

@@ -46,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "persecutter",
 			"sp": 130
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

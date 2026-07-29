@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "geyser",
 			"sp": 60
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "hunter_mech"
 		}
 	]
 }

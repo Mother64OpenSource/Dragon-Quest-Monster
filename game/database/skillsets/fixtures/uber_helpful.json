@@ -1,0 +1,56 @@
+{
+	"display_name": "Uber Helpful",
+	"id": "uber_helpful",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaping",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadim",
+			"sp": 130
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaoomph",
+			"sp": 175
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lift_demerit",
+			"sp": 200
+		}
+	]
+}

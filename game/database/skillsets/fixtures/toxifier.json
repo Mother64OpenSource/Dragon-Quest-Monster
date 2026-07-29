@@ -31,6 +31,16 @@
 			"kind": "skill",
 			"skill_id": "venomous_volley",
 			"sp": 50
+		},
+		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "paralysis_ward"
 		}
 	]
 }

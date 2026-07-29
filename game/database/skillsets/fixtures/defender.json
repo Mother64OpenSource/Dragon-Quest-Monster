@@ -46,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "selflessness",
 			"sp": 86
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sap_ward"
 		}
 	]
 }

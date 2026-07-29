@@ -1,0 +1,59 @@
+{
+	"display_name": "Pork Broth Power",
+	"id": "pork_broth_power",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 200
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"display_name": "Plum Queen",
+	"id": "plum_queen",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "sleep_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sleep_sock",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "requiem_of_restoration",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "persecutter",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "sleep_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 200
+		}
+	]
+}

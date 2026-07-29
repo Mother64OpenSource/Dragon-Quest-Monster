@@ -1,0 +1,61 @@
+{
+	"display_name": "King of the Lake",
+	"id": "king_of_the_lake",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kadonk",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 200
+		}
+	]
+}

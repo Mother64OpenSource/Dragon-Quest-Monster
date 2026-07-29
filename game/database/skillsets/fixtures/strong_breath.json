@@ -1,0 +1,56 @@
+{
+	"display_name": "Strong Breath",
+	"id": "strong_breath",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "flame_breath",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chilly_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cold_blizzard",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "c_c_cold_breath",
+			"sp": 90
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "cold_breath_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 200
+		}
+	]
+}

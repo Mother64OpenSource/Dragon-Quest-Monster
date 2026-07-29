@@ -47,6 +47,11 @@
 			"stat_name": "wisdom"
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "master_of_weapons"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "cataclysm",
 			"sp": 150

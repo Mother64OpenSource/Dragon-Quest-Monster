@@ -1,0 +1,59 @@
+{
+	"display_name": "Castellan Daimyo",
+	"id": "castellan_daimyo",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "sap_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kabuff",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasap",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flute_of_fortification",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "sap_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "stealth_strike",
+			"sp": 200
+		}
+	]
+}

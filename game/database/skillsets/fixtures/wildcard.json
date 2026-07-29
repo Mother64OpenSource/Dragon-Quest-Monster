@@ -23,6 +23,11 @@
 			"sp": 65
 		},
 		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "paralysis_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "lightning_storm",
 			"sp": 90

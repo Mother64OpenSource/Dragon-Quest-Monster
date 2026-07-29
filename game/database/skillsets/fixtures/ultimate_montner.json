@@ -1,0 +1,60 @@
+{
+	"display_name": "Ultimate Montner",
+	"id": "ultimate_montner",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 5
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 20
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapall",
+			"sp": 50
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 110
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 150,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "genma_s_gaol",
+			"sp": 250
+		}
+	]
+}

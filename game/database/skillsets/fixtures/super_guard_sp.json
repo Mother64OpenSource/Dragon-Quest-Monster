@@ -1,0 +1,56 @@
+{
+	"display_name": "Super Guard SP",
+	"id": "super_guard_sp",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 25,
+			"trait_id": "dazzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "gobstopper_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "fizzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sag_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 175,
+			"trait_id": "donk_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "zap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 225,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "flame_breath_ward"
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"display_name": "Uber Zapologist",
+	"id": "uber_zapologist",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizz",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 150
+		}
+	]
+}

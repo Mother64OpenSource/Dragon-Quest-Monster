@@ -38,6 +38,16 @@
 			"sp": 58
 		},
 		{
+			"kind": "trait",
+			"sp": 76,
+			"trait_id": "poison_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sleep_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "deadly_breath",
 			"sp": 150

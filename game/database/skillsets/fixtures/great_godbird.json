@@ -23,6 +23,21 @@
 			"sp": 40
 		},
 		{
+			"kind": "trait",
+			"sp": 55,
+			"trait_id": "donk_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "mp_gambit"
+		},
+		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "comeback_kid"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaoomph",
 			"sp": 120

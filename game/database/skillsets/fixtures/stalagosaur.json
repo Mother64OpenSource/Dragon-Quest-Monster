@@ -38,6 +38,11 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "rubblerouser_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "boulder_toss",
 			"sp": 150

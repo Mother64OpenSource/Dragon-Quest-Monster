@@ -41,6 +41,16 @@
 			"kind": "skill",
 			"skill_id": "bounce",
 			"sp": 64
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "dim_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "magical_sabotage_ward"
 		}
 	]
 }

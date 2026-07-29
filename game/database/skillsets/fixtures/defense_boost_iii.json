@@ -1,0 +1,65 @@
+{
+	"display_name": "Defense Boost III",
+	"id": "defense_boost_iii",
+	"thresholds": [
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 25,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 45,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 65,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 90,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 115,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 145,
+			"stat_name": "defense"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 175,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 210,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "sap_ward"
+		}
+	]
+}

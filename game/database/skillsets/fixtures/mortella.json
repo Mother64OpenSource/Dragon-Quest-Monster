@@ -38,6 +38,11 @@
 			"sp": 100
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "grand_nebula",
 			"sp": 150

@@ -28,6 +28,16 @@
 			"sp": 80
 		},
 		{
+			"kind": "trait",
+			"sp": 95,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "paralysis_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "curse_of_rumba",
 			"sp": 130

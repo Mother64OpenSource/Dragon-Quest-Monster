@@ -38,6 +38,11 @@
 			"sp": 80
 		},
 		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "drain_magic_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "sonata_of_serenity",
 			"sp": 120

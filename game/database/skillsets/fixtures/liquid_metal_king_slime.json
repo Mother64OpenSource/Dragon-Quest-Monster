@@ -28,6 +28,11 @@
 			"sp": 75
 		},
 		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "donk_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "wave_of_relief",
 			"sp": 120

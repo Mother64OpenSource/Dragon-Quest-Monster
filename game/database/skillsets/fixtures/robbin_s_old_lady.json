@@ -23,6 +23,16 @@
 			"sp": 35
 		},
 		{
+			"kind": "trait",
+			"sp": 55,
+			"trait_id": "inaction_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "wicked_waltz",
 			"sp": 110

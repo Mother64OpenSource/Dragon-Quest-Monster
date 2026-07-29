@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "gale_slash",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "def_roulette"
 		}
 	]
 }

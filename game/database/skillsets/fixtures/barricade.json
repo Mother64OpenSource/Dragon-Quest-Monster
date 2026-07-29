@@ -43,6 +43,11 @@
 			"sp": 95
 		},
 		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sap_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "flute_of_fortification",
 			"sp": 150

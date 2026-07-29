@@ -1,0 +1,66 @@
+{
+	"display_name": "Uber Wisdom Boost",
+	"id": "uber_wisdom_boost",
+	"thresholds": [
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 25,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 45,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 65,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 90,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 115,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 145,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 60,
+			"kind": "stat_boost",
+			"sp": 175,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 72,
+			"kind": "stat_boost",
+			"sp": 210,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 96,
+			"kind": "stat_boost",
+			"sp": 250,
+			"stat_name": "wisdom"
+		}
+	]
+}

@@ -28,6 +28,11 @@
 			"sp": 85
 		},
 		{
+			"kind": "trait",
+			"sp": 105,
+			"trait_id": "comeback_kid"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "magic_burst",
 			"sp": 130

@@ -1,0 +1,59 @@
+{
+	"display_name": "Chaotic Carp",
+	"id": "chaotic_carp",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "confusing_touch"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "persecutter",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dark_shackles",
+			"sp": 200
+		}
+	]
+}

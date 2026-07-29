@@ -1,0 +1,55 @@
+{
+	"display_name": "Witch SP",
+	"id": "witch_sp",
+	"thresholds": [
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 60
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 85,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 110,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizz_cracker",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_burst",
+			"sp": 170
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "magic_regenerator"
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"display_name": "Extreme",
+	"id": "extreme",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "great_swing",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_frailty",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 200
+		}
+	]
+}

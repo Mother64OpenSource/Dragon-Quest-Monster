@@ -38,6 +38,11 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "crack_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "tidal_wave",
 			"sp": 150

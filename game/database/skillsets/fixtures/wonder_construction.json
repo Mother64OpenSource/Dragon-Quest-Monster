@@ -28,9 +28,19 @@
 			"sp": 30
 		},
 		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "ban_dance_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "wind_sickles",
 			"sp": 60
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "master_of_weapons"
 		},
 		{
 			"kind": "skill",

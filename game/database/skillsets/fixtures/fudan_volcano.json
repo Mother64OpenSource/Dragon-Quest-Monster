@@ -1,0 +1,59 @@
+{
+	"display_name": "Fudan Volcano",
+	"id": "fudan_volcano",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "rubblerouser_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ridgeraiser",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boulder_toss",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "rubblerouser_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 200
+		}
+	]
+}

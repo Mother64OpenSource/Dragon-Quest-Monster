@@ -1,0 +1,61 @@
+{
+	"display_name": "Pleasant Momotaro",
+	"id": "pleasant_momotaro",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "reheal",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "give_magic",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "omniheal",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "prezing",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk",
+			"sp": 200
+		}
+	]
+}

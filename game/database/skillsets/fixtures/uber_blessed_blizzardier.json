@@ -1,0 +1,51 @@
+{
+	"display_name": "Uber Blessed Blizzardier",
+	"id": "uber_blessed_blizzardier",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "kaswoosh",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 95
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 150
+		}
+	]
+}

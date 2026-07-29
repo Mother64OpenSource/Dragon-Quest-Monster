@@ -7,19 +7,26 @@ extends Resource
 
 @export var species_id: String = ""
 @export var nickname: String = ""
-@export var equipped_skill_ids: Array[String] = []
 
-## skillset_id -> points invested. Keys should be a subset of the species'
-## available_skill_sets; each value should not exceed that skillset's own
-## max defined threshold (enforced by TeamRosterManager.validate_member, not
-## here) -- there's no shared cross-panel point pool, since skill points are
-## effectively unlimited via farmable skill seeds.
+## skillset_id -> points invested. Every known skill and trait this monster
+## actually has comes from this Dictionary's keys/values -- there is no
+## separate "equip a subset of what you've unlocked" step (that's not how
+## these games work: crossing a threshold means you simply know that move
+## or carry that trait, permanently, no picking and choosing which of your
+## already-crossed thresholds to keep). See
+## TeamRosterManager.get_unlocked_skill_ids()/get_active_trait_ids(), the
+## real functions of record for "what does this monster actually have."
+## Capped at species.slots+2 simultaneous keys (enforced by
+## TeamRosterManager.validate_member, not here) -- there's no shared
+## cross-panel *point* pool (skill points are effectively unlimited via
+## farmable skill seeds), but the number of skillset *slots* really is
+## limited, same as the real games.
 @export var skill_point_allocation: Dictionary = {}
 
 ## "" means no weapon equipped. Should be a WeaponData whose type is in
 ## MonsterEquipmentRules.get_equippable_weapon_types(species) (enforced by
 ## TeamRosterManager.validate_member, not here -- same pattern as
-## equipped_skill_ids above).
+## skill_point_allocation above).
 @export var equipped_weapon_id: String = ""
 
 ## BlacksmithItemData ids permanently applied to this monster. Any species

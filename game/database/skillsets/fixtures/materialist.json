@@ -38,6 +38,11 @@
 			"sp": 55
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "steady_recovery"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "knuckle_sandwich",
 			"sp": 100

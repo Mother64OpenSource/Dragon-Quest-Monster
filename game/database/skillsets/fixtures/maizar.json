@@ -3,6 +3,21 @@
 	"id": "maizar",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "sag_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "slash_dance",
 			"sp": 65

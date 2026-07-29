@@ -38,6 +38,11 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "ban_dance_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "possessed_polka",
 			"sp": 150

@@ -1,0 +1,56 @@
+{
+	"display_name": "Sizz & Zap II",
+	"id": "sizz_zap_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizz",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "zap_ward"
+		}
+	]
+}

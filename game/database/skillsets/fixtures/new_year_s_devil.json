@@ -1,0 +1,59 @@
+{
+	"display_name": "New Year's Devil",
+	"id": "new_year_s_devil",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "blunt_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "victimiser",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "persecutter",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ocean_slash",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "blunt_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 200
+		}
+	]
+}

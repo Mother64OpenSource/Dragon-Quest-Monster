@@ -41,6 +41,16 @@
 			"kind": "skill",
 			"skill_id": "dire_dirge",
 			"sp": 60
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "inaction_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "curse_ward"
 		}
 	]
 }

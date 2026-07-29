@@ -38,6 +38,11 @@
 			"sp": 75
 		},
 		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "hunter_mech"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "requiem_for_the_lost",
 			"sp": 150

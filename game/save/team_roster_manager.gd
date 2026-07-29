@@ -131,12 +131,15 @@ static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpec
 
 ## Every trait id actually active for this loadout: the species' always-on
 ## starting_trait_ids, plus whichever of its size_gated_trait_ids/
-## synth_gated_trait_ids tiers current_size/synthesis_stack have reached.
-## Each tier check is independent (not elif) since both ladders are ordinal
-## -- reaching H (3+ slots) implies P (2+) is also unlocked, and reaching
-## +★ (100) implies +50 and +25 are too, so a monster at the top of either
+## synth_gated_trait_ids tiers current_size/synthesis_stack have reached,
+## plus whatever each allocated skillset's own trait-kind thresholds have
+## unlocked (e.g. Diamond Slime grants Steady Recovery/Magic Regenerator at
+## 120/150 SP -- see SkillSetData's own doc comment). Each size/synth tier
+## check is independent (not elif) since both ladders are ordinal --
+## reaching H (3+ slots) implies P (2+) is also unlocked, and reaching +★
+## (100) implies +50 and +25 are too, so a monster at the top of either
 ## ladder gets every rung below it as well, not just the top one.
-static func get_active_trait_ids(loadout: MonsterLoadout, species: MonsterSpecies) -> Array[String]:
+static func get_active_trait_ids(loadout: MonsterLoadout, species: MonsterSpecies, skillset_db: SkillSetDatabase) -> Array[String]:
 	var result: Array[String] = species.starting_trait_ids.duplicate()
 	var size := loadout.current_size if loadout.current_size != 0 else species.slots
 	if size >= 2:
@@ -152,6 +155,12 @@ static func get_active_trait_ids(loadout: MonsterLoadout, species: MonsterSpecie
 		_append_new(result, species.synth_gated_trait_ids.get("50", []))
 	if stack >= 100:
 		_append_new(result, species.synth_gated_trait_ids.get("star", []))
+	for skillset_id in loadout.skill_point_allocation:
+		var skillset := skillset_db.get_skillset(skillset_id)
+		if skillset == null:
+			continue
+		var points: int = loadout.skill_point_allocation[skillset_id]
+		_append_new(result, skillset.unlocked_trait_ids(points))
 	return result
 
 static func _append_new(result: Array[String], ids: Array) -> void:
@@ -180,10 +189,14 @@ func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skill
 		if skillset != null and allocated > skillset.max_sp():
 			errors.append("Allocated %d points to '%s' but its ladder only goes up to %d" % [allocated, skillset_id, skillset.max_sp()])
 
-	var unlocked := get_unlocked_skill_ids(loadout, species, skillset_db)
-	for skill_id in loadout.equipped_skill_ids:
-		if not unlocked.has(skill_id):
-			errors.append("Skill '%s' is not known by species '%s'" % [skill_id, loadout.species_id])
+	# Unlike the point pool itself, the NUMBER of skillsets a monster can
+	# have simultaneously allocated at once really is capped in the real
+	# games -- 3 base panels, +1 per slot beyond the first (so 3/4/5/6 for a
+	# 1/2/3/4-slot monster), same "slots + 2" figure MonsterSpecies.slots'
+	# own doc comment already describes.
+	var max_skillsets := species.slots + 2
+	if loadout.skill_point_allocation.size() > max_skillsets:
+		errors.append("Allocated points across %d skillsets but '%s' only has %d slots" % [loadout.skill_point_allocation.size(), loadout.species_id, max_skillsets])
 
 	if weapon_db != null and not loadout.equipped_weapon_id.is_empty():
 		var weapon := weapon_db.get_weapon(loadout.equipped_weapon_id)

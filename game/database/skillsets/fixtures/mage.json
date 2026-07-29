@@ -1,0 +1,60 @@
+{
+	"display_name": "Mage",
+	"id": "mage",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "swoosh",
+			"sp": 5
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 25
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 40,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 55
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 90
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 110,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 130
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "magic_miser"
+		}
+	]
+}

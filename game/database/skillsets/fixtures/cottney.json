@@ -13,6 +13,16 @@
 			"sp": 15
 		},
 		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "zap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "zam_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "balancing_tango",
 			"sp": 65

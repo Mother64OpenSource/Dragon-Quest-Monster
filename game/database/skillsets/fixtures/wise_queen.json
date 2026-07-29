@@ -1,0 +1,61 @@
+{
+	"display_name": "Wise Queen",
+	"id": "wise_queen",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "chain",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "change",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "unnatural_order",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "party_change",
+			"sp": 200
+		}
+	]
+}

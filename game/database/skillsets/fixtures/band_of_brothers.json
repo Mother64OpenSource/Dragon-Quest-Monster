@@ -1,0 +1,59 @@
+{
+	"display_name": "Band of Brothers",
+	"id": "band_of_brothers",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "quake_strike",
+			"sp": 200
+		}
+	]
+}

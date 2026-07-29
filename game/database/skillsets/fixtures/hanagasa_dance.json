@@ -1,0 +1,61 @@
+{
+	"display_name": "Hanagasa Dance",
+	"id": "hanagasa_dance",
+	"thresholds": [
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ridgeraiser",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 160
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 200
+		}
+	]
+}

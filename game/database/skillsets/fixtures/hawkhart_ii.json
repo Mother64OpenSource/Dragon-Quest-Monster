@@ -1,0 +1,51 @@
+{
+	"display_name": "Hawkhart II",
+	"id": "hawkhart_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "dazzle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sear",
+			"sp": 18
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 42
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cremate",
+			"sp": 58
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasnooze",
+			"sp": 70
+		},
+		{
+			"kind": "trait",
+			"sp": 85,
+			"trait_id": "confusing_touch"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "ban_dance_ward"
+		}
+	]
+}

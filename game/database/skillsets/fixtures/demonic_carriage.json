@@ -3,6 +3,21 @@
 	"id": "demonic_carriage",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "inaction_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "decelerate_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "miracle_slash",
 			"sp": 65

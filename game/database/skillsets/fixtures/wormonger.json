@@ -46,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "mountainmover",
 			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

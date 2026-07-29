@@ -114,12 +114,13 @@ func _check_load_team_and_add_species() -> void:
 	var slime_species := _screen.monster_db.get_species("slime")
 	_check("member row added to the Main Party", _count_member_rows(editor._main_party_row) == 1)
 	_check(
-		"new member defaults to all of the species' starting skills",
+		"new member defaults to all of the species' starting skills, no skillsets allocated yet",
 		# NOTE: editor.current_team is the authoritative in-memory object the
 		# UI actually mutates — TeamRosterManager.get_team()/create_team()
 		# return fresh Resource instances read from disk, so a separately
 		# held reference would never see edits made through the editor panel.
-		editor.current_team.members[0].equipped_skill_ids == slime_species.starting_skill_ids
+		editor.current_team.members[0].skill_point_allocation.is_empty()
+		and TeamRosterManager.get_unlocked_skill_ids(editor.current_team.members[0], slime_species, _screen.skillset_db) == slime_species.starting_skill_ids
 	)
 
 	var reloaded := _screen.roster.get_team(team_id)
@@ -143,16 +144,22 @@ func _check_row_edits() -> void:
 	var reloaded := _screen.roster.get_team(team_id)
 	_check("nickname edit persists to disk", reloaded.members[0].nickname == "Nicky")
 
-	# "zam" unlocks at 3 SP in dracky's "dark_knight" panel.
-	row._skill_point_dialog.show_for(editor.current_team.members[0], row._species, _screen.skill_db, _screen.skillset_db)
-	row._skill_point_dialog._on_points_changed(3.0, "dark_knight")
-	row._skill_point_dialog._on_skill_toggled(true, "zam")
-	_check("toggling a skill on via the row's dialog equips it", editor.current_team.members[0].equipped_skill_ids.has("zam"))
-
-	row._skill_point_dialog._on_skill_toggled(false, "zam")
+	# "zam" unlocks at 3 SP in dracky's "dark_knight" panel -- allocating that
+	# skillset and driving its slider is what unlocks it now, no separate
+	# equip/toggle step.
+	row._skill_point_dialog.show_for(editor.current_team.members[0], row._species, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
+	row._skill_point_dialog._on_skillset_picked("dark_knight")
+	var dark_knight_slider := _find_slider(row._skill_point_dialog._slots_list)
+	dark_knight_slider.value = 3
 	_check(
-		"toggling a skill off via the row's dialog removes it from equipped_skill_ids",
-		not editor.current_team.members[0].equipped_skill_ids.has("zam")
+		"allocating 3 points into Dark Knight unlocks zam",
+		TeamRosterManager.get_unlocked_skill_ids(editor.current_team.members[0], row._species, _screen.skillset_db).has("zam")
+	)
+
+	row._skill_point_dialog._on_remove_skillset("dark_knight")
+	_check(
+		"removing the skillset entirely re-locks zam",
+		not TeamRosterManager.get_unlocked_skill_ids(editor.current_team.members[0], row._species, _screen.skillset_db).has("zam")
 	)
 
 	_screen.roster.delete_team(team_id)
@@ -278,12 +285,14 @@ func _check_degradation() -> void:
 	var row1: TeamMemberRow = RowScene.instantiate()
 	_tree.root.add_child(row1)
 
-	# "double_slash" isn't reachable from any of slime's available panels --
-	# exercises the row/dialog not crashing on an out-of-sync equipped skill
-	# (e.g. left over from an import or a since-changed allocation).
-	var extra_skill_loadout := MonsterLoadout.new()
-	extra_skill_loadout.species_id = "slime"
-	extra_skill_loadout.equipped_skill_ids = ["attack", "double_slash"]
+	# A skillset_id with no matching fixture (e.g. left over from a
+	# since-removed/renamed panel) shouldn't crash the row or the dialog --
+	# TeamRosterManager.get_unlocked_skill_ids/get_active_trait_ids already
+	# skip a null skillset lookup, so this just proves the UI layer built on
+	# top of them does too.
+	var dangling_skillset_loadout := MonsterLoadout.new()
+	dangling_skillset_loadout.species_id = "slime"
+	dangling_skillset_loadout.skill_point_allocation = {"nonexistent_skillset": 5}
 	var row2: TeamMemberRow = RowScene.instantiate()
 	_tree.root.add_child(row2)
 
@@ -298,23 +307,28 @@ func _check_degradation() -> void:
 	)
 	row1.queue_free()
 
-	row2.setup(extra_skill_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
-	_check("known species with an out-of-panel skill doesn't crash the row", row2._skills_button.visible)
-	_check("skills button shows the raw equipped count", row2._skills_button.text == "Skills (2)")
+	row2.setup(dangling_skillset_loadout, 0, _screen.monster_db, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
+	_check("known species with a dangling skillset allocation doesn't crash the row", row2._skills_button.visible)
+	_check("skillsets button shows the raw slot count regardless of whether it resolves", row2._skills_button.text == "Skillsets (1/3)")
 
 	var slime_species := _screen.monster_db.get_species("slime")
-	row2._skill_point_dialog.show_for(extra_skill_loadout, slime_species, _screen.skill_db, _screen.skillset_db)
+	row2._skill_point_dialog.show_for(dangling_skillset_loadout, slime_species, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
 	_check(
-		"opening the dialog prunes an equipped skill no panel allocation unlocks",
-		not extra_skill_loadout.equipped_skill_ids.has("double_slash")
+		"the dialog renders the dangling slot without crashing (falls back to the raw id as its own label)",
+		_find_label(row2._skill_point_dialog._slots_list, "nonexistent_skillset") != null
 	)
 	row2.queue_free()
 
+## Slime is 1-slot, so its own skillset-slot cap is 1+2 = 3 (see
+## MonsterSpecies.slots' own doc comment / TeamRosterManager.validate_member).
+## "guard" is deliberately NOT in slime.json's curated available_skill_sets
+## list -- picking it anyway is the real test that universal skillset access
+## actually reaches this new slot-based UI, not just data that happened to
+## already include it.
 func _check_skill_point_allocation() -> void:
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = "slime"
 	var slime_species := _screen.monster_db.get_species("slime")
-	_check("slime has more than one available skill panel", slime_species.available_skill_sets.size() > 1)
 
 	# Build a standalone dialog instance rather than digging one out of a row,
 	# to keep this check independent of row/dialog wiring internals.
@@ -323,56 +337,69 @@ func _check_skill_point_allocation() -> void:
 	_tree.root.add_child(dialog)
 	await _tree.process_frame
 
-	dialog.show_for(loadout, slime_species, _screen.skill_db, _screen.skillset_db)
+	dialog.show_for(loadout, slime_species, _screen.skill_db, _screen.skillset_db, _screen.trait_db)
+	_check("header reports 0/3 skillset slots used for a fresh 1-slot Slime", dialog._header_label.text.contains("0/3"))
+	_check("an empty loadout shows just the one Add-Skillset button", dialog._slots_list.get_child_count() == 1)
 	_check("frizz starts locked with 0 points allocated", not TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz"))
 
-	# Every monster can invest in every skillset -- not just the handful
-	# curated into species.available_skill_sets. "guard" is deliberately NOT
-	# in slime.json's curated list, so it's a real test of the restriction
-	# actually being gone rather than of data that happened to include it.
-	_check("every skillset is shown, not just the species' curated list", dialog._panels_list.get_child_count() == _screen.skillset_db.get_all_skillsets().size())
-	loadout.skill_point_allocation["guard"] = 56
+	dialog._on_add_slot_pressed()
+	_check("pressing Add switches the row into search-and-pick mode", dialog._adding_slot)
+	_check("the picker's search field starts empty", _find_slider(dialog._slots_list) == null)
+
+	dialog._on_picker_search_changed("guard")
+	var guard_option := _find_button(dialog._slots_list, "Guard")
+	_check("searching the picker narrows results to a matching skillset name (Guard, outside slime's own curated list)", guard_option != null)
+
+	dialog._on_skillset_picked("guard")
+	_check("picking a skillset records it at 0 SP", int(loadout.skill_point_allocation.get("guard", -1)) == 0)
+	_check("header now reports 1/3 slots used", dialog._header_label.text.contains("1/3"))
 	_check(
-		"a skillset outside slime's curated list is still a valid, unlocking allocation",
-		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("selflessness")
+		"a skillset outside slime's curated list is still a valid, unlocking allocation once points are added",
+		not TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("selflessness")
 	)
 	_check("that allocation passes validation (no species restriction anymore)", _screen.roster.validate_member(loadout, _screen.monster_db, _screen.skillset_db).is_empty())
-	loadout.skill_point_allocation.erase("guard")
 
-	# The search field narrows the visible panel list without touching data.
-	dialog._search_edit.text = "slimer"
-	dialog._on_search_text_changed("slimer")
-	_check("searching filters down to matching panels only", dialog._panels_list.get_child_count() == 1)
-	dialog._search_edit.text = ""
-	dialog._on_search_text_changed("")
+	var slider := _find_slider(dialog._slots_list)
+	_check("the newly-added skillset's slider exists", slider != null)
+	_check("guard's own ladder max is 100 SP (its own top rung, sap_ward, is a trait threshold -- see wiki/log.md)", slider != null and slider.max_value == 100)
+	_check("the slider starts at 0", slider != null and slider.value == 0)
 
-	dialog._on_points_changed(2.0, "slimer")
+	# Driving the slider must NOT rebuild the dialog -- value_changed fires
+	# continuously while dragging (once per integer step), and destroying the
+	# very slider node mid-drag would break the gesture. Capturing the same
+	# object reference before/after is the real proof, not just that the
+	# allocation updated.
+	slider.value = 56
+	_check("the slider is still the SAME node after a value change (no destructive rebuild mid-drag)", _find_slider(dialog._slots_list) == slider)
+	_check("moving the slider to 56 records it on the loadout", int(loadout.skill_point_allocation.get("guard", -1)) == 56)
 	_check(
-		"allocating 2 points in slimer unlocks frizz (2 SP threshold)",
-		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("frizz")
+		"56 points in Guard unlocks Selflessness (its own real 56 SP threshold)",
+		TeamRosterManager.get_unlocked_skill_ids(loadout, slime_species, _screen.skillset_db).has("selflessness")
 	)
-	_check("allocation is recorded on the loadout", int(loadout.skill_point_allocation.get("slimer", 0)) == 2)
+	var value_label := _find_label(dialog._slots_list, "/ 100 SP")
+	_check("the value label live-updates without a rebuild", value_label != null and value_label.text == "56 / 100 SP")
+	var summary_label := _find_label(dialog._slots_list, "Selflessness")
+	_check("the unlocked-summary label live-updates to include the newly-unlocked move", summary_label != null)
 
-	# Match on "— Frizz (" (display name flanked by the label's own
-	# separator/MP-paren) rather than a bare "Frizz" substring -- several
-	# other real skills (Frizzle, Frizz Cracker) also contain "Frizz" and
-	# would otherwise be matched first, since every skillset is listed now.
-	var frizz_checkbox := _find_checkbox(dialog._panels_list, "— Frizz (")
-	var frizz_description: String = _screen.skill_db.get_skill("frizz").description
-	_check("frizz's checkbox exists once unlocked", frizz_checkbox != null)
-	_check(
-		"frizz's checkbox tooltip shows its move description",
-		frizz_checkbox != null and not frizz_description.is_empty() and frizz_checkbox.tooltip_text == frizz_description
-	)
+	# Removing the skillset frees the slot back up.
+	var remove_button := _find_button(dialog._slots_list, "x")
+	_check("the filled slot has a remove button", remove_button != null)
+	dialog._on_remove_skillset("guard")
+	_check("removing a skillset clears its allocation entirely", not loadout.skill_point_allocation.has("guard"))
+	_check("header is back to 0/3 slots used", dialog._header_label.text.contains("0/3"))
 
-	dialog._on_skill_toggled(true, "frizz")
-	_check("toggling an unlocked skill's checkbox equips it", loadout.equipped_skill_ids.has("frizz"))
+	# The 3-slot cap itself: filling all 3 leaves no room for a 4th, so the
+	# Add-Skillset affordance disappears entirely rather than overflowing.
+	loadout.skill_point_allocation = {"slimer": 0, "guard": 0, "aquapothecary": 0}
+	dialog._rebuild()
+	_check("with all 3 slots full, only the 3 filled slots render -- no Add button left", dialog._slots_list.get_child_count() == 3)
+	_check("that fully-slotted loadout still passes validation", _screen.roster.validate_member(loadout, _screen.monster_db, _screen.skillset_db).is_empty())
 
-	dialog._on_points_changed(0.0, "slimer")
-	_check(
-		"reallocating away from a threshold re-locks and unequips its skill",
-		not loadout.equipped_skill_ids.has("frizz")
-	)
+	loadout.skill_point_allocation.erase("aquapothecary")
+	dialog._rebuild()
+	dialog._on_add_slot_pressed()
+	dialog._on_picker_search_changed("slimer")
+	_check("a skillset already occupying another slot is excluded from the picker's own results", _find_button(dialog._slots_list, "Slimer") == null)
 
 	dialog.queue_free()
 
@@ -636,6 +663,33 @@ func _find_checkbox(root: Node, text_contains: String) -> CheckBox:
 		if child is CheckBox and (child as CheckBox).text.contains(text_contains):
 			return child
 		var found := _find_checkbox(child, text_contains)
+		if found != null:
+			return found
+	return null
+
+func _find_slider(root: Node) -> HSlider:
+	for child in root.get_children():
+		if child is HSlider:
+			return child
+		var found := _find_slider(child)
+		if found != null:
+			return found
+	return null
+
+func _find_button(root: Node, text_contains: String) -> Button:
+	for child in root.get_children():
+		if child is Button and (child as Button).text.contains(text_contains):
+			return child
+		var found := _find_button(child, text_contains)
+		if found != null:
+			return found
+	return null
+
+func _find_label(root: Node, text_contains: String) -> Label:
+	for child in root.get_children():
+		if child is Label and (child as Label).text.contains(text_contains):
+			return child
+		var found := _find_label(child, text_contains)
 		if found != null:
 			return found
 	return null

@@ -1,0 +1,56 @@
+{
+	"display_name": "Superstar SP",
+	"id": "superstar_sp",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "tap_dance",
+			"sp": 25
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fuddle_dance",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 75
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hustle_dance",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 125
+		},
+		{
+			"kind": "skill",
+			"skill_id": "possessed_polka",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "balancing_tango",
+			"sp": 175
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 225
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kerplunk_dance",
+			"sp": 250
+		}
+	]
+}

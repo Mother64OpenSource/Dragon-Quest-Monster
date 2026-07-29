@@ -4,20 +4,27 @@ extends RefCounted
 ## Turns a saved team-builder team into battle-engine MonsterInstances.
 ## Mirrors game/tests/fixtures/team_builder.gd's construction pattern (slot
 ## is -1 until BattleSetup/FaintHandler assigns it), but sources
-## learned_skills from the player's actual equipped_skill_ids on each
-## MonsterLoadout rather than a species' full default list.
+## learned_skills from TeamRosterManager.get_unlocked_skill_ids() -- every
+## skill each allocated skillset's own point investment has unlocked, since
+## there's no separate "equip a subset of what you've unlocked" step (that
+## isn't how these games work -- see MonsterLoadout.skill_point_allocation's
+## own doc comment).
 
 ## instance_id_offset lets the caller keep ids unique across both teams in
 ## one battle -- pass 0 for the first team, first_team.size() for the second.
-## weapon_db/blacksmith_db are both optional (default null, backward
-## compatible with every existing call site) -- when omitted, no
-## equipped_weapon/crafted bonus is resolved onto the built instances.
+## skillset_db is required (not optional like weapon_db/blacksmith_db below)
+## since it's needed just to resolve a monster's own known skills/traits,
+## not an optional bonus system. weapon_db/blacksmith_db stay optional
+## (default null, backward compatible with every existing call site) --
+## when omitted, no equipped_weapon/crafted bonus is resolved onto the
+## built instances.
 static func build_team(
 	saved_team: SavedTeam,
 	side: String,
 	monster_db: MonsterDatabase,
 	skill_db: SkillDatabase,
 	trait_db: TraitDatabase,
+	skillset_db: SkillSetDatabase,
 	instance_id_offset: int,
 	weapon_db: WeaponDatabase = null,
 	blacksmith_db: BlacksmithDatabase = null
@@ -33,15 +40,15 @@ static func build_team(
 		var instance := MonsterInstance.new(instance_id_offset + i + 1, species, side, -1)
 
 		var skills: Array[SkillData] = []
-		for skill_id in loadout.equipped_skill_ids:
+		for skill_id in TeamRosterManager.get_unlocked_skill_ids(loadout, species, skillset_db):
 			var skill := skill_db.get_skill(skill_id)
 			if skill != null:
 				skills.append(skill)
 			else:
-				push_error("Unknown skill id equipped by %s: %s" % [loadout.species_id, skill_id])
+				push_error("Unknown skill id unlocked by %s: %s" % [loadout.species_id, skill_id])
 		instance.learned_skills = skills
 
-		var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, species)
+		var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, species, skillset_db)
 		var traits: Array[TraitEffect] = []
 		for trait_id in active_trait_ids:
 			var data := trait_db.get_trait_data(trait_id)

@@ -33,6 +33,21 @@
 			"sp": 80
 		},
 		{
+			"kind": "trait",
+			"sp": 95,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "donk_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "rival_riler"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kerplunk",
 			"sp": 150

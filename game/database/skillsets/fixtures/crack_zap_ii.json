@@ -1,0 +1,56 @@
+{
+	"display_name": "Crack & Zap II",
+	"id": "crack_zap_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrackle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazapple",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "zap_ward"
+		}
+	]
+}

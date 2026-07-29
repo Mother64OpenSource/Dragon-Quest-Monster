@@ -1,0 +1,56 @@
+{
+	"display_name": "Pranks of the Gods",
+	"id": "pranks_of_the_gods",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "hp_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "mp_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "atk_roulette"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shuffle",
+			"sp": 80
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "def_roulette"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "star_fall",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 140,
+			"trait_id": "agi_roulette"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kamikazee",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "wis_roulette"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hocus_pocus",
+			"sp": 200
+		}
+	]
+}

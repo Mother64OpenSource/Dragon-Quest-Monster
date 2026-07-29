@@ -1,0 +1,62 @@
+{
+	"display_name": "Stubborn Hick",
+	"id": "stubborn_hick",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 40,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "comeback_kid"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "metal_killer"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "trait",
+			"sp": 160,
+			"trait_id": "standard_killer"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "giant_killer"
+		}
+	]
+}

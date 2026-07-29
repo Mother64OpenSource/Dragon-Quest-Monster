@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "hustle_dance",
 			"sp": 76
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "ban_dance_ward"
 		}
 	]
 }

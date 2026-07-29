@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "lightning",
 			"sp": 60
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "steady_recovery"
 		}
 	]
 }

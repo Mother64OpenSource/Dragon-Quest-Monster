@@ -38,6 +38,11 @@
 			"sp": 120
 		},
 		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "metal_killer"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "knuckle_sandwich",
 			"sp": 200

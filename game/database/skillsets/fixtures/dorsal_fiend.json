@@ -13,6 +13,11 @@
 			"sp": 16
 		},
 		{
+			"kind": "trait",
+			"sp": 31,
+			"trait_id": "drain_magic_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "undead_undoer",
 			"sp": 39
@@ -36,6 +41,11 @@
 			"kind": "skill",
 			"skill_id": "multifists",
 			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "donk_ward"
 		}
 	]
 }

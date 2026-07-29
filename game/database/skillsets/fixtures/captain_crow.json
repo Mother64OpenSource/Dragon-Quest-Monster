@@ -38,6 +38,11 @@
 			"sp": 80
 		},
 		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "master_of_weapons"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "requiem_for_the_lost",
 			"sp": 120

@@ -1,0 +1,65 @@
+{
+	"display_name": "Wisdom Boost III",
+	"id": "wisdom_boost_iii",
+	"thresholds": [
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 25,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 45,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 65,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 90,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 115,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 145,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 175,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 210,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "dim_ward"
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"display_name": "General Fog",
+	"id": "general_fog",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "black_fog",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "red_fog",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "white_fog",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sublime_mist",
+			"sp": 200
+		}
+	]
+}

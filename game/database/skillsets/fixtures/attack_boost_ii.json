@@ -1,0 +1,60 @@
+{
+	"display_name": "Attack Boost II",
+	"id": "attack_boost_ii",
+	"thresholds": [
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 5,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 50,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 75,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 130,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 160,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 200,
+			"stat_name": "attack"
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"display_name": "Sleeping Cat's Dream",
+	"id": "sleeping_cat_s_dream",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "zam_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "zam_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "grand_nebula",
+			"sp": 200
+		}
+	]
+}

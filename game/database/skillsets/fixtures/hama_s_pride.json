@@ -1,0 +1,59 @@
+{
+	"display_name": "Hama's Pride",
+	"id": "hama_s_pride",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "decelerate_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slowing_slug",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "acceleratle",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deceleratle",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "call_of_the_falcon",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "decelerate_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "starry_samba",
+			"sp": 200
+		}
+	]
+}

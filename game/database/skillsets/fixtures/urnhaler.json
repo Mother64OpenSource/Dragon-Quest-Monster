@@ -8,6 +8,16 @@
 			"sp": 10
 		},
 		{
+			"kind": "trait",
+			"sp": 25,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "cold_breath_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "lightning_storm",
 			"sp": 60

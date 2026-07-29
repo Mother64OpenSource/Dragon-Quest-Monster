@@ -5,6 +5,13 @@ extends SceneTree
 ## panels + a rank-based skill point pool, replacing the flat moveset from
 ## the previous import pass. See wiki/log.md for full rationale.
 ##
+## Its own panel-fixture-writing step is superseded by
+## import_skillsets_full.gd, which regenerates every one of the 384 real
+## skillsets (this script only ever wrote the 220 referenced by at least one
+## monster's own curated list) and also captures trait-granting thresholds
+## this script's own _build_thresholds() silently dropped. Still the source
+## of truth for starting_skill_ids/available_skill_sets on monster fixtures.
+##
 ## Run via: godot --headless --script res://tests/tools/import_skill_panels.gd
 
 const SCRATCH := "C:/Users/elivo/AppData/Local/Temp/claude/D--Dragon-Quest-Monster-Showdown/33389280-0d18-448d-bdab-bc0185796eb1/scratchpad"

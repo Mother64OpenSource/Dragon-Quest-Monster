@@ -13,6 +13,36 @@
 			"sp": 10
 		},
 		{
+			"kind": "trait",
+			"sp": 25,
+			"trait_id": "wis_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "agi_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 55,
+			"trait_id": "def_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "atk_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 85,
+			"trait_id": "mp_roulette"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "hp_roulette"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "call_of_the_falcon",
 			"sp": 110

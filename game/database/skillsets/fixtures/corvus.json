@@ -28,6 +28,11 @@
 			"sp": 70
 		},
 		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "comeback_kid"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "disruptive_wave",
 			"sp": 120

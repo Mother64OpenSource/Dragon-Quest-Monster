@@ -3,6 +3,21 @@
 	"id": "cat_riberio",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "sag_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "black_fog",
 			"sp": 65

@@ -38,6 +38,11 @@
 			"sp": 55
 		},
 		{
+			"kind": "trait",
+			"sp": 65,
+			"trait_id": "decelerate_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "call_of_the_falcon",
 			"sp": 80

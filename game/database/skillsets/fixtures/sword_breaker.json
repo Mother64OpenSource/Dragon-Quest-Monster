@@ -36,6 +36,16 @@
 			"kind": "skill",
 			"skill_id": "counter",
 			"sp": 64
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "decelerate_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sap_ward"
 		}
 	]
 }

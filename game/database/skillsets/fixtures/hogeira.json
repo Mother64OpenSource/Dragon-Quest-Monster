@@ -3,6 +3,21 @@
 	"id": "hogeira",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "frizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "dazzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "dim_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "death_dance",
 			"sp": 65

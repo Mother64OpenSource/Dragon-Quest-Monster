@@ -1,0 +1,51 @@
+{
+	"display_name": "Diamagon II",
+	"id": "diamagon_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "crackle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "geyser",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kacrack",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "paralysing_punch",
+			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "paralysis_ward"
+		}
+	]
+}

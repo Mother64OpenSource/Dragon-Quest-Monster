@@ -31,6 +31,16 @@
 			"kind": "skill",
 			"skill_id": "kasnooze",
 			"sp": 56
+		},
+		{
+			"kind": "trait",
+			"sp": 78,
+			"trait_id": "sleep_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "gobstopper_ward"
 		}
 	]
 }

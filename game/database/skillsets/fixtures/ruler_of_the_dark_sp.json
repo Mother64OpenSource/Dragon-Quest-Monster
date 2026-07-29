@@ -1,0 +1,51 @@
+{
+	"display_name": "Ruler of the Dark SP",
+	"id": "ruler_of_the_dark_sp",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "curse_of_rumba",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "frenzy",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "death_dance",
+			"sp": 50
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wicked_waltz",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "partner_waltz",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "round_zero",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 250
+		}
+	]
+}

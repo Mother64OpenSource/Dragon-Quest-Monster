@@ -116,7 +116,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 ## rather than just species.starting_trait_ids, so traits unlocked by the
 ## Size/Synth spinboxes below actually show up here once they're reached.
 func _update_traits_label() -> void:
-	var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, _species)
+	var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, _species, _skillset_db)
 	if _trait_db == null or active_trait_ids.is_empty():
 		_traits_label.visible = false
 		return
@@ -149,17 +149,13 @@ func _on_synth_changed(new_value: float) -> void:
 	loadout_edited.emit()
 
 func _build_unknown_species_label() -> void:
-	var extra_text := ""
-	for i in range(loadout.equipped_skill_ids.size()):
-		if i > 0:
-			extra_text += ", "
-		extra_text += loadout.equipped_skill_ids[i]
+	var skillset_ids: Array = loadout.skill_point_allocation.keys()
 	var label := Label.new()
-	label.text = "(species unknown — skills not editable): %s" % extra_text
+	label.text = "(species unknown — skillsets not editable): %s" % ", ".join(skillset_ids)
 	_skills_box.add_child(label)
 
 func _update_skills_button_text() -> void:
-	_skills_button.text = "Skills (%d)" % loadout.equipped_skill_ids.size()
+	_skills_button.text = "Skillsets (%d/%d)" % [loadout.skill_point_allocation.size(), _species.slots + 2]
 
 ## Options are filtered to only the weapons this species can actually equip
 ## (MonsterEquipmentRules.get_equippable_weapon_types(), which also honors
@@ -210,7 +206,7 @@ func _on_blacksmith_items_changed() -> void:
 	loadout_edited.emit()
 
 func _on_skills_pressed() -> void:
-	_skill_point_dialog.show_for(loadout, _species, _skill_db, _skillset_db)
+	_skill_point_dialog.show_for(loadout, _species, _skill_db, _skillset_db, _trait_db)
 
 func _on_allocation_changed() -> void:
 	_update_skills_button_text()

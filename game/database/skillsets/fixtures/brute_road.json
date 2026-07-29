@@ -41,6 +41,11 @@
 			"kind": "skill",
 			"skill_id": "hatchet_man",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "steady_recovery"
 		}
 	]
 }

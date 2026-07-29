@@ -1,0 +1,61 @@
+{
+	"display_name": "Pharmacist's Prayer",
+	"id": "pharmacist_s_prayer",
+	"thresholds": [
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "megaheal",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multiheal",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "soothing_vortex",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazing",
+			"sp": 160
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "miracle_of_the_stars",
+			"sp": 200
+		}
+	]
+}

@@ -27,6 +27,7 @@ var roster: TeamRosterManager
 var monster_db: MonsterDatabase
 var skill_db: SkillDatabase
 var trait_db: TraitDatabase
+var skillset_db: SkillSetDatabase
 var profile_manager: PlayerProfileManager
 
 var _teams: Array[SavedTeam] = []
@@ -79,6 +80,7 @@ func _ready() -> void:
 	monster_db = MonsterDatabase.new()
 	skill_db = SkillDatabase.new()
 	trait_db = TraitDatabase.new()
+	skillset_db = SkillSetDatabase.new()
 	profile_manager = PlayerProfileManager.new()
 
 	_teams = roster.list_teams()
@@ -257,8 +259,8 @@ func _launch_battle() -> void:
 	var host_team := SavedTeamLoader.load_from_dict(host_team_dict)
 	var joiner_team := SavedTeamLoader.load_from_dict(joiner_team_dict)
 
-	var instances_a := TeamToBattleBridge.build_team(host_team, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(joiner_team, "side_b", monster_db, skill_db, trait_db, host_team.members.size())
+	var instances_a := TeamToBattleBridge.build_team(host_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(joiner_team, "side_b", monster_db, skill_db, trait_db, skillset_db, host_team.members.size())
 	if instances_a.is_empty() or instances_b.is_empty():
 		_status_label.text = "Couldn't build one of the teams (unknown species?)."
 		_battle_launched = false

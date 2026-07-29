@@ -43,6 +43,11 @@
 			"sp": 85
 		},
 		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "whack_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "persecutter",
 			"sp": 150

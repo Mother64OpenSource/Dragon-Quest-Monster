@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "blizzard_slash",
 			"sp": 75
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "agi_roulette"
 		}
 	]
 }

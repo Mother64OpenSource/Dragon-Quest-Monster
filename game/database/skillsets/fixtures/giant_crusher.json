@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "giga_drain_magic",
 			"sp": 150
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "giant_killer"
 		}
 	]
 }

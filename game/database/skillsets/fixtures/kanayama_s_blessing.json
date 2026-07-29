@@ -1,0 +1,59 @@
+{
+	"display_name": "Kanayama's Blessing",
+	"id": "kanayama_s_blessing",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "cold_breath_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ice_age",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tidal_wave",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "cold_breath_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "aurora_breath",
+			"sp": 200
+		}
+	]
+}

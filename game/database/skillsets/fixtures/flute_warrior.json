@@ -8,9 +8,19 @@
 			"sp": 5
 		},
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "hunter_mech"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "decelerate",
 			"sp": 25
+		},
+		{
+			"kind": "trait",
+			"sp": 35,
+			"trait_id": "dazzle_ward"
 		},
 		{
 			"kind": "skill",
@@ -18,9 +28,19 @@
 			"sp": 50
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "inaction_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "big_banga",
 			"sp": 95
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "comeback_kid"
 		},
 		{
 			"kind": "skill",

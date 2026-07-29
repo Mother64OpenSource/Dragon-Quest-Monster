@@ -3,6 +3,21 @@
 	"id": "argo",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "zap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "paralysis_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "dim_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaswooshle",
 			"sp": 65

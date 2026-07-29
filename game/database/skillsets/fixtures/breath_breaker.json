@@ -36,6 +36,16 @@
 			"kind": "skill",
 			"skill_id": "brake_wind",
 			"sp": 64
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "cold_breath_ward"
 		}
 	]
 }

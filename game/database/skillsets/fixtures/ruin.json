@@ -46,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "genma_s_gaol",
 			"sp": 150
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

@@ -38,6 +38,11 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "magic_regenerator"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "song_of_salvation",
 			"sp": 150

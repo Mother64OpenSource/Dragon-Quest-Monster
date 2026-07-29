@@ -210,10 +210,8 @@ func _on_add_monster_pressed() -> void:
 func _on_species_chosen(species_id: String) -> void:
 	if current_team == null:
 		return
-	var species := monster_db.get_species(species_id)
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = species_id
-	loadout.equipped_skill_ids = species.starting_skill_ids.duplicate() if species != null else []
 	loadout.skill_point_allocation = {}
 
 	var candidate_members := current_team.members.duplicate()

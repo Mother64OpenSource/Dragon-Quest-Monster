@@ -1,0 +1,56 @@
+{
+	"display_name": "Uber Breath",
+	"id": "uber_breath",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "sweet_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "venom_breath",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "bemusing_breath",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "burning_breath",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deadly_breath",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "gobstopper_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ice_age",
+			"sp": 250
+		}
+	]
+}

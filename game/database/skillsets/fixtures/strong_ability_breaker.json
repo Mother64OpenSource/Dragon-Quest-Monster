@@ -18,6 +18,26 @@
 			"sp": 14
 		},
 		{
+			"kind": "trait",
+			"sp": 32,
+			"trait_id": "crack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "bang_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "zam_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "white_fog",
 			"sp": 100

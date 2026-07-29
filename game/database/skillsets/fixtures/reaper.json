@@ -38,6 +38,11 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "whack_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "dire_dirge",
 			"sp": 150

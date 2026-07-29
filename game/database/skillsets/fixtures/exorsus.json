@@ -41,6 +41,16 @@
 			"kind": "skill",
 			"skill_id": "dire_dirge",
 			"sp": 90
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "magical_sabotage_ward"
 		}
 	]
 }

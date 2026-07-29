@@ -36,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "oomphle",
 			"sp": 70
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sag_ward"
 		}
 	]
 }

@@ -19,10 +19,11 @@ func run(tree: SceneTree) -> bool:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 
-	_check_relay_end_to_end(monster_db, skill_db, trait_db)
-	_check_forfeit_forwards_to_peer(monster_db, skill_db, trait_db)
-	await _check_disconnect_message(tree, monster_db, skill_db, trait_db)
+	_check_relay_end_to_end(monster_db, skill_db, trait_db, skillset_db)
+	_check_forfeit_forwards_to_peer(monster_db, skill_db, trait_db, skillset_db)
+	await _check_disconnect_message(tree, monster_db, skill_db, trait_db, skillset_db)
 
 	if _all_passed:
 		print("NetworkRelayTestRunner: ALL CHECKS PASSED")
@@ -30,6 +31,9 @@ func run(tree: SceneTree) -> bool:
 		print("NetworkRelayTestRunner: SOME CHECKS FAILED")
 	return _all_passed
 
+## Each entry is [species_id, skill_point_allocation] -- see the identical
+## helper in battle_ui_test_runner.gd for why there's no separate "equip a
+## skill" step anymore.
 func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	var team := SavedTeam.new()
 	team.id = team_name
@@ -38,29 +42,26 @@ func _make_team(team_name: String, entries: Array) -> SavedTeam:
 	for entry in entries:
 		var loadout := MonsterLoadout.new()
 		loadout.species_id = entry[0]
-		var skill_ids: Array[String] = []
-		for id in entry[1]:
-			skill_ids.append(id)
-		loadout.equipped_skill_ids = skill_ids
+		loadout.skill_point_allocation = (entry[1] as Dictionary).duplicate()
 		members.append(loadout)
 	team.members = members
 	return team
 
-func _build_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, team_a: SavedTeam, team_b: SavedTeam) -> BattleController:
-	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, 0)
-	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, team_a.members.size())
+func _build_controller(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase, team_a: SavedTeam, team_b: SavedTeam) -> BattleController:
+	var instances_a := TeamToBattleBridge.build_team(team_a, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
+	var instances_b := TeamToBattleBridge.build_team(team_b, "side_b", monster_db, skill_db, trait_db, skillset_db, team_a.members.size())
 	return BattleController.new(instances_a, instances_b, skill_db.skills_by_id, SEED)
 
-func _check_relay_end_to_end(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Relay A", [["slime", ["attack"]]])
-	var team_b := _make_team("Relay B", [["golem", ["attack"]]])
+func _check_relay_end_to_end(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Relay A", [["slime", {}]])
+	var team_b := _make_team("Relay B", [["golem", {}]])
 
 	# controller_a/relay_a stand in for the "side_a" player's own machine;
 	# controller_b/relay_b for the "side_b" player's. Each is a fully
 	# independent local simulation of the *entire* battle (both sides), kept
 	# in sync purely by relaying each player's own submissions to the other.
-	var controller_a := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
-	var controller_b := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var controller_a := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
+	var controller_b := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	var fake_a := FakeNetworkManager.new()
 	var fake_b := FakeNetworkManager.new()
@@ -118,12 +119,12 @@ func _check_relay_end_to_end(monster_db: MonsterDatabase, skill_db: SkillDatabas
 ## (the same mechanism submit_fight/submit_swap already forward through) --
 ## this proves that reuse actually works end-to-end through a real relay,
 ## not just that the signal fires.
-func _check_forfeit_forwards_to_peer(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Forfeit A", [["slime", ["attack"]]])
-	var team_b := _make_team("Forfeit B", [["golem", ["attack"]]])
+func _check_forfeit_forwards_to_peer(monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Forfeit A", [["slime", {}]])
+	var team_b := _make_team("Forfeit B", [["golem", {}]])
 
-	var controller_a := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
-	var controller_b := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+	var controller_a := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
+	var controller_b := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	var fake_a := FakeNetworkManager.new()
 	var fake_b := FakeNetworkManager.new()
@@ -144,10 +145,10 @@ func _check_forfeit_forwards_to_peer(monster_db: MonsterDatabase, skill_db: Skil
 	_check("the peer's controller also ends, crediting the same winner", controller_b.is_over() and controller_b.get_state().winner_side == "side_b")
 	_check("the peer's relay does not echo the forfeit back", fake_b.send_count == 0)
 
-func _check_disconnect_message(tree: SceneTree, monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
-	var team_a := _make_team("Disconnect A", [["slime", ["attack"]]])
-	var team_b := _make_team("Disconnect B", [["golem", ["attack"]]])
-	var controller := _build_controller(monster_db, skill_db, trait_db, team_a, team_b)
+func _check_disconnect_message(tree: SceneTree, monster_db: MonsterDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase, skillset_db: SkillSetDatabase) -> void:
+	var team_a := _make_team("Disconnect A", [["slime", {}]])
+	var team_b := _make_team("Disconnect B", [["golem", {}]])
+	var controller := _build_controller(monster_db, skill_db, trait_db, skillset_db, team_a, team_b)
 
 	var view: BattleSideView = SideViewScene.instantiate()
 	tree.root.add_child(view)

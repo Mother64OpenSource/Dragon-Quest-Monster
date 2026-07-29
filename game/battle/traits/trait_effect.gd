@@ -276,15 +276,27 @@ static func create(id: String, data: TraitData, skill_db: SkillDatabase = null) 
 		# extra_attacks = 1 (attacks twice total) is a placeholder -- no
 		# sourced magnitude exists for Hit Squad specifically, so this
 		# borrows the closest confirmed number in this same dataset
-		# (Double Trouble's explicit "twice"). Double/Triple/Quad Trouble
-		# themselves stay unimplemented: their own descriptions gate them on
-		# "when not given specific orders," an AI-vs-player-controlled
-		# distinction this project has no concept of at all -- every action
-		# here is always a specific player order, so there's no "no orders"
-		# case for them to ever trigger in.
+		# (Double Trouble's explicit "twice").
 		"hit_squad":
 			effect = ExtraAttackTraitEffect.new()
 			effect.extra_attacks = 1
+		# Double/Triple/Quad Trouble's own descriptions gate them on "when not
+		# given specific orders" -- an AI-vs-player-controlled distinction
+		# this project has no concept of at all (every action here is always
+		# a specific player order). Per explicit user request, registered
+		# anyway with their own real sourced magnitudes (2/3/4 total actions)
+		# rather than left permanently inert -- the order-gate is treated as
+		# always-satisfied, same override already applied to Hit Squad's own
+		# placeholder number above.
+		"double_trouble":
+			effect = ExtraAttackTraitEffect.new()
+			effect.extra_attacks = 1
+		"triple_trouble":
+			effect = ExtraAttackTraitEffect.new()
+			effect.extra_attacks = 2
+		"quad_trouble":
+			effect = ExtraAttackTraitEffect.new()
+			effect.extra_attacks = 3
 		# hp_roulette/mp_roulette deliberately NOT registered here: unlike
 		# attack/defense/agility/wisdom, this engine has no "temporary max
 		# HP/MP modifier" concept at all -- MonsterInstance.take_damage()/
@@ -900,11 +912,14 @@ static func create(id: String, data: TraitData, skill_db: SkillDatabase = null) 
 		#   proactive_hunter, its sibling trait in the original audit note,
 		#   got peeled off this entry since its own "acted this turn" flag
 		#   was buildable without new sourced data.
-		# - double_trouble/triple_trouble/quad_trouble and the
-		#   tactical_genius/tactical_mastermind/tactical_trooper/tactical_uber
-		#   cluster: same "acts extra times when not given specific orders"
-		#   AI-vs-player-order distinction already noted at hit_squad above
-		#   -- this engine has no concept of an order-less turn.
+		# - the tactical_genius/tactical_mastermind/tactical_trooper/
+		#   tactical_uber cluster: same "acts extra times when not given
+		#   specific orders" AI-vs-player-order distinction as
+		#   double_trouble/triple_trouble/quad_trouble (now registered
+		#   above, per explicit user request, with the order-gate treated as
+		#   always-satisfied) -- this cluster stays excluded since it wasn't
+		#   part of that request and this engine still has no concept of an
+		#   order-less turn.
 		# The autonomous-self-cast mechanism (SelfCastSkillOnTurnTraitEffect/
 		# SelfCastSkillOnEntryTraitEffect) unlocked random_buff/random_oomph/
 		# random_ping/sudden_ping once Buff/Ping/Kaping/Oomphle's own broken

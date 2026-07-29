@@ -1,0 +1,56 @@
+{
+	"display_name": "Ultra Guard SP",
+	"id": "ultra_guard_sp",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 25,
+			"trait_id": "ban_dance_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "abiliterator_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "drain_magic_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "sleep_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "whack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 175,
+			"trait_id": "rubblerouser_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "frizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 225,
+			"trait_id": "sizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "inaction_ward"
+		}
+	]
+}

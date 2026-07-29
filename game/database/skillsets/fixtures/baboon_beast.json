@@ -33,6 +33,16 @@
 			"sp": 110
 		},
 		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "dazzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 140,
+			"trait_id": "sleep_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaoomphle",
 			"sp": 160

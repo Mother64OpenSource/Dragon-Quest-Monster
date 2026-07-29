@@ -13,6 +13,16 @@
 			"sp": 20
 		},
 		{
+			"kind": "trait",
+			"sp": 35,
+			"trait_id": "drain_magic_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "confusion_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaoomphle",
 			"sp": 70

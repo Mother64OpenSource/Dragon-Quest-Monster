@@ -1,0 +1,46 @@
+{
+	"display_name": "Blunt Ward",
+	"id": "blunt_ward",
+	"thresholds": [
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 5,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "agility"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 50,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "blunt_ward"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "able_ambusher"
+		}
+	]
+}

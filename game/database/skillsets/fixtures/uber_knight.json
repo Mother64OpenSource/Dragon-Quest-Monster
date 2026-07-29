@@ -1,0 +1,56 @@
+{
+	"display_name": "Uber Knight",
+	"id": "uber_knight",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 80
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blizzard_slash",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sacred_slash",
+			"sp": 120
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigaslash",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 170,
+			"trait_id": "master_of_weapons"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gigagash",
+			"sp": 200
+		}
+	]
+}

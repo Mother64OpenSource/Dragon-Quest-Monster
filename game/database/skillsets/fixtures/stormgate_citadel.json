@@ -18,6 +18,11 @@
 			"sp": 25
 		},
 		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "paralysis_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "one_on_one",
 			"sp": 55
@@ -41,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "deadly_breath",
 			"sp": 130
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

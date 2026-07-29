@@ -18,10 +18,12 @@ func run() -> bool:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var skillset_db := SkillSetDatabase.new()
+	var trait_db := TraitDatabase.new()
 	var weapon_db := WeaponDatabase.new()
 	var roster := TeamRosterManager.new(TEST_TEAMS_DIR)
 
 	_check_database(monster_db, skill_db)
+	_check_skillset_data(skillset_db, skill_db, trait_db)
 	_check_crud(roster)
 	_check_reorder_and_members(roster)
 	_check_import_export(roster)
@@ -37,6 +39,38 @@ func run() -> bool:
 	else:
 		print("TeamRosterTestRunner: SOME CHECKS FAILED")
 	return _all_passed
+
+## All 384 real skillsets (not just the 220 referenced by at least one
+## monster's own curated list -- e.g. Uber Breath was previously missing
+## entirely, never even written as a fixture), and trait-granting thresholds
+## (previously silently dropped as unrecognized -- e.g. Diamond Slime's own
+## 120/150 SP rungs are Steady Recovery/Magic Regenerator, not skills at
+## all) now resolve correctly. See wiki/log.md.
+func _check_skillset_data(skillset_db: SkillSetDatabase, skill_db: SkillDatabase, trait_db: TraitDatabase) -> void:
+	_check("SkillSetDatabase loads all 384 real skillsets", skillset_db.get_all_skillsets().size() == 384)
+
+	var uber_breath := skillset_db.get_skillset("uber_breath")
+	_check("Uber Breath (previously missing entirely) now resolves", uber_breath != null)
+
+	var diamond_slime := skillset_db.get_skillset("diamond_slime")
+	_check("Diamond Slime resolves", diamond_slime != null)
+	if diamond_slime != null:
+		_check("Diamond Slime unlocks no traits at 100 SP (below both trait rungs)", diamond_slime.unlocked_trait_ids(100).is_empty())
+		_check(
+			"Diamond Slime unlocks Steady Recovery (HP regen) at 120 SP",
+			diamond_slime.unlocked_trait_ids(120) == (["steady_recovery"] as Array[String])
+		)
+		_check(
+			"Diamond Slime unlocks BOTH Steady Recovery and Magic Regenerator (MP regen) at 150 SP",
+			diamond_slime.unlocked_trait_ids(150) == (["steady_recovery", "magic_regenerator"] as Array[String])
+		)
+		var steady_recovery := trait_db.get_trait_data("steady_recovery")
+		_check("steady_recovery is a real trait with a real description", steady_recovery != null and steady_recovery.description.contains("HP"))
+		var magic_regenerator := trait_db.get_trait_data("magic_regenerator")
+		_check("magic_regenerator is a real trait with a real description", magic_regenerator != null and magic_regenerator.description.contains("MP"))
+		# magic_burst (200 SP) still resolves as a normal skill threshold
+		# alongside the trait ones on the very same ladder.
+		_check("Diamond Slime's own top rung (200 SP) is still a real skill", diamond_slime.unlocked_skill_ids(200).has("magic_burst"))
 
 func _check_database(monster_db: MonsterDatabase, skill_db: SkillDatabase) -> void:
 	# The fixtures directory holds the 4 hand-tuned M1 test species plus a
@@ -106,7 +140,6 @@ func _check_crud(roster: TeamRosterManager) -> void:
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = "slime"
 	loadout.nickname = "Sluggo"
-	loadout.equipped_skill_ids = ["attack", "oomph"]
 	roster.add_member(team, loadout)
 	roster.save_team(team)
 
@@ -152,7 +185,7 @@ func _check_import_export(roster: TeamRosterManager) -> void:
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = "healslime"
 	loadout.nickname = "Doc"
-	loadout.equipped_skill_ids = ["heal", "sap"]
+	loadout.skill_point_allocation = {"slimer": 5}
 	roster.add_member(team, loadout)
 	roster.save_team(team)
 
@@ -167,7 +200,7 @@ func _check_import_export(roster: TeamRosterManager) -> void:
 			imported.members.size() == 1
 			and imported.members[0].species_id == "healslime"
 			and imported.members[0].nickname == "Doc"
-			and imported.members[0].equipped_skill_ids == ["heal", "sap"]
+			and imported.members[0].skill_point_allocation == {"slimer": 5}
 		)
 		roster.delete_team(imported.id)
 
@@ -177,18 +210,23 @@ func _check_import_export(roster: TeamRosterManager) -> void:
 	roster.delete_team(team.id)
 
 func _check_validation(roster: TeamRosterManager, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase) -> void:
-	# "frizz" unlocks at 2 SP in slime's "slimer" panel; "double_slash" isn't
-	# reachable from any of slime's panels at all.
+	# "frizz" unlocks at 2 SP in slime's "slimer" panel -- known automatically
+	# once allocated, no separate "equip" step to validate anymore.
 	var valid_loadout := MonsterLoadout.new()
 	valid_loadout.species_id = "slime"
 	valid_loadout.skill_point_allocation = {"slimer": 2}
-	valid_loadout.equipped_skill_ids = ["attack", "frizz"]
 	_check("valid loadout has no errors", roster.validate_member(valid_loadout, monster_db, skillset_db).is_empty())
 
-	var bad_skill_loadout := MonsterLoadout.new()
-	bad_skill_loadout.species_id = "slime"
-	bad_skill_loadout.equipped_skill_ids = ["double_slash"]
-	_check("loadout with unknown-to-species skill flagged", roster.validate_member(bad_skill_loadout, monster_db, skillset_db).size() == 1)
+	# Slime is 1-slot, so its own skillset-slot cap is 1+2 = 3 -- 4 distinct
+	# skillsets at once (regardless of how few points are in each) overflows
+	# that cap, the real games' own limit on simultaneous skillsets.
+	var too_many_skillsets_loadout := MonsterLoadout.new()
+	too_many_skillsets_loadout.species_id = "slime"
+	too_many_skillsets_loadout.skill_point_allocation = {"slimer": 1, "guard": 1, "aquapothecary": 1, "crack_sizz": 1}
+	_check(
+		"loadout allocating across more skillsets than the species has slots for is flagged",
+		roster.validate_member(too_many_skillsets_loadout, monster_db, skillset_db).size() == 1
+	)
 
 	# "slimer"'s own ladder tops out at 75 SP (share_magic) -- there's no
 	# separate species-wide pool, so 999 is only invalid because it overshoots
@@ -273,7 +311,7 @@ func _check_size_synth_traits(roster: TeamRosterManager, monster_db: MonsterData
 	baseline.species_id = "slime"
 	_check(
 		"a fresh loadout (current_size=0 sentinel, synthesis_stack=0) gets only the 3 starting traits",
-		TeamRosterManager.get_active_trait_ids(baseline, species) == species.starting_trait_ids
+		TeamRosterManager.get_active_trait_ids(baseline, species, skillset_db) == species.starting_trait_ids
 	)
 
 	var at_size_1 := MonsterLoadout.new()
@@ -281,20 +319,20 @@ func _check_size_synth_traits(roster: TeamRosterManager, monster_db: MonsterData
 	at_size_1.current_size = 1
 	_check(
 		"current_size=1 (slime's own natural size) is equivalent to the 0 sentinel",
-		TeamRosterManager.get_active_trait_ids(at_size_1, species) == TeamRosterManager.get_active_trait_ids(baseline, species)
+		TeamRosterManager.get_active_trait_ids(at_size_1, species, skillset_db) == TeamRosterManager.get_active_trait_ids(baseline, species, skillset_db)
 	)
 
 	var at_size_2 := MonsterLoadout.new()
 	at_size_2.species_id = "slime"
 	at_size_2.current_size = 2
-	var active_at_2 := TeamRosterManager.get_active_trait_ids(at_size_2, species)
+	var active_at_2 := TeamRosterManager.get_active_trait_ids(at_size_2, species, skillset_db)
 	_check("current_size=2 unlocks the P tier (Random Accelerate)", active_at_2.has("random_accelerate"))
 	_check("current_size=2 does NOT unlock the H tier yet", not active_at_2.has("sudden_white_fog"))
 
 	var at_size_3 := MonsterLoadout.new()
 	at_size_3.species_id = "slime"
 	at_size_3.current_size = 3
-	var active_at_3 := TeamRosterManager.get_active_trait_ids(at_size_3, species)
+	var active_at_3 := TeamRosterManager.get_active_trait_ids(at_size_3, species, skillset_db)
 	_check(
 		"current_size=3 unlocks BOTH P and H (reaching a higher tier doesn't skip the lower one)",
 		active_at_3.has("random_accelerate") and active_at_3.has("sudden_white_fog")
@@ -305,19 +343,19 @@ func _check_size_synth_traits(roster: TeamRosterManager, monster_db: MonsterData
 	at_size_4.current_size = 4
 	_check(
 		"current_size=4 doesn't crash even though slime has no G-tier entry at all",
-		TeamRosterManager.get_active_trait_ids(at_size_4, species).size() == active_at_3.size()
+		TeamRosterManager.get_active_trait_ids(at_size_4, species, skillset_db).size() == active_at_3.size()
 	)
 
 	var at_stack_25 := MonsterLoadout.new()
 	at_stack_25.species_id = "slime"
 	at_stack_25.synthesis_stack = 25
-	var active_at_25 := TeamRosterManager.get_active_trait_ids(at_stack_25, species)
+	var active_at_25 := TeamRosterManager.get_active_trait_ids(at_stack_25, species, skillset_db)
 	_check("synthesis_stack=25 unlocks Dust of the Clan only", active_at_25.has("dust_of_the_clan") and not active_at_25.has("tactical_trooper") and not active_at_25.has("strong_guard_break"))
 
 	var at_stack_50 := MonsterLoadout.new()
 	at_stack_50.species_id = "slime"
 	at_stack_50.synthesis_stack = 50
-	var active_at_50 := TeamRosterManager.get_active_trait_ids(at_stack_50, species)
+	var active_at_50 := TeamRosterManager.get_active_trait_ids(at_stack_50, species, skillset_db)
 	_check(
 		"synthesis_stack=50 unlocks BOTH +25 and +50 tiers",
 		active_at_50.has("dust_of_the_clan") and active_at_50.has("tactical_trooper") and not active_at_50.has("strong_guard_break")
@@ -328,13 +366,13 @@ func _check_size_synth_traits(roster: TeamRosterManager, monster_db: MonsterData
 	at_stack_99.synthesis_stack = 99
 	_check(
 		"synthesis_stack=99 is one short of +★ -- Strong Guard Break stays locked",
-		not TeamRosterManager.get_active_trait_ids(at_stack_99, species).has("strong_guard_break")
+		not TeamRosterManager.get_active_trait_ids(at_stack_99, species, skillset_db).has("strong_guard_break")
 	)
 
 	var at_stack_100 := MonsterLoadout.new()
 	at_stack_100.species_id = "slime"
 	at_stack_100.synthesis_stack = 100
-	var active_at_100 := TeamRosterManager.get_active_trait_ids(at_stack_100, species)
+	var active_at_100 := TeamRosterManager.get_active_trait_ids(at_stack_100, species, skillset_db)
 	_check(
 		"synthesis_stack=100 (+★) unlocks all 3 rank-offset traits",
 		active_at_100.has("dust_of_the_clan") and active_at_100.has("tactical_trooper") and active_at_100.has("strong_guard_break")

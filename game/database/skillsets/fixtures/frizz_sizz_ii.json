@@ -1,0 +1,56 @@
+{
+	"display_name": "Frizz & Sizz II",
+	"id": "frizz_sizz_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "sizzle",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizz",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasizzle",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "frizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "sizz_ward"
+		}
+	]
+}

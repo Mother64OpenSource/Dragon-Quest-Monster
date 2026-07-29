@@ -33,6 +33,16 @@
 			"sp": 90
 		},
 		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "steady_recovery"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "magic_regenerator"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "magic_burst",
 			"sp": 200

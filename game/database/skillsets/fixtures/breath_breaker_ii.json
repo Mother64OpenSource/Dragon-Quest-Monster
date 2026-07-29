@@ -1,0 +1,56 @@
+{
+	"display_name": "Breath Breaker II",
+	"id": "breath_breaker_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "insulate",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blowback",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gobstopper",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "brake_wind",
+			"sp": 40
+		},
+		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "cold_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "abiliterator_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "mist_me",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_breath",
+			"sp": 150
+		}
+	]
+}

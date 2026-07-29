@@ -36,6 +36,16 @@
 			"kind": "skill",
 			"skill_id": "kafuddle",
 			"sp": 44
+		},
+		{
+			"kind": "trait",
+			"sp": 72,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "sleep_ward"
 		}
 	]
 }

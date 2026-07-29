@@ -21,6 +21,26 @@
 			"kind": "skill",
 			"skill_id": "drain_magic",
 			"sp": 26
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "blunt_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "dazzle_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "whack_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "inaction_ward"
 		}
 	]
 }

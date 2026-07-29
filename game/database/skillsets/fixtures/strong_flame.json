@@ -1,0 +1,56 @@
+{
+	"display_name": "Strong Flame",
+	"id": "strong_flame",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "frizzle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "flame_breath",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deep_breath",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizz",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "inferno",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kafrizzle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "scorch",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 150
+		}
+	]
+}

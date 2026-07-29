@@ -1,0 +1,46 @@
+{
+	"display_name": "Champion SP",
+	"id": "champion_sp",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "roundhouse_kick",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "one_on_one",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "knuckle_sandwich",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 100
+		},
+		{
+			"kind": "skill",
+			"skill_id": "cataclysm",
+			"sp": 150
+		},
+		{
+			"kind": "skill",
+			"skill_id": "big_banga",
+			"sp": 200
+		},
+		{
+			"kind": "skill",
+			"skill_id": "furious_slash",
+			"sp": 250
+		}
+	]
+}

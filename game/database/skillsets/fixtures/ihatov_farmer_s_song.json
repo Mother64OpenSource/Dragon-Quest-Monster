@@ -1,0 +1,61 @@
+{
+	"display_name": "Ihatov Farmer's Song",
+	"id": "ihatov_farmer_s_song",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "slash_dance",
+			"sp": 40
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "insulatle",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 120
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "tension_giver",
+			"sp": 200
+		}
+	]
+}

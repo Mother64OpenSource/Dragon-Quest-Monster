@@ -3,6 +3,11 @@
 	"id": "empyrea",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 15,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "ping",
 			"sp": 20
@@ -28,6 +33,11 @@
 			"sp": 60
 		},
 		{
+			"kind": "trait",
+			"sp": 75,
+			"trait_id": "able_ambusher"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "wind_shear",
 			"sp": 90
@@ -36,6 +46,11 @@
 			"kind": "skill",
 			"skill_id": "soothing_vortex",
 			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

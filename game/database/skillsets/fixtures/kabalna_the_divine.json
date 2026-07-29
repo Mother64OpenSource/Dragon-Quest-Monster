@@ -23,6 +23,16 @@
 			"sp": 40
 		},
 		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "steady_recovery"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "magic_regenerator"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "multifists",
 			"sp": 100

@@ -3,6 +3,11 @@
 	"id": "tactician_iddo",
 	"thresholds": [
 		{
+			"kind": "trait",
+			"sp": 10,
+			"trait_id": "whack_attack"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "great_swing",
 			"sp": 20
@@ -21,6 +26,11 @@
 			"kind": "skill",
 			"skill_id": "kaboomle",
 			"sp": 70
+		},
+		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "inaction_ward"
 		},
 		{
 			"kind": "skill",

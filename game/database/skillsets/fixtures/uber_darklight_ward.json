@@ -1,0 +1,62 @@
+{
+	"display_name": "Uber Darklight Ward",
+	"id": "uber_darklight_ward",
+	"thresholds": [
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 25,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 45,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 65,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 36,
+			"kind": "stat_boost",
+			"sp": 90,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 72,
+			"kind": "stat_boost",
+			"sp": 115,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "trait",
+			"sp": 145,
+			"trait_id": "dim_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 175,
+			"trait_id": "ban_dance_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 210,
+			"trait_id": "zap_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 250,
+			"trait_id": "zam_ward"
+		}
+	]
+}

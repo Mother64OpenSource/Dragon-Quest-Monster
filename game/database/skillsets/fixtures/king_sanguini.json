@@ -33,6 +33,11 @@
 			"sp": 70
 		},
 		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "ban_dance_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kerplunk_dance",
 			"sp": 120

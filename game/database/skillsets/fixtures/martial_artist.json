@@ -1,0 +1,60 @@
+{
+	"display_name": "Martial Artist",
+	"id": "martial_artist",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "heart_breaker",
+			"sp": 5
+		},
+		{
+			"amount": 4,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "hp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "body_slam",
+			"sp": 25
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 40,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "defending_champion",
+			"sp": 55
+		},
+		{
+			"amount": 12,
+			"kind": "stat_boost",
+			"sp": 70,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 90
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 110,
+			"stat_name": "attack"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "multifists",
+			"sp": 140
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "steady_recovery"
+		}
+	]
+}

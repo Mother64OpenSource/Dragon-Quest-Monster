@@ -1,0 +1,59 @@
+{
+	"display_name": "Fisherman's Heart",
+	"id": "fisherman_s_heart",
+	"thresholds": [
+		{
+			"kind": "trait",
+			"sp": 20,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaswooshle",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "gale_slash",
+			"sp": 80
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "wind_shear",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 160
+		},
+		{
+			"kind": "trait",
+			"sp": 180,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 200
+		}
+	]
+}

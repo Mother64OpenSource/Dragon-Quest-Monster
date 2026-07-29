@@ -33,6 +33,16 @@
 			"sp": 55
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "curse_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "whack_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "thwack",
 			"sp": 120

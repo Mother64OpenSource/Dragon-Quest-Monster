@@ -2273,24 +2273,23 @@ func _check_weapon_equip_mechanics() -> void:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 	var loadout := MonsterLoadout.new()
 	loadout.species_id = "slime"
-	loadout.equipped_skill_ids = ["attack"]
 	loadout.equipped_weapon_id = "copper_sword"
 	var saved_team := SavedTeam.new()
 	saved_team.members = [loadout]
-	var bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, 0, weapon_db)
+	var bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0, weapon_db)
 	_check("TeamToBattleBridge resolves equipped_weapon_id into a real WeaponData", bridged_team[0].equipped_weapon != null and bridged_team[0].equipped_weapon.id == "copper_sword")
 
 	var unweaponed_loadout := MonsterLoadout.new()
 	unweaponed_loadout.species_id = "slime"
-	unweaponed_loadout.equipped_skill_ids = ["attack"]
 	var unweaponed_saved_team := SavedTeam.new()
 	unweaponed_saved_team.members = [unweaponed_loadout]
-	var unweaponed_bridged_team := TeamToBattleBridge.build_team(unweaponed_saved_team, "side_a", monster_db, skill_db, trait_db, 0, weapon_db)
+	var unweaponed_bridged_team := TeamToBattleBridge.build_team(unweaponed_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0, weapon_db)
 	_check("an empty equipped_weapon_id leaves equipped_weapon null even with a weapon_db present", unweaponed_bridged_team[0].equipped_weapon == null)
 
-	var no_weapon_db_bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, 0)
+	var no_weapon_db_bridged_team := TeamToBattleBridge.build_team(saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)
 	_check("omitting weapon_db from build_team leaves equipped_weapon null (backward compatible)", no_weapon_db_bridged_team[0].equipped_weapon == null)
 
 ## Covers the mechanically-real subset of weapon flavor text: family-based
@@ -2437,14 +2436,14 @@ func _check_blacksmith_mechanics() -> void:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 
 	var stat_loadout := MonsterLoadout.new()
 	stat_loadout.species_id = "slime"
-	stat_loadout.equipped_skill_ids = ["attack"]
 	stat_loadout.crafted_blacksmith_ids = ["atk_20", "def_40"]
 	var stat_saved_team := SavedTeam.new()
 	stat_saved_team.members = [stat_loadout]
-	var stat_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	var stat_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0, null, blacksmith_db)[0]
 	_check(
 		"TeamToBattleBridge resolves crafted stat-boost ids into real BlacksmithItemData on the instance",
 		stat_bridged.crafted_stat_boosts.size() == 2 and stat_bridged.get_effective_stat("attack") == stat_bridged.species.base_attack + 20
@@ -2454,11 +2453,10 @@ func _check_blacksmith_mechanics() -> void:
 	# real, functioning trait effect.
 	var new_trait_loadout := MonsterLoadout.new()
 	new_trait_loadout.species_id = "golem"
-	new_trait_loadout.equipped_skill_ids = ["attack"]
 	new_trait_loadout.crafted_blacksmith_ids = ["artful_dodger"]
 	var new_trait_saved_team := SavedTeam.new()
 	new_trait_saved_team.members = [new_trait_loadout]
-	var new_trait_bridged := TeamToBattleBridge.build_team(new_trait_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	var new_trait_bridged := TeamToBattleBridge.build_team(new_trait_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0, null, blacksmith_db)[0]
 	var golem_species := monster_db.get_species("golem")
 	_check("Golem's own species fixture doesn't innately carry artful_dodger (sanity check)", not golem_species.starting_trait_ids.has("artful_dodger"))
 	_check(
@@ -2472,11 +2470,10 @@ func _check_blacksmith_mechanics() -> void:
 	# already have that bonus" caveat, not a stacked duplicate.
 	var dup_trait_loadout := MonsterLoadout.new()
 	dup_trait_loadout.species_id = "slime"
-	dup_trait_loadout.equipped_skill_ids = ["attack"]
 	dup_trait_loadout.crafted_blacksmith_ids = ["critical_massacre"]
 	var dup_trait_saved_team := SavedTeam.new()
 	dup_trait_saved_team.members = [dup_trait_loadout]
-	var dup_trait_bridged := TeamToBattleBridge.build_team(dup_trait_saved_team, "side_a", monster_db, skill_db, trait_db, 0, null, blacksmith_db)[0]
+	var dup_trait_bridged := TeamToBattleBridge.build_team(dup_trait_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0, null, blacksmith_db)[0]
 	var slime_species := monster_db.get_species("slime")
 	_check("Slime's own species fixture already innately carries critical_massacre (sanity check)", slime_species.starting_trait_ids.has("critical_massacre"))
 	_check(
@@ -2485,7 +2482,7 @@ func _check_blacksmith_mechanics() -> void:
 	)
 
 	# Backward compatibility: omitting blacksmith_db entirely.
-	var no_blacksmith_db_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	var no_blacksmith_db_bridged := TeamToBattleBridge.build_team(stat_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)[0]
 	_check("omitting blacksmith_db from build_team leaves crafted_stat_boosts empty (backward compatible)", no_blacksmith_db_bridged.crafted_stat_boosts.is_empty())
 
 	# --- TeamRosterManager validation ---
@@ -2510,13 +2507,13 @@ func _check_size_synth_trait_bridge_mechanics() -> void:
 	var monster_db := MonsterDatabase.new()
 	var skill_db := SkillDatabase.new()
 	var trait_db := TraitDatabase.new()
+	var skillset_db := SkillSetDatabase.new()
 
 	var baseline_loadout := MonsterLoadout.new()
 	baseline_loadout.species_id = "slime"
-	baseline_loadout.equipped_skill_ids = ["attack"]
 	var baseline_saved_team := SavedTeam.new()
 	baseline_saved_team.members = [baseline_loadout]
-	var baseline_bridged := TeamToBattleBridge.build_team(baseline_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	var baseline_bridged := TeamToBattleBridge.build_team(baseline_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)[0]
 	var slime_species := monster_db.get_species("slime")
 	_check(
 		"a fresh bridged Slime carries only its 3 starting traits, none of the size/synth-gated ones",
@@ -2525,12 +2522,11 @@ func _check_size_synth_trait_bridge_mechanics() -> void:
 
 	var reborn_loadout := MonsterLoadout.new()
 	reborn_loadout.species_id = "slime"
-	reborn_loadout.equipped_skill_ids = ["attack"]
 	reborn_loadout.current_size = 3
 	reborn_loadout.synthesis_stack = 100
 	var reborn_saved_team := SavedTeam.new()
 	reborn_saved_team.members = [reborn_loadout]
-	var reborn_bridged := TeamToBattleBridge.build_team(reborn_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	var reborn_bridged := TeamToBattleBridge.build_team(reborn_saved_team, "side_a", monster_db, skill_db, trait_db, skillset_db, 0)[0]
 	_check(
 		"a Slime reborn to size 3 with a maxed synthesis stack is bridged with all 3 starting traits plus all 5 gated ones (P+H, +25/+50/+★)",
 		reborn_bridged.active_traits.size() == slime_species.starting_trait_ids.size() + 5

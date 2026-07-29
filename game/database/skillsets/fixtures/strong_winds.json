@@ -1,0 +1,61 @@
+{
+	"display_name": "Strong Winds",
+	"id": "strong_winds",
+	"thresholds": [
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "whirlwind",
+			"sp": 40
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 60,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "deadly_breath",
+			"sp": 80
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "hellfire",
+			"sp": 120
+		},
+		{
+			"amount": 40,
+			"kind": "stat_boost",
+			"sp": 140,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ice_age",
+			"sp": 160
+		},
+		{
+			"amount": 20,
+			"kind": "stat_boost",
+			"sp": 180,
+			"stat_name": "agility"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "soothing_vortex",
+			"sp": 200
+		}
+	]
+}

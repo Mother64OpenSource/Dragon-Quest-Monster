@@ -1,0 +1,46 @@
+{
+	"display_name": "Frailty Ward",
+	"id": "frailty_ward",
+	"thresholds": [
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 5,
+			"stat_name": "hp"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 15,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "mp"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 50,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 100,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "magic_scrooge"
+		}
+	]
+}

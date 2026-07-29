@@ -1,0 +1,55 @@
+{
+	"display_name": "Warrior SP",
+	"id": "warrior_sp",
+	"thresholds": [
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 32,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "helm_splitter",
+			"sp": 40
+		},
+		{
+			"kind": "skill",
+			"skill_id": "double_up",
+			"sp": 60
+		},
+		{
+			"amount": 24,
+			"kind": "stat_boost",
+			"sp": 85,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 48,
+			"kind": "stat_boost",
+			"sp": 110,
+			"stat_name": "defense"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "fissure_strike",
+			"sp": 140
+		},
+		{
+			"kind": "skill",
+			"skill_id": "giga_slash",
+			"sp": 170
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "steady_recovery"
+		}
+	]
+}

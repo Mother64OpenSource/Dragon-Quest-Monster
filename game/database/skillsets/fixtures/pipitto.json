@@ -33,6 +33,16 @@
 			"sp": 110
 		},
 		{
+			"kind": "trait",
+			"sp": 130,
+			"trait_id": "flame_breath_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "cold_breath_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "fissure_strike",
 			"sp": 200

@@ -1,0 +1,46 @@
+{
+	"display_name": "Dance Breaker II",
+	"id": "dance_breaker_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "magic_barrier",
+			"sp": 3
+		},
+		{
+			"kind": "skill",
+			"skill_id": "ban_dance",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "drain_magic",
+			"sp": 20
+		},
+		{
+			"kind": "trait",
+			"sp": 40,
+			"trait_id": "drain_magic_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "confusion_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
+			"kind": "skill",
+			"skill_id": "counter_dance",
+			"sp": 110
+		},
+		{
+			"kind": "skill",
+			"skill_id": "underworld_fog",
+			"sp": 150
+		}
+	]
+}

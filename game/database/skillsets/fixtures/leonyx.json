@@ -23,6 +23,11 @@
 			"sp": 30
 		},
 		{
+			"kind": "trait",
+			"sp": 45,
+			"trait_id": "magic_regenerator"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kacrackle",
 			"sp": 65
@@ -31,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "kafrizzle",
 			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "comeback_kid"
 		},
 		{
 			"kind": "skill",

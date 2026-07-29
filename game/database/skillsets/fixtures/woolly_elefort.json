@@ -33,6 +33,11 @@
 			"sp": 70
 		},
 		{
+			"kind": "trait",
+			"sp": 90,
+			"trait_id": "cold_breath_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kadonk",
 			"sp": 120

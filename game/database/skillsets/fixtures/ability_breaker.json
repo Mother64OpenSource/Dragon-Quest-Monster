@@ -21,6 +21,31 @@
 			"kind": "skill",
 			"skill_id": "tame_tiger",
 			"sp": 20
+		},
+		{
+			"kind": "trait",
+			"sp": 30,
+			"trait_id": "abiliterator_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 46,
+			"trait_id": "frizz_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 62,
+			"trait_id": "woosh_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "rubblerouser_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "zap_ward"
 		}
 	]
 }

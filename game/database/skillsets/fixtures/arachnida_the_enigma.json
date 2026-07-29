@@ -28,6 +28,11 @@
 			"sp": 50
 		},
 		{
+			"kind": "trait",
+			"sp": 70,
+			"trait_id": "poison_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "nightmarish_shriek",
 			"sp": 100

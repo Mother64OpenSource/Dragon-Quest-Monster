@@ -1,0 +1,56 @@
+{
+	"display_name": "Bang & Zam II",
+	"id": "bang_zam_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zammle",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "boom",
+			"sp": 10
+		},
+		{
+			"kind": "skill",
+			"skill_id": "blast_slash",
+			"sp": 20
+		},
+		{
+			"kind": "skill",
+			"skill_id": "shadow_slash",
+			"sp": 30
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazam",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboom",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazammle",
+			"sp": 90
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kaboomle",
+			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 135,
+			"trait_id": "zam_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "bang_ward"
+		}
+	]
+}

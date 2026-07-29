@@ -23,9 +23,19 @@
 			"sp": 40
 		},
 		{
+			"kind": "trait",
+			"sp": 50,
+			"trait_id": "steady_recovery"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaboomle",
 			"sp": 70
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "comeback_kid"
 		},
 		{
 			"kind": "skill",

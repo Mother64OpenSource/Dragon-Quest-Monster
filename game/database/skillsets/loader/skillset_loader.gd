@@ -9,11 +9,14 @@ static func load_from_dict(data: Dictionary) -> SkillSetData:
 	var thresholds: Array[Dictionary] = []
 	for raw in data.get("thresholds", []):
 		var t: Dictionary = {"sp": int(raw.get("sp", 0)), "kind": raw.get("kind", "skill")}
-		if t["kind"] == "skill":
-			t["skill_id"] = raw.get("skill_id", "")
-		else:
-			t["stat_name"] = raw.get("stat_name", "attack")
-			t["amount"] = int(raw.get("amount", 0))
+		match t["kind"]:
+			"skill":
+				t["skill_id"] = raw.get("skill_id", "")
+			"trait":
+				t["trait_id"] = raw.get("trait_id", "")
+			_:
+				t["stat_name"] = raw.get("stat_name", "attack")
+				t["amount"] = int(raw.get("amount", 0))
 		thresholds.append(t)
 	thresholds.sort_custom(func(a, b): return a["sp"] < b["sp"])
 	skillset.thresholds = thresholds

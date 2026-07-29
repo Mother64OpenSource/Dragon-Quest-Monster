@@ -33,6 +33,11 @@
 			"sp": 95
 		},
 		{
+			"kind": "trait",
+			"sp": 110,
+			"trait_id": "blunt_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "ocean_slash",
 			"sp": 150

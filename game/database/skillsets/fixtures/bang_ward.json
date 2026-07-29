@@ -1,0 +1,57 @@
+{
+	"display_name": "Bang Ward",
+	"id": "bang_ward",
+	"thresholds": [
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 5,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 8,
+			"kind": "stat_boost",
+			"sp": 10,
+			"stat_name": "attack"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 20,
+			"stat_name": "wisdom"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 30,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "bang_ward"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 85,
+			"stat_name": "wisdom"
+		},
+		{
+			"kind": "trait",
+			"sp": 125,
+			"trait_id": "magic_miser"
+		},
+		{
+			"amount": 16,
+			"kind": "stat_boost",
+			"sp": 160,
+			"stat_name": "mp"
+		},
+		{
+			"kind": "trait",
+			"sp": 200,
+			"trait_id": "magic_scrooge"
+		}
+	]
+}

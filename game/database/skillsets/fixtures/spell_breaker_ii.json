@@ -33,6 +33,16 @@
 			"sp": 50
 		},
 		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "dim_ward"
+		},
+		{
+			"kind": "trait",
+			"sp": 80,
+			"trait_id": "magical_sabotage_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "black_fog",
 			"sp": 100

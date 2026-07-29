@@ -1,0 +1,51 @@
+{
+	"display_name": "Wulfspade II",
+	"id": "wulfspade_ii",
+	"thresholds": [
+		{
+			"kind": "skill",
+			"skill_id": "zapple",
+			"sp": 5
+		},
+		{
+			"kind": "skill",
+			"skill_id": "oomphle",
+			"sp": 15
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning",
+			"sp": 23
+		},
+		{
+			"kind": "skill",
+			"skill_id": "singing_slash",
+			"sp": 33
+		},
+		{
+			"kind": "skill",
+			"skill_id": "lightning_storm",
+			"sp": 45
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kazap",
+			"sp": 60
+		},
+		{
+			"kind": "skill",
+			"skill_id": "kasag",
+			"sp": 70
+		},
+		{
+			"kind": "skill",
+			"skill_id": "poisonous_poke",
+			"sp": 85
+		},
+		{
+			"kind": "trait",
+			"sp": 100,
+			"trait_id": "dazzle_ward"
+		}
+	]
+}

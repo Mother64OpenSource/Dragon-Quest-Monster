@@ -41,6 +41,11 @@
 			"kind": "skill",
 			"skill_id": "scorch",
 			"sp": 120
+		},
+		{
+			"kind": "trait",
+			"sp": 150,
+			"trait_id": "comeback_kid"
 		}
 	]
 }

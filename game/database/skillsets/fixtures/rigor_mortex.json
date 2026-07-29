@@ -23,6 +23,11 @@
 			"sp": 45
 		},
 		{
+			"kind": "trait",
+			"sp": 60,
+			"trait_id": "blunt_ward"
+		},
+		{
 			"kind": "skill",
 			"skill_id": "kaclang",
 			"sp": 80
@@ -31,6 +36,11 @@
 			"kind": "skill",
 			"skill_id": "big_banga",
 			"sp": 100
+		},
+		{
+			"kind": "trait",
+			"sp": 120,
+			"trait_id": "comeback_kid"
 		},
 		{
 			"kind": "skill",
