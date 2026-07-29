@@ -75,6 +75,7 @@ func run() -> bool:
 	_check_weapon_effects_mechanics()
 	_check_blacksmith_mechanics()
 	_check_taunt_mechanics()
+	_check_counter_stance_and_utility_skill_mechanics()
 
 	if _all_passed:
 		print("BattleTestRunner: ALL CHECKS PASSED")
@@ -2580,12 +2581,156 @@ func _check_taunt_mechanics() -> void:
 			direct_hit = event
 	_check("directly targeting the taunter already (no redirect needed) still lands on them correctly", direct_hit != null and direct_hit.target_instance_id == direct_side_b[1].instance_id)
 
+## Real sweep: found while investigating the Selflessness/taunt report --
+## 38 self-targeted skills across the full fixture set whose only "effect"
+## was a self-damage DamageEffect that didn't match their own description
+## at all (the same import-mistake class as Selflessness). Fixed the
+## subset that fits this engine's existing single-target framework without
+## needing new ally/AOE targeting infrastructure (see wiki/log.md for the
+## full list and what's deliberately deferred to a follow-up): the Counter
+## family, Deep Breath, Mist Me, and Defending Champion. Each fresh
+## harness below is deliberately NOT shared across sub-checks, same reason
+## as _check_taunt_mechanics()'s own second harness -- avoids one
+## sub-check's ActionExecutor.execute() calls (which reset every "until my
+## next action" flag on whichever monster acts) quietly interfering with
+## another's.
+func _check_counter_stance_and_utility_skill_mechanics() -> void:
+	var team_builder := TeamBuilder.new()
+
+	# --- Counter family: skill data itself ---
+	var counter_slash_data := team_builder.skill_database.get_skill("counter_slash")
+	_check(
+		"counter_slash's own fixture is a self-targeted CounterStanceEffect filtered to Slash, not a damage effect",
+		counter_slash_data.target_type == SkillData.TargetType.SELF and counter_slash_data.effects.size() == 1
+		and counter_slash_data.effects[0] is CounterStanceEffect
+		and counter_slash_data.effects[0].allowed_skill_types == (["Slash"] as Array[String])
+	)
+	var plain_counter_data := team_builder.skill_database.get_skill("counter")
+	_check(
+		"plain counter's own fixture allows BOTH Slash and the no-skill_type basic Attack, per its own \"also can reflect normal attacks\" wording",
+		plain_counter_data.effects[0].allowed_skill_types == (["Slash", ""] as Array[String])
+	)
+
+	# --- Counter family: a non-matching category must NOT trigger a filtered stance ---
+	var mismatch_harness := _new_harness(team_builder)
+	mismatch_harness.target.current_mp = team_builder.skill_registry["counter_slash"].mp_cost
+	ActionExecutor.execute(mismatch_harness.ctx, Action.new(mismatch_harness.target.instance_id, "counter_slash", mismatch_harness.target.instance_id), team_builder.skill_registry)
+	_check("casting counter_slash sets the defender's countering_skill_types to just Slash", mismatch_harness.target.countering_skill_types == (["Slash"] as Array[String]))
+	ActionExecutor.execute(mismatch_harness.ctx, Action.new(mismatch_harness.actor.instance_id, "attack", mismatch_harness.target.instance_id), team_builder.skill_registry)
+	var saw_mismatched_counter := false
+	for event in mismatch_harness.ctx.event_bus.get_log():
+		if event is CounterattackEvent:
+			saw_mismatched_counter = true
+	_check("counter_slash does NOT trigger against a non-matching category (plain Attack has no real skill_type at all)", not saw_mismatched_counter)
+
+	# --- Counter family: a matching category DOES trigger, for the hand-computed retaliation amount ---
+	# Both sides use a tanky species (base_hp 3500) rather than the usual
+	# slime/golem pair -- this check's damage flows BOTH ways (the original
+	# hit, then the counter-retaliation back), and MonsterInstance.take_damage
+	# clamps to [0, species.base_hp], so a fragile combatant on either side
+	# would silently clamp the applied amount below the hand-computed raw
+	# value and fail the equality check for the wrong reason.
+	var match_harness := _new_harness(team_builder, "great_muddy_hand", "great_muddy_hand")
+	var defender: MonsterInstance = match_harness.target
+	var attacker: MonsterInstance = match_harness.actor
+	defender.current_mp = team_builder.skill_registry["counter_slash"].mp_cost
+	attacker.current_mp = team_builder.skill_registry["anchor_knuckle"].mp_cost
+	ActionExecutor.execute(match_harness.ctx, Action.new(defender.instance_id, "counter_slash", defender.instance_id), team_builder.skill_registry)
+	var expected_counter_damage := DamageFormula.calculate(0, defender.get_effective_stat("attack"), attacker.get_effective_stat("defense"))
+	ActionExecutor.execute(match_harness.ctx, Action.new(attacker.instance_id, "anchor_knuckle", defender.instance_id), team_builder.skill_registry)
+	var counter_event: CounterattackEvent = null
+	for event in match_harness.ctx.event_bus.get_log():
+		if event is CounterattackEvent:
+			counter_event = event
+	_check("counter_slash DOES trigger against a matching category (a real Slash-type skill, Anchor Knuckle)", counter_event != null)
+	_check(
+		"the retaliation lands on the original attacker, for the hand-computed amount",
+		counter_event != null and counter_event.source_instance_id == defender.instance_id
+		and counter_event.target_instance_id == attacker.instance_id and counter_event.amount == expected_counter_damage
+	)
+	ActionExecutor.execute(match_harness.ctx, Action.new(defender.instance_id, "attack", attacker.instance_id), team_builder.skill_registry)
+	_check("countering_skill_types clears the moment the defender's own next action executes", defender.countering_skill_types.is_empty())
+
+	# --- Deep Breath: boosts damage of a real Breath-type skill used next, and only that ---
+	# Aurora Breath's power (315, further boosted 1.5x) would one-shot a
+	# normal 50 HP test monster and clamp the applied amount below the
+	# hand-computed raw value -- give the target a tanky species instead
+	# (see the match_harness comment above for why the clamp matters).
+	var breath_harness := _new_harness(team_builder, "slime", "great_muddy_hand")
+	var breather: MonsterInstance = breath_harness.actor
+	var breath_target: MonsterInstance = breath_harness.target
+	ActionExecutor.execute(breath_harness.ctx, Action.new(breather.instance_id, "deep_breath", breather.instance_id), team_builder.skill_registry)
+	_check("casting deep_breath sets the caster's own charge flag", breather.deep_breath_charged)
+	breather.current_mp = team_builder.skill_registry["aurora_breath"].mp_cost
+	var aurora_breath_power: int = team_builder.skill_registry["aurora_breath"].effects[0].power
+	var boosted_power := MathUtils.round_half_up(float(aurora_breath_power) * DamageEffect.DEEP_BREATH_DAMAGE_MULTIPLIER)
+	ActionExecutor.execute(breath_harness.ctx, Action.new(breather.instance_id, "aurora_breath", breath_target.instance_id), team_builder.skill_registry)
+	var boosted_hit: DamageAppliedEvent = null
+	for event in breath_harness.ctx.event_bus.get_log():
+		if event is DamageAppliedEvent:
+			boosted_hit = event
+	# Slime (the attacker here) innately carries critical_massacre, so this
+	# single hit can legitimately land as a crit depending on RNG -- a crit
+	# ignores defense entirely (see DamageEffect.apply()), so the expected
+	# value has to branch on the real hit's own is_critical flag rather than
+	# assuming defense always applies.
+	var expected_boosted_damage := DamageFormula.calculate(
+		boosted_power, breather.get_effective_stat("attack"),
+		0 if (boosted_hit != null and boosted_hit.is_critical) else breath_target.get_effective_stat("defense")
+	)
+	_check("a real Breath-type skill (Aurora Breath) used right after Deep Breath deals the hand-computed BOOSTED amount", boosted_hit != null and boosted_hit.amount == expected_boosted_damage)
+	_check("deep_breath_charged clears the moment this monster's own next action executes", not breather.deep_breath_charged)
+
+	var wasted_breath_harness := _new_harness(team_builder)
+	var wasted_breather: MonsterInstance = wasted_breath_harness.actor
+	ActionExecutor.execute(wasted_breath_harness.ctx, Action.new(wasted_breather.instance_id, "deep_breath", wasted_breather.instance_id), team_builder.skill_registry)
+	ActionExecutor.execute(wasted_breath_harness.ctx, Action.new(wasted_breather.instance_id, "attack", wasted_breath_harness.target.instance_id), team_builder.skill_registry)
+	_check("charging Deep Breath and then using a non-Breath skill just clears the charge for nothing (no boost, no crash)", not wasted_breather.deep_breath_charged)
+
+	# --- Mist Me: the chance is rolled once at cast time, not per incoming hit ---
+	var success_harness := _new_harness(team_builder)
+	var forced_success := MistMeEffect.new()
+	forced_success.success_chance = 1.0
+	forced_success.apply(success_harness.ctx, success_harness.target, success_harness.target)
+	_check("Mist Me's forced-success roll (chance=1.0) sets mist_me_active", success_harness.target.mist_me_active)
+	ActionExecutor.execute(success_harness.ctx, Action.new(success_harness.actor.instance_id, "attack", success_harness.target.instance_id), team_builder.skill_registry)
+	var mist_hit: DamageAppliedEvent = null
+	for event in success_harness.ctx.event_bus.get_log():
+		if event is DamageAppliedEvent:
+			mist_hit = event
+	_check("an active Mist Me ward reduces the next hit taken to exactly 0 (was_negated, not just reduced)", mist_hit != null and mist_hit.amount == 0 and mist_hit.was_negated)
+	_check("the ward is consumed by that one hit, not left standing", not success_harness.target.mist_me_active)
+
+	var failure_harness := _new_harness(team_builder)
+	var forced_failure := MistMeEffect.new()
+	forced_failure.success_chance = 0.0
+	forced_failure.apply(failure_harness.ctx, failure_harness.target, failure_harness.target)
+	_check("Mist Me's forced-failure roll (chance=0.0) leaves mist_me_active false (a wasted turn, not a guaranteed ward)", not failure_harness.target.mist_me_active)
+
+	# --- Defending Champion: a real sourced number (1/10 reduction), and it does NOT reset each turn ---
+	var champion_harness := _new_harness(team_builder)
+	var champion: MonsterInstance = champion_harness.target
+	var champion_attacker: MonsterInstance = champion_harness.actor
+	ActionExecutor.execute(champion_harness.ctx, Action.new(champion.instance_id, "defending_champion", champion.instance_id), team_builder.skill_registry)
+	_check("casting defending_champion sets the persistent flag", champion.defending_champion_active)
+	var champion_base_damage := DamageFormula.calculate(team_builder.skill_registry["attack"].effects[0].power, champion_attacker.get_effective_stat("attack"), champion.get_effective_stat("defense"))
+	var expected_champion_damage := MathUtils.round_half_up(float(champion_base_damage) * DamageEffect.DEFENDING_CHAMPION_DAMAGE_MULTIPLIER)
+	ActionExecutor.execute(champion_harness.ctx, Action.new(champion_attacker.instance_id, "attack", champion.instance_id), team_builder.skill_registry)
+	var champion_hit: DamageAppliedEvent = null
+	for event in champion_harness.ctx.event_bus.get_log():
+		if event is DamageAppliedEvent:
+			champion_hit = event
+	_check("Defending Champion reduces damage taken to the hand-computed 1/10-less amount", champion_hit != null and champion_hit.amount == expected_champion_damage)
+	# Champion's own next action (unlike every flag above) must NOT clear the buff -- it lasts the rest of the battle.
+	ActionExecutor.execute(champion_harness.ctx, Action.new(champion.instance_id, "attack", champion_attacker.instance_id), team_builder.skill_registry)
+	_check("defending_champion_active is still true after the champion's own next action -- it lasts the whole battle, not just one turn", champion.defending_champion_active)
+
 ## One fresh actor(side_a)/target(side_b) pair plus a real BattleContext,
 ## isolated per status scenario so one test's active_status/event log can't
 ## leak into another's.
-func _new_harness(team_builder: TeamBuilder) -> Dictionary:
-	var side_a := team_builder.build_team(["slime"], "side_a")
-	var side_b := team_builder.build_team(["golem"], "side_b")
+func _new_harness(team_builder: TeamBuilder, actor_species: String = "slime", target_species: String = "golem") -> Dictionary:
+	var side_a := team_builder.build_team([actor_species], "side_a")
+	var side_b := team_builder.build_team([target_species], "side_b")
 	var event_bus := BattleEventBus.new()
 	var state := BattleState.new(DeterministicRng.new(1), event_bus)
 	state.side_a_team = side_a

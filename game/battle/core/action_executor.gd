@@ -16,13 +16,25 @@ static func execute(ctx: BattleContext, action: Action, skill_lookup: Dictionary
 		actor.is_defending = true
 		ctx.event_bus.emit_event(DefendEvent.new(actor.instance_id), ctx.state.turn_number)
 		return
-	# Defend/Taunt (Selflessness et al.) both protect/redirect only until
+	# Defend/Taunt/Counter-stance/Mist Me all protect or redirect only until
 	# this monster's own next action, whatever that turns out to be -- so
 	# taking any OTHER action (even one later prevented/fizzled/missed; a
 	# turn boundary still passed) clears them here, before any of the
-	# early-return paths below.
+	# early-return paths below. Defending Champion is deliberately NOT reset
+	# here -- see its own doc comment on MonsterInstance for why (it lasts
+	# the whole rest of the battle). Deep Breath is ALSO deliberately not
+	# managed here, unlike the others, for the opposite reason: it charges up
+	# THIS SAME upcoming action's own outgoing damage (not some later
+	# incoming hit), so resetting it before the skill's effects even run
+	# would wipe it out before DamageEffect ever gets a chance to read it,
+	# and resetting it after would just as easily wipe out a charge this
+	# very action set (if the action IS Deep Breath itself). It's entirely
+	# self-contained inside DamageEffect.apply() instead -- same precedent
+	# as tension_level, which isn't touched here either.
 	actor.is_defending = false
 	actor.is_taunting = false
+	actor.countering_skill_types = []
+	actor.mist_me_active = false
 
 	var skill: SkillData = skill_lookup.get(action.skill_id)
 	if skill == null:

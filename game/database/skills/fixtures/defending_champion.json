@@ -5,9 +5,7 @@
 	"display_name": "Defending Champion",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 24.0,
-			"type": "damage"
+			"type": "defending_champion"
 		}
 	],
 	"id": "defending_champion",

@@ -17,6 +17,13 @@ const DEFEND_DAMAGE_MULTIPLIER := 0.5
 ## damage taken," with no real sourced number -- a documented placeholder,
 ## same honesty convention as this file's other invented constants.
 const TAUNT_DAMAGE_MULTIPLIER := 1.5
+## Deep Breath's own description gives no real number either -- a
+## documented placeholder, same as TAUNT_DAMAGE_MULTIPLIER above.
+const DEEP_BREATH_DAMAGE_MULTIPLIER := 1.5
+## Unlike this file's other multipliers, Defending Champion's own
+## description gives an exact real number ("reduce damage by 1/10") --
+## not a placeholder.
+const DEFENDING_CHAMPION_DAMAGE_MULTIPLIER := 0.9
 
 @export var category: Category = Category.PHYSICAL
 @export var power: int = 0
@@ -48,6 +55,22 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 		for trait_effect in user.active_traits:
 			tension_percent *= trait_effect.get_tension_burn_multiplier(ctx)
 
+	# Deep Breath only ever boosts a Breath-type action -- charging it and
+	# then using some other skill just clears the charge for nothing (see
+	# MonsterInstance.deep_breath_charged's own doc comment), same as
+	# tension_snapshot above this is read once per action, not per hit.
+	# Self-contained here rather than in ActionExecutor's generic reset block
+	# (unlike is_defending/is_taunting/mist_me_active) -- this flag needs to
+	# still read true DURING this same action's own damage calc (it boosts
+	# THIS action's outgoing damage, not some later incoming hit), so it can
+	# only be consumed/cleared from inside the one place that actually reads
+	# it, exactly like tension_level above.
+	var effective_power := power
+	if user.deep_breath_charged:
+		if skill_type == "Breath":
+			effective_power = MathUtils.round_half_up(float(power) * DEEP_BREATH_DAMAGE_MULTIPLIER)
+		user.deep_breath_charged = false
+
 	for _hit in range(hit_count):
 		if target.is_fainted():
 			break
@@ -59,7 +82,7 @@ func apply(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance) -
 		# entirely, honestly adapted into this engine's own placeholder
 		# formula rather than grafting in the real formula's fully different
 		# shape (which has no "power" term at all).
-		var raw_damage := DamageFormula.calculate(power, offense, 0 if is_critical else defense)
+		var raw_damage := DamageFormula.calculate(effective_power, offense, 0 if is_critical else defense)
 		if tension_snapshot > 0:
 			raw_damage = MathUtils.round_half_up(float(raw_damage) * (1.0 + tension_percent * tension_snapshot))
 		var final_damage := _run_damage_hooks(ctx, user, target, raw_damage)
@@ -136,8 +159,14 @@ func _wake_if_sleeping(ctx: BattleContext, target: MonsterInstance) -> void:
 ## Each hit goes through the weapon's own damage bonus, then the user's
 ## on_before_damage_dealt hooks, then the target's on_before_damage_taken
 ## hooks — per-hit, not per-action, since multi-hit skills roll damage
-## independently for each hit.
+## independently for each hit. Mist Me is checked first and short-circuits
+## everything else -- "take no damage once" means exactly that, not a
+## multiplier stacked with whatever else might apply.
 func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: MonsterInstance, raw_damage: int) -> int:
+	if target.mist_me_active:
+		target.mist_me_active = false
+		_maybe_counter_attack(ctx, target, user)
+		return 0
 	var damage := _apply_weapon_damage_bonus(user.equipped_weapon, target, raw_damage)
 	for trait_effect in user.active_traits:
 		damage = trait_effect.on_before_damage_dealt(ctx, user, target, damage, element)
@@ -148,7 +177,36 @@ func _run_damage_hooks(ctx: BattleContext, user: MonsterInstance, target: Monste
 		damage = MathUtils.round_half_up(float(damage) * DEFEND_DAMAGE_MULTIPLIER)
 	if target.is_taunting:
 		damage = MathUtils.round_half_up(float(damage) * TAUNT_DAMAGE_MULTIPLIER)
+	if target.defending_champion_active:
+		damage = MathUtils.round_half_up(float(damage) * DEFENDING_CHAMPION_DAMAGE_MULTIPLIER)
+	_maybe_counter_attack(ctx, target, user)
 	return maxi(0, damage)
+
+## Counter/Counter Slash/Counter Attack/Counter Breath/Counter Dance/
+## Counter Magic (see CounterStanceEffect): if `defender` is currently
+## countering the attacking skill's own skill_type, retaliates against
+## `attacker` -- same retaliation math as the permanent, trait-driven
+## CounterAttackTraitEffect.on_before_damage_taken(), just triggered by
+## MonsterInstance state instead of an always-active trait. Triggers
+## regardless of how much (if any) damage `attacker`'s own hit actually
+## dealt -- what matters is that a matching-category attack was used
+## against `defender` at all, not the final damage number, matching how
+## the trait-driven version already behaves (its own hook fires before
+## damage negation gets a chance to zero anything out).
+func _maybe_counter_attack(ctx: BattleContext, defender: MonsterInstance, attacker: MonsterInstance) -> void:
+	if not defender.countering_skill_types.has(skill_type) or attacker.is_fainted():
+		return
+	var counter_damage := DamageFormula.calculate(0, defender.get_effective_stat("attack"), attacker.get_effective_stat("defense"))
+	var applied := attacker.take_damage(counter_damage)
+	ctx.event_bus.emit_event(
+		CounterattackEvent.new(defender.instance_id, attacker.instance_id, applied, attacker.current_hp),
+		ctx.state.turn_number
+	)
+	# A counter can be lethal -- EndOfTurnProcessor's own fainted pass skips
+	# monsters that are *already* fainted, so without this explicit call the
+	# attacker's MonsterFaintedEvent/backfill would never fire (same reason
+	# CounterAttackTraitEffect calls this too).
+	FaintHandler.handle_if_fainted(ctx, attacker)
 
 ## WeaponData.bonus_vs_families is matched case-insensitively against the
 ## target's species.family (fixture casing isn't fully consistent -- see

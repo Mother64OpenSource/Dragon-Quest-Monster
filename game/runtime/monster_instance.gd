@@ -51,6 +51,40 @@ var is_defending: bool = false
 ## but takes significantly more of it."
 var is_taunting: bool = false
 
+## Set by a Counter-family skill (Counter Slash et al. -- see
+## CounterStanceEffect), cleared the moment this monster's own next action
+## executes, same lifetime as is_defending/is_taunting. Empty = not
+## countering. Holds the SkillData.skill_type value(s) (see skill_data.gd)
+## this stance retaliates against; "" is included for plain "Counter"'s
+## own "also can reflect normal attacks" wording, since the basic "attack"
+## skill (almost alone among every skill fixture) carries no real
+## skill_type at all. Checked in DamageEffect._run_damage_hooks().
+var countering_skill_types: Array[String] = []
+
+## Set by Deep Breath. Unlike is_defending/is_taunting/mist_me_active
+## (cleared at the START of my own next action, before it does anything,
+## since those all protect against an incoming hit from someone else in the
+## meantime), this boosts THIS SAME upcoming action's own outgoing damage --
+## so ActionExecutor only clears it AFTER that action's effects have run.
+## Boosts damage if (and only if) that action turns out to be a Breath
+## skill (DamageEffect.apply()) -- otherwise just clears having done
+## nothing, same as taking a breath and then not breathing fire.
+var deep_breath_charged: bool = false
+
+## Set by Mist Me: a chance-based "my very next hit taken is fully
+## negated" ward (rolled once, at cast time, per its own "chance of
+## failure" wording -- not re-rolled per incoming hit). Consumed the
+## moment it actually blocks a hit (DamageEffect._run_damage_hooks()), or
+## cleared unconsumed at the same "until my own next action" checkpoint as
+## everything else in this family if nothing hits first.
+var mist_me_active: bool = false
+
+## Set by Defending Champion -- unlike every other flag on this page, this
+## is NOT reset each turn: its own description ("during 1 battle") means
+## it lasts for the rest of the battle once cast, so ActionExecutor.execute()
+## deliberately leaves it alone.
+var defending_champion_active: bool = false
+
 func _init(p_instance_id: int, p_species: MonsterSpecies, p_side: String, p_slot: int) -> void:
 	instance_id = p_instance_id
 	species = p_species

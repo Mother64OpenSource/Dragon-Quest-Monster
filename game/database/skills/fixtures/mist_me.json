@@ -5,9 +5,7 @@
 	"display_name": "Mist Me",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 45.0,
-			"type": "damage"
+			"type": "mist_me"
 		}
 	],
 	"id": "mist_me",

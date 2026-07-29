@@ -5,9 +5,7 @@
 	"display_name": "Deep Breath",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 15.0,
-			"type": "damage"
+			"type": "deep_breath"
 		}
 	],
 	"id": "deep_breath",

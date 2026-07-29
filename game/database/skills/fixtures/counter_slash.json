@@ -5,9 +5,8 @@
 	"display_name": "Counter Slash",
 	"effects": [
 		{
-			"category": "physical",
-			"power": 111.0,
-			"type": "damage"
+			"allowed_skill_types": ["Slash"],
+			"type": "counter_stance"
 		}
 	],
 	"id": "counter_slash",

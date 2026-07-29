@@ -131,6 +131,22 @@ static func _build_effect(effect_data: Dictionary, status_registry: Dictionary) 
 			return effect
 		"taunt":
 			return TauntEffect.new()
+		"counter_stance":
+			var effect := CounterStanceEffect.new()
+			var allowed_types: Array[String] = []
+			for skill_type in effect_data.get("allowed_skill_types", []):
+				allowed_types.append(str(skill_type))
+			effect.allowed_skill_types = allowed_types
+			return effect
+		"deep_breath":
+			return DeepBreathEffect.new()
+		"mist_me":
+			var effect := MistMeEffect.new()
+			if effect_data.has("success_chance"):
+				effect.success_chance = float(effect_data.get("success_chance"))
+			return effect
+		"defending_champion":
+			return DefendingChampionEffect.new()
 		_:
 			push_error("Unknown skill effect type: %s" % effect_type)
 			return null
