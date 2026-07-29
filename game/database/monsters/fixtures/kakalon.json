@@ -39,6 +39,11 @@
 		"Wck": "0",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_jammer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/kakalon.webp",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"double_trouble",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"crafty_ice_breather"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

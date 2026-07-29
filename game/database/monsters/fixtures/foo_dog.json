@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"close_scraper"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/foo_dog.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"last_word",
 		"stalwart_spirit"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"crafty_donker"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

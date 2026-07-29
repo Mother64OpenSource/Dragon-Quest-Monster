@@ -40,6 +40,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		],
+		"P": [
+			"perfect_parry"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wight_knight.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"hit_squad",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

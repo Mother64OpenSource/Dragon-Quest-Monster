@@ -43,6 +43,11 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/trauminator.webp",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"double_trouble",
 		"bangmeister",
 		"crafty_inactivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"paralyzed_attack"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

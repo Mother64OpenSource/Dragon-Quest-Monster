@@ -38,6 +38,14 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heat_up"
+		],
+		"P": [
+			"last_gasp"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/roseguardin.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"counter_striker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_buff"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

@@ -41,6 +41,7 @@
 		"Wsh": "⁎",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/araniad_the_enigma.png",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"double_trouble",
 		"hit_squad",
 		"poisonous_poke"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"crafty_confuser"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

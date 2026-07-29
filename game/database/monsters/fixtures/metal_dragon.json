@@ -38,6 +38,14 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"one_shot_reversal"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/metal_dragon.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"perilous_parrier",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

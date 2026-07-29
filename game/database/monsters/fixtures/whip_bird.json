@@ -38,6 +38,14 @@
 		"Slp": "0",
 		"Wsh": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sizzmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/whip_bird.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

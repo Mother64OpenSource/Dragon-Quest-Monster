@@ -41,6 +41,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/aztech.png",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"tactical_genius",
 		"violent_rager",
 		"hopeful_hitter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"one_shot_reversal"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

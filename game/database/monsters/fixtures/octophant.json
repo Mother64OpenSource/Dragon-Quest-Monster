@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"dance_meister"
+		],
+		"P": [
+			"sobering_slap"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/octophant.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"tactical_mastermind",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

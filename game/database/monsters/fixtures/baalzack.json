@@ -43,6 +43,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"intimidating"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/baalzack.webp",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"standard_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

@@ -42,6 +42,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zammer"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/black_dragon.webp",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"zammeister",
 		"scare_stare"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"heat_up"
+		],
+		"star": [
+			"random_oomph"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counter_striker"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/harmour.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_zammer",
 		"perilous_parrier"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"metal_killer"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"random_underworld_fog"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"warrior"
+		],
+		"P": [
+			"full_satisfaction_guard"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mandrake_major.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"hopeful_hitter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"crafty_zapper"
+		],
+		"star": [
+			"tactical_trooper"
+		]
+	}
 }

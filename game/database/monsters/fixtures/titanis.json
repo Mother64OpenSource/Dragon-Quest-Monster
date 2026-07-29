@@ -45,6 +45,11 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/titanis.webp",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"double_trouble",
 		"bangmeister",
 		"coercion"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"crafty_inactivist"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

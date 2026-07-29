@@ -36,6 +36,14 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/koala_knight.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"critical_massacre",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"crafty_zapper"
+		]
+	}
 }

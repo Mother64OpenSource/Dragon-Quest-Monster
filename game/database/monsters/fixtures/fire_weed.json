@@ -38,6 +38,14 @@
 		"Wck": "↓",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fire_weed.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"frizzmeister",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"crafty_frizzer"
+		]
+	}
 }

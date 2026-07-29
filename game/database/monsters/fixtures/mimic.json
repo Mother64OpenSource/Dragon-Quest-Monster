@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"early_bird"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mimic.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"critical_massacre",
 		"tension_relief_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_whacker"
+		],
+		"50": [
+			"deadly_touch"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

@@ -41,6 +41,14 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_frizzer"
+		],
+		"P": [
+			"random_tension"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pumpkin_knight.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"full_satisfaction_guard"
+		],
+		"50": [
+			"giant_killer"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

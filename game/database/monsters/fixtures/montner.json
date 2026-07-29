@@ -33,6 +33,17 @@
 		"Wsh": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"G": [
+			"quad_trouble"
+		],
+		"H": [
+			"wrath_of_the_stars"
+		],
+		"P": [
+			"wave_of_relief"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/montner.png",
 	"starting_skill_ids": [
@@ -42,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"health_professional"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"crafty_devil"
+		]
+	}
 }

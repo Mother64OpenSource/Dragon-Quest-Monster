@@ -53,6 +53,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"ultra_fast_action"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/metal_slime.png",
 	"starting_skill_ids": [
@@ -62,5 +70,16 @@
 		"small_body",
 		"metal_body",
 		"escape_artist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"comeback_kid"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

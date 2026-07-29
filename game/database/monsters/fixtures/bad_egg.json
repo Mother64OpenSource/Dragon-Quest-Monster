@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sizzmeister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bad_egg.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"crafty_sealer",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"take_magic"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"fly_swatter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/serpentia.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_poisoner"
+		],
+		"50": [
+			"berserker"
+		],
+		"star": [
+			"crafty_rubblerouser"
+		]
+	}
 }

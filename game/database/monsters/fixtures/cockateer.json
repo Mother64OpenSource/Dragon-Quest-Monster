@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counter_striker"
+		],
+		"P": [
+			"artful_dodger"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cockateer.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"fly_swatter",
 		"wooshmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tactical_trooper"
+		],
+		"50": [
+			"crafty_woosher"
+		],
+		"star": [
+			"early_bird"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_whacker"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/megalodon.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"artful_dodger",
 		"magic_regenerator"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"deadly_touch"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

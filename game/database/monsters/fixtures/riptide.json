@@ -41,6 +41,14 @@
 		"Slp": "↓",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"berserker"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/riptide.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"early_bird",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"zammeister"
+		],
+		"50": [
+			"stress_relief"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

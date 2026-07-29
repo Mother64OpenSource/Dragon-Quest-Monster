@@ -3,10 +3,11 @@ extends SceneTree
 ## One-off utility: builds TraitData fixtures for every real trait name in
 ## the project's Google Sheets "Traits" reference tab, then populates every
 ## monster fixture's starting_trait_ids from that same sheet's per-monster
-## "Traits" column ("By Default" tier only -- the sheet also lists Size-tier
-## and Rank-offset-tier traits per monster, but this engine has no
-## synthesis/size/rank-offset progression system to hang those on yet, so
-## only the unconditional starting tier is imported). See wiki/log.md.
+## "Traits" column ("By Default" tier only -- the sheet's per-monster Traits
+## cell also lists Size-tier and Rank-offset-tier traits on two further
+## lines; see import_size_synth_traits.gd, which imports those into
+## size_gated_trait_ids/synth_gated_trait_ids once this script has already
+## populated the trait fixtures it depends on). See wiki/log.md.
 ##
 ## Run via: godot --headless --script res://tests/tools/import_traits.gd
 

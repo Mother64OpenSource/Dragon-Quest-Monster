@@ -33,6 +33,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sleeper"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/parched_peckerel.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"hit_squad",
 		"sudden_accelerate"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"early_bird"
+		],
+		"50": [
+			"sleep_sock"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

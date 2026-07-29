@@ -38,6 +38,11 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/monster_parade.webp",
 	"starting_skill_ids": [
@@ -48,5 +53,16 @@
 		"double_trouble",
 		"hit_squad",
 		"crafty_poisoner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_confuser"
+		],
+		"50": [
+			"crafty_sleeper"
+		],
+		"star": [
+			"crafty_paralyzer"
+		]
+	}
 }

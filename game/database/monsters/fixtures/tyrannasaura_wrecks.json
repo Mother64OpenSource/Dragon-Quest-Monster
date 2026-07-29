@@ -43,6 +43,7 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/tyrannasaura_wrecks.webp",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"double_trouble",
 		"strangely_alluring",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"intimidating"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"crafty_sealer"
+		]
+	}
 }

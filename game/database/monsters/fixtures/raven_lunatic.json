@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"early_bird"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/raven_lunatic.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"zammeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_black_fog"
+		],
+		"50": [
+			"dust_of_the_clan"
+		],
+		"star": [
+			"crafty_zammer"
+		]
+	}
 }

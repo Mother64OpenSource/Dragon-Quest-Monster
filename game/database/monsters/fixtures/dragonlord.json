@@ -44,6 +44,11 @@
 		"Zam": "0",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dragonlord.webp",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_genius",
 		"coercion",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

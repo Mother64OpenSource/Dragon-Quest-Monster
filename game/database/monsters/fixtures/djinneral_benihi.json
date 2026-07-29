@@ -33,6 +33,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"great_sage"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/djinneral_benihi.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"tactical_genius",
 		"random_reversal"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"crafty_woosher"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

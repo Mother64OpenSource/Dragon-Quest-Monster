@@ -35,6 +35,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"suicidal_satisfaction"
+		],
+		"P": [
+			"spell_satisfaction"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/orc.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"health_professional",
 		"sudden_ping"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

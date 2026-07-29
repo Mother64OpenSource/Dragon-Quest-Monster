@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heat_up"
+		],
+		"P": [
+			"crafty_frizzer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fox_fire.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"sudden_red_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tactical_trooper"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"random_red_fog"
+		]
+	}
 }

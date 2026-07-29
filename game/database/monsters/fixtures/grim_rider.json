@@ -38,6 +38,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/grim_rider.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"counter_striker",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"confusing_touch"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

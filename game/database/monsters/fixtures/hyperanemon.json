@@ -37,6 +37,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hyperanemon.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"zapmeister",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous_poke"
+		],
+		"50": [
+			"steady_recovery"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

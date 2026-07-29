@@ -39,6 +39,11 @@
 		"Wsh": "↓",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_magic_barrier"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/domedy.webp",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"double_trouble",
 		"artful_dodger",
 		"crafty_banger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_donker"
+		],
+		"50": [
+			"random_buff"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

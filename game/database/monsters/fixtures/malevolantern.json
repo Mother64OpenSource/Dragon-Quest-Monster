@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/malevolantern.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"cursed_attack"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"final_breath"
+		],
+		"star": [
+			"sudden_red_fog"
+		]
+	}
 }

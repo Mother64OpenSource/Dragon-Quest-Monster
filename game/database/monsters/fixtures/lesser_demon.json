@@ -34,6 +34,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lesser_demon.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"crafty_donker",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"heckling_hector"
+		],
+		"star": [
+			"sudden_red_fog"
+		]
+	}
 }

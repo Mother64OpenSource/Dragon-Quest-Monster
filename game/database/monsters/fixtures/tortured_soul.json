@@ -37,6 +37,14 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"crafty_sizzer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tortured_soul.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"crafty_paralyzer",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"sudden_red_fog"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

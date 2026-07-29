@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counter_striker"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/nardragon.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"whack_attack",
 		"crafty_inactivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"scare_stare"
+		],
+		"50": [
+			"early_bird"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_magic_barrier"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/killerpillar.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"desperado",
 		"poisonous_poke"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

@@ -40,6 +40,14 @@
 		"Sap": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wave_of_panic"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/drohl_diabolist.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"take_magic",
 		"rare_mist_me"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sleep_sock"
+		],
+		"50": [
+			"crafty_devil"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

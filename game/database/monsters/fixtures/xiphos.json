@@ -46,6 +46,7 @@
 		"Wck": "↑↑",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/xiphos.webp",
 	"starting_skill_ids": [
@@ -56,5 +57,16 @@
 		"tactical_mastermind",
 		"hit_squad",
 		"standard_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"warrior"
+		]
+	}
 }

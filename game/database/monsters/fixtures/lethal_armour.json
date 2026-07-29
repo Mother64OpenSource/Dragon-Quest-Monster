@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lethal_armour.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"random_oomph",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cottney.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"rabble_rouser",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"protection_of_the_stars"
+		],
+		"50": [
+			"star_gift"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

@@ -43,6 +43,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"dance_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/hulagan.png",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_genius",
 		"artful_dodger",
 		"stress_relief"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_inactivist"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"divine_dancer"
+		]
+	}
 }

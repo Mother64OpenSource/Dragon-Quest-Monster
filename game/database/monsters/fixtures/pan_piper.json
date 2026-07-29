@@ -35,6 +35,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"comeback_kid"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pan_piper.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"sleep_sock",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"rabble_rouser"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

@@ -55,6 +55,7 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/liquid_metal_king_slime.webp",
 	"starting_skill_ids": [
@@ -65,5 +66,16 @@
 		"tactical_mastermind",
 		"metal_body",
 		"escape_artist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perilous_parrier"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

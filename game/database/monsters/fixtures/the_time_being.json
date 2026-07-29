@@ -35,6 +35,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"sudden_red_fog"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/the_time_being.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"tactical_genius",
 		"zammeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"random_red_fog"
+		],
+		"star": [
+			"sudden_ping"
+		]
+	}
 }

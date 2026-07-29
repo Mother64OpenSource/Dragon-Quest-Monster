@@ -36,6 +36,14 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cobra_king.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"poisonous_poke",
 		"crafty_poisoner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"stress_relief"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

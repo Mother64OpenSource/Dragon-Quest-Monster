@@ -33,6 +33,14 @@
 		"Wck": "⁎",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"giant_killer"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/ragged_reaper.webp",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"standard_killer",
 		"deadly_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

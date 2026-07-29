@@ -35,6 +35,14 @@
 		"Sag": "↓",
 		"Slp": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sleeper"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/spiked_hare.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"sleep_sock",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"deadly_touch"
+		],
+		"star": [
+			"sudden_tension"
+		]
+	}
 }

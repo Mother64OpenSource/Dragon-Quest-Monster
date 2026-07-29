@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wooshmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/kon_the_knight.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"hit_squad",
 		"metal_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

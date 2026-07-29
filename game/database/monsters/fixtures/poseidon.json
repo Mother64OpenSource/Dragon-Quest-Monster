@@ -39,6 +39,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/poseidon.webp",
 	"starting_skill_ids": [
@@ -49,5 +50,16 @@
 		"tactical_mastermind",
 		"coercion",
 		"random_reversal"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"drain_magic_attack"
+		]
+	}
 }

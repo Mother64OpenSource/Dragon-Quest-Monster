@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wax_murderer.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"frizzmeister",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"crafty_frizzer"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

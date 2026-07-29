@@ -35,6 +35,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_black_fog"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sickler.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"deadly_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wooshmeister"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

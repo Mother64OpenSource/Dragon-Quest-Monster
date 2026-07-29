@@ -33,6 +33,14 @@
 		"Wsh": "½",
 		"Zap": "⇄"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/elder_pippit.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"small_body",
 		"random_accelerate",
 		"crafty_banger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_squasher"
+		],
+		"50": [
+			"random_ping"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

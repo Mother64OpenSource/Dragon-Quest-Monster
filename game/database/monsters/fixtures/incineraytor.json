@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"violent_rager"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/incineraytor.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_genius",
 		"crafty_sealer",
 		"rare_mist_me"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"crafty_squasher"
+		]
+	}
 }

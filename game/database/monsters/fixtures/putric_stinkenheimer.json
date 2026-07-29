@@ -41,6 +41,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_underworld_fog"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/putric_stinkenheimer.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"wooshmeister",
 		"random_underworld_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_poisoner"
+		],
+		"50": [
+			"poisonous"
+		],
+		"star": [
+			"poisonous_poke"
+		]
+	}
 }

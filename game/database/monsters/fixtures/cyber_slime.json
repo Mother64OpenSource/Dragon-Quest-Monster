@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"zapmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cyber_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"paralyzing",
 		"dead_obsession"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"crafty_zapper"
+		],
+		"star": [
+			"counter_striker"
+		]
+	}
 }

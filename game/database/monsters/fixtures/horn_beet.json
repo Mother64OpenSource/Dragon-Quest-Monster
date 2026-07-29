@@ -49,6 +49,11 @@
 		"Zam": "↑",
 		"Zap": "↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/horn_beet.webp",
 	"starting_skill_ids": [
@@ -59,5 +64,16 @@
 		"tactical_trooper",
 		"light_metal_body",
 		"random_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_red_fog"
+		],
+		"50": [
+			"crafty_banger"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

@@ -38,6 +38,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		],
+		"P": [
+			"crafty_curser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/belial.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"bangmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"health_professional"
+		],
+		"50": [
+			"suicidal_satisfaction"
+		],
+		"star": [
+			"crafty_banger"
+		]
+	}
 }

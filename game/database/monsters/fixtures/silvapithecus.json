@@ -36,6 +36,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"suicidal_satisfaction"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/silvapithecus.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"random_ping",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"drain_magic_attack"
+		],
+		"50": [
+			"one_shot_reversal"
+		],
+		"star": [
+			"bouncer"
+		]
+	}
 }

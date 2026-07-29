@@ -40,6 +40,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/metal_heavy.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"fly_swatter",
 		"critical_massacre",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

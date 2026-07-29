@@ -36,6 +36,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/princess_togami.webp",
 	"starting_skill_ids": [
@@ -46,5 +47,16 @@
 		"tactical_mastermind",
 		"hit_squad",
 		"take_magic"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"sudden_ping"
+		],
+		"star": [
+			"metal_body"
+		]
+	}
 }

@@ -39,6 +39,14 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zapper"
+		],
+		"P": [
+			"counter_striker"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/excalipurr.webp",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"zapmeister"
+		],
+		"star": [
+			"warrior"
+		]
+	}
 }

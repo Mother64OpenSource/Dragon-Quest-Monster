@@ -39,6 +39,14 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"triple_trouble"
+		],
+		"P": [
+			"one_shot_reversal"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wildcard.webp",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"hit_squad",
 		"counteractivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wave_of_relief"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

@@ -35,6 +35,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/robbin_locks.png",
 	"starting_skill_ids": [
@@ -45,5 +46,16 @@
 		"artful_dodger",
 		"lucky",
 		"tactical_genius"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_white_fog"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"coercion"
+		]
+	}
 }

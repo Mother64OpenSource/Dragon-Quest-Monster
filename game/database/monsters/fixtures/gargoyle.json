@@ -38,6 +38,14 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		],
+		"P": [
+			"crafty_sleeper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gargoyle.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_squasher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_black_fog"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

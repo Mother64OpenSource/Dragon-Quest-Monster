@@ -39,6 +39,7 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/evil_beast.png",
 	"starting_skill_ids": [
@@ -49,5 +50,16 @@
 		"tactical_mastermind",
 		"hit_squad",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"magic_regenerator"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

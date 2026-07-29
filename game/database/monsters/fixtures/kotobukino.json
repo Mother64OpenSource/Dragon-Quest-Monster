@@ -36,6 +36,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wooshmeister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/kotobukino.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"sudden_oomph"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"random_reversal"
+		],
+		"star": [
+			"fly_swatter"
+		]
+	}
 }

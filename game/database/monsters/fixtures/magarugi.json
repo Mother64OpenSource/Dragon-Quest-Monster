@@ -39,6 +39,7 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/magarugi.webp",
 	"starting_skill_ids": [
@@ -49,5 +50,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"sudden_red_fog"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

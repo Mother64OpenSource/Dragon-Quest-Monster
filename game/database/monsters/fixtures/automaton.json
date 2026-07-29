@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"suicidal_satisfaction"
+		],
+		"P": [
+			"desperado"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/automaton.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"tactical_genius",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/paws.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"deadly_touch"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

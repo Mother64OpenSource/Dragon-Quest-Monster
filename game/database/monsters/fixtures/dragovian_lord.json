@@ -42,6 +42,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"fly_swatter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dragovian_lord.webp",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"critical_massacre",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"random_ping"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

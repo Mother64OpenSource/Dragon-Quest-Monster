@@ -41,6 +41,14 @@
 		"Wsh": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"health_professional"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/high_djinks.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"artful_dodger",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"perilous_parrier"
+		],
+		"star": [
+			"counter_striker"
+		]
+	}
 }

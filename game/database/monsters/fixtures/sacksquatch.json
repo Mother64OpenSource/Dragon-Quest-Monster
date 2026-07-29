@@ -34,6 +34,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"crafty_debuffer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sacksquatch.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"crafty_rubblerouser",
 		"sudden_white_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"proactive_hunter"
+		],
+		"50": [
+			"last_gasp"
+		],
+		"star": [
+			"crafty_sealer"
+		]
+	}
 }

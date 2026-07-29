@@ -40,6 +40,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gamble_counter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/drackal.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_trooper",
 		"critical_massacre",
 		"rolled_over"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"sizzmeister"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

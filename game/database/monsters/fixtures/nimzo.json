@@ -38,6 +38,14 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"disruptive_wave"
+		],
+		"P": [
+			"frizzmeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/nimzo.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"spell_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"crafty_banger"
+		],
+		"star": [
+			"crafty_ice_breather"
+		]
+	}
 }

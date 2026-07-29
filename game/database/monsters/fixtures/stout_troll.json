@@ -41,6 +41,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/stout_troll.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"hit_squad",
 		"intimidating",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"sudden_underworld_fog"
+		],
+		"star": [
+			"dead_obsession"
+		]
+	}
 }

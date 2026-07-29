@@ -38,6 +38,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_fire_breather"
+		],
+		"P": [
+			"crafty_frizzer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/demon_at_arms.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"double_trouble",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"desperado"
+		]
+	}
 }

@@ -34,6 +34,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"magic_regenerator"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/babygoyle.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"sizzmeister",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"random_accelerate"
+		],
+		"star": [
+			"heckling_hector"
+		]
+	}
 }

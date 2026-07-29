@@ -36,6 +36,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		],
+		"P": [
+			"crafty_curser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/archdemon.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"bangmeister",
 		"crafty_banger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heckling_hector"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"random_tension"
+		]
+	}
 }

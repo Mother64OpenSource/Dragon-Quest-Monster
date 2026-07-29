@@ -15,6 +15,8 @@ static func load_from_dict(data: Dictionary) -> MonsterSpecies:
 	species.rank = _parse_rank(data.get("rank", "F"))
 	species.starting_skill_ids = _to_string_array(data.get("starting_skill_ids", []))
 	species.starting_trait_ids = _to_string_array(data.get("starting_trait_ids", []))
+	species.size_gated_trait_ids = data.get("size_gated_trait_ids", {})
+	species.synth_gated_trait_ids = data.get("synth_gated_trait_ids", {})
 	species.sprite_path = data.get("sprite_path", "")
 	species.resistances = data.get("resistances", {})
 	species.available_skill_sets = _to_string_array(data.get("available_skill_sets", []))

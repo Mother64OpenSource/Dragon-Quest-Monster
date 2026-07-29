@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"all_guard"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aquarella.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"protecter"
+		],
+		"star": [
+			"early_bird"
+		]
+	}
 }

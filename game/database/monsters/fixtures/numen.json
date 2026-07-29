@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/numen.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"comeback_kid",
 		"wave_of_relief"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"lucky"
+		],
+		"50": [
+			"star_gift"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

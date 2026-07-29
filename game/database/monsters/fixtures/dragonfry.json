@@ -35,6 +35,14 @@
 		"Wsh": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_accelerate"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dragonfry.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"artful_dodger",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

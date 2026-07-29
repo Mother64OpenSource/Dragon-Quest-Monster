@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"paralysing_punch"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wireman.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hopeful_hitter",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"sudden_black_fog"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

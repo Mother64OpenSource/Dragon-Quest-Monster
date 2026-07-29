@@ -44,6 +44,11 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/widow_s_pique.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"poisonous_poke",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_poisoner"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"rare_mist_me"
+		]
+	}
 }

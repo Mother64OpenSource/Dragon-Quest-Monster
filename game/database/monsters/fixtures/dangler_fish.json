@@ -35,6 +35,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sizzer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dangler_fish.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"sizzmeister",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"paralyzing"
+		],
+		"50": [
+			"sudden_oomph"
+		],
+		"star": [
+			"paralysing_punch"
+		]
+	}
 }

@@ -38,6 +38,14 @@
 		"Slp": "↓",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"bangmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/buffalogre.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"random_tension",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"sudden_oomph"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

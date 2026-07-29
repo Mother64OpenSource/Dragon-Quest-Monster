@@ -40,6 +40,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_fire_breather"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/orgodemir_ii.webp",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

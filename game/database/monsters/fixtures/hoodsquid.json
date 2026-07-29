@@ -35,6 +35,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"perfect_parry"
+		],
+		"P": [
+			"divine_dancer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hoodsquid.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"rare_high_tension",
 		"dance_meister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_shuffle"
+		],
+		"50": [
+			"sobering_slap"
+		],
+		"star": [
+			"triple_trouble"
+		]
+	}
 }

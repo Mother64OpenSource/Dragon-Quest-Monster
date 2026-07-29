@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sore_loser"
+		],
+		"P": [
+			"critical_massacre"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/corrupt_carter.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"counter_striker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sleep_sock"
+		],
+		"50": [
+			"crafty_sleeper"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

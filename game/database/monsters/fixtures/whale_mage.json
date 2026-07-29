@@ -39,6 +39,11 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"medicinal_knowledge"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/whale_mage.png",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"double_trouble",
 		"last_word",
 		"random_reversal"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_ping"
+		],
+		"50": [
+			"proactive_hunter"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

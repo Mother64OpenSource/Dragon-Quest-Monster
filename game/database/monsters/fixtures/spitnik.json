@@ -44,6 +44,14 @@
 		"Zam": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"intimidating"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/spitnik.webp",
 	"starting_skill_ids": [
@@ -53,5 +61,16 @@
 		"standard_body",
 		"berserker",
 		"stalwart_spirit"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_white_fog"
+		],
+		"50": [
+			"counteractivist"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

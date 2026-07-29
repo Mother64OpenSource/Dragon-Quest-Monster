@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dragonthorn.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sleep_sock"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"bladed_body"
+		]
+	}
 }

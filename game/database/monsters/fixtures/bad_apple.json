@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bad_apple.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"standard_killer",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"scare_stare"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

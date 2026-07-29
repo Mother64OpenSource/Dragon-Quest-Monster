@@ -41,6 +41,11 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gemon.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"fly_swatter",
 		"scare_stare"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_red_fog"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"crafty_fire_breather"
+		]
+	}
 }

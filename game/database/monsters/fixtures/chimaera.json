@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"double_trouble"
+		],
+		"P": [
+			"spell_satisfaction"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/chimaera.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

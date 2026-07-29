@@ -37,6 +37,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_reverse"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/morphean_mollusc.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"last_word",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

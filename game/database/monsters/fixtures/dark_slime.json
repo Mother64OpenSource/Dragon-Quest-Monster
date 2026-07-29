@@ -34,6 +34,14 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_jammer"
+		],
+		"P": [
+			"zammeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dark_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"crafty_zammer",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"crafty_sealer"
+		]
+	}
 }

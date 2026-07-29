@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		],
+		"P": [
+			"standard_killer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/jum.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"random_buff",
 		"bangmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"crafty_banger"
+		]
+	}
 }

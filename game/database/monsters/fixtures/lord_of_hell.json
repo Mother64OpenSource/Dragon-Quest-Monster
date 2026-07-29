@@ -49,6 +49,7 @@
 		"Wsh": "↑↑",
 		"Zam": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/lord_of_hell.png",
 	"starting_skill_ids": [
@@ -59,5 +60,16 @@
 		"triple_trouble",
 		"sudden_underworld_fog",
 		"crafty_devil"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"early_bird"
+		],
+		"50": [
+			"wave_of_panic"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

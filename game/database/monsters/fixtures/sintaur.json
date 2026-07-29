@@ -37,6 +37,14 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"one_shot_reversal"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sintaur.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"counter_striker",
 		"hopeful_hitter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_white_fog"
+		],
+		"50": [
+			"steady_recovery"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"crafty_sleeper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/quayhorse.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"fly_swatter",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"standard_killer"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"crafty_ice_breather"
+		]
+	}
 }

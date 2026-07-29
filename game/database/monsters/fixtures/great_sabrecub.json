@@ -38,6 +38,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"early_bird"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/great_sabrecub.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"small_body",
 		"hit_squad",
 		"stress_relief"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"close_scraper"
+		]
+	}
 }

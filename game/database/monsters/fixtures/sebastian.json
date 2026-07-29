@@ -39,6 +39,14 @@
 		"Siz": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"coercion"
+		],
+		"P": [
+			"deadly_touch"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sebastian.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"suicidal_satisfaction"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

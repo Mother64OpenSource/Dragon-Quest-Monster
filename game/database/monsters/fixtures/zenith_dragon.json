@@ -45,6 +45,7 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/zenith_dragon.webp",
 	"starting_skill_ids": [
@@ -55,5 +56,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

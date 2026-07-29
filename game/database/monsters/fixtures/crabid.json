@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"full_satisfaction_guard"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/crabid.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"close_scraper",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

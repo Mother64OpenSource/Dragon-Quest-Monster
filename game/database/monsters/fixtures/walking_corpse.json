@@ -40,6 +40,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_oomph"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/walking_corpse.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"poisonous",
 		"crafty_poisoner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"dead_obsession"
+		]
+	}
 }

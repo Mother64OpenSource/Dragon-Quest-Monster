@@ -35,6 +35,14 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"light_metal_body"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mechan_o_wyrm.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"critical_massacre",
 		"paralyzing"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"desperado"
+		]
+	}
 }

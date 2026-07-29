@@ -34,6 +34,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"early_bird"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/prickly_prankster.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"zapmeister",
 		"random_accelerate"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zapper"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

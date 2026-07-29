@@ -41,6 +41,7 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/slider_king.webp",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"metal_killer",
 		"hit_squad",
 		"giant_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

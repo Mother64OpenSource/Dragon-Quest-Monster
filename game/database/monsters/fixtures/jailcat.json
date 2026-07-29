@@ -37,6 +37,14 @@
 		"Siz": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"artful_dodger"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/jailcat.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"crackmeister",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rolled_over"
+		],
+		"50": [
+			"comeback_kid"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

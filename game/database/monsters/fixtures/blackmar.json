@@ -37,6 +37,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"crafty_sealer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/blackmar.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"double_trouble",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_fire_breather"
+		],
+		"50": [
+			"sudden_ping"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

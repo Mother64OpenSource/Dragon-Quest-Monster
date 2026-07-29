@@ -43,6 +43,7 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/dark_dragonlord.webp",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"quad_trouble",
 		"deadly_breath",
 		"coercion"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_fire_breather"
+		],
+		"50": [
+			"random_oomph"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

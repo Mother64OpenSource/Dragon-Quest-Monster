@@ -33,6 +33,14 @@
 		"Wsh": "½",
 		"Zap": "⇄"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"artful_dodger"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tiko.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"small_body",
 		"magic_regenerator",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counteractivist"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"crafty_woosher"
+		]
+	}
 }

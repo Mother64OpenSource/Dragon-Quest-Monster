@@ -42,6 +42,11 @@
 		"Wsh": "HP",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/coatol.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"bangmeister",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"hopeful_hitter"
+		],
+		"50": [
+			"scare_stare"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

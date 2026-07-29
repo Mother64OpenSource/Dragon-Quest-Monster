@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sobering_slap"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/florajay.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"health_professional",
 		"sudden_accelerate"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"artful_dodger"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"lucky"
+		]
+	}
 }

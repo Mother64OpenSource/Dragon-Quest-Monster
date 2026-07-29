@@ -36,6 +36,14 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"divine_dancer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pink_bonbon.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"small_body",
 		"hit_squad",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_red_fog"
+		],
+		"50": [
+			"rabble_rouser"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

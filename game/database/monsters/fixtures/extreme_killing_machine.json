@@ -45,6 +45,7 @@
 		"Wsh": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/extreme_killing_machine.webp",
 	"starting_skill_ids": [
@@ -55,5 +56,16 @@
 		"tactical_mastermind",
 		"bouncer",
 		"paralyzed_attack"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"standard_killer"
+		],
+		"50": [
+			"last_gasp"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

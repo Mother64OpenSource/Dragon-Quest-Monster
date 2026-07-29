@@ -38,6 +38,14 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"protecter"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/thwarthog.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"hit_squad",
 		"health_professional"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"full_satisfaction_guard"
+		],
+		"50": [
+			"rare_magic_barrier"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

@@ -38,6 +38,14 @@
 		"Wck": "½",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"warrior"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/estarkers.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"small_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"disruptive_wave"
+		],
+		"50": [
+			"rolled_over"
+		],
+		"star": [
+			"random_tension"
+		]
+	}
 }

@@ -46,6 +46,7 @@
 		"Slp": "0",
 		"Wck": "↑↑"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/pruslas.webp",
 	"starting_skill_ids": [
@@ -56,5 +57,16 @@
 		"tactical_genius",
 		"hopeful_hitter",
 		"last_word"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"zammeister"
+		],
+		"50": [
+			"random_reversal"
+		],
+		"star": [
+			"crafty_zammer"
+		]
+	}
 }

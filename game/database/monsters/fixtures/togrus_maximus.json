@@ -42,6 +42,7 @@
 		"Wsh": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/togrus_maximus.png",
 	"starting_skill_ids": [
@@ -52,5 +53,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"stress_relief"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"crafty_sizzer"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

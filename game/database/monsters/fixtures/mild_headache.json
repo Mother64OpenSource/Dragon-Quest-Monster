@@ -36,6 +36,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_whacker"
+		],
+		"P": [
+			"crafty_curser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mild_headache.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"bladed_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"deadly_touch"
+		],
+		"50": [
+			"sudden_oomph"
+		],
+		"star": [
+			"gamble_counter"
+		]
+	}
 }

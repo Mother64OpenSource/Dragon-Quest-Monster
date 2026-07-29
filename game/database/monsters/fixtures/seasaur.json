@@ -39,6 +39,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heat_up"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/seasaur.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"artful_dodger",
 		"rare_mist_me"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_ice_breather"
+		],
+		"50": [
+			"steady_recovery"
+		],
+		"star": [
+			"sudden_tension"
+		]
+	}
 }

@@ -44,6 +44,11 @@
 		"Zam": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"coercion"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/slaughtomaton.webp",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"crafty_fire_breather"
+		]
+	}
 }

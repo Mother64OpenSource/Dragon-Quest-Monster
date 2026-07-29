@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gillgush.webp",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"crafty_cracker",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_buff"
+		],
+		"50": [
+			"crafty_ice_breather"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

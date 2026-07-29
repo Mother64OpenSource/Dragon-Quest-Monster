@@ -37,6 +37,11 @@
 		"Wsh": "½",
 		"Zam": "⇄"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gisvarg.webp",
 	"starting_skill_ids": [
@@ -47,5 +52,16 @@
 		"tactical_trooper",
 		"zapmeister",
 		"crafty_poisoner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"disruptive_wave"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"sudden_oomph"
+		]
+	}
 }

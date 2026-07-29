@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		],
+		"P": [
+			"fly_swatter"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gorerilla.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"critical_massacre",
 		"coercion"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

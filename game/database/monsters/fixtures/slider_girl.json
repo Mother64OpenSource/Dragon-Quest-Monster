@@ -46,6 +46,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"artful_dodger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/slider_girl.png",
 	"starting_skill_ids": [
@@ -56,5 +61,16 @@
 		"tactical_genius",
 		"rabble_rouser",
 		"rocket_start"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"comeback_kid"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"ultra_fast_action"
+		]
+	}
 }

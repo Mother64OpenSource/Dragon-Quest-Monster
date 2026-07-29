@@ -27,6 +27,14 @@
 		"Zam": "0",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/berry_slime.png",
 	"starting_skill_ids": [
@@ -36,5 +44,16 @@
 		"small_body",
 		"candy_carnival",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_accelerate"
+		],
+		"50": [
+			"star_gift"
+		],
+		"star": [
+			"divine_dancer"
+		]
+	}
 }

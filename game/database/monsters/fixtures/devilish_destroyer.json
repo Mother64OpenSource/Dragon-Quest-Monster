@@ -40,6 +40,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/devilish_destroyer.png",
 	"starting_skill_ids": [
@@ -50,5 +51,16 @@
 		"tactical_mastermind",
 		"hit_squad",
 		"fast_learner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"lootist"
+		],
+		"50": [
+			"zapmeister"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

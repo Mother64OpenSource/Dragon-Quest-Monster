@@ -41,6 +41,14 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"crafty_zapper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/overkilling_machine.webp",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"double_trouble",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_inactivist"
+		],
+		"50": [
+			"zapmeister"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

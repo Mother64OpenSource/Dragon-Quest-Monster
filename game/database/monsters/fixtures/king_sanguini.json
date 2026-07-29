@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rabble_rouser"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/king_sanguini.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"double_trouble",
 		"hit_squad",
 		"protection_of_the_stars"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"lucky"
+		]
+	}
 }

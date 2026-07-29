@@ -40,6 +40,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"comeback_kid"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/prism_peacock.webp",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"crafty_fire_breather",
 		"early_bird"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"random_ping"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

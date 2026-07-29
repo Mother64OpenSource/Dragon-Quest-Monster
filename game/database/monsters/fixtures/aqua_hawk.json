@@ -36,6 +36,14 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aqua_hawk.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"early_bird",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

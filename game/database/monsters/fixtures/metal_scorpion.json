@@ -51,6 +51,11 @@
 		"Zam": "↑↑",
 		"Zap": "↑↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_paralyzer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/metal_scorpion.webp",
 	"starting_skill_ids": [
@@ -61,5 +66,16 @@
 		"hit_squad",
 		"light_metal_body",
 		"perilous_parrier"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_inactivist"
+		],
+		"50": [
+			"random_red_fog"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

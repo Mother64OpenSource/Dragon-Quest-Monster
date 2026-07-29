@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_breath"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/buga_the_terragon.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_genius",
 		"counteractivist",
 		"stalwart_spirit"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_black_fog"
+		],
+		"50": [
+			"crafty_fire_breather"
+		],
+		"star": [
+			"sudden_black_fog"
+		]
+	}
 }

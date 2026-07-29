@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_red_fog"
+		],
+		"P": [
+			"sudden_buff"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/goodybag.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"random_tension",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"confusing_touch"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"double_trouble"
+		]
+	}
 }

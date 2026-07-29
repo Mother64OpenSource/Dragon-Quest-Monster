@@ -41,6 +41,11 @@
 		"Wsh": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rubblerouser_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/rayburn.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"fly_swatter"
+		],
+		"star": [
+			"crafty_rubblerouser"
+		]
+	}
 }

@@ -41,6 +41,7 @@
 		"Wck": "0",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/sand_wave.png",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"tactical_genius",
 		"coercion",
 		"sudden_white_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"perfect_parry"
+		],
+		"star": [
+			"rare_mist_me"
+		]
+	}
 }

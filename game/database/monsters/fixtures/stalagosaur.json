@@ -42,6 +42,7 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/stalagosaur.webp",
 	"starting_skill_ids": [
@@ -52,5 +53,16 @@
 		"tactical_uber",
 		"random_shuffle",
 		"crafty_rubblerouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"proactive_hunter"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

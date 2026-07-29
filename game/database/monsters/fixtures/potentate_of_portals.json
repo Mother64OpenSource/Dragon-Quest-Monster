@@ -38,6 +38,7 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/potentate_of_portals.webp",
 	"starting_skill_ids": [
@@ -48,5 +49,16 @@
 		"quad_trouble",
 		"early_bird",
 		"giant_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perfect_parry"
+		],
+		"50": [
+			"strong_guard_break"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

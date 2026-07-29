@@ -40,6 +40,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"grudge_bearer"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mad_smith.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"crafty_poisoner",
 		"crafty_curser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sleeper"
+		],
+		"50": [
+			"crafty_paralyzer"
+		],
+		"star": [
+			"sudden_underworld_fog"
+		]
+	}
 }

@@ -49,6 +49,7 @@
 		"Zam": "HP",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/schwarzman_tank.webp",
 	"starting_skill_ids": [
@@ -59,5 +60,16 @@
 		"tactical_genius",
 		"light_metal_body",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

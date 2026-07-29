@@ -38,6 +38,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_donker"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cobra_cardinal.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"paralysing_punch",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

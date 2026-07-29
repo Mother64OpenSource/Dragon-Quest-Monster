@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_reverse"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pearl_gel.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_jammer",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tit_for_tat"
+		],
+		"50": [
+			"random_tension"
+		],
+		"star": [
+			"sudden_buff"
+		]
+	}
 }

@@ -34,6 +34,14 @@
 		"Siz": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"spell_satisfaction"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wormbat.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"random_accelerate"
+		],
+		"star": [
+			"paralysing_punch"
+		]
+	}
 }

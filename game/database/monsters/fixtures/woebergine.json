@@ -34,6 +34,14 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rubblerouser_meister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/woebergine.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"drain_magic_attack",
 		"crafty_inactivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"crafty_squasher"
+		],
+		"star": [
+			"crafty_rubblerouser"
+		]
+	}
 }

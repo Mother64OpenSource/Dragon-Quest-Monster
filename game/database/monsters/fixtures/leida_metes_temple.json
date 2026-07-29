@@ -37,6 +37,7 @@
 		"Wsh": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/leida_metes_temple.png",
 	"starting_skill_ids": [
@@ -47,5 +48,16 @@
 		"tactical_mastermind",
 		"random_white_fog",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"coercion"
+		],
+		"50": [
+			"final_breath"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

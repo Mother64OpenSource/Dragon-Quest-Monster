@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"one_shot_reversal"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/24_carrot_bunicorn.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"heat_up",
 		"gold_getter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"crafty_zapper"
+		],
+		"star": [
+			"sudden_accelerate"
+		]
+	}
 }

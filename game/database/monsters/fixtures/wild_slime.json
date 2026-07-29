@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"whack_attack"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wild_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"counter_striker",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_tension"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

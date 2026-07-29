@@ -37,6 +37,14 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_mastermind"
+		],
+		"P": [
+			"sore_loser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/rashaverak.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_accelerate"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

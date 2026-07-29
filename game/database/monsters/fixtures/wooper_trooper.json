@@ -36,6 +36,14 @@
 		"Zam": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counter_striker"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wooper_trooper.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"sudden_oomph",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

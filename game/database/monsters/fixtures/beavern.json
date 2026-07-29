@@ -34,6 +34,14 @@
 		"Slp": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"fly_swatter"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/beavern.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"random_oomph",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"critical_massacre"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

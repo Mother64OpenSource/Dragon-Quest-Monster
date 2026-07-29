@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"protecter"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/yabby.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

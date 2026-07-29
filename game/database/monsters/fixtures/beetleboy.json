@@ -36,6 +36,14 @@
 		"Wck": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sore_loser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/beetleboy.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"sudden_tension",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perilous_parrier"
+		],
+		"50": [
+			"crafty_zammer"
+		],
+		"star": [
+			"random_buff"
+		]
+	}
 }

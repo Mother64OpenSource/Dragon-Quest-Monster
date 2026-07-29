@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/green_dragon.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"crafty_zapper",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stress_relief"
+		],
+		"50": [
+			"intimidating"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

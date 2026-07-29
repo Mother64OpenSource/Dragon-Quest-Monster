@@ -43,6 +43,7 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/v_drag.png",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"double_trouble",
 		"sudden_white_fog",
 		"breath_meister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heat_up"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

@@ -40,6 +40,7 @@ func run(tree: SceneTree) -> bool:  # coroutine (awaits a frame internally)
 	_check_crud_and_selection()
 	_check_load_team_and_add_species()
 	_check_row_edits()
+	_check_size_synth_spin_boxes()
 	_check_weapon_button()
 	_check_blacksmith_button()
 	_check_reorder()
@@ -152,6 +153,39 @@ func _check_row_edits() -> void:
 	_check(
 		"toggling a skill off via the row's dialog removes it from equipped_skill_ids",
 		not editor.current_team.members[0].equipped_skill_ids.has("zam")
+	)
+
+	_screen.roster.delete_team(team_id)
+
+## Slime's own real sourced data: current_size=2 unlocks Random Accelerate
+## (P), synthesis_stack=100 additionally unlocks Dust of the Clan/Tactical
+## Trooper/Strong Guard Break (+25/+50/+★) -- see wiki/log.md.
+func _check_size_synth_spin_boxes() -> void:
+	var editor := _screen._team_editor_panel
+	var team_id := _screen.roster.create_team("Size Synth Test").id
+	editor.load_team(team_id)
+	editor._on_species_chosen("slime")
+
+	var row: TeamMemberRow = editor._main_party_row.get_child(0)
+	_check("the size spinbox starts at slime's own natural size (1)", row._size_spin_box.value == 1)
+	_check("the synth spinbox starts at 0", row._synth_spin_box.value == 0)
+	_check("traits label starts with just the 3 starting traits, no gated ones", not row._traits_label.text.contains("Random Accelerate"))
+
+	row._on_size_changed(2.0)
+	_check("moving the size spinbox to 2 updates the loadout's current_size", editor.current_team.members[0].current_size == 2)
+	_check("the traits label now includes the P-tier trait unlocked at size 2", row._traits_label.text.contains("Random Accelerate"))
+
+	row._on_synth_changed(100.0)
+	_check("moving the synth spinbox to 100 updates the loadout's synthesis_stack", editor.current_team.members[0].synthesis_stack == 100)
+	_check(
+		"the traits label now also includes all 3 rank-offset traits unlocked at +★",
+		row._traits_label.text.contains("Dust of the Clan") and row._traits_label.text.contains("Tactical Trooper") and row._traits_label.text.contains("Strong Guard Break")
+	)
+
+	var reloaded := _screen.roster.get_team(team_id)
+	_check(
+		"current_size/synthesis_stack persist to disk",
+		reloaded.members[0].current_size == 2 and reloaded.members[0].synthesis_stack == 100
 	)
 
 	_screen.roster.delete_team(team_id)

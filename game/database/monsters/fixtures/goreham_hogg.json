@@ -36,6 +36,14 @@
 		"Wck": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"close_scraper"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/goreham_hogg.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"berserker",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

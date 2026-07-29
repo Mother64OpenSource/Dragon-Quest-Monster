@@ -40,6 +40,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heat_up"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/eggla_chickira.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"double_trouble",
 		"hit_squad",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"mutter"
+		],
+		"50": [
+			"fly_swatter"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

@@ -44,6 +44,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_mastermind"
+		],
+		"P": [
+			"crafty_jammer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fire_spirit.png",
 	"starting_skill_ids": [
@@ -53,5 +61,16 @@
 		"standard_body",
 		"frizzmeister",
 		"crafty_frizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"dead_obsession"
+		]
+	}
 }

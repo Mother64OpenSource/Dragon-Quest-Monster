@@ -36,6 +36,11 @@
 		"Wsh": "½",
 		"Zam": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"bouncer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/nimzo_ii.webp",
 	"starting_skill_ids": [
@@ -46,5 +51,16 @@
 		"double_trouble",
 		"bangmeister",
 		"disruptive_wave"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

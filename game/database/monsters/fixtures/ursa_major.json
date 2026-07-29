@@ -39,6 +39,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/ursa_major.png",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"counter_striker",
 		"sudden_oomph",
 		"random_tension"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"crafty_sealer"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

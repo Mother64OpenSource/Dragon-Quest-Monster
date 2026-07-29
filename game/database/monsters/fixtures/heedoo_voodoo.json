@@ -35,6 +35,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heat_up"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/heedoo_voodoo.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"counter_striker",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"berserker"
+		],
+		"50": [
+			"comeback_kid"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

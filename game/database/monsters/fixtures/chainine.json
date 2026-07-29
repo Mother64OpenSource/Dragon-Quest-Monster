@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_cracker"
+		],
+		"P": [
+			"random_underworld_fog"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/chainine.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"crackmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"dead_obsession"
+		]
+	}
 }

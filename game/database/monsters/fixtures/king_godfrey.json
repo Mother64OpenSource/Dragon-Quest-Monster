@@ -49,6 +49,11 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"frizzmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/king_godfrey.png",
 	"starting_skill_ids": [
@@ -59,5 +64,16 @@
 		"tactical_genius",
 		"sizzmeister",
 		"wis_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"mp_roulette"
+		],
+		"50": [
+			"random_white_fog"
+		],
+		"star": [
+			"crafty_cracker"
+		]
+	}
 }

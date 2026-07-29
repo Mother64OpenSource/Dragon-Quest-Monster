@@ -36,6 +36,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"confusing_touch"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/frightbait.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"critical_massacre",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"grudge_bearer"
+		],
+		"50": [
+			"sudden_underworld_fog"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

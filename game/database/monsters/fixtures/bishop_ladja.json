@@ -40,6 +40,14 @@
 		"Zam": "HP",
 		"Zap": "↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"heckling_hector"
+		],
+		"P": [
+			"frizzmeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bishop_ladja.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"crafty_frizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"bouncer"
+		],
+		"50": [
+			"sudden_ping"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

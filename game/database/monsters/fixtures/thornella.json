@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"medicinal_knowledge"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/thornella.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"health_professional"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"bladed_body"
+		]
+	}
 }

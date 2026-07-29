@@ -47,6 +47,11 @@
 		"Zam": "↑",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/au_1000.webp",
 	"starting_skill_ids": [
@@ -57,5 +62,16 @@
 		"double_trouble",
 		"bangmeister",
 		"light_metal_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"paralyzed_attack"
+		],
+		"star": [
+			"warrior"
+		]
+	}
 }

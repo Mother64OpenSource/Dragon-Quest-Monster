@@ -45,6 +45,11 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gnuriel.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"sudden_shuffle"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

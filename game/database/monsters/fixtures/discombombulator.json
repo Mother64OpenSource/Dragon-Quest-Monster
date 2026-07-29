@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"confusing_touch"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/discombombulator.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"last_gasp"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"suicidal_satisfaction"
+		]
+	}
 }

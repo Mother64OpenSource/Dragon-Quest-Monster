@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_black_fog"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/king_bubble_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"poisonous",
 		"poisonous_poke"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"comeback_kid"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

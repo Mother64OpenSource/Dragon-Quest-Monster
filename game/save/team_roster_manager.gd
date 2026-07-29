@@ -129,6 +129,36 @@ static func get_unlocked_skill_ids(loadout: MonsterLoadout, species: MonsterSpec
 				result.append(skill_id)
 	return result
 
+## Every trait id actually active for this loadout: the species' always-on
+## starting_trait_ids, plus whichever of its size_gated_trait_ids/
+## synth_gated_trait_ids tiers current_size/synthesis_stack have reached.
+## Each tier check is independent (not elif) since both ladders are ordinal
+## -- reaching H (3+ slots) implies P (2+) is also unlocked, and reaching
+## +★ (100) implies +50 and +25 are too, so a monster at the top of either
+## ladder gets every rung below it as well, not just the top one.
+static func get_active_trait_ids(loadout: MonsterLoadout, species: MonsterSpecies) -> Array[String]:
+	var result: Array[String] = species.starting_trait_ids.duplicate()
+	var size := loadout.current_size if loadout.current_size != 0 else species.slots
+	if size >= 2:
+		_append_new(result, species.size_gated_trait_ids.get("P", []))
+	if size >= 3:
+		_append_new(result, species.size_gated_trait_ids.get("H", []))
+	if size >= 4:
+		_append_new(result, species.size_gated_trait_ids.get("G", []))
+	var stack := loadout.synthesis_stack
+	if stack >= 25:
+		_append_new(result, species.synth_gated_trait_ids.get("25", []))
+	if stack >= 50:
+		_append_new(result, species.synth_gated_trait_ids.get("50", []))
+	if stack >= 100:
+		_append_new(result, species.synth_gated_trait_ids.get("star", []))
+	return result
+
+static func _append_new(result: Array[String], ids: Array) -> void:
+	for id in ids:
+		if not result.has(id):
+			result.append(String(id))
+
 ## Empty result means the loadout is valid. weapon_db/blacksmith_db are both
 ## optional (default null, backward compatible with every existing call
 ## site) -- when omitted, the corresponding field goes unchecked, same as
@@ -166,6 +196,11 @@ func validate_member(loadout: MonsterLoadout, monster_db: MonsterDatabase, skill
 		for item_id in loadout.crafted_blacksmith_ids:
 			if blacksmith_db.get_item(item_id) == null:
 				errors.append("Unknown blacksmith item id: %s" % item_id)
+
+	if loadout.current_size != 0 and (loadout.current_size < 1 or loadout.current_size > 4):
+		errors.append("current_size must be 0 (use natural size) or 1-4, got %d" % loadout.current_size)
+	if loadout.synthesis_stack < 0 or loadout.synthesis_stack > 100:
+		errors.append("synthesis_stack must be 0-100, got %d" % loadout.synthesis_stack)
 	return errors
 
 func _generate_unique_id(name: String) -> String:

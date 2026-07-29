@@ -42,6 +42,7 @@
 		"Wsh": "⁎",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/wiggly.png",
 	"starting_skill_ids": [
@@ -52,5 +53,16 @@
 		"tactical_genius",
 		"poisonous",
 		"steady_recovery"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"coercion"
+		],
+		"50": [
+			"dust_of_the_clan"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

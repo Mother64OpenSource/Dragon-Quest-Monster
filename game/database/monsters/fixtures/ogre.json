@@ -39,6 +39,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/ogre.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"fly_swatter",
 		"metal_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"atk_roulette"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

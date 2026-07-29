@@ -38,6 +38,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_underworld_fog"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hellhound.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"cursed_attack",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_ice_breather"
+		],
+		"50": [
+			"coercion"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

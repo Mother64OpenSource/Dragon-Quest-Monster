@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"intimidating"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/king_kelp.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"rabble_rouser",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"mutter"
+		],
+		"50": [
+			"tit_for_tat"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

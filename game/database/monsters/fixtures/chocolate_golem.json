@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"protecter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/chocolate_golem.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"perilous_parrier",
 		"crafty_rubblerouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_ice_breather"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zammer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/stark_raven.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"one_shot_reversal"
+		],
+		"50": [
+			"random_black_fog"
+		],
+		"star": [
+			"zammeister"
+		]
+	}
 }

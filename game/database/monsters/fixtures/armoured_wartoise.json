@@ -34,6 +34,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"light_metal_body"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/armoured_wartoise.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"hit_squad",
 		"perilous_parrier"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zapper"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"proactive_hunter"
+		]
+	}
 }

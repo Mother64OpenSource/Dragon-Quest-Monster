@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/deadly_dodo.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"sudden_black_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heckling_hector"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

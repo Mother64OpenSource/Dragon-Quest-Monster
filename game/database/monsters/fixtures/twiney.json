@@ -32,6 +32,14 @@
 		"Wsh": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"divine_dancer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/twiney.png",
 	"starting_skill_ids": [
@@ -41,5 +49,16 @@
 		"small_body",
 		"double_trouble",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rabble_rouser"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"close_scraper"
+		]
+	}
 }

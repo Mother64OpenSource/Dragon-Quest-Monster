@@ -38,6 +38,14 @@
 		"Wsh": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"last_gasp"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/abyss_diver.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"artful_dodger",
 		"zammeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_buff"
+		],
+		"50": [
+			"steady_recovery"
+		],
+		"star": [
+			"stalwart_spirit"
+		]
+	}
 }

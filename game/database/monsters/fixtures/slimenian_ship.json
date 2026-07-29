@@ -39,6 +39,7 @@
 		"Wsh": "HP",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/slimenian_ship.png",
 	"starting_skill_ids": [
@@ -49,5 +50,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"last_gasp"
+		],
+		"50": [
+			"sudden_shuffle"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

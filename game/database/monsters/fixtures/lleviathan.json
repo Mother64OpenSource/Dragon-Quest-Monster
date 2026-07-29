@@ -49,6 +49,7 @@
 		"Wck": "↑↑",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/lleviathan.webp",
 	"starting_skill_ids": [
@@ -59,5 +60,16 @@
 		"tactical_mastermind",
 		"take_magic",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"crafty_devil"
+		]
+	}
 }

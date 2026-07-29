@@ -36,6 +36,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_woosher"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mudslinger.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"poisonous",
 		"crafty_woosher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_shuffle"
+		],
+		"50": [
+			"mutter"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

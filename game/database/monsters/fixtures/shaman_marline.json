@@ -38,6 +38,11 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_underworld_fog"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/shaman_marline.png",
 	"starting_skill_ids": [
@@ -48,5 +53,16 @@
 		"tactical_genius",
 		"crafty_curser",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"crafty_debuffer"
+		],
+		"star": [
+			"cursed_attack"
+		]
+	}
 }

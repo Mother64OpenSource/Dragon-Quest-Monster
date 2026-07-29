@@ -35,6 +35,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"great_sage"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/alchemy_hat.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_curser",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"tit_for_tat"
+		],
+		"star": [
+			"crafty_sealer"
+		]
+	}
 }

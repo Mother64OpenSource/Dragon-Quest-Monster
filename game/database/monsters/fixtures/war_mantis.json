@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"coercion"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/war_mantis.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"berserker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sore_loser"
+		],
+		"50": [
+			"critical_massacre"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

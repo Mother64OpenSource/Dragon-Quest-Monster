@@ -36,6 +36,14 @@
 		"Zam": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/will_o_whips.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"mutter"
+		],
+		"50": [
+			"heckling_hector"
+		],
+		"star": [
+			"cursed_attack"
+		]
+	}
 }

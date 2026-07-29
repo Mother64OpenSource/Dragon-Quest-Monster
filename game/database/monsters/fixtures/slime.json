@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_white_fog"
+		],
+		"P": [
+			"random_accelerate"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/slime.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"critical_massacre",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dust_of_the_clan"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"strong_guard_break"
+		]
+	}
 }

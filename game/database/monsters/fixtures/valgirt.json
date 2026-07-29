@@ -43,6 +43,7 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/valgirt.webp",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"tactical_mastermind",
 		"hit_squad",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"standard_killer"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"breath_meister"
+		]
+	}
 }

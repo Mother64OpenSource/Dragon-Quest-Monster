@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"triple_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/demonic_ender.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"gold_getter",
 		"lootist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_squasher"
+		],
+		"50": [
+			"wooshmeister"
+		],
+		"star": [
+			"zammeister"
+		]
+	}
 }

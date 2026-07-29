@@ -37,6 +37,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/psycho_psaro.png",
 	"starting_skill_ids": [
@@ -47,5 +48,16 @@
 		"quad_trouble",
 		"proactive_hunter",
 		"cursed_attack"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"random_black_fog"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

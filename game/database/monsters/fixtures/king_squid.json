@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/king_squid.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"random_reversal"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

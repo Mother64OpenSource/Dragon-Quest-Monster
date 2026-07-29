@@ -53,6 +53,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/metal_king_slime.png",
 	"starting_skill_ids": [
@@ -62,5 +70,16 @@
 		"standard_body",
 		"metal_body",
 		"escape_artist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"sudden_red_fog"
+		],
+		"star": [
+			"early_bird"
+		]
+	}
 }

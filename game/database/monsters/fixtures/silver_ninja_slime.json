@@ -41,6 +41,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rabble_rouser"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/silver_ninja_slime.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"hit_squad",
 		"bouncer",
 		"spell_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"double_trouble"
+		]
+	}
 }

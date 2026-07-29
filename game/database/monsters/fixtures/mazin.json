@@ -38,6 +38,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"protecter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mazin.png",
 	"starting_skill_ids": [
@@ -48,5 +53,16 @@
 		"double_trouble",
 		"hopeful_hitter",
 		"heat_up"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"light_metal_body"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

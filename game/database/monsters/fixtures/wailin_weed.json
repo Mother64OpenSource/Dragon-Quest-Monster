@@ -41,6 +41,14 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wailin_weed.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"rabble_rouser",
 		"mutter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"comeback_kid"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

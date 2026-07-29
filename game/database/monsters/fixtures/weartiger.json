@@ -36,6 +36,14 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/weartiger.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"scare_stare"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"crafty_inactivist"
+		]
+	}
 }

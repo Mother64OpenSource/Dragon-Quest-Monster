@@ -44,6 +44,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gamble_counter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/boss_troll.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"crafty_frizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"random_underworld_fog"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

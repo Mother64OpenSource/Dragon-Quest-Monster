@@ -41,6 +41,11 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/greygnarl.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"double_trouble",
 		"zapmeister",
 		"comeback_kid"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_oomph"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

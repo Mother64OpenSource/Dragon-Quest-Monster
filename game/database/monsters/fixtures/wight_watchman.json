@@ -38,6 +38,14 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_paralyzer"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wight_watchman.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_whacker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_poisoner"
+		],
+		"50": [
+			"crafty_zammer"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

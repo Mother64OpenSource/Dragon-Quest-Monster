@@ -34,6 +34,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"perfect_parry"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lips.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"crafty_confuser",
 		"crafty_donker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"strangely_alluring"
+		],
+		"50": [
+			"crafty_inactivist"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

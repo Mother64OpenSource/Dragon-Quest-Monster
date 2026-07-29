@@ -44,6 +44,11 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sizzmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/baron_von_bellycose.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"crafty_sizzer",
 		"spell_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"paralyzed_attack"
+		],
+		"50": [
+			"rare_magic_barrier"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

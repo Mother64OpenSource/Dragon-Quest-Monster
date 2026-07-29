@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/guaardvark.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"confusing_touch",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_inactivist"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

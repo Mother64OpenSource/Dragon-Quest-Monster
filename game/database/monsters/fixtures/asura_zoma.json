@@ -37,6 +37,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/asura_zoma.webp",
 	"starting_skill_ids": [
@@ -47,5 +48,16 @@
 		"quad_trouble",
 		"disruptive_wave",
 		"sudden_shuffle"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zapper"
+		],
+		"50": [
+			"sudden_buff"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

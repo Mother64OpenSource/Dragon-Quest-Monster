@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/weaken_beakon.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"hit_squad",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"early_bird"
+		],
+		"star": [
+			"sudden_accelerate"
+		]
+	}
 }

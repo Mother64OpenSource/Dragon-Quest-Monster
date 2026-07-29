@@ -38,6 +38,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/snowmangler.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"crackmeister",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_whacker"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"crafty_ice_breather"
+		]
+	}
 }

@@ -44,6 +44,11 @@
 		"Wck": "½",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"frizzmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/ginormoose.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"crafty_frizzer",
 		"random_oomph"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_buff"
+		],
+		"50": [
+			"crafty_zapper"
+		],
+		"star": [
+			"critical_massacre"
+		]
+	}
 }

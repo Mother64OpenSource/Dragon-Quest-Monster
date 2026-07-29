@@ -35,6 +35,14 @@
 		"Zam": "↑",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_jammer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/magic_slime.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"hit_squad",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"crafty_debuffer"
+		]
+	}
 }

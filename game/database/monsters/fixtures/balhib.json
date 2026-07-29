@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"lucky"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/balhib.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"gold_getter",
 		"crafty_devil"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"metal_killer"
+		],
+		"50": [
+			"rare_magic_barrier"
+		],
+		"star": [
+			"all_guard"
+		]
+	}
 }

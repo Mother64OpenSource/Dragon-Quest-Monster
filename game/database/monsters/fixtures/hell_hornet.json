@@ -40,6 +40,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_accelerate"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hell_hornet.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"small_body",
 		"artful_dodger",
 		"paralysing_punch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"wooshmeister"
+		],
+		"star": [
+			"critical_massacre"
+		]
+	}
 }

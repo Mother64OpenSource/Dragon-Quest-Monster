@@ -44,6 +44,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_whacker"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dual_duellers.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"double_trouble",
 		"hit_squad",
 		"poisonous_poke"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"standard_killer"
+		],
+		"50": [
+			"crafty_ice_breather"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

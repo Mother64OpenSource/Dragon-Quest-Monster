@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_poisoner"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mental_pitcher.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"poisonous_poke",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"steady_recovery"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

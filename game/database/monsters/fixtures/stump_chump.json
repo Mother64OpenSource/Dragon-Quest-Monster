@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sleeper"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/stump_chump.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_donker",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"drain_magic_attack"
+		],
+		"50": [
+			"magic_regenerator"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

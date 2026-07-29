@@ -33,6 +33,14 @@
 		"Wsh": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_donker"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/robbin_huddle.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"small_body",
 		"hit_squad",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_accelerate"
+		],
+		"50": [
+			"crafty_squasher"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

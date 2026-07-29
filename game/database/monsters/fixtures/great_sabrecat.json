@@ -41,6 +41,14 @@
 		"Slp": "↓",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rocket_start"
+		],
+		"P": [
+			"wooshmeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/great_sabrecat.png",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"hit_squad",
 		"early_bird"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

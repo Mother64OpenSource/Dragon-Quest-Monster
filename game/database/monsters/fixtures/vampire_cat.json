@@ -36,6 +36,14 @@
 		"Psn": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"whack_attack"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/vampire_cat.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"early_bird"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

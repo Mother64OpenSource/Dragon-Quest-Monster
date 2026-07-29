@@ -44,6 +44,7 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/ruin.webp",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"double_trouble",
 		"last_word",
 		"hopeful_hitter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"berserker"
+		],
+		"50": [
+			"sudden_underworld_fog"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

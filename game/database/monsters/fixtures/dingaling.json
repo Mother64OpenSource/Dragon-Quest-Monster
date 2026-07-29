@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_mist_me"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dingaling.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"confusing_touch",
 		"perilous_parrier"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_donker"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

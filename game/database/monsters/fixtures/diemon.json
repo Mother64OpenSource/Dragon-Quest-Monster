@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"standard_killer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/diemon.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"wooshmeister",
 		"lucky"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"crafty_woosher"
+		]
+	}
 }

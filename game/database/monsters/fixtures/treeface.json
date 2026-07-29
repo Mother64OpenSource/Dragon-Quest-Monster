@@ -43,6 +43,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_curser"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/treeface.png",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"crackmeister"
+		],
+		"star": [
+			"cursed_attack"
+		]
+	}
 }

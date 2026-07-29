@@ -37,6 +37,14 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_oomph"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/muddy_hand.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"crafty_confuser",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sizzmeister"
+		],
+		"50": [
+			"confusing_touch"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

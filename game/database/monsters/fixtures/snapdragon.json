@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"poisonous_poke"
+		],
+		"P": [
+			"crafty_frizzer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/snapdragon.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"artful_dodger",
 		"frizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"bladed_body"
+		]
+	}
 }

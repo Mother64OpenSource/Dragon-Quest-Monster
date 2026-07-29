@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rubblerouser_meister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wooden_horseman.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"fly_swatter",
 		"intimidating"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_red_fog"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"crafty_squasher"
+		]
+	}
 }

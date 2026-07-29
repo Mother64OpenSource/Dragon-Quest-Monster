@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sobering_slap"
+		],
+		"P": [
+			"gamble_counter"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/boe.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"small_body",
 		"sudden_accelerate",
 		"steady_recovery"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_donker"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"crafty_squasher"
+		]
+	}
 }

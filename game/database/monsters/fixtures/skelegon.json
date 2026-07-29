@@ -35,6 +35,14 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"tit_for_tat"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/skelegon.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crackmeister",
 		"rare_mist_me"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"steady_recovery"
+		],
+		"50": [
+			"crafty_ice_breather"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

@@ -44,6 +44,7 @@
 		"Slp": "↑↑",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/woolly_elefort.webp",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"tactical_uber",
 		"random_reversal",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"steady_recovery"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

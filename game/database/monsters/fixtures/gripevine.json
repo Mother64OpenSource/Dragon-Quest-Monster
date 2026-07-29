@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"medicinal_knowledge"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gripevine.webp",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"poisonous"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"close_scraper"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

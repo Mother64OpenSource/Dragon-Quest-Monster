@@ -39,6 +39,14 @@
 		"Slp": "↓",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/squign.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"hit_squad",
 		"gold_getter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fast_learner"
+		],
+		"50": [
+			"talent_scout"
+		],
+		"star": [
+			"all_guard"
+		]
+	}
 }

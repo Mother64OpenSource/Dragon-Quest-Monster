@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/queenie_sanguini.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"strangely_alluring",
 		"stress_relief"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_red_fog"
+		],
+		"50": [
+			"sudden_red_fog"
+		],
+		"star": [
+			"crafty_jammer"
+		]
+	}
 }

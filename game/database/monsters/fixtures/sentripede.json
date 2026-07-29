@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/sentripede.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"paralysing_punch",
 		"random_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"paralyzing"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"crafty_paralyzer"
+		]
+	}
 }

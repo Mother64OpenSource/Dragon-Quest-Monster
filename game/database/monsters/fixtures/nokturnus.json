@@ -38,6 +38,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		],
+		"P": [
+			"warrior"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/nokturnus.webp",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

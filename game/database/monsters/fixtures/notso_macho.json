@@ -39,6 +39,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"one_shot_reversal"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/notso_macho.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"crafty_sealer",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"berserker"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

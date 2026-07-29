@@ -22,6 +22,22 @@ enum Rank { F, E, D, C, B, A, S, SS }
 @export var starting_skill_ids: Array[String] = []
 @export var starting_trait_ids: Array[String] = []
 
+## Traits unlocked once a monster is reborn into a bigger size than its
+## natural one -- sparse map of tier code ("P" = 2+ slots, "H" = 3+ slots,
+## "G" = 4 slots) -> Array[String] of trait ids, sourced from the source
+## sheet's own per-monster "If Size [P/H/G]" line. A tier absent from this
+## dict means this species has no trait gated on it. See
+## MonsterLoadout.current_size / TeamRosterManager.get_active_trait_ids()
+## for how these actually get folded into a monster's real trait list.
+@export var size_gated_trait_ids: Dictionary = {}
+
+## Traits unlocked once a monster's synthesis stack ("+N", capping at "+★"
+## i.e. +100) crosses a threshold -- sparse map of tier code ("25"/"50"/
+## "star") -> Array[String] of trait ids, sourced from the source sheet's
+## own per-monster "If Rank Offset [+25/+50/+★]" line. See
+## MonsterLoadout.synthesis_stack / TeamRosterManager.get_active_trait_ids().
+@export var synth_gated_trait_ids: Dictionary = {}
+
 ## "" means no artwork available yet — callers must handle the missing case.
 @export var sprite_path: String = ""
 

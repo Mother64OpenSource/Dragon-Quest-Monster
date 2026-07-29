@@ -43,6 +43,7 @@
 		"Wsh": "0",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/yggdrasil.webp",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"counter_striker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"stress_relief"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

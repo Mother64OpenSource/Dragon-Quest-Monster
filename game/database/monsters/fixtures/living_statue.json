@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_oomph"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/living_statue.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"critical_massacre",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_buff"
+		],
+		"50": [
+			"crafty_debuffer"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

@@ -33,6 +33,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"divine_dancer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/djinneral_tetsuguro.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"tactical_genius",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"crafty_donker"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		],
+		"P": [
+			"desperado"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/brownie.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"random_oomph",
 		"talent_scout"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_confuser"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/darck.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"heckling_hector",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_shuffle"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"crafty_zapper"
+		]
+	}
 }

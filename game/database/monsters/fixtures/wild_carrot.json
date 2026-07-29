@@ -42,6 +42,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"dance_meister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wild_carrot.png",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"crafty_confuser",
 		"tension_relief_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"sudden_shuffle"
+		],
+		"star": [
+			"divine_dancer"
+		]
+	}
 }

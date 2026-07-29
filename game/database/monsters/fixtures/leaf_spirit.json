@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wave_of_relief"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/leaf_spirit.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"random_buff",
 		"medicinal_knowledge"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"sudden_ping"
+		]
+	}
 }

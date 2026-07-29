@@ -36,6 +36,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"grudge_bearer"
+		],
+		"P": [
+			"wave_of_panic"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fallen_priest.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"zammeister",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"crafty_zammer"
+		]
+	}
 }

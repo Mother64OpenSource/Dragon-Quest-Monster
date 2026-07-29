@@ -46,6 +46,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/saggitar.png",
 	"starting_skill_ids": [
@@ -56,5 +57,16 @@
 		"double_trouble",
 		"hit_squad",
 		"early_bird"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"berserker"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

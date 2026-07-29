@@ -27,6 +27,7 @@ func run() -> bool:
 	_check_import_export(roster)
 	_check_validation(roster, monster_db, skillset_db)
 	_check_weapon_validation(roster, monster_db, skillset_db, weapon_db)
+	_check_size_synth_traits(roster, monster_db, skillset_db)
 	_check_malformed_import(roster)
 
 	_clear_test_dir()
@@ -257,6 +258,99 @@ func _check_weapon_validation(roster: TeamRosterManager, monster_db: MonsterData
 		"get_equippable_weapon_types returns all 7 types for master_of_weapons",
 		MonsterEquipmentRules.get_equippable_weapon_types(master_species).size() == 7
 	)
+
+## Slime's own real sourced data (see wiki/log.md): starting_trait_ids
+## [small_body, critical_massacre, zapmeister]; size_gated_trait_ids
+## {P: [random_accelerate], H: [sudden_white_fog]} (no G entry at all --
+## slime has no G-tier trait, unlike e.g. Montner); synth_gated_trait_ids
+## {25: [dust_of_the_clan], 50: [tactical_trooper], star: [strong_guard_break]}.
+func _check_size_synth_traits(roster: TeamRosterManager, monster_db: MonsterDatabase, skillset_db: SkillSetDatabase) -> void:
+	var species := monster_db.get_species("slime")
+	_check("slime has real size-gated trait data (P and H, no G)", species.size_gated_trait_ids.keys() == ["H", "P"] or species.size_gated_trait_ids.keys() == ["P", "H"])
+	_check("slime has real synth-gated trait data (25/50/star)", species.synth_gated_trait_ids.has("25") and species.synth_gated_trait_ids.has("50") and species.synth_gated_trait_ids.has("star"))
+
+	var baseline := MonsterLoadout.new()
+	baseline.species_id = "slime"
+	_check(
+		"a fresh loadout (current_size=0 sentinel, synthesis_stack=0) gets only the 3 starting traits",
+		TeamRosterManager.get_active_trait_ids(baseline, species) == species.starting_trait_ids
+	)
+
+	var at_size_1 := MonsterLoadout.new()
+	at_size_1.species_id = "slime"
+	at_size_1.current_size = 1
+	_check(
+		"current_size=1 (slime's own natural size) is equivalent to the 0 sentinel",
+		TeamRosterManager.get_active_trait_ids(at_size_1, species) == TeamRosterManager.get_active_trait_ids(baseline, species)
+	)
+
+	var at_size_2 := MonsterLoadout.new()
+	at_size_2.species_id = "slime"
+	at_size_2.current_size = 2
+	var active_at_2 := TeamRosterManager.get_active_trait_ids(at_size_2, species)
+	_check("current_size=2 unlocks the P tier (Random Accelerate)", active_at_2.has("random_accelerate"))
+	_check("current_size=2 does NOT unlock the H tier yet", not active_at_2.has("sudden_white_fog"))
+
+	var at_size_3 := MonsterLoadout.new()
+	at_size_3.species_id = "slime"
+	at_size_3.current_size = 3
+	var active_at_3 := TeamRosterManager.get_active_trait_ids(at_size_3, species)
+	_check(
+		"current_size=3 unlocks BOTH P and H (reaching a higher tier doesn't skip the lower one)",
+		active_at_3.has("random_accelerate") and active_at_3.has("sudden_white_fog")
+	)
+
+	var at_size_4 := MonsterLoadout.new()
+	at_size_4.species_id = "slime"
+	at_size_4.current_size = 4
+	_check(
+		"current_size=4 doesn't crash even though slime has no G-tier entry at all",
+		TeamRosterManager.get_active_trait_ids(at_size_4, species).size() == active_at_3.size()
+	)
+
+	var at_stack_25 := MonsterLoadout.new()
+	at_stack_25.species_id = "slime"
+	at_stack_25.synthesis_stack = 25
+	var active_at_25 := TeamRosterManager.get_active_trait_ids(at_stack_25, species)
+	_check("synthesis_stack=25 unlocks Dust of the Clan only", active_at_25.has("dust_of_the_clan") and not active_at_25.has("tactical_trooper") and not active_at_25.has("strong_guard_break"))
+
+	var at_stack_50 := MonsterLoadout.new()
+	at_stack_50.species_id = "slime"
+	at_stack_50.synthesis_stack = 50
+	var active_at_50 := TeamRosterManager.get_active_trait_ids(at_stack_50, species)
+	_check(
+		"synthesis_stack=50 unlocks BOTH +25 and +50 tiers",
+		active_at_50.has("dust_of_the_clan") and active_at_50.has("tactical_trooper") and not active_at_50.has("strong_guard_break")
+	)
+
+	var at_stack_99 := MonsterLoadout.new()
+	at_stack_99.species_id = "slime"
+	at_stack_99.synthesis_stack = 99
+	_check(
+		"synthesis_stack=99 is one short of +★ -- Strong Guard Break stays locked",
+		not TeamRosterManager.get_active_trait_ids(at_stack_99, species).has("strong_guard_break")
+	)
+
+	var at_stack_100 := MonsterLoadout.new()
+	at_stack_100.species_id = "slime"
+	at_stack_100.synthesis_stack = 100
+	var active_at_100 := TeamRosterManager.get_active_trait_ids(at_stack_100, species)
+	_check(
+		"synthesis_stack=100 (+★) unlocks all 3 rank-offset traits",
+		active_at_100.has("dust_of_the_clan") and active_at_100.has("tactical_trooper") and active_at_100.has("strong_guard_break")
+	)
+
+	var bad_size := MonsterLoadout.new()
+	bad_size.species_id = "slime"
+	bad_size.current_size = 5
+	_check("current_size out of range (5) is flagged", roster.validate_member(bad_size, monster_db, skillset_db).size() == 1)
+
+	var bad_stack := MonsterLoadout.new()
+	bad_stack.species_id = "slime"
+	bad_stack.synthesis_stack = 101
+	_check("synthesis_stack out of range (101) is flagged", roster.validate_member(bad_stack, monster_db, skillset_db).size() == 1)
+
+	_check("current_size=0 sentinel itself passes validation", roster.validate_member(baseline, monster_db, skillset_db).is_empty())
 
 func _check_malformed_import(roster: TeamRosterManager) -> void:
 	var result := roster.import_team_from_string("{ this is not valid json ][")

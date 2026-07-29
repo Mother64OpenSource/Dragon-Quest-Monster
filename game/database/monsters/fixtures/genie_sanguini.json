@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"lucky"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/genie_sanguini.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"artful_dodger",
 		"counter_striker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"confusing_touch"
+		],
+		"50": [
+			"heckling_hector"
+		],
+		"star": [
+			"strangely_alluring"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/powie_yowie.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_accelerate"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

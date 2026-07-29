@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"grudge_bearer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/wishmaster.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_genius",
 		"desperado",
 		"bangmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"close_scraper"
+		],
+		"50": [
+			"coercion"
+		],
+		"star": [
+			"crafty_banger"
+		]
+	}
 }

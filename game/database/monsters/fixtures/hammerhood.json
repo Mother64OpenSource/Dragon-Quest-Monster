@@ -35,6 +35,14 @@
 		"Sap": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"fly_swatter"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hammerhood.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"random_tension",
 		"rabble_rouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"one_shot_reversal"
+		],
+		"star": [
+			"bangmeister"
+		]
+	}
 }

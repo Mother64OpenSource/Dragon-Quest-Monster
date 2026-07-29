@@ -36,6 +36,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		],
+		"P": [
+			"crafty_curser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/swingin_hipster.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"spell_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sizzmeister"
+		],
+		"50": [
+			"sleep_sock"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

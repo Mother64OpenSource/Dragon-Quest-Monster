@@ -40,6 +40,11 @@
 		"Wck": "0",
 		"Zam": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zapper"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/xenlon.webp",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_genius",
 		"zapmeister",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

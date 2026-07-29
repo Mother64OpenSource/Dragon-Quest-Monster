@@ -45,6 +45,11 @@
 		"Zam": "⁎",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"bangmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/elusid.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"frizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"crafty_cracker"
+		]
+	}
 }

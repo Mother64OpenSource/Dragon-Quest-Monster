@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"full_satisfaction_guard"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/trap_box.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"critical_massacre",
 		"perilous_parrier"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"take_magic"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"rare_high_tension"
+		]
+	}
 }

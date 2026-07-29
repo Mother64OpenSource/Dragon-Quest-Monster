@@ -38,6 +38,14 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_rubblerouser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/restless_armour.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"stalwart_spirit",
 		"crafty_donker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"full_satisfaction_guard"
+		],
+		"50": [
+			"sudden_buff"
+		],
+		"star": [
+			"rare_high_tension"
+		]
+	}
 }

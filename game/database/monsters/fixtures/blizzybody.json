@@ -39,6 +39,14 @@
 		"Wck": "⁎",
 		"Wsh": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/blizzybody.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crackmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"random_white_fog"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

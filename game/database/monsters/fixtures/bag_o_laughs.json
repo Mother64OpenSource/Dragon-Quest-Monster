@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"random_oomph"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bag_o_laughs.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"frizzmeister",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_ping"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

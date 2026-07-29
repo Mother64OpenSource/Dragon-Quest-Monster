@@ -41,6 +41,11 @@
 		"Wsh": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/robbin_s_old_lady.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"double_trouble",
 		"hit_squad",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"strangely_alluring"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"rare_high_tension"
+		]
+	}
 }

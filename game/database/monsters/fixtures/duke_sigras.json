@@ -34,6 +34,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"frizzmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/duke_sigras.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"spell_satisfaction",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"crafty_banger"
+		],
+		"star": [
+			"crafty_jammer"
+		]
+	}
 }

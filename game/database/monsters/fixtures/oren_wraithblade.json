@@ -38,6 +38,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"critical_massacre"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/oren_wraithblade.webp",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"double_trouble",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

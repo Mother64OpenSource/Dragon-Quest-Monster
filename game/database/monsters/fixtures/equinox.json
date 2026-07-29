@@ -37,6 +37,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_debuffer"
+		],
+		"P": [
+			"crafty_sizzer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/equinox.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"sizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_inactivist"
+		],
+		"50": [
+			"sudden_black_fog"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

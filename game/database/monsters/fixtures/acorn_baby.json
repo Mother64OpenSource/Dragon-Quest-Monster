@@ -34,6 +34,14 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/acorn_baby.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"hit_squad",
 		"last_gasp"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"strangely_alluring"
+		],
+		"50": [
+			"giant_killer"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

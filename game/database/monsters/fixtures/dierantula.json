@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dierantula.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_trooper",
 		"scare_stare",
 		"crafty_woosher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

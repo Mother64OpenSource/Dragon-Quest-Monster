@@ -36,6 +36,14 @@
 		"Siz": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_ping"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/blooming_sorcerer.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"mutter",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sizzmeister"
+		],
+		"50": [
+			"rare_magic_barrier"
+		],
+		"star": [
+			"crafty_sizzer"
+		]
+	}
 }

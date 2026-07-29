@@ -47,6 +47,7 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/baramos_zombie.webp",
 	"starting_skill_ids": [
@@ -57,5 +58,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"paralysing_punch"
+		],
+		"50": [
+			"random_underworld_fog"
+		],
+		"star": [
+			"sudden_oomph"
+		]
+	}
 }

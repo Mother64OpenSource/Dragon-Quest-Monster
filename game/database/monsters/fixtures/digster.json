@@ -45,6 +45,14 @@
 		"Zam": "↑",
 		"Zap": "↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"protecter"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/digster.png",
 	"starting_skill_ids": [
@@ -54,5 +62,16 @@
 		"standard_body",
 		"hit_squad",
 		"light_metal_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"sudden_black_fog"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/chewlip.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"crafty_whacker",
 		"random_reversal"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"last_word"
+		],
+		"star": [
+			"deadly_touch"
+		]
+	}
 }

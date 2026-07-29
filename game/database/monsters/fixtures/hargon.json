@@ -42,6 +42,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_jammer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hargon.webp",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"random_ping"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

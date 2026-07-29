@@ -42,6 +42,11 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"scare_stare"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/quadrahead.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"crafty_frizzer"
+		],
+		"star": [
+			"last_gasp"
+		]
+	}
 }

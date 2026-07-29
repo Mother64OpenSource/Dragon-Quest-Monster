@@ -34,6 +34,14 @@
 		"Wsh": "½",
 		"Zam": "↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_ice_breather"
+		],
+		"P": [
+			"crafty_cracker"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/zoma_s_devil.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wave_of_relief"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

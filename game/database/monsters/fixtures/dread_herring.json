@@ -33,6 +33,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sizzmeister"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dread_herring.webp",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"desperado",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_oomph"
+		],
+		"50": [
+			"one_shot_reversal"
+		],
+		"star": [
+			"random_accelerate"
+		]
+	}
 }

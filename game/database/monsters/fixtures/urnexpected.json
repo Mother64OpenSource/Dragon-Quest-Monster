@@ -36,6 +36,14 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/urnexpected.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"crafty_whacker",
 		"sudden_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"scare_stare"
+		],
+		"star": [
+			"deadly_touch"
+		]
+	}
 }

@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"confusing_touch"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/exaucers.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"wooshmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_confuser"
+		],
+		"50": [
+			"crafty_sealer"
+		],
+		"star": [
+			"crafty_jammer"
+		]
+	}
 }

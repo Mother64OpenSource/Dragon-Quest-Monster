@@ -33,6 +33,14 @@
 		"Wsh": "½",
 		"Zap": "⇄"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"ultra_fast_action"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/kukri.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"small_body",
 		"steady_recovery",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counteractivist"
+		],
+		"50": [
+			"crafty_woosher"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

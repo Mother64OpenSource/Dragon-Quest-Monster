@@ -44,6 +44,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dead_masker.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"artful_dodger",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"intimidating"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counteractivist"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/cursed_mask.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_mastermind",
 		"cursed_attack",
 		"crafty_curser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tit_for_tat"
+		],
+		"50": [
+			"grudge_bearer"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

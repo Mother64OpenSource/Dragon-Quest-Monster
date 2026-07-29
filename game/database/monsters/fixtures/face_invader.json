@@ -35,6 +35,14 @@
 		"Slp": "↓",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/face_invader.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_rubblerouser",
 		"suicidal_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"grudge_bearer"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

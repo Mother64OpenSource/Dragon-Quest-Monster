@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_tension"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cumulus_rex.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"hit_squad",
 		"magic_regenerator"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wave_of_relief"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"random_white_fog"
+		]
+	}
 }

@@ -37,6 +37,7 @@
 		"Wsh": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/grand_estark.webp",
 	"starting_skill_ids": [
@@ -47,5 +48,16 @@
 		"quad_trouble",
 		"hopeful_hitter",
 		"berserker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heat_up"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

@@ -52,6 +52,11 @@
 		"Wsh": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/exorsus.png",
 	"starting_skill_ids": [
@@ -62,5 +67,16 @@
 		"tactical_trooper",
 		"sizzmeister",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"magic_regenerator"
+		],
+		"50": [
+			"crafty_sealer"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

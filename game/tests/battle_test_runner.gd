@@ -74,6 +74,7 @@ func run() -> bool:
 	_check_weapon_equip_mechanics()
 	_check_weapon_effects_mechanics()
 	_check_blacksmith_mechanics()
+	_check_size_synth_trait_bridge_mechanics()
 	_check_taunt_mechanics()
 	_check_counter_stance_and_utility_skill_mechanics()
 
@@ -2499,6 +2500,42 @@ func _check_blacksmith_mechanics() -> void:
 	_check(
 		"the same unknown item is unflagged when blacksmith_db is omitted (backward compatible)",
 		roster.validate_member(unknown_item_loadout, monster_db, SkillSetDatabase.new()).is_empty()
+	)
+
+## Proves the size/synthesis-stack trait gating actually reaches a real
+## MonsterInstance's active_traits through TeamToBattleBridge, not just
+## TeamRosterManager.get_active_trait_ids() in isolation (covered separately,
+## with more threshold detail, in team_roster_test_runner.gd).
+func _check_size_synth_trait_bridge_mechanics() -> void:
+	var monster_db := MonsterDatabase.new()
+	var skill_db := SkillDatabase.new()
+	var trait_db := TraitDatabase.new()
+
+	var baseline_loadout := MonsterLoadout.new()
+	baseline_loadout.species_id = "slime"
+	baseline_loadout.equipped_skill_ids = ["attack"]
+	var baseline_saved_team := SavedTeam.new()
+	baseline_saved_team.members = [baseline_loadout]
+	var baseline_bridged := TeamToBattleBridge.build_team(baseline_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	var slime_species := monster_db.get_species("slime")
+	_check(
+		"a fresh bridged Slime carries only its 3 starting traits, none of the size/synth-gated ones",
+		baseline_bridged.active_traits.size() == slime_species.starting_trait_ids.size()
+	)
+
+	var reborn_loadout := MonsterLoadout.new()
+	reborn_loadout.species_id = "slime"
+	reborn_loadout.equipped_skill_ids = ["attack"]
+	reborn_loadout.current_size = 3
+	reborn_loadout.synthesis_stack = 100
+	var reborn_saved_team := SavedTeam.new()
+	reborn_saved_team.members = [reborn_loadout]
+	var reborn_bridged := TeamToBattleBridge.build_team(reborn_saved_team, "side_a", monster_db, skill_db, trait_db, 0)[0]
+	_check(
+		"a Slime reborn to size 3 with a maxed synthesis stack is bridged with all 3 starting traits plus all 5 gated ones (P+H, +25/+50/+★)",
+		reborn_bridged.active_traits.size() == slime_species.starting_trait_ids.size() + 5
+		and reborn_bridged.active_traits.any(func(t): return t.trait_data != null and t.trait_data.id == "random_accelerate")
+		and reborn_bridged.active_traits.any(func(t): return t.trait_data != null and t.trait_data.id == "strong_guard_break")
 	)
 
 ## Real report: "the enemy shouldn't attack my other monster, just the

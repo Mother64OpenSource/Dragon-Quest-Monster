@@ -39,6 +39,14 @@
 		"Siz": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"double_trouble"
+		],
+		"P": [
+			"all_guard"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/platypunk.webp",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"hit_squad",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_woosher"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

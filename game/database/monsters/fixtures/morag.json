@@ -41,6 +41,11 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"cursed_attack"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/morag.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"crackmeister"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

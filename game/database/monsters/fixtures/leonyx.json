@@ -41,6 +41,7 @@
 		"Wsh": "½",
 		"Zap": "⇄"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/leonyx.webp",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"double_trouble",
 		"hit_squad",
 		"crafty_devil"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"magic_regenerator"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

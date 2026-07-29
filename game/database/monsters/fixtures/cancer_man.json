@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"standard_killer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cancer_man.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"hit_squad",
 		"heat_up"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"grudge_bearer"
+		],
+		"50": [
+			"random_underworld_fog"
+		],
+		"star": [
+			"tactical_genius"
+		]
+	}
 }

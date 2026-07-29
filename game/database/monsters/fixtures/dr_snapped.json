@@ -44,6 +44,11 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_poisoner"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dr_snapped.webp",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"double_trouble",
 		"hit_squad",
 		"poisonous"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

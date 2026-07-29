@@ -38,6 +38,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"coercion"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/psaro.webp",
 	"starting_skill_ids": [
@@ -48,5 +53,16 @@
 		"tactical_trooper",
 		"desperado",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_ping"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

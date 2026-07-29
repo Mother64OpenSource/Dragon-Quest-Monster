@@ -37,6 +37,14 @@
 		"Zam": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mandrake_marshal.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

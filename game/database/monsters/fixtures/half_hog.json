@@ -41,6 +41,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"intimidating"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/half_hog.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stress_relief"
+		],
+		"50": [
+			"crafty_frizzer"
+		],
+		"star": [
+			"frizzmeister"
+		]
+	}
 }

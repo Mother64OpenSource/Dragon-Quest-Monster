@@ -35,6 +35,14 @@
 		"Wsh": "⁎",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"random_white_fog"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/leafy_larrikin.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"hit_squad",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crackmeister"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"last_gasp"
+		]
+	}
 }

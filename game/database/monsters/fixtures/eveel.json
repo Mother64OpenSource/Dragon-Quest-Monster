@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"grudge_bearer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/eveel.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"poisonous_poke",
 		"crafty_poisoner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"crafty_debuffer"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

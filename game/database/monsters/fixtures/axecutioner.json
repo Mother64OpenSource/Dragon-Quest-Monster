@@ -37,6 +37,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		],
+		"P": [
+			"artful_dodger"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/axecutioner.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"crafty_debuffer",
 		"random_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

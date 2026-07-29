@@ -40,6 +40,14 @@
 		"Zam": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_paralyzer"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mumboh_jumboe.webp",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"bangmeister",
 		"paralyzing"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"last_gasp"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wooshmeister"
+		],
+		"P": [
+			"cursed_attack"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gryphon.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_jammer",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_ping"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

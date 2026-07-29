@@ -35,6 +35,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/brushead.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"last_gasp",
 		"health_professional"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perfect_parry"
+		],
+		"50": [
+			"sudden_red_fog"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

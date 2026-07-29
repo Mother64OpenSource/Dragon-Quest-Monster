@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cannibox.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"desperado",
 		"deadly_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sleeper"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

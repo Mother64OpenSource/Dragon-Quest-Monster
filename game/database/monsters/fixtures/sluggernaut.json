@@ -43,6 +43,7 @@
 		"Wck": "↑↑",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/sluggernaut.png",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"double_trouble",
 		"hit_squad",
 		"rabble_rouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

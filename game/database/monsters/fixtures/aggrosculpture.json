@@ -37,6 +37,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rocket_start"
+		],
+		"P": [
+			"early_bird"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aggrosculpture.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"bangmeister",
 		"crafty_banger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous_poke"
+		],
+		"50": [
+			"crafty_poisoner"
+		],
+		"star": [
+			"double_trouble"
+		]
+	}
 }

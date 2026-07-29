@@ -35,6 +35,14 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sobering_slap"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pumpoise.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"strangely_alluring",
 		"lucky"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"comeback_kid"
+		],
+		"50": [
+			"perfect_parry"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

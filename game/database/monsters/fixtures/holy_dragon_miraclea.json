@@ -36,6 +36,7 @@
 		"Wsh": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/holy_dragon_miraclea.png",
 	"starting_skill_ids": [
@@ -46,5 +47,16 @@
 		"quad_trouble",
 		"lucky",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

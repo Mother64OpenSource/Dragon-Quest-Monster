@@ -33,6 +33,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cauldrone.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"sudden_black_fog",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_accelerate"
+		],
+		"50": [
+			"random_black_fog"
+		],
+		"star": [
+			"crafty_inactivist"
+		]
+	}
 }

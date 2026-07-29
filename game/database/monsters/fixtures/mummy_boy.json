@@ -37,6 +37,14 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sleeper"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mummy_boy.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"sleep_sock",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"sudden_underworld_fog"
+		]
+	}
 }

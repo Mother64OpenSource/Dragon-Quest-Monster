@@ -48,6 +48,7 @@
 		"Wsh": "↑",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/schleiman_tank.webp",
 	"starting_skill_ids": [
@@ -58,5 +59,16 @@
 		"double_trouble",
 		"light_metal_body",
 		"giant_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"take_magic"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

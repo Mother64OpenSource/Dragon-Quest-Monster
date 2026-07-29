@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"perfect_parry"
+		],
+		"P": [
+			"triple_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/khalamari_kid.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"strangely_alluring",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"spell_satisfaction"
+		]
+	}
 }

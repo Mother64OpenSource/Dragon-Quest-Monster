@@ -40,6 +40,8 @@ var _weapon_button_ids: Array[String] = []
 @onready var _nickname_edit: LineEdit = $Layout/NicknameEdit
 @onready var _species_label: Label = $Layout/SpeciesLabel
 @onready var _traits_label: Label = $Layout/TraitsLabel
+@onready var _size_spin_box: SpinBox = $Layout/SizeSynthBox/SizeSpinBox
+@onready var _synth_spin_box: SpinBox = $Layout/SizeSynthBox/SynthSpinBox
 @onready var _skills_box: HBoxContainer = $Layout/SkillsBox
 ## Looked up via get_node(), not the bare "ArtStylePreference" identifier --
 ## matches this project's own NetworkManager convention.
@@ -60,6 +62,8 @@ func _ready() -> void:
 	_weapon_button.item_selected.connect(_on_weapon_selected)
 	_blacksmith_button.pressed.connect(_on_blacksmith_pressed)
 	_blacksmith_dialog.items_changed.connect(_on_blacksmith_items_changed)
+	_size_spin_box.value_changed.connect(_on_size_changed)
+	_synth_spin_box.value_changed.connect(_on_synth_changed)
 
 func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase, skill_db: SkillDatabase, skillset_db: SkillSetDatabase, trait_db: TraitDatabase, weapon_db: WeaponDatabase = null, blacksmith_db: BlacksmithDatabase = null) -> void:
 	loadout = p_loadout
@@ -82,6 +86,7 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 		_species_icon.texture = null
 		_species_label.text = "Unknown species: '%s'" % loadout.species_id
 		_traits_label.visible = false
+		_size_spin_box.get_parent().visible = false
 		_skills_button.visible = false
 		_skills_box.visible = true
 		_weapon_button.visible = false
@@ -92,6 +97,9 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 	custom_minimum_size = Vector2(SPACE_UNIT_WIDTH * _species.slots, CELL_HEIGHT)
 	_species_icon.texture = _art_style.load_texture(_species)
 	_species_label.text = "%s [Slot %d]" % [_species.display_name, _species.slots]
+	_size_spin_box.get_parent().visible = true
+	_size_spin_box.set_value_no_signal(loadout.current_size if loadout.current_size != 0 else _species.slots)
+	_synth_spin_box.set_value_no_signal(loadout.synthesis_stack)
 	_update_traits_label()
 	_skills_box.visible = false
 	_skills_button.visible = true
@@ -104,14 +112,17 @@ func setup(p_loadout: MonsterLoadout, p_index: int, monster_db: MonsterDatabase,
 ## convention) with a composed "Name: description" tooltip per trait joined
 ## by newlines -- the same composition precedent battle_side_view.gd's
 ## status badge uses, just covering every trait on the card in one hover
-## instead of one icon per status.
+## instead of one icon per status. Uses TeamRosterManager.get_active_trait_ids()
+## rather than just species.starting_trait_ids, so traits unlocked by the
+## Size/Synth spinboxes below actually show up here once they're reached.
 func _update_traits_label() -> void:
-	if _trait_db == null or _species.starting_trait_ids.is_empty():
+	var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, _species)
+	if _trait_db == null or active_trait_ids.is_empty():
 		_traits_label.visible = false
 		return
 	var names: Array[String] = []
 	var tooltip_lines: Array[String] = []
-	for trait_id in _species.starting_trait_ids:
+	for trait_id in active_trait_ids:
 		var trait_data := _trait_db.get_trait_data(trait_id)
 		if trait_data == null:
 			continue
@@ -120,6 +131,22 @@ func _update_traits_label() -> void:
 	_traits_label.visible = not names.is_empty()
 	_traits_label.text = ", ".join(names)
 	_traits_label.tooltip_text = "\n".join(tooltip_lines)
+
+func _on_size_changed(new_value: float) -> void:
+	var new_size := int(new_value)
+	if loadout.current_size == new_size:
+		return
+	loadout.current_size = new_size
+	_update_traits_label()
+	loadout_edited.emit()
+
+func _on_synth_changed(new_value: float) -> void:
+	var new_stack := int(new_value)
+	if loadout.synthesis_stack == new_stack:
+		return
+	loadout.synthesis_stack = new_stack
+	_update_traits_label()
+	loadout_edited.emit()
 
 func _build_unknown_species_label() -> void:
 	var extra_text := ""

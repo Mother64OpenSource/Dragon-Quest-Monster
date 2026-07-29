@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/puppeteer.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"rabble_rouser",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"perfect_parry"
+		],
+		"star": [
+			"rare_high_tension"
+		]
+	}
 }

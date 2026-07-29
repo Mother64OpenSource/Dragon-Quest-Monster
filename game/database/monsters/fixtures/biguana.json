@@ -42,6 +42,11 @@
 		"Zam": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"confusing_touch"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/biguana.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"random_underworld_fog",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_squasher"
+		],
+		"50": [
+			"scare_stare"
+		],
+		"star": [
+			"crafty_donker"
+		]
+	}
 }

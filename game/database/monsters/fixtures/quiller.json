@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"fly_swatter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/quiller.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"critical_massacre",
 		"bladed_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heat_up"
+		],
+		"50": [
+			"frizzmeister"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

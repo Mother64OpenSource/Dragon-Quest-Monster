@@ -53,6 +53,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"protecter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/diamond_slime.webp",
 	"starting_skill_ids": [
@@ -62,5 +70,16 @@
 		"standard_body",
 		"hard_metal_body",
 		"escape_artist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zapper"
+		],
+		"50": [
+			"drain_magic_attack"
+		],
+		"star": [
+			"zapmeister"
+		]
+	}
 }

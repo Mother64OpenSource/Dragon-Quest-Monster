@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_tension"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/compos_mantis.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"confusing_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"zapmeister"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

@@ -54,6 +54,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"perilous_parrier"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/darkonium_slime.png",
 	"starting_skill_ids": [
@@ -64,5 +69,16 @@
 		"double_trouble",
 		"metal_body",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"escape_artist"
+		],
+		"50": [
+			"last_word"
+		],
+		"star": [
+			"crafty_devil"
+		]
+	}
 }

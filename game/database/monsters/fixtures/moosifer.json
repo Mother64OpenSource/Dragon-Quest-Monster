@@ -38,6 +38,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_mastermind"
+		],
+		"P": [
+			"random_tension"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/moosifer.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"cursed_attack",
 		"random_oomph"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"crafty_curser"
+		]
+	}
 }

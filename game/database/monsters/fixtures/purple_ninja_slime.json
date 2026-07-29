@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"suicidal_satisfaction"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/purple_ninja_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"hit_squad",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_squasher"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"crafty_donker"
+		]
+	}
 }

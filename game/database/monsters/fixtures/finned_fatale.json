@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_fire_breather"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/finned_fatale.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"critical_massacre",
 		"heat_up"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

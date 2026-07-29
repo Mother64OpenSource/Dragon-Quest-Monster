@@ -43,6 +43,7 @@
 		"Wck": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/tyrant_basagrande.webp",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"tactical_genius",
 		"critical_massacre",
 		"heat_up"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"random_black_fog"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

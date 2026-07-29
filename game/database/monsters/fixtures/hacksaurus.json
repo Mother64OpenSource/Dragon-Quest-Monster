@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hacksaurus.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"giant_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"scare_stare"
+		],
+		"50": [
+			"crafty_fire_breather"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

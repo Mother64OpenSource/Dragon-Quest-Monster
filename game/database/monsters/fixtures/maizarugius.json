@@ -38,6 +38,7 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/maizarugius.png",
 	"starting_skill_ids": [
@@ -48,5 +49,16 @@
 		"tactical_genius",
 		"wrath_of_the_stars",
 		"random_red_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"coercion"
+		],
+		"50": [
+			"wave_of_panic"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

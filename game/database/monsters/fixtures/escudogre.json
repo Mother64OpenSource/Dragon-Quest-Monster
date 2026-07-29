@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"perilous_parrier"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/escudogre.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"sudden_buff",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"light_metal_body"
+		],
+		"50": [
+			"full_satisfaction_guard"
+		],
+		"star": [
+			"protecter"
+		]
+	}
 }

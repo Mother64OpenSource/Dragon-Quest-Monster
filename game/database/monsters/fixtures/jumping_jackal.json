@@ -42,6 +42,14 @@
 		"Slp": "↓",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sore_loser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/jumping_jackal.png",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"early_bird",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

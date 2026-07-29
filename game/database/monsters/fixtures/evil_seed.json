@@ -36,6 +36,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		],
+		"P": [
+			"scare_stare"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/evil_seed.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"crafty_sizzer"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

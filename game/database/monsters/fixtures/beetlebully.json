@@ -38,6 +38,14 @@
 		"Wck": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_mastermind"
+		],
+		"P": [
+			"grudge_bearer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/beetlebully.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"crafty_zapper",
 		"sudden_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_tension"
+		],
+		"50": [
+			"crafty_debuffer"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

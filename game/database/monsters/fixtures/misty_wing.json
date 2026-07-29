@@ -43,6 +43,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/misty_wing.png",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_trooper",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"take_magic"
+		],
+		"star": [
+			"rare_magic_barrier"
+		]
+	}
 }

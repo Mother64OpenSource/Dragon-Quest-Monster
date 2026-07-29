@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rubblerouser_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/lazamanus.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"double_trouble",
 		"suicidal_satisfaction",
 		"random_ping"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_curser"
+		],
+		"50": [
+			"wave_of_panic"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

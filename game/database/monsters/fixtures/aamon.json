@@ -41,6 +41,11 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"great_sage"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/aamon.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"rare_mist_me",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"rare_magic_barrier"
+		],
+		"star": [
+			"suicidal_satisfaction"
+		]
+	}
 }

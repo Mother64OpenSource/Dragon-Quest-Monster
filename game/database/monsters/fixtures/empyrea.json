@@ -44,6 +44,7 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/empyrea.webp",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"protection_of_the_stars"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

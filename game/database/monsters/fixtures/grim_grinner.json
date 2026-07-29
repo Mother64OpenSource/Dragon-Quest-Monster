@@ -34,6 +34,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_buff"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/grim_grinner.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"heat_up",
 		"protecter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_shuffle"
+		],
+		"50": [
+			"proactive_hunter"
+		],
+		"star": [
+			"close_scraper"
+		]
+	}
 }

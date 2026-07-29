@@ -38,6 +38,14 @@
 		"Wsh": "↓",
 		"Zam": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_white_fog"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dancing_flame.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"frizzmeister",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_ping"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"crafty_frizzer"
+		]
+	}
 }

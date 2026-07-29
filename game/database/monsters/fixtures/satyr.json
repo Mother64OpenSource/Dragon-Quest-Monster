@@ -35,6 +35,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		],
+		"P": [
+			"final_breath"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/satyr.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"talent_scout",
 		"lootist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gold_getter"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"strong_guard_break"
+		]
+	}
 }

@@ -39,6 +39,14 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gamble_counter"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/animated_armour.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"early_bird",
 		"standard_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"tit_for_tat"
+		],
+		"star": [
+			"last_gasp"
+		]
+	}
 }

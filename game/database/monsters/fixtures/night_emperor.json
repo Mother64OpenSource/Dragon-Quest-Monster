@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"fly_swatter"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/night_emperor.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sleep_sock"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

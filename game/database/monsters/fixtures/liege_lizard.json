@@ -44,6 +44,11 @@
 		"Zam": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/liege_lizard.png",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_genius",
 		"crafty_fire_breather",
 		"coercion"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"random_accelerate"
+		]
+	}
 }

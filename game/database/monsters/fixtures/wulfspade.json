@@ -37,6 +37,14 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"counter_striker"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wulfspade.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"close_scraper",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

@@ -38,6 +38,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"crafty_poisoner"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mortamor.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_oomph"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"bangmeister"
+		]
+	}
 }

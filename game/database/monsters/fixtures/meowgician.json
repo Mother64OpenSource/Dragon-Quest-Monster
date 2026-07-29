@@ -36,6 +36,14 @@
 		"Slp": "↓",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/meowgician.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"frizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"bangmeister"
+		],
+		"50": [
+			"suicidal_satisfaction"
+		],
+		"star": [
+			"crafty_frizzer"
+		]
+	}
 }

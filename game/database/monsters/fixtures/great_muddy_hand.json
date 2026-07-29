@@ -44,6 +44,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/great_muddy_hand.png",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"crafty_curser",
 		"crafty_sealer",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"confusing_touch"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

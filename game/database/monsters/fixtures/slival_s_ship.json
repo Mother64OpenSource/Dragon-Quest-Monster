@@ -39,6 +39,7 @@
 		"Wsh": "HP",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/slival_s_ship.png",
 	"starting_skill_ids": [
@@ -49,5 +50,16 @@
 		"tactical_mastermind",
 		"wis_roulette",
 		"agi_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"atk_roulette"
+		],
+		"50": [
+			"mp_roulette"
+		],
+		"star": [
+			"hp_roulette"
+		]
+	}
 }

@@ -42,6 +42,11 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/alphyn.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"double_trouble",
 		"bangmeister",
 		"sudden_ping"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"protecter"
+		]
+	}
 }

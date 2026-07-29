@@ -40,6 +40,7 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/robbin_ladies.webp",
 	"starting_skill_ids": [
@@ -50,5 +51,16 @@
 		"tactical_mastermind",
 		"counter_striker",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"metal_killer"
+		],
+		"50": [
+			"coercion"
+		],
+		"star": [
+			"strangely_alluring"
+		]
+	}
 }

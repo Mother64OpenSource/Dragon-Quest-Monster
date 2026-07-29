@@ -43,6 +43,7 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/stormgate_citadel.png",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"double_trouble",
 		"perilous_parrier",
 		"crafty_zapper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"desperado"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"wooshmeister"
+		]
+	}
 }

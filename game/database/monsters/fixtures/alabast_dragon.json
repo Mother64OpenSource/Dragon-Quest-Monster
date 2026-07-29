@@ -47,6 +47,11 @@
 		"Zam": "0",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/alabast_dragon.webp",
 	"starting_skill_ids": [
@@ -57,5 +62,16 @@
 		"tactical_trooper",
 		"whack_attack",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rolled_over"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

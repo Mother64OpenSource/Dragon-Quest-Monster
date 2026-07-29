@@ -39,6 +39,11 @@
 		"Wsh": "⁎",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"health_professional"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/uber_dreamaera.png",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wave_of_relief"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"early_bird"
+		]
+	}
 }

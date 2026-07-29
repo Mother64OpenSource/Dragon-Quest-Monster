@@ -34,6 +34,14 @@
 		"Wsh": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_buff"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hawkhart.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"close_scraper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"wave_of_relief"
+		]
+	}
 }

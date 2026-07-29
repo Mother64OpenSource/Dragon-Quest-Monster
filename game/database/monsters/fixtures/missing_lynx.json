@@ -44,6 +44,7 @@
 		"Wck": "↑↑",
 		"Wsh": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/missing_lynx.png",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"tactical_genius",
 		"coercion",
 		"crafty_woosher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rolled_over"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

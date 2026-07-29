@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_shuffle"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/shell_slime.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"sudden_buff",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"light_metal_body"
+		],
+		"star": [
+			"rare_mist_me"
+		]
+	}
 }

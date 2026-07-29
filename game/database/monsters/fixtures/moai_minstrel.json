@@ -40,6 +40,11 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"take_magic"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/moai_minstrel.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_trooper",
 		"crafty_sealer",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"last_gasp"
+		],
+		"50": [
+			"crafty_woosher"
+		],
+		"star": [
+			"random_ping"
+		]
+	}
 }

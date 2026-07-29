@@ -36,6 +36,14 @@
 		"Siz": "↑",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"ultra_fast_action"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/swag_bagger.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"gold_getter",
 		"lootist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_accelerate"
+		],
+		"50": [
+			"rocket_start"
+		],
+		"star": [
+			"lucky"
+		]
+	}
 }

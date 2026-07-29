@@ -40,6 +40,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fright_knight.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"counter_striker",
 		"giant_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"metal_killer"
+		],
+		"50": [
+			"fly_swatter"
+		],
+		"star": [
+			"random_tension"
+		]
+	}
 }

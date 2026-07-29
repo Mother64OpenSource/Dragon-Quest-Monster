@@ -38,6 +38,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"rare_high_tension"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bone_baron.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"counter_striker",
 		"heckling_hector"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"confusing_touch"
+		],
+		"50": [
+			"random_oomph"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

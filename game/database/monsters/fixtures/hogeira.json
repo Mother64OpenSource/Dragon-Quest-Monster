@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gamble_counter"
+		],
+		"P": [
+			"rare_high_tension"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hogeira.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"random_oomph"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dust_of_the_clan"
+		],
+		"50": [
+			"wrath_of_the_stars"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

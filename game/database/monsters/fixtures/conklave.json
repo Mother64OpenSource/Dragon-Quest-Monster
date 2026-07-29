@@ -33,6 +33,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"stalwart_spirit"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/conklave.webp",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"small_body",
 		"hit_squad",
 		"talent_scout"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

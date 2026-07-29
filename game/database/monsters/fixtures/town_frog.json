@@ -41,6 +41,7 @@
 		"Wck": "↑↑",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/town_frog.png",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"tactical_genius",
 		"atk_roulette",
 		"def_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wis_roulette"
+		],
+		"50": [
+			"mp_roulette"
+		],
+		"star": [
+			"hp_roulette"
+		]
+	}
 }

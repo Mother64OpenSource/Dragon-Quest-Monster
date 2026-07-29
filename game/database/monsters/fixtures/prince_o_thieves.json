@@ -38,6 +38,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"counter_striker"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/prince_o_thieves.webp",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"intimidating"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"one_shot_reversal"
+		],
+		"50": [
+			"zammeister"
+		],
+		"star": [
+			"crafty_zammer"
+		]
+	}
 }

@@ -42,6 +42,14 @@
 		"Wsh": "↑",
 		"Zap": "↑↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"early_bird"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/metal_slime_knight.png",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"light_metal_body",
 		"counter_striker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_paralyzer"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

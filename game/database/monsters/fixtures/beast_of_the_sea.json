@@ -43,6 +43,7 @@
 		"Wck": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/beast_of_the_sea.png",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"tactical_uber",
 		"poisonous_poke",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

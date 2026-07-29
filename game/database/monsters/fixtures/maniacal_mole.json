@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rubblerouser_meister"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/maniacal_mole.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"gold_getter",
 		"lootist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fast_learner"
+		],
+		"50": [
+			"pro_talent_scout"
+		],
+		"star": [
+			"ultra_guard_break"
+		]
+	}
 }

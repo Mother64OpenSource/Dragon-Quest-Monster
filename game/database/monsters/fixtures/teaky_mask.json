@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"final_breath"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/teaky_mask.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hp_roulette",
 		"crafty_woosher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perilous_parrier"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

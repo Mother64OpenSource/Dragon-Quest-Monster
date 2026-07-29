@@ -34,6 +34,14 @@
 		"Wsh": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tree_feller.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_confuser"
+		],
+		"50": [
+			"health_professional"
+		],
+		"star": [
+			"crafty_cracker"
+		]
+	}
 }

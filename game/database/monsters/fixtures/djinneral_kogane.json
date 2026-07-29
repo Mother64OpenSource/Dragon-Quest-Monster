@@ -33,6 +33,14 @@
 		"Wsh": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"warrior"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/djinneral_kogane.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"tactical_genius",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_confuser"
+		],
+		"50": [
+			"crafty_sleeper"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

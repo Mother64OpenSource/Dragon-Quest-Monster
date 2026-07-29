@@ -42,6 +42,11 @@
 		"Wsh": "0",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"bangmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/thunderbird.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"artful_dodger",
 		"rare_mist_me"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"paralyzing"
+		],
+		"star": [
+			"crafty_paralyzer"
+		]
+	}
 }

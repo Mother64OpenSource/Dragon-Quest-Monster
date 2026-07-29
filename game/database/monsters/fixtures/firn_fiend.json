@@ -38,6 +38,14 @@
 		"Wck": "⁎",
 		"Wsh": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sleep_sock"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/firn_fiend.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"crackmeister",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_oomph"
+		],
+		"50": [
+			"rare_high_tension"
+		],
+		"star": [
+			"crafty_cracker"
+		]
+	}
 }

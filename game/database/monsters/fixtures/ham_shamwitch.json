@@ -36,6 +36,14 @@
 		"Sag": "↓",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"metal_killer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/ham_shamwitch.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"rubblerouser_meister",
 		"random_ping"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_shuffle"
+		],
+		"50": [
+			"random_shuffle"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

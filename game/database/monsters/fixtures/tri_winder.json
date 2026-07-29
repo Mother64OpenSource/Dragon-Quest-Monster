@@ -42,6 +42,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_ice_breather"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tri_winder.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"metal_killer"
+		],
+		"50": [
+			"crafty_inactivist"
+		],
+		"star": [
+			"crackmeister"
+		]
+	}
 }

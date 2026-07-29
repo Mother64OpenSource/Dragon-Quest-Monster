@@ -46,6 +46,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"stalwart_spirit"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/holy_bahlib.webp",
 	"starting_skill_ids": [
@@ -56,5 +61,16 @@
 		"tactical_trooper",
 		"crafty_inactivist",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"critical_massacre"
+		],
+		"50": [
+			"sudden_white_fog"
+		],
+		"star": [
+			"berserker"
+		]
+	}
 }

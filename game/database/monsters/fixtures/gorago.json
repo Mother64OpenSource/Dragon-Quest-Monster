@@ -43,6 +43,11 @@
 		"Wck": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_tension"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gorago.webp",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_mastermind",
 		"berserker",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_banger"
+		],
+		"50": [
+			"random_oomph"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

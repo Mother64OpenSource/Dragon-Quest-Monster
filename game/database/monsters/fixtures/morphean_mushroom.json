@@ -36,6 +36,14 @@
 		"Slp": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_sealer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/morphean_mushroom.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"sleep_sock",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_reversal"
+		],
+		"50": [
+			"tit_for_tat"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

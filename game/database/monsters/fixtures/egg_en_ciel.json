@@ -35,6 +35,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wrath_of_the_stars"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/egg_en_ciel.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"perilous_parrier",
 		"protection_of_the_stars"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"star_gift"
+		],
+		"50": [
+			"all_guard"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

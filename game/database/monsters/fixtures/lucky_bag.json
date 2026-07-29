@@ -37,6 +37,14 @@
 		"Zam": "0",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"full_satisfaction_guard"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/lucky_bag.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"perilous_parrier",
 		"atk_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"def_roulette"
+		],
+		"50": [
+			"hp_roulette"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

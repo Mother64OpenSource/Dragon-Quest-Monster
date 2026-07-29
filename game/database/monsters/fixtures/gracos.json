@@ -37,6 +37,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rocket_start"
+		],
+		"P": [
+			"one_shot_reversal"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gracos.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"crackmeister",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_mist_me"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

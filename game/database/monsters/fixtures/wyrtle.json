@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_buff"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/wyrtle.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"perilous_parrier",
 		"close_scraper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"light_metal_body"
+		],
+		"50": [
+			"magic_regenerator"
+		],
+		"star": [
+			"crafty_devil"
+		]
+	}
 }

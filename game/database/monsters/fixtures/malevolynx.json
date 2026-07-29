@@ -42,6 +42,7 @@
 		"Wsh": "½",
 		"Zam": "⇄"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/malevolynx.webp",
 	"starting_skill_ids": [
@@ -52,5 +53,16 @@
 		"double_trouble",
 		"sleep_sock",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sleeper"
+		],
+		"50": [
+			"standard_killer"
+		],
+		"star": [
+			"warrior"
+		]
+	}
 }

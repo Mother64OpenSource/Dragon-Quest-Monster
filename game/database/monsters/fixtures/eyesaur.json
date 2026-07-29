@@ -36,6 +36,14 @@
 		"Sap": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"paralysing_punch"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/eyesaur.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"crafty_debuffer",
 		"crafty_paralyzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_shuffle"
+		],
+		"50": [
+			"scare_stare"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

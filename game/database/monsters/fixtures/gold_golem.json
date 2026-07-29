@@ -34,6 +34,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_trooper"
+		],
+		"P": [
+			"sudden_tension"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gold_golem.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"crafty_debuffer",
 		"crafty_squasher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"crafty_sealer"
+		],
+		"star": [
+			"crafty_donker"
+		]
+	}
 }

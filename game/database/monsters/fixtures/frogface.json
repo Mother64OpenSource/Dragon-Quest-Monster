@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"scare_stare"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/frogface.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"sudden_oomph",
 		"crafty_whacker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"zammeister"
+		],
+		"50": [
+			"deadly_touch"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

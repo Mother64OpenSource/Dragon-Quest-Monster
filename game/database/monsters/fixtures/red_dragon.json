@@ -43,6 +43,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"final_breath"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/red_dragon.png",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_trooper",
 		"crafty_sleeper",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_underworld_fog"
+		],
+		"50": [
+			"random_shuffle"
+		],
+		"star": [
+			"coercion"
+		]
+	}
 }

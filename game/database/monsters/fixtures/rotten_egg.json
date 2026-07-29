@@ -35,6 +35,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"scare_stare"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/rotten_egg.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"counter_striker",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_accelerate"
+		],
+		"50": [
+			"take_magic"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

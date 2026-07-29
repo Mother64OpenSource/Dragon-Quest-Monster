@@ -36,6 +36,14 @@
 		"Slp": "⁎",
 		"Wsh": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_accelerate"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cyclown.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wooshmeister"
+		],
+		"50": [
+			"crafty_zammer"
+		],
+		"star": [
+			"crafty_woosher"
+		]
+	}
 }

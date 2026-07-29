@@ -34,6 +34,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"frizzmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/flying_flayer.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_frizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_tension"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"fly_swatter"
+		]
+	}
 }

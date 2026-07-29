@@ -36,6 +36,14 @@
 		"Siz": "⁎",
 		"Zam": "⇄"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_debuffer"
+		],
+		"P": [
+			"zammeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dark_king_slime.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"heckling_hector"
+		],
+		"star": [
+			"crafty_donker"
+		]
+	}
 }

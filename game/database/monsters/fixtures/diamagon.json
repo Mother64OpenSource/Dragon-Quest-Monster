@@ -36,6 +36,14 @@
 		"Wsh": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"medicinal_knowledge"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/diamagon.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"small_body",
 		"close_scraper",
 		"rabble_rouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"strangely_alluring"
+		],
+		"star": [
+			"rare_magic_barrier"
+		]
+	}
 }

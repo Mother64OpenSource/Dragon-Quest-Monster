@@ -48,6 +48,7 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/king_godwyn_ii.webp",
 	"starting_skill_ids": [
@@ -58,5 +59,16 @@
 		"tactical_mastermind",
 		"drain_magic_attack",
 		"disruptive_wave"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"crafty_frizzer"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Zam": "⇄",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"double_trouble"
+		],
+		"P": [
+			"crafty_cracker"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dhoulmagus.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_sizzer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"zammeister"
+		],
+		"star": [
+			"sizzmeister"
+		]
+	}
 }

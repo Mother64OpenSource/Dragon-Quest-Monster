@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_red_fog"
+		],
+		"P": [
+			"sudden_red_fog"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/boh.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"health_professional",
 		"magic_regenerator"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"spell_satisfaction"
+		]
+	}
 }

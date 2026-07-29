@@ -42,6 +42,14 @@
 		"Wck": "⁎",
 		"Wsh": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sore_loser"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/flamethrower.png",
 	"starting_skill_ids": [
@@ -51,5 +59,16 @@
 		"standard_body",
 		"artful_dodger",
 		"frizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"random_red_fog"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

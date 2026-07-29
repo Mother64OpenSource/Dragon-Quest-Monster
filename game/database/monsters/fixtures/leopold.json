@@ -41,6 +41,14 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"critical_massacre"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/leopold.webp",
 	"starting_skill_ids": [
@@ -50,5 +58,16 @@
 		"standard_body",
 		"artful_dodger",
 		"early_bird"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"giant_killer"
+		],
+		"50": [
+			"sudden_black_fog"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

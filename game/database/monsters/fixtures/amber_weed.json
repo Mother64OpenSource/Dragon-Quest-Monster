@@ -43,6 +43,11 @@
 		"Zam": "½",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_donker"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/amber_weed.png",
 	"starting_skill_ids": [
@@ -53,5 +58,16 @@
 		"tactical_trooper",
 		"perilous_parrier",
 		"lucky"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_squasher"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"crafty_rubblerouser"
+		]
+	}
 }

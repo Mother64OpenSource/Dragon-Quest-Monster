@@ -37,6 +37,11 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"ultra_guard_break"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/nelgel.webp",
 	"starting_skill_ids": [
@@ -47,5 +52,16 @@
 		"double_trouble",
 		"random_underworld_fog",
 		"sudden_tension"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"perfect_parry"
+		],
+		"50": [
+			"disruptive_wave"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

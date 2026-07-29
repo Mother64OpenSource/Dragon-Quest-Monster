@@ -38,6 +38,7 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/geno_malroth.png",
 	"starting_skill_ids": [
@@ -48,5 +49,16 @@
 		"quad_trouble",
 		"wave_of_panic",
 		"sudden_underworld_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zammer"
+		],
+		"50": [
+			"random_underworld_fog"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

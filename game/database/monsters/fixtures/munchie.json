@@ -37,6 +37,14 @@
 		"Wsh": "½",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/munchie.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"crafty_fire_breather",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"strangely_alluring"
+		],
+		"50": [
+			"rabble_rouser"
+		],
+		"star": [
+			"comeback_kid"
+		]
+	}
 }

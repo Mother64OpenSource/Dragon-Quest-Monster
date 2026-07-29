@@ -37,6 +37,14 @@
 		"Sag": "↓",
 		"Slp": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_jammer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/damned_ram.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"sudden_ping",
 		"spell_satisfaction"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sealer"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"random_buff"
+		]
+	}
 }

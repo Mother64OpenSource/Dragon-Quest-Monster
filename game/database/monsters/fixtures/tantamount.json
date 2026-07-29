@@ -45,6 +45,14 @@
 		"Slp": "↓",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tantamount.png",
 	"starting_skill_ids": [
@@ -54,5 +62,16 @@
 		"standard_body",
 		"early_bird",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"crafty_sealer"
+		],
+		"star": [
+			"random_accelerate"
+		]
+	}
 }

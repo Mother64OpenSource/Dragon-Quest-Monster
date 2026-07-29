@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"lucky"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/healslime.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"small_body",
 		"artful_dodger",
 		"health_professional"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"drain_magic_attack"
+		],
+		"50": [
+			"comeback_kid"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

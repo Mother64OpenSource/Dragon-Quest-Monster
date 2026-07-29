@@ -41,6 +41,11 @@
 		"Slp": "↑",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_tension"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tuskateer.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"scare_stare",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_whacker"
+		],
+		"50": [
+			"random_oomph"
+		],
+		"star": [
+			"hopeful_hitter"
+		]
+	}
 }

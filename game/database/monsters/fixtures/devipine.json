@@ -35,6 +35,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/devipine.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"crafty_whacker",
 		"crafty_curser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_poisoner"
+		],
+		"50": [
+			"crafty_sleeper"
+		],
+		"star": [
+			"crafty_confuser"
+		]
+	}
 }

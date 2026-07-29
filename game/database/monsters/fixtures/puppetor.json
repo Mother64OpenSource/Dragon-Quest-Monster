@@ -36,6 +36,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"divine_dancer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/puppetor.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_inactivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sobering_slap"
+		],
+		"50": [
+			"whack_attack"
+		],
+		"star": [
+			"dance_meister"
+		]
+	}
 }

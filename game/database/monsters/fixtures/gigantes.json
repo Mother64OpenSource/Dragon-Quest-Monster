@@ -42,6 +42,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"one_shot_reversal"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gigantes.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_trooper",
 		"last_word",
 		"crafty_banger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"hopeful_hitter"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

@@ -45,6 +45,11 @@
 		"Zam": "½",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_rubblerouser"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/taurus.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"tactical_trooper",
 		"desperado",
 		"rolled_over"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"rubblerouser_meister"
+		]
+	}
 }

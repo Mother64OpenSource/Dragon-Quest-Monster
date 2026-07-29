@@ -39,6 +39,14 @@
 		"Slp": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"proactive_hunter"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/drohl_drone.webp",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"last_word",
 		"take_magic"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_devil"
+		],
+		"50": [
+			"lucky"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

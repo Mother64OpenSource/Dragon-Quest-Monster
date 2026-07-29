@@ -41,6 +41,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/estark.webp",
 	"starting_skill_ids": [
@@ -51,5 +52,16 @@
 		"double_trouble",
 		"hit_squad",
 		"disruptive_wave"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

@@ -34,6 +34,14 @@
 		"Wsh": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"atk_roulette"
+		],
+		"P": [
+			"hp_roulette"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/gremlin.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"artful_dodger",
 		"wis_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"agi_roulette"
+		],
+		"50": [
+			"mp_roulette"
+		],
+		"star": [
+			"def_roulette"
+		]
+	}
 }

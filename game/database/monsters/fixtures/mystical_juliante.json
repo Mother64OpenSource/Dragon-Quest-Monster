@@ -36,6 +36,14 @@
 		"Slp": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"strangely_alluring"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mystical_juliante.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"sudden_accelerate",
 		"crafty_inactivist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"crafty_woosher"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

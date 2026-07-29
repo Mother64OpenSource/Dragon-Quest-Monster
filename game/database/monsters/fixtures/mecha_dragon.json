@@ -47,6 +47,11 @@
 		"Wsh": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"light_metal_body"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mecha_dragon.png",
 	"starting_skill_ids": [
@@ -57,5 +62,16 @@
 		"tactical_trooper",
 		"critical_massacre",
 		"metal_killer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_oomph"
+		],
+		"50": [
+			"last_gasp"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

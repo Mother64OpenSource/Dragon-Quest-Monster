@@ -41,6 +41,11 @@
 		"Wck": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/bantamweight.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"artful_dodger",
 		"random_tension"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sizzer"
+		],
+		"50": [
+			"stress_relief"
+		],
+		"star": [
+			"sizzmeister"
+		]
+	}
 }

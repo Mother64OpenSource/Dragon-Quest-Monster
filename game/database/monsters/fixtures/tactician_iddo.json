@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_frizzer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tactician_iddo.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_mastermind",
 		"suicidal_satisfaction",
 		"drain_magic_attack"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_red_fog"
+		],
+		"50": [
+			"crafty_jammer"
+		],
+		"star": [
+			"crafty_banger"
+		]
+	}
 }

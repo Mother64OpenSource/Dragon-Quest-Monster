@@ -44,6 +44,11 @@
 		"Slp": "↑",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_frizzer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/marquis_de_l_on.webp",
 	"starting_skill_ids": [
@@ -54,5 +59,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"frizzmeister"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"sizzmeister"
+		]
+	}
 }

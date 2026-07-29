@@ -38,6 +38,7 @@
 		"Slp": "↑↑",
 		"Wck": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/aquarion.webp",
 	"starting_skill_ids": [
@@ -48,5 +49,16 @@
 		"double_trouble",
 		"random_tension",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dead_obsession"
+		],
+		"50": [
+			"tension_relief_body"
+		],
+		"star": [
+			"coercion"
+		]
+	}
 }

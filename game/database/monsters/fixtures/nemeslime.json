@@ -39,6 +39,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		],
+		"P": [
+			"critical_massacre"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/nemeslime.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"fly_swatter"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

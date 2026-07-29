@@ -43,6 +43,14 @@
 		"Siz": "↓",
 		"Zam": "HP"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"spell_satisfaction"
+		],
+		"P": [
+			"disruptive_wave"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/syphon.webp",
 	"starting_skill_ids": [
@@ -52,5 +60,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dust_of_the_clan"
+		],
+		"50": [
+			"wrath_of_the_stars"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

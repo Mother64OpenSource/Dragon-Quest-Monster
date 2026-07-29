@@ -40,6 +40,27 @@ layout_mode = 2
 clip_text = true
 theme_override_font_sizes/font_size = 12
 
+[node name="SizeSynthBox" type="HBoxContainer" parent="Layout"]
+layout_mode = 2
+
+[node name="SizeSpinBox" type="SpinBox" parent="Layout/SizeSynthBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Size (1-4). Reborn into a bigger size than natural to unlock P/H/G-tier traits."
+min_value = 1
+max_value = 4
+value = 1
+prefix = "Sz"
+
+[node name="SynthSpinBox" type="SpinBox" parent="Layout/SizeSynthBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Synthesis stack (0-100, 100 = +★). Unlocks +25/+50/+★-tier traits."
+min_value = 0
+max_value = 100
+value = 0
+prefix = "Sy"
+
 [node name="SkillsBox" type="HBoxContainer" parent="Layout"]
 layout_mode = 2
 size_flags_horizontal = 3

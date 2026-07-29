@@ -44,6 +44,14 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gamble_counter"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/drakulard.webp",
 	"starting_skill_ids": [
@@ -53,5 +61,16 @@
 		"standard_body",
 		"critical_massacre",
 		"intimidating"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"stalwart_spirit"
+		],
+		"50": [
+			"crafty_squasher"
+		],
+		"star": [
+			"crafty_fire_breather"
+		]
+	}
 }

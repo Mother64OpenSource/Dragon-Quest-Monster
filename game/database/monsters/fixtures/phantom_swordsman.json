@@ -38,6 +38,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_mastermind"
+		],
+		"P": [
+			"crafty_devil"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/phantom_swordsman.png",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"artful_dodger",
 		"confusing_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gamble_counter"
+		],
+		"50": [
+			"take_magic"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

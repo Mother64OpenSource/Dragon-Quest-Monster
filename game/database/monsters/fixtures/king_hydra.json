@@ -44,6 +44,7 @@
 		"Wck": "↑↑",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/king_hydra.webp",
 	"starting_skill_ids": [
@@ -54,5 +55,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_high_tension"
+		],
+		"50": [
+			"crafty_frizzer"
+		],
+		"star": [
+			"breath_meister"
+		]
+	}
 }

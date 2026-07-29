@@ -33,6 +33,14 @@
 		"Sag": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"combat_king"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wild_chappy.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"hopeful_hitter",
 		"berserker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"atk_roulette"
+		],
+		"50": [
+			"one_shot_reversal"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

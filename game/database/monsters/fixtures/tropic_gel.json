@@ -41,6 +41,11 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/tropic_gel.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"hit_squad",
 		"take_magic",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"medicinal_knowledge"
+		],
+		"star": [
+			"crafty_inactivist"
+		]
+	}
 }

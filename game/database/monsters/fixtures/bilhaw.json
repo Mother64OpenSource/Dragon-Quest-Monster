@@ -41,6 +41,11 @@
 		"Wck": "0",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"stalwart_spirit"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/bilhaw.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"early_bird",
 		"hopeful_hitter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"berserker"
+		],
+		"50": [
+			"rolled_over"
+		],
+		"star": [
+			"paralyzed_attack"
+		]
+	}
 }

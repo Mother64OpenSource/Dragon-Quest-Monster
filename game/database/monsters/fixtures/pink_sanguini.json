@@ -39,6 +39,14 @@
 		"Sag": "↓",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"rare_mist_me"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/pink_sanguini.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"small_body",
 		"artful_dodger",
 		"strangely_alluring"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"lucky"
+		]
+	}
 }

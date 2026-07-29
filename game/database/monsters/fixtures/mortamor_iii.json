@@ -39,6 +39,11 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_banger"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mortamor_iii.webp",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"sudden_red_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"disruptive_wave"
+		],
+		"50": [
+			"crafty_ice_breather"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

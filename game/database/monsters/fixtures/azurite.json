@@ -42,6 +42,11 @@
 		"Wsh": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"zapmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/azurite.webp",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"crafty_zapper",
 		"coercion"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"final_breath"
+		]
+	}
 }

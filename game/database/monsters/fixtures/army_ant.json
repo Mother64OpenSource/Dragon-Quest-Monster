@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		],
+		"P": [
+			"artful_dodger"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/army_ant.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"sudden_buff",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_oomph"
+		],
+		"50": [
+			"desperado"
+		],
+		"star": [
+			"tactical_trooper"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Slp": "↓",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mossferatu.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"mutter",
 		"poisonous_poke"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"magic_regenerator"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

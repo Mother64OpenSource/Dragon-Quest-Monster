@@ -54,6 +54,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"gold_getter"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/gem_slime.webp",
 	"starting_skill_ids": [
@@ -64,5 +69,16 @@
 		"tactical_trooper",
 		"metal_body",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"escape_artist"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"coercion"
+		]
+	}
 }

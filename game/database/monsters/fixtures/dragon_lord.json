@@ -40,6 +40,14 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"double_trouble"
+		],
+		"P": [
+			"crafty_confuser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dragon_lord.webp",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"scare_stare",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"suicidal_satisfaction"
+		],
+		"50": [
+			"crafty_sizzer"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

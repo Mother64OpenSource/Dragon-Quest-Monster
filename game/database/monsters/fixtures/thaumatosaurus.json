@@ -42,6 +42,7 @@
 		"Wck": "↑↑",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/thaumatosaurus.png",
 	"starting_skill_ids": [
@@ -52,5 +53,16 @@
 		"tactical_genius",
 		"crafty_woosher",
 		"intimidating"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"giant_killer"
+		]
+	}
 }

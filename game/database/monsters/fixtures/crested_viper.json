@@ -35,6 +35,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"artful_dodger"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/crested_viper.webp",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"critical_massacre",
 		"sudden_accelerate"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_white_fog"
+		],
+		"50": [
+			"random_tension"
+		],
+		"star": [
+			"rocket_start"
+		]
+	}
 }

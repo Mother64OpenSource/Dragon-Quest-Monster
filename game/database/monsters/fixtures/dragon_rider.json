@@ -40,6 +40,14 @@
 		"Wsh": "0",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"stalwart_spirit"
+		],
+		"P": [
+			"sudden_oomph"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dragon_rider.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counter_striker"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"whack_attack"
+		]
+	}
 }

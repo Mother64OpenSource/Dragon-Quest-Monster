@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"lucky"
+		],
+		"P": [
+			"tactical_mastermind"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/confetti.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"bladed_body",
 		"protecter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"protection_of_the_stars"
+		],
+		"50": [
+			"star_gift"
+		],
+		"star": [
+			"metal_killer"
+		]
+	}
 }

@@ -45,6 +45,11 @@
 		"Wsh": "⁎",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sleep_sock"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/carnivine.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"gamble_counter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_black_fog"
+		],
+		"50": [
+			"random_tension"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

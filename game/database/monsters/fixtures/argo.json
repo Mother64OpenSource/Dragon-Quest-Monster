@@ -40,6 +40,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_high_tension"
+		],
+		"P": [
+			"sudden_oomph"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/argo.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"random_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"dust_of_the_clan"
+		],
+		"50": [
+			"protection_of_the_stars"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

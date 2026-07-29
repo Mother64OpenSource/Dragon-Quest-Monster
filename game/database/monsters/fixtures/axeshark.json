@@ -36,6 +36,14 @@
 		"Slp": "↓",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rocket_start"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/axeshark.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"heat_up",
 		"rare_high_tension"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_debuffer"
+		],
+		"50": [
+			"random_underworld_fog"
+		],
+		"star": [
+			"random_accelerate"
+		]
+	}
 }

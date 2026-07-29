@@ -35,6 +35,14 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/yellow_sickler.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"berserker",
 		"crafty_jammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tit_for_tat"
+		],
+		"50": [
+			"grudge_bearer"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

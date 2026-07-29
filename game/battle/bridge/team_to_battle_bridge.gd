@@ -41,8 +41,9 @@ static func build_team(
 				push_error("Unknown skill id equipped by %s: %s" % [loadout.species_id, skill_id])
 		instance.learned_skills = skills
 
+		var active_trait_ids := TeamRosterManager.get_active_trait_ids(loadout, species)
 		var traits: Array[TraitEffect] = []
-		for trait_id in species.starting_trait_ids:
+		for trait_id in active_trait_ids:
 			var data := trait_db.get_trait_data(trait_id)
 			if data != null:
 				var effect := TraitEffect.create(trait_id, data, skill_db)
@@ -63,11 +64,11 @@ static func build_team(
 						instance.crafted_stat_boosts.append(item)
 					BlacksmithItemData.Category.TRAIT_GRANT:
 						# "But has no effect on those who already have that
-						# bonus" -- skip if the species already carries this
-						# trait innately, so a granted crit-chance multiplier
-						# (etc.) can never stack with the same monster's own
-						# native copy of it.
-						if species.starting_trait_ids.has(item.granted_trait_id):
+						# bonus" -- skip if this monster already carries this
+						# trait (innately, or unlocked via size/synthesis
+						# gating), so a granted crit-chance multiplier (etc.)
+						# can never stack with its own copy of it.
+						if active_trait_ids.has(item.granted_trait_id):
 							continue
 						var data := trait_db.get_trait_data(item.granted_trait_id)
 						if data != null:

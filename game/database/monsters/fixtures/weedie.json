@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"comeback_kid"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/weedie.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"health_professional",
 		"crafty_whacker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"deadly_touch"
+		],
+		"50": [
+			"sudden_accelerate"
+		],
+		"star": [
+			"medicinal_knowledge"
+		]
+	}
 }

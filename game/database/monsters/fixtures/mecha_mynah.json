@@ -37,6 +37,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zapper"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/mecha_mynah.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"small_body",
 		"artful_dodger",
 		"tension_relief_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"zapmeister"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

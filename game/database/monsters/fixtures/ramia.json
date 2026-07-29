@@ -37,6 +37,7 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/ramia.webp",
 	"starting_skill_ids": [
@@ -47,5 +48,16 @@
 		"tactical_genius",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"health_professional"
+		],
+		"50": [
+			"star_gift"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

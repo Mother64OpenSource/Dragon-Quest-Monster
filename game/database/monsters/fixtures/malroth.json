@@ -40,6 +40,11 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sleep_sock"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/malroth.webp",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"double_trouble",
 		"hit_squad",
 		"health_professional"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"disruptive_wave"
+		],
+		"50": [
+			"spell_satisfaction"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

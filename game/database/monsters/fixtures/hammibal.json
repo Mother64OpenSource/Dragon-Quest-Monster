@@ -40,6 +40,14 @@
 		"Wck": "↓",
 		"Wsh": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"whack_attack"
+		],
+		"P": [
+			"crafty_inactivist"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/hammibal.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"counter_striker"
+		],
+		"star": [
+			"combat_king"
+		]
+	}
 }

@@ -47,6 +47,14 @@
 		"Zam": "½",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zammer"
+		],
+		"P": [
+			"crafty_woosher"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/fowleye.webp",
 	"starting_skill_ids": [
@@ -56,5 +64,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"sudden_ping"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"spell_satisfaction"
+		],
+		"50": [
+			"bouncer"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

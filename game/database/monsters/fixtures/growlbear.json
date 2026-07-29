@@ -41,6 +41,11 @@
 		"Wck": "½",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_woosher"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/growlbear.png",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"tactical_trooper",
 		"rare_mist_me",
 		"desperado"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"wooshmeister"
+		],
+		"50": [
+			"sudden_oomph"
+		],
+		"star": [
+			"heat_up"
+		]
+	}
 }

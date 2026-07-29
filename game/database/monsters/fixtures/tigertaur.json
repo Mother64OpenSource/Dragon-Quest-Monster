@@ -36,6 +36,14 @@
 		"Slp": "↓",
 		"Wck": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sudden_oomph"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/tigertaur.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"steady_recovery",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"sobering_slap"
+		]
+	}
 }

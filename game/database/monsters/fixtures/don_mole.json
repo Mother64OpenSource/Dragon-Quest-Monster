@@ -37,6 +37,14 @@
 		"Siz": "½",
 		"Slp": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_devil"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/don_mole.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"counter_striker",
 		"deadly_touch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"mutter"
+		],
+		"50": [
+			"metal_killer"
+		],
+		"star": [
+			"bangmeister"
+		]
+	}
 }

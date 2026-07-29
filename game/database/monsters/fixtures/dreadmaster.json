@@ -45,6 +45,11 @@
 		"Wck": "↑",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/dreadmaster.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"hit_squad",
 		"critical_massacre",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_tension"
+		],
+		"50": [
+			"random_shuffle"
+		],
+		"star": [
+			"crackmeister"
+		]
+	}
 }

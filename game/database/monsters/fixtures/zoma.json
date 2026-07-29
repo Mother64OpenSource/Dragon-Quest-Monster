@@ -37,6 +37,14 @@
 		"Zam": "↑",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		],
+		"P": [
+			"hidden_power"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/zoma.webp",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"tactical_trooper",
 		"bouncer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_cracker"
+		],
+		"50": [
+			"sudden_ping"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

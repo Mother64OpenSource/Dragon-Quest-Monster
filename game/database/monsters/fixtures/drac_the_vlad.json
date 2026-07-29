@@ -35,6 +35,14 @@
 		"Wsh": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crackmeister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/drac_the_vlad.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"drain_magic_attack",
 		"crafty_cracker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_shuffle"
+		],
+		"50": [
+			"dead_obsession"
+		],
+		"star": [
+			"wave_of_panic"
+		]
+	}
 }

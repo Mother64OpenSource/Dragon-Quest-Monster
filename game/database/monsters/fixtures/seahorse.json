@@ -36,6 +36,14 @@
 		"Wsh": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_cracker"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/seahorse.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"crafty_ice_breather",
 		"sudden_buff"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_accelerate"
+		],
+		"50": [
+			"sudden_underworld_fog"
+		],
+		"star": [
+			"counter_striker"
+		]
+	}
 }

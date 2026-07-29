@@ -39,6 +39,11 @@
 		"Wck": "0",
 		"Zam": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_inactivist"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/sneezy.png",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"double_trouble",
 		"artful_dodger",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"crafty_fire_breather"
+		],
+		"star": [
+			"divine_dancer"
+		]
+	}
 }

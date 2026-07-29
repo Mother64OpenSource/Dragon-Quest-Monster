@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"giant_killer"
+		],
+		"P": [
+			"metal_killer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/heart_knight.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"double_trouble",
 		"fast_learner"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"gold_getter"
+		],
+		"50": [
+			"lootist"
+		],
+		"star": [
+			"warrior"
+		]
+	}
 }

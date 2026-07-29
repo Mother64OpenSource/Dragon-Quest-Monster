@@ -33,6 +33,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"deadly_breath"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/djinneral_shion.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"tactical_genius",
 		"random_white_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"crafty_fire_breather"
+		],
+		"star": [
+			"light_metal_body"
+		]
+	}
 }

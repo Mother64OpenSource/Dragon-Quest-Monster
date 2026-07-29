@@ -36,6 +36,14 @@
 		"Slp": "0",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"close_scraper"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/walking_stick.webp",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"small_body",
 		"hit_squad",
 		"lucky"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tension_relief_body"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"sore_loser"
+		]
+	}
 }

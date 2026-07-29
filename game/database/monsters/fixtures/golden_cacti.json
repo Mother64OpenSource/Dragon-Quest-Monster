@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hard_metal_body"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/golden_cacti.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"bladed_body",
 		"gold_getter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"lootist"
+		],
+		"50": [
+			"fast_learner"
+		],
+		"star": [
+			"strong_guard_break"
+		]
+	}
 }

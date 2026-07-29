@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wild_boarfish.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"standard_body",
 		"paralyzing",
 		"crackmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous_poke"
+		],
+		"50": [
+			"crafty_paralyzer"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

@@ -35,6 +35,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"double_trouble"
+		],
+		"P": [
+			"wis_roulette"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/aqua_slime.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hp_roulette",
 		"mp_roulette"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"atk_roulette"
+		],
+		"50": [
+			"def_roulette"
+		],
+		"star": [
+			"agi_roulette"
+		]
+	}
 }

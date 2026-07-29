@@ -34,6 +34,14 @@
 		"Wck": "⁎",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"grudge_bearer"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bodkin_archer.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"crafty_poisoner",
 		"frizzmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous_poke"
+		],
+		"50": [
+			"critical_massacre"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

@@ -37,6 +37,14 @@
 		"Siz": "↓",
 		"Slp": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"breath_meister"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/snowbird.png",
 	"starting_skill_ids": [
@@ -46,5 +54,16 @@
 		"standard_body",
 		"artful_dodger",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sleep_sock"
+		],
+		"50": [
+			"close_scraper"
+		],
+		"star": [
+			"crafty_sleeper"
+		]
+	}
 }

@@ -45,6 +45,11 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"coercion"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/mortella.png",
 	"starting_skill_ids": [
@@ -55,5 +60,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"paralysing_punch"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"heckling_hector"
+		],
+		"50": [
+			"crafty_cracker"
+		],
+		"star": [
+			"crackmeister"
+		]
+	}
 }

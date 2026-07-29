@@ -46,6 +46,7 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/demonic_carriage.png",
 	"starting_skill_ids": [
@@ -56,5 +57,16 @@
 		"double_trouble",
 		"hopeful_hitter",
 		"dust_of_the_clan"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"rare_magic_barrier"
+		],
+		"50": [
+			"rabble_rouser"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

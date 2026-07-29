@@ -46,6 +46,7 @@
 		"Zam": "↓",
 		"Zap": "HP"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/great_godbird.webp",
 	"starting_skill_ids": [
@@ -56,5 +57,16 @@
 		"double_trouble",
 		"hit_squad",
 		"tension_relief_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_ping"
+		],
+		"50": [
+			"wave_of_relief"
+		],
+		"star": [
+			"random_accelerate"
+		]
+	}
 }

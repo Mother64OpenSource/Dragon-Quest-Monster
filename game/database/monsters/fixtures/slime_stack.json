@@ -33,6 +33,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zapper"
+		],
+		"P": [
+			"sobering_slap"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/slime_stack.png",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"hit_squad",
 		"zapmeister"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"comeback_kid"
+		],
+		"50": [
+			"tactical_trooper"
+		],
+		"star": [
+			"perfect_parry"
+		]
+	}
 }

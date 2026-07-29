@@ -39,6 +39,14 @@
 		"Wsh": "0",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tactical_genius"
+		],
+		"P": [
+			"crafty_confuser"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/grotwyrm.png",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"poisonous",
 		"fly_swatter"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"confusing_touch"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"crafty_poisoner"
+		]
+	}
 }

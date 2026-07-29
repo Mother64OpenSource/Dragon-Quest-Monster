@@ -54,6 +54,11 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rocket_start"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/metal_kaiser_slime.png",
 	"starting_skill_ids": [
@@ -64,5 +69,16 @@
 		"tactical_trooper",
 		"metal_body",
 		"escape_artist"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"early_bird"
+		],
+		"50": [
+			"crafty_inactivist"
+		],
+		"star": [
+			"standard_killer"
+		]
+	}
 }

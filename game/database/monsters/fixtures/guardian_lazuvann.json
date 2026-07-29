@@ -39,6 +39,11 @@
 		"Wsh": "½",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"warrior"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/guardian_lazuvann.png",
 	"starting_skill_ids": [
@@ -49,5 +54,16 @@
 		"double_trouble",
 		"crafty_frizzer",
 		"crafty_fire_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"proactive_hunter"
+		],
+		"50": [
+			"sudden_tension"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

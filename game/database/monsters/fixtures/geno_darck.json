@@ -40,6 +40,11 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"deadly_touch"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/geno_darck.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"tactical_genius",
 		"hit_squad",
 		"sudden_underworld_fog"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_donker"
+		],
+		"50": [
+			"perilous_parrier"
+		],
+		"star": [
+			"crafty_whacker"
+		]
+	}
 }

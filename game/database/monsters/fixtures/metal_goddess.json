@@ -56,6 +56,7 @@
 		"Zam": "0",
 		"Zap": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/metal_goddess.webp",
 	"starting_skill_ids": [
@@ -66,5 +67,16 @@
 		"tactical_uber",
 		"hit_squad",
 		"superhard_metal_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"comeback_kid"
+		],
+		"50": [
+			"random_shuffle"
+		],
+		"star": [
+			"disruptive_wave"
+		]
+	}
 }

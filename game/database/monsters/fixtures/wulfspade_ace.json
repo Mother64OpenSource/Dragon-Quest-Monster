@@ -33,6 +33,14 @@
 		"Wck": "0",
 		"Wsh": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"all_guard"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wulfspade_ace.webp",
 	"starting_skill_ids": [
@@ -42,5 +50,16 @@
 		"standard_body",
 		"close_scraper",
 		"hit_squad"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_zapper"
+		],
+		"50": [
+			"fly_swatter"
+		],
+		"star": [
+			"proactive_hunter"
+		]
+	}
 }

@@ -38,6 +38,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"random_reversal"
+		],
+		"P": [
+			"double_trouble"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/cruelcumber.webp",
 	"starting_skill_ids": [
@@ -47,5 +55,16 @@
 		"standard_body",
 		"last_word",
 		"crafty_debuffer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"bangmeister"
+		],
+		"50": [
+			"gamble_counter"
+		],
+		"star": [
+			"proactive_hunter"
+		]
+	}
 }

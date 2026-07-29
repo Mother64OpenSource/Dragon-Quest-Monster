@@ -40,6 +40,11 @@
 		"Wck": "½",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"wooshmeister"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/garudian.png",
 	"starting_skill_ids": [
@@ -50,5 +55,16 @@
 		"double_trouble",
 		"hit_squad",
 		"artful_dodger"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"deadly_touch"
+		]
+	}
 }

@@ -42,6 +42,11 @@
 		"Wck": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"standard_killer"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/drygon.png",
 	"starting_skill_ids": [
@@ -52,5 +57,16 @@
 		"tactical_genius",
 		"intimidating",
 		"critical_massacre"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_black_fog"
+		],
+		"50": [
+			"stalwart_spirit"
+		],
+		"star": [
+			"one_shot_reversal"
+		]
+	}
 }

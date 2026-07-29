@@ -40,6 +40,14 @@
 		"Siz": "½",
 		"Zam": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"sleep_sock"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/smile_lizard.png",
 	"starting_skill_ids": [
@@ -49,5 +57,16 @@
 		"small_body",
 		"paralyzed_attack",
 		"crafty_sleeper"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"berserker"
+		],
+		"50": [
+			"frizzmeister"
+		],
+		"star": [
+			"crafty_frizzer"
+		]
+	}
 }

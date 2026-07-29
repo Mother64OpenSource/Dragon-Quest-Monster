@@ -45,6 +45,7 @@
 		"Wsh": "½",
 		"Zam": "½"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/maulusc.png",
 	"starting_skill_ids": [
@@ -55,5 +56,16 @@
 		"tactical_genius",
 		"rare_mist_me",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"paralyzing"
+		],
+		"50": [
+			"sudden_black_fog"
+		],
+		"star": [
+			"confusing_touch"
+		]
+	}
 }

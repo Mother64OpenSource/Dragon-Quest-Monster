@@ -45,6 +45,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_frizzer"
+		],
+		"P": [
+			"tactical_trooper"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/wight_king.png",
 	"starting_skill_ids": [
@@ -54,5 +62,16 @@
 		"standard_body",
 		"magic_regenerator",
 		"crafty_woosher"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"frizzmeister"
+		],
+		"50": [
+			"random_ping"
+		],
+		"star": [
+			"tit_for_tat"
+		]
+	}
 }

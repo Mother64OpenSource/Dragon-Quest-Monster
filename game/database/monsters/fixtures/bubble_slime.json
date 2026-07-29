@@ -34,6 +34,14 @@
 		"Zam": "↓",
 		"Zap": "½"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"tit_for_tat"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/bubble_slime.webp",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"poisonous",
 		"crafty_zammer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"poisonous_poke"
+		],
+		"50": [
+			"crafty_poisoner"
+		],
+		"star": [
+			"grudge_bearer"
+		]
+	}
 }

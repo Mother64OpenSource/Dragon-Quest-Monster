@@ -43,6 +43,7 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 3.0,
 	"sprite_path": "res://assets/monsters/lexicon.png",
 	"starting_skill_ids": [
@@ -53,5 +54,16 @@
 		"tactical_genius",
 		"artful_dodger",
 		"crafty_sealer"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_jammer"
+		],
+		"50": [
+			"sudden_shuffle"
+		],
+		"star": [
+			"great_sage"
+		]
+	}
 }

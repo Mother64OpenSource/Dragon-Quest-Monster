@@ -39,6 +39,14 @@
 		"Zam": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"sleep_sock"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/murdaw.webp",
 	"starting_skill_ids": [
@@ -48,5 +56,16 @@
 		"standard_body",
 		"crackmeister",
 		"crafty_ice_breather"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_sleeper"
+		],
+		"50": [
+			"tactical_mastermind"
+		],
+		"star": [
+			"crafty_zapper"
+		]
+	}
 }

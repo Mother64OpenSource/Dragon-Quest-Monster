@@ -35,6 +35,14 @@
 		"Wsh": "↓",
 		"Zap": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_zammer"
+		],
+		"P": [
+			"tactical_genius"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/chariot_chappie.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"zammeister",
 		"random_accelerate"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"deadly_touch"
+		],
+		"50": [
+			"crafty_whacker"
+		],
+		"star": [
+			"violent_rager"
+		]
+	}
 }

@@ -41,6 +41,11 @@
 		"Zam": "HP",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"crafty_squasher"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/barbarus.webp",
 	"starting_skill_ids": [
@@ -51,5 +56,16 @@
 		"double_trouble",
 		"intimidating",
 		"crafty_donker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_underworld_fog"
+		],
+		"50": [
+			"stress_relief"
+		],
+		"star": [
+			"deadly_breath"
+		]
+	}
 }

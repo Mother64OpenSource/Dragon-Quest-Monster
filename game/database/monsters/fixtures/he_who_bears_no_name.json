@@ -38,6 +38,7 @@
 		"Wsh": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {},
 	"slots": 4.0,
 	"sprite_path": "res://assets/monsters/he_who_bears_no_name.png",
 	"starting_skill_ids": [
@@ -48,5 +49,16 @@
 		"quad_trouble",
 		"ultra_guard_break",
 		"disruptive_wave"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"counteractivist"
+		],
+		"50": [
+			"ultra_fast_action"
+		],
+		"star": [
+			"hidden_power"
+		]
+	}
 }

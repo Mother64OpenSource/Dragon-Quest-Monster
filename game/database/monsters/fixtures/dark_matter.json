@@ -35,6 +35,14 @@
 		"Wck": "½",
 		"Zam": "0"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"superhard_metal_body"
+		],
+		"P": [
+			"zammeister"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/dark_matter.png",
 	"starting_skill_ids": [
@@ -44,5 +52,16 @@
 		"standard_body",
 		"hit_squad",
 		"crafty_whacker"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"sudden_underworld_fog"
+		],
+		"50": [
+			"tit_for_tat"
+		],
+		"star": [
+			"tactical_genius"
+		]
+	}
 }

@@ -34,6 +34,14 @@
 		"Slp": "⁎",
 		"Wsh": "⁎"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"confusing_touch"
+		],
+		"P": [
+			"tit_for_tat"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/batterfly.png",
 	"starting_skill_ids": [
@@ -43,5 +51,16 @@
 		"small_body",
 		"artful_dodger",
 		"crafty_confuser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"tactical_trooper"
+		],
+		"50": [
+			"suicidal_satisfaction"
+		],
+		"star": [
+			"crafty_jammer"
+		]
+	}
 }

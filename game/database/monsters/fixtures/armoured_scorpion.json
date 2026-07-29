@@ -48,6 +48,11 @@
 		"Zam": "↑",
 		"Zap": "↑"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"rare_mist_me"
+		]
+	},
 	"slots": 2.0,
 	"sprite_path": "res://assets/monsters/armoured_scorpion.webp",
 	"starting_skill_ids": [
@@ -58,5 +63,16 @@
 		"tactical_trooper",
 		"hit_squad",
 		"light_metal_body"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"random_tension"
+		],
+		"50": [
+			"random_white_fog"
+		],
+		"star": [
+			"protecter"
+		]
+	}
 }

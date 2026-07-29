@@ -36,6 +36,14 @@
 		"Wck": "0",
 		"Zap": "↓"
 	},
+	"size_gated_trait_ids": {
+		"H": [
+			"hidden_power"
+		],
+		"P": [
+			"coercion"
+		]
+	},
 	"slots": 1.0,
 	"sprite_path": "res://assets/monsters/jamirus.png",
 	"starting_skill_ids": [
@@ -45,5 +53,16 @@
 		"standard_body",
 		"double_trouble",
 		"rabble_rouser"
-	]
+	],
+	"synth_gated_trait_ids": {
+		"25": [
+			"crafty_frizzer"
+		],
+		"50": [
+			"rare_mist_me"
+		],
+		"star": [
+			"wooshmeister"
+		]
+	}
 }
